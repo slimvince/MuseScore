@@ -25,7 +25,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_third_2026_10_26.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -111,10 +112,10 @@ its own entry there.
 | 54 | `cowork_bounded_context_design.md` passages | **DONE** (§6.54) |
 | 55 | `cowork_prefit_gates.md` passages | **DONE** (§6.55) |
 | 56 | The L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10 | **DONE** (§6.56) |
-| 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | **TABLE DONE; FULL-ROW GROUP 1 DONE** (§6.57 — every named row pointed or named for a full row; group 1's full rows built; the remaining full rows NOT YET WRITTEN, named at §6.57's foot) |
+| 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | **TABLE DONE; FULL-ROW GROUPS 1 AND 2 DONE** (§6.57 — every named row pointed or named for a full row; groups 1 and 2's full rows built; the remaining full rows NOT YET WRITTEN, named at §6.57's foot) |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 56, the table of position 57 and its first full-row group —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 56, the table of position 57 and its first two full-row groups —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -136,7 +137,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, position 55, the passages of `cowork_prefit_gates.md`, position 56, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10, and the table of position 57, the L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 — the first portion of a member done in named portions under the ruling record of 2026-10-26, and its first full-row group, the rows named at §6.57's group heading.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, position 55, the passages of `cowork_prefit_gates.md`, position 56, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10, and the table of position 57, the L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 — the first portion of a member done in named portions under the ruling record of 2026-10-26, and its first two full-row groups, the rows named at §6.57's group headings.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -185,10 +186,12 @@ under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_se
 member boundary after position 56 under its own limit on the batch, and not by a capacity judgment; the table of
 position 57 was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_third_2026_10_26.md`, which stopped after
 the table under its own limit on the batch, and not by a capacity judgment; the first full-row group of position 57
-was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md`.**
+was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md`, which stopped after
+the group under its own limit on the batch, and not by a capacity judgment; the second full-row group of position 57
+was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md`.**
 **The writing now stands inside position 57, at a boundary the ruling record of 2026-10-26 names: its table and its
-first full-row group done; its remaining full rows, named at §6.57's foot, not yet written — and the next writing
-resumes at the second group of them.**
+first two full-row groups done; its remaining full rows, named at §6.57's foot, not yet written — and the next
+writing resumes at the third group of them.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -72335,7 +72338,7 @@ the row; *Document and locator* the document the L2 row's block names and that b
 | 57.246 | L2 Row 41.27(ii) | B58 | `cowork_layer6_grouping_design.md` (locator: lines 86–87) | Row 8.19 (§6.8) |
 | 57.247 | L2 Row 41.28 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 90–91) | Row 8.20 (§6.8) — the quotation is a portion of what that row quotes |
 | 57.248 | L2 Row 41.32 | B58 | `cowork_layer6_grouping_design.md` (locator: line 107) | Row 8.24 (§6.8) |
-| 57.249 | L2 Row 41.33 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 107–109) | **NEEDS A FULL ROW** — listed only — §6.8 item 11 |
+| 57.249 | L2 Row 41.33 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 107–109) | **FULL ROW BUILT** — group 2 — listed only — §6.8 item 11 |
 | 57.250 | L2 Row 41.34 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 109–110) | Row 8.25 (§6.8) |
 | 57.251 | L2 Row 41.35 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 110–111) | Row 8.26 (§6.8) |
 | 57.252 | L2 Row 41.37 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 117–118) | Row 8.28 (§6.8) |
@@ -72345,7 +72348,7 @@ the row; *Document and locator* the document the L2 row's block names and that b
 | 57.256 | L2 Row 41.53 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 155–157) | Row 8.42 (§6.8) |
 | 57.257 | L2 Row 41.55 | B58 | `cowork_layer6_grouping_design.md` (locator: line 162) | Row 8.44 (§6.8) |
 | 57.258 | L2 Row 41.57 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 166–169) | Row 8.45 (§6.8) |
-| 57.259 | L2 Row 41.58 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 169–171) | **NEEDS A FULL ROW** — listed only — §6.8 item 18 |
+| 57.259 | L2 Row 41.58 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 169–171) | **FULL ROW BUILT** — group 2 — listed only — §6.8 item 18 |
 | 57.260 | L2 Row 41.59 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 172–173) | Row 8.46 (§6.8) |
 | 57.261 | L2 Row 41.60 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 174–175) | Row 8.47 (§6.8) |
 | 57.262 | L2 Row 41.61 | B58 | `cowork_layer6_grouping_design.md` (locator: line 176) | Row 8.48 (§6.8) |
@@ -72364,19 +72367,19 @@ the row; *Document and locator* the document the L2 row's block names and that b
 | 57.275 | L2 Row 41.87 | B58 | `cowork_layer6_grouping_design.md` (locator: line 246) | Row 8.74 (§6.8) |
 | 57.276 | L2 Row 41.88 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 246–248) | Row 8.75 (§6.8) |
 | 57.277 | L2 Row 41.90 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 251–253) | Row 8.77 (§6.8) |
-| 57.278 | L2 Row 41.91 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 253–254) | **NEEDS A FULL ROW** — listed only — §6.8 item 25 |
+| 57.278 | L2 Row 41.91 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 253–254) | **FULL ROW BUILT** — group 2 — listed only — §6.8 item 25 |
 | 57.279 | L2 Row 41.93(i) | B58 | `cowork_layer6_grouping_design.md` (locator: lines 262–264) | Row 8.79 (§6.8) |
 | 57.280 | L2 Row 41.97 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 270–273) | Row 8.82 (§6.8) |
 | 57.281 | L2 Row 41.98 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 276–277) | Row 8.83 (§6.8) |
 | 57.282 | L2 Row 41.99 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 278–280) | Row 8.84 (§6.8) |
-| 57.283 | L2 Row 41.100 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 280–281) | **NEEDS A FULL ROW** — listed only — §6.8 item 27 |
+| 57.283 | L2 Row 41.100 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 280–281) | **FULL ROW BUILT** — group 2 — listed only — §6.8 item 27 |
 | 57.284 | L2 Row 41.101 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 282–283) | Row 8.85 (§6.8) |
 | 57.285 | L2 Row 41.102 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 284–285) | Row 8.86 (§6.8) |
 | 57.286 | L2 Row 41.103 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 285–287) | Row 8.87 (§6.8) |
 | 57.287 | L2 Row 41.104 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 288–289) | Row 8.88 (§6.8) |
 | 57.288 | L2 Row 41.105 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 307–309) | Row 8.95 (§6.8) |
 | 57.289 | L2 Row 41.106 | B58 | `cowork_layer6_grouping_design.md` (locator: line 309) | Row 8.96 (§6.8) |
-| 57.290 | L2 Row 41.107 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 311–312) | **NEEDS A FULL ROW** — listed only — §6.8 item 28 |
+| 57.290 | L2 Row 41.107 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 311–312) | **FULL ROW BUILT** — group 2 — listed only — §6.8 item 28 |
 | 57.291 | L2 Row 41.110 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 318–319) | Row 8.101 (§6.8) — the quotation adds the bullet's bold label, read at §6.8 as a title |
 | 57.292 | L2 Row 41.111 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 319–320) | Row 8.102 (§6.8) |
 | 57.293 | L2 Row 41.114 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 325–326) | Row 8.105 (§6.8) |
@@ -72401,14 +72404,14 @@ the row; *Document and locator* the document the L2 row's block names and that b
 | 57.312 | L2 Row 41.29 | B62 | `cowork_layer6_grouping_design.md` (locator: lines 93–94) | Row 8.21 (§6.8) — the quotation is a portion of what that row quotes |
 | 57.313 | L2 Row 41.30 | B62 | `cowork_layer6_grouping_design.md` (locator: line 97) | Row 8.22 (§6.8) — the quotation is one sentence of those that row quotes |
 | 57.314 | L2 Row 41.43 | B62 | `cowork_layer6_grouping_design.md` (locator: line 131) | Row 8.34 (§6.8) |
-| 57.315 | L2 Row 41.122 | B62 | `cowork_layer6_grouping_design.md` (locator: line 341) | **NEEDS A FULL ROW** — not found — member 8 (the decision's label, read at §6.8 as a title) |
+| 57.315 | L2 Row 41.122 | B62 | `cowork_layer6_grouping_design.md` (locator: line 341) | **FULL ROW BUILT** — group 2 — not found — member 8 (the decision's label, read at §6.8 as a title) |
 | 57.316 | L2 Row 41.31 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 102–104) | Row 8.23 (§6.8) — the quotation is a portion of what that row quotes |
 | 57.317 | L2 Row 41.44 | B63 | `cowork_layer6_grouping_design.md` (locator: line 135) | Row 8.35 (§6.8) |
-| 57.318 | L2 Row 41.45 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 135–136) | **NEEDS A FULL ROW** — listed only — §6.8 item 14 |
+| 57.318 | L2 Row 41.45 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 135–136) | **FULL ROW BUILT** — group 2 — listed only — §6.8 item 14 |
 | 57.319 | L2 Row 41.46 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 136–140) | Row 8.36 (§6.8) |
-| 57.320 | L2 Row 41.47 | B63 | `cowork_layer6_grouping_design.md` (locator: line 140) | **NEEDS A FULL ROW** — listed only — §6.8 item 15 |
+| 57.320 | L2 Row 41.47 | B63 | `cowork_layer6_grouping_design.md` (locator: line 140) | **FULL ROW BUILT** — group 2 — listed only — §6.8 item 15 |
 | 57.321 | L2 Row 41.124 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 348–349) | Row 8.113 (§6.8) |
-| 57.322 | L2 Row 41.125 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 349–350) | **NEEDS A FULL ROW** — listed only — §6.8 item 35 |
+| 57.322 | L2 Row 41.125 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 349–350) | **FULL ROW BUILT** — group 2 — listed only — §6.8 item 35 |
 | 57.323 | L2 Row 41.126 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 350–353) | Row 8.114 (§6.8) |
 | 57.324 | L2 Row 41.152 | B63 | `cowork_layer6_grouping_design.md` (locator: line 452) | Row 8.141 (§6.8) |
 | 57.325 | L2 Row 41.51 | B64 | `cowork_layer6_grouping_design.md` (locator: lines 149–150) | Row 8.40 (§6.8) |
@@ -72438,9 +72441,9 @@ the row; *Document and locator* the document the L2 row's block names and that b
 | 57.349 | L2 Row 43.93 | B73 | `cowork_target_architecture.md` (locator: lines 241–242) | Row 38.76 (§6.38) |
 | 57.350 | L2 Row 43.80 | B74 | `cowork_target_architecture.md` (locator: lines 228–229) | Row 38.63 (§6.38) |
 | 57.351 | L2 Row 43.81 | B74 | `cowork_target_architecture.md` (locator: lines 229–230) | Row 38.64 (§6.38) |
-| 57.352 | L2 Row 43.100(iii) | B74 | `cowork_target_architecture.md` (locator: lines 264–266) | **NEEDS A FULL ROW** — in member 38's cut |
-| 57.353 | L2 Row 43.101 | B74 | `cowork_target_architecture.md` (locator: lines 267–269) | **NEEDS A FULL ROW** — in member 38's cut |
-| 57.354 | L2 Row 43.102 | B74 | `cowork_target_architecture.md` (locator: lines 269–270) | **NEEDS A FULL ROW** — in member 38's cut |
+| 57.352 | L2 Row 43.100(iii) | B74 | `cowork_target_architecture.md` (locator: lines 264–266) | **FULL ROW BUILT** — group 2 — in member 38's cut |
+| 57.353 | L2 Row 43.101 | B74 | `cowork_target_architecture.md` (locator: lines 267–269) | **FULL ROW BUILT** — group 2 — in member 38's cut |
+| 57.354 | L2 Row 43.102 | B74 | `cowork_target_architecture.md` (locator: lines 269–270) | **FULL ROW BUILT** — group 2 — in member 38's cut |
 | 57.355 | L2 Row 44.14(ii) | B75 | `cowork_evidence_inventory.md` (locator: lines 36–39) | Row 40.11 (§6.40) |
 | 57.356 | L2 Row 44.22(i) | B76 | `cowork_evidence_inventory.md` (locator: lines 65–66) | Row 40.16 (§6.40) |
 | 57.357 | L2 Row 44.30(ii) | B77 | `cowork_evidence_inventory.md` (locator: lines 76–81) | Row 40.22 (§6.40) |
@@ -72448,22 +72451,22 @@ the row; *Document and locator* the document the L2 row's block names and that b
 | 57.359 | L2 Row 45.62 | B78 | `cowork_bounded_context_design.md` (locator: lines 184–185) | Row 54.36 (§6.54) — the quotation is a portion of what that row quotes |
 | 57.360 | L2 Row 46.12 | B79 | `cowork_voiceleading_axis_design.md` (locator: lines 66–67) | Row 37.18 (§6.37) |
 | 57.361 | L2 Row 46.24(i) | B80 | `cowork_voiceleading_axis_design.md` (locator: line 143) | Row 37.31 (§6.37) |
-| 57.362 | L2 Row 47.14 | B81 | `cowork_notation_adoption_increment.md` (locator: lines 96–97) | **NEEDS A FULL ROW** — in member 52's cut |
-| 57.363 | L2 Row 47.27(i) | B81 | `cowork_notation_adoption_increment.md` (locator: lines 292–294) | **NEEDS A FULL ROW** — in member 52's cut |
-| 57.364 | L2 Row 47.28(ii) | B81 | `cowork_notation_adoption_increment.md` (locator: lines 296–297) | **NEEDS A FULL ROW** — in member 52's cut |
-| 57.365 | L2 Row 48.31 | B82 | `cowork_joint_estimator_architecture.md` (locator: lines 96–97) | **NEEDS A FULL ROW** — in member 49's cut |
-| 57.366 | L2 Row 48.32 | B82 | `cowork_joint_estimator_architecture.md` (locator: lines 97–101) | **NEEDS A FULL ROW** — in member 49's cut |
+| 57.362 | L2 Row 47.14 | B81 | `cowork_notation_adoption_increment.md` (locator: lines 96–97) | **FULL ROW BUILT** — group 2 — in member 52's cut |
+| 57.363 | L2 Row 47.27(i) | B81 | `cowork_notation_adoption_increment.md` (locator: lines 292–294) | **FULL ROW BUILT** — group 2 — in member 52's cut |
+| 57.364 | L2 Row 47.28(ii) | B81 | `cowork_notation_adoption_increment.md` (locator: lines 296–297) | **FULL ROW BUILT** — group 2 — in member 52's cut |
+| 57.365 | L2 Row 48.31 | B82 | `cowork_joint_estimator_architecture.md` (locator: lines 96–97) | **FULL ROW BUILT** — group 2 — in member 49's cut |
+| 57.366 | L2 Row 48.32 | B82 | `cowork_joint_estimator_architecture.md` (locator: lines 97–101) | **FULL ROW BUILT** — group 2 — in member 49's cut |
 | 57.367 | L2 Row 48.40(i) | B83 | `cowork_joint_estimator_architecture.md` (locator: lines 134–136) | Row 49.26 (§6.49) |
-| 57.368 | L2 Row 49.1(ii) | B84 | `cowork_notation_output_contract.md` (locator: lines 21–22) | **NEEDS A FULL ROW** — in member 48's cut |
-| 57.369 | L2 Row 49.6 | B85 | `cowork_notation_output_contract.md` (locator: lines 27–28) | **NEEDS A FULL ROW** — in member 48's cut |
-| 57.370 | L2 Row 49.7 | B86 | `cowork_notation_output_contract.md` (locator: lines 28–29) | **NEEDS A FULL ROW** — in member 48's cut |
-| 57.371 | L2 Row 49.28 | B86 | `cowork_notation_output_contract.md` (locator: lines 139–141) | **NEEDS A FULL ROW** — in member 48's cut |
-| 57.372 | L2 Row 49.29 | B86 | `cowork_notation_output_contract.md` (locator: lines 141–144) | **NEEDS A FULL ROW** — in member 48's cut |
-| 57.373 | L2 Row 49.30 | B86 | `cowork_notation_output_contract.md` (locator: lines 144–145) | **NEEDS A FULL ROW** — in member 48's cut |
+| 57.368 | L2 Row 49.1(ii) | B84 | `cowork_notation_output_contract.md` (locator: lines 21–22) | **FULL ROW BUILT** — group 2 — in member 48's cut |
+| 57.369 | L2 Row 49.6 | B85 | `cowork_notation_output_contract.md` (locator: lines 27–28) | **FULL ROW BUILT** — group 2 — in member 48's cut |
+| 57.370 | L2 Row 49.7 | B86 | `cowork_notation_output_contract.md` (locator: lines 28–29) | **FULL ROW BUILT** — group 2 — in member 48's cut |
+| 57.371 | L2 Row 49.28 | B86 | `cowork_notation_output_contract.md` (locator: lines 139–141) | **FULL ROW BUILT** — group 2 — in member 48's cut |
+| 57.372 | L2 Row 49.29 | B86 | `cowork_notation_output_contract.md` (locator: lines 141–144) | **FULL ROW BUILT** — group 2 — in member 48's cut |
+| 57.373 | L2 Row 49.30 | B86 | `cowork_notation_output_contract.md` (locator: lines 144–145) | **FULL ROW BUILT** — group 2 — in member 48's cut |
 | 57.374 | L2 Row 49.9 | B87 | `cowork_notation_output_contract.md` (locator: lines 36–37) | Row 48.1 (§6.48) |
 | 57.375 | L2 Row 49.11 | B87 | `cowork_notation_output_contract.md` (locator: lines 40–43) | Row 48.3 (§6.48) |
 | 57.376 | L2 Row 49.12 | B87 | `cowork_notation_output_contract.md` (locator: lines 43–44) | Row 48.4 (§6.48) |
-| 57.377 | L2 Row 49.23(iii) | B87 | `cowork_notation_output_contract.md` (locator: lines 110–114) | **NEEDS A FULL ROW** — in member 48's cut |
+| 57.377 | L2 Row 49.23(iii) | B87 | `cowork_notation_output_contract.md` (locator: lines 110–114) | **FULL ROW BUILT** — group 2 — in member 48's cut |
 | 57.378 | L2 Row 49.36 | B87 | `cowork_notation_output_contract.md` (locator: line 169) | Row 48.22 (§6.48) |
 | 57.379 | L2 Row 49.37 | B87 | `cowork_notation_output_contract.md` (locator: line 170) | Row 48.23 (§6.48) |
 | 57.380 | L2 Row 49.39 | B87 | `cowork_notation_output_contract.md` (locator: line 172) | Row 48.25 (§6.48) |
@@ -72584,10 +72587,10 @@ the row; *Document and locator* the document the L2 row's block names and that b
 | 57.495 | L2 Row 53.64 | B112 | `cowork_progression_schema_design.md` (locator: lines 204–206) | **NEEDS A FULL ROW** — listed only — §6.44 item 17 |
 | 57.496 | L2 Row 53.79(i) | B112 | `cowork_progression_schema_design.md` (locator: lines 302–304) | **NEEDS A FULL ROW** — in member 44's cut |
 | 57.497 | L2 Row 53.65 | B113 | `cowork_progression_schema_design.md` (locator: line 218) | Rows 44.38 and 44.39 (§6.44) — the quotation is the decision's bold lead, read at §6.44 as a title; those rows tabulate the two sentences stating its claim |
-| 57.498 | L2 Row 54.1 | B114 | `docs/llm_integration.md` (locator: line 582) | **NEEDS A FULL ROW** — listed only — §6.51 item 17 |
-| 57.499 | L2 Row 54.2 | B114 | `docs/llm_integration.md` (locator: line 708) | **NEEDS A FULL ROW** — listed only — §6.51 item 35 |
-| 57.500 | L2 Row 54.3 | B114 | `docs/llm_integration.md` (locator: line 709) | **NEEDS A FULL ROW** — listed only — §6.51 item 36 |
-| 57.501 | L2 Row 54.4 | B114 | `docs/llm_integration.md` (locator: line 710) | **NEEDS A FULL ROW** — listed only — §6.51 item 37 |
+| 57.498 | L2 Row 54.1 | B114 | `docs/llm_integration.md` (locator: line 582) | **FULL ROW BUILT** — group 2 — listed only — §6.51 item 17 |
+| 57.499 | L2 Row 54.2 | B114 | `docs/llm_integration.md` (locator: line 708) | **FULL ROW BUILT** — group 2 — listed only — §6.51 item 35 |
+| 57.500 | L2 Row 54.3 | B114 | `docs/llm_integration.md` (locator: line 709) | **FULL ROW BUILT** — group 2 — listed only — §6.51 item 36 |
+| 57.501 | L2 Row 54.4 | B114 | `docs/llm_integration.md` (locator: line 710) | **FULL ROW BUILT** — group 2 — listed only — §6.51 item 37 |
 | 57.502 | L2 Row 57.8 | B115 | `cowork_architecture_review_2026_07.md` (locator: lines 324–325) | **NEEDS A FULL ROW** — no member's document |
 | 57.503 | L2 Row 62.41(i) | B116 | `cowork_progression_schema_dictionary.md` (the L0/L1 row's own locator: lines 77–79) | **NEEDS A FULL ROW** — in member 46's cut |
 | 57.504 | L2 Row 62.41(ii) | B116 | `cowork_progression_schema_dictionary.md` (the L0/L1 row's own locator: lines 77–79) | **NEEDS A FULL ROW** — in member 46's cut |
@@ -72597,10 +72600,10 @@ the row; *Document and locator* the document the L2 row's block names and that b
 | 57.508 | L2 Row 44.51(i) | B118 | `cowork_evidence_inventory.md` (locator: lines 158–159) | Row 40.42 (§6.40) |
 | 57.509 | L2 Row 44.76(iv) | B118 | `cowork_evidence_inventory.md` (locator: lines 252–257) | Row 40.63 (§6.40) |
 | 57.510 | L2 Row 21.49(ii) | B119 | `ARCHITECTURE.md` (locator: lines 1138–1141) | Row 19.39 (§6.19) |
-| 57.511 | L2 Row 43.100(ii) | B119 | `cowork_target_architecture.md` (locator: lines 264–266) | **NEEDS A FULL ROW** — in member 38's cut |
+| 57.511 | L2 Row 43.100(ii) | B119 | `cowork_target_architecture.md` (locator: lines 264–266) | **FULL ROW BUILT** — group 2 — in member 38's cut |
 | 57.512 | L2 Row 5.68(i) | B120 | `cowork_layer5_function_design.md` (locator: lines 165–166) | Row 7.61 (§6.7) |
-| 57.513 | L2 Row 47.17(iv) | B121 | `cowork_notation_adoption_increment.md` (locator: lines 135–140) | **NEEDS A FULL ROW** — in member 52's cut |
-| 57.514 | L2 Row 47.18(i) | B121 | `cowork_notation_adoption_increment.md` (locator: lines 165–167) | **NEEDS A FULL ROW** — in member 52's cut |
+| 57.513 | L2 Row 47.17(iv) | B121 | `cowork_notation_adoption_increment.md` (locator: lines 135–140) | **FULL ROW BUILT** — group 2 — in member 52's cut |
+| 57.514 | L2 Row 47.18(i) | B121 | `cowork_notation_adoption_increment.md` (locator: lines 165–167) | **FULL ROW BUILT** — group 2 — in member 52's cut |
 | 57.515 | L2 Row 22.92(iii) | B122 | `ARCHITECTURE.md` (locator: lines 2213–2218) | Row 3.5 (§6.3) |
 | 57.516 | L2 Row 55.1 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 3–4) | **NEEDS A FULL ROW** — in member 53's cut |
 | 57.517 | L2 Row 55.2 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 4–5) | **NEEDS A FULL ROW** — in member 53's cut |
@@ -72658,8 +72661,8 @@ line is a title and is neither here nor among the lines.
 - Lines written: **537** (57.1 to 57.537): **415 pointer lines** and **122 needs-a-full-row lines** — 415 + 122 = 537,
   the named rows (every claim counted, no row named twice with one claim).
 - A pointer line's statement is counted at the row it names: **it is counted in neither table of the feet.**
-- **Outgoing statements placed by this portion: 0.** The member's full rows are built in named groups below; group
-  1's are built, and the remaining groups' are not yet written.
+- **Outgoing statements placed by this portion: 0.** The member's full rows are built in named groups below; groups
+  1 and 2's are built, and the remaining groups' are not yet written.
 - Listed under *not a statement*: **9**.
 - **Every non-blank line of the range is accounted for**: 1 heading line, 277 lines of the 123 bullets, and 652 lines of
   the 9 listed items — 1 + 277 + 652 = 930, the range's non-blank lines.
@@ -72802,7 +72805,9 @@ line is a title and is neither here nor among the lines.
   names in that form — L2 Row 26.1(ii) (B39), whose row B39 names whole, and L2 Rows 53.50 and 53.51 (B106), whose
   claims (i) B106 names.
 - **Built so far:** group 1 — Rows 57.50, 57.60, 57.62, 57.97, 57.107 to 57.119, 57.124, 57.126, 57.153 to 57.157,
-  57.170, 57.171, 57.173 and 57.207 (28 rows), at the group heading below; 94 rows remain NOT YET WRITTEN.
+  57.170, 57.171, 57.173 and 57.207 (28 rows), at its group heading below; group 2 — Rows 57.249, 57.259, 57.278,
+  57.283, 57.290, 57.315, 57.318, 57.320, 57.322, 57.352 to 57.354, 57.362 to 57.366, 57.368 to 57.373, 57.377, 57.498
+  to 57.501, 57.511, 57.513 and 57.514 (31 rows), at its group heading below; 63 rows remain NOT YET WRITTEN.
 
 #### Full-row group 1 — Rows 57.50, 57.60, 57.62, 57.97, 57.107 to 57.119, 57.124, 57.126, 57.153 to 57.157, 57.170, 57.171, 57.173 and 57.207 (28 rows; `cowork_layer5_function_design.md`, `ARCHITECTURE.md`, `cowork_phrase_boundary_design.md`)
 
@@ -74000,6 +74005,1358 @@ The AGREES statements: 57.62 (i) (L3-S15), 57.62 (ii) (L3-S8), 57.126 (ii) (L3-S
 
 ---
 
+#### Full-row group 2 — Rows 57.249, 57.259, 57.278, 57.283, 57.290, 57.315, 57.318, 57.320, 57.322, 57.352 to 57.354, 57.362 to 57.366, 57.368 to 57.373, 57.377, 57.498 to 57.501, 57.511, 57.513 and 57.514 (31 rows; `cowork_layer6_grouping_design.md`, `cowork_target_architecture.md`, `cowork_notation_adoption_increment.md`, `cowork_joint_estimator_architecture.md`, `cowork_notation_output_contract.md`, `docs/llm_integration.md`)
+
+> **Group 2 of the full-row groups.** Thirty-one rows of the named list, in the table's order, in six documents — the
+> rows the named list gives to those six documents and no others, a scope chosen by document and named row by row in the
+> heading; planned by the writing side by document and confirmed by the dispatch that wrote this group on the previous
+> batch's paragraph on a full row's cost (the dispatch's sizing section, stated for challenge); each row built in full
+> in position 56's full-row form, numbered as the table numbered its line — one named L2 row, one identity in this file,
+> and at L2 Row 43.100 one line per named claim. **They are not the next 31 rows of the named list after group 1's 28**:
+> in the table's order the first twenty-four of them follow group 1's rows directly; then forty-nine rows of
+> `cowork_progression_schema_dictionary.md` and `cowork_progression_schema_design.md` (Rows 57.390 to 57.496) stand
+> before Rows 57.498 to 57.501, and three more (Rows 57.502 to 57.504) before Rows 57.511, 57.513 and 57.514, the
+> group's last three. The dispatch described the group as the next 31 rows in the table's order and ordered that
+> checked; the check failed, the session stopped and reported it, and the user's word *"resume"* overruled the stop — so
+> this header states the scope as it is (the report names the departure). Rows built: **31**. Outgoing statements:
+> **37** (Rows 57.249 to 57.514 as the heading names them; 25 rows of one claim and 6 rows of two (Rows 57.315, 57.318,
+> 57.320, 57.322, 57.366 and 57.373), each split — the arithmetic is at the foot of this group). Lines turned into
+> pointers: **none**. By class at the table: 1 *not found*, 12 *listed only*, 18 *in member M's cut*. Counted at this
+> group by this session; the counts appear here, at the group's feet, at §6.57's *Built so far* bullet and at §13.
+>
+> **How each row was built.** The table's decision was re-confirmed at this file before any row was written
+> (`decisions57g2.txt`, the report): each place the decision points to was opened — §6.8's items 11, 14, 15, 18, 25, 27,
+> 28 and 35 with the rows they name (Rows 8.24, 8.35, 8.36, 8.45, 8.75 and 8.113), its items 32 and 33 with Rows 8.25
+> and 8.34 for the label at Row 57.315, §6.51's items 17 and 35 to 37 with its manifest header, and the cuts in the
+> manifest headers of §6.38, §6.48, §6.49 and §6.52 — and a scripted search of every statement and every listed item of
+> §6.1 to §6.56 for each quotation and each run of six of its words printed the candidates the table's search rested on
+> (Rows 19.39, 7.63 and 15.25, sentences of the same content in other documents), each read by eye: **every one of the
+> 31 sentences is tabulated nowhere in this file as a statement**, so no line became a pointer. The 31 L2 blocks —
+> thirty L2 rows, L2 Row 43.100 serving two — were extracted from the L2 file's blob at this batch's Task 0 commit and
+> read whole; each quotes its statement under *Outgoing statement.* with a locator equal to the table's cell. Each row
+> quotes, first, its §10 bullet whole, its wrapped lines joined with one space (*The L2 entry.*), the same words §6.57's
+> numbered list carries; and second, the statement the L2 row's own block quotes, with the block's elisions and bold
+> markers kept, the document and the section the block names, and the block's own locator
+> (*The outgoing statement it carries.*). Each of the six documents was opened at the located lines at its blob at the
+> same commit: **every one of the 31 quotations stands there as quoted**, at exactly the lines the block locates, and
+> *At the source now.* says where each sentence begins and ends and where its lines lie against this comparison's
+> members. An L2 row is always written with the prefix *L2*.
+>
+> **What kind of text the rows are, and which placement readings applied.** Thirty-one sentences, bullets and one table
+> row of six documents, sent to L3 by the L2 comparison: nine of the earlier grouping layer's design (its signals
+> computed earlier, the scope of a boundary, the key area's opening rule, the closing cadence, the assembly bound, its
+> label refusing hierarchy, and its exclusion of forms and sections without disqualifying them); four of the target
+> architecture's paragraph on how span kinds relate; eleven on the un-rounded modal reading and the record, from the
+> notation adoption increment, the joint estimator's architecture and the notation output contract; two on the record as
+> the surface the notation path reads and on display subsetting; four on what a planned language-model integration is
+> handed; and the tonality run. The readings of the unit stated at earlier members apply unchanged: **a list marker**
+> dropped at the head of Rows 57.315, 57.352, 57.353, 57.511 and 57.499 to 57.501; **a bold run-in lead read as a
+> title** before Rows 57.249, 57.362 and 57.368; the quotation join met nothing to join. **A sentence the L2 block does
+> not split but which carries two claims under the unit is split here** (Rows 57.318, 57.320, 57.322, 57.366 and
+> 57.373), and each row says so; **where the L2 block splits the row and the bullet names one claim**
+> (L2 Rows 43.100(ii), 43.100(iii), 47.17(iv), 47.18(i), 47.27(i), 47.28(ii), 49.1(ii) and 49.23(iii)), the row
+> tabulates that claim and says the block's other claims are not its own; the label at Row 57.315, whose L2 block does
+> not split it, carries two claims and is split here.
+>
+> **Cases no earlier member or group met, and one this member's groups meet for the first time, each stated for
+> challenge.** (1) **One L2 row named by two bullets at two claims**: L2 Row 43.100, claim (iii) by B74 (Row 57.352) and
+> claim (ii) by B119 (Row 57.511); the table gave each claim its own line, and each row tabulates its own claim, quotes
+> the sentence as the block quotes it and names the other row — one sentence, two claims, two rows, counted as two
+> statements; **the alternative**, one full row carrying both claims under one number, is stated and not taken, because
+> the table and the named list already give the two claims two numbers. (2) **L2 rows carrying a mark of the L2
+> comparison's own**: L2 Rows 48.31 and 48.32 (*WITHHELD* for D-524) and 49.28 to 49.30 (*WITHHELD* for D-276) — marks
+> about that comparison's pack; neither identity is withheld from this comparison's pack, no such mark is carried in,
+> each title is the bullet's gloss and never the L2 heading line, and each of those rows says so. (3) **A listing member
+> that places no statement**: Rows 57.498 to 57.501 depart from §6.51, which lists their lines as what a planned
+> consumer receives and states the alternative of tabulating them without taking it — as Row 57.124 departed from
+> §6.33's listing; each is placed UNPLACED, as Row 57.124. (4) **The label weighed at Row 57.315**: its two claims are
+> tabulated from other sentences at Rows 8.25 and 8.34 and its body sentences listed as §6.8's items 32 and 33; neither
+> row tabulates the same sentence, so under 1(d)'s rule the row is built in full and travels with them — **the
+> alternative**, the pointer under the table's first reading, is stated and not taken, because the label is not the same
+> sentence as either row's and states a claim beyond Row 8.34's. (5) **Listed sentences placed on their content against
+> the listing member's reading**: Rows 57.278, 57.283 and 57.290 depart from §6.8's items 25, 27 and 28, which read them
+> as about the document, about its vocabulary and as a pointer; each states a rule and is placed on it, and each row
+> says so. (6) **A table row of `docs/llm_integration.md` quoted** (Row 57.498): its statement is a row of the table in
+> member 51's range 575–593, which §6.51 lists as item 17; §5's definition counts a table row as one outgoing statement
+> and quotes it as written, so the row quotes it with the table row's pipes as the L2 block writes it — the first full
+> row of position 57 to quote a table row.
+>
+> **The marks of the full rows, located at the data file.** `item_4_identities_inside` for position 57 is empty. Both
+> walks over `tools/audit/decisions/backbone_decisions.json`, taken at this batch's Task 0 commit by explicit hash, the
+> retired block included — the first by each home's cited line range, the second by where each home's words and each
+> row's sentence actually stand, character by character — set each row's lines in its document against every home the
+> data file records there: **one full row lies inside the home of one of the twenty-three withheld identities —
+> Row 57.322, inside D-456's home (lines 348–354) — and carries the WITHHELD mark naming D-456 after its title**; **two
+> rows stand at a withheld home's edge and outside its words** — Row 57.278, ending on line 254 before D-459's words
+> begin there, and Row 57.290, beginning on line 311 after D-454's words end there — and carry no mark, as §6.8's item
+> 28 records for the second. **Two live homes, neither withheld nor SEEN, hold rows without marking them**: register
+> entry D-524 (`cowork_joint_estimator_architecture.md`, 89–103) holds Rows 57.365 and 57.366, and register entry D-276
+> (`cowork_notation_output_contract.md`, 139–147) holds Rows 57.371 to 57.373; each row carries the paragraph
+> *The decisions register at this row.* Every home met has its words exactly at its cited lines. No home lies at the
+> other rows' lines; `cowork_target_architecture.md` holds no home at all. **The SEEN check, made at the homes:** no
+> SEEN identity is homed in any of the six documents. The walk over the L2 reading file's range 75368–76315 finds no
+> home: the data file records none in that file. **Rows naming L3-S4: none.**
+>
+> **How the full rows' subjects were placed.** **The earlier grouping layer's sentences** follow §6.8 where it placed
+> the rule each one restates: the signals computed earlier and the assembly bound are **UNPLACED** against L3-S8,
+> travelling with Rows 8.24 and 8.105 (ii); the scope of a boundary is **ADOPTED — proposed** with Row 8.45 (ii); the
+> key area's opening rule with Rows 8.75 and 8.12; the closing cadence is **ADOPTED — carried** (L3-S15) with
+> Row 8.45 (iii); the label refusing hierarchy is **UNPLACED** against L3-S22 with Rows 8.25 and 8.34; the exclusion of
+> forms and sections from the core is **UNPLACED** against L3-S22 with Row 8.36 (i), while their not being disqualified
+> for want of a ground truth is **ADOPTED — carried** (L3-S33) with Row 8.36 (ii), and the fact that the held corpus
+> lacks a ground truth for them is **RELOCATED** to *the measurement of the analysis*. **The span relations** follow
+> Row 19.39: phrase units nesting in sections is **ADOPTED — carried** (L3-S22); harmonic spans nesting in phrase units
+> is **UNPLACED** against L3-S8; the cutting across of tonality spans and phrase units, and the modeling error of
+> asserting nesting where they cut across, are **ADOPTED — proposed** with Rows 7.63 and 38.83 (ii). **The un-rounded
+> modal reading** (ten claims) is **UNPLACED**, as Row 48.32 (ii): no charter of `FRAMEWORK.md` §5 lists a count of
+> chromatic inflections per tonality run among its publications; the preset-to-mode-prior claim is **RELOCATED** to
+> *L2 — The tonal reading. The one entangled decision.* **The tonality run** is **ADOPTED — proposed** with Row 8.12.
+> **The record read by the notation path, display subsetting, and what the language-model integration is handed** are
+> **UNPLACED**, as Rows 48.1 (i) and 57.124. **The surface carrying the derived chord facts** (Rows 57.513 and 57.514)
+> AGREES with L3-S1 as to those facts and is **UNPLACED** as a whole. The L2 comparison relocated these rows to L3;
+> where a row places a claim elsewhere it says so as a fact. **No statement of this group is QUARANTINED, DISCARDED or
+> HISTORICAL.**
+
+---
+
+**Row 57.249 — L2 Row 41.33, one of the sixty-two rows B58 names: the grouping layer as assembly and not detection, with
+its partitions and its alignment of cadences.**
+
+*The L2 entry.* "Rows 41.7(i), 41.14 to 41.16, 41.18, 41.20, 41.21, 41.23, 41.27(ii), 41.28, 41.32 to 41.35, 41.37 to
+41.40, 41.53, 41.55, 41.57 to 41.61, 41.67, 41.71, 41.73 to 41.78, 41.80 to 41.83, 41.87, 41.88, 41.90, 41.91, 41.93(i),
+41.97 to 41.107, 41.110, 41.111, 41.114, 41.118, 41.123, 41.127, 41.128, 41.141 and 41.142 — travelling with Row 6.8:
+the grouping layer as assembly and not detection, reading the decided reading and the phrase-boundary ticks and
+producing the punctuation-spans, the key-areas and the alignment of cadences to punctuation-span ends; the
+punctuation-span partition, total and with no nesting, its edge groups marked as clipped and an unclosed edge span
+carrying an extension cue that only the orchestrator acts on; the key-area as a maximal run of one local tonality,
+closed at each change, its confidence non-increasing in its weakest unit's; a cadence closing the span whose end lies at
+or just after its arrival, a span free to end with no cadence, and a cadence near no boundary tagged internal and
+recorded rather than resolved; the open marks carried and never resolved; and no second detector of boundaries, cadences
+or tonalities. *(L2-S49 AGREES at Rows 41.7(i), 41.15, 41.18, 41.33, 41.34, 41.37 to 41.39, 41.53, 41.118 and 41.127.)*"
+(locator: §10, lines 75712–75723). It is one of the sixty-two rows this bullet names, and each of them quotes the whole
+bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "Every signal Layer 6 needs has already been computed by an earlier layer — the
+punctuation-span boundaries (the Layer-1.5 phrase-boundary primitive), the cadences and the Roman numerals (Layer 5),
+the local keys (Layer 3)." — `cowork_layer6_grouping_design.md`, §1 *The core principle* (the L2 row's own locator:
+lines 107–109).
+
+This file holds the sentence only as §6.8's item 11 under *not a statement* — *a defense of Row 8.24* — so the row is
+built in full and the sentence placed on its content: beside defending Row 8.24's rule, it states that every signal the
+grouping needs comes already computed from an earlier layer. One claim: every signal the grouping needs — the phrase
+boundaries, the cadences and the Roman numerals, the local tonalities — has already been computed by an earlier layer.
+
+*Derived statements that speak to it.* L3-S8.
+
+*Current-text axis.* L3-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text says *"Every signal Layer 6 needs has already been
+computed by an earlier layer"*, the phrase boundaries among them; L3-S8 says *"The phrase reading is an L3 decision."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above, travelling with Row 8.24, whose rule it defends.
+
+*At the source now.* The sentence stands at lines 107–109 of the document's blob at this batch's Task 0 commit, found as
+quoted: it opens on line 107 after the bold sentence Row 8.24 tabulates and ends on line 109, before the sentence
+Row 8.25 tabulates. The nearest heading at the blob is *"## 1. The core principle"*. The lines lie inside member 8's one
+range, the whole document, where §6.8 lists the sentence as item 11. The document is member 8, compared whole (§6.8),
+one of the five withheld from the deriving session's pack; no home of the decisions register lies at these lines.
+
+---
+
+**Row 57.259 — L2 Row 41.58, one of the sixty-two rows B58 names: the grouping layer as assembly and not detection, with
+its partitions and its alignment of cadences.**
+
+*The L2 entry.* "Rows 41.7(i), 41.14 to 41.16, 41.18, 41.20, 41.21, 41.23, 41.27(ii), 41.28, 41.32 to 41.35, 41.37 to
+41.40, 41.53, 41.55, 41.57 to 41.61, 41.67, 41.71, 41.73 to 41.78, 41.80 to 41.83, 41.87, 41.88, 41.90, 41.91, 41.93(i),
+41.97 to 41.107, 41.110, 41.111, 41.114, 41.118, 41.123, 41.127, 41.128, 41.141 and 41.142 — travelling with Row 6.8:
+the grouping layer as assembly and not detection, reading the decided reading and the phrase-boundary ticks and
+producing the punctuation-spans, the key-areas and the alignment of cadences to punctuation-span ends; the
+punctuation-span partition, total and with no nesting, its edge groups marked as clipped and an unclosed edge span
+carrying an extension cue that only the orchestrator acts on; the key-area as a maximal run of one local tonality,
+closed at each change, its confidence non-increasing in its weakest unit's; a cadence closing the span whose end lies at
+or just after its arrival, a span free to end with no cadence, and a cadence near no boundary tagged internal and
+recorded rather than resolved; the open marks carried and never resolved; and no second detector of boundaries, cadences
+or tonalities. *(L2-S49 AGREES at Rows 41.7(i), 41.15, 41.18, 41.33, 41.34, 41.37 to 41.39, 41.53, 41.118 and 41.127.)*"
+(locator: §10, lines 75712–75723). It is one of the sixty-two rows this bullet names, and each of them quotes the whole
+bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "Carrying the scope is what keeps the annotation from silently presenting a
+**local** boundary (e.g. one part's breath) as a **global** one (e.g. a double barline) — L6 annotates the distinction,
+it does not flatten it." — `cowork_layer6_grouping_design.md`, §3 *Inputs and outputs* (the L2 row's own locator: lines
+169–171).
+
+This file holds the sentence only as §6.8's item 18 under *not a statement* — *a defense of Row 8.45 (ii)* — so the row
+is built in full and the sentence placed on its content: it states what the grouping does with a boundary's scope. One
+claim: the grouping carries the scope of the notated evidence that marks each boundary, so that a local boundary is
+never presented as a global one, annotating the distinction rather than removing it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* as Row 8.45 (ii), travelling with it: that each phrase unit
+carry the scope of the notated evidence that opened and closed it, the whole texture or one part, so that a local
+boundary is never presented as a global one.
+
+*At the source now.* The sentence stands at lines 169–171 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 169 after the bullet's first sentence, which Row 8.45 tabulates, and closing the bullet. The
+nearest heading at the blob is *"## 3. Inputs and outputs (the contract)"*. The lines lie inside member 8's one range,
+the whole document, where §6.8 lists the sentence as item 18. The document is member 8, compared whole (§6.8), one of
+the five withheld from the deriving session's pack; no home of the decisions register lies at these lines.
+
+---
+
+**Row 57.278 — L2 Row 41.91, one of the sixty-two rows B58 names: the grouping layer as assembly and not detection, with
+its partitions and its alignment of cadences.**
+
+*The L2 entry.* "Rows 41.7(i), 41.14 to 41.16, 41.18, 41.20, 41.21, 41.23, 41.27(ii), 41.28, 41.32 to 41.35, 41.37 to
+41.40, 41.53, 41.55, 41.57 to 41.61, 41.67, 41.71, 41.73 to 41.78, 41.80 to 41.83, 41.87, 41.88, 41.90, 41.91, 41.93(i),
+41.97 to 41.107, 41.110, 41.111, 41.114, 41.118, 41.123, 41.127, 41.128, 41.141 and 41.142 — travelling with Row 6.8:
+the grouping layer as assembly and not detection, reading the decided reading and the phrase-boundary ticks and
+producing the punctuation-spans, the key-areas and the alignment of cadences to punctuation-span ends; the
+punctuation-span partition, total and with no nesting, its edge groups marked as clipped and an unclosed edge span
+carrying an extension cue that only the orchestrator acts on; the key-area as a maximal run of one local tonality,
+closed at each change, its confidence non-increasing in its weakest unit's; a cadence closing the span whose end lies at
+or just after its arrival, a span free to end with no cadence, and a cadence near no boundary tagged internal and
+recorded rather than resolved; the open marks carried and never resolved; and no second detector of boundaries, cadences
+or tonalities. *(L2-S49 AGREES at Rows 41.7(i), 41.15, 41.18, 41.33, 41.34, 41.37 to 41.39, 41.53, 41.118 and 41.127.)*"
+(locator: §10, lines 75712–75723). It is one of the sixty-two rows this bullet names, and each of them quotes the whole
+bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "The rule that a key change starts a new area is fixed here." —
+`cowork_layer6_grouping_design.md`, §5.2 *Key-area grouping* (the L2 row's own locator: lines 253–254).
+
+This file holds the sentence only as §6.8's item 25 under *not a statement* — *about the document; the rule is tabulated
+at Row 8.75* — so the row is built in full and the sentence placed on its content: it states, in its own words, the rule
+Row 8.75 tabulates. **This departs from item 25's reading**, which takes the sentence as about the document; it is
+stated for challenge in the group's header. One claim: a change of tonality starts a new key area.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* as Row 8.75, travelling with it and with Row 8.12: that a
+change of tonality closes one key area and starts the next.
+
+*At the source now.* The sentence stands at lines 253–254 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 253 after the sentence on the key area's confidence and ending on line 254, before the italic
+parenthesis on contract compliance that opens there. The nearest heading at the blob is *"### 5.2 Key-area grouping"*.
+The lines lie inside member 8's one range, the whole document, where §6.8 lists the sentence as item 25. The document is
+member 8, compared whole (§6.8), one of the five withheld from the deriving session's pack.
+
+*The decisions register at this row.* The data file homes **register entry D-459** — *"The key-area confidence is a
+declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics'
+sigmoid"* (group H, LIVE, entry ratified 2026-08-04 · user), one of the twenty-three identities withheld from the
+deriving session's pack — at lines 254–261, and its words stand exactly there; they begin on line 254 with the italic
+parenthesis that follows this sentence. **This sentence lies outside the home's words**, sharing only its last line, as
+both walks the group's header names show, **so the row carries no mark**.
+
+---
+
+**Row 57.283 — L2 Row 41.100, one of the sixty-two rows B58 names: the grouping layer as assembly and not detection,
+with its partitions and its alignment of cadences.**
+
+*The L2 entry.* "Rows 41.7(i), 41.14 to 41.16, 41.18, 41.20, 41.21, 41.23, 41.27(ii), 41.28, 41.32 to 41.35, 41.37 to
+41.40, 41.53, 41.55, 41.57 to 41.61, 41.67, 41.71, 41.73 to 41.78, 41.80 to 41.83, 41.87, 41.88, 41.90, 41.91, 41.93(i),
+41.97 to 41.107, 41.110, 41.111, 41.114, 41.118, 41.123, 41.127, 41.128, 41.141 and 41.142 — travelling with Row 6.8:
+the grouping layer as assembly and not detection, reading the decided reading and the phrase-boundary ticks and
+producing the punctuation-spans, the key-areas and the alignment of cadences to punctuation-span ends; the
+punctuation-span partition, total and with no nesting, its edge groups marked as clipped and an unclosed edge span
+carrying an extension cue that only the orchestrator acts on; the key-area as a maximal run of one local tonality,
+closed at each change, its confidence non-increasing in its weakest unit's; a cadence closing the span whose end lies at
+or just after its arrival, a span free to end with no cadence, and a cadence near no boundary tagged internal and
+recorded rather than resolved; the open marks carried and never resolved; and no second detector of boundaries, cadences
+or tonalities. *(L2-S49 AGREES at Rows 41.7(i), 41.15, 41.18, 41.33, 41.34, 41.37 to 41.39, 41.53, 41.118 and 41.127.)*"
+(locator: §10, lines 75712–75723). It is one of the sixty-two rows this bullet names, and each of them quotes the whole
+bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "That cadence is the punctuation-span's **closing cadence**." —
+`cowork_layer6_grouping_design.md`, §5.3 *Cadence-to-punctuation-span alignment* (the L2 row's own locator: lines
+280–281).
+
+This file holds the sentence only as §6.8's item 27 under *not a statement* — *about the document's vocabulary* — so the
+row is built in full and the sentence placed on its content: it states that the cadence the rule before it aligns to a
+span's end is the cadence that closes that span. **This departs from item 27's reading** and is stated for challenge in
+the group's header. One claim: the cadence whose arrival lies at a span's ending boundary, or within the alignment
+window after it, is that span's closing cadence.
+
+*Derived statements that speak to it.* L3-S15.
+
+*Current-text axis.* L3-S15: **AGREES** — *"A cadence is published only at a phrase end L3 has decided"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S15), travelling with Row 8.45 (iii).
+
+*At the source now.* The sentence stands at lines 280–281 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 280 after the bullet's first sentence and closing the bullet. The nearest heading at the blob is
+*"### 5.3 Cadence-to-punctuation-span alignment"*. The lines lie inside member 8's one range, the whole document, where
+§6.8 lists the sentence as item 27. The document is member 8, compared whole (§6.8), one of the five withheld from the
+deriving session's pack; no home of the decisions register lies at these lines.
+
+---
+
+**Row 57.290 — L2 Row 41.107, one of the sixty-two rows B58 names: the grouping layer as assembly and not detection,
+with its partitions and its alignment of cadences.**
+
+*The L2 entry.* "Rows 41.7(i), 41.14 to 41.16, 41.18, 41.20, 41.21, 41.23, 41.27(ii), 41.28, 41.32 to 41.35, 41.37 to
+41.40, 41.53, 41.55, 41.57 to 41.61, 41.67, 41.71, 41.73 to 41.78, 41.80 to 41.83, 41.87, 41.88, 41.90, 41.91, 41.93(i),
+41.97 to 41.107, 41.110, 41.111, 41.114, 41.118, 41.123, 41.127, 41.128, 41.141 and 41.142 — travelling with Row 6.8:
+the grouping layer as assembly and not detection, reading the decided reading and the phrase-boundary ticks and
+producing the punctuation-spans, the key-areas and the alignment of cadences to punctuation-span ends; the
+punctuation-span partition, total and with no nesting, its edge groups marked as clipped and an unclosed edge span
+carrying an extension cue that only the orchestrator acts on; the key-area as a maximal run of one local tonality,
+closed at each change, its confidence non-increasing in its weakest unit's; a cadence closing the span whose end lies at
+or just after its arrival, a span free to end with no cadence, and a cadence near no boundary tagged internal and
+recorded rather than resolved; the open marks carried and never resolved; and no second detector of boundaries, cadences
+or tonalities. *(L2-S49 AGREES at Rows 41.7(i), 41.15, 41.18, 41.33, 41.34, 41.37 to 41.39, 41.53, 41.118 and 41.127.)*"
+(locator: §10, lines 75712–75723). It is one of the sixty-two rows this bullet names, and each of them quotes the whole
+bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "The proportionality discipline (§7) holds the layer to the assembly + the
+carries." — `cowork_layer6_grouping_design.md`, §6 *The layer is exactly its assembly rules + read-through carries* (the
+L2 row's own locator: lines 311–312).
+
+This file holds the sentence only as §6.8's item 28 under *not a statement* — *a pointer* — so the row is built in full
+and the sentence placed on its content: beside pointing at §7, it restates that the grouping is held to its assembly and
+the carried readings. **This departs from item 28's reading** and is stated for challenge in the group's header. One
+claim: the grouping is held to the assembly and the carries, with no detection of its own.
+
+*Derived statements that speak to it.* L3-S8.
+
+*Current-text axis.* L3-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing layer is held *"to the assembly + the carries"*; L3-S8 says
+*"The phrase reading is an L3 decision."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above, travelling with Rows 8.24 and 8.105 (ii).
+
+*At the source now.* The sentence stands at lines 311–312 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 311 after the sentence that ends *"not a new Layer-6 mechanism."* and closing the section. The
+nearest heading at the blob is *"## 6. The layer is exactly its assembly rules + read-through carries (the
+proportionality bound)"*. The lines lie inside member 8's one range, the whole document, where §6.8 lists the sentence
+as item 28. The document is member 8, compared whole (§6.8), one of the five withheld from the deriving session's pack.
+
+*The decisions register at this row.* The data file homes **register entry D-454** — *"The grouping layer detects
+nothing — it assembles what earlier layers decided, and pressure to add detection means the work belongs elsewhere"*
+(group H, LIVE, entry ratified 2026-08-04 · user), one of the twenty-three identities withheld from the deriving
+session's pack — at lines 307–311, and its words stand exactly there, ending on line 311 before this sentence begins.
+**This sentence lies outside the home's words**, sharing only its first line, as both walks the group's header names
+show and as §6.8's item 28 records, **so the row carries no mark**.
+
+---
+
+**Row 57.315 — L2 Row 41.122, one of the four rows B62 names: no hierarchical grouping and no tree over the piece.**
+
+*The L2 entry.* "Rows 41.29, 41.30, 41.43 and 41.122 — travelling with Row 22.89: no hierarchical grouping and no tree
+over the piece." (locator: §10, line 75731). It is one of the four rows this bullet names, and each of them quotes the
+whole bullet.
+
+*The outgoing statement it carries.* "**D1 — Flat grouping, not hierarchical.**" — `cowork_layer6_grouping_design.md`,
+§9 *Architecture decisions* (the L2 row's own locator: line 341).
+
+The table classed the line *not found — member 8*, the quotation being the decision's label, which §6.8 reads as a
+title. **Weighed at this row:** the label carries two claims, and each is tabulated in this file from another sentence —
+that the grouping is unnested at Row 8.25 (lines 109–110), and that it is not hierarchical at Row 8.34 (line 131) —
+while its body sentences stand only under *not a statement* as §6.8's items 32 and 33. Neither row tabulates this
+sentence, and neither alone carries both its claims, so under 1(d)'s rule — a pointer only where the same sentence is
+tabulated — the row is built in full, travelling with Rows 8.25 and 8.34; the pointer under the table's first reading is
+the alternative, stated in the group's header and not taken. Two claims: (i) the grouping is unnested; (ii) it is not
+hierarchical.
+
+*Derived statements that speak to it.* (i) L3-S22. (ii) L3-S22.
+
+*Current-text axis.* (i) L3-S22: **DIFFERS**. (ii) L3-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* (i) The outgoing grouping is *"Flat grouping"*; L3-S22 says *"It is a nested
+grouping over the units of the phrase reading"*. (ii) The outgoing grouping is *"not hierarchical"*; L3-S22 says *"It is
+a nested grouping over the units of the phrase reading"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above, travelling with Row 8.25. (ii) **UNPLACED** — a rule on L3's own subject that a derived statement
+differs from; read: the two texts above, travelling with Row 8.34.
+
+*At the source now.* The label stands at line 341 of the document's blob at this batch's Task 0 commit, found as quoted,
+the quotation dropping the list marker that opens the line and keeping the bold markers; the bullet's body goes on at
+lines 341–344 with the sentences §6.8 lists as items 32 and 33. The nearest heading at the blob is *"## 9. Architecture
+decisions (with the alternatives weighed)"*. The line lies inside member 8's one range, the whole document. The document
+is member 8, compared whole (§6.8), one of the five withheld from the deriving session's pack; no home of the decisions
+register lies at this line.
+
+---
+
+**Row 57.318 — L2 Row 41.45, one of the nine rows B63 names: sentences, periods, formal functions and sections kept out
+of the grouping's core.**
+
+*The L2 entry.* "Rows 41.31, 41.44 to 41.47, 41.124 to 41.126 and 41.152 — travelling with Row 21.64(iii): sentences,
+periods, formal functions and sections kept out of the grouping's core for proportionality, not disqualified for want of
+a ground truth, and buildable later by an alternative-confidence path with a mark." (locator: §10, lines 75732–75734).
+It is one of the nine rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "Sound theory that *does* lack an oracle in our corpus — but **per the
+verifiability contract, lack of ground truth does NOT disqualify them.**" — `cowork_layer6_grouping_design.md`, §2,
+*Does not do* (the L2 row's own locator: lines 135–136).
+
+This file holds the sentence only as §6.8's item 14 under *not a statement* — *a defense of Row 8.35* — so the row is
+built in full and the sentence placed on its content: beside defending Row 8.35's exclusion, it states a fact about the
+corpus and a rule of its own. Two claims, the L2 block not splitting the sentence: (i) formal functions and multi-span
+sections lack a ground truth in this project's corpus; (ii) under the verifiability contract, lacking a ground truth
+does not disqualify them.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S33.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S33: **AGREES** — provisional status *"is carried by
+anything resting on an unfitted weight, a stand-in value or a provisional input."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***: which subjects the held corpus
+annotates, and so what can serve as a ground truth for them, is the measurement layer's own content under `FRAMEWORK.md`
+§5. The L2 comparison relocated the row this one quotes, L2 Row 41.45, to L3; this claim is placed elsewhere, as a fact
+beside the disposition and not a correction of that comparison. (ii) **ADOPTED — carried** (L3-S33), travelling with
+Row 8.36 (ii).
+
+*At the source now.* The sentence stands at lines 135–136 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 135 after the bold-led item Row 8.35 tabulates and ending on line 136, before the sentence
+Row 8.36 tabulates. The nearest heading at the blob is *"## 2. The layer model — what L6 does and does not do"*. The
+lines lie inside member 8's one range, the whole document, where §6.8 lists the sentence as item 14. The document is
+member 8, compared whole (§6.8), one of the five withheld from the deriving session's pack; no home of the decisions
+register lies at these lines.
+
+---
+
+**Row 57.320 — L2 Row 41.47, one of the nine rows B63 names: sentences, periods, formal functions and sections kept out
+of the grouping's core.**
+
+*The L2 entry.* "Rows 41.31, 41.44 to 41.47, 41.124 to 41.126 and 41.152 — travelling with Row 21.64(iii): sentences,
+periods, formal functions and sections kept out of the grouping's core for proportionality, not disqualified for want of
+a ground truth, and buildable later by an alternative-confidence path with a mark." (locator: §10, lines 75732–75734).
+It is one of the nine rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "Out of the *core*, **not** disqualified." — `cowork_layer6_grouping_design.md`,
+§2, *Does not do* (the L2 row's own locator: line 140).
+
+This file holds the sentence only as §6.8's item 15 under *not a statement* — *narrative, a summary of Rows 8.35 and
+8.36* — so the row is built in full and the sentence placed on its content: in summing up the two rows it states two
+rules. Two claims, the L2 block not splitting the sentence: (i) formal functions and sections are out of the grouping's
+core; (ii) they are not disqualified.
+
+*Derived statements that speak to it.* (i) L3-S22. (ii) L3-S33.
+
+*Current-text axis.* (i) L3-S22: **DIFFERS**. (ii) L3-S33: **AGREES** — provisional status *"is carried by anything
+resting on an unfitted weight, a stand-in value or a provisional input."*
+
+*The difference, in both texts' own words.* (i) The outgoing forms and sections are kept out of the grouping's *"core"*;
+L3-S22 says *"The section grouping is an L3 decision."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above, travelling with Row 8.36 (i). (ii) **ADOPTED — carried** (L3-S33), travelling with Row 8.36 (ii).
+
+*At the source now.* The sentence stands at line 140 of the document's blob at this batch's Task 0 commit, found as
+quoted, closing the bullet after the sentence Row 8.36 tabulates. The nearest heading at the blob is *"## 2. The layer
+model — what L6 does and does not do"*. The line lies inside member 8's one range, the whole document, where §6.8 lists
+the sentence as item 15. The document is member 8, compared whole (§6.8), one of the five withheld from the deriving
+session's pack; no home of the decisions register lies at this line.
+
+---
+
+**Row 57.322 — L2 Row 41.125, one of the nine rows B63 names: sentences, periods, formal functions and sections kept out
+of the grouping's core.** *WITHHELD — D-456.*
+
+*The L2 entry.* "Rows 41.31, 41.44 to 41.47, 41.124 to 41.126 and 41.152 — travelling with Row 21.64(iii): sentences,
+periods, formal functions and sections kept out of the grouping's core for proportionality, not disqualified for want of
+a ground truth, and buildable later by an alternative-confidence path with a mark." (locator: §10, lines 75732–75734).
+It is one of the nine rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "They are sound theory and *do* lack an oracle in our corpus, but the contract is
+explicit that **lack of ground truth is not a disqualifier.**" — `cowork_layer6_grouping_design.md`, §9 *Architecture
+decisions* (the L2 row's own locator: lines 349–350).
+
+This file holds the sentence only as §6.8's item 35 under *not a statement* — *a defense of Row 8.113*, inside D-456's
+home — so the row is built in full and the sentence placed on its content: beside defending the D3 lead, it states a
+fact about the corpus and a rule. Two claims, the L2 block not splitting the sentence: (i) sections, periods and
+sentences lack a ground truth in this project's corpus; (ii) under the contract, lacking a ground truth is not a
+disqualifier.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S33.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S33: **AGREES** — provisional status *"is carried by
+anything resting on an unfitted weight, a stand-in value or a provisional input."* **An AGREES on a row inside a
+withheld home: a derived statement reaching a ruled answer the deriving session was not shown**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***: which subjects the held corpus
+annotates, and so what can serve as a ground truth for them, is the measurement layer's own content under `FRAMEWORK.md`
+§5. The L2 comparison relocated the row this one quotes, L2 Row 41.125, to L3; this claim is placed elsewhere, as a fact
+beside the disposition and not a correction of that comparison. (ii) **ADOPTED — carried** (L3-S33), travelling with
+Row 8.36 (ii).
+
+*At the source now.* The sentence stands at lines 349–350 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 349 after the bold D3 lead Row 8.113 tabulates. The nearest heading at the blob is *"## 9.
+Architecture decisions (with the alternatives weighed)"*. The lines lie inside member 8's one range, the whole document,
+where §6.8 lists the sentence as item 35. The document is member 8, compared whole (§6.8), one of the five withheld from
+the deriving session's pack.
+
+*The decisions register at this row.* The data file homes **register entry D-456** — *"Sections, periods and sentences
+are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle"* (group H, LIVE,
+entry ratified 2026-08-04 · user) — at lines 348–354, and its words stand exactly there. **This sentence lies inside the
+home's words**, as both walks the group's header names show, and D-456 is one of the twenty-three identities withheld
+from the deriving session's pack, **so the row carries the WITHHELD mark after its title**, as §6.8's Rows 8.113 to
+8.115 carry it.
+
+---
+
+**Row 57.352 — L2 Row 43.100(iii), one of the five rows B74 names: the tonal stream segmented many ways at once, with
+its nesting and its cutting across.**
+
+*The L2 entry.* "Rows 43.80, 43.81, 43.100(iii), 43.101 and 43.102 — travelling with Row 21.49(iii): the tonal stream
+segmented many ways at once, punctuation-spans nesting in section-spans, and tonality spans and punctuation-spans
+cutting across one another." (locator: §10, lines 75755–75756). It is one of the five rows this bullet names, and each
+of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**Nesting (containment):** chord-spans ⊂ key-spans; chord-spans ⊂
+punctuation-spans; punctuation-spans ⊂ section-spans — the finer tiles the coarser." — `cowork_target_architecture.md`,
+§2 *The layer model*, how spans relate (the L2 row's own locator: lines 264–266).
+
+The lines lie in member 38's cut — the lines 262–271, which §6.38's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time; Row 19.39 tabulates a sentence of
+the same content in `ARCHITECTURE.md`, not this one. The bullet names claim (iii) of L2 Row 43.100, whose block splits
+the sentence into three claims; this row tabulates claim (iii), and the block's claims (i) and (ii) are not this row's —
+a fact, not a correction; claim (ii) is tabulated at Row 57.511, which B119 names. One claim: phrase units nest in
+sections.
+
+*Derived statements that speak to it.* L3-S22.
+
+*Current-text axis.* L3-S22: **AGREES** — *"A section boundary is always a boundary of the phrase reading."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S22), as Row 19.39 (iii).
+
+*At the source now.* The sentence stands at lines 264–266 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens line 264 and keeping the bullet's bold run-in lead *Nesting
+(containment):*. The nearest heading at the blob is *"## 2. The layer model"*, the bullet standing under the bold
+paragraph at line 263. The lines lie in none of member 38's published ranges: they fall between its ranges 228–261 and
+272–277, inside the cut 262–271 §6.38's manifest header lists as the paragraph on nesting and cross-cutting — so the
+class *in member 38's cut* holds at the blobs. The document is not one of the five withheld from the deriving session's
+pack, and the decisions register's data file homes nothing in it.
+
+---
+
+**Row 57.353 — L2 Row 43.101, one of the five rows B74 names: the tonal stream segmented many ways at once, with its
+nesting and its cutting across.**
+
+*The L2 entry.* "Rows 43.80, 43.81, 43.100(iii), 43.101 and 43.102 — travelling with Row 21.49(iii): the tonal stream
+segmented many ways at once, punctuation-spans nesting in section-spans, and tonality spans and punctuation-spans
+cutting across one another." (locator: §10, lines 75755–75756). It is one of the five rows this bullet names, and each
+of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**Cross-cutting (independent):** **key-spans and punctuation-spans cross-cut** — a
+key change may fall mid-span and a punctuation-span end need not change key, so they are **two independent segmentations
+of one stream, not a hierarchy**." — `cowork_target_architecture.md`, §2 *The layer model*, how spans relate (the L2
+row's own locator: lines 267–269).
+
+The lines lie in member 38's cut — the lines 262–271, which §6.38's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time; Rows 19.39 (iv) and 7.63 tabulate
+sentences of the same content in other documents, not this one. One claim: tonality spans and phrase units cut across
+each other — a change of tonality may fall inside a unit and a unit's end need not change tonality — two independent
+segmentations of one stream, not a hierarchy.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* as Row 7.63, travelling with it and with Row 19.39 (iv):
+that a change of tonality may fall inside a phrase unit and a phrase unit's end need not change tonality, the two
+segmentations independent and neither nested in the other.
+
+*At the source now.* The sentence stands at lines 267–269 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens line 267 and keeping the bold markers; line 269 goes on with
+the sentence Row 57.354 carries. The nearest heading at the blob is *"## 2. The layer model"*. The lines lie in none of
+member 38's published ranges: they fall between its ranges 228–261 and 272–277, inside the cut 262–271 §6.38's manifest
+header lists as the paragraph on nesting and cross-cutting — so the class *in member 38's cut* holds at the blobs. The
+document is not one of the five withheld from the deriving session's pack, and the decisions register's data file homes
+nothing in it.
+
+---
+
+**Row 57.354 — L2 Row 43.102, one of the five rows B74 names: the tonal stream segmented many ways at once, with its
+nesting and its cutting across.**
+
+*The L2 entry.* "Rows 43.80, 43.81, 43.100(iii), 43.101 and 43.102 — travelling with Row 21.49(iii): the tonal stream
+segmented many ways at once, punctuation-spans nesting in section-spans, and tonality spans and punctuation-spans
+cutting across one another." (locator: §10, lines 75755–75756). It is one of the five rows this bullet names, and each
+of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "Asserting containment where the truth is cross-cutting (e.g. nesting key-areas
+inside punctuation-spans) is a modelling error." — `cowork_target_architecture.md`, §2 *The layer model*, how spans
+relate (the L2 row's own locator: lines 269–270).
+
+The lines lie in member 38's cut — the lines 262–271, which §6.38's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. One claim: to assert that one
+span kind nests in another where the two cut across each other is a modeling error, key areas nested inside phrase units
+the example.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* travelling with Rows 38.83 (ii) and 57.353: that L3 never
+state that one span kind nests in another where the two cut across each other, key areas inside phrase units among them.
+
+*At the source now.* The sentence stands at lines 269–270 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 269 after the sentence Row 57.353 carries and closing the bullet. The nearest heading at the
+blob is *"## 2. The layer model"*. The lines lie in none of member 38's published ranges: they fall between its ranges
+228–261 and 272–277, inside the cut 262–271 §6.38's manifest header lists as the paragraph on nesting and cross-cutting
+— so the class *in member 38's cut* holds at the blobs. The document is not one of the five withheld from the deriving
+session's pack, and the decisions register's data file homes nothing in it.
+
+---
+
+**Row 57.362 — L2 Row 47.14, one of the three rows B81 names: the un-rounded modal reading published as a fact of its
+own beside the tonality.**
+
+*The L2 entry.* "Rows 47.14, 47.27(i) and 47.28(ii) — travelling with Row 17.27: the un-rounded modal reading published
+as a fact of its own beside the tonality." (locator: §10, lines 75766–75767). It is one of the three rows this bullet
+names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "Decision 1 (2026-07-19): the un-rounded modal reading is PUBLISHED for the
+presentation layer." — `cowork_notation_adoption_increment.md`, §1 *The verified current state*, the presentation
+obligations (the L2 row's own locator: lines 96–97).
+
+The lines lie in member 52's cut — the lines 75–485, which §6.52's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. One claim: the un-rounded modal
+reading is published for the presentation layer, by the ratified decision of 2026-07-19.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.32 (ii): a count per tonality run of the chromatic inflections
+of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
+and mode; the derivation names no such count.
+
+*At the source now.* The sentence stands at lines 96–97 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 96 after the bold lead *The ratified presentation obligations.* and ending on line 97, before
+the sentence on the ornament labels. The nearest heading at the blob is *"## 1. The verified current state (all read at
+source this session)"*. The lines lie in none of member 52's published ranges: they fall between its ranges 66–74 and
+486–502, inside the cut 75–485 §6.52's manifest header lists — so the class *in member 52's cut* holds at the blobs. The
+document is not one of the five withheld from the deriving session's pack; no home of the decisions register lies at
+these lines.
+
+---
+
+**Row 57.363 — L2 Row 47.27(i), one of the three rows B81 names: the un-rounded modal reading published as a fact of its
+own beside the tonality.**
+
+*The L2 entry.* "Rows 47.14, 47.27(i) and 47.28(ii) — travelling with Row 17.27: the un-rounded modal reading published
+as a fact of its own beside the tonality." (locator: §10, lines 75766–75767). It is one of the three rows this bullet
+names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "Ratified decision 1 publishes the UN-ROUNDED MODAL READING (the emission's modal
+color — how strongly a passage's variable degrees behave, e.g., Dorian-ly) instead of a rounded exotic-mode label." —
+`cowork_notation_adoption_increment.md`, §5 *Decision C* (the L2 row's own locator: lines 292–294).
+
+The lines lie in member 52's cut — the lines 75–485, which §6.52's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. The bullet names claim (i) of
+L2 Row 47.27, whose block splits the sentence into two claims; this row tabulates claim (i), and the block's claim (ii),
+that no rounded label of an exotic mode is published in its place, is not this row's — a fact, not a correction. One
+claim: the un-rounded modal reading is published.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.32 (ii): a count per tonality run of the chromatic inflections
+of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
+and mode; the derivation names no such count.
+
+*At the source now.* The sentence stands at lines 292–294 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 292 after the sentence on the legacy record's mode field and the bridge's mode priors. The
+nearest heading at the blob is *"## 5. Decision C — the mode field and the 21-value presentation question"*. The lines
+lie in none of member 52's published ranges: they fall between its ranges 66–74 and 486–502, inside the cut 75–485
+§6.52's manifest header lists — so the class *in member 52's cut* holds at the blobs. The document is not one of the
+five withheld from the deriving session's pack; no home of the decisions register lies at these lines.
+
+---
+
+**Row 57.364 — L2 Row 47.28(ii), one of the three rows B81 names: the un-rounded modal reading published as a fact of
+its own beside the tonality.**
+
+*The L2 entry.* "Rows 47.14, 47.27(i) and 47.28(ii) — travelling with Row 17.27: the un-rounded modal reading published
+as a fact of its own beside the tonality." (locator: §10, lines 75766–75767). It is one of the three rows this bullet
+names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**Option C1 — the surface carries A's two-mode key; the un-rounded modal reading
+is published beside it as its own fact; no 21-value mode label is ever inferred or published again.**" —
+`cowork_notation_adoption_increment.md`, §5 *Decision C*, Option C1 (the L2 row's own locator: lines 296–297).
+
+The lines lie in member 52's cut — the lines 75–485, which §6.52's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. The bullet names claim (ii) of
+L2 Row 47.28, whose block splits the sentence into three claims; this row tabulates claim (ii), and the block's claims
+(i) and (iii), on the two-mode tonality and on no label of twenty-one values, are not this row's — a fact, not a
+correction. One claim: the un-rounded modal reading is published beside the tonality as a fact of its own.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.32 (ii): a count per tonality run of the chromatic inflections
+of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
+and mode; the derivation names no such count.
+
+*At the source now.* The sentence stands at lines 296–297 of the document's blob at this batch's Task 0 commit, found as
+quoted, the option's bold lead whole, the bold markers kept as the block writes them. The nearest heading at the blob is
+*"## 5. Decision C — the mode field and the 21-value presentation question"*. The lines lie in none of member 52's
+published ranges: they fall between its ranges 66–74 and 486–502, inside the cut 75–485 §6.52's manifest header lists —
+so the class *in member 52's cut* holds at the blobs. The document is not one of the five withheld from the deriving
+session's pack; no home of the decisions register lies at these lines.
+
+---
+
+**Row 57.365 — L2 Row 48.31, one of the two rows B82 names: the un-rounded modal reading published for the presentation
+layer.**
+
+*The L2 entry.* "Rows 48.31 and 48.32 — travelling with Row 17.27: the un-rounded modal reading published as a fact of
+its own beside the tonality, for the presentation layer." (locator: §10, lines 75768–75769). It is one of the two rows
+this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**User's condition, part of the decision: the un-rounded reading is preserved and
+published.**" — `cowork_joint_estimator_architecture.md`, §5a, the mode vocabulary (the L2 row's own locator: lines
+96–97).
+
+The lines lie in member 49's cut — the lines 61–104, which §6.49's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. One claim: by the user's
+condition, which the decision includes, the un-rounded modal reading is preserved and published.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.32 (ii): a count per tonality run of the chromatic inflections
+of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
+and mode; the derivation names no such count.
+
+*At the source now.* The sentence stands at lines 96–97 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 96 after the parenthesis on the constrained-optimum record, the bold markers kept. The nearest
+heading at the blob is *"## 5a. Design decisions ratified (the design pass, 2026-07-19 →)"*. The lines lie in none of
+member 49's published ranges: they fall between its ranges 55–60 and 105–123, inside the cut 61–104 §6.49's manifest
+header lists — so the class *in member 49's cut* holds at the blobs. The document is one of the five withheld from the
+deriving session's pack.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-524** at this
+document's lines 89–103, the paragraph on the mode vocabulary this sentence stands in; the decisions register's INDEX
+records it as *"The joint state's mode axis is TWO modes — major and composite minor; modal and chromatic colour lives
+in the pitch emission, and the un-rounded reading is published"* (group A, LIVE, no entry ratification shown) — a fact
+of the decisions register, moving no disposition and carrying no mark, D-524 being neither withheld from this
+comparison's pack nor a SEEN identity. Its words stand exactly at its cited lines. The L2 comparison marked the L2 row
+this one quotes *WITHHELD* for its own pack; that mark is that comparison's, and this comparison's marks are its own.
+
+---
+
+**Row 57.366 — L2 Row 48.32, one of the two rows B82 names: the un-rounded modal reading published for the presentation
+layer.**
+
+*The L2 entry.* "Rows 48.31 and 48.32 — travelling with Row 17.27: the un-rounded modal reading published as a fact of
+its own beside the tonality, for the presentation layer." (locator: §10, lines 75768–75769). It is one of the two rows
+this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "The emission factor's modal-variant evidence is published as a derived fact on the
+output surface, so the presentation layer can show the end-user that a passage decoded as, say, D minor would — without
+the rounding to major/minor — be called D Dorian, and can choose whether/how to display that by user preference (the
+eventual preset ↔ mode-prior mapping is a presentation/preference concern, not an inference state)." —
+`cowork_joint_estimator_architecture.md`, §5a, the mode vocabulary (the L2 row's own locator: lines 97–101).
+
+The lines lie in member 49's cut — the lines 61–104, which §6.49's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. Two claims, the L2 block not
+splitting the sentence: (i) the emission's modal-variant evidence is published as a derived fact on the output surface,
+so that the presentation layer can show and display a modal name by preference; (ii) the mapping from a preset to mode
+priors is a presentation and preference concern, not an inference state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 48.32 (ii): a count per tonality run of the chromatic
+inflections of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the
+tonality as tonic and mode; the derivation names no such count. (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***: it says what the tonal reading's states
+are not, the mode being L2's to decide. The L2 comparison relocated the row this one quotes, L2 Row 48.32, to L3; this
+claim is placed elsewhere, as a fact beside the disposition and not a correction of that comparison.
+
+*At the source now.* The sentence stands at lines 97–101 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 97 after the bold sentence Row 57.365 carries; the paragraph goes on at line 102 with the
+sentence on inference states under every preset. The nearest heading at the blob is *"## 5a. Design decisions ratified
+(the design pass, 2026-07-19 →)"*. The lines lie in none of member 49's published ranges: they fall between its ranges
+55–60 and 105–123, inside the cut 61–104 §6.49's manifest header lists — so the class *in member 49's cut* holds at the
+blobs. The document is one of the five withheld from the deriving session's pack.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-524** at this
+document's lines 89–103, the paragraph on the mode vocabulary this sentence stands in; the decisions register's INDEX
+records it as *"The joint state's mode axis is TWO modes — major and composite minor; modal and chromatic colour lives
+in the pitch emission, and the un-rounded reading is published"* (group A, LIVE, no entry ratification shown) — a fact
+of the decisions register, moving no disposition and carrying no mark, D-524 being neither withheld from this
+comparison's pack nor a SEEN identity. Its words stand exactly at its cited lines. The L2 comparison marked the L2 row
+this one quotes *WITHHELD* for its own pack; that mark is that comparison's, and this comparison's marks are its own.
+
+---
+
+**Row 57.368 — L2 Row 49.1(ii): the record the one output surface the notation path reads.**
+
+*The L2 entry.* "Row 49.1(ii) — travelling with Row 17.23(ii): the record the one output surface the notation path
+reads. *(L2-S49 travels with it.)*" (locator: §10, lines 75771–75772). Its *L2-S49* names a statement of the L2
+derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "*The record* — the data the joint module publishes per analyzed score span; the
+one output surface the notation path reads (Decision A2)." — `cowork_notation_output_contract.md`, the terms, above §1
+(the L2 row's own locator: lines 21–22).
+
+The lines lie in member 48's cut — the lines 1–35, which §6.48's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. The bullet names claim (ii) of
+L2 Row 49.1, whose block splits the sentence into two claims; this row tabulates claim (ii), and the block's claim (i),
+that the record is what the estimator publishes per analyzed span, is not this row's — a fact, not a correction. One
+claim: the record is the one output surface the notation path reads.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.1 (i): the notation path is the application's, and no charter
+of `FRAMEWORK.md` §5 holds the code's interfaces or names the surface an application path reads.
+
+*At the source now.* The sentence stands at lines 21–22 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 21 after the bold lead *Terms, defined at first use.* with the italic term its quotation keeps,
+and ending on line 22, before the entry on the segment. The nearest heading at the blob is the document's title, *"# The
+notation output-surface contract — the A-native record (★ USER-RATIFIED 2026-07-26)"*. The lines lie in none of member
+48's published ranges: they fall before its first range, 36–46, inside the cut 1–35 §6.48's manifest header lists as the
+terms paragraph — so the class *in member 48's cut* holds at the blobs. The document is not one of the five withheld
+from the deriving session's pack; no home of the decisions register lies at these lines.
+
+---
+
+**Row 57.369 — L2 Row 49.6: the tonality run, a maximal run of segments sharing one tonality.**
+
+*The L2 entry.* "Row 49.6 — the tonality run, a maximal run of segments sharing one tonality, read off the tonality per
+span." (locator: §10, line 75773).
+
+*The outgoing statement it carries.* "*Key run* — a maximal run of consecutive segments sharing one key." —
+`cowork_notation_output_contract.md`, the terms, above §1 (the L2 row's own locator: lines 27–28).
+
+The lines lie in member 48's cut — the lines 1–35, which §6.48's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. One claim: the tonality run is a
+maximal run of consecutive segments sharing one tonality.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* as Row 8.12, travelling with it: that L3 publish the run of
+consecutive spans of L2's segmentation sharing one tonality, maximal, as a grouping of its own.
+
+*At the source now.* The sentence stands at lines 27–28 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 27 after the entry on the marginal mass, with the italic term its quotation keeps. The nearest
+heading at the blob is the document's title. The lines lie in none of member 48's published ranges: they fall before its
+first range, 36–46, inside the cut 1–35 §6.48's manifest header lists as the terms paragraph — so the class
+*in member 48's cut* holds at the blobs. The document is not one of the five withheld from the deriving session's pack;
+no home of the decisions register lies at these lines.
+
+---
+
+**Row 57.370 — L2 Row 49.7, one of the four rows B86 names: the un-rounded modal reading per tonality run and scale
+degree.**
+
+*The L2 entry.* "Rows 49.7, 49.28, 49.29 and 49.30 — travelling with Row 17.27: the un-rounded modal reading, per
+tonality run and scale degree the duration and onset count of every chromatic inflection observed, the presentation
+layer free to format a reading from it. *(Rows 49.28 to 49.30 lie inside D-276's home.)*" (locator: §10, lines
+75774–75776). It is one of the four rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "*Modal reading* — the ratified un-rounded publication of modal color (§3.4)." —
+`cowork_notation_output_contract.md`, the terms, above §1 (the L2 row's own locator: lines 28–29).
+
+The lines lie in member 48's cut — the lines 1–35, which §6.48's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. One claim: the modal reading is
+the ratified un-rounded publication of modal color.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.32 (ii): a count per tonality run of the chromatic inflections
+of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
+and mode; the derivation names no such count.
+
+*At the source now.* The sentence stands at lines 28–29 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 28 after the sentence Row 57.369 carries. The nearest heading at the blob is the document's
+title. The lines lie in none of member 48's published ranges: they fall before its first range, 36–46, inside the cut
+1–35 §6.48's manifest header lists as the terms paragraph — so the class *in member 48's cut* holds at the blobs. The
+document is not one of the five withheld from the deriving session's pack; no home of the decisions register lies at
+these lines.
+
+---
+
+**Row 57.371 — L2 Row 49.28, one of the four rows B86 names: the un-rounded modal reading per tonality run and scale
+degree.**
+
+*The L2 entry.* "Rows 49.7, 49.28, 49.29 and 49.30 — travelling with Row 17.27: the un-rounded modal reading, per
+tonality run and scale degree the duration and onset count of every chromatic inflection observed, the presentation
+layer free to format a reading from it. *(Rows 49.28 to 49.30 lie inside D-276's home.)*" (locator: §10, lines
+75774–75776). It is one of the four rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "For each key run and each scale degree 1..7 of its key: the sounding duration and
+onset count of EVERY chromatic inflection of that degree actually observed in the run (computed from the published L1
+note facts relative to (tonic, mode))." — `cowork_notation_output_contract.md`, §3.4 *Per key run* (the L2 row's own
+locator: lines 139–141).
+
+The lines lie in member 48's cut — the lines 107–166, which §6.48's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time; Row 15.25 tabulates a sentence of
+the same content in `ARCHITECTURE.md`, not this one. One claim: for each tonality run and each degree of its scale, the
+sounding duration and the onset count of every chromatic inflection of that degree observed in the run is published,
+computed from the published note facts relative to the tonic and mode.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.32 (ii): a count per tonality run of the chromatic inflections
+of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
+and mode; the derivation names no such count.
+
+*At the source now.* The sentence stands at lines 139–141 of the document's blob at this batch's Task 0 commit, found as
+quoted, the first sentence of §3.4. The nearest heading at the blob is *"### 3.4 Per key run — the un-rounded modal
+reading (C1; ratified decision 1 delivered)"*. The lines lie in none of member 48's published ranges: they fall between
+its ranges 98–106 and 167–182, inside the cut 107–166 §6.48's manifest header lists — so the class *in member 48's cut*
+holds at the blobs. The document is not one of the five withheld from the deriving session's pack.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-276** at this
+document's lines 139–147, the section §3.4 this sentence stands in; the decisions register's INDEX records it as *"Modal
+colour is published as un-rounded per-degree counts; no mode label is inferred or published anywhere"* (group B, LIVE,
+entry ratified 2026-08-02 · user) — a fact of the decisions register, moving no disposition and carrying no mark, D-276
+being neither withheld from this comparison's pack nor a SEEN identity. Its words stand exactly at its cited lines. The
+L2 comparison marked the L2 row this one quotes *WITHHELD* for its own pack; that mark is that comparison's, and this
+comparison's marks are its own.
+
+---
+
+**Row 57.372 — L2 Row 49.29, one of the four rows B86 names: the un-rounded modal reading per tonality run and scale
+degree.**
+
+*The L2 entry.* "Rows 49.7, 49.28, 49.29 and 49.30 — travelling with Row 17.27: the un-rounded modal reading, per
+tonality run and scale degree the duration and onset count of every chromatic inflection observed, the presentation
+layer free to format a reading from it. *(Rows 49.28 to 49.30 lie inside D-276's home.)*" (locator: §10, lines
+75774–75776). It is one of the four rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "This is the whole publication — counted, un-rounded, nothing hand-set: minor's
+variable 6̂/7̂ (Dorian color, subtonic-vs-leading-tone), major's lowered 7̂ (Mixolydian color) or raised 4̂ (Lydian
+color), and every borrowing appear as their actual counts." — `cowork_notation_output_contract.md`, §3.4 *Per key run*
+(the L2 row's own locator: lines 141–144).
+
+The lines lie in member 48's cut — the lines 107–166, which §6.48's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. One claim: the counts are the
+whole publication — counted, un-rounded and with nothing set by hand — every modal color and every borrowing appearing
+as its count.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.32 (ii): a count per tonality run of the chromatic inflections
+of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
+and mode; the derivation names no such count.
+
+*At the source now.* The sentence stands at lines 141–144 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 141 after the sentence Row 57.371 carries, the combining circumflex marks of the degrees kept as
+the document writes them. The nearest heading at the blob is *"### 3.4 Per key run — the un-rounded modal reading (C1;
+ratified decision 1 delivered)"*. The lines lie in none of member 48's published ranges: they fall between its ranges
+98–106 and 167–182, inside the cut 107–166 §6.48's manifest header lists — so the class *in member 48's cut* holds at
+the blobs. The document is not one of the five withheld from the deriving session's pack.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-276** at this
+document's lines 139–147, the section §3.4 this sentence stands in; the decisions register's INDEX records it as *"Modal
+colour is published as un-rounded per-degree counts; no mode label is inferred or published anywhere"* (group B, LIVE,
+entry ratified 2026-08-02 · user) — a fact of the decisions register, moving no disposition and carrying no mark, D-276
+being neither withheld from this comparison's pack nor a SEEN identity. Its words stand exactly at its cited lines. The
+L2 comparison marked the L2 row this one quotes *WITHHELD* for its own pack; that mark is that comparison's, and this
+comparison's marks are its own.
+
+---
+
+**Row 57.373 — L2 Row 49.30, one of the four rows B86 names: the un-rounded modal reading per tonality run and scale
+degree.**
+
+*The L2 entry.* "Rows 49.7, 49.28, 49.29 and 49.30 — travelling with Row 17.27: the un-rounded modal reading, per
+tonality run and scale degree the duration and onset count of every chromatic inflection observed, the presentation
+layer free to format a reading from it. *(Rows 49.28 to 49.30 lie inside D-276's home.)*" (locator: §10, lines
+75774–75776). It is one of the four rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "The presentation layer may FORMAT a reading from it ("Dorian-leaning"); the
+published fact is the counts, with establishment status (§5.4)." — `cowork_notation_output_contract.md`, §3.4 *Per key
+run* (the L2 row's own locator: lines 144–145).
+
+The lines lie in member 48's cut — the lines 107–166, which §6.48's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. Two claims, the L2 block not
+splitting the sentence: (i) the presentation layer may format a reading from the counts; (ii) the published fact is the
+counts, with their establishment status.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 48.32 (ii): a count per tonality run of the chromatic
+inflections of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the
+tonality as tonic and mode; the derivation names no such count. (ii) **UNPLACED** — travelling with claim (i); read as
+at Row 48.32 (ii): a count per tonality run of the chromatic inflections of each degree, which no charter of
+`FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic and mode; the derivation names no
+such count.
+
+*At the source now.* The sentence stands at lines 144–145 of the document's blob at this batch's Task 0 commit, found as
+quoted, its inner quotation marks as the document writes them, opening on line 144 after the sentence Row 57.372
+carries; line 145 goes on with the sentence on the mode label. The nearest heading at the blob is *"### 3.4 Per key run
+— the un-rounded modal reading (C1; ratified decision 1 delivered)"*. The lines lie in none of member 48's published
+ranges: they fall between its ranges 98–106 and 167–182, inside the cut 107–166 §6.48's manifest header lists — so the
+class *in member 48's cut* holds at the blobs. The document is not one of the five withheld from the deriving session's
+pack.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-276** at this
+document's lines 139–147, the section §3.4 this sentence stands in; the decisions register's INDEX records it as *"Modal
+colour is published as un-rounded per-degree counts; no mode label is inferred or published anywhere"* (group B, LIVE,
+entry ratified 2026-08-02 · user) — a fact of the decisions register, moving no disposition and carrying no mark, D-276
+being neither withheld from this comparison's pack nor a SEEN identity. Its words stand exactly at its cited lines. The
+L2 comparison marked the L2 row this one quotes *WITHHELD* for its own pack; that mark is that comparison's, and this
+comparison's marks are its own.
+
+---
+
+**Row 57.377 — L2 Row 49.23(iii), one of the ten rows B87 names: the two seams and the audited consumers reading the
+record as views.**
+
+*The L2 entry.* "Rows 49.9, 49.11, 49.12, 49.23(iii), 49.36, 49.37, 49.39, 49.41, 49.45 and 49.49 — travelling with
+Row 17.23(ii): the two seams reading the record as views with no second computation, and each audited consumer — the
+span positions, the tonality context, the degree and diatonic answer, the ranked alternatives and their display subset,
+the single-note context and the accessibility string — reading the record and deciding nothing. *(L2-S49 travels with
+them.)*" (locator: §10, lines 75777–75781). It is one of the ten rows this bullet names, and each of them quotes the
+whole bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "No truncation constant exists anywhere in the publication (a breadth "N" or a
+gap-window width would be a hand-set value with no basis, #1/#19); nothing computed is discarded at the boundary (#12;
+the evidence-publication amendment — the near-miss class scores are the evidence the OI-192-class refinements read);
+display subsetting is a downstream presentation read." — `cowork_notation_output_contract.md`, §3.3, the second
+amendment (the L2 row's own locator: lines 110–114).
+
+The lines lie in member 48's cut — the lines 107–166, which §6.48's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. The bullet names claim (iii) of
+L2 Row 49.23, whose block splits the sentence into three claims; this row tabulates claim (iii), and the block's claims
+(i) and (ii), on the truncation constant and on nothing computed being discarded, are not this row's — a fact, not a
+correction. One claim: a subset of the published lists shown for display is a read the presentation makes downstream.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.1 (i): what a display shows of the published lists is the
+application's presentation, which no charter of `FRAMEWORK.md` §5 holds.
+
+*At the source now.* The sentence stands at lines 110–114 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening on line 110 after the sentence that supersedes the earlier wording of the candidate lists and ending on
+line 114, before the constrained-optimum record. The nearest heading at the blob is *"### 3.3 Per segment — the
+uncertainty surface (B-full, OI-193; two field groups, no redefinition)"*. The lines lie in none of member 48's
+published ranges: they fall between its ranges 98–106 and 167–182, inside the cut 107–166 §6.48's manifest header lists
+— so the class *in member 48's cut* holds at the blobs. The document is not one of the five withheld from the deriving
+session's pack. No home of the decisions register lies at these lines.
+
+---
+
+**Row 57.498 — L2 Row 54.1, one of the four rows B114 names: the analysis the language-model integration is handed.**
+
+*The L2 entry.* "Rows 54.1, 54.2, 54.3 and 54.4 — travelling with Row 17.23(ii): the analysis the language-model
+integration is handed — the chord symbols and the Roman-numeral analysis, the tonality and mode, and where the chords
+change. *(L2-S49 travels with them.)*" (locator: §10, lines 75838–75840). It is one of the four rows this bullet names,
+and each of them quotes the whole bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "| Chord symbols | Yes | From composing module analysis |" —
+`docs/llm_integration.md`, §7.3, what the language model's view includes, row *Chord symbols* (the L2 row's own locator:
+line 582).
+
+This file holds the line only as §6.51's item 17 under *not a statement* — *what a planned consumer receives from the
+analysis, read as §6.33 read its item 2* — so the row is built in full and the line placed on its content, as Row 57.124
+placed §6.33's item 3. **This departs from §6.51's listing**, which places no statement at that member and states the
+alternative of tabulating these lines without taking it; it is stated for challenge in the group's header. One claim:
+the chord symbols from the analysis are among what the planned serialization for the language model includes.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.124 and as §6.51 read the line: what a planned bridge outside
+the analysis receives from it, and no charter of `FRAMEWORK.md` §5 names a reader outside the analysis.
+
+*At the source now.* The line stands at line 582 of the document's blob at this batch's Task 0 commit, found as quoted:
+it is a row of the table under *"### 7.3 What to include"*, and the L2 block quotes it with its pipes, as §6.51's item
+17 does. The line lies inside member 51's range 575–593, the table, where §6.51 lists it as item 17. The document is not
+one of the five withheld from the deriving session's pack, and no home of the decisions register lies at this line.
+
+---
+
+**Row 57.499 — L2 Row 54.2, one of the four rows B114 names: the analysis the language-model integration is handed.**
+
+*The L2 entry.* "Rows 54.1, 54.2, 54.3 and 54.4 — travelling with Row 17.23(ii): the analysis the language-model
+integration is handed — the chord symbols and the Roman-numeral analysis, the tonality and mode, and where the chords
+change. *(L2-S49 travels with them.)*" (locator: §10, lines 75838–75840). It is one of the four rows this bullet names,
+and each of them quotes the whole bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "Chord symbols and Roman numeral analysis per measure" — `docs/llm_integration.md`,
+§8, the composing module as the language model's context provider (the L2 row's own locator: line 708).
+
+This file holds the line only as §6.51's item 35 under *not a statement* — *what a planned consumer receives from the
+analysis, read as §6.33 read its item 2* — so the row is built in full and the line placed on its content, as Row 57.124
+placed §6.33's item 3. **This departs from §6.51's listing**, which places no statement at that member and states the
+alternative of tabulating these lines without taking it; it is stated for challenge in the group's header. One claim:
+the analysis's chord symbols and Roman-numeral analysis are sent with every stretch of music to the planned model.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.124 and as §6.51 read the line: what a planned bridge outside
+the analysis receives from it, and no charter of `FRAMEWORK.md` §5 names a reader outside the analysis.
+
+*At the source now.* The line stands at line 708 of the document's blob at this batch's Task 0 commit, found as quoted,
+the quotation dropping the list marker that opens it; it is the first of the four bullets the sentence at lines 705–706
+leads. The nearest heading at the blob is *"## 10. Relationship to the Composing Module"*. The line lies inside member
+51's range 708–711, where §6.51 lists it as item 35. The document is not one of the five withheld from the deriving
+session's pack, and no home of the decisions register lies at this line.
+
+---
+
+**Row 57.500 — L2 Row 54.3, one of the four rows B114 names: the analysis the language-model integration is handed.**
+
+*The L2 entry.* "Rows 54.1, 54.2, 54.3 and 54.4 — travelling with Row 17.23(ii): the analysis the language-model
+integration is handed — the chord symbols and the Roman-numeral analysis, the tonality and mode, and where the chords
+change. *(L2-S49 travels with them.)*" (locator: §10, lines 75838–75840). It is one of the four rows this bullet names,
+and each of them quotes the whole bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "Key and mode inference" — `docs/llm_integration.md`, §8, the composing module as
+the language model's context provider (the L2 row's own locator: line 709).
+
+This file holds the line only as §6.51's item 36 under *not a statement* — *what a planned consumer receives from the
+analysis, read as §6.33 read its item 2* — so the row is built in full and the line placed on its content, as Row 57.124
+placed §6.33's item 3. **This departs from §6.51's listing**, which places no statement at that member and states the
+alternative of tabulating these lines without taking it; it is stated for challenge in the group's header. One claim:
+the analysis's tonality and mode are sent with every stretch of music to the planned model.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.124 and as §6.51 read the line: what a planned bridge outside
+the analysis receives from it, and no charter of `FRAMEWORK.md` §5 names a reader outside the analysis.
+
+*At the source now.* The line stands at line 709 of the document's blob at this batch's Task 0 commit, found as quoted,
+the quotation dropping the list marker that opens it; it is the second of the four bullets the sentence at lines 705–706
+leads. The nearest heading at the blob is *"## 10. Relationship to the Composing Module"*. The line lies inside member
+51's range 708–711, where §6.51 lists it as item 36. The document is not one of the five withheld from the deriving
+session's pack, and no home of the decisions register lies at this line.
+
+---
+
+**Row 57.501 — L2 Row 54.4, one of the four rows B114 names: the analysis the language-model integration is handed.**
+
+*The L2 entry.* "Rows 54.1, 54.2, 54.3 and 54.4 — travelling with Row 17.23(ii): the analysis the language-model
+integration is handed — the chord symbols and the Roman-numeral analysis, the tonality and mode, and where the chords
+change. *(L2-S49 travels with them.)*" (locator: §10, lines 75838–75840). It is one of the four rows this bullet names,
+and each of them quotes the whole bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "Harmonic rhythm (where chord changes occur)" — `docs/llm_integration.md`, §8, the
+composing module as the language model's context provider (the L2 row's own locator: line 710).
+
+This file holds the line only as §6.51's item 37 under *not a statement* — *what a planned consumer receives from the
+analysis, read as §6.33 read its item 2* — so the row is built in full and the line placed on its content, as Row 57.124
+placed §6.33's item 3. **This departs from §6.51's listing**, which places no statement at that member and states the
+alternative of tabulating these lines without taking it; it is stated for challenge in the group's header. One claim:
+where the chords change is sent with every stretch of music to the planned model.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.124 and as §6.51 read the line: what a planned bridge outside
+the analysis receives from it, and no charter of `FRAMEWORK.md` §5 names a reader outside the analysis.
+
+*At the source now.* The line stands at line 710 of the document's blob at this batch's Task 0 commit, found as quoted,
+the quotation dropping the list marker that opens it; it is the third of the four bullets the sentence at lines 705–706
+leads. The nearest heading at the blob is *"## 10. Relationship to the Composing Module"*. The line lies inside member
+51's range 708–711, where §6.51 lists it as item 37. The document is not one of the five withheld from the deriving
+session's pack, and no home of the decisions register lies at this line.
+
+---
+
+**Row 57.511 — L2 Row 43.100(ii), one of the two rows B119 names: harmonic spans nesting in phrase units.**
+
+*The L2 entry.* "Rows 21.49(ii) and 43.100(ii) — travelling with Row 21.49(iii): "chord-spans ⊂ punctuation-spans".
+*(Placed from UNPLACED; cowork_rulings_2026_10_07_l2_notated_boundary_evidence_sitting.md, Ruling 1.)*" (locator: §10,
+lines 75851–75852). It is one of the two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**Nesting (containment):** chord-spans ⊂ key-spans; chord-spans ⊂
+punctuation-spans; punctuation-spans ⊂ section-spans — the finer tiles the coarser." — `cowork_target_architecture.md`,
+§2 *The layer model*, how spans relate (the L2 row's own locator: lines 264–266).
+
+The lines lie in member 38's cut — the lines 262–271, which §6.38's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time; Row 19.39 tabulates a sentence of
+the same content in `ARCHITECTURE.md`, not this one. The bullet names claim (ii) of L2 Row 43.100, whose block splits
+the sentence into three claims; this row tabulates claim (ii), and the block's claims (i) and (iii) are not this row's —
+a fact, not a correction; claim (iii) is tabulated at Row 57.352, which B74 names. One claim: harmonic spans nest in
+phrase units, so that every phrase boundary is a boundary of the harmonic spans.
+
+*Derived statements that speak to it.* L3-S8.
+
+*Current-text axis.* L3-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing typology nests *"chord-spans ⊂ punctuation-spans"*; L3-S8 says
+*"Every change point and both span edges are candidate phrase ends."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above, as Row 19.39 (ii).
+
+*At the source now.* The sentence stands at lines 264–266 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens line 264 and keeping the bullet's bold run-in lead *Nesting
+(containment):*. The nearest heading at the blob is *"## 2. The layer model"*. The lines lie in none of member 38's
+published ranges: they fall between its ranges 228–261 and 272–277, inside the cut 262–271 §6.38's manifest header lists
+as the paragraph on nesting and cross-cutting — so the class *in member 38's cut* holds at the blobs. The document is
+not one of the five withheld from the deriving session's pack, and the decisions register's data file homes nothing in
+it.
+
+---
+
+**Row 57.513 — L2 Row 47.17(iv), one of the two rows B121 names: the old Decision A as to the derived chord facts.**
+
+*The L2 entry.* "Rows 47.17(iv) and 47.18(i) — travelling with Row 49.17(i): the old "Decision A" of
+`cowork_notation_adoption_increment.md`, as to the derived chord facts. *(Placed from UNPLACED;
+cowork_rulings_2026_10_08_l2_chord_as_degree_sitting.md, Ruling 2.)*" (locator: §10, lines 75856–75858). It is one of
+the two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**What the principles demand of the surface, before any option is weighed:** every
+fact A computes is published once, on the producing layer's own surface, in the producer's own terms, with establishment
+status attached (the fact-publication corollary, #6/#7/#12; the evidence-publication amendment); nothing computed is
+narrowed or reinterpreted at a boundary (#12/#19); the surface carries what best-possible-inference consumers will need
+(#4) — the posterior, the derived chord facts, the ratified presentation facts." —
+`cowork_notation_adoption_increment.md`, §3 *Decision A* (the L2 row's own locator: lines 135–140).
+
+The lines lie in member 52's cut — the lines 75–485, which §6.52's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. The bullet names claim (iv) of
+L2 Row 47.17, whose block splits the sentence into four claims; this row tabulates claim (iv), and the block's claims
+(i) to (iii) are not this row's — a fact, not a correction. One claim: the estimator's surface carries what consumers
+aiming at the best possible inference need — the posterior, the derived chord facts and the ratified presentation facts.
+
+*Derived statements that speak to it.* L3-S1.
+
+*Current-text axis.* L3-S1: **AGREES** — as to the derived chord facts, *"The chord symbol is a view of L2's chord."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: one surface carrying the posterior, the derived chord facts and the
+presentation facts together, where L3-S1 publishes the chord symbol as L3's view of L2's chord and no charter of
+`FRAMEWORK.md` §5 lists the presentation facts; the L2 comparison relocated the claim to L3 as to the derived chord
+facts alone, and a disposition of the whole claim would choose between its components.
+
+*At the source now.* The sentence stands at lines 135–140 of the document's blob at this batch's Task 0 commit, found as
+quoted, the bold lead kept as the block writes it. The nearest heading at the blob is *"## 3. Decision A — the shape of
+the output-surface contract"*. The lines lie in none of member 52's published ranges: they fall between its ranges 66–74
+and 486–502, inside the cut 75–485 §6.52's manifest header lists — so the class *in member 52's cut* holds at the blobs.
+The document is not one of the five withheld from the deriving session's pack; no home of the decisions register lies at
+these lines.
+
+---
+
+**Row 57.514 — L2 Row 47.18(i), one of the two rows B121 names: the old Decision A as to the derived chord facts.**
+
+*The L2 entry.* "Rows 47.17(iv) and 47.18(i) — travelling with Row 49.17(i): the old "Decision A" of
+`cowork_notation_adoption_increment.md`, as to the derived chord facts. *(Placed from UNPLACED;
+cowork_rulings_2026_10_08_l2_chord_as_degree_sitting.md, Ruling 2.)*" (locator: §10, lines 75856–75858). It is one of
+the two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**Option A2 — the joint-native record IS the surface: A publishes its own record
+(segments, keys, classes, derived chord facts, the posterior, the ratified presentation facts), and the notation
+consumers read it; `HarmonicRegion` and its satellite shapes retire with the legacy path.**" —
+`cowork_notation_adoption_increment.md`, §3 *Decision A*, Option A2 (the L2 row's own locator: lines 165–167).
+
+The lines lie in member 52's cut — the lines 75–485, which §6.52's manifest header lists in no range — so no member of
+this comparison tabulated them, and the sentence is tabulated here for the first time. The bullet names claim (i) of
+L2 Row 47.18, whose block splits the sentence into two claims; this row tabulates claim (i), and the block's claim (ii),
+that the legacy region record retires with the legacy path, is not this row's — a fact, not a correction. One claim: the
+estimator publishes its own record — segments, tonalities, chord classes, derived chord facts, the posterior and the
+presentation facts — and the notation consumers read it.
+
+*Derived statements that speak to it.* L3-S1.
+
+*Current-text axis.* L3-S1: **AGREES** — as to the derived chord facts, *"The chord symbol is a view of L2's chord."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 57.513; read: one record carrying L2's facts, the derived
+chord facts and the presentation facts for the application's notation consumers, which no charter of `FRAMEWORK.md` §5
+holds whole; the L2 comparison relocated the claim to L3 as to the derived chord facts alone.
+
+*At the source now.* The sentence stands at lines 165–167 of the document's blob at this batch's Task 0 commit, found as
+quoted, the option's bold lead whole. The nearest heading at the blob is *"## 3. Decision A — the shape of the
+output-surface contract"*. The lines lie in none of member 52's published ranges: they fall between its ranges 66–74 and
+486–502, inside the cut 75–485 §6.52's manifest header lists — so the class *in member 52's cut* holds at the blobs. The
+document is not one of the five withheld from the deriving session's pack; no home of the decisions register lies at
+these lines.
+
+#### The arithmetic at this group
+
+- Rows written: **31**, every one a full row; lines turned into pointers: **0** — 31 + 0 = 31, the rows the group's
+  heading names.
+- The full rows' claims: 25 rows of one claim and 6 rows of two — 25 + 12 = 37.
+- **Outgoing statements placed by this group (the full rows' statements): 37.**
+- Listed under *not a statement* at this group: **0** — the member's nine items stand at §6.57's foot.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 37 dispositions over 37
+  statements.
+- **UNPLACED statements at this group: 24.**
+
+#### The distribution at this group, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 5 | 57.283, 57.318 (ii), 57.320 (ii), 57.322 (ii), 57.352 |
+| ADOPTED — proposed | 5 | 57.259, 57.278, 57.353, 57.354, 57.369 |
+| RELOCATED | 3 | 57.318 (i), 57.322 (i), 57.366 (ii) |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 24 | 57.249, 57.290, 57.315 (i), 57.315 (ii), 57.320 (i), 57.362, 57.363, 57.364, 57.365, 57.366 (i), 57.368, 57.370, 57.371, 57.372, 57.373 (i), 57.373 (ii), 57.377, 57.498, 57.499, 57.500, 57.501, 57.511, 57.513, 57.514 |
+| **Total** | **37** | — |
+
+**The column sums to 37 (5 + 5 + 3 + 0 + 0 + 0 + 24), against 37 statements, so the arithmetic closes at this group.**
+
+#### The current-text axis at this group, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 7 |
+| DIFFERS | 6 |
+| THE DERIVATION IS SILENT | 24 |
+| **Total verdicts** | **37** |
+
+The AGREES statements: 57.283 (L3-S15), 57.318 (ii) (L3-S33), 57.320 (ii) (L3-S33), 57.322 (ii) (L3-S33), 57.352
+(L3-S22), 57.513 (L3-S1), 57.514 (L3-S1). The DIFFERS statements: 57.249 (L3-S8), 57.290 (L3-S8), 57.315 (i) (L3-S22),
+57.315 (ii) (L3-S22), 57.320 (i) (L3-S22), 57.511 (L3-S8).
+
+#### The marks at this group
+
+- **WITHHELD rows: one — Row 57.322 (D-456)**, whose sentence lies inside D-456's home (lines 348–354 of
+  `cowork_layer6_grouping_design.md`), located at the data file by both walks the group's header names;
+  `item_4_identities_inside` for position 57 is empty. Its claim (ii) carries an AGREES inside the withheld home. **At a
+  withheld home's edge and outside its words, no mark**: Row 57.278 (D-459's line 254) and Row 57.290 (D-454's line
+  311).
+- **SEEN rows: none** — no SEEN identity is homed in any of the six documents.
+- **Homes of the decisions register's data file at the full rows' lines**: **register entry D-456**
+  (`cowork_layer6_grouping_design.md`, 348–354; Row 57.322, marked); **register entry D-524**
+  (`cowork_joint_estimator_architecture.md`, 89–103; Rows 57.365 and 57.366, no mark); **register entry D-276**
+  (`cowork_notation_output_contract.md`, 139–147; Rows 57.371, 57.372 and 57.373, no mark); and at the edge, outside
+  their words, **register entries D-459** (254–261; Row 57.278) and **D-454** (307–311; Row 57.290). **Each one's words
+  stand exactly at its cited lines.** No home lies at the other rows' lines, and none in the L2 reading file.
+- **The marks were counted both ways**: the identities the data file places at the full rows' lines against the mark
+  strings in this sub-section — one withheld identity holding one row's sentence, and one WITHHELD mark string standing
+  in the sub-section, after Row 57.322's title, and no SEEN mark string; **and over the whole of §6.57 the two mark
+  strings stand once, at that title**, so no line of the table, no item of the bullet list and nothing of group 1's
+  sub-section carries one. **No mark of the L2 comparison's own was carried in**: the five L2 rows that carry one
+  (L2 Rows 48.31, 48.32 and 49.28 to 49.30) are quoted by their blocks' statements and named by their bullets' glosses,
+  never by their heading lines.
+- **Rows naming L3-S4: none.**
+
+---
+
 #### The distribution at this member, counted at these rows
 
 NOT YET WRITTEN — written with the last full-row group of this member, summing the groups' feet; the table places
@@ -74705,6 +76062,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 56.10 (i) and 56.10 (ii) — the selection's joint-consistency margin as the confidence of the selection
   decision itself, attached to its named decision and distinct from the resolver's next-best margin. *(As Row 9.83;
   the L0/L1 comparison placed the row this one quotes, L0/L1 Row 24.20, at L3.)*
+- Row 57.366 (ii) — that the mapping from a preset to mode priors is a presentation and preference concern, not an
+  inference state. *(The L2 comparison relocated L2 Row 48.32 to L3.)*
 
 **To *the second axis — voice leading*.**
 
@@ -75047,6 +76406,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   49.17 (ii); Rows 55.1, 55.2 and 55.5 lie on register entry D-271's home, unmarked.)*
 - Row 57.60 (ii) — that the cadence typology is a superset of the annotation standard's six labels. *(The L2 comparison
   relocated L2 Row 5.340 to L3.)*
+- Rows 57.318 (i) and 57.322 (i) — that formal functions and multi-span sections, and sections, periods and sentences,
+  lack a ground truth in the held corpus. *(The L2 comparison relocated L2 Rows 41.45 and 41.125 to L3.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
@@ -77192,8 +78553,8 @@ rows carry no disposition of their own (§6.56's manifest header).
 
 **Member 57 — the L2 transfer input, `ratification_surfaces/cowork_comparison_l2_reading.md` §10.**
 
-No QUARANTINED row yet: the member's table carries no disposition of its own, and its first full-row group records no
-built or measured property of the code (§6.57's group header).
+No QUARANTINED row yet: the member's table carries no disposition of its own, and its first two full-row groups record
+no built or measured property of the code (§6.57's group headers).
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -78226,6 +79587,29 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
   decision *"publishes the principal partition with its rivals and their mass"*.
 - **DIFFERS — Row 57.157 (L3-S9):** the outgoing profile reads *"the absolute interval (in semitones)"*, where L3-S9's
   family (i) reads *"the spelled melodic interval"*.
+- **ADOPTED — proposed — Row 57.259:** that each phrase unit carry the scope of the notated evidence that opened and
+  closed it, so that a local boundary is never presented as a global one — as Row 8.45 (ii), travelling with it.
+- **ADOPTED — proposed — Row 57.278:** that a change of tonality closes one key area and starts the next — as Row 8.75,
+  travelling with it and with Row 8.12.
+- **ADOPTED — proposed — Row 57.353:** that a change of tonality may fall inside a phrase unit and a phrase unit's end
+  need not change tonality, the two segmentations independent and neither nested in the other — as Row 7.63, travelling
+  with it and with Row 19.39 (iv).
+- **ADOPTED — proposed — Row 57.354:** that L3 never state that one span kind nests in another where the two cut across
+  each other, key areas inside phrase units among them — travelling with Rows 38.83 (ii) and 57.353.
+- **ADOPTED — proposed — Row 57.369:** that L3 publish the run of consecutive spans of L2's segmentation sharing one
+  tonality, maximal, as a grouping of its own — as Row 8.12, travelling with it.
+- **DIFFERS — Row 57.249 (L3-S8):** the outgoing text says *"Every signal Layer 6 needs has already been computed by an
+  earlier layer"*, the phrase boundaries among them, where L3-S8 says *"The phrase reading is an L3 decision."*
+- **DIFFERS — Row 57.290 (L3-S8):** the outgoing layer is held *"to the assembly + the carries"*, where L3-S8 says *"The
+  phrase reading is an L3 decision."*
+- **DIFFERS — Row 57.315 (i) (L3-S22):** the outgoing grouping is *"Flat grouping"*, where L3-S22 says *"It is a nested
+  grouping over the units of the phrase reading"*.
+- **DIFFERS — Row 57.315 (ii) (L3-S22):** the outgoing grouping is *"not hierarchical"*, where L3-S22 says *"It is a
+  nested grouping over the units of the phrase reading"*.
+- **DIFFERS — Row 57.320 (i) (L3-S22):** the outgoing forms and sections are kept out of the grouping's *"core"*, where
+  L3-S22 says *"The section grouping is an L3 decision."*
+- **DIFFERS — Row 57.511 (L3-S8):** the outgoing typology nests *"chord-spans ⊂ punctuation-spans"*, where L3-S8 says
+  *"Every change point and both span edges are candidate phrase ends."*
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -78290,17 +79674,17 @@ are at its own foot, and the integers below are re-derivable from them.
 | 54 | 56 | 0 | 0 | 42 | 4 | 0 | 6 | 4 | 5 |
 | 55 | 16 | 0 | 0 | 14 | 0 | 0 | 2 | 0 | 0 |
 | 56 | 5 | 0 | 2 | 2 | 0 | 0 | 0 | 1 | 11 |
-| 57 | 38 | 3 | 1 | 15 | 0 | 0 | 0 | 19 | 9 |
-| **Total** | **4573** | **199** | **94** | **1983** | **1212** | **0** | **722** | **363** | **1317** |
+| 57 | 75 | 8 | 6 | 18 | 0 | 0 | 0 | 43 | 9 |
+| **Total** | **4610** | **204** | **99** | **1986** | **1212** | **0** | **722** | **387** | **1317** |
 
-**The arithmetic check:** 199 + 94 + 1983 + 1212 + 0 + 722 + 363 = 4573, against 4573 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 204 + 99 + 1986 + 1212 + 0 + 722 + 387 = 4610, against 4610 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
-0 + 27 + 25 + 56 + 16 + 5 + 38).
+0 + 27 + 25 + 56 + 16 + 5 + 75).
 
 *(Member 56's row counts its three full rows' statements alone; its 23 pointer rows are counted at the rows they name.)*
-*(Member 57's row counts the statements of its full rows written so far — group 1's; its pointer lines are counted at
-the rows they name, and its table is at §6.57.)*
+*(Member 57's row counts the statements of its full rows written so far — groups 1 and 2's; its pointer lines are
+counted at the rows they name, and its table is at §6.57.)*
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -78360,13 +79744,13 @@ the rows they name, and its table is at §6.57.)*
 | 54 | 17 | 4 | 35 | 56 |
 | 55 | 0 | 0 | 16 | 16 |
 | 56 | 0 | 0 | 5 | 5 |
-| 57 | 12 | 4 | 22 | 38 |
-| **Total** | **441** | **363** | **3777** | **4581** |
+| 57 | 19 | 10 | 46 | 75 |
+| **Total** | **448** | **369** | **3801** | **4618** |
 
-**The arithmetic check of the verdicts:** 441 + 363 + 3777 = 4581, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 448 + 369 + 3801 = 4618, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
-0 + 27 + 25 + 56 + 16 + 5 + 38).
+0 + 27 + 25 + 56 + 16 + 5 + 75).
 
 ## 14. The derivation's independence record, relayed
 
