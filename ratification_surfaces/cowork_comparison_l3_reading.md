@@ -23,7 +23,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_third_2026_10_26.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -109,10 +110,10 @@ its own entry there.
 | 54 | `cowork_bounded_context_design.md` passages | **DONE** (§6.54) |
 | 55 | `cowork_prefit_gates.md` passages | **DONE** (§6.55) |
 | 56 | The L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10 | **DONE** (§6.56) |
-| 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
+| 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | **TABLE DONE** (§6.57 — every named row pointed or named for a full row; the full rows NOT YET WRITTEN, named at §6.57's foot) |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 56 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 56 and the table of position 57 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -134,7 +135,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, position 55, the passages of `cowork_prefit_gates.md`, and position 56, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, position 55, the passages of `cowork_prefit_gates.md`, position 56, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10, and the table of position 57, the L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 — the first portion of a member done in named portions under the ruling record of 2026-10-26.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -179,12 +180,17 @@ to 49 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison
 member boundary after position 49 under its own limit on the batch, and not by a capacity judgment; positions 50
 to 55 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md`, which stopped at the
 member boundary after position 55 under its own limit on the batch, and not by a capacity judgment; position 56 was tabulated
-under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md`.**
-**The writing now stands at the member boundary after position 56: not done, position 57, and the next writing
-resumes at position 57.**
+under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md`, which stopped at the
+member boundary after position 56 under its own limit on the batch, and not by a capacity judgment; the table of
+position 57 was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_third_2026_10_26.md`.**
+**The writing now stands inside position 57, at the boundary the ruling record of 2026-10-26 names: its table done;
+its full rows, named at §6.57's foot, not yet written — and the next writing resumes at the first group of them.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
+**A member marked TABLE DONE is worked to a named boundary inside it under the ruling record of 2026-10-26: its table
+is whole over every row the block names, and the full rows it names are untouched until their own group's commit
+(D-671, D-672).**
 
 ---
 
@@ -71662,6 +71668,1150 @@ The AGREES statements: none. The DIFFERS statements: none.
 
 ---
 
+### 6.57 — Member 57: the L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10
+
+> **Manifest for this member.** Position **57**. Kind: *the L2 transfer input* — the rows the L2 comparison relocated to
+> L3, built under the dispatch's Task 1(d) in the compact form the ruling record of 2026-10-26 orders
+> (`records/cowork/rulings/cowork_rulings_2026_10_26_l3_position_57_sitting.md`, Ruling 1, *"C"*), and not under the
+> passage rule nor in position 56's form. **The difference of form, as the ruling orders it stated here:** position 56
+> quoted every bullet once per named row and built its full rows in the same commit; this member quotes every bullet
+> once, lists every named row in a table, and builds its full rows in later groups, each naming its rows. Document:
+> `ratification_surfaces/cowork_comparison_l2_reading.md`. Label: *"## 10. The TRANSFER LIST — every RELOCATED row, by
+> target charter"*, exactly as the artifact spells it. **The one published range**, as a locator only (**D-307**), with
+> its first and last line texts exactly as the artifact publishes them:
+>
+> - lines 75368–76315, from *"## 10. The TRANSFER LIST — every RELOCATED row, by target charter"* to the empty string —
+> the range's last line is a blank line, the one before that file's `## 11.` heading.
+>
+> **The range is that file's §10, whole.** Its two line texts were compared with the lines at their locators in the L2
+> reading file's blob at the commit that landed this batch's dispatch, by a script reading the artifact at that commit,
+> **and both match**; the range holds 948 lines. The blob carries no carriage return, so nothing was stripped before a
+> comparison. No other member of the artifact is cut from this document. **One line inside the range is a heading** —
+> line 75368 — and under the first reading rule of §6 it is a title, neither tabulated nor listed. The range holds no
+> table line, no fence line and no line opening a quotation block.
+>
+> **The unit here is not a sentence of §10** (Task 1(d)): one **line** of the table per L2 row that the block headed
+> *"To *L3 — The read-off facts*."* names — **the named rows**, the rows a bullet writes before its em dash, a range *A
+> to B* expanded to every row from its first number to its last, and a claim kept as the bullet writes it. **A row a
+> bullet names after *travelling with*, or inside a parenthesis, is not a named row of that bullet**, and an *L2-Sn*
+> inside a parenthesis names a statement of the L2 derivation, never a row. **A bullet naming several L2 rows gives one
+> line per row it names** (§6.56's shared-bullet rule), and **a row named by two bullets with the same claim would take
+> one line carrying both bullet numbers** — none is. Where a bullet names a row whole and the row's block is split, the
+> line names the row whole and the search ran over the whole quotation (L2 Row 26.1 alone). **Every L2 row is written
+> with the prefix *L2***: its number is that comparison's own and has nothing to do with this file's row numbers. **No
+> line quotes the outgoing statement or the bullet**: each bullet stands once in the numbered list below, and each
+> statement stands at the L2 row's own block, both findable by the locators the line carries.
+>
+> Counted at this member by this session: **123 bullets** (B1 to B123), naming **537 L2 rows** (every claim counted, no
+> row named twice with one claim), so **537 lines** (Rows 57.1 to 57.537): **415 pointer lines** and **122
+> needs-a-full-row lines** — 23 *listed only*, 96 *in member M's cut*, 1 *no member's document* and 2 *not found*.
+> Outgoing statements: **0** — placed by this portion; the full rows are owed, named at the foot. Listed under *not a
+> statement*: **9**. Counted at this member by this session; the counts appear here, at the feet and at §13, and nowhere
+> else.
+>
+> **How each line was decided, and the search that decided it.** Four scripts ran over the L2 reading file's blob and
+> this file's blob, both taken at this batch's Task 0 commit, before any line was written: `t1_bullets57.py` parsed and
+> numbered the bullets and their named rows (`bullets57.json`, read whole by eye, every parse checked against its text);
+> `t1_blocks57.py` took each named row's block — its member heading, its outgoing statement under *Outgoing statement.*
+> (or, at the one §6.62 row, L2 Row 62.41, under *The outgoing statement it carries.*, its document taken from that
+> paragraph), its locator and its claims — and checked that every named row exists at its own block with a statement and
+> a locator, **no exception remaining** (`blocks57.json`); `t1_where57.py` set each block's document and located lines
+> against this comparison's members and their published ranges (`where57.txt`); and **`t1_search57.py`** took each
+> statement and searched this file — every *Outgoing statement.* paragraph of §6.1 to §6.55, every *The outgoing
+> statement it carries.* paragraph of §6.56's three full rows, and every item under every *Not a statement* heading of
+> §6.1 to §6.56 — for any shared run of six words, the comparison case-folded and blind to markup, **exactly as §6.56's
+> search did**, marking a candidate that shares every run of the statement as covering it (`search57.txt`). **It printed
+> 802 candidates over the 537 lines (729 over the 518 distinct quotations, a row's claims sharing one quotation), and
+> every one was read by eye at its quotation**, and at its row wherever the quotation did not settle the line — a label
+> or a title, a quotation joining sentences, a candidate that is a *not a statement* item, two covering candidates, or
+> no covering one. For the statements of fewer than six words, which the test cannot reach, the whole statement was
+> searched as a substring of the same paragraphs. **The decision per line was written to `decisions57.txt` before the
+> first line**, and the lines, this list and the feet were generated from it by script.
+>
+> **A pointer line** names the row or rows of §6.1 to §6.56 that tabulate the same sentence and repeats no disposition,
+> no verdict and no mark; the named row carries them. A few words say where the L2 quotation is a portion of what that
+> row quotes, joins sentences this file tabulates one by one, or elides. **A needs-a-full-row line** says the sentence
+> is tabulated nowhere in this file as a statement, in one of four classes: *listed only — §6.M item k* (the sentence
+> stands here only under *not a statement*); *in member M's cut* (the document is a passage member of this comparison
+> and the located lines fall in none of its published ranges); *no member's document*; and *not found — member M* (the
+> document is a member and the lines fall in its ranges, yet no candidate reads as the sentence — a fact recorded, never
+> resolved here). **The bound on *in member M's cut*, stated as the dispatch orders:** the L2 block's locator was taken
+> at the L2 comparison's own batch and the artifact's ranges at the L3 population batch, so the class is a reading by
+> locators from two dates, settled at *At the source now.* by the full-row group that builds the row, never here. For
+> `ARCHITECTURE.md`, cut into several members, the member named is the passage member whose top-level section label is
+> the L2 member's.
+>
+> **Three readings, each stated for challenge.** (1) **A quotation that is a decision's label or a bullet's bold lead,
+> which this file reads as a title, is pointed at the row or rows tabulating the body sentence that states its claim**,
+> under the first reading rule of §6 — *"where a heading carries a claim, the body sentence that states the same claim
+> is what is tabulated"* — and as §6.56's Row 56.22 pointed at a quotation joining a label and two sentences; a
+> quotation adding a label to a sentence is pointed at the sentence's row, the line saying so. Where the label's body
+> sentences stand here only under *not a statement*, the line is *not found* with the title named (L2 Row 41.122). **The
+> alternative** — a full row for every such label — is stated and not taken, because the label's claim is already
+> tabulated as a statement at the body row. (2) **The other blocks of the range are listed under *not a statement* one
+> item per block, each item naming the block by its lead, its line span and its count of bullets, and not every L2 row
+> its bullets name** — a departure from §6.56's items, which named every L0/L1 row of each other block: those rows are
+> addressed to charters this comparison is not, and they stand at the cited lines of a file in this repository, lost to
+> nobody (#12). **The alternative**, naming every row as §6.56 did, is stated and not taken. (3) **The blocks were read
+> by eye where the decision is made** — at the exceptions of `t1_blocks57.py`, which ended with none, and at the
+> candidates — not all five hundred and eighteen whole as position 56 read its twenty-six.
+>
+> **No line carries a mark, and no home was walked**: a pointer line carries no mark of its own — the row it names
+> carries whatever mark its member gave it — and the full rows' marks are located at the data file by the full-row group
+> that builds each row. **No placement reading applied, because no row was built**; the first reading rule applied only
+> to the range's one heading line. **Rows naming L3-S4: none.**
+
+#### The table — the first portion of this member (the ruling's "part 1")
+
+**The bullets of the block, quoted once each**, from after the list marker, their wrapped lines joined with one space,
+their italics and inner quotation marks kept as they stand, each with its lines in the L2 reading file.
+
+1. **B1** — "Row 4.1(iii) — the cadence markers the function layer produces. *(L2-S49 travels with it.)*" (line 75588)
+2. **B2** — "Row 4.8 — the perfect/imperfect cadence call made on the bass-derived inversion, the soprano arrival a soft
+   optional nudge, and no melody identification." (lines 75589–75590)
+3. **B3** — "Row 4.9 — that the full-close criterion from the melody note is not available, the structural melody not
+   being reliably recoverable." (lines 75591–75592)
+4. **B4** — "Row 4.10 — that the top voice may nudge a cadence's confidence in a chordal texture and never decides."
+   (line 75593)
+5. **B5** — "Row 4.15 — the fallback cadence admission for a featureless phrase-boundary profile." (line 75594)
+6. **B6** — "Row 4.16 — that cadences are sought at phrase ends read from the graded phrase-boundary profile. *(Read
+   beside the L0/L1 comparison's relocation of that profile to L3, its §10, Ruling 48; L2-S49 DIFFERS at the row.)*"
+   (lines 75595–75597)
+7. **B7** — "Row 4.17 — that the profile goes featureless in punctuation-poor music." (line 75598)
+8. **B8** — "Row 4.18 — that the fallback admits cadences more freely and weights their votes down." (line 75599)
+9. **B9** — "Rows 5.1, 5.35, 5.109, 5.113, 5.114, 5.115, 5.116, 5.311 and 5.313 — the perfect/imperfect call made on the
+   bass-derived inversion, the top voice at most a soft nudge, and no melody identification." (lines 75600–75601)
+10. **B10** — "Rows 5.5(i), 5.5(ii), 5.27, 5.65, 5.235(ii), 5.237 and 5.284 — the three-role summary as a read-out of
+    the Roman numeral that never drives the analysis, its context-dependent cases defaulting to the tonic side. *(L2-S45
+    travels with them.)*" (lines 75602–75604)
+11. **B11** — "Rows 5.9, 5.10, 5.49, 5.58, 5.99, 5.102, 5.103, 5.108, 5.110, 5.111, 5.112, 5.117 to 5.123, 5.198(i),
+    5.206(ii), 5.240, 5.262 and 5.279 — the cadence typology and its tests over the approach and arrival chords:
+    authentic, perfect and imperfect, half including the Phrygian half cadence, deceptive, plagal and evaded, with each
+    cadence's location and confidence. *(L2-S49 travels with them; at Row 5.10 L2-S34 DIFFERS.)*" (lines 75605–75609)
+12. **B12** — "Rows 5.100(ii) and 5.101 — that for cadence detection a cadential six-four is collapsed into one dominant
+    approach and never registers as a tonic arrival. *(At Row 5.100(i) the reading itself is UNPLACED.)*" (lines
+    75610–75611)
+13. **B13** — "Rows 5.37, 5.38(ii), 5.75(i), 5.77(i), 5.124 and 5.274 — the phrase grouping, and the cadence phrase-gate
+    read from it. *(Read beside the L0/L1 comparison's relocation of the phrase-boundary profile to L3, its §10, Ruling
+    48; at Row 5.37 L2-S49 and L2-S13 DIFFER.)*" (lines 75612–75614)
+14. **B14** — "Rows 5.39 and 5.204(i) — section ends, and section grouping downstream of the reading." (line 75615)
+15. **B15** — "Row 5.91 — recognizing the named progressions and substitutions of the catalog over decided chords."
+    (line 75616)
+16. **B16** — "Rows 5.339, 5.340 and 5.341 — the cadence labels, a superset of the annotation standard's six, and their
+    translation as a display task." (lines 75617–75618)
+17. **B17** — "Rows 5.348, 5.349 and 5.350 — the phrase-gate fallback for punctuation-poor textures, admission relaxed
+    with the vote weight reduced in proportion to boundary strength." (lines 75619–75620)
+18. **B18** — "Row 6.7(ii) — the texture strength profile, the phrase-boundary primitive's aggregated output. *(Read
+    beside the L0/L1 comparison's relocation of the graded phrase-boundary profile to L3, its §10, Ruling 48.)*" (lines
+    75621–75622)
+19. **B19** — "Row 6.8 — the grouping layer's span delimited by surface punctuation. *(L2-S49 travels with it.)*" (line
+    75623)
+20. **B20** — "Rows 6.163 and 6.205(ii) — the chord symbol, root, quality and bass, as a read-off of the decided chord,
+    and whether the power-chord label is ever displayed. *(L2-S27 travels with them.)*" (lines 75624–75625)
+21. **B21** — "Row 7.160(i) — that a cadence is decided after the tonality and the chord. *(L2-S49 travels with it.)*"
+    (line 75626)
+22. **B22** — "Row 10.12 — travelling with Row 6.163: the chord symbol, its root the tonic transposed by the degree's
+    interval, as a derived fact. *(L2-S27 travels with it.)*" (lines 75627–75628)
+23. **B23** — "Row 17.23(ii), with Rows 17.39(i) and 17.56(ii) — that a consumer of the decided reading reads it as a
+    view, never decoding again and never reading the score. *(L2-S49 travels with them.)*" (lines 75629–75630)
+24. **B24** — "Rows 17.25(i), 17.44(ii) and 17.52(ii) — travelling with Row 6.163: the chord facts read off the decided
+    reading — the root and bass spellings, the member pitch classes and their roles — and the display chord symbol and
+    Nashville number rendered from it. *(L2-S27 travels with them.)*" (lines 75631–75633)
+25. **B25** — "Row 17.27 — the un-rounded count of chromatic inflections per scale degree over a tonality run, with no
+    mode label." (lines 75634–75635)
+26. **B26** — "Rows 21.42(ii) and 21.48(ii) — travelling with Row 6.8: the punctuation-span, and phrases, key-areas and
+    sections as groupings derived from the reading, not primary objects. *(L2-S49 travels with them.)*" (lines
+    75636–75637)
+27. **B27** — "Row 21.48(iv) — the cadential scope, the span a cadence closes and confirms. *(L2-S34 DIFFERS at the
+    row.)*" (line 75638)
+28. **B28** — "Row 21.48(v) — travelling with Row 5.91: the progression-schema-span the recognition consumer emits.
+    *(L2-S49 travels with it.)*" (lines 75639–75640)
+29. **B29** — "Row 21.49(iii) — punctuation-spans nesting in section-spans, and key-spans, punctuation-spans and
+    progression-schema-spans cutting across one another." (lines 75641–75642)
+30. **B30** — "Row 21.50 — travelling with Row 6.7(ii): the cue delimiting a punctuation-span, supplied by the
+    phrase-boundary primitive." (lines 75643–75644)
+31. **B31** — "Row 21.64(iii) — grouping structure above the grouping layer — sections, periods, form — anticipated and
+    deferred." (line 75645)
+32. **B32** — "Rows 22.50(i), 22.50(ii), 22.51 and 22.52(i) — travelling with Row 6.7(ii): no validated rule set for
+    polyphonic phrase-boundary detection, the primitive our own engineering validated against our own annotated corpus,
+    and the gap cue transferring to polyphony." (lines 75646–75648)
+33. **B33** — "Row 22.87(i) — travelling with Row 6.8: the grouping layer's punctuation-spans, key-areas and alignment
+    of cadences to punctuation-span ends. *(L2-S49 travels with it.)*" (lines 75649–75650)
+34. **B34** — "Row 22.89 — hierarchy, periods and sentences, and prolongation outside the validatable core." (line
+    75651)
+35. **B35** — "Rows 22.90(i), 22.90(ii), 22.91, 22.92(i), 22.92(ii) and 22.93 — key areas grouped over an already
+    smoothed key sequence, closing only when a differing region clears a confidence test, a region below the test
+    keeping its own key. *(At Row 22.92(iii) the reading itself is UNPLACED.)*" (lines 75652–75654)
+36. **B36** — "Row 22.98(i) — travelling with Row 5.91: the progression-schema recognizer's annotation over the
+    committed progression. *(L2-S49 travels with it.)*" (lines 75655–75656)
+37. **B37** — "Rows 23.291 to 23.298 — the figured bass: read with no root detection, from the bass and each upper
+    tone's interval above it spelled against the signature, through the standard omission table, annotating every
+    sounding pitch." (lines 75657–75658)
+38. **B38** — "Row 23.340 — travelling with Row 17.44(ii): Roman and Nashville numerals as presentation choices over one
+    result. *(L2-S27 travels with it.)*" (lines 75659–75660)
+39. **B39** — "Rows 26.1, 26.2, 26.3, 26.5 and 26.6 — travelling with Row 5.91: the Harmonic Vocabulary, a static
+    knowledge-base component the layers query and not a pipeline layer, its entries carrying provenance rather than a
+    validation status, substitution operating on every functional family, the dictionaries its data. *(L2-S49 AGREES at
+    Row 26.1(ii).)*" (lines 75661–75663)
+40. **B40** — "Rows 26.7 to 26.13 — travelling with Row 26.6: the substitution network's list, the tritone,
+    secondary-dominant, backdoor, modal-interchange and relative substitutions, each with its voice-leading implications
+    and style weights." (lines 75664–75665)
+41. **B41** — "Row 30.26(ii) — travelling with Row 23.340: Roman and Nashville numerals encoding identical information.
+    *(L2-S27 travels with it.)*" (lines 75666–75667)
+42. **B42** — "Rows 30.50, 30.51, 30.52 and 30.53 — travelling with Row 5.9: the authentic, half, deceptive and plagal
+    cadences, marked above the chord staff. *(L2-S49 travels with them.)*" (lines 75668–75669)
+43. **B43** — "Row 36.1 — travelling with Row 17.23(ii): the language model receives the analysis and does not derive
+    the harmony again from the pitches. *(L2-S49 travels with it.)*" (lines 75670–75671)
+44. **B44** — "Row 39.325(i) — travelling with Row 5.9: cadence detection, planned for the dormant function layer.
+    *(L2-S49 AGREES at the row.)*" (lines 75672–75673)
+45. **B45** — "Rows 40.1, 40.5, 40.7 to 40.10, 40.11(ii), 40.15 to 40.18, 40.24 to 40.27, 40.30 to 40.32 and 40.34 —
+    travelling with Row 6.7(ii): the phrase-boundary primitive as a derived view that inherits the loaded span and
+    recomputes when a consumer extends it; a graded per-onset boundary-strength profile, computed per voice and
+    aggregated to the texture, with the picked boundary ticks and the per-region phrase-end flag; what it consumes and
+    what it produces; a small inference whose markers are facts and whose surface strength is computed; and the
+    boundaries marked only harmonically, which it misses by design." (lines 75674–75679)
+46. **B46** — "Rows 40.4 and 40.12(i) — travelling with Row 21.50: the picked boundary as the cue that delimits the
+    punctuation-span." (line 75680)
+47. **B47** — "Rows 40.6 and 40.140 — travelling with Row 4.16: the cadence gate, a cadence candidate admitted only at a
+    phrase boundary." (lines 75681–75682)
+48. **B48** — "Rows 40.14 and 40.96 — cadence-based phrase refinement as a combination downstream of the primitive, the
+    phrase reading and the cadence both being L3's." (lines 75683–75684)
+49. **B49** — "Rows 40.33 and 40.137 — travelling with Row 4.10: the top voice as at most an optional soft cue for the
+    cadence test, not used by the primitive." (lines 75685–75686)
+50. **B50** — "Rows 40.36, 40.38 to 40.45, 40.47 to 40.59, 40.61 to 40.64, 40.66 to 40.71, 40.73 and 40.74(i) —
+    travelling with Row 6.7(ii): the model — three local-change cue profiles, gap, inter-onset and pitch-interval,
+    max-normalized and combined in a gap-dominant weighted sum; the notated-marker spikes set above any surface peak,
+    for a fermata, a breath mark or caesura, a structural barline, a key-signature change, a sudden tempo change or
+    written ritardando, and the onset of an all-voice rest; per-voice cues summed per onset within a coincidence window;
+    the surface cues peak-picked and every marker emitted unconditionally; the boundary tick and the phrase-end flag;
+    and the requirement that each picked boundary carry which cue fired and at what scope, inert on chorales by
+    construction." (lines 75687–75693)
+51. **B51** — "Rows 40.80 to 40.88 — travelling with Row 6.7(ii): the runtime scenarios — a chorale phrase end, a phrase
+    ended by a rest, a phrase end by lengthening, a section break, a passing leap, one voice phrasing while the others
+    continue, and a purely harmonic cadence recovered downstream." (lines 75694–75696)
+52. **B52** — "Rows 40.89, 40.90, 40.97 to 40.100, 40.102 and 40.103 — travelling with Row 6.7(ii): the architecture
+    decisions — the primitive owned by the notation-derived views, graded rather than a binary union, its cues run per
+    voice and aggregated to the texture, and generalized beyond the fermata." (lines 75697–75699)
+53. **B53** — "Rows 40.101 and 40.111 — travelling with Row 22.50(ii): the per-voice aggregation, validated only on
+    single lines in the literature, to be validated on the project's own corpus." (lines 75700–75701)
+54. **B54** — "Rows 40.112, 40.113, 40.115 and 40.117 — travelling with Row 6.7(ii): the risks accepted — boundaries
+    marked only harmonically missed, the primitive a small inference rather than a pure fact, and not an accuracy
+    requirement but load-bearing for the cadence mechanism." (lines 75702–75704)
+55. **B55** — "Rows 40.119 to 40.136 and 40.139 — travelling with Row 6.7(ii): the glossary's entries for the
+    primitive's vocabulary." (line 75705)
+56. **B56** — "Rows 40.150(ii) and 40.155 to 40.160 — travelling with Row 6.7(ii): the scope of the markers — the tempo
+    marker to fire on a genuine change only; the globally scoped markers spiking the texture; the per-part markers
+    reaching the texture only through voice-coincidence, the fermata the borderline case; inert on chorales; and each
+    picked boundary carrying its cue and its scope." (lines 75706–75709)
+57. **B57** — "Rows 41.3(i) and 41.85 — travelling with Row 6.8: the codetta reading — keep the strong-peak cut, drop
+    the weak cut and record the codetta's end as an annexe, the only reading that keeps the partition total and
+    unnested." (lines 75710–75711)
+58. **B58** — "Rows 41.7(i), 41.14 to 41.16, 41.18, 41.20, 41.21, 41.23, 41.27(ii), 41.28, 41.32 to 41.35, 41.37 to
+    41.40, 41.53, 41.55, 41.57 to 41.61, 41.67, 41.71, 41.73 to 41.78, 41.80 to 41.83, 41.87, 41.88, 41.90, 41.91,
+    41.93(i), 41.97 to 41.107, 41.110, 41.111, 41.114, 41.118, 41.123, 41.127, 41.128, 41.141 and 41.142 — travelling
+    with Row 6.8: the grouping layer as assembly and not detection, reading the decided reading and the phrase-boundary
+    ticks and producing the punctuation-spans, the key-areas and the alignment of cadences to punctuation-span ends; the
+    punctuation-span partition, total and with no nesting, its edge groups marked as clipped and an unclosed edge span
+    carrying an extension cue that only the orchestrator acts on; the key-area as a maximal run of one local tonality,
+    closed at each change, its confidence non-increasing in its weakest unit's; a cadence closing the span whose end
+    lies at or just after its arrival, a span free to end with no cadence, and a cadence near no boundary tagged
+    internal and recorded rather than resolved; the open marks carried and never resolved; and no second detector of
+    boundaries, cadences or tonalities. *(L2-S49 AGREES at Rows 41.7(i), 41.15, 41.18, 41.33, 41.34, 41.37 to 41.39,
+    41.53, 41.118 and 41.127.)*" (lines 75712–75723)
+59. **B59** — "Rows 41.13 and 41.72 — travelling with Row 5.9: the cadence typology, and the cadence the grouping reads
+    with its type, its approach and arrival, and a salience. *(L2-S49 travels with them.)*" (lines 75724–75725)
+60. **B60** — "Rows 41.19, 41.24, 41.25 and 41.79 — travelling with Row 21.50: the punctuation-span's boundaries as the
+    picked peaks of the phrase-boundary primitive, consumed as they are and never re-thresholded." (lines 75726–75727)
+61. **B61** — "Rows 41.26, 41.41, 41.42 and 41.62 to 41.64 — travelling with Row 5.91: the progression-schema-spans the
+    recognition consumer emits, hosted by the grouping as read-only, additive labels cutting across the
+    punctuation-spans. *(L2-S49 travels with them.)*" (lines 75728–75730)
+62. **B62** — "Rows 41.29, 41.30, 41.43 and 41.122 — travelling with Row 22.89: no hierarchical grouping and no tree
+    over the piece." (line 75731)
+63. **B63** — "Rows 41.31, 41.44 to 41.47, 41.124 to 41.126 and 41.152 — travelling with Row 21.64(iii): sentences,
+    periods, formal functions and sections kept out of the grouping's core for proportionality, not disqualified for
+    want of a ground truth, and buildable later by an alternative-confidence path with a mark." (lines 75732–75734)
+64. **B64** — "Row 41.51 — travelling with Row 4.8: the perfect/imperfect cadence call made on the bass-derived
+    inversion." (line 75735)
+65. **B65** — "Row 41.54 — travelling with Row 6.7(ii): the phrase-boundary primitive's ticks and strengths as the
+    grouping's input." (line 75736)
+66. **B66** — "Rows 41.65, 41.66, 41.89(ii), 41.129 and 41.157 — travelling with Row 21.49(iii): key-spans and schema
+    spans as independent segmentations cutting across the punctuation-spans, not nested in them." (lines 75737–75738)
+67. **B67** — "Row 41.116 — travelling with Row 5.204(i): the grouping merging the already corrected slices. *(L2-S49
+    travels with it.)*" (lines 75739–75740)
+68. **B68** — "Rows 43.35(i), 43.95, 43.96(i) and 43.97(i) — travelling with Row 5.91: the progression schemata of the
+    harmonic skeleton, homed in the schema span and the cadential approach, a catalog specific to an idiom, recognized
+    additive over the committed progression. *(L2-S49 travels with Row 43.97(i).)*" (lines 75741–75743)
+69. **B69** — "Rows 43.37, 43.38(i), 43.38(ii) and 43.99 — travelling with Row 26.1: the Harmonic Vocabulary a component
+    with a read-only query interface, read by the function and grouping layers and shared with a future suggestion tool.
+    *(L2-S49 travels with Row 43.38(i).)*" (lines 75744–75746)
+70. **B70** — "Row 43.97(ii) — travelling with Row 26.6: robust matching of schemata needing the overlay of functional
+    substitutions." (line 75747)
+71. **B71** — "Rows 43.85 and 43.86 — travelling with Row 21.42(ii): the tonality span, a grouping bounded by a change
+    of tonality. *(L2-S49 travels with Row 43.85.)*" (lines 75748–75749)
+72. **B72** — "Rows 43.88, 43.89, 43.151, 43.154 and 43.155(ii) — travelling with Row 6.8: the phrase as the grouping
+    unit, and the grouping as a derived view of the reading needing no embellishment logic of its own. *(L2-S49 travels
+    with Row 43.88, L2-S45 with Row 43.151.)*" (lines 75750–75752)
+73. **B73** — "Row 43.93 — travelling with Row 21.48(iv): the cadential scope, one detector feeding the phrase and the
+    tonality. *(L2-S34 DIFFERS at the row.)*" (lines 75753–75754)
+74. **B74** — "Rows 43.80, 43.81, 43.100(iii), 43.101 and 43.102 — travelling with Row 21.49(iii): the tonal stream
+    segmented many ways at once, punctuation-spans nesting in section-spans, and tonality spans and punctuation-spans
+    cutting across one another." (lines 75755–75756)
+75. **B75** — "Row 44.14(ii) — travelling with Row 6.7(ii): the length of rest counting as a phrase end, fitted rather
+    than guessed." (line 75757)
+76. **B76** — "Row 44.22(i) — the strength of the beat as evidence of where a cadence arrives." (line 75758)
+77. **B77** — "Row 44.30(ii) — travelling with Row 4.10: the soprano's scale degree at phrase ends, constrained by the
+    cadence formulas." (lines 75759–75760)
+78. **B78** — "Rows 45.27 and 45.62 — travelling with Row 41.78: the grouping layer surfacing the truncation marks and
+    the extension cue, requesting nothing and never acting on them." (lines 75761–75762)
+79. **B79** — "Row 46.12 — travelling with Row 6.8: the punctuation-span as the grouping layer's unit. *(L2-S49 AGREES
+    at the row.)*" (line 75763)
+80. **B80** — "Row 46.24(i) — travelling with Row 4.1(iii): the cadence the function layer of the harmonic spine
+    detects. *(L2-S49 AGREES at the row.)*" (lines 75764–75765)
+81. **B81** — "Rows 47.14, 47.27(i) and 47.28(ii) — travelling with Row 17.27: the un-rounded modal reading published as
+    a fact of its own beside the tonality." (lines 75766–75767)
+82. **B82** — "Rows 48.31 and 48.32 — travelling with Row 17.27: the un-rounded modal reading published as a fact of its
+    own beside the tonality, for the presentation layer." (lines 75768–75769)
+83. **B83** — "Row 48.40(i) — travelling with Row 6.163: the chord symbol a derived fact, published once." (line 75770)
+84. **B84** — "Row 49.1(ii) — travelling with Row 17.23(ii): the record the one output surface the notation path reads.
+    *(L2-S49 travels with it.)*" (lines 75771–75772)
+85. **B85** — "Row 49.6 — the tonality run, a maximal run of segments sharing one tonality, read off the tonality per
+    span." (line 75773)
+86. **B86** — "Rows 49.7, 49.28, 49.29 and 49.30 — travelling with Row 17.27: the un-rounded modal reading, per tonality
+    run and scale degree the duration and onset count of every chromatic inflection observed, the presentation layer
+    free to format a reading from it. *(Rows 49.28 to 49.30 lie inside D-276's home.)*" (lines 75774–75776)
+87. **B87** — "Rows 49.9, 49.11, 49.12, 49.23(iii), 49.36, 49.37, 49.39, 49.41, 49.45 and 49.49 — travelling with Row
+    17.23(ii): the two seams reading the record as views with no second computation, and each audited consumer — the
+    span positions, the tonality context, the degree and diatonic answer, the ranked alternatives and their display
+    subset, the single-note context and the accessibility string — reading the record and deciding nothing. *(L2-S49
+    travels with them.)*" (lines 75777–75781)
+88. **B88** — "Row 49.15(ii) — the signature value the tonality implies, published as a derived fact." (line 75782)
+89. **B89** — "Rows 49.17(i), 49.20(ii) and 49.38 — travelling with Row 6.163: the derived chord facts computed once for
+    the consumers, the display chord symbol and the Nashville number as presentation derivations, and the consumers'
+    chord identity read from them. *(L2-S27 travels with them.)*" (lines 75783–75785)
+90. **B90** — "Row 49.43 — travelling with Row 22.90(i): the tonality areas derived by the section layer by collapsing
+    the record's tonality sequence." (lines 75786–75787)
+91. **B91** — "Row 49.44 — travelling with Row 4.1(iii): the cadence labels the section layer's derivation over the
+    record. *(L2-S49 travels with it.)*" (lines 75788–75789)
+92. **B92** — "Rows 50.1 to 50.7, 50.8(i), 50.9, 50.12, 50.13, 50.14, 50.16, 50.17, 50.18, 50.22, 50.24, 50.25, 50.27,
+    50.30 to 50.32, 50.33(i), 50.34, 50.37, 50.41(i), 50.42 to 50.48, 50.49(i), 50.57 to 50.59, 50.60 to 50.66, 50.69,
+    50.70 and 50.76(ii) — travelling with Row 5.91: the Harmonic Vocabulary's terms, its ownership of the named
+    progressions and substitutions apart from the licensing grammar, its queries, its function map, its named
+    progressions and schemata, its substitution operations, the style label it carries with the weighting and the
+    decision left to the consumer, and its glossary." (lines 75790–75795)
+93. **B93** — "Row 50.19 — travelling with Row 5.5(i): the diatonic functions in three families, tonic, pre-dominant and
+    dominant." (line 75796)
+94. **B94** — "Rows 50.28 and 50.29 — travelling with Row 5.9: the cadential progressions the catalog lists, already
+    detected by the cadence detector. *(L2-S49 travels with Row 50.28.)*" (lines 75797–75798)
+95. **B95** — "Rows 50.38, 50.39 and 50.40 — travelling with Row 26.5: substitution operating on every functional
+    family, only the tritone substitution specific to the dominant." (lines 75799–75800)
+96. **B96** — "Rows 50.41(ii), 50.51 and 50.71 — travelling with Row 43.99: the catalog read in both directions, to
+    recognize and to suggest." (lines 75801–75802)
+97. **B97** — "Rows 53.1, 53.20, 53.26, 53.51(ii), 53.58(i), 53.62, 53.67 and 53.79(ii) — travelling with Row 5.91: a
+    named progression and its catalog entry, the catalog queried and not owned, nothing emitted where nothing is
+    recognized, an internally sequential entry's tonality motion carried by its schema-span, exact matches only for now,
+    the catalog the one place a named progression is added or edited and its owner, and frequent corpus pairs the
+    catalog lacks the evidence for growing it." (lines 75803–75807)
+98. **B98** — "Rows 53.21, 53.35, 53.49 and 53.56(ii) — travelling with Row 5.91: the consumer reading the committed
+    progression, running its recognition over it, exposing each sequence as a typed output, and adding no layer.
+    *(L2-S49 travels with them; Row 53.49 lies inside D-504's and D-505's homes.)*" (lines 75808–75810)
+99. **B99** — "Row 53.2 — travelling with Row 50.2: a member, one chord position of an entry, by scale degree and
+    quality." (line 75811)
+100. **B100** — "Row 53.3 — travelling with Row 50.6: the Prinner, a galant schema." (line 75812)
+101. **B101** — "Row 53.4 — travelling with Row 50.62: a substitution, one chord standing in for another of the same
+     function." (line 75813)
+102. **B102** — "Row 53.10(i) — travelling with Row 50.70: the match, the catalog's value for a stretch realizing an
+     entry." (line 75814)
+103. **B103** — "Rows 53.12, 53.13, 53.14, 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47(ii) — travelling with
+     Row 50.76(ii): the consumer's weighting of its recognitions — prior strength, admission and its threshold, the
+     seed, the weight vector discovered from the music in three forward-only phases, the histogram and the blend, the
+     mode cue and the factor for entries defined by their lines." (lines 75815–75818)
+104. **B104** — "Row 53.15 — travelling with Row 6.8: the punctuation-span, the grouping layer's span. *(L2-S49 travels
+     with it.)*" (line 75819)
+105. **B105** — "Rows 53.16, 53.23 and 53.72 — travelling with Row 21.48(v): the progression-schema-span, one per
+     recognized progression, and its name. *(L2-S49 travels with Rows 53.16 and 53.23.)*" (lines 75820–75821)
+106. **B106** — "Rows 53.17, 53.50(i) and 53.51(i) — travelling with Row 50.32: the harmonic sequence, at least two
+     transposed statements of one entry, and none emitted for a single recognition of an internally sequential entry.
+     *(Rows 53.50 and 53.51 lie inside D-504's home, and claim (i) of each inside D-505's.)*" (lines 75822–75824)
+107. **B107** — "Row 53.19(i) — travelling with Row 21.49(iii): the schema-span cutting across the punctuation-spans."
+     (line 75825)
+108. **B108** — "Rows 53.19(ii) and 53.22(i) — travelling with Row 43.97(i): the recognition read-only and additive over
+     the function layer. *(L2-S49 travels with them.)*" (lines 75826–75827)
+109. **B109** — "Rows 53.22(ii), 53.28 and 53.59 — the literal Roman numeral never changed by the recognition, a
+     substitution recorded only in the annotation. *(Rows 53.28 and 53.59 travel with Row 53.22(ii); L2-S49 travels with
+     all three; Row 53.59 lies inside D-506's home.)*" (lines 75828–75830)
+110. **B110** — "Row 53.27 — travelling with Row 50.41(i): a member filled by a substitution recorded with what the
+     chord stands in for." (lines 75831–75832)
+111. **B111** — "Rows 53.47(i), 53.57 and 53.73(i) — travelling with Row 43.35(i): an entry defined by its lines
+     recognized by its chord skeleton alone and marked chords-only, the scope chords only." (lines 75833–75834)
+112. **B112** — "Rows 53.61, 53.63, 53.64 and 53.79(i) — travelling with Row 50.9: the licensing grammar and the catalog
+     not derived from each other, coupled one way by the consistency test, and a licensed pair in no entry not a gap of
+     the catalog." (lines 75835–75836)
+113. **B113** — "Row 53.65 — travelling with Row 50.8(i): one owner per item." (line 75837)
+114. **B114** — "Rows 54.1, 54.2, 54.3 and 54.4 — travelling with Row 17.23(ii): the analysis the language-model
+     integration is handed — the chord symbols and the Roman-numeral analysis, the tonality and mode, and where the
+     chords change. *(L2-S49 travels with them.)*" (lines 75838–75840)
+115. **B115** — "Row 57.8 — travelling with Row 4.15: the fallback admitting cadences at a featureless phrase-boundary
+     profile. *(L2-S49 travels with it.)*" (lines 75841–75842)
+116. **B116** — "Rows 62.41(i) and 62.41(ii) — travelling with Row 50.2: a progression entry's functional skeleton,
+     key-relative and degree-parameterised, one entry instantiating in every key." (lines 75843–75844)
+117. **B117** — "Rows 5.100(i) and 5.283 — travelling with Rows 5.100(ii) and 5.101: what L3 does with a cadential
+     six-four when it reads cadences, not what L2 labels it. *(Placed from UNPLACED;
+     cowork_rulings_2026_10_05_l2_cadential_six_four_sitting.md, Ruling 1.)*" (lines 75845–75847)
+118. **B118** — "Rows 44.36(i), 44.51(i) and 44.76(iv) — the evidence inventory's "collection: confident; tonic: open
+     between these two", a fact read off the settled reading. *(Placed from UNPLACED;
+     cowork_rulings_2026_10_06_l2_publication_to_next_layer_sitting.md, Ruling 2.)*" (lines 75848–75850)
+119. **B119** — "Rows 21.49(ii) and 43.100(ii) — travelling with Row 21.49(iii): "chord-spans ⊂ punctuation-spans".
+     *(Placed from UNPLACED; cowork_rulings_2026_10_07_l2_notated_boundary_evidence_sitting.md, Ruling 1.)*" (lines
+     75851–75852)
+120. **B120** — "Row 5.68(i) — travelling with Row 49.6: a run of consecutive spans sharing one tonality, read off L2's
+     tonality per span. *(Placed against its proposal, ADOPTED — carried (L2-S16);
+     cowork_rulings_2026_10_07_l2_one_tonality_per_span_sitting.md, Ruling 1.)*" (lines 75853–75855)
+121. **B121** — "Rows 47.17(iv) and 47.18(i) — travelling with Row 49.17(i): the old "Decision A" of
+     `cowork_notation_adoption_increment.md`, as to the derived chord facts. *(Placed from UNPLACED;
+     cowork_rulings_2026_10_08_l2_chord_as_degree_sitting.md, Ruling 2.)*" (lines 75856–75858)
+122. **B122** — "Row 22.92(iii) — travelling with claims (i) and (ii) of the same row: a region's Roman numerals written
+     against the enclosing key area (`ARCHITECTURE.md` Layer 6, the home of D-472). *(Placed from UNPLACED;
+     cowork_rulings_2026_10_08_l2_chord_as_degree_sitting.md, Ruling 2.)*" (lines 75859–75861)
+123. **B123** — "Rows 55.1, 55.2, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 55.10, 55.11, 55.12, 55.13, 55.14, 55.15, 55.16,
+     55.17, 55.19, 55.22, 50.54, 50.67, 50.75 and 53.11 — travelling with Row 5.91: the catalog's idiom tags. *(Placed
+     from UNPLACED; cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md, Ruling 2.)*" (lines 75862–75864)
+
+**The lines, one per named L2 row, in the order the block names them.** *Bullet* gives the number of the bullet naming
+the row; *Document and locator* the document the L2 row's block names and that block's own locator.
+
+| Row | L2 row | Bullet | Document and locator | Decision |
+|---|---|---|---|---|
+| 57.1 | L2 Row 4.1(iii) | B1 | `ARCHITECTURE.md` (locator: lines 2077–2079) | Row 2.1 (§6.2) |
+| 57.2 | L2 Row 4.8 | B2 | `ARCHITECTURE.md` (locator: lines 2111–2112) | Row 2.7 (§6.2) |
+| 57.3 | L2 Row 4.9 | B3 | `ARCHITECTURE.md` (locator: lines 2113–2115) | Row 2.8 (§6.2) |
+| 57.4 | L2 Row 4.10 | B4 | `ARCHITECTURE.md` (locator: lines 2115–2116) | Row 2.9 (§6.2) |
+| 57.5 | L2 Row 4.15 | B5 | `ARCHITECTURE.md` (locator: lines 2143–2144) | Row 2.15 (§6.2) |
+| 57.6 | L2 Row 4.16 | B6 | `ARCHITECTURE.md` (locator: lines 2144–2146) | Row 2.16 (§6.2) |
+| 57.7 | L2 Row 4.17 | B7 | `ARCHITECTURE.md` (locator: lines 2146–2147) | Row 2.17 (§6.2) |
+| 57.8 | L2 Row 4.18 | B8 | `ARCHITECTURE.md` (locator: lines 2147–2148) | Row 2.18 (§6.2) |
+| 57.9 | L2 Row 5.1 | B9 | `cowork_layer5_function_design.md` (locator: lines 3–6) | Row 7.1 (§6.7) |
+| 57.10 | L2 Row 5.35 | B9 | `cowork_layer5_function_design.md` (locator: lines 89–92) | Row 7.31 (§6.7) |
+| 57.11 | L2 Row 5.109 | B9 | `cowork_layer5_function_design.md` (locator: lines 281–283) | Row 7.101 (§6.7) |
+| 57.12 | L2 Row 5.113 | B9 | `cowork_layer5_function_design.md` (locator: line 290) | Row 7.105 (§6.7) |
+| 57.13 | L2 Row 5.114 | B9 | `cowork_layer5_function_design.md` (locator: lines 293–294) | Row 7.106 (§6.7) |
+| 57.14 | L2 Row 5.115 | B9 | `cowork_layer5_function_design.md` (locator: lines 294–296) | Row 7.107 (§6.7) |
+| 57.15 | L2 Row 5.116 | B9 | `cowork_layer5_function_design.md` (locator: lines 296–297) | Row 7.108 (§6.7) |
+| 57.16 | L2 Row 5.311 | B9 | `cowork_layer5_function_design.md` (locator: lines 805–808) | Row 7.301 (§6.7) |
+| 57.17 | L2 Row 5.313 | B9 | `cowork_layer5_function_design.md` (locator: lines 809–810) | Row 7.303 (§6.7) — the same sentence; Row 7.108 quotes a longer sentence containing its words |
+| 57.18 | L2 Row 5.5(i) | B10 | `cowork_layer5_function_design.md` (locator: lines 22–23) | Row 7.5 (§6.7) |
+| 57.19 | L2 Row 5.5(ii) | B10 | `cowork_layer5_function_design.md` (locator: lines 22–23) | Row 7.5 (§6.7) |
+| 57.20 | L2 Row 5.27 | B10 | `cowork_layer5_function_design.md` (locator: line 71) | Row 7.24 (§6.7) |
+| 57.21 | L2 Row 5.65 | B10 | `cowork_layer5_function_design.md` (locator: line 150) | Row 7.59 (§6.7) |
+| 57.22 | L2 Row 5.235(ii) | B10 | `cowork_layer5_function_design.md` (locator: line 621) | Row 7.226 (§6.7) |
+| 57.23 | L2 Row 5.237 | B10 | `cowork_layer5_function_design.md` (locator: lines 625–626) | Row 7.228 (§6.7) |
+| 57.24 | L2 Row 5.284 | B10 | `cowork_layer5_function_design.md` (locator: lines 720–721) | Row 7.274 (§6.7) |
+| 57.25 | L2 Row 5.9 | B11 | `cowork_layer5_function_design.md` (locator: lines 35–37) | Row 7.8 (§6.7) |
+| 57.26 | L2 Row 5.10 | B11 | `cowork_layer5_function_design.md` (locator: lines 37–38) | Row 7.9 (§6.7) |
+| 57.27 | L2 Row 5.49 | B11 | `cowork_layer5_function_design.md` (locator: lines 117–119) | Row 7.44 (§6.7) |
+| 57.28 | L2 Row 5.58 | B11 | `cowork_layer5_function_design.md` (locator: lines 139–140) | Row 7.52 (§6.7) |
+| 57.29 | L2 Row 5.99 | B11 | `cowork_layer5_function_design.md` (locator: lines 252–253) | Row 7.93 (§6.7) |
+| 57.30 | L2 Row 5.102 | B11 | `cowork_layer5_function_design.md` (locator: lines 260–264) | Row 7.96 (§6.7) |
+| 57.31 | L2 Row 5.103 | B11 | `cowork_layer5_function_design.md` (locator: lines 264–266) | Row 7.97 (§6.7) |
+| 57.32 | L2 Row 5.108 | B11 | `cowork_layer5_function_design.md` (locator: lines 280–281) | Row 7.100 (§6.7) |
+| 57.33 | L2 Row 5.110 | B11 | `cowork_layer5_function_design.md` (locator: lines 284–285) | Row 7.102 (§6.7) |
+| 57.34 | L2 Row 5.111 | B11 | `cowork_layer5_function_design.md` (locator: lines 286–288) | Row 7.103 (§6.7) |
+| 57.35 | L2 Row 5.112 | B11 | `cowork_layer5_function_design.md` (locator: lines 288–289) | Row 7.104 (§6.7) |
+| 57.36 | L2 Row 5.117 | B11 | `cowork_layer5_function_design.md` (locator: lines 298–299) | Row 7.109 (§6.7) |
+| 57.37 | L2 Row 5.118 | B11 | `cowork_layer5_function_design.md` (locator: lines 299–301) | Row 7.110 (§6.7) |
+| 57.38 | L2 Row 5.119 | B11 | `cowork_layer5_function_design.md` (locator: lines 301–303) | Row 7.111 (§6.7) |
+| 57.39 | L2 Row 5.120 | B11 | `cowork_layer5_function_design.md` (locator: lines 303–304) | Row 7.112 (§6.7) |
+| 57.40 | L2 Row 5.121 | B11 | `cowork_layer5_function_design.md` (locator: lines 305–307) | Row 7.113 (§6.7) |
+| 57.41 | L2 Row 5.122 | B11 | `cowork_layer5_function_design.md` (locator: lines 308–311) | Row 7.114 (§6.7) |
+| 57.42 | L2 Row 5.123 | B11 | `cowork_layer5_function_design.md` (locator: lines 312–314) | Row 7.115 (§6.7) |
+| 57.43 | L2 Row 5.198(i) | B11 | `cowork_layer5_function_design.md` (locator: lines 528–530) | Row 7.189 (§6.7) — the quotation adds the scenario's bold label, read at §6.7 as a title |
+| 57.44 | L2 Row 5.206(ii) | B11 | `cowork_layer5_function_design.md` (locator: lines 551–552) | Row 7.197 (§6.7) |
+| 57.45 | L2 Row 5.240 | B11 | `cowork_layer5_function_design.md` (locator: lines 630–631) | Row 7.230 (§6.7) |
+| 57.46 | L2 Row 5.262 | B11 | `cowork_layer5_function_design.md` (locator: line 679) | Row 7.249 (§6.7) |
+| 57.47 | L2 Row 5.279 | B11 | `cowork_layer5_function_design.md` (locator: lines 712–714) | Row 7.269 (§6.7) |
+| 57.48 | L2 Row 5.100(ii) | B12 | `cowork_layer5_function_design.md` (locator: lines 255–259) | Row 7.94 (§6.7) — the quotation adds the bullet's bold label, read at §6.7 as a title |
+| 57.49 | L2 Row 5.101 | B12 | `cowork_layer5_function_design.md` (locator: line 259) | Row 7.95 (§6.7) |
+| 57.50 | L2 Row 5.37 | B13 | `cowork_layer5_function_design.md` (locator: lines 93–94) | **NEEDS A FULL ROW** — not found — member 7 |
+| 57.51 | L2 Row 5.38(ii) | B13 | `cowork_layer5_function_design.md` (locator: lines 94–95) | Row 7.33 (§6.7) |
+| 57.52 | L2 Row 5.75(i) | B13 | `cowork_layer5_function_design.md` (locator: lines 183–185) | Row 7.68 (§6.7) |
+| 57.53 | L2 Row 5.77(i) | B13 | `cowork_layer5_function_design.md` (locator: lines 186–187) | Row 7.70 (§6.7) |
+| 57.54 | L2 Row 5.124 | B13 | `cowork_layer5_function_design.md` (locator: lines 315–316) | Row 7.116 (§6.7) — the quotation adds the bullet's bold label, read at §6.7 as a title |
+| 57.55 | L2 Row 5.274 | B13 | `cowork_layer5_function_design.md` (locator: lines 699–700) | Row 7.263 (§6.7) |
+| 57.56 | L2 Row 5.39 | B14 | `cowork_layer5_function_design.md` (locator: lines 95–97) | Row 7.34 (§6.7) |
+| 57.57 | L2 Row 5.204(i) | B14 | `cowork_layer5_function_design.md` (locator: lines 541–543) | Row 7.195 (§6.7) |
+| 57.58 | L2 Row 5.91 | B15 | `cowork_layer5_function_design.md` (locator: lines 228–229) | Row 7.85 (§6.7) |
+| 57.59 | L2 Row 5.339 | B16 | `cowork_layer5_function_design.md` (locator: line 868) | Row 7.329 (§6.7) |
+| 57.60 | L2 Row 5.340 | B16 | `cowork_layer5_function_design.md` (locator: lines 869–870) | **NEEDS A FULL ROW** — listed only — §6.7 item 77 |
+| 57.61 | L2 Row 5.341 | B16 | `cowork_layer5_function_design.md` (locator: lines 870–872) | Row 7.330 (§6.7) |
+| 57.62 | L2 Row 5.348 | B17 | `cowork_layer5_function_design.md` (locator: lines 889–891) | **NEEDS A FULL ROW** — listed only — §6.7 item 82 |
+| 57.63 | L2 Row 5.349 | B17 | `cowork_layer5_function_design.md` (locator: lines 891–894) | Row 7.336 (§6.7) |
+| 57.64 | L2 Row 5.350 | B17 | `cowork_layer5_function_design.md` (locator: lines 894–895) | Row 7.337 (§6.7) |
+| 57.65 | L2 Row 6.7(ii) | B18 | `cowork_layer4_chordsymbol_design.md` (locator: line 38) | Row 10.8 (§6.10) — the quotation is a portion of what that row quotes |
+| 57.66 | L2 Row 6.8 | B19 | `cowork_layer4_chordsymbol_design.md` (locator: line 39) | Row 10.9 (§6.10) — the quotation is a portion of what that row quotes |
+| 57.67 | L2 Row 6.163 | B20 | `cowork_layer4_chordsymbol_design.md` (locator: lines 499–500) | Row 10.181 (§6.10) |
+| 57.68 | L2 Row 6.205(ii) | B20 | `cowork_layer4_chordsymbol_design.md` (locator: lines 626–629) | Row 10.221 (§6.10) |
+| 57.69 | L2 Row 7.160(i) | B21 | `cowork_layer3_keymode_design.md` (locator: lines 462–464) | Row 43.105 (§6.43) |
+| 57.70 | L2 Row 10.12 | B22 | `cowork_joint_estimator_factorization.md` (locator: lines 38–39) | Row 42.6 (§6.42) |
+| 57.71 | L2 Row 17.23(ii) | B23 | `ARCHITECTURE.md` (locator: lines 81–84) | Row 15.21 (§6.15) |
+| 57.72 | L2 Row 17.39(i) | B23 | `ARCHITECTURE.md` (locator: lines 137–142) | Row 15.37 (§6.15) |
+| 57.73 | L2 Row 17.56(ii) | B23 | `ARCHITECTURE.md` (locator: lines 202–206) | Row 15.55 (§6.15) |
+| 57.74 | L2 Row 17.25(i) | B24 | `ARCHITECTURE.md` (locator: lines 87–94) | Row 15.23 (§6.15) |
+| 57.75 | L2 Row 17.44(ii) | B24 | `ARCHITECTURE.md` (locator: lines 158–165) | Row 15.42 (§6.15) |
+| 57.76 | L2 Row 17.52(ii) | B24 | `ARCHITECTURE.md` (locator: lines 185–193) | Row 15.50 (§6.15) |
+| 57.77 | L2 Row 17.27 | B25 | `ARCHITECTURE.md` (locator: lines 94–97) | Row 15.25 (§6.15) |
+| 57.78 | L2 Row 21.42(ii) | B26 | `ARCHITECTURE.md` (locator: lines 1078–1079) | Row 19.31 (§6.19) |
+| 57.79 | L2 Row 21.48(ii) | B26 | `ARCHITECTURE.md` (locator: lines 1127–1138) | Row 19.38 (§6.19) |
+| 57.80 | L2 Row 21.48(iv) | B27 | `ARCHITECTURE.md` (locator: lines 1127–1138) | Row 19.38 (§6.19) |
+| 57.81 | L2 Row 21.48(v) | B28 | `ARCHITECTURE.md` (locator: lines 1127–1138) | Row 19.38 (§6.19) |
+| 57.82 | L2 Row 21.49(iii) | B29 | `ARCHITECTURE.md` (locator: lines 1138–1141) | Row 19.39 (§6.19) |
+| 57.83 | L2 Row 21.50 | B30 | `ARCHITECTURE.md` (locator: lines 1142–1144) | Row 19.41 (§6.19) |
+| 57.84 | L2 Row 21.64(iii) | B31 | `ARCHITECTURE.md` (locator: lines 1187–1196) | Row 19.59 (§6.19) |
+| 57.85 | L2 Row 22.50(i) | B32 | `ARCHITECTURE.md` (locator: lines 1612–1614) | Row 20.31 (§6.20) |
+| 57.86 | L2 Row 22.50(ii) | B32 | `ARCHITECTURE.md` (locator: lines 1612–1614) | Row 20.31 (§6.20) |
+| 57.87 | L2 Row 22.51 | B32 | `ARCHITECTURE.md` (locator: lines 1616–1618) | Row 20.32 (§6.20) |
+| 57.88 | L2 Row 22.52(i) | B32 | `ARCHITECTURE.md` (locator: lines 1620–1623) | Row 20.33 (§6.20) |
+| 57.89 | L2 Row 22.87(i) | B33 | `ARCHITECTURE.md` (locator: lines 2194–2197) | Row 3.1 (§6.3) |
+| 57.90 | L2 Row 22.89 | B34 | `ARCHITECTURE.md` (locator: lines 2202–2203) | Row 3.3 (§6.3) |
+| 57.91 | L2 Row 22.90(i) | B35 | `ARCHITECTURE.md` (locator: lines 2208–2212) | Rows 3.4 and 3.5 (§6.3) — the quotation is the ★ block's title, listed at §6.3 as item 9, which names those rows as tabulating its claims |
+| 57.92 | L2 Row 22.90(ii) | B35 | `ARCHITECTURE.md` (locator: lines 2208–2212) | Rows 3.4 and 3.5 (§6.3) — the quotation is the ★ block's title, listed at §6.3 as item 9, which names those rows as tabulating its claims |
+| 57.93 | L2 Row 22.91 | B35 | `ARCHITECTURE.md` (locator: lines 2212–2213) | Row 3.4 (§6.3) |
+| 57.94 | L2 Row 22.92(i) | B35 | `ARCHITECTURE.md` (locator: lines 2213–2218) | Row 3.5 (§6.3) |
+| 57.95 | L2 Row 22.92(ii) | B35 | `ARCHITECTURE.md` (locator: lines 2213–2218) | Row 3.5 (§6.3) |
+| 57.96 | L2 Row 22.93 | B35 | `ARCHITECTURE.md` (locator: lines 2225–2227) | Row 3.6 (§6.3) |
+| 57.97 | L2 Row 22.98(i) | B36 | `ARCHITECTURE.md` (locator: lines 2259–2261) | **NEEDS A FULL ROW** — in member 20's cut |
+| 57.98 | L2 Row 23.291 | B37 | `ARCHITECTURE.md` (locator: lines 3897–3898) | Row 4.22 (§6.4) |
+| 57.99 | L2 Row 23.292 | B37 | `ARCHITECTURE.md` (locator: line 3900) | Row 4.23 (§6.4) |
+| 57.100 | L2 Row 23.293 | B37 | `ARCHITECTURE.md` (locator: line 3901) | Row 4.24 (§6.4) |
+| 57.101 | L2 Row 23.294 | B37 | `ARCHITECTURE.md` (locator: line 3902) | Row 4.25 (§6.4) |
+| 57.102 | L2 Row 23.295 | B37 | `ARCHITECTURE.md` (locator: lines 3903–3904) | Row 4.26 (§6.4) |
+| 57.103 | L2 Row 23.296 | B37 | `ARCHITECTURE.md` (locator: line 3905) | Row 4.27 (§6.4) |
+| 57.104 | L2 Row 23.297 | B37 | `ARCHITECTURE.md` (locator: lines 3907–3908) | Row 4.28 (§6.4) |
+| 57.105 | L2 Row 23.298 | B37 | `ARCHITECTURE.md` (locator: lines 3908–3910) | Row 4.29 (§6.4) |
+| 57.106 | L2 Row 23.340 | B38 | `ARCHITECTURE.md` (locator: lines 4142–4143) | Row 21.191 (§6.21) |
+| 57.107 | L2 Row 26.1 | B39 | `ARCHITECTURE.md` (locator: lines 5686–5693) | **NEEDS A FULL ROW** — in member 24's cut |
+| 57.108 | L2 Row 26.2 | B39 | `ARCHITECTURE.md` (locator: lines 5693–5694) | **NEEDS A FULL ROW** — in member 24's cut |
+| 57.109 | L2 Row 26.3 | B39 | `ARCHITECTURE.md` (locator: lines 5694–5695) | **NEEDS A FULL ROW** — in member 24's cut |
+| 57.110 | L2 Row 26.5 | B39 | `ARCHITECTURE.md` (locator: lines 5696–5698) | **NEEDS A FULL ROW** — in member 24's cut |
+| 57.111 | L2 Row 26.6 | B39 | `ARCHITECTURE.md` (locator: lines 5698–5700) | **NEEDS A FULL ROW** — in member 24's cut |
+| 57.112 | L2 Row 26.7 | B40 | `ARCHITECTURE.md` (locator: line 5757) | **NEEDS A FULL ROW** — in member 24's cut |
+| 57.113 | L2 Row 26.8 | B40 | `ARCHITECTURE.md` (locator: line 5758) | **NEEDS A FULL ROW** — in member 24's cut |
+| 57.114 | L2 Row 26.9 | B40 | `ARCHITECTURE.md` (locator: line 5759) | **NEEDS A FULL ROW** — in member 24's cut |
+| 57.115 | L2 Row 26.10 | B40 | `ARCHITECTURE.md` (locator: line 5760) | **NEEDS A FULL ROW** — in member 24's cut |
+| 57.116 | L2 Row 26.11 | B40 | `ARCHITECTURE.md` (locator: line 5761) | **NEEDS A FULL ROW** — in member 24's cut |
+| 57.117 | L2 Row 26.12 | B40 | `ARCHITECTURE.md` (locator: line 5762) | **NEEDS A FULL ROW** — in member 24's cut |
+| 57.118 | L2 Row 26.13 | B40 | `ARCHITECTURE.md` (locator: line 5763) | **NEEDS A FULL ROW** — in member 24's cut |
+| 57.119 | L2 Row 30.26(ii) | B41 | `ARCHITECTURE.md` (locator: lines 7136–7138) | **NEEDS A FULL ROW** — in member 28's cut |
+| 57.120 | L2 Row 30.50 | B42 | `ARCHITECTURE.md` (locator: line 7261) | Row 28.31 (§6.28) |
+| 57.121 | L2 Row 30.51 | B42 | `ARCHITECTURE.md` (locator: line 7262) | Row 28.32 (§6.28) |
+| 57.122 | L2 Row 30.52 | B42 | `ARCHITECTURE.md` (locator: line 7263) | Row 28.33 (§6.28) |
+| 57.123 | L2 Row 30.53 | B42 | `ARCHITECTURE.md` (locator: line 7264) | Row 28.34 (§6.28) |
+| 57.124 | L2 Row 36.1 | B43 | `ARCHITECTURE.md` (locator: lines 8144–8146) | **NEEDS A FULL ROW** — listed only — §6.33 item 3 |
+| 57.125 | L2 Row 39.325(i) | B44 | `docs/scoring_model.md` (locator: lines 1582–1583) | Row 35.155 (§6.35) |
+| 57.126 | L2 Row 40.1 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 23–28) | **NEEDS A FULL ROW** — in member 36's cut |
+| 57.127 | L2 Row 40.5 | B45 | `cowork_phrase_boundary_design.md` (locator: line 42) | Row 36.5 (§6.36) |
+| 57.128 | L2 Row 40.7 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 49–50) | Row 36.10 (§6.36) |
+| 57.129 | L2 Row 40.8 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 50–52) | Row 36.11 (§6.36) |
+| 57.130 | L2 Row 40.9 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 55–56) | Row 36.13 (§6.36) |
+| 57.131 | L2 Row 40.10 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 56–58) | Row 36.14 (§6.36) |
+| 57.132 | L2 Row 40.11(ii) | B45 | `cowork_phrase_boundary_design.md` (locator: lines 58–59) | Row 36.15 (§6.36) |
+| 57.133 | L2 Row 40.15 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 68–69) | Row 36.19 (§6.36) |
+| 57.134 | L2 Row 40.16 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 70–72) | Row 36.20 (§6.36) |
+| 57.135 | L2 Row 40.17 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 73–74) | Row 36.21 (§6.36) — the quotation adds the bullet's bold label, read at §6.36 as a title |
+| 57.136 | L2 Row 40.18 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 74–76) | Row 36.22 (§6.36) |
+| 57.137 | L2 Row 40.24 | B45 | `cowork_phrase_boundary_design.md` (locator: line 83) | Row 36.27 (§6.36) |
+| 57.138 | L2 Row 40.25 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 83–84) | Row 36.28 (§6.36) |
+| 57.139 | L2 Row 40.26 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 84–85) | Row 36.29 (§6.36) |
+| 57.140 | L2 Row 40.27 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 85–86) | Row 36.30 (§6.36) |
+| 57.141 | L2 Row 40.30 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 97–101) | Row 36.33 (§6.36) |
+| 57.142 | L2 Row 40.31 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 101–102) | Row 36.34 (§6.36) |
+| 57.143 | L2 Row 40.32 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 102–103) | Row 36.35 (§6.36) |
+| 57.144 | L2 Row 40.34 | B45 | `cowork_phrase_boundary_design.md` (locator: lines 107–110) | Row 36.37 (§6.36) |
+| 57.145 | L2 Row 40.4 | B46 | `cowork_phrase_boundary_design.md` (locator: line 41) | Row 36.4 (§6.36) |
+| 57.146 | L2 Row 40.12(i) | B46 | `cowork_phrase_boundary_design.md` (locator: lines 59–61) | Row 36.16 (§6.36) — the quotation is a portion of what that row quotes |
+| 57.147 | L2 Row 40.6 | B47 | `cowork_phrase_boundary_design.md` (locator: line 43) | Row 36.6 (§6.36) |
+| 57.148 | L2 Row 40.140 | B47 | `cowork_phrase_boundary_design.md` (locator: lines 354–355) | Row 36.133 (§6.36) |
+| 57.149 | L2 Row 40.14 | B48 | `cowork_phrase_boundary_design.md` (locator: lines 67–68) | Row 36.18 (§6.36) |
+| 57.150 | L2 Row 40.96 | B48 | `cowork_phrase_boundary_design.md` (locator: lines 258–259) | Row 36.90 (§6.36) |
+| 57.151 | L2 Row 40.33 | B49 | `cowork_phrase_boundary_design.md` (locator: lines 103–105) | Row 36.36 (§6.36) |
+| 57.152 | L2 Row 40.137 | B49 | `cowork_phrase_boundary_design.md` (locator: lines 347–349) | Row 36.130 (§6.36) |
+| 57.153 | L2 Row 40.36 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 116–117) | **NEEDS A FULL ROW** — in member 36's cut |
+| 57.154 | L2 Row 40.38 | B50 | `cowork_phrase_boundary_design.md` (locator: line 120) | **NEEDS A FULL ROW** — in member 36's cut |
+| 57.155 | L2 Row 40.39 | B50 | `cowork_phrase_boundary_design.md` (locator: line 121) | **NEEDS A FULL ROW** — in member 36's cut |
+| 57.156 | L2 Row 40.40 | B50 | `cowork_phrase_boundary_design.md` (locator: line 122) | **NEEDS A FULL ROW** — in member 36's cut |
+| 57.157 | L2 Row 40.41 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 123–124) | **NEEDS A FULL ROW** — in member 36's cut |
+| 57.158 | L2 Row 40.42 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 126–130) | Row 36.41 (§6.36) |
+| 57.159 | L2 Row 40.43 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 130–132) | Row 56.24 (§6.56) — the full row §6.56 builds for this sentence; the L0/L1 quotation it carries elides a parenthesis this quotation keeps |
+| 57.160 | L2 Row 40.44 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 132–134) | Row 36.42 (§6.36) |
+| 57.161 | L2 Row 40.45 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 136–138) | Row 36.43 (§6.36) |
+| 57.162 | L2 Row 40.47 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 142–147) | Row 36.45 (§6.36) |
+| 57.163 | L2 Row 40.48 | B50 | `cowork_phrase_boundary_design.md` (locator: line 148) | Row 36.46 (§6.36) |
+| 57.164 | L2 Row 40.49 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 149–151) | Row 36.47 (§6.36) |
+| 57.165 | L2 Row 40.50 | B50 | `cowork_phrase_boundary_design.md` (locator: line 152) | Row 36.48 (§6.36) |
+| 57.166 | L2 Row 40.51 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 153–156) | Row 36.49 (§6.36) |
+| 57.167 | L2 Row 40.52 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 157–159) | Row 36.51 (§6.36) |
+| 57.168 | L2 Row 40.53 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 160–161) | Row 36.52 (§6.36) |
+| 57.169 | L2 Row 40.54 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 162–164) | Row 36.53 (§6.36) |
+| 57.170 | L2 Row 40.55 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 167–168) | **NEEDS A FULL ROW** — in member 36's cut |
+| 57.171 | L2 Row 40.56 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 168–170) | **NEEDS A FULL ROW** — in member 36's cut |
+| 57.172 | L2 Row 40.57 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 172–175) | Row 36.54 (§6.36) |
+| 57.173 | L2 Row 40.58 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 175–176) | **NEEDS A FULL ROW** — listed only — §6.36 item 22 |
+| 57.174 | L2 Row 40.59 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 176–178) | Row 36.55 (§6.36) |
+| 57.175 | L2 Row 40.61 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 182–183) | Row 36.57 (§6.36) |
+| 57.176 | L2 Row 40.62 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 183–184) | Row 36.58 (§6.36) |
+| 57.177 | L2 Row 40.63 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 184–185) | Row 36.59 (§6.36) |
+| 57.178 | L2 Row 40.64 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 188–190) | Row 36.60 (§6.36) |
+| 57.179 | L2 Row 40.66 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 194–197) | Row 36.61 (§6.36) |
+| 57.180 | L2 Row 40.67 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 197–199) | Row 36.62 (§6.36) |
+| 57.181 | L2 Row 40.68 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 199–200) | Row 36.63 (§6.36) |
+| 57.182 | L2 Row 40.69 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 200–201) | Row 36.64 (§6.36) |
+| 57.183 | L2 Row 40.70 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 201–203) | Row 36.65 (§6.36) |
+| 57.184 | L2 Row 40.71 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 206–208) | Row 36.67 (§6.36) |
+| 57.185 | L2 Row 40.73 | B50 | `cowork_phrase_boundary_design.md` (locator: lines 211–213) | Row 36.69 (§6.36) |
+| 57.186 | L2 Row 40.74(i) | B50 | `cowork_phrase_boundary_design.md` (locator: lines 214–216) | Row 36.70 (§6.36) |
+| 57.187 | L2 Row 40.80 | B51 | `cowork_phrase_boundary_design.md` (locator: lines 231–232) | Row 36.76 (§6.36) — the quotation adds the scenario's bold label, read at §6.36 as a title |
+| 57.188 | L2 Row 40.81 | B51 | `cowork_phrase_boundary_design.md` (locator: lines 233–234) | Row 36.77 (§6.36) — the quotation adds the scenario's bold label, read at §6.36 as a title |
+| 57.189 | L2 Row 40.82 | B51 | `cowork_phrase_boundary_design.md` (locator: lines 235–237) | Row 36.78 (§6.36) — the quotation adds the scenario's bold label, read at §6.36 as a title |
+| 57.190 | L2 Row 40.83 | B51 | `cowork_phrase_boundary_design.md` (locator: line 238) | Row 36.79 (§6.36) — the quotation adds the scenario's bold label, read at §6.36 as a title |
+| 57.191 | L2 Row 40.84 | B51 | `cowork_phrase_boundary_design.md` (locator: lines 239–241) | Row 36.80 (§6.36) — the quotation adds the scenario's bold label, read at §6.36 as a title |
+| 57.192 | L2 Row 40.85 | B51 | `cowork_phrase_boundary_design.md` (locator: lines 242–244) | Row 36.81 (§6.36) — the quotation adds the scenario's bold label, read at §6.36 as a title |
+| 57.193 | L2 Row 40.86 | B51 | `cowork_phrase_boundary_design.md` (locator: lines 244–245) | Row 36.82 (§6.36) |
+| 57.194 | L2 Row 40.87 | B51 | `cowork_phrase_boundary_design.md` (locator: lines 246–247) | Row 36.83 (§6.36) — the quotation adds the scenario's bold label, read at §6.36 as a title |
+| 57.195 | L2 Row 40.88 | B51 | `cowork_phrase_boundary_design.md` (locator: line 247) | Row 36.84 (§6.36) |
+| 57.196 | L2 Row 40.89 | B52 | `cowork_phrase_boundary_design.md` (locator: line 250) | Row 36.85 (§6.36) — the quotation is the decision's label, read at §6.36 as a title; that row tabulates the body sentence stating its claim |
+| 57.197 | L2 Row 40.90 | B52 | `cowork_phrase_boundary_design.md` (locator: lines 250–251) | Row 36.85 (§6.36) |
+| 57.198 | L2 Row 40.97 | B52 | `cowork_phrase_boundary_design.md` (locator: line 260) | Row 36.91 (§6.36) — the quotation is the decision's label, read at §6.36 as a title; that row tabulates the body sentence stating its claim |
+| 57.199 | L2 Row 40.98 | B52 | `cowork_phrase_boundary_design.md` (locator: lines 260–261) | Row 36.91 (§6.36) |
+| 57.200 | L2 Row 40.99 | B52 | `cowork_phrase_boundary_design.md` (locator: lines 266–267) | Rows 36.94 and 36.95 (§6.36) — the quotation is the decision's label, read at §6.36 as a title; those rows tabulate the sentences stating its two claims |
+| 57.201 | L2 Row 40.100 | B52 | `cowork_phrase_boundary_design.md` (locator: lines 267–268) | Row 36.94 (§6.36) |
+| 57.202 | L2 Row 40.102 | B52 | `cowork_phrase_boundary_design.md` (locator: line 273) | Row 36.97 (§6.36) — the quotation is the decision's label, read at §6.36 as a title; that row tabulates the body sentence stating its claim |
+| 57.203 | L2 Row 40.103 | B52 | `cowork_phrase_boundary_design.md` (locator: lines 273–274) | Row 36.97 (§6.36) |
+| 57.204 | L2 Row 40.101 | B53 | `cowork_phrase_boundary_design.md` (locator: lines 271–272) | Row 36.96 (§6.36) |
+| 57.205 | L2 Row 40.111 | B53 | `cowork_phrase_boundary_design.md` (locator: lines 294–295) | Row 36.106 (§6.36) |
+| 57.206 | L2 Row 40.112 | B54 | `cowork_phrase_boundary_design.md` (locator: lines 296–297) | Row 36.107 (§6.36) |
+| 57.207 | L2 Row 40.113 | B54 | `cowork_phrase_boundary_design.md` (locator: line 297) | **NEEDS A FULL ROW** — listed only — §6.36 item 35 |
+| 57.208 | L2 Row 40.115 | B54 | `cowork_phrase_boundary_design.md` (locator: lines 300–301) | Row 36.109 (§6.36) |
+| 57.209 | L2 Row 40.117 | B54 | `cowork_phrase_boundary_design.md` (locator: lines 305–307) | Row 36.111 (§6.36) |
+| 57.210 | L2 Row 40.119 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 312–313) | Row 36.113 (§6.36) |
+| 57.211 | L2 Row 40.120 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 314–315) | Row 36.114 (§6.36) |
+| 57.212 | L2 Row 40.121 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 316–317) | Row 36.115 (§6.36) — the quotation is a portion of what that row quotes |
+| 57.213 | L2 Row 40.122 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 317–319) | Row 36.115 (§6.36) — the quotation is a portion of what that row quotes |
+| 57.214 | L2 Row 40.123 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 320–321) | Row 36.116 (§6.36) |
+| 57.215 | L2 Row 40.124 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 322–323) | Row 36.117 (§6.36) |
+| 57.216 | L2 Row 40.125 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 324–325) | Row 36.118 (§6.36) — the quotation is a portion of what that row quotes |
+| 57.217 | L2 Row 40.126 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 327–328) | Row 36.119 (§6.36) |
+| 57.218 | L2 Row 40.127 | B55 | `cowork_phrase_boundary_design.md` (locator: line 329) | Row 36.120 (§6.36) |
+| 57.219 | L2 Row 40.128 | B55 | `cowork_phrase_boundary_design.md` (locator: line 330) | Row 36.121 (§6.36) |
+| 57.220 | L2 Row 40.129 | B55 | `cowork_phrase_boundary_design.md` (locator: line 331) | Row 36.122 (§6.36) |
+| 57.221 | L2 Row 40.130 | B55 | `cowork_phrase_boundary_design.md` (locator: line 332) | Row 36.123 (§6.36) |
+| 57.222 | L2 Row 40.131 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 333–335) | Row 36.124 (§6.36) |
+| 57.223 | L2 Row 40.132 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 336–338) | Row 36.125 (§6.36) |
+| 57.224 | L2 Row 40.133 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 339–340) | Row 36.126 (§6.36) |
+| 57.225 | L2 Row 40.134 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 341–342) | Row 36.127 (§6.36) |
+| 57.226 | L2 Row 40.135 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 343–344) | Row 36.128 (§6.36) |
+| 57.227 | L2 Row 40.136 | B55 | `cowork_phrase_boundary_design.md` (locator: lines 345–346) | Row 36.129 (§6.36) |
+| 57.228 | L2 Row 40.139 | B55 | `cowork_phrase_boundary_design.md` (locator: line 353) | Row 36.132 (§6.36) |
+| 57.229 | L2 Row 40.150(ii) | B56 | `cowork_phrase_boundary_design.md` (locator: lines 380–382) | Row 36.144 (§6.36) |
+| 57.230 | L2 Row 40.155 | B56 | `cowork_phrase_boundary_design.md` (locator: lines 393–395) | Row 36.149 (§6.36) |
+| 57.231 | L2 Row 40.156 | B56 | `cowork_phrase_boundary_design.md` (locator: lines 396–397) | Row 36.150 (§6.36) |
+| 57.232 | L2 Row 40.157 | B56 | `cowork_phrase_boundary_design.md` (locator: lines 398–402) | Row 36.152 (§6.36) |
+| 57.233 | L2 Row 40.158 | B56 | `cowork_phrase_boundary_design.md` (locator: lines 402–404) | Row 36.153 (§6.36) |
+| 57.234 | L2 Row 40.159 | B56 | `cowork_phrase_boundary_design.md` (locator: lines 405–408) | Row 36.154 (§6.36) — the quotation adds the item's bold label, read at §6.36 as a title |
+| 57.235 | L2 Row 40.160 | B56 | `cowork_phrase_boundary_design.md` (locator: lines 409–412) | Row 36.155 (§6.36) — the quotation adds the item's bold label, read at §6.36 as a title |
+| 57.236 | L2 Row 41.3(i) | B57 | `cowork_layer6_grouping_design.md` (locator: lines 12–15) | Row 8.4 (§6.8) |
+| 57.237 | L2 Row 41.85 | B57 | `cowork_layer6_grouping_design.md` (locator: lines 234–237) | Row 8.72 (§6.8) |
+| 57.238 | L2 Row 41.7(i) | B58 | `cowork_layer6_grouping_design.md` (locator: lines 22–26) | Row 8.8 (§6.8) |
+| 57.239 | L2 Row 41.14 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 57–58) | Row 8.11 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.240 | L2 Row 41.15 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 59–60) | Row 8.12 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.241 | L2 Row 41.16 | B58 | `cowork_layer6_grouping_design.md` (locator: line 60) | Row 8.12 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.242 | L2 Row 41.18 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 64–67) | Row 8.14 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.243 | L2 Row 41.20 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 73–74) | Row 8.14 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.244 | L2 Row 41.21 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 74–75) | Row 8.14 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.245 | L2 Row 41.23 | B58 | `cowork_layer6_grouping_design.md` (locator: line 78) | Row 8.15 (§6.8) — the quotation is one sentence of those that row quotes |
+| 57.246 | L2 Row 41.27(ii) | B58 | `cowork_layer6_grouping_design.md` (locator: lines 86–87) | Row 8.19 (§6.8) |
+| 57.247 | L2 Row 41.28 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 90–91) | Row 8.20 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.248 | L2 Row 41.32 | B58 | `cowork_layer6_grouping_design.md` (locator: line 107) | Row 8.24 (§6.8) |
+| 57.249 | L2 Row 41.33 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 107–109) | **NEEDS A FULL ROW** — listed only — §6.8 item 11 |
+| 57.250 | L2 Row 41.34 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 109–110) | Row 8.25 (§6.8) |
+| 57.251 | L2 Row 41.35 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 110–111) | Row 8.26 (§6.8) |
+| 57.252 | L2 Row 41.37 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 117–118) | Row 8.28 (§6.8) |
+| 57.253 | L2 Row 41.38 | B58 | `cowork_layer6_grouping_design.md` (locator: line 119) | Row 8.29 (§6.8) |
+| 57.254 | L2 Row 41.39 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 120–122) | Row 8.30 (§6.8) |
+| 57.255 | L2 Row 41.40 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 123–124) | Row 8.31 (§6.8) |
+| 57.256 | L2 Row 41.53 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 155–157) | Row 8.42 (§6.8) |
+| 57.257 | L2 Row 41.55 | B58 | `cowork_layer6_grouping_design.md` (locator: line 162) | Row 8.44 (§6.8) |
+| 57.258 | L2 Row 41.57 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 166–169) | Row 8.45 (§6.8) |
+| 57.259 | L2 Row 41.58 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 169–171) | **NEEDS A FULL ROW** — listed only — §6.8 item 18 |
+| 57.260 | L2 Row 41.59 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 172–173) | Row 8.46 (§6.8) |
+| 57.261 | L2 Row 41.60 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 174–175) | Row 8.47 (§6.8) |
+| 57.262 | L2 Row 41.61 | B58 | `cowork_layer6_grouping_design.md` (locator: line 176) | Row 8.48 (§6.8) |
+| 57.263 | L2 Row 41.67 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 186–187) | Row 8.54 (§6.8) |
+| 57.264 | L2 Row 41.71 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 203–205) | Row 8.58 (§6.8) |
+| 57.265 | L2 Row 41.73 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 210–211) | Row 8.60 (§6.8) |
+| 57.266 | L2 Row 41.74 | B58 | `cowork_layer6_grouping_design.md` (locator: line 211) | Row 8.61 (§6.8) |
+| 57.267 | L2 Row 41.75 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 211–213) | Row 8.62 (§6.8) |
+| 57.268 | L2 Row 41.76 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 214–217) | Row 8.63 (§6.8) |
+| 57.269 | L2 Row 41.77 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 217–218) | Row 8.64 (§6.8) |
+| 57.270 | L2 Row 41.78 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 218–222) | Row 8.65 (§6.8) |
+| 57.271 | L2 Row 41.80 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 225–226) | Row 8.67 (§6.8) |
+| 57.272 | L2 Row 41.81 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 227–228) | Row 8.68 (§6.8) |
+| 57.273 | L2 Row 41.82 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 228–230) | Row 8.69 (§6.8) |
+| 57.274 | L2 Row 41.83 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 231–233) | Row 8.70 (§6.8) |
+| 57.275 | L2 Row 41.87 | B58 | `cowork_layer6_grouping_design.md` (locator: line 246) | Row 8.74 (§6.8) |
+| 57.276 | L2 Row 41.88 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 246–248) | Row 8.75 (§6.8) |
+| 57.277 | L2 Row 41.90 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 251–253) | Row 8.77 (§6.8) |
+| 57.278 | L2 Row 41.91 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 253–254) | **NEEDS A FULL ROW** — listed only — §6.8 item 25 |
+| 57.279 | L2 Row 41.93(i) | B58 | `cowork_layer6_grouping_design.md` (locator: lines 262–264) | Row 8.79 (§6.8) |
+| 57.280 | L2 Row 41.97 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 270–273) | Row 8.82 (§6.8) |
+| 57.281 | L2 Row 41.98 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 276–277) | Row 8.83 (§6.8) |
+| 57.282 | L2 Row 41.99 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 278–280) | Row 8.84 (§6.8) |
+| 57.283 | L2 Row 41.100 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 280–281) | **NEEDS A FULL ROW** — listed only — §6.8 item 27 |
+| 57.284 | L2 Row 41.101 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 282–283) | Row 8.85 (§6.8) |
+| 57.285 | L2 Row 41.102 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 284–285) | Row 8.86 (§6.8) |
+| 57.286 | L2 Row 41.103 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 285–287) | Row 8.87 (§6.8) |
+| 57.287 | L2 Row 41.104 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 288–289) | Row 8.88 (§6.8) |
+| 57.288 | L2 Row 41.105 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 307–309) | Row 8.95 (§6.8) |
+| 57.289 | L2 Row 41.106 | B58 | `cowork_layer6_grouping_design.md` (locator: line 309) | Row 8.96 (§6.8) |
+| 57.290 | L2 Row 41.107 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 311–312) | **NEEDS A FULL ROW** — listed only — §6.8 item 28 |
+| 57.291 | L2 Row 41.110 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 318–319) | Row 8.101 (§6.8) — the quotation adds the bullet's bold label, read at §6.8 as a title |
+| 57.292 | L2 Row 41.111 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 319–320) | Row 8.102 (§6.8) |
+| 57.293 | L2 Row 41.114 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 325–326) | Row 8.105 (§6.8) |
+| 57.294 | L2 Row 41.118 | B58 | `cowork_layer6_grouping_design.md` (locator: line 334) | Row 8.109 (§6.8) |
+| 57.295 | L2 Row 41.123 | B58 | `cowork_layer6_grouping_design.md` (locator: line 345) | Row 8.112 (§6.8) — the quotation adds the decision's bold lead, read at §6.8 as a title |
+| 57.296 | L2 Row 41.127 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 353–354) | Row 8.115 (§6.8) |
+| 57.297 | L2 Row 41.128 | B58 | `cowork_layer6_grouping_design.md` (locator: line 355) | Row 8.116 (§6.8) |
+| 57.298 | L2 Row 41.141 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 402–403) | Row 8.129 (§6.8) |
+| 57.299 | L2 Row 41.142 | B58 | `cowork_layer6_grouping_design.md` (locator: lines 404–405) | Row 8.130 (§6.8) |
+| 57.300 | L2 Row 41.13 | B59 | `cowork_layer6_grouping_design.md` (locator: lines 56–57) | Row 8.11 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.301 | L2 Row 41.72 | B59 | `cowork_layer6_grouping_design.md` (locator: lines 205–207) | Row 8.59 (§6.8) |
+| 57.302 | L2 Row 41.19 | B60 | `cowork_layer6_grouping_design.md` (locator: lines 67–69) | Row 8.14 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.303 | L2 Row 41.24 | B60 | `cowork_layer6_grouping_design.md` (locator: lines 79–80) | Row 8.16 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.304 | L2 Row 41.25 | B60 | `cowork_layer6_grouping_design.md` (locator: lines 80–81) | Row 8.16 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.305 | L2 Row 41.79 | B60 | `cowork_layer6_grouping_design.md` (locator: lines 222–224) | Row 8.66 (§6.8) |
+| 57.306 | L2 Row 41.26 | B61 | `cowork_layer6_grouping_design.md` (locator: lines 83–84) | Row 8.18 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.307 | L2 Row 41.41 | B61 | `cowork_layer6_grouping_design.md` (locator: lines 125–127) | Row 8.32 (§6.8) |
+| 57.308 | L2 Row 41.42 | B61 | `cowork_layer6_grouping_design.md` (locator: lines 127–128) | Row 8.33 (§6.8) |
+| 57.309 | L2 Row 41.62 | B61 | `cowork_layer6_grouping_design.md` (locator: lines 177–179) | Row 8.49 (§6.8) |
+| 57.310 | L2 Row 41.63 | B61 | `cowork_layer6_grouping_design.md` (locator: lines 179–180) | Row 8.50 (§6.8) |
+| 57.311 | L2 Row 41.64 | B61 | `cowork_layer6_grouping_design.md` (locator: lines 180–181) | Row 8.51 (§6.8) |
+| 57.312 | L2 Row 41.29 | B62 | `cowork_layer6_grouping_design.md` (locator: lines 93–94) | Row 8.21 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.313 | L2 Row 41.30 | B62 | `cowork_layer6_grouping_design.md` (locator: line 97) | Row 8.22 (§6.8) — the quotation is one sentence of those that row quotes |
+| 57.314 | L2 Row 41.43 | B62 | `cowork_layer6_grouping_design.md` (locator: line 131) | Row 8.34 (§6.8) |
+| 57.315 | L2 Row 41.122 | B62 | `cowork_layer6_grouping_design.md` (locator: line 341) | **NEEDS A FULL ROW** — not found — member 8 (the decision's label, read at §6.8 as a title) |
+| 57.316 | L2 Row 41.31 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 102–104) | Row 8.23 (§6.8) — the quotation is a portion of what that row quotes |
+| 57.317 | L2 Row 41.44 | B63 | `cowork_layer6_grouping_design.md` (locator: line 135) | Row 8.35 (§6.8) |
+| 57.318 | L2 Row 41.45 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 135–136) | **NEEDS A FULL ROW** — listed only — §6.8 item 14 |
+| 57.319 | L2 Row 41.46 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 136–140) | Row 8.36 (§6.8) |
+| 57.320 | L2 Row 41.47 | B63 | `cowork_layer6_grouping_design.md` (locator: line 140) | **NEEDS A FULL ROW** — listed only — §6.8 item 15 |
+| 57.321 | L2 Row 41.124 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 348–349) | Row 8.113 (§6.8) |
+| 57.322 | L2 Row 41.125 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 349–350) | **NEEDS A FULL ROW** — listed only — §6.8 item 35 |
+| 57.323 | L2 Row 41.126 | B63 | `cowork_layer6_grouping_design.md` (locator: lines 350–353) | Row 8.114 (§6.8) |
+| 57.324 | L2 Row 41.152 | B63 | `cowork_layer6_grouping_design.md` (locator: line 452) | Row 8.141 (§6.8) |
+| 57.325 | L2 Row 41.51 | B64 | `cowork_layer6_grouping_design.md` (locator: lines 149–150) | Row 8.40 (§6.8) |
+| 57.326 | L2 Row 41.54 | B65 | `cowork_layer6_grouping_design.md` (locator: lines 158–161) | Row 8.43 (§6.8) |
+| 57.327 | L2 Row 41.65 | B66 | `cowork_layer6_grouping_design.md` (locator: lines 183–186) | Row 8.52 (§6.8) |
+| 57.328 | L2 Row 41.66 | B66 | `cowork_layer6_grouping_design.md` (locator: line 186) | Row 8.53 (§6.8) |
+| 57.329 | L2 Row 41.89(ii) | B66 | `cowork_layer6_grouping_design.md` (locator: lines 248–251) | Row 8.76 (§6.8) |
+| 57.330 | L2 Row 41.129 | B66 | `cowork_layer6_grouping_design.md` (locator: line 358) | Row 8.117 (§6.8) |
+| 57.331 | L2 Row 41.157 | B66 | `cowork_layer6_grouping_design.md` (locator: lines 461–462) | Row 8.145 (§6.8) |
+| 57.332 | L2 Row 41.116 | B67 | `cowork_layer6_grouping_design.md` (locator: lines 330–331) | Row 8.107 (§6.8) — the quotation elides |
+| 57.333 | L2 Row 43.35(i) | B68 | `cowork_target_architecture.md` (locator: lines 102–105) | Row 38.18 (§6.38) |
+| 57.334 | L2 Row 43.95 | B68 | `cowork_target_architecture.md` (locator: lines 250–252) | Row 38.78 (§6.38) |
+| 57.335 | L2 Row 43.96(i) | B68 | `cowork_target_architecture.md` (locator: lines 252–253) | Row 38.79 (§6.38) |
+| 57.336 | L2 Row 43.97(i) | B68 | `cowork_target_architecture.md` (locator: lines 253–257) | Row 38.80 (§6.38) |
+| 57.337 | L2 Row 43.37 | B69 | `cowork_target_architecture.md` (locator: lines 108–111) | Row 38.20 (§6.38) |
+| 57.338 | L2 Row 43.38(i) | B69 | `cowork_target_architecture.md` (locator: lines 111–114) | Row 38.21 (§6.38) |
+| 57.339 | L2 Row 43.38(ii) | B69 | `cowork_target_architecture.md` (locator: lines 111–114) | Row 38.21 (§6.38) |
+| 57.340 | L2 Row 43.99 | B69 | `cowork_target_architecture.md` (locator: lines 260–261) | Row 38.82 (§6.38) |
+| 57.341 | L2 Row 43.97(ii) | B70 | `cowork_target_architecture.md` (locator: lines 253–257) | Row 38.80 (§6.38) |
+| 57.342 | L2 Row 43.85 | B71 | `cowork_target_architecture.md` (locator: line 235) | Row 38.68 (§6.38) |
+| 57.343 | L2 Row 43.86 | B71 | `cowork_target_architecture.md` (locator: lines 235–236) | Row 38.69 (§6.38) |
+| 57.344 | L2 Row 43.88 | B72 | `cowork_target_architecture.md` (locator: line 237) | Row 38.71 (§6.38) |
+| 57.345 | L2 Row 43.89 | B72 | `cowork_target_architecture.md` (locator: lines 237–238) | Row 38.72 (§6.38) |
+| 57.346 | L2 Row 43.151 | B72 | `cowork_target_architecture.md` (locator: lines 392–393) | Row 38.117 (§6.38) |
+| 57.347 | L2 Row 43.154 | B72 | `cowork_target_architecture.md` (locator: lines 396–397) | Row 38.120 (§6.38) |
+| 57.348 | L2 Row 43.155(ii) | B72 | `cowork_target_architecture.md` (locator: lines 397–398) | Row 38.121 (§6.38) |
+| 57.349 | L2 Row 43.93 | B73 | `cowork_target_architecture.md` (locator: lines 241–242) | Row 38.76 (§6.38) |
+| 57.350 | L2 Row 43.80 | B74 | `cowork_target_architecture.md` (locator: lines 228–229) | Row 38.63 (§6.38) |
+| 57.351 | L2 Row 43.81 | B74 | `cowork_target_architecture.md` (locator: lines 229–230) | Row 38.64 (§6.38) |
+| 57.352 | L2 Row 43.100(iii) | B74 | `cowork_target_architecture.md` (locator: lines 264–266) | **NEEDS A FULL ROW** — in member 38's cut |
+| 57.353 | L2 Row 43.101 | B74 | `cowork_target_architecture.md` (locator: lines 267–269) | **NEEDS A FULL ROW** — in member 38's cut |
+| 57.354 | L2 Row 43.102 | B74 | `cowork_target_architecture.md` (locator: lines 269–270) | **NEEDS A FULL ROW** — in member 38's cut |
+| 57.355 | L2 Row 44.14(ii) | B75 | `cowork_evidence_inventory.md` (locator: lines 36–39) | Row 40.11 (§6.40) |
+| 57.356 | L2 Row 44.22(i) | B76 | `cowork_evidence_inventory.md` (locator: lines 65–66) | Row 40.16 (§6.40) |
+| 57.357 | L2 Row 44.30(ii) | B77 | `cowork_evidence_inventory.md` (locator: lines 76–81) | Row 40.22 (§6.40) |
+| 57.358 | L2 Row 45.27 | B78 | `cowork_bounded_context_design.md` (locator: line 107) | Row 54.14 (§6.54) |
+| 57.359 | L2 Row 45.62 | B78 | `cowork_bounded_context_design.md` (locator: lines 184–185) | Row 54.36 (§6.54) — the quotation is a portion of what that row quotes |
+| 57.360 | L2 Row 46.12 | B79 | `cowork_voiceleading_axis_design.md` (locator: lines 66–67) | Row 37.18 (§6.37) |
+| 57.361 | L2 Row 46.24(i) | B80 | `cowork_voiceleading_axis_design.md` (locator: line 143) | Row 37.31 (§6.37) |
+| 57.362 | L2 Row 47.14 | B81 | `cowork_notation_adoption_increment.md` (locator: lines 96–97) | **NEEDS A FULL ROW** — in member 52's cut |
+| 57.363 | L2 Row 47.27(i) | B81 | `cowork_notation_adoption_increment.md` (locator: lines 292–294) | **NEEDS A FULL ROW** — in member 52's cut |
+| 57.364 | L2 Row 47.28(ii) | B81 | `cowork_notation_adoption_increment.md` (locator: lines 296–297) | **NEEDS A FULL ROW** — in member 52's cut |
+| 57.365 | L2 Row 48.31 | B82 | `cowork_joint_estimator_architecture.md` (locator: lines 96–97) | **NEEDS A FULL ROW** — in member 49's cut |
+| 57.366 | L2 Row 48.32 | B82 | `cowork_joint_estimator_architecture.md` (locator: lines 97–101) | **NEEDS A FULL ROW** — in member 49's cut |
+| 57.367 | L2 Row 48.40(i) | B83 | `cowork_joint_estimator_architecture.md` (locator: lines 134–136) | Row 49.26 (§6.49) |
+| 57.368 | L2 Row 49.1(ii) | B84 | `cowork_notation_output_contract.md` (locator: lines 21–22) | **NEEDS A FULL ROW** — in member 48's cut |
+| 57.369 | L2 Row 49.6 | B85 | `cowork_notation_output_contract.md` (locator: lines 27–28) | **NEEDS A FULL ROW** — in member 48's cut |
+| 57.370 | L2 Row 49.7 | B86 | `cowork_notation_output_contract.md` (locator: lines 28–29) | **NEEDS A FULL ROW** — in member 48's cut |
+| 57.371 | L2 Row 49.28 | B86 | `cowork_notation_output_contract.md` (locator: lines 139–141) | **NEEDS A FULL ROW** — in member 48's cut |
+| 57.372 | L2 Row 49.29 | B86 | `cowork_notation_output_contract.md` (locator: lines 141–144) | **NEEDS A FULL ROW** — in member 48's cut |
+| 57.373 | L2 Row 49.30 | B86 | `cowork_notation_output_contract.md` (locator: lines 144–145) | **NEEDS A FULL ROW** — in member 48's cut |
+| 57.374 | L2 Row 49.9 | B87 | `cowork_notation_output_contract.md` (locator: lines 36–37) | Row 48.1 (§6.48) |
+| 57.375 | L2 Row 49.11 | B87 | `cowork_notation_output_contract.md` (locator: lines 40–43) | Row 48.3 (§6.48) |
+| 57.376 | L2 Row 49.12 | B87 | `cowork_notation_output_contract.md` (locator: lines 43–44) | Row 48.4 (§6.48) |
+| 57.377 | L2 Row 49.23(iii) | B87 | `cowork_notation_output_contract.md` (locator: lines 110–114) | **NEEDS A FULL ROW** — in member 48's cut |
+| 57.378 | L2 Row 49.36 | B87 | `cowork_notation_output_contract.md` (locator: line 169) | Row 48.22 (§6.48) |
+| 57.379 | L2 Row 49.37 | B87 | `cowork_notation_output_contract.md` (locator: line 170) | Row 48.23 (§6.48) |
+| 57.380 | L2 Row 49.39 | B87 | `cowork_notation_output_contract.md` (locator: line 172) | Row 48.25 (§6.48) |
+| 57.381 | L2 Row 49.41 | B87 | `cowork_notation_output_contract.md` (locator: line 174) | Row 48.27 (§6.48) |
+| 57.382 | L2 Row 49.45 | B87 | `cowork_notation_output_contract.md` (locator: line 178) | Row 48.31 (§6.48) |
+| 57.383 | L2 Row 49.49 | B87 | `cowork_notation_output_contract.md` (locator: line 182) | Row 48.35 (§6.48) |
+| 57.384 | L2 Row 49.15(ii) | B88 | `cowork_notation_output_contract.md` (locator: lines 70–71) | Row 48.7 (§6.48) |
+| 57.385 | L2 Row 49.17(i) | B89 | `cowork_notation_output_contract.md` (locator: lines 74–80) | Rows 48.9 to 48.15 (§6.48) — the quotation joins the items those rows tabulate one by one, with an elision |
+| 57.386 | L2 Row 49.20(ii) | B89 | `cowork_notation_output_contract.md` (locator: lines 98–104) | Rows 48.18, 48.19 and 48.20 (§6.48) — the quotation joins the sentences those rows tabulate one by one, with an elision |
+| 57.387 | L2 Row 49.38 | B89 | `cowork_notation_output_contract.md` (locator: line 171) | Row 48.24 (§6.48) |
+| 57.388 | L2 Row 49.43 | B90 | `cowork_notation_output_contract.md` (locator: line 176) | Row 48.29 (§6.48) |
+| 57.389 | L2 Row 49.44 | B91 | `cowork_notation_output_contract.md` (locator: line 177) | Row 48.30 (§6.48) |
+| 57.390 | L2 Row 50.1 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 13) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.391 | L2 Row 50.2 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 14) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.392 | L2 Row 50.3 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 15) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.393 | L2 Row 50.4 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 16) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.394 | L2 Row 50.5 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 17) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.395 | L2 Row 50.6 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 18) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.396 | L2 Row 50.7 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 19) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.397 | L2 Row 50.8(i) | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 35–37) | Row 46.1 (§6.46) |
+| 57.398 | L2 Row 50.9 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 40–41) | **NEEDS A FULL ROW** — listed only — §6.46 item 3 |
+| 57.399 | L2 Row 50.12 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 94–95) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.400 | L2 Row 50.13 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 96–97) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.401 | L2 Row 50.14 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 97–102) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.402 | L2 Row 50.16 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 111–112) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.403 | L2 Row 50.17 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 142–143) | Row 46.4 (§6.46) |
+| 57.404 | L2 Row 50.18 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 143–145) | Row 46.5 (§6.46) |
+| 57.405 | L2 Row 50.22 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 155) | **NEEDS A FULL ROW** — listed only — §6.46 item 6 |
+| 57.406 | L2 Row 50.24 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 159–160) | Row 46.10 (§6.46) |
+| 57.407 | L2 Row 50.25 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 161–162) | Row 46.11 (§6.46) |
+| 57.408 | L2 Row 50.27 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 165–166) | Row 46.13 (§6.46) |
+| 57.409 | L2 Row 50.30 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 174–175) | Row 46.16 (§6.46) |
+| 57.410 | L2 Row 50.31 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 176–178) | Row 46.17 (§6.46) |
+| 57.411 | L2 Row 50.32 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 179–183) | Row 46.18 (§6.46) |
+| 57.412 | L2 Row 50.33(i) | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 184–189) | Row 46.19 (§6.46) |
+| 57.413 | L2 Row 50.34 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 190–195) | Row 46.20 (§6.46) |
+| 57.414 | L2 Row 50.37 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 198) | Row 46.23 (§6.46) |
+| 57.415 | L2 Row 50.41(i) | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 205–207) | Row 46.27 (§6.46) |
+| 57.416 | L2 Row 50.42 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 208) | Row 46.28 (§6.46) |
+| 57.417 | L2 Row 50.43 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 209) | Row 46.29 (§6.46) |
+| 57.418 | L2 Row 50.44 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 210–211) | Row 46.30 (§6.46) |
+| 57.419 | L2 Row 50.45 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 212–213) | Row 46.31 (§6.46) |
+| 57.420 | L2 Row 50.46 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 214) | Row 46.32 (§6.46) |
+| 57.421 | L2 Row 50.47 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 215–216) | Row 46.33 (§6.46) |
+| 57.422 | L2 Row 50.48 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 217) | Row 46.34 (§6.46) |
+| 57.423 | L2 Row 50.49(i) | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 218–219) | Row 46.35 (§6.46) |
+| 57.424 | L2 Row 50.57 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 240–242) | Row 46.44 (§6.46) |
+| 57.425 | L2 Row 50.58 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 242–243) | Row 46.45 (§6.46) |
+| 57.426 | L2 Row 50.59 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 244–245) | Row 46.46 (§6.46) |
+| 57.427 | L2 Row 50.60 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 287) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.428 | L2 Row 50.61 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 288) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.429 | L2 Row 50.62 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 289–290) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.430 | L2 Row 50.63 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 291–292) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.431 | L2 Row 50.64 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 293) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.432 | L2 Row 50.65 | B92 | `cowork_progression_schema_dictionary.md` (locator: line 294) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.433 | L2 Row 50.66 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 295–296) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.434 | L2 Row 50.69 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 300–301) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.435 | L2 Row 50.70 | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 302–303) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.436 | L2 Row 50.76(ii) | B92 | `cowork_progression_schema_dictionary.md` (locator: lines 322–324) | Row 46.50 (§6.46) |
+| 57.437 | L2 Row 50.19 | B93 | `cowork_progression_schema_dictionary.md` (locator: lines 147–148) | Row 46.6 (§6.46) |
+| 57.438 | L2 Row 50.28 | B94 | `cowork_progression_schema_dictionary.md` (locator: lines 169–171) | Row 46.14 (§6.46) |
+| 57.439 | L2 Row 50.29 | B94 | `cowork_progression_schema_dictionary.md` (locator: lines 171–173) | Row 46.15 (§6.46) |
+| 57.440 | L2 Row 50.38 | B95 | `cowork_progression_schema_dictionary.md` (locator: line 201) | Row 46.24 (§6.46) |
+| 57.441 | L2 Row 50.39 | B95 | `cowork_progression_schema_dictionary.md` (locator: lines 201–203) | Row 46.25 (§6.46) |
+| 57.442 | L2 Row 50.40 | B95 | `cowork_progression_schema_dictionary.md` (locator: lines 203–205) | Row 46.26 (§6.46) |
+| 57.443 | L2 Row 50.41(ii) | B96 | `cowork_progression_schema_dictionary.md` (locator: lines 205–207) | Row 46.27 (§6.46) |
+| 57.444 | L2 Row 50.51 | B96 | `cowork_progression_schema_dictionary.md` (locator: lines 225–226) | Row 46.37 (§6.46) — the quotation is a portion of what that row quotes |
+| 57.445 | L2 Row 50.71 | B96 | `cowork_progression_schema_dictionary.md` (locator: lines 304–305) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.446 | L2 Row 53.1 | B97 | `cowork_progression_schema_design.md` (locator: lines 21–23) | Row 44.1 (§6.44) |
+| 57.447 | L2 Row 53.20 | B97 | `cowork_progression_schema_design.md` (locator: line 89) | Row 44.21 (§6.44) |
+| 57.448 | L2 Row 53.26 | B97 | `cowork_progression_schema_design.md` (locator: line 101) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.449 | L2 Row 53.51(ii) | B97 | `cowork_progression_schema_design.md` (locator: lines 165–169) | Row 44.28 (§6.44) |
+| 57.450 | L2 Row 53.58(i) | B97 | `cowork_progression_schema_design.md` (locator: line 191) | Row 44.36 (§6.44) |
+| 57.451 | L2 Row 53.62 | B97 | `cowork_progression_schema_design.md` (locator: line 201) | **NEEDS A FULL ROW** — listed only — §6.44 item 15 |
+| 57.452 | L2 Row 53.67 | B97 | `cowork_progression_schema_design.md` (locator: lines 219–220) | Row 44.39 (§6.44) |
+| 57.453 | L2 Row 53.79(ii) | B97 | `cowork_progression_schema_design.md` (locator: lines 302–304) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.454 | L2 Row 53.21 | B98 | `cowork_progression_schema_design.md` (locator: lines 95–96) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.455 | L2 Row 53.35 | B98 | `cowork_progression_schema_design.md` (locator: line 137) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.456 | L2 Row 53.49 | B98 | `cowork_progression_schema_design.md` (locator: lines 162–163) | Row 44.26 (§6.44) |
+| 57.457 | L2 Row 53.56(ii) | B98 | `cowork_progression_schema_design.md` (locator: line 187) | Row 44.34 (§6.44) |
+| 57.458 | L2 Row 53.2 | B99 | `cowork_progression_schema_design.md` (locator: lines 23–25) | Row 44.2 (§6.44) |
+| 57.459 | L2 Row 53.3 | B100 | `cowork_progression_schema_design.md` (locator: lines 26–27) | Row 44.3 (§6.44) — the quotation is a portion of what that row quotes |
+| 57.460 | L2 Row 53.4 | B101 | `cowork_progression_schema_design.md` (locator: lines 29–30) | Row 44.4 (§6.44) |
+| 57.461 | L2 Row 53.10(i) | B102 | `cowork_progression_schema_design.md` (locator: lines 49–51) | Row 44.10 (§6.44) |
+| 57.462 | L2 Row 53.12 | B103 | `cowork_progression_schema_design.md` (locator: line 54) | Row 44.12 (§6.44) |
+| 57.463 | L2 Row 53.13 | B103 | `cowork_progression_schema_design.md` (locator: lines 54–55) | Row 44.13 (§6.44) |
+| 57.464 | L2 Row 53.14 | B103 | `cowork_progression_schema_design.md` (locator: lines 55–57) | Row 44.14 (§6.44) |
+| 57.465 | L2 Row 53.33 | B103 | `cowork_progression_schema_design.md` (locator: line 135) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.466 | L2 Row 53.34 | B103 | `cowork_progression_schema_design.md` (locator: lines 135–136) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.467 | L2 Row 53.36 | B103 | `cowork_progression_schema_design.md` (locator: lines 137–139) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.468 | L2 Row 53.37 | B103 | `cowork_progression_schema_design.md` (locator: lines 140–141) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.469 | L2 Row 53.38 | B103 | `cowork_progression_schema_design.md` (locator: lines 141–144) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.470 | L2 Row 53.39 | B103 | `cowork_progression_schema_design.md` (locator: line 145) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.471 | L2 Row 53.40 | B103 | `cowork_progression_schema_design.md` (locator: line 146) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.472 | L2 Row 53.43 | B103 | `cowork_progression_schema_design.md` (locator: line 151) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.473 | L2 Row 53.44 | B103 | `cowork_progression_schema_design.md` (locator: line 153) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.474 | L2 Row 53.45 | B103 | `cowork_progression_schema_design.md` (locator: lines 154–155) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.475 | L2 Row 53.47(ii) | B103 | `cowork_progression_schema_design.md` (locator: lines 157–159) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.476 | L2 Row 53.15 | B104 | `cowork_progression_schema_design.md` (locator: line 58) | Row 44.15 (§6.44) |
+| 57.477 | L2 Row 53.16 | B105 | `cowork_progression_schema_design.md` (locator: lines 58–60) | Row 44.16 (§6.44) |
+| 57.478 | L2 Row 53.23 | B105 | `cowork_progression_schema_design.md` (locator: line 98) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.479 | L2 Row 53.72 | B105 | `cowork_progression_schema_design.md` (locator: lines 245–246) | Row 44.44 (§6.44) |
+| 57.480 | L2 Row 53.17 | B106 | `cowork_progression_schema_design.md` (locator: lines 61–62) | Row 44.17 (§6.44) |
+| 57.481 | L2 Row 53.50(i) | B106 | `cowork_progression_schema_design.md` (locator: lines 163–165) | Row 44.27 (§6.44) |
+| 57.482 | L2 Row 53.51(i) | B106 | `cowork_progression_schema_design.md` (locator: lines 165–169) | Row 44.28 (§6.44) |
+| 57.483 | L2 Row 53.19(i) | B107 | `cowork_progression_schema_design.md` (locator: lines 87–88) | Row 44.20 (§6.44) |
+| 57.484 | L2 Row 53.19(ii) | B108 | `cowork_progression_schema_design.md` (locator: lines 87–88) | Row 44.20 (§6.44) |
+| 57.485 | L2 Row 53.22(i) | B108 | `cowork_progression_schema_design.md` (locator: line 97) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.486 | L2 Row 53.22(ii) | B109 | `cowork_progression_schema_design.md` (locator: line 97) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.487 | L2 Row 53.28 | B109 | `cowork_progression_schema_design.md` (locator: line 115) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.488 | L2 Row 53.59 | B109 | `cowork_progression_schema_design.md` (locator: line 193) | Row 44.37 (§6.44) |
+| 57.489 | L2 Row 53.27 | B110 | `cowork_progression_schema_design.md` (locator: lines 113–114) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.490 | L2 Row 53.47(i) | B111 | `cowork_progression_schema_design.md` (locator: lines 157–159) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.491 | L2 Row 53.57 | B111 | `cowork_progression_schema_design.md` (locator: line 189) | Row 44.35 (§6.44) |
+| 57.492 | L2 Row 53.73(i) | B111 | `cowork_progression_schema_design.md` (locator: lines 272–273) | Row 44.46 (§6.44) |
+| 57.493 | L2 Row 53.61 | B112 | `cowork_progression_schema_design.md` (locator: lines 199–200) | **NEEDS A FULL ROW** — listed only — §6.44 item 14 |
+| 57.494 | L2 Row 53.63 | B112 | `cowork_progression_schema_design.md` (locator: lines 201–203) | **NEEDS A FULL ROW** — listed only — §6.44 item 16 |
+| 57.495 | L2 Row 53.64 | B112 | `cowork_progression_schema_design.md` (locator: lines 204–206) | **NEEDS A FULL ROW** — listed only — §6.44 item 17 |
+| 57.496 | L2 Row 53.79(i) | B112 | `cowork_progression_schema_design.md` (locator: lines 302–304) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.497 | L2 Row 53.65 | B113 | `cowork_progression_schema_design.md` (locator: line 218) | Rows 44.38 and 44.39 (§6.44) — the quotation is the decision's bold lead, read at §6.44 as a title; those rows tabulate the two sentences stating its claim |
+| 57.498 | L2 Row 54.1 | B114 | `docs/llm_integration.md` (locator: line 582) | **NEEDS A FULL ROW** — listed only — §6.51 item 17 |
+| 57.499 | L2 Row 54.2 | B114 | `docs/llm_integration.md` (locator: line 708) | **NEEDS A FULL ROW** — listed only — §6.51 item 35 |
+| 57.500 | L2 Row 54.3 | B114 | `docs/llm_integration.md` (locator: line 709) | **NEEDS A FULL ROW** — listed only — §6.51 item 36 |
+| 57.501 | L2 Row 54.4 | B114 | `docs/llm_integration.md` (locator: line 710) | **NEEDS A FULL ROW** — listed only — §6.51 item 37 |
+| 57.502 | L2 Row 57.8 | B115 | `cowork_architecture_review_2026_07.md` (locator: lines 324–325) | **NEEDS A FULL ROW** — no member's document |
+| 57.503 | L2 Row 62.41(i) | B116 | `cowork_progression_schema_dictionary.md` (the L0/L1 row's own locator: lines 77–79) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.504 | L2 Row 62.41(ii) | B116 | `cowork_progression_schema_dictionary.md` (the L0/L1 row's own locator: lines 77–79) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.505 | L2 Row 5.100(i) | B117 | `cowork_layer5_function_design.md` (locator: lines 255–259) | Row 7.94 (§6.7) — the quotation adds the bullet's bold label, read at §6.7 as a title |
+| 57.506 | L2 Row 5.283 | B117 | `cowork_layer5_function_design.md` (locator: lines 718–719) | Row 7.273 (§6.7) |
+| 57.507 | L2 Row 44.36(i) | B118 | `cowork_evidence_inventory.md` (locator: lines 103–107) | Row 40.27 (§6.40) |
+| 57.508 | L2 Row 44.51(i) | B118 | `cowork_evidence_inventory.md` (locator: lines 158–159) | Row 40.42 (§6.40) |
+| 57.509 | L2 Row 44.76(iv) | B118 | `cowork_evidence_inventory.md` (locator: lines 252–257) | Row 40.63 (§6.40) |
+| 57.510 | L2 Row 21.49(ii) | B119 | `ARCHITECTURE.md` (locator: lines 1138–1141) | Row 19.39 (§6.19) |
+| 57.511 | L2 Row 43.100(ii) | B119 | `cowork_target_architecture.md` (locator: lines 264–266) | **NEEDS A FULL ROW** — in member 38's cut |
+| 57.512 | L2 Row 5.68(i) | B120 | `cowork_layer5_function_design.md` (locator: lines 165–166) | Row 7.61 (§6.7) |
+| 57.513 | L2 Row 47.17(iv) | B121 | `cowork_notation_adoption_increment.md` (locator: lines 135–140) | **NEEDS A FULL ROW** — in member 52's cut |
+| 57.514 | L2 Row 47.18(i) | B121 | `cowork_notation_adoption_increment.md` (locator: lines 165–167) | **NEEDS A FULL ROW** — in member 52's cut |
+| 57.515 | L2 Row 22.92(iii) | B122 | `ARCHITECTURE.md` (locator: lines 2213–2218) | Row 3.5 (§6.3) |
+| 57.516 | L2 Row 55.1 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 3–4) | **NEEDS A FULL ROW** — in member 53's cut |
+| 57.517 | L2 Row 55.2 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 4–5) | **NEEDS A FULL ROW** — in member 53's cut |
+| 57.518 | L2 Row 55.4 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 8–9) | **NEEDS A FULL ROW** — in member 53's cut |
+| 57.519 | L2 Row 55.5 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 14) | **NEEDS A FULL ROW** — in member 53's cut |
+| 57.520 | L2 Row 55.6 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 15) | **NEEDS A FULL ROW** — in member 53's cut |
+| 57.521 | L2 Row 55.7 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 16) | **NEEDS A FULL ROW** — in member 53's cut |
+| 57.522 | L2 Row 55.8 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 17) | **NEEDS A FULL ROW** — in member 53's cut |
+| 57.523 | L2 Row 55.9 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 18) | **NEEDS A FULL ROW** — in member 53's cut |
+| 57.524 | L2 Row 55.10 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 40) | Row 53.14 (§6.53) |
+| 57.525 | L2 Row 55.11 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 41) | Row 53.15 (§6.53) |
+| 57.526 | L2 Row 55.12 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 42) | Row 53.16 (§6.53) |
+| 57.527 | L2 Row 55.13 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 43) | Row 53.17 (§6.53) |
+| 57.528 | L2 Row 55.14 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 44) | Row 53.18 (§6.53) |
+| 57.529 | L2 Row 55.15 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 45) | Row 53.19 (§6.53) |
+| 57.530 | L2 Row 55.16 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 46) | Row 53.20 (§6.53) |
+| 57.531 | L2 Row 55.17 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 47) | Row 53.21 (§6.53) |
+| 57.532 | L2 Row 55.19 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 51–52) | **NEEDS A FULL ROW** — in member 53's cut |
+| 57.533 | L2 Row 55.22 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 56–57) | **NEEDS A FULL ROW** — in member 53's cut |
+| 57.534 | L2 Row 50.54 | B123 | `cowork_progression_schema_dictionary.md` (locator: line 237) | Row 46.40 (§6.46) — the same sentence; Row 46.49 quotes a longer sentence containing its words |
+| 57.535 | L2 Row 50.67 | B123 | `cowork_progression_schema_dictionary.md` (locator: lines 297–299) | **NEEDS A FULL ROW** — in member 46's cut |
+| 57.536 | L2 Row 50.75 | B123 | `cowork_progression_schema_dictionary.md` (locator: lines 321–322) | Row 46.49 (§6.46) |
+| 57.537 | L2 Row 53.11 | B123 | `cowork_progression_schema_design.md` (locator: lines 52–53) | Row 44.11 (§6.44) |
+
+#### Not a statement, at this member
+
+Each item is one block of the range, quoted from its opening with its line locator, and its kind named; the one heading
+line is a title and is neither here nor among the lines.
+
+1. "**Over every member of the population** (§0: positions 1 …" (lines 75370–75372) — *the section's account of itself*:
+   that file's account of its own list.
+2. "**To *L0 — The notated record* (the input contract).** …" (lines 75374–75468) — *the transfer list's rows addressed
+   to another charter*: the block's lead and its 48 bullets, addressed to *L0 — The notated record* (the input
+   contract).
+3. "**To *L1 — Change points, candidates and notated evidence*.** …" (lines 75470–75584) — *the transfer list's rows
+   addressed to another charter*: the block's lead and its 63 bullets, addressed to *L1 — Change points, candidates and
+   notated evidence*.
+4. "**To *L3 — The read-off facts*.**" (line 75586) — *the section's account of itself*: the lead of the block whose
+   bullets are B1 to B123 above and whose named rows are Rows 57.1 to 57.537.
+5. "**To *the second axis — voice leading*.** …" (lines 75866–75949) — *the transfer list's rows addressed to another
+   charter*: the block's lead and its 38 bullets, addressed to *the second axis — voice leading*.
+6. "**To *the uncertainty surface* (NOT A LAYER).** …" (lines 75951–76010) — *the transfer list's rows addressed to
+   another charter*: the block's lead and its 26 bullets, addressed to *the uncertainty surface* (NOT A LAYER).
+7. "**To *the measurement of the analysis* (NOT A LAYER).** …" (lines 76012–76288) — *the transfer list's rows addressed
+   to another charter*: the block's lead and its 164 bullets, addressed to *the measurement of the analysis* (NOT A
+   LAYER).
+8. "**To *outside the framework — the style system* (NOT A CHARTER).** …" (lines 76290–76303) — *the transfer list's
+   rows addressed to no charter, as its own paragraph says*: the block's lead, its paragraph and its 3 bullets,
+   addressed to *outside the framework — the style system* (NOT A CHARTER).
+9. "*(Member 1's relocations are the rows numbered …" (lines 76305–76314) — *the section's account of itself*: which of
+   that comparison's members relocate which rows.
+
+#### The arithmetic at this member — the table
+
+- Lines written: **537** (57.1 to 57.537): **415 pointer lines** and **122 needs-a-full-row lines** — 415 + 122 = 537,
+  the named rows (every claim counted, no row named twice with one claim).
+- A pointer line's statement is counted at the row it names: **it is counted in neither table of the feet.**
+- **Outgoing statements placed by this portion: 0.** The member's full rows are not yet written.
+- Listed under *not a statement*: **9**.
+- **Every non-blank line of the range is accounted for**: 1 heading line, 277 lines of the 123 bullets, and 652 lines of
+  the 9 listed items — 1 + 277 + 652 = 930, the range's non-blank lines.
+
+#### The rows needing a full row, named
+
+**122 lines need a full row** — 23 *listed only*, 96 *in member M's cut*, 1 *no member's document* and 2 *not found*
+(23 + 96 + 1 + 2 = 122). This count is the quantity the full-row groups are sized from. In the table's order:
+
+| Row | L2 row | Class |
+|---|---|---|
+| 57.50 | L2 Row 5.37 | not found — member 7 |
+| 57.60 | L2 Row 5.340 | listed only — §6.7 item 77 |
+| 57.62 | L2 Row 5.348 | listed only — §6.7 item 82 |
+| 57.97 | L2 Row 22.98(i) | in member 20's cut |
+| 57.107 | L2 Row 26.1 | in member 24's cut |
+| 57.108 | L2 Row 26.2 | in member 24's cut |
+| 57.109 | L2 Row 26.3 | in member 24's cut |
+| 57.110 | L2 Row 26.5 | in member 24's cut |
+| 57.111 | L2 Row 26.6 | in member 24's cut |
+| 57.112 | L2 Row 26.7 | in member 24's cut |
+| 57.113 | L2 Row 26.8 | in member 24's cut |
+| 57.114 | L2 Row 26.9 | in member 24's cut |
+| 57.115 | L2 Row 26.10 | in member 24's cut |
+| 57.116 | L2 Row 26.11 | in member 24's cut |
+| 57.117 | L2 Row 26.12 | in member 24's cut |
+| 57.118 | L2 Row 26.13 | in member 24's cut |
+| 57.119 | L2 Row 30.26(ii) | in member 28's cut |
+| 57.124 | L2 Row 36.1 | listed only — §6.33 item 3 |
+| 57.126 | L2 Row 40.1 | in member 36's cut |
+| 57.153 | L2 Row 40.36 | in member 36's cut |
+| 57.154 | L2 Row 40.38 | in member 36's cut |
+| 57.155 | L2 Row 40.39 | in member 36's cut |
+| 57.156 | L2 Row 40.40 | in member 36's cut |
+| 57.157 | L2 Row 40.41 | in member 36's cut |
+| 57.170 | L2 Row 40.55 | in member 36's cut |
+| 57.171 | L2 Row 40.56 | in member 36's cut |
+| 57.173 | L2 Row 40.58 | listed only — §6.36 item 22 |
+| 57.207 | L2 Row 40.113 | listed only — §6.36 item 35 |
+| 57.249 | L2 Row 41.33 | listed only — §6.8 item 11 |
+| 57.259 | L2 Row 41.58 | listed only — §6.8 item 18 |
+| 57.278 | L2 Row 41.91 | listed only — §6.8 item 25 |
+| 57.283 | L2 Row 41.100 | listed only — §6.8 item 27 |
+| 57.290 | L2 Row 41.107 | listed only — §6.8 item 28 |
+| 57.315 | L2 Row 41.122 | not found — member 8 |
+| 57.318 | L2 Row 41.45 | listed only — §6.8 item 14 |
+| 57.320 | L2 Row 41.47 | listed only — §6.8 item 15 |
+| 57.322 | L2 Row 41.125 | listed only — §6.8 item 35 |
+| 57.352 | L2 Row 43.100(iii) | in member 38's cut |
+| 57.353 | L2 Row 43.101 | in member 38's cut |
+| 57.354 | L2 Row 43.102 | in member 38's cut |
+| 57.362 | L2 Row 47.14 | in member 52's cut |
+| 57.363 | L2 Row 47.27(i) | in member 52's cut |
+| 57.364 | L2 Row 47.28(ii) | in member 52's cut |
+| 57.365 | L2 Row 48.31 | in member 49's cut |
+| 57.366 | L2 Row 48.32 | in member 49's cut |
+| 57.368 | L2 Row 49.1(ii) | in member 48's cut |
+| 57.369 | L2 Row 49.6 | in member 48's cut |
+| 57.370 | L2 Row 49.7 | in member 48's cut |
+| 57.371 | L2 Row 49.28 | in member 48's cut |
+| 57.372 | L2 Row 49.29 | in member 48's cut |
+| 57.373 | L2 Row 49.30 | in member 48's cut |
+| 57.377 | L2 Row 49.23(iii) | in member 48's cut |
+| 57.390 | L2 Row 50.1 | in member 46's cut |
+| 57.391 | L2 Row 50.2 | in member 46's cut |
+| 57.392 | L2 Row 50.3 | in member 46's cut |
+| 57.393 | L2 Row 50.4 | in member 46's cut |
+| 57.394 | L2 Row 50.5 | in member 46's cut |
+| 57.395 | L2 Row 50.6 | in member 46's cut |
+| 57.396 | L2 Row 50.7 | in member 46's cut |
+| 57.398 | L2 Row 50.9 | listed only — §6.46 item 3 |
+| 57.399 | L2 Row 50.12 | in member 46's cut |
+| 57.400 | L2 Row 50.13 | in member 46's cut |
+| 57.401 | L2 Row 50.14 | in member 46's cut |
+| 57.402 | L2 Row 50.16 | in member 46's cut |
+| 57.405 | L2 Row 50.22 | listed only — §6.46 item 6 |
+| 57.427 | L2 Row 50.60 | in member 46's cut |
+| 57.428 | L2 Row 50.61 | in member 46's cut |
+| 57.429 | L2 Row 50.62 | in member 46's cut |
+| 57.430 | L2 Row 50.63 | in member 46's cut |
+| 57.431 | L2 Row 50.64 | in member 46's cut |
+| 57.432 | L2 Row 50.65 | in member 46's cut |
+| 57.433 | L2 Row 50.66 | in member 46's cut |
+| 57.434 | L2 Row 50.69 | in member 46's cut |
+| 57.435 | L2 Row 50.70 | in member 46's cut |
+| 57.445 | L2 Row 50.71 | in member 46's cut |
+| 57.448 | L2 Row 53.26 | in member 44's cut |
+| 57.451 | L2 Row 53.62 | listed only — §6.44 item 15 |
+| 57.453 | L2 Row 53.79(ii) | in member 44's cut |
+| 57.454 | L2 Row 53.21 | in member 44's cut |
+| 57.455 | L2 Row 53.35 | in member 44's cut |
+| 57.465 | L2 Row 53.33 | in member 44's cut |
+| 57.466 | L2 Row 53.34 | in member 44's cut |
+| 57.467 | L2 Row 53.36 | in member 44's cut |
+| 57.468 | L2 Row 53.37 | in member 44's cut |
+| 57.469 | L2 Row 53.38 | in member 44's cut |
+| 57.470 | L2 Row 53.39 | in member 44's cut |
+| 57.471 | L2 Row 53.40 | in member 44's cut |
+| 57.472 | L2 Row 53.43 | in member 44's cut |
+| 57.473 | L2 Row 53.44 | in member 44's cut |
+| 57.474 | L2 Row 53.45 | in member 44's cut |
+| 57.475 | L2 Row 53.47(ii) | in member 44's cut |
+| 57.478 | L2 Row 53.23 | in member 44's cut |
+| 57.485 | L2 Row 53.22(i) | in member 44's cut |
+| 57.486 | L2 Row 53.22(ii) | in member 44's cut |
+| 57.487 | L2 Row 53.28 | in member 44's cut |
+| 57.489 | L2 Row 53.27 | in member 44's cut |
+| 57.490 | L2 Row 53.47(i) | in member 44's cut |
+| 57.493 | L2 Row 53.61 | listed only — §6.44 item 14 |
+| 57.494 | L2 Row 53.63 | listed only — §6.44 item 16 |
+| 57.495 | L2 Row 53.64 | listed only — §6.44 item 17 |
+| 57.496 | L2 Row 53.79(i) | in member 44's cut |
+| 57.498 | L2 Row 54.1 | listed only — §6.51 item 17 |
+| 57.499 | L2 Row 54.2 | listed only — §6.51 item 35 |
+| 57.500 | L2 Row 54.3 | listed only — §6.51 item 36 |
+| 57.501 | L2 Row 54.4 | listed only — §6.51 item 37 |
+| 57.502 | L2 Row 57.8 | no member's document |
+| 57.503 | L2 Row 62.41(i) | in member 46's cut |
+| 57.504 | L2 Row 62.41(ii) | in member 46's cut |
+| 57.511 | L2 Row 43.100(ii) | in member 38's cut |
+| 57.513 | L2 Row 47.17(iv) | in member 52's cut |
+| 57.514 | L2 Row 47.18(i) | in member 52's cut |
+| 57.516 | L2 Row 55.1 | in member 53's cut |
+| 57.517 | L2 Row 55.2 | in member 53's cut |
+| 57.518 | L2 Row 55.4 | in member 53's cut |
+| 57.519 | L2 Row 55.5 | in member 53's cut |
+| 57.520 | L2 Row 55.6 | in member 53's cut |
+| 57.521 | L2 Row 55.7 | in member 53's cut |
+| 57.522 | L2 Row 55.8 | in member 53's cut |
+| 57.523 | L2 Row 55.9 | in member 53's cut |
+| 57.532 | L2 Row 55.19 | in member 53's cut |
+| 57.533 | L2 Row 55.22 | in member 53's cut |
+| 57.535 | L2 Row 50.67 | in member 46's cut |
+
+- **Rows named after *travelling with* that no bullet names before its em dash: none** — every travelling-with target of
+  the block is a named row of some bullet.
+- **Rows named by two bullets with the same claim: none.** L2 Row 5.100 is named by two bullets with different claims —
+  claim (ii) by B12 and claim (i) by B117 — and each claim has its own line.
+- *A fact of the block, recorded*: three identities stand in its parentheses with a claim, or whole, that no bullet
+  names in that form — L2 Row 26.1(ii) (B39), whose row B39 names whole, and L2 Rows 53.50 and 53.51 (B106), whose
+  claims (i) B106 names.
+
+#### The distribution at this member, counted at these rows
+
+NOT YET WRITTEN — written with the last full-row group of this member; the table places nothing, and a pointer line
+carries no mark of its own.
+
+#### The current-text axis at this member, counted at these rows
+
+NOT YET WRITTEN — written with the last full-row group of this member; the table places nothing, and a pointer line
+carries no mark of its own.
+
+#### The marks at this member
+
+NOT YET WRITTEN — written with the last full-row group of this member; the table places nothing, and a pointer line
+carries no mark of its own.
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -72689,7 +73839,7 @@ member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 2
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
 member 40's the rows numbered 40.n, member 41's the rows numbered 41.n,
-member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, member 54's the rows numbered 54.n, member 55's the rows numbered 55.n, and member 56's full rows, numbered 56.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33, 34 and 51 relocate no row.)*
+member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, member 54's the rows numbered 54.n, member 55's the rows numbered 55.n, and member 56's full rows, numbered 56.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33, 34 and 51 relocate no row. Member 57 relocates no row yet: its table carries no disposition, and its full rows are not yet written.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -74822,6 +75972,11 @@ No QUARANTINED row: the member's range records no built or measured property of 
 No QUARANTINED row: the member's three full rows record no built or measured property of the code, and its pointer
 rows carry no disposition of their own (§6.56's manifest header).
 
+**Member 57 — the L2 transfer input, `ratification_surfaces/cowork_comparison_l2_reading.md` §10.**
+
+No QUARANTINED row yet: the member's table carries no disposition of its own, and its full rows are not yet written
+(§6.57's manifest header).
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -75839,6 +76994,9 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **ADOPTED — proposed — Row 56.2 (ii):** that it record, with the same standing, that nothing comparable has been
   established for several simultaneous voices.
 
+**Member 57.** No ADOPTED — proposed row and no DIFFERS yet: the table carries neither, and the full rows are not yet
+written.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -75902,14 +77060,17 @@ are at its own foot, and the integers below are re-derivable from them.
 | 54 | 56 | 0 | 0 | 42 | 4 | 0 | 6 | 4 | 5 |
 | 55 | 16 | 0 | 0 | 14 | 0 | 0 | 2 | 0 | 0 |
 | 56 | 5 | 0 | 2 | 2 | 0 | 0 | 0 | 1 | 11 |
-| **Total** | **4535** | **196** | **93** | **1968** | **1212** | **0** | **722** | **344** | **1308** |
+| 57 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
+| **Total** | **4535** | **196** | **93** | **1968** | **1212** | **0** | **722** | **344** | **1317** |
 
 **The arithmetic check:** 196 + 93 + 1968 + 1212 + 0 + 722 + 344 = 4535, against 4535 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
-0 + 27 + 25 + 56 + 16 + 5).
+0 + 27 + 25 + 56 + 16 + 5 + 0).
 
 *(Member 56's row counts its three full rows' statements alone; its 23 pointer rows are counted at the rows they name.)*
+*(Member 57's row counts the statements of its full rows, none of which is yet written; its pointer lines are counted
+at the rows they name, and its table is at §6.57.)*
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -75969,12 +77130,13 @@ are at its own foot, and the integers below are re-derivable from them.
 | 54 | 17 | 4 | 35 | 56 |
 | 55 | 0 | 0 | 16 | 16 |
 | 56 | 0 | 0 | 5 | 5 |
+| 57 | 0 | 0 | 0 | 0 |
 | **Total** | **429** | **359** | **3755** | **4543** |
 
 **The arithmetic check of the verdicts:** 429 + 359 + 3755 = 4543, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
-0 + 27 + 25 + 56 + 16 + 5).
+0 + 27 + 25 + 56 + 16 + 5 + 0).
 
 ## 14. The derivation's independence record, relayed
 
