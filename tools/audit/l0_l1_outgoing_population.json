@@ -231,7 +231,7 @@
     "MusicXML": 126,
     "leading-tone": 112,
     ".mscx": 100,
-    "repeat": 99,
+    "repeat": 98,
     "eligible": 96,
     "release": 73,
     "change-point": 72,
@@ -3308,23 +3308,6 @@
       "term": "slice",
       "tier": "recorded",
       "line": "| OI-73 | Membership verdict dies at the L4→L5 boundary | chordTonePcs/nonChordTonePcs are never copied onto FunctionSlice. | siloed facts / E4 surface | OPEN — E4 surface design | [detail](open_items/OI-73.md) |"
-     }
-    ]
-   },
-   "STATUS.md": {
-    "path": "STATUS.md",
-    "inventory_class": "governing-documents",
-    "is_a_named_member": false,
-    "in_the_specification_document_set": false,
-    "admitting_hit_count": 0,
-    "recorded_hit_count": 1,
-    "admitting_hits": [],
-    "recorded_hits": [
-     {
-      "line_number": 8,
-      "term": "repeat",
-      "tier": "recorded",
-      "line": "*Last updated: 2026-10-26 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md`, Task 2, the close. **★★ THE L3 COMPARISON CONTINUED AT POSITION 56 — POSITION 56 TABULATED, PROPOSALS ONLY.** ★ This dispatch and handoff entry 447 are committed as they stood, the dispatch pinned to its blob and proved unmoved before staging; the derived statements' file and the brief were verified at their blobs before the work opened. ★ `ratification_surfaces/cowork_comparison_l3_reading.md` is extended: position 56, the first of the two transfer inputs, is tabulated whole in one commit, **a capacity judgment written to a file outside the repository before the member was opened, quoted whole in the report** — one row for each row of the earlier comparison that the input's two blocks addressed to this layer name; **each row either points at the row of this file that already tabulates the same sentence, repeating no disposition, or is built in full, every statement there placed under exactly one proposed disposition**; a scripted search decided which before any row was written, and every candidate it printed was read by eye; the arithmetic closes at the member, its quotations of both texts were checked at the objects before the commit, **no row is marked as withheld or as seen**, counted both ways, and the one decision home met at a full row's lines is relayed as a fact that moves no disposition, its words compared with the lines it cites; §0, §10, §11, §12 and §13 are updated in the same commit, the previous batch's stop stated in §0 as its own clause in its own true words, and the reading file's banner names this dispatch. ★ **No summary of this session's context fell.** **The stop is at the member boundary after position 56, by this dispatch's own limit on the batch and not by capacity; position 57 is untouched**, and the next writing resumes at position 57. **Every disposition is a proposal and nothing is applied. Nothing decided, no disposition applied, no outgoing text edited, the derivation and the brief unedited, no session booted, no open-items row, no `D-NNN`**; no `src/` file, build, test, golden, corpus of scores or measurement of the analysis. Per the OI-222 pointer convention this entry is a **POINTER** — the whole of it is `records/cc/reports/cc_report_l3_comparison_tabulation_twenty_second_2026_10_26.md` — and no count is restated here (**D-431**).)*"
      }
     ]
    },
