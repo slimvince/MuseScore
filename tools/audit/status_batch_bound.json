@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md, Task 2",
+ "dispatch": "cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -729,38 +729,44 @@
    "base_commit": "581f8b36ff093b52b685c8b8ca6ce96f9b261f5a",
    "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md, Task 2",
+   "base_commit": "36a1457ee89c9eabe305a75f9820ee8ba34f5a9d",
+   "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "581f8b36ff093b52b685c8b8ca6ce96f9b261f5a",
- "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md",
+ "base_commit": "36a1457ee89c9eabe305a75f9820ee8ba34f5a9d",
+ "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md",
  "the_kind_of_move": "ordinary",
  "entries_moved": 3,
- "characters_moved": 3952,
+ "characters_moved": 3936,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2672,
-   "sha256": "e206d5e67d79dc13ef283ee7b0d5bbdcb950ed61a9f97e08af6b5bde56a13db0",
+   "characters": 2599,
+   "sha256": "607fa1a978b8df89b741985f456535d86dd2f8f929fb9e1400394b70959cb5e6",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-27 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md`, Task 2, the close. **★★ THE L3 COMPARI"
+   "opening": "*2026-10-28 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md`, Task 2, the close. **★★ THE L3 COMPARI"
   },
   {
    "line_at_base": 10,
-   "characters": 1050,
-   "sha256": "b6b61b5f62b94ea3b76f572fea349552dc5dcd4fc33e8565e630723f9db531c1",
+   "characters": 1117,
+   "sha256": "4c991d400137fe59505b76b3841d6dfaebdcea6408190838029151a74cd11b8a",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-27 (CC — Same dispatch, Task 1. **THE L3 COMPARISON CONTINUED: THE SECOND FULL-ROW GROUP OF POSITION 57 BUILT**, after the stop on the failed"
+   "opening": "*2026-10-28 (CC — Same dispatch, Task 1. **THE L3 COMPARISON CONTINUED: THE THIRD FULL-ROW GROUP OF POSITION 57 BUILT**: a capacity judgment written t"
   },
   {
    "line_at_base": 12,
-   "characters": 230,
-   "sha256": "4483a3e6182354ddc6aef3021bb1adcc62f7d8d918f4d9a3bca2b34e43703999",
+   "characters": 220,
+   "sha256": "d159eb6358e3316130279294c7c59b63794cb63454c1a3fdba5b135ef7847584",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-27 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRIES 451 AND 452 ARE LANDED**, as they stood. **POINTER** — `records/cc/report"
+   "opening": "*2026-10-27 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRY 453 ARE LANDED**, as they stood. **POINTER** — `records/cc/reports/cc_repor"
   }
  ],
  "reconciliation": {

@@ -29182,3 +29182,79 @@ This commit adds only the guard run's artifact and this portion.
 
 *Provenance: CC, 2026-10-28, appended in the one further commit after the close commit
 `9e25bb664b2030cd699caf4832567afd648671c0`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 COMPARISON CONTINUED AT POSITION 57 — THE FOURTH FULL-ROW GROUP BUILT, 26 NAMED ROWS, PROPOSALS ONLY, NOTHING DECIDED, NO ALGORITHM CHANGED — STOPPED AFTER THE GROUP BY THE DISPATCH'S OWN LIMIT, THE LAST GROUP'S FULL ROWS NAMED AND NOT WRITTEN
+
+This batch ran `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md`, landed at
+Task 0 as blob `1142e0fb32be5b112500beed86d22c14b80b5f96`:
+
+- **Task 0** landed this dispatch and handoff entry 454 as they stood (`337dd396…`), pushed and read at the ref file,
+  and took the opening guard capture — the thirteen and nothing else, with the header *"the guard state re-derives"*.
+- **Task 1** extended `ratification_surfaces/cowork_comparison_l3_reading.md` with **position 57's fourth full-row
+  group** — Rows 57.448, 57.451, 57.453 to 57.455, 57.465 to 57.475, 57.478, 57.485 to 57.487, 57.489, 57.490 and
+  57.493 to 57.496, in one document — in one commit (`36a1457e…`), with §6.57's 26 cells and two foot sentences, §0's
+  clause on the previous batch's stop in its true words, §0's standing sentence naming the fifth group as the last with
+  **the re-cut — the dispatch's own, the planned fourth group cut by document into the fourth and the fifth —** said,
+  the banner, and §10 to §13. **The group's scope, chosen by document, was checked both ways at the table as ordered,
+  and the check held**; the header opens with the dispatch's own words. **A capacity-judgment file was written before
+  the group was opened**, quoted whole at the head of the report. The table's decision was re-confirmed at the file for
+  every row; **no line became a pointer**. Every row is a full row; the decisions register's data file was walked twice
+  at the rows' lines; **two rows, Rows 57.465 and 57.466, lie inside a home the deriving session saw at its heading line
+  (D-503) and carry the SEEN mark**; no row lies inside a withheld home. Four listed sentences of the dependency map
+  (Rows 57.451 and 57.493 to 57.495) are placed on their content against the listing member's reading, and Row 57.467's
+  first claim is placed as a rule rather than quarantined, each stated for challenge. It **STOPPED after the group under
+  the dispatch's own limit**, not by a capacity judgment. **The member's last group of full rows is named at §6.57's
+  foot and not written.**
+- **A summary of the session's context fell during Task 1**, after the rows had been generated and before the group was
+  committed, while the generated group was being read through. After it the blocks, the bullets and the document's lines
+  were re-read at the blob copies, the remainder of the group was read, and the checks ran; the derived-statement
+  re-check found nothing to compare, the group quoting no derived statement; the report declares it.
+- **The quotation re-check ran before the group's commit** (none missing, after its italic capture was tightened twice,
+  declared); the locator aid was not run, declared.
+- **Task 2** closed: the three `STATUS.md` entries written first, the `Last updated: ` prefix moved in the same edit (one
+  line carrying it, checked), the 26 ruled terms searched with the one standing hit, before and after the move; the
+  forward bound re-aimed at `36a1457e…` and **moved exactly the twenty-sixth batch's three entries, with no STOP**; the
+  evidence pin, the L0/L1 population and the L3 population stayed green; the defense share and the session-start read
+  size went red as A2 provides and were regenerated, the read size last, each moving only with `STATUS.md`'s size.
+
+**NOTHING WAS DECIDED; NO DISPOSITION WAS APPLIED.** Every disposition the group's rows carry is a proposal. The
+document was opened at its lines and not edited; no outgoing text was edited. The derivation, the brief, the pack and the
+earlier reading files were not edited, and §6.1 to §6.56 and groups 1 to 3's sub-sections were not touched. No session
+was booted. No measurement of the analysis was made. No open-items row and no `D-NNN`. No ruling was taken, no
+recommendation was made, and nothing was put to the user. Nothing any layer computes changed.
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_comparison_tabulation_twenty_seventh_2026_10_28.md`, and is pointed at rather than
+copied (#6): the capacity file at its head; the ordered first read (§0); Task 0 (§1); Task 1's lines and scope check, the
+blocks, the re-confirmation file, the source readings, both homes walks and the records met, the marks file, the
+generation, the checks verbatim, the word scan, the quotation re-check and the commit (§2); Task 2 (§3); the grades (§4),
+the observations (§5), the declared departures (§6), the member's state and the paragraph on a full row's cost (§7), the
+findings (§8), the summary of context (§9), the plan's tell (§10) and the self-check (§11).
+
+### What needs the writing side, named rather than resolved
+
+1. **The last group's full rows** — 10, named at §6.57's foot — and **the paragraph on a full row's cost** (report §7):
+   group 4 was finished whole, but a summary fell inside it; the report finds no reason to doubt that the ten rows can
+   be built whole by one fresh session, gives reason to doubt that the ten rows, the member's three feet and the
+   sections 1(e) names fit one session together, says what a cut — the rows in one batch, the feet and the sections in
+   another — would do, and says that this batch did not open those sections.
+2. **Four listed sentences placed against §6.44's listing reading** (Rows 57.451 and 57.493 to 57.495) and **Row
+   57.467's first claim placed as a rule rather than quarantined**, each stated for challenge at the group's header
+   (report §5).
+3. **The quotation re-check's inherited italic capture skips an italic quotation that opens with bold markers**; this
+   batch's script was tightened, and whether earlier batches' runs skipped any such quotation is not checked (report §5,
+   §2.6).
+4. **The classification tool's message still names four tools without an authored verdict**, unchanged.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then the dispatch of the
+  fifth and last full-row group, confirmed or re-sized on this batch's paragraph on a full row's cost, resuming at the
+  boundary §0 of the reading file records; that dispatch also writes the member's three feet and the sections 1(e)
+  names.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-30, at boot tip `572377519f007bedbf901ad7686c9def010e33cd`, under
+`cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md`. Every commit identifier here was read from the
+commit's own object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
