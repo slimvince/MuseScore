@@ -27,7 +27,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_third_2026_10_26.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -113,10 +114,10 @@ its own entry there.
 | 54 | `cowork_bounded_context_design.md` passages | **DONE** (§6.54) |
 | 55 | `cowork_prefit_gates.md` passages | **DONE** (§6.55) |
 | 56 | The L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10 | **DONE** (§6.56) |
-| 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | **TABLE DONE; FULL-ROW GROUPS 1 TO 3 DONE** (§6.57 — every named row pointed or named for a full row; groups 1 to 3's full rows built; the remaining full rows NOT YET WRITTEN, named at §6.57's foot) |
+| 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | **TABLE DONE; FULL-ROW GROUPS 1 TO 4 DONE** (§6.57 — every named row pointed or named for a full row; groups 1 to 4's full rows built; the remaining full rows NOT YET WRITTEN, named at §6.57's foot) |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 56, the table of position 57 and its first three full-row groups —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 56, the table of position 57 and its first four full-row groups —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -138,7 +139,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, position 55, the passages of `cowork_prefit_gates.md`, position 56, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10, and the table of position 57, the L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 — the first portion of a member done in named portions under the ruling record of 2026-10-26, and its first three full-row groups, the rows named at §6.57's group headings.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, position 55, the passages of `cowork_prefit_gates.md`, position 56, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10, and the table of position 57, the L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 — the first portion of a member done in named portions under the ruling record of 2026-10-26, and its first four full-row groups, the rows named at §6.57's group headings.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -191,10 +192,13 @@ was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabula
 the group under its own limit on the batch, and not by a capacity judgment; the second full-row group of position 57
 was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md`, which stopped after
 the group under its own limit on the batch, and not by a capacity judgment; the third full-row group of position 57
-was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md`.**
+was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md`, which stopped after
+the group under its own limit on the batch, and not by a capacity judgment; the fourth full-row group of position 57
+was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md`.**
 **The writing now stands inside position 57, at a boundary the ruling record of 2026-10-26 names: its table and its
-first three full-row groups done; its remaining full rows, named at §6.57's foot, not yet written — and the next
-writing resumes at the fourth group of them, the last.**
+first four full-row groups done; its remaining full rows, named at §6.57's foot, not yet written — and the next
+writing resumes at the fifth group of them, the last, the planned fourth group having been re-cut by document into
+the fourth and the fifth at the dispatch of the fourth.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -72540,14 +72544,14 @@ the row; *Document and locator* the document the L2 row's block names and that b
 | 57.445 | L2 Row 50.71 | B96 | `cowork_progression_schema_dictionary.md` (locator: lines 304–305) | **FULL ROW BUILT** — group 3 — in member 46's cut |
 | 57.446 | L2 Row 53.1 | B97 | `cowork_progression_schema_design.md` (locator: lines 21–23) | Row 44.1 (§6.44) |
 | 57.447 | L2 Row 53.20 | B97 | `cowork_progression_schema_design.md` (locator: line 89) | Row 44.21 (§6.44) |
-| 57.448 | L2 Row 53.26 | B97 | `cowork_progression_schema_design.md` (locator: line 101) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.448 | L2 Row 53.26 | B97 | `cowork_progression_schema_design.md` (locator: line 101) | **FULL ROW BUILT** — group 4 — in member 44's cut |
 | 57.449 | L2 Row 53.51(ii) | B97 | `cowork_progression_schema_design.md` (locator: lines 165–169) | Row 44.28 (§6.44) |
 | 57.450 | L2 Row 53.58(i) | B97 | `cowork_progression_schema_design.md` (locator: line 191) | Row 44.36 (§6.44) |
-| 57.451 | L2 Row 53.62 | B97 | `cowork_progression_schema_design.md` (locator: line 201) | **NEEDS A FULL ROW** — listed only — §6.44 item 15 |
+| 57.451 | L2 Row 53.62 | B97 | `cowork_progression_schema_design.md` (locator: line 201) | **FULL ROW BUILT** — group 4 — listed only — §6.44 item 15 |
 | 57.452 | L2 Row 53.67 | B97 | `cowork_progression_schema_design.md` (locator: lines 219–220) | Row 44.39 (§6.44) |
-| 57.453 | L2 Row 53.79(ii) | B97 | `cowork_progression_schema_design.md` (locator: lines 302–304) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.454 | L2 Row 53.21 | B98 | `cowork_progression_schema_design.md` (locator: lines 95–96) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.455 | L2 Row 53.35 | B98 | `cowork_progression_schema_design.md` (locator: line 137) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.453 | L2 Row 53.79(ii) | B97 | `cowork_progression_schema_design.md` (locator: lines 302–304) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.454 | L2 Row 53.21 | B98 | `cowork_progression_schema_design.md` (locator: lines 95–96) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.455 | L2 Row 53.35 | B98 | `cowork_progression_schema_design.md` (locator: line 137) | **FULL ROW BUILT** — group 4 — in member 44's cut |
 | 57.456 | L2 Row 53.49 | B98 | `cowork_progression_schema_design.md` (locator: lines 162–163) | Row 44.26 (§6.44) |
 | 57.457 | L2 Row 53.56(ii) | B98 | `cowork_progression_schema_design.md` (locator: line 187) | Row 44.34 (§6.44) |
 | 57.458 | L2 Row 53.2 | B99 | `cowork_progression_schema_design.md` (locator: lines 23–25) | Row 44.2 (§6.44) |
@@ -72557,38 +72561,38 @@ the row; *Document and locator* the document the L2 row's block names and that b
 | 57.462 | L2 Row 53.12 | B103 | `cowork_progression_schema_design.md` (locator: line 54) | Row 44.12 (§6.44) |
 | 57.463 | L2 Row 53.13 | B103 | `cowork_progression_schema_design.md` (locator: lines 54–55) | Row 44.13 (§6.44) |
 | 57.464 | L2 Row 53.14 | B103 | `cowork_progression_schema_design.md` (locator: lines 55–57) | Row 44.14 (§6.44) |
-| 57.465 | L2 Row 53.33 | B103 | `cowork_progression_schema_design.md` (locator: line 135) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.466 | L2 Row 53.34 | B103 | `cowork_progression_schema_design.md` (locator: lines 135–136) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.467 | L2 Row 53.36 | B103 | `cowork_progression_schema_design.md` (locator: lines 137–139) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.468 | L2 Row 53.37 | B103 | `cowork_progression_schema_design.md` (locator: lines 140–141) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.469 | L2 Row 53.38 | B103 | `cowork_progression_schema_design.md` (locator: lines 141–144) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.470 | L2 Row 53.39 | B103 | `cowork_progression_schema_design.md` (locator: line 145) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.471 | L2 Row 53.40 | B103 | `cowork_progression_schema_design.md` (locator: line 146) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.472 | L2 Row 53.43 | B103 | `cowork_progression_schema_design.md` (locator: line 151) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.473 | L2 Row 53.44 | B103 | `cowork_progression_schema_design.md` (locator: line 153) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.474 | L2 Row 53.45 | B103 | `cowork_progression_schema_design.md` (locator: lines 154–155) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.475 | L2 Row 53.47(ii) | B103 | `cowork_progression_schema_design.md` (locator: lines 157–159) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.465 | L2 Row 53.33 | B103 | `cowork_progression_schema_design.md` (locator: line 135) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.466 | L2 Row 53.34 | B103 | `cowork_progression_schema_design.md` (locator: lines 135–136) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.467 | L2 Row 53.36 | B103 | `cowork_progression_schema_design.md` (locator: lines 137–139) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.468 | L2 Row 53.37 | B103 | `cowork_progression_schema_design.md` (locator: lines 140–141) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.469 | L2 Row 53.38 | B103 | `cowork_progression_schema_design.md` (locator: lines 141–144) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.470 | L2 Row 53.39 | B103 | `cowork_progression_schema_design.md` (locator: line 145) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.471 | L2 Row 53.40 | B103 | `cowork_progression_schema_design.md` (locator: line 146) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.472 | L2 Row 53.43 | B103 | `cowork_progression_schema_design.md` (locator: line 151) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.473 | L2 Row 53.44 | B103 | `cowork_progression_schema_design.md` (locator: line 153) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.474 | L2 Row 53.45 | B103 | `cowork_progression_schema_design.md` (locator: lines 154–155) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.475 | L2 Row 53.47(ii) | B103 | `cowork_progression_schema_design.md` (locator: lines 157–159) | **FULL ROW BUILT** — group 4 — in member 44's cut |
 | 57.476 | L2 Row 53.15 | B104 | `cowork_progression_schema_design.md` (locator: line 58) | Row 44.15 (§6.44) |
 | 57.477 | L2 Row 53.16 | B105 | `cowork_progression_schema_design.md` (locator: lines 58–60) | Row 44.16 (§6.44) |
-| 57.478 | L2 Row 53.23 | B105 | `cowork_progression_schema_design.md` (locator: line 98) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.478 | L2 Row 53.23 | B105 | `cowork_progression_schema_design.md` (locator: line 98) | **FULL ROW BUILT** — group 4 — in member 44's cut |
 | 57.479 | L2 Row 53.72 | B105 | `cowork_progression_schema_design.md` (locator: lines 245–246) | Row 44.44 (§6.44) |
 | 57.480 | L2 Row 53.17 | B106 | `cowork_progression_schema_design.md` (locator: lines 61–62) | Row 44.17 (§6.44) |
 | 57.481 | L2 Row 53.50(i) | B106 | `cowork_progression_schema_design.md` (locator: lines 163–165) | Row 44.27 (§6.44) |
 | 57.482 | L2 Row 53.51(i) | B106 | `cowork_progression_schema_design.md` (locator: lines 165–169) | Row 44.28 (§6.44) |
 | 57.483 | L2 Row 53.19(i) | B107 | `cowork_progression_schema_design.md` (locator: lines 87–88) | Row 44.20 (§6.44) |
 | 57.484 | L2 Row 53.19(ii) | B108 | `cowork_progression_schema_design.md` (locator: lines 87–88) | Row 44.20 (§6.44) |
-| 57.485 | L2 Row 53.22(i) | B108 | `cowork_progression_schema_design.md` (locator: line 97) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.486 | L2 Row 53.22(ii) | B109 | `cowork_progression_schema_design.md` (locator: line 97) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.487 | L2 Row 53.28 | B109 | `cowork_progression_schema_design.md` (locator: line 115) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.485 | L2 Row 53.22(i) | B108 | `cowork_progression_schema_design.md` (locator: line 97) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.486 | L2 Row 53.22(ii) | B109 | `cowork_progression_schema_design.md` (locator: line 97) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.487 | L2 Row 53.28 | B109 | `cowork_progression_schema_design.md` (locator: line 115) | **FULL ROW BUILT** — group 4 — in member 44's cut |
 | 57.488 | L2 Row 53.59 | B109 | `cowork_progression_schema_design.md` (locator: line 193) | Row 44.37 (§6.44) |
-| 57.489 | L2 Row 53.27 | B110 | `cowork_progression_schema_design.md` (locator: lines 113–114) | **NEEDS A FULL ROW** — in member 44's cut |
-| 57.490 | L2 Row 53.47(i) | B111 | `cowork_progression_schema_design.md` (locator: lines 157–159) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.489 | L2 Row 53.27 | B110 | `cowork_progression_schema_design.md` (locator: lines 113–114) | **FULL ROW BUILT** — group 4 — in member 44's cut |
+| 57.490 | L2 Row 53.47(i) | B111 | `cowork_progression_schema_design.md` (locator: lines 157–159) | **FULL ROW BUILT** — group 4 — in member 44's cut |
 | 57.491 | L2 Row 53.57 | B111 | `cowork_progression_schema_design.md` (locator: line 189) | Row 44.35 (§6.44) |
 | 57.492 | L2 Row 53.73(i) | B111 | `cowork_progression_schema_design.md` (locator: lines 272–273) | Row 44.46 (§6.44) |
-| 57.493 | L2 Row 53.61 | B112 | `cowork_progression_schema_design.md` (locator: lines 199–200) | **NEEDS A FULL ROW** — listed only — §6.44 item 14 |
-| 57.494 | L2 Row 53.63 | B112 | `cowork_progression_schema_design.md` (locator: lines 201–203) | **NEEDS A FULL ROW** — listed only — §6.44 item 16 |
-| 57.495 | L2 Row 53.64 | B112 | `cowork_progression_schema_design.md` (locator: lines 204–206) | **NEEDS A FULL ROW** — listed only — §6.44 item 17 |
-| 57.496 | L2 Row 53.79(i) | B112 | `cowork_progression_schema_design.md` (locator: lines 302–304) | **NEEDS A FULL ROW** — in member 44's cut |
+| 57.493 | L2 Row 53.61 | B112 | `cowork_progression_schema_design.md` (locator: lines 199–200) | **FULL ROW BUILT** — group 4 — listed only — §6.44 item 14 |
+| 57.494 | L2 Row 53.63 | B112 | `cowork_progression_schema_design.md` (locator: lines 201–203) | **FULL ROW BUILT** — group 4 — listed only — §6.44 item 16 |
+| 57.495 | L2 Row 53.64 | B112 | `cowork_progression_schema_design.md` (locator: lines 204–206) | **FULL ROW BUILT** — group 4 — listed only — §6.44 item 17 |
+| 57.496 | L2 Row 53.79(i) | B112 | `cowork_progression_schema_design.md` (locator: lines 302–304) | **FULL ROW BUILT** — group 4 — in member 44's cut |
 | 57.497 | L2 Row 53.65 | B113 | `cowork_progression_schema_design.md` (locator: line 218) | Rows 44.38 and 44.39 (§6.44) — the quotation is the decision's bold lead, read at §6.44 as a title; those rows tabulate the two sentences stating its claim |
 | 57.498 | L2 Row 54.1 | B114 | `docs/llm_integration.md` (locator: line 582) | **FULL ROW BUILT** — group 2 — listed only — §6.51 item 17 |
 | 57.499 | L2 Row 54.2 | B114 | `docs/llm_integration.md` (locator: line 708) | **FULL ROW BUILT** — group 2 — listed only — §6.51 item 35 |
@@ -72665,7 +72669,7 @@ line is a title and is neither here nor among the lines.
   the named rows (every claim counted, no row named twice with one claim).
 - A pointer line's statement is counted at the row it names: **it is counted in neither table of the feet.**
 - **Outgoing statements placed by this portion: 0.** The member's full rows are built in named groups below; groups
-  1 to 3's are built, and the last group's are not yet written.
+  1 to 4's are built, and the last group's are not yet written.
 - Listed under *not a statement*: **9**.
 - **Every non-blank line of the range is accounted for**: 1 heading line, 277 lines of the 123 bullets, and 652 lines of
   the 9 listed items — 1 + 277 + 652 = 930, the range's non-blank lines.
@@ -72811,8 +72815,9 @@ line is a title and is neither here nor among the lines.
   57.170, 57.171, 57.173 and 57.207 (28 rows), at its group heading below; group 2 — Rows 57.249, 57.259, 57.278,
   57.283, 57.290, 57.315, 57.318, 57.320, 57.322, 57.352 to 57.354, 57.362 to 57.366, 57.368 to 57.373, 57.377, 57.498
   to 57.501, 57.511, 57.513 and 57.514 (31 rows), at its group heading below; group 3 — Rows 57.390 to 57.396, 57.398 to
-  57.402, 57.405, 57.427 to 57.435, 57.445, 57.502 to 57.504 and 57.535 (27 rows), at its group heading below; 36 rows
-  remain NOT YET WRITTEN.
+  57.402, 57.405, 57.427 to 57.435, 57.445, 57.502 to 57.504 and 57.535 (27 rows), at its group heading below; group 4 —
+  Rows 57.448, 57.451, 57.453 to 57.455, 57.465 to 57.475, 57.478, 57.485 to 57.487, 57.489, 57.490 and 57.493 to 57.496
+  (26 rows), at its group heading below; 10 rows remain NOT YET WRITTEN.
 
 #### Full-row group 1 — Rows 57.50, 57.60, 57.62, 57.97, 57.107 to 57.119, 57.124, 57.126, 57.153 to 57.157, 57.170, 57.171, 57.173 and 57.207 (28 rows; `cowork_layer5_function_design.md`, `ARCHITECTURE.md`, `cowork_phrase_boundary_design.md`)
 
@@ -76598,6 +76603,1237 @@ The AGREES statements: none. The DIFFERS statements: 57.502 (i) (L3-S8).
 
 ---
 
+#### Full-row group 4 — Rows 57.448, 57.451, 57.453 to 57.455, 57.465 to 57.475, 57.478, 57.485 to 57.487, 57.489, 57.490 and 57.493 to 57.496 (26 rows; `cowork_progression_schema_design.md`)
+
+> **Group 4 of the full-row groups.** Twenty-six rows of the named list, in the table's order, in one document — the
+> rows the named list gives to that document and no others, a scope chosen by document and named row by row in the
+> heading; the first of the two groups into which the dispatch that wrote this group re-cut the fourth group the
+> twenty-fourth dispatch planned (36 rows in two documents), by document, on the previous batch's paragraph on a full
+> row's cost and the twenty-fifth's (the dispatch's sizing section, stated for challenge); each row built in full in
+> position 56's full-row form, numbered as the table numbered its line — one named L2 row, one identity in this file,
+> and at L2 Rows 53.22, 53.47 and 53.79 one line per named claim. In the table's order the twenty-six are the first
+> twenty-six of the thirty-six needs-a-full-row cells that remained after group 3, Rows 57.448 to 57.496, standing
+> between group 3's Row 57.445 and group 2's Rows 57.498 to 57.501; the ten rows of the last group,
+> `cowork_idiom_entry_mapping.md`'s Rows 57.516 to 57.533, stand after group 2's Rows 57.511 to 57.514 and before group
+> 3's Row 57.535. The dispatch described the group as the cells of its one document and ordered it checked as such, with
+> its place in the table's order printed as a fact; the check held. Rows built: **26**. Outgoing statements: **36**
+> (Rows 57.448 to 57.496 as the heading names them; 16 rows of one claim and 10 rows of two (Rows 57.466, 57.467,
+> 57.469, 57.470, 57.487, 57.489, 57.490, 57.493, 57.494 and 57.495), each split — the arithmetic is at the foot of this
+> group). Lines turned into pointers: **none**. By class at the table: 22 *in member 44's cut*, 4 *listed only*. Counted
+> at this group by this session; the counts appear here, at the group's feet, at §6.57's *Built so far* bullet and at
+> §13.
+>
+> **How each row was built.** The table's lines were re-read first: a script printed the 26 table lines and the 26 lines
+> of the named list from this file's blob at this batch's Task 0 commit and checked each against the dispatch's table —
+> every L2 row, bullet, document, locator and class equal, every decision cell reading *NEEDS A FULL ROW* — and checked
+> the scope both ways: every needs-a-full-row cell naming the document is one of the 26, and every one of the 26 is such
+> a cell; the other ten cells name `cowork_idiom_entry_mapping.md`. The table's decision was then re-confirmed at this
+> file before any row was written (`decisions57g4.txt`, the report): each place the decision points to was opened —
+> §6.44's manifest header whole, with its eight ranges, its cut and its homes, its items 13 to 17 and its Rows 44.12 to
+> 44.14, 44.19 to 44.21, 44.37 to 44.39 and 44.46; §6.7's items 31 to 33, which items 14 to 17 say they are read as;
+> §6.46's items 1, 3 and 6 with group 3's Rows 57.398 and 57.405, the dictionary's sentences of the same dependency map;
+> and Row 38.80 — and a scripted search of every statement and every listed item of §6.1 to §6.56 for each quotation and
+> each run of six of its words printed the candidates the table's search rested on (Rows 44.14, 44.37 and 38.80, and
+> §6.44's items 14 to 17), each read by eye: **every one of the 26 sentences is tabulated nowhere in this file as a
+> statement** — Row 44.37 tabulates the member's decision D4, the same two claims as Rows 57.485 to 57.487 at another
+> place of the document, and Row 44.14 the terms list's definition of the seed — so no line became a pointer. The 26
+> rows' L2 blocks — twenty-three L2 rows, L2 Rows 53.22, 53.47 and 53.79 each serving two — were extracted from the L2
+> file's blob at this batch's Task 0 commit and read whole; each quotes its statement under *Outgoing statement.*, with
+> a locator equal to the table's cell, and none carries a mark of the L2 comparison's own at its heading line. Each row
+> quotes, first, its §10 bullet whole, its wrapped lines joined with one space (*The L2 entry.*), the same words §6.57's
+> numbered list carries; and second, the statement the L2 row's own block quotes, with the block's bold markers kept,
+> the document and the section the block names, and the block's own locator (*The outgoing statement it carries.*). The
+> document was opened at the located lines at its blob at the same commit: **every one of the 26 quotations stands there
+> as quoted**, at exactly the lines the block locates, and *At the source now.* says where each sentence begins and
+> ends, what its first line carries before it, and where its lines lie against this comparison's members. The homes were
+> walked twice, as the marks paragraph below says. An L2 row is always written with the prefix *L2*.
+>
+> **What kind of text the rows are, and which placement readings applied.** Twenty-six claims and sentences of one
+> document, `cowork_progression_schema_design.md`, sent to L3 by the L2 comparison, every one of its L2 rows a passage
+> row of that comparison's member 53: twenty-two from the document's cut sections, tabulated as a run — five of §3,
+> *Inputs and outputs (the contract)*, two of §4.2, *Substitutions*, thirteen of §4.5, *The idiom-mixture weighting*,
+> and two of §9's open item 2 — and four from §6's dependency map, which §6.44 lists as its items 14 to 17. **The
+> readings of the unit stated at earlier members apply unchanged.** **A list marker** is dropped at the head of
+> Rows 57.448, 57.451, 57.472 to 57.475, 57.478, 57.490 and 57.495; **a numbered item's number and its bold lead are not
+> quoted** where the L2 block opens after them — §4.5's three phases, *Recognise (weight-free).*,
+> *Estimate the mixture.* and *Weight and emit.*, at Rows 57.455, 57.468 and 57.470 — and each row's
+> *At the source now.* says what the line carries before the quotation; **a bold lead or an italic lead that opens the
+> sentence carrying the claim is quoted with it**, as the L2 block quotes it (Rows 57.454, 57.472 to 57.475, 57.490,
+> 57.451 and 57.495); **a bold lead closed by a colon that carries its own claims is tabulated under the colon-lead
+> reading** (Rows 57.485 and 57.486, §3's *Produces* lead, and Row 57.466, §4.5's bold sentence introducing the three
+> phases); **a parenthesis giving a sentence its reason, or a pointer, is taken with it** (Rows 57.466, 57.475, 57.478,
+> 57.493, 57.495 and 57.496). The glossary reading has no instance: no row of this group is a terms-table row or a
+> glossary entry, the document's terms list being §6.44's range 1. **A unit the L2 block does not split but which
+> carries two claims under the unit is split here** (Rows 57.466, 57.467, 57.469, 57.470, 57.487, 57.489, 57.493, 57.494
+> and 57.495), and each row says so; **where the L2 block splits the row and a bullet names one claim**, the row
+> tabulates that claim and says the block's other claim is not its own; and Row 57.490, whose L2 claim carries two
+> clauses with two subjects, is split again here and says so.
+>
+> **Cases no earlier member or group met, each stated for challenge.** (1) **The planned fourth group re-cut by
+> document**: the dispatch that wrote this group cut the 36 rows the twenty-fourth dispatch planned as one group in two
+> documents into this group of 26 rows in one document and a fifth group, the last, of 10 rows in
+> `cowork_idiom_entry_mapping.md`; the scope check it ordered — both ways, over the table's needs-a-full-row cells —
+> held. (2) **One document's cut sections tabulated as a run**: twenty-two sentences of §3, §4.2, §4.5 and §9's item 2,
+> which lie in the cut §6.44's manifest header lists and which no member tabulated. (3) **A numbered list of phases with
+> bold leads the L2 blocks do not quote, and bulleted rules with bold leads they do**, each row saying which. (4)
+> **Three L2 rows each named at two claims by two different bullets and built as two rows**: L2 Row 53.22, its claim (i)
+> named by B108 (Row 57.485) and its claim (ii) by B109 (Row 57.486); L2 Row 53.47, claim (i) by B111 (Row 57.490) and
+> claim (ii) by B103 (Row 57.475); L2 Row 53.79, claim (i) by B112 (Row 57.496) and claim (ii) by B97 (Row 57.453) — one
+> quotation, two claims, two rows, each row naming the other, as group 2's Rows 57.352 and 57.511 did for L2 Row 43.100
+> and group 3's Rows 57.503 and 57.504 for L2 Row 62.41; **the alternative**, one full row for the sentence carrying
+> both claims under one number, is stated and not taken, because the table already gave the two claims two numbers and
+> the named list names both. (5) **Four listed sentences of the dependency map placed against §6.44's reading of them**:
+> Rows 57.451, 57.493, 57.494 and 57.495, which §6.44 lists as its items 15, 14, 16 and 17 as maintenance instructions
+> or statements about the code, read as at §6.7's items 31 to 33; each is read here as stating the rule of the
+> dependency map — how the catalog and the grammar shall relate, and what a change to either shall do — and placed on
+> it, beside group 3's placement of the dictionary's sentences of the same map (Rows 57.398 and 57.405); **the
+> alternative**, QUARANTINED with an audit question on the built test, is stated and not taken, because each sentence is
+> a bullet of a map the member's decision D5 states for every reader and names no code site. (6) **A sentence recording
+> the first version's state, weighed as rule or property**: Row 57.467's sentence opening *"In v1 this step does not
+> depend on `w` at all"* is split, its first claim placed as the recognition's own rule and its second with the weights;
+> **the alternative**, the first claim QUARANTINED as a property of the first version as built, is stated and not taken,
+> because the sentence stands in a ratified design's rules and names no code site. (7) **A SEEN home whose words are two
+> tabulated sentences**: register entry D-503's home, lines 135 to 136, holds exactly the sentences of Rows 57.465 and
+> 57.466, each marked, as the marks paragraph below says. (8) **The narrowed ordered read of §6.57**: this group's
+> session read §6.57 at its header, its bullet list, its table's remaining lines, its foot, the earlier groups'
+> headings, headers and feet and the precedent rows named, and not whole.
+>
+> **The marks of the full rows, located at the data file.** `item_4_identities_inside` for position 57 is empty. Both
+> walks over `tools/audit/decisions/backbone_decisions.json`, taken at this batch's Task 0 commit by explicit hash, the
+> retired block included — the first by each home's cited line range, the second by where each home's words and each
+> row's sentence actually stand, character by character — set each row's lines against every home the data file records
+> in the document: eight, all live and none retired — register entries D-502 (lines 245–247), D-503 (135–136), D-504
+> (161–178), D-505 (162–166), D-506 (193–194), D-507 (272–273), D-508 (242–244) and D-509 (121–128) — **each one's words
+> standing exactly at its cited lines**, every one a SEEN identity, and none of the twenty-three withheld identities
+> homed in the document. **No full row lies inside a withheld home, so no row is marked WITHHELD.** **Two full rows lie
+> inside a SEEN home — Rows 57.465 and 57.466, inside D-503's (lines 135–136) — and each carries the SEEN mark naming
+> D-503 after its title**, with the paragraph *The decisions register at this row*: the home's words are exactly the two
+> sentences, the first ending mid-line 135 and the second ending with the colon that closes line 136. Rows 57.455 and
+> 57.467, whose sentences open line 137 inside the first numbered phase, stand outside the home's words, as both walks
+> show. No other home lies at any row's lines: D-509's ends before §4.5 opens, D-504's and D-505's begin at §4.6 after
+> the blank line that closes §4.5, D-506's ends before the dependency map, and D-502's, D-507's and D-508's lie after it
+> and before §9. **The content of D-506 and D-507 stands at Rows 57.485 to 57.487 and 57.490**, homed at the member's
+> decisions D4 and D7 and marked at §6.44's Rows 44.37 and 44.46; the mark is never carried by content, and those rows
+> carry none. The walk over the L2 reading file's range 75368–76315 finds no home: the data file records none in that
+> file, and no L2 block of this group carries a mark of the L2 comparison's own. **Rows naming L3-S4: none.**
+>
+> **How the full rows' subjects were placed.** **The recognition of a named progression as such** — what the consumer
+> reads, that it produces nothing where nothing is recognized, its schema span, its additivity over the function layer,
+> its first phase, its outputs, its chords-only scope and its record of a substitution — is **UNPLACED**, read as §6.44
+> read it (placement (o) there; Rows 57.97, 44.20 (i), 44.21, 44.37 (i) and 44.4): no charter of `FRAMEWORK.md` §5 names
+> the recognition of a schema, the span it covers or a knowledge-base component. **The literal Roman numeral never
+> changed** is **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, which publishes the chord per
+> span, as Row 44.37 (ii) placed the same claim (Rows 57.486 and 57.487 (i)). **The weighting of the recognitions** —
+> the weight vector, its discovery from the music in three forward-only phases, the histogram, the blend from the seed,
+> the weights applied to admission and prior strength, the prior strength, the admission, the mode cue and the factor
+> for entries defined by their lines — is **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, whose
+> detail specification fixes how the candidate score over its readings is formed and what its terms are, as §6.44 placed
+> the idiom weights and Rows 44.12 to 44.14 the prior strength, the admission and the seed. **The chords-only mark** is
+> **RELOCATED** to *the uncertainty surface*, as Row 44.46 (i) placed it (Row 57.490 (ii)). The L2 comparison relocated
+> each of those rows to L3, and each RELOCATED claim says it is placed elsewhere, as a fact and not a correction. **The
+> dependency map and the asymmetry ruling** — the catalog and the grammar not derived from each other, coupled one way
+> by the consistency test, a change to either needing no edit of the other, and a licensed pair in no entry not a gap of
+> the catalog — are **UNPLACED** as rules of the catalog, read as at Row 57.398, departing from §6.44's items 14 to 17
+> (case (5) above); and the evidence for growing the catalog (Row 57.453) is **UNPLACED** as at Row 7.85. **No derived
+> statement speaks to any claim of this group**: every verdict is THE DERIVATION IS SILENT, as at §6.44's rows of the
+> recognition. **No statement of this group is ADOPTED, QUARANTINED, DISCARDED or HISTORICAL.**
+
+---
+
+**Row 57.448 — L2 Row 53.26, one of the eight rows B97 names: nothing emitted where nothing is recognized.**
+
+*The L2 entry.* "Rows 53.1, 53.20, 53.26, 53.51(ii), 53.58(i), 53.62, 53.67 and 53.79(ii) — travelling with Row 5.91: a
+named progression and its catalog entry, the catalog queried and not owned, nothing emitted where nothing is recognized,
+an internally sequential entry's tonality motion carried by its schema-span, exact matches only for now, the catalog the
+one place a named progression is added or edited and its owner, and frequent corpus pairs the catalog lacks the evidence
+for growing it." (locator: §10, lines 75803–75807). It is one of the eight rows this bullet names, and each of them
+quotes the whole bullet.
+
+*The outgoing statement it carries.* "nothing where nothing is recognised." — `cowork_progression_schema_design.md`, §3,
+the inputs and outputs (the L2 row's own locator: line 101).
+
+The line lies in member 44's cut — the lines 90–116, which §6.44's manifest header lists in no range, §3 whole among
+them — so no member of this comparison tabulated it, and the sentence is tabulated here for the first time. One claim:
+where nothing is recognized, the consumer produces nothing.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.97: the derivation names no recognized progression schema, and
+none of `FRAMEWORK.md` §5's charters names the recognition of one.
+
+*At the source now.* The sentence stands at line 101 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens the line. It is the last of the four bullets the bold lead at
+line 97 introduces, the outputs the consumer produces; §8's risk on catalog completeness points back to it (*"on an
+unrecognised progression the consumer emits nothing (§3)"*, line 290, in the cut). The nearest heading at the blob is
+*"## 3. Inputs and outputs (the contract)"*. The line lies in none of member 44's published ranges: it falls between its
+ranges 80–89 and 117–128, inside the cut 90–116 §6.44's manifest header lists — so the class *in member 44's cut* holds
+at the blobs. The document is not one of the five withheld from the deriving session's pack; no home of the decisions
+register lies at this line.
+
+---
+
+**Row 57.451 — L2 Row 53.62, one of the eight rows B97 names: the catalog the one place a named progression is added or
+edited and its owner.**
+
+*The L2 entry.* "Rows 53.1, 53.20, 53.26, 53.51(ii), 53.58(i), 53.62, 53.67 and 53.79(ii) — travelling with Row 5.91: a
+named progression and its catalog entry, the catalog queried and not owned, nothing emitted where nothing is recognized,
+an internally sequential entry's tonality motion carried by its schema-span, exact matches only for now, the catalog the
+one place a named progression is added or edited and its owner, and frequent corpus pairs the catalog lacks the evidence
+for growing it." (locator: §10, lines 75803–75807). It is one of the eight rows this bullet names, and each of them
+quotes the whole bullet.
+
+*The outgoing statement it carries.* "*Changing the CATALOG* (add/edit a named progression or substitution) → change the
+Vocabulary ONLY." — `cowork_progression_schema_design.md`, §6, the architecture decisions, the dependency map (the L2
+row's own locator: line 201).
+
+This file holds the sentence only as §6.44's item 15 under *not a statement* — *a maintenance instruction about the
+catalog, read as at §6.7's item 32* — so the row is built in full and the sentence placed on its content. **It is read
+as stating a rule — how the catalog and the grammar shall relate, and what a change to either shall do — and not a
+property of the code as built**: it is a bullet of the dependency map the member's decision D5 states, under its lead
+*what changes where — every reader must be able to answer this*, and names no code site. **This departs from item 15's
+reading**, and from §6.7's item 32, which list sentences of the same content in another document; it follows group 3's
+Rows 57.398 and 57.405, which placed the dictionary's sentences of the same map as rules; stated for challenge in the
+group's header. One claim: a change to the catalog — adding or editing a named progression or substitution — changes the
+catalog component only; its italic lead names the change and is quoted with it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.39: the catalog the one owner of the named progressions,
+`FRAMEWORK.md` §5 naming no charter whose subject is a catalog of named progressions.
+
+*At the source now.* The sentence stands at line 201 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens the line and stopping at the bullet's first sentence. The
+bullet's second sentence, which Row 57.494 tabulates, follows on the same line. The nearest heading at the blob is
+*"## 6. Architecture decisions (with the alternatives weighed)"*, the member's decision D5 and its dependency map. The
+line lies inside member 44's range 186–273, where §6.44 lists the sentence as item 15. The document is not one of the
+five withheld from the deriving session's pack; no home of the decisions register lies at this line — register entry
+D-506's (193–194) ends before the map and D-508's (242–244) begins after it.
+
+---
+
+**Row 57.453 — L2 Row 53.79(ii), one of the eight rows B97 names: frequent corpus pairs the catalog lacks the evidence
+for growing it.**
+
+*The L2 entry.* "Rows 53.1, 53.20, 53.26, 53.51(ii), 53.58(i), 53.62, 53.67 and 53.79(ii) — travelling with Row 5.91: a
+named progression and its catalog entry, the catalog queried and not owned, nothing emitted where nothing is recognized,
+an internally sequential entry's tonality motion carried by its schema-span, exact matches only for now, the catalog the
+one place a named progression is added or edited and its owner, and frequent corpus pairs the catalog lacks the evidence
+for growing it." (locator: §10, lines 75803–75807). It is one of the eight rows this bullet names, and each of them
+quotes the whole bullet.
+
+*The outgoing statement it carries.* "Note the asymmetry ruling (D5): a licensed pair in no catalog entry is NOT a
+catalog gap (grammar licenses more than convention names); frequent corpus pairs absent from the catalog are the
+`idiom_discovery/` pipeline's evidence for growing it." — `cowork_progression_schema_design.md`, §9, the open items,
+item 2 (the L2 row's own locator: lines 302–304).
+
+The lines lie in member 44's cut — the lines 284–311, which §6.44's manifest header lists in no range, §8 and §9 whole
+among them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. The
+sentence stands inside §9's item 2, an open item on partial matching deferred to the precision phase; it opens *Note the
+asymmetry ruling (D5)* and states that ruling's two claims as rules, and is placed as the rules it states, not as the
+open item's record. The L2 block splits it into two claims, and two bullets name them: B97 names claim (ii), which this
+row tabulates; the block's claim (i) is not this row's — a fact, not a correction; claim (i) is tabulated at Row 57.496,
+which B112 names. One claim: frequent pairs in the corpora that the catalog lacks are the evidence, gathered by the
+idiom-discovery pipeline, for growing it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 7.85: `FRAMEWORK.md` §5 names no charter whose subject is a
+catalog of named progressions, and the derivation does not speak to one; how the catalog grows is its own upkeep.
+
+*At the source now.* The sentence stands at lines 302–304 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening mid-line 302 after the item's account of partial matching and closing the item on line 304; Row 57.496
+tabulates the block's other claim of the same sentence. The nearest heading at the blob is *"## 9. Open items"*. The
+lines lie in none of member 44's published ranges: they fall between its ranges 275–283 and 312–332, inside the cut
+284–311 §6.44's manifest header lists — so the class *in member 44's cut* holds at the blobs. The document is not one of
+the five withheld from the deriving session's pack; no home of the decisions register lies at these lines.
+
+---
+
+**Row 57.454 — L2 Row 53.21, one of the four rows B98 names: the consumer reading the committed progression.**
+
+*The L2 entry.* "Rows 53.21, 53.35, 53.49 and 53.56(ii) — travelling with Row 5.91: the consumer reading the committed
+progression, running its recognition over it, exposing each sequence as a typed output, and adding no layer. *(L2-S49
+travels with them; Row 53.49 lies inside D-504's and D-505's homes.)*" (locator: §10, lines 75808–75810). It is one of
+the four rows this bullet names, and each of them quotes the whole bullet. Its *L2-S49* names a statement of the L2
+derivation, relayed as it stands. Its parenthesis names the homes the L2 comparison's reading placed at L2 Row 53.49,
+not a row of this group — a fact of that comparison, quoted with the bullet and graded nowhere.
+
+*The outgoing statement it carries.* "**Consumes:** the committed progression; the Harmonic Vocabulary (queried,
+filtered per §4.5); the idiom-mixture weight vector (§4.5)." — `cowork_progression_schema_design.md`, §3, the inputs and
+outputs (the L2 row's own locator: lines 95–96).
+
+The lines lie in member 44's cut — the lines 90–116, which §6.44's manifest header lists in no range, §3 whole among
+them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. One claim:
+the consumer reads three inputs — the committed progression, the Harmonic Vocabulary, queried and filtered by the idiom
+weights, and the idiom-mixture weight vector; its bold lead *Consumes:* opens the sentence that carries the claim and is
+quoted with it, as the L2 block quotes it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.21 and Row 57.97: the inputs of the recognition of a named
+progression, a catalog queried and not owned among them; no charter of `FRAMEWORK.md` §5, nor its NOT A LAYER items,
+names a knowledge-base component or the recognition of a schema.
+
+*At the source now.* The sentence stands at lines 95–96 of the document's blob at this batch's Task 0 commit, found as
+quoted, the sentence opening the section with its bold lead *Consumes:*. The bold lead *Produces — …* that Rows 57.485
+and 57.486 tabulate follows at line 97. The nearest heading at the blob is *"## 3. Inputs and outputs (the contract)"*.
+The lines lie in none of member 44's published ranges: they fall between its ranges 80–89 and 117–128, inside the cut
+90–116 §6.44's manifest header lists — so the class *in member 44's cut* holds at the blobs. The document is not one of
+the five withheld from the deriving session's pack; no home of the decisions register lies at these lines.
+
+---
+
+**Row 57.455 — L2 Row 53.35, one of the four rows B98 names: running its recognition over it.**
+
+*The L2 entry.* "Rows 53.21, 53.35, 53.49 and 53.56(ii) — travelling with Row 5.91: the consumer reading the committed
+progression, running its recognition over it, exposing each sequence as a typed output, and adding no layer. *(L2-S49
+travels with them; Row 53.49 lies inside D-504's and D-505's homes.)*" (locator: §10, lines 75808–75810). It is one of
+the four rows this bullet names, and each of them quotes the whole bullet. Its *L2-S49* names a statement of the L2
+derivation, relayed as it stands. Its parenthesis names the homes the L2 comparison's reading placed at L2 Row 53.49,
+not a row of this group — a fact of that comparison, quoted with the bullet and graded nowhere.
+
+*The outgoing statement it carries.* "Run §4.1 recognition over the committed progression." —
+`cowork_progression_schema_design.md`, §4.5, the idiom-mixture weighting, phase 1 (the L2 row's own locator: line 137).
+
+The line lies in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated it, and the sentence is tabulated here for the first time. One claim:
+in the first phase, the recognition is run over the committed progression.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.97: the derivation names no recognized progression schema, and
+none of `FRAMEWORK.md` §5's charters names the recognition of one.
+
+*At the source now.* The sentence stands at line 137 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation opening mid-line 137 after the numbered item's number and its bold lead
+*"**Recognise (weight-free).**"*, which the L2 block does not quote. The sentence Row 57.467 tabulates follows on the
+same line. Register entry D-503's words end with the colon closing line 136, so this sentence stands outside them, as
+both walks show. The nearest heading at the blob is *"### 4.5 The idiom-mixture weighting (structure and directions
+fixed here; every value Stage-5)"*. The line lies in none of member 44's published ranges: it falls between its ranges
+117–128 and 161–178, inside the cut 129–160 §6.44's manifest header lists — so the class *in member 44's cut* holds at
+the blobs. The document is not one of the five withheld from the deriving session's pack; no home of the decisions
+register lies at this line.
+
+---
+
+**Row 57.465 — L2 Row 53.33, one of the fourteen rows B103 names: the weight vector discovered from the music in three
+forward-only phases.** *SEEN — §6 item 1 (D-503; the heading line only).*
+
+*The L2 entry.* "Rows 53.12, 53.13, 53.14, 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47(ii) — travelling with
+Row 50.76(ii): the consumer's weighting of its recognitions — prior strength, admission and its threshold, the seed, the
+weight vector discovered from the music in three forward-only phases, the histogram and the blend, the mode cue and the
+factor for entries defined by their lines." (locator: §10, lines 75815–75818). It is one of the fourteen rows this
+bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "The consumer holds a weight vector `w` with one weight per idiom." —
+`cowork_progression_schema_design.md`, §4.5, the idiom-mixture weighting (the L2 row's own locator: line 135).
+
+The line lies in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated it, and the sentence is tabulated here for the first time. One claim:
+the consumer holds a weight vector with one weight per idiom.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as §6.44 placed the idiom weights and Rows 44.12 to 44.14 the prior strength, the admission and the seed they
+enter. The L2 comparison relocated the row this one quotes, L2 Row 53.33, to L3; this claim is placed elsewhere, as a
+fact beside the disposition and not a correction of that comparison.
+
+*At the source now.* The sentence stands at line 135 of the document's blob at this batch's Task 0 commit, found as
+quoted. It opens the section's body on the line after its heading, and the bold sentence Row 57.466 tabulates follows on
+the same line. The nearest heading at the blob is *"### 4.5 The idiom-mixture weighting (structure and directions fixed
+here; every value Stage-5)"*. The line lies in none of member 44's published ranges: it falls between its ranges 117–128
+and 161–178, inside the cut 129–160 §6.44's manifest header lists — so the class *in member 44's cut* holds at the
+blobs. The document is not one of the five withheld from the deriving session's pack.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **register entry D-503** (lines
+135–136), *"The idiom mixture is DISCOVERED from the score and merely SEEDED by the user's preset, in three forward-only
+phases"*, which the decisions register's INDEX records as LIVE, group M, with no entry ratification shown (its
+entry-ratified cell reads —) — a SEEN home: what the deriving session saw of it was its heading line only, at pack
+member 05, where it stopped reading (the derivation's §6 item 1); a fact of the decisions register, relayed, moving no
+disposition. Its words stand exactly at its cited lines, and **this sentence lies inside them**, as both walks the
+group's header names show: the home's words are this sentence and the one Row 57.466 tabulates, and nothing else. **So
+the row carries the SEEN mark after its title**, as §6.44's Row 44.37 carries its mark for D-506; the SEEN row carries
+no AGREES, its claim being THE DERIVATION IS SILENT. §6.44's manifest header records this home in its cut and marks no
+row for it.
+
+---
+
+**Row 57.466 — L2 Row 53.34, one of the fourteen rows B103 names: the weight vector discovered from the music in three
+forward-only phases.** *SEEN — §6 item 1 (D-503; the heading line only).*
+
+*The L2 entry.* "Rows 53.12, 53.13, 53.14, 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47(ii) — travelling with
+Row 50.76(ii): the consumer's weighting of its recognitions — prior strength, admission and its threshold, the seed, the
+weight vector discovered from the music in three forward-only phases, the histogram and the blend, the mode cue and the
+factor for entries defined by their lines." (locator: §10, lines 75815–75818). It is one of the fourteen rows this
+bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**`w` is DISCOVERED from the score, seeded by the user's preference (user-ratified
+model, 2026-07-02), in three phases — forward-only, no loop:**" — `cowork_progression_schema_design.md`, §4.5, the
+idiom-mixture weighting (the L2 row's own locator: lines 135–136).
+
+The lines lie in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. The
+quotation is one bold sentence ending in a colon, which introduces the three numbered phases of lines 137 to 145; read
+under the colon-lead reading, it carries its own claims and is tabulated. Two claims, the L2 block not splitting the
+sentence: (i) the weights are discovered from the music and seeded by the user's preference — the parenthesis on the
+model's ratification taken with it; (ii) they are discovered in three phases, forward-only, with no loop.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 44.14 placed the seed from the user's preset. The L2 comparison relocated the row this one quotes,
+L2 Row 53.34, to L3; this claim is placed elsewhere, as a fact beside the disposition and not a correction of that
+comparison. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), travelling with (i). The L2 comparison relocated the row this one quotes, L2 Row 53.34, to L3; this claim is
+placed elsewhere, as a fact beside the disposition and not a correction of that comparison.
+
+*At the source now.* The sentence stands at lines 135–136 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening mid-line 135 after the sentence Row 57.465 tabulates and closing with the colon at the end of line 136.
+The nearest heading at the blob is *"### 4.5 The idiom-mixture weighting (structure and directions fixed here; every
+value Stage-5)"*. The lines lie in none of member 44's published ranges: they fall between its ranges 117–128 and
+161–178, inside the cut 129–160 §6.44's manifest header lists — so the class *in member 44's cut* holds at the blobs.
+The document is not one of the five withheld from the deriving session's pack.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **register entry D-503** (lines
+135–136), *"The idiom mixture is DISCOVERED from the score and merely SEEDED by the user's preset, in three forward-only
+phases"*, which the decisions register's INDEX records as LIVE, group M, with no entry ratification shown (its
+entry-ratified cell reads —) — a SEEN home: what the deriving session saw of it was its heading line only, at pack
+member 05, where it stopped reading (the derivation's §6 item 1); a fact of the decisions register, relayed, moving no
+disposition. Its words stand exactly at its cited lines, and **this sentence lies inside them**, as both walks the
+group's header names show: the home's words are this sentence and the one Row 57.465 tabulates, and nothing else. **So
+the row carries the SEEN mark after its title**, as §6.44's Row 44.37 carries its mark for D-506; the SEEN row carries
+no AGREES, its two claims being THE DERIVATION IS SILENT. §6.44's manifest header records this home in its cut and marks
+no row for it.
+
+---
+
+**Row 57.467 — L2 Row 53.36, one of the fourteen rows B103 names: the weight vector discovered from the music in three
+forward-only phases.**
+
+*The L2 entry.* "Rows 53.12, 53.13, 53.14, 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47(ii) — travelling with
+Row 50.76(ii): the consumer's weighting of its recognitions — prior strength, admission and its threshold, the seed, the
+weight vector discovered from the music in three forward-only phases, the histogram and the blend, the mode cue and the
+factor for entries defined by their lines." (locator: §10, lines 75815–75818). It is one of the fourteen rows this
+bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "In v1 this step does not depend on `w` at all (matches are exact; `w` weights only
+the *use* of a recognition, not its finding) — which is what makes phase 2 loop-free." —
+`cowork_progression_schema_design.md`, §4.5, the idiom-mixture weighting, phase 1 (the L2 row's own locator: lines
+137–139).
+
+The lines lie in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. Two
+claims, the L2 block not splitting the sentence: (i) in the first version the recognition step does not depend on the
+weights, its matches being exact; (ii) the weights weight only the use of a recognition, not its finding, which is what
+makes the second phase loop-free. **The sentence is read as a rule of the first version's mechanism, not as a record of
+the code**: it stands in a ratified design's rules and names no code site, and the paragraph after it declares what
+changes when partial matching arrives; **the alternative** — claim (i) QUARANTINED as a property of the first version as
+built — is stated in the group's header and not taken.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 57.97: the derivation names no recognized progression schema,
+and none of `FRAMEWORK.md` §5's charters names the recognition of one, the exactness of the first version's matches
+being the matcher's own, as at Row 57.401. (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail specification fixes how the
+candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the L2 block), travelling with
+Row 57.465: the weights weight the use of a recognition, which enters there. The L2 comparison relocated the row this
+one quotes, L2 Row 53.36, to L3; this claim is placed elsewhere, as a fact beside the disposition and not a correction
+of that comparison.
+
+*At the source now.* The sentence stands at lines 137–139 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening mid-line 137 after the sentence Row 57.455 tabulates, inside the first numbered phase. Register entry
+D-503's words end with line 136, so this sentence stands outside them, as both walks show. The nearest heading at the
+blob is *"### 4.5 The idiom-mixture weighting (structure and directions fixed here; every value Stage-5)"*. The lines
+lie in none of member 44's published ranges: they fall between its ranges 117–128 and 161–178, inside the cut 129–160
+§6.44's manifest header lists — so the class *in member 44's cut* holds at the blobs. The document is not one of the
+five withheld from the deriving session's pack; no home of the decisions register lies at these lines.
+
+---
+
+**Row 57.468 — L2 Row 53.37, one of the fourteen rows B103 names: the histogram and the blend.**
+
+*The L2 entry.* "Rows 53.12, 53.13, 53.14, 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47(ii) — travelling with
+Row 50.76(ii): the consumer's weighting of its recognitions — prior strength, admission and its threshold, the seed, the
+weight vector discovered from the music in three forward-only phases, the histogram and the blend, the mode cue and the
+factor for entries defined by their lines." (locator: §10, lines 75815–75818). It is one of the fourteen rows this
+bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "Build the score's **idiom-evidence histogram**: each phase-1 recognition
+contributes its match score to every idiom in its entry's IdiomSet." — `cowork_progression_schema_design.md`, §4.5, the
+idiom-mixture weighting, phase 2 (the L2 row's own locator: lines 140–141).
+
+The lines lie in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. One claim:
+in the second phase, the music's idiom-evidence histogram is built, each first-phase recognition contributing its match
+value to every idiom of its entry's idiom set.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), travelling with Row 57.466 (i). The L2 comparison relocated the row this one quotes, L2 Row 53.37, to L3;
+this claim is placed elsewhere, as a fact beside the disposition and not a correction of that comparison.
+
+*At the source now.* The sentence stands at lines 140–141 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation opening mid-line 140 after the numbered item's number and its bold lead
+*"**Estimate the mixture.**"*, which the L2 block does not quote, and ending mid-line 141 before the sentence Row 57.469
+tabulates. The nearest heading at the blob is *"### 4.5 The idiom-mixture weighting (structure and directions fixed
+here; every value Stage-5)"*. The lines lie in none of member 44's published ranges: they fall between its ranges
+117–128 and 161–178, inside the cut 129–160 §6.44's manifest header lists — so the class *in member 44's cut* holds at
+the blobs. The document is not one of the five withheld from the deriving session's pack; no home of the decisions
+register lies at these lines.
+
+---
+
+**Row 57.469 — L2 Row 53.38, one of the fourteen rows B103 names: the histogram and the blend.**
+
+*The L2 entry.* "Rows 53.12, 53.13, 53.14, 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47(ii) — travelling with
+Row 50.76(ii): the consumer's weighting of its recognitions — prior strength, admission and its threshold, the seed, the
+weight vector discovered from the music in three forward-only phases, the histogram and the blend, the mode cue and the
+factor for entries defined by their lines." (locator: §10, lines 75815–75818). It is one of the fourteen rows this
+bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "Then `w = blend(seed, histogram)` where the **seed** is the user's preset
+expressed as idiom weights (or all-equal when no preset is given), and the blend moves from the seed toward the
+histogram as recognised evidence accumulates — with **no** recognised evidence, `w` = the seed; with abundant evidence,
+the histogram dominates (direction fixed here; the blend rate is one Stage-5 constant)." —
+`cowork_progression_schema_design.md`, §4.5, the idiom-mixture weighting, phase 2 (the L2 row's own locator: lines
+141–144).
+
+The lines lie in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. Two
+claims, the L2 block not splitting the sentence: (i) the weights are a blend of the seed — the user's preset as idiom
+weights, all equal when no preset is given — and the histogram, moving from the seed toward the histogram as recognized
+evidence accumulates, the seed alone with no evidence and the histogram dominating with abundant evidence; (ii) the
+direction is fixed in the design and the blend rate is one constant left to the precision phase. Row 44.14 tabulates the
+terms list's definition of the seed, another sentence.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 44.14 placed the seed. The L2 comparison relocated the row this one quotes, L2 Row 53.38, to L3; this
+claim is placed elsewhere, as a fact beside the disposition and not a correction of that comparison. (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail specification fixes how the
+candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the L2 block), travelling with
+(i). The L2 comparison relocated the row this one quotes, L2 Row 53.38, to L3; this claim is placed elsewhere, as a fact
+beside the disposition and not a correction of that comparison.
+
+*At the source now.* The sentence stands at lines 141–144 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening mid-line 141 after the sentence Row 57.468 tabulates and closing the second numbered phase on line 144.
+The nearest heading at the blob is *"### 4.5 The idiom-mixture weighting (structure and directions fixed here; every
+value Stage-5)"*. The lines lie in none of member 44's published ranges: they fall between its ranges 117–128 and
+161–178, inside the cut 129–160 §6.44's manifest header lists — so the class *in member 44's cut* holds at the blobs.
+The document is not one of the five withheld from the deriving session's pack; no home of the decisions register lies at
+these lines.
+
+---
+
+**Row 57.470 — L2 Row 53.39, one of the fourteen rows B103 names: the weight vector discovered from the music in three
+forward-only phases.**
+
+*The L2 entry.* "Rows 53.12, 53.13, 53.14, 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47(ii) — travelling with
+Row 50.76(ii): the consumer's weighting of its recognitions — prior strength, admission and its threshold, the seed, the
+weight vector discovered from the music in three forward-only phases, the histogram and the blend, the mode cue and the
+factor for entries defined by their lines." (locator: §10, lines 75815–75818). It is one of the fourteen rows this
+bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "Apply `w` to admission and prior strength (below), then emit the §4.3/§4.4/§4.6
+outputs." — `cowork_progression_schema_design.md`, §4.5, the idiom-mixture weighting, phase 3 (the L2 row's own locator:
+line 145).
+
+The line lies in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated it, and the sentence is tabulated here for the first time. Two claims,
+the L2 block not splitting the sentence: (i) in the third phase the weights are applied to admission and prior strength;
+(ii) the outputs of §4.3, §4.4 and §4.6 are then emitted.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Rows 44.12 and 44.13 placed the prior strength and the admission. The L2 comparison relocated the row this
+one quotes, L2 Row 53.39, to L3; this claim is placed elsewhere, as a fact beside the disposition and not a correction
+of that comparison. (ii) **UNPLACED** — read as at Row 57.97: the derivation names no recognized progression schema, and
+none of `FRAMEWORK.md` §5's charters names the recognition of one, the outputs being the recognition's.
+
+*At the source now.* The sentence stands at line 145 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation opening mid-line after the numbered item's number and its bold lead *"**Weight and emit.**"*,
+which the L2 block does not quote. The nearest heading at the blob is *"### 4.5 The idiom-mixture weighting (structure
+and directions fixed here; every value Stage-5)"*. The line lies in none of member 44's published ranges: it falls
+between its ranges 117–128 and 161–178, inside the cut 129–160 §6.44's manifest header lists — so the class
+*in member 44's cut* holds at the blobs. The document is not one of the five withheld from the deriving session's pack;
+no home of the decisions register lies at this line.
+
+---
+
+**Row 57.471 — L2 Row 53.40, one of the fourteen rows B103 names: the weight vector discovered from the music in three
+forward-only phases.**
+
+*The L2 entry.* "Rows 53.12, 53.13, 53.14, 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47(ii) — travelling with
+Row 50.76(ii): the consumer's weighting of its recognitions — prior strength, admission and its threshold, the seed, the
+weight vector discovered from the music in three forward-only phases, the histogram and the blend, the mode cue and the
+factor for entries defined by their lines." (locator: §10, lines 75815–75818). It is one of the fourteen rows this
+bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "Phase 2's input is phase-1 output only — never phase-3's — so estimation feeds
+forward and nothing cycles." — `cowork_progression_schema_design.md`, §4.5, the idiom-mixture weighting (the L2 row's
+own locator: line 146).
+
+The line lies in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated it, and the sentence is tabulated here for the first time. One claim:
+the second phase's input is the first phase's output only and never the third's, so the estimation feeds forward and
+nothing cycles.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), travelling with Row 57.466 (ii). The L2 comparison relocated the row this one quotes, L2 Row 53.40, to L3;
+this claim is placed elsewhere, as a fact beside the disposition and not a correction of that comparison.
+
+*At the source now.* The sentence stands at line 146 of the document's blob at this batch's Task 0 commit, found as
+quoted, the sentence opening the line after the three numbered phases. The italic parenthesis that follows on the same
+line, on what happens when partial matching arrives, is not the L2 block's. The nearest heading at the blob is *"### 4.5
+The idiom-mixture weighting (structure and directions fixed here; every value Stage-5)"*. The line lies in none of
+member 44's published ranges: it falls between its ranges 117–128 and 161–178, inside the cut 129–160 §6.44's manifest
+header lists — so the class *in member 44's cut* holds at the blobs. The document is not one of the five withheld from
+the deriving session's pack; no home of the decisions register lies at this line.
+
+---
+
+**Row 57.472 — L2 Row 53.43, one of the fourteen rows B103 names: prior strength.**
+
+*The L2 entry.* "Rows 53.12, 53.13, 53.14, 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47(ii) — travelling with
+Row 50.76(ii): the consumer's weighting of its recognitions — prior strength, admission and its threshold, the seed, the
+weight vector discovered from the music in three forward-only phases, the histogram and the blend, the mode cue and the
+factor for entries defined by their lines." (locator: §10, lines 75815–75818). It is one of the fourteen rows this
+bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**Prior strength of a recognition** = `match score × max(w[i] over the entry's
+IdiomSet)`." — `cowork_progression_schema_design.md`, §4.5, the idiom-mixture weighting (the L2 row's own locator: line
+151).
+
+The line lies in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated it, and the sentence is tabulated here for the first time. One claim: a
+recognition's prior strength is its match value times the largest of the weights over its entry's idiom set; its bold
+lead names the term the formula defines and is quoted with it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 44.12 placed the term. The L2 comparison relocated the row this one quotes, L2 Row 53.43, to L3; this
+claim is placed elsewhere, as a fact beside the disposition and not a correction of that comparison.
+
+*At the source now.* The sentence stands at line 151 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens the line and stopping at the bullet's first sentence; its
+second, opening *"The **max**, not the sum"*, the reason, is not the L2 block's. The nearest heading at the blob is
+*"### 4.5 The idiom-mixture weighting (structure and directions fixed here; every value Stage-5)"*. The line lies in
+none of member 44's published ranges: it falls between its ranges 117–128 and 161–178, inside the cut 129–160 §6.44's
+manifest header lists — so the class *in member 44's cut* holds at the blobs. The document is not one of the five
+withheld from the deriving session's pack; no home of the decisions register lies at this line.
+
+---
+
+**Row 57.473 — L2 Row 53.44, one of the fourteen rows B103 names: admission and its threshold.**
+
+*The L2 entry.* "Rows 53.12, 53.13, 53.14, 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47(ii) — travelling with
+Row 50.76(ii): the consumer's weighting of its recognitions — prior strength, admission and its threshold, the seed, the
+weight vector discovered from the music in three forward-only phases, the histogram and the blend, the mode cue and the
+factor for entries defined by their lines." (locator: §10, lines 75815–75818). It is one of the fourteen rows this
+bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**Admission**: prior strength above one declared admission threshold." —
+`cowork_progression_schema_design.md`, §4.5, the idiom-mixture weighting (the L2 row's own locator: line 153).
+
+The line lies in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated it, and the sentence is tabulated here for the first time. One claim: a
+recognition is admitted where its prior strength is above one declared threshold; its bold lead names the term and is
+quoted with it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 44.13 placed the term. The L2 comparison relocated the row this one quotes, L2 Row 53.44, to L3; this
+claim is placed elsewhere, as a fact beside the disposition and not a correction of that comparison.
+
+*At the source now.* The sentence stands at line 153 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens the line. The nearest heading at the blob is *"### 4.5 The
+idiom-mixture weighting (structure and directions fixed here; every value Stage-5)"*. The line lies in none of member
+44's published ranges: it falls between its ranges 117–128 and 161–178, inside the cut 129–160 §6.44's manifest header
+lists — so the class *in member 44's cut* holds at the blobs. The document is not one of the five withheld from the
+deriving session's pack; no home of the decisions register lies at this line.
+
+---
+
+**Row 57.474 — L2 Row 53.45, one of the fourteen rows B103 names: the mode cue.**
+
+*The L2 entry.* "Rows 53.12, 53.13, 53.14, 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47(ii) — travelling with
+Row 50.76(ii): the consumer's weighting of its recognitions — prior strength, admission and its threshold, the seed, the
+weight vector discovered from the music in three forward-only phases, the histogram and the blend, the mode cue and the
+factor for entries defined by their lines." (locator: §10, lines 75815–75818). It is one of the fourteen rows this
+bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**Mode cue**: if the entry's `Mode` tag contradicts the local key's mode at the
+recognised span, multiply the prior strength by one declared factor less than 1 (never zero — modes mix)." —
+`cowork_progression_schema_design.md`, §4.5, the idiom-mixture weighting (the L2 row's own locator: lines 154–155).
+
+The lines lie in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. One claim:
+where an entry's mode tag contradicts the mode of the local tonality at the recognized span, its prior strength is
+multiplied by one declared factor below one and never zero, modes mixing; its bold lead names the cue and is quoted with
+it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), travelling with Row 57.472. The L2 comparison relocated the row this one quotes, L2 Row 53.45, to L3; this
+claim is placed elsewhere, as a fact beside the disposition and not a correction of that comparison.
+
+*At the source now.* The sentence stands at lines 154–155 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens line 154 and stopping mid-line 155. The sentence after it on
+line 155, on the chromaticism tag's having no first-version behavior, is not the L2 block's. The nearest heading at the
+blob is *"### 4.5 The idiom-mixture weighting (structure and directions fixed here; every value Stage-5)"*. The lines
+lie in none of member 44's published ranges: they fall between its ranges 117–128 and 161–178, inside the cut 129–160
+§6.44's manifest header lists — so the class *in member 44's cut* holds at the blobs. The document is not one of the
+five withheld from the deriving session's pack; no home of the decisions register lies at these lines.
+
+---
+
+**Row 57.475 — L2 Row 53.47(ii), one of the fourteen rows B103 names: the factor for entries defined by their lines.**
+
+*The L2 entry.* "Rows 53.12, 53.13, 53.14, 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47(ii) — travelling with
+Row 50.76(ii): the consumer's weighting of its recognitions — prior strength, admission and its threshold, the seed, the
+weight vector discovered from the music in three forward-only phases, the histogram and the blend, the mode cue and the
+factor for entries defined by their lines." (locator: §10, lines 75815–75818). It is one of the fourteen rows this
+bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**`voiceLeadingDefined` entries**: recognisable by their chord skeleton alone; the
+schema-span carries the **"chords-only"** mark (D7) and the prior strength is multiplied by one declared factor less
+than 1 (an entry defined by its lines is under-identified by its chords alone)." —
+`cowork_progression_schema_design.md`, §4.5, the idiom-mixture weighting (the L2 row's own locator: lines 157–159).
+
+The lines lie in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. The bullet
+names claim (ii) of L2 Row 53.47, whose block splits the bullet into two claims; this row tabulates claim (ii), and the
+block's claim (i) is not this row's — a fact, not a correction; claim (i) is tabulated at Row 57.490, which B111 names.
+One claim: an entry defined by its lines has its prior strength multiplied by one declared factor below one, being
+under-identified by its chords alone — the parenthesis giving the reason taken with it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), travelling with Row 57.472. The L2 comparison relocated the row this one quotes, L2 Row 53.47, to L3; this
+claim is placed elsewhere, as a fact beside the disposition and not a correction of that comparison.
+
+*At the source now.* The sentence stands at lines 157–159 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens line 157 and closing the section on line 159. Register entry
+D-504's words begin at the heading of §4.6 on line 161, after the blank line 160, so no home lies at these lines. The
+nearest heading at the blob is *"### 4.5 The idiom-mixture weighting (structure and directions fixed here; every value
+Stage-5)"*. The lines lie in none of member 44's published ranges: they fall between its ranges 117–128 and 161–178,
+inside the cut 129–160 §6.44's manifest header lists — so the class *in member 44's cut* holds at the blobs. The
+document is not one of the five withheld from the deriving session's pack; no home of the decisions register lies at
+these lines.
+
+---
+
+**Row 57.478 — L2 Row 53.23, one of the three rows B105 names: the progression-schema-span, one per recognized
+progression.**
+
+*The L2 entry.* "Rows 53.16, 53.23 and 53.72 — travelling with Row 21.48(v): the progression-schema-span, one per
+recognized progression, and its name. *(L2-S49 travels with Rows 53.16 and 53.23.)*" (locator: §10, lines 75820–75821).
+It is one of the three rows this bullet names, and each of them quotes the whole bullet. Its *L2-S49* names a statement
+of the L2 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "one **schema-span** per recognised progression (§4.4);" —
+`cowork_progression_schema_design.md`, §3, the inputs and outputs (the L2 row's own locator: line 98).
+
+The line lies in member 44's cut — the lines 90–116, which §6.44's manifest header lists in no range, §3 whole among
+them — so no member of this comparison tabulated it, and the sentence is tabulated here for the first time. One claim:
+the consumer produces one progression-schema-span per recognized progression; the bullet's pointer to §4.4 is taken with
+it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.20 (i), and as that row reads it, as at Row 8.52 (iii): the
+span a recognized progression covers, which no charter of `FRAMEWORK.md` §5 names, L3's grouping being the phrase and
+section grouping a schema span cuts across.
+
+*At the source now.* The sentence stands at line 98 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens the line. It is the first of the four bullets the bold lead at
+line 97 introduces. The nearest heading at the blob is *"## 3. Inputs and outputs (the contract)"*. The line lies in
+none of member 44's published ranges: it falls between its ranges 80–89 and 117–128, inside the cut 90–116 §6.44's
+manifest header lists — so the class *in member 44's cut* holds at the blobs. The document is not one of the five
+withheld from the deriving session's pack; no home of the decisions register lies at this line.
+
+---
+
+**Row 57.485 — L2 Row 53.22(i), one of the two rows B108 names: the recognition read-only and additive over the function
+layer.**
+
+*The L2 entry.* "Rows 53.19(ii) and 53.22(i) — travelling with Row 43.97(i): the recognition read-only and additive over
+the function layer. *(L2-S49 travels with them.)*" (locator: §10, lines 75826–75827). It is one of the two rows this
+bullet names, and each of them quotes the whole bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as
+it stands.
+
+*The outgoing statement it carries.* "**Produces — additive over Layer 5; the literal Roman numeral is never changed:**"
+— `cowork_progression_schema_design.md`, §3, the inputs and outputs (the L2 row's own locator: line 97).
+
+The line lies in member 44's cut — the lines 90–116, which §6.44's manifest header lists in no range, §3 whole among
+them — so no member of this comparison tabulated it, and the sentence is tabulated here for the first time. The
+quotation is the bold lead of the section's second paragraph, ending in a colon and introducing the four outputs; read
+under the colon-lead reading, it carries its own two claims and is tabulated. The bullet names claim (i) of
+L2 Row 53.22, whose block splits the lead into two claims; this row tabulates claim (i), and the block's claim (ii) is
+not this row's — a fact, not a correction; claim (ii) is tabulated at Row 57.486, which B109 names. One claim: what the
+consumer produces is additive over the function layer, the older stack's *Layer 5*.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.37 (i), and as Row 44.37 (i) reads it, as at Row 8.51: that the
+recognition is additive over the function layer it reads.
+
+*At the source now.* The sentence stands at line 97 of the document's blob at this batch's Task 0 commit, found as
+quoted. The line is a bold lead closed by a colon, the four bullets of lines 98 to 101 following it, and the L2 block
+quotes it whole with its bold markers. Row 44.37 tabulates the member's decision D4, *"**D4 — Additive; the literal
+Roman numeral is never changed.**"* (line 193), the same two claims at §6 — another sentence, inside register entry
+D-506's home and marked SEEN at its own row; the mark is never carried by content, and this row carries none. The
+nearest heading at the blob is *"## 3. Inputs and outputs (the contract)"*. The line lies in none of member 44's
+published ranges: it falls between its ranges 80–89 and 117–128, inside the cut 90–116 §6.44's manifest header lists —
+so the class *in member 44's cut* holds at the blobs. The document is not one of the five withheld from the deriving
+session's pack; no home of the decisions register lies at this line.
+
+---
+
+**Row 57.486 — L2 Row 53.22(ii), one of the three rows B109 names: the literal Roman numeral never changed by the
+recognition, a substitution recorded only in the annotation.**
+
+*The L2 entry.* "Rows 53.22(ii), 53.28 and 53.59 — the literal Roman numeral never changed by the recognition, a
+substitution recorded only in the annotation. *(Rows 53.28 and 53.59 travel with Row 53.22(ii); L2-S49 travels with all
+three; Row 53.59 lies inside D-506's home.)*" (locator: §10, lines 75828–75830). It is one of the three rows this bullet
+names, and each of them quotes the whole bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as it
+stands. Its parenthesis names the home the L2 comparison's reading placed at L2 Row 53.59, not a row of this group — a
+fact of that comparison, quoted with the bullet and graded nowhere.
+
+*The outgoing statement it carries.* "**Produces — additive over Layer 5; the literal Roman numeral is never changed:**"
+— `cowork_progression_schema_design.md`, §3, the inputs and outputs (the L2 row's own locator: line 97).
+
+The line lies in member 44's cut — the lines 90–116, which §6.44's manifest header lists in no range, §3 whole among
+them — so no member of this comparison tabulated it, and the sentence is tabulated here for the first time. The
+quotation is the bold lead of the section's second paragraph, as at Row 57.485. The bullet names claim (ii) of
+L2 Row 53.22; this row tabulates claim (ii), and the block's claim (i) is not this row's — a fact, not a correction;
+claim (i) is tabulated at Row 57.485, which B108 names. One claim: the literal Roman numeral is never changed by what
+the consumer produces.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which publishes
+per span the chord as degree, quality, figure and applied target (`FRAMEWORK.md` §5), as Row 44.37 (ii) placed the same
+claim of the member's decision D4. The L2 comparison relocated the row this one quotes, L2 Row 53.22, to L3; this claim
+is placed elsewhere, as a fact beside the disposition and not a correction of that comparison.
+
+*At the source now.* The sentence stands at line 97 of the document's blob at this batch's Task 0 commit, found as
+quoted. The line is the bold lead Row 57.485 quotes; Row 44.37 states the same claim at the member's decision D4 (line
+193), inside register entry D-506's home and marked SEEN at its own row; the mark is never carried by content, and this
+row carries none. The nearest heading at the blob is *"## 3. Inputs and outputs (the contract)"*. The line lies in none
+of member 44's published ranges: it falls between its ranges 80–89 and 117–128, inside the cut 90–116 §6.44's manifest
+header lists — so the class *in member 44's cut* holds at the blobs. The document is not one of the five withheld from
+the deriving session's pack; no home of the decisions register lies at this line.
+
+---
+
+**Row 57.487 — L2 Row 53.28, one of the three rows B109 names: the literal Roman numeral never changed by the
+recognition, a substitution recorded only in the annotation.**
+
+*The L2 entry.* "Rows 53.22(ii), 53.28 and 53.59 — the literal Roman numeral never changed by the recognition, a
+substitution recorded only in the annotation. *(Rows 53.28 and 53.59 travel with Row 53.22(ii); L2-S49 travels with all
+three; Row 53.59 lies inside D-506's home.)*" (locator: §10, lines 75828–75830). It is one of the three rows this bullet
+names, and each of them quotes the whole bullet. Its *L2-S49* names a statement of the L2 derivation, relayed as it
+stands. Its parenthesis names the home the L2 comparison's reading placed at L2 Row 53.59, not a row of this group — a
+fact of that comparison, quoted with the bullet and graded nowhere.
+
+*The outgoing statement it carries.* "The literal Roman numeral is unchanged; the substitution is recorded only in the
+annotation ("`♭II7` = `subV7/I`")." — `cowork_progression_schema_design.md`, §4.2, the substitutions (the L2 row's own
+locator: line 115).
+
+The line lies in member 44's cut — the lines 90–116, which §6.44's manifest header lists in no range, §4.2 whole among
+them — so no member of this comparison tabulated it, and the sentence is tabulated here for the first time. Two claims,
+the L2 block not splitting the sentence: (i) the literal Roman numeral is unchanged; (ii) the substitution is recorded
+only in the annotation, the quotation's inner example writing what the annotation records.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which
+publishes per span the chord as degree, quality, figure and applied target (`FRAMEWORK.md` §5), travelling with
+Row 57.486, as Row 44.37 (ii) placed the same claim. The L2 comparison relocated the row this one quotes, L2 Row 53.28,
+to L3; this claim is placed elsewhere, as a fact beside the disposition and not a correction of that comparison. (ii)
+**UNPLACED** — travelling with Row 57.489 (i): the annotation is the recognition's own record, which no charter of
+`FRAMEWORK.md` §5 names.
+
+*At the source now.* The sentence stands at line 115 of the document's blob at this batch's Task 0 commit, found as
+quoted. It closes the section, after the sentence Row 57.489 tabulates, and carries the document's own inner quotation
+marks around its example, which the L2 block quotes as they stand. Its two claims are the content of register entry
+D-506, homed at the member's decision D4 (lines 193–194) and marked SEEN at Row 44.37; the mark is never carried by
+content, and this row carries none. The nearest heading at the blob is *"### 4.2 Substitutions"*, under *4. The rules*.
+The line lies in none of member 44's published ranges: it falls between its ranges 80–89 and 117–128, inside the cut
+90–116 §6.44's manifest header lists — so the class *in member 44's cut* holds at the blobs. The document is not one of
+the five withheld from the deriving session's pack; no home of the decisions register lies at this line.
+
+---
+
+**Row 57.489 — L2 Row 53.27: a member filled by a substitution recorded with what the chord stands in for.**
+
+*The L2 entry.* "Row 53.27 — travelling with Row 50.41(i): a member filled by a substitution recorded with what the
+chord stands in for." (locator: §10, lines 75831–75832).
+
+*The outgoing statement it carries.* "Where the Vocabulary marks a member as filled by a substitution, record what the
+chord stands in for: `♭II7` resolving to `I` = a tritone-substituted dominant (`subV7/I`); a ii–V–I with a
+tritone-subbed V is still a ii–V–I." — `cowork_progression_schema_design.md`, §4.2, the substitutions (the L2 row's own
+locator: lines 113–114).
+
+The lines lie in member 44's cut — the lines 90–116, which §6.44's manifest header lists in no range, §4.2 whole among
+them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. Two
+claims, the L2 block not splitting the sentence: (i) where the catalog marks a member as filled by a substitution, the
+consumer records what the chord stands in for — a `♭II7` resolving to `I` recorded as a tritone-substituted dominant;
+(ii) a ii–V–I whose V is tritone-substituted is still recognized as a ii–V–I.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 44.4: no charter of `FRAMEWORK.md` §5 names the relation of a
+chord to the chord it stands in for, and the derivation does not speak to one. (ii) **UNPLACED** — travelling with
+Row 57.401 (ii), where a chord may match a member through a substitution entry's mapping.
+
+*At the source now.* The sentence stands at lines 113–114 of the document's blob at this batch's Task 0 commit, found as
+quoted. It opens the section and is followed on line 115 by the sentence Row 57.487 tabulates. Row 38.80 tabulates a
+sentence of another document sharing its last clause. The nearest heading at the blob is *"### 4.2 Substitutions"*,
+under *4. The rules*. The lines lie in none of member 44's published ranges: they fall between its ranges 80–89 and
+117–128, inside the cut 90–116 §6.44's manifest header lists — so the class *in member 44's cut* holds at the blobs. The
+document is not one of the five withheld from the deriving session's pack; no home of the decisions register lies at
+these lines.
+
+---
+
+**Row 57.490 — L2 Row 53.47(i), one of the three rows B111 names: an entry defined by its lines recognized by its chord
+skeleton alone and marked chords-only.**
+
+*The L2 entry.* "Rows 53.47(i), 53.57 and 53.73(i) — travelling with Row 43.35(i): an entry defined by its lines
+recognized by its chord skeleton alone and marked chords-only, the scope chords only." (locator: §10, lines
+75833–75834). It is one of the three rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**`voiceLeadingDefined` entries**: recognisable by their chord skeleton alone; the
+schema-span carries the **"chords-only"** mark (D7) and the prior strength is multiplied by one declared factor less
+than 1 (an entry defined by its lines is under-identified by its chords alone)." —
+`cowork_progression_schema_design.md`, §4.5, the idiom-mixture weighting (the L2 row's own locator: lines 157–159).
+
+The lines lie in member 44's cut — the lines 129–160, which §6.44's manifest header lists in no range, §4.5 whole among
+them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. The bullet
+names claim (i) of L2 Row 53.47, whose block splits the bullet into two claims; this row tabulates claim (i), and the
+block's claim (ii) is not this row's — a fact, not a correction; claim (ii) is tabulated at Row 57.475, which B103
+names. **The block's claim (i) carries two clauses with two subjects and is split here**: (i) an entry defined by its
+lines is recognized by its chord skeleton alone; (ii) its schema span carries the chords-only mark. Row 44.46 tabulates
+the member's decision D7, the same mark at §6, another sentence.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 57.97: the derivation names no recognized progression schema,
+and none of `FRAMEWORK.md` §5's charters names the recognition of one, the chords-only scope being the recognition's
+own, as at Row 44.20. (ii) **RELOCATED** — to ***the uncertainty surface***, on which every published fact carries its
+own mass and its own establishment status (`FRAMEWORK.md` §5), as Row 44.46 (i) placed the mark. The L2 comparison
+relocated the row this one quotes, L2 Row 53.47, to L3; this claim is placed elsewhere, as a fact beside the disposition
+and not a correction of that comparison.
+
+*At the source now.* The sentence stands at lines 157–159 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens line 157 and closing the section on line 159; Row 57.475
+tabulates the block's other claim of the same bullet. Register entry D-507, the member's decision D7 (lines 272–273),
+states the same mark and is marked SEEN at Row 44.46; the mark is never carried by content, and this row carries none.
+The nearest heading at the blob is *"### 4.5 The idiom-mixture weighting (structure and directions fixed here; every
+value Stage-5)"*. The lines lie in none of member 44's published ranges: they fall between its ranges 117–128 and
+161–178, inside the cut 129–160 §6.44's manifest header lists — so the class *in member 44's cut* holds at the blobs.
+The document is not one of the five withheld from the deriving session's pack; no home of the decisions register lies at
+these lines.
+
+---
+
+**Row 57.493 — L2 Row 53.61, one of the four rows B112 names: the licensing grammar and the catalog not derived from
+each other, coupled one way by the consistency test.**
+
+*The L2 entry.* "Rows 53.61, 53.63, 53.64 and 53.79(i) — travelling with Row 50.9: the licensing grammar and the catalog
+not derived from each other, coupled one way by the consistency test, and a licensed pair in no entry not a gap of the
+catalog." (locator: §10, lines 75835–75836). It is one of the four rows this bullet names, and each of them quotes the
+whole bullet.
+
+*The outgoing statement it carries.* "The catalog never needs an edit for a grammar change — but the consistency test
+re-runs, and a catalog entry that now fails it is flagged (the entry was leaning on the old grammar)." —
+`cowork_progression_schema_design.md`, §6, the architecture decisions, the dependency map (the L2 row's own locator:
+lines 199–200).
+
+This file holds the sentence only as §6.44's item 14 under *not a statement* — *a maintenance instruction about the code
+and the test that couples it, read as at §6.7's items 31 and 33* — so the row is built in full and the sentence placed
+on its content. **It is read as stating a rule — how the catalog and the grammar shall relate, and what a change to
+either shall do — and not a property of the code as built**: it is a bullet of the dependency map the member's decision
+D5 states, under its lead *what changes where — every reader must be able to answer this*, and names no code site.
+**This departs from item 14's reading**, and from §6.7's items 31 and 33, which list sentences of the same content in
+another document; it follows group 3's Rows 57.398 and 57.405, which placed the dictionary's sentences of the same map
+as rules; stated for challenge in the group's header. Two claims, the L2 block not splitting the sentence: (i) a change
+of the grammar never needs an edit of the catalog; (ii) the consistency test then runs again, and a catalog entry that
+now fails it is flagged — the parenthesis giving the reason taken with it.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 57.398: `FRAMEWORK.md` §5 names no charter whose subject is a
+catalog of named progressions, so none whose subject is that catalog's relation to the licensing grammar, and the
+derivation does not speak to one. (ii) **UNPLACED** — travelling with (i), the consistency test being the one coupling
+of the map, as at Row 57.398 (ii).
+
+*At the source now.* The sentence stands at lines 199–200 of the document's blob at this batch's Task 0 commit, found as
+quoted, the bullet's second sentence, after its first, on a change of the grammar, which §6.44 lists as item 13. The
+nearest heading at the blob is *"## 6. Architecture decisions (with the alternatives weighed)"*, the member's decision
+D5 and its dependency map. The lines lie inside member 44's range 186–273, where §6.44 lists the sentence as item 14.
+The document is not one of the five withheld from the deriving session's pack; no home of the decisions register lies at
+these lines — register entry D-506's (193–194) ends before the map and D-508's (242–244) begins after it.
+
+---
+
+**Row 57.494 — L2 Row 53.63, one of the four rows B112 names: the licensing grammar and the catalog not derived from
+each other, coupled one way by the consistency test.**
+
+*The L2 entry.* "Rows 53.61, 53.63, 53.64 and 53.79(i) — travelling with Row 50.9: the licensing grammar and the catalog
+not derived from each other, coupled one way by the consistency test, and a licensed pair in no entry not a gap of the
+catalog." (locator: §10, lines 75835–75836). It is one of the four rows this bullet names, and each of them quotes the
+whole bullet.
+
+*The outgoing statement it carries.* "The grammar never needs an edit — but the new entry must PASS the consistency test
+(every adjacent pair licensed); a failure means the entry is mis-encoded OR a genuine grammar gap was found (escalate,
+don't tag around it)." — `cowork_progression_schema_design.md`, §6, the architecture decisions, the dependency map (the
+L2 row's own locator: lines 201–203).
+
+This file holds the sentence only as §6.44's item 16 under *not a statement* — *a maintenance instruction and the test
+an added entry must pass, read as at §6.7's items 32 and 33* — so the row is built in full and the sentence placed on
+its content. **It is read as stating a rule — how the catalog and the grammar shall relate, and what a change to either
+shall do — and not a property of the code as built**: it is a bullet of the dependency map the member's decision D5
+states, under its lead *what changes where — every reader must be able to answer this*, and names no code site. **This
+departs from item 16's reading**, and from §6.7's items 32 and 33, which list sentences of the same content in another
+document; it follows group 3's Rows 57.398 and 57.405, which placed the dictionary's sentences of the same map as rules;
+stated for challenge in the group's header. Two claims, the L2 block not splitting the sentence: (i) a change of the
+catalog never needs an edit of the grammar, but a new entry must pass the consistency test, every adjacent pair
+licensed; (ii) a failure means the entry is mis-encoded or a genuine grammar gap was found, to be escalated and never
+tagged around.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 57.398: `FRAMEWORK.md` §5 names no charter whose subject is a
+catalog of named progressions, so none whose subject is that catalog's relation to the licensing grammar, and the
+derivation does not speak to one. (ii) **UNPLACED** — travelling with (i).
+
+*At the source now.* The sentence stands at lines 201–203 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening mid-line 201 after the bullet's first sentence, which Row 57.451 tabulates. The nearest heading at the
+blob is *"## 6. Architecture decisions (with the alternatives weighed)"*, the member's decision D5 and its dependency
+map. The lines lie inside member 44's range 186–273, where §6.44 lists the sentence as item 16. The document is not one
+of the five withheld from the deriving session's pack; no home of the decisions register lies at these lines — register
+entry D-506's (193–194) ends before the map and D-508's (242–244) begins after it.
+
+---
+
+**Row 57.495 — L2 Row 53.64, one of the four rows B112 names: the licensing grammar and the catalog not derived from
+each other, coupled one way by the consistency test.**
+
+*The L2 entry.* "Rows 53.61, 53.63, 53.64 and 53.79(i) — travelling with Row 50.9: the licensing grammar and the catalog
+not derived from each other, coupled one way by the consistency test, and a licensed pair in no entry not a gap of the
+catalog." (locator: §10, lines 75835–75836). It is one of the four rows this bullet names, and each of them quotes the
+whole bullet.
+
+*The outgoing statement it carries.* "*The two are NOT derived from each other* (grammar licenses more than convention
+names; the catalog is enumerative and grows from evidence) — the consistency test is the ONLY coupling, and it runs one
+way (catalog → grammar)." — `cowork_progression_schema_design.md`, §6, the architecture decisions, the dependency map
+(the L2 row's own locator: lines 204–206).
+
+This file holds the sentence only as §6.44's item 17 under *not a statement* — *a statement about the code's two sources
+of knowledge and the one test that couples them, read as at §6.7's item 33* — so the row is built in full and the
+sentence placed on its content. **It is read as stating a rule — how the catalog and the grammar shall relate, and what
+a change to either shall do — and not a property of the code as built**: it is a bullet of the dependency map the
+member's decision D5 states, under its lead *what changes where — every reader must be able to answer this*, and names
+no code site. **This departs from item 17's reading**, and from §6.7's item 33, which list sentences of the same content
+in another document; it follows group 3's Rows 57.398 and 57.405, which placed the dictionary's sentences of the same
+map as rules; stated for challenge in the group's header. Two claims, the L2 block not splitting the sentence, as
+Row 57.398 split the dictionary's sentence of the same content: (i) the grammar and the catalog are not derived from
+each other — the parenthesis giving the reason taken with it, the grammar licensing more than convention names and the
+catalog enumerative and growing from evidence; (ii) the consistency test is the only coupling between them, and it runs
+one way, from the catalog to the grammar; its italic lead states claim (i) and is quoted with it.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 57.398: `FRAMEWORK.md` §5 names no charter whose subject is a
+catalog of named progressions, so none whose subject is that catalog's relation to the licensing grammar, and the
+derivation does not speak to one. (ii) **UNPLACED** — travelling with (i), as Row 57.398 (ii).
+
+*At the source now.* The sentence stands at lines 204–206 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens line 204; it is the map's last bullet, and the bold *Build
+riders* lead follows on line 207. The nearest heading at the blob is *"## 6. Architecture decisions (with the
+alternatives weighed)"*, the member's decision D5 and its dependency map. The lines lie inside member 44's range
+186–273, where §6.44 lists the sentence as item 17. The document is not one of the five withheld from the deriving
+session's pack; no home of the decisions register lies at these lines — register entry D-506's (193–194) ends before the
+map and D-508's (242–244) begins after it.
+
+---
+
+**Row 57.496 — L2 Row 53.79(i), one of the four rows B112 names: a licensed pair in no entry not a gap of the catalog.**
+
+*The L2 entry.* "Rows 53.61, 53.63, 53.64 and 53.79(i) — travelling with Row 50.9: the licensing grammar and the catalog
+not derived from each other, coupled one way by the consistency test, and a licensed pair in no entry not a gap of the
+catalog." (locator: §10, lines 75835–75836). It is one of the four rows this bullet names, and each of them quotes the
+whole bullet.
+
+*The outgoing statement it carries.* "Note the asymmetry ruling (D5): a licensed pair in no catalog entry is NOT a
+catalog gap (grammar licenses more than convention names); frequent corpus pairs absent from the catalog are the
+`idiom_discovery/` pipeline's evidence for growing it." — `cowork_progression_schema_design.md`, §9, the open items,
+item 2 (the L2 row's own locator: lines 302–304).
+
+The lines lie in member 44's cut — the lines 284–311, which §6.44's manifest header lists in no range, §8 and §9 whole
+among them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. The
+sentence stands inside §9's item 2, an open item on partial matching deferred to the precision phase; it opens *Note the
+asymmetry ruling (D5)* and states that ruling's two claims as rules, and is placed as the rules it states, not as the
+open item's record. The L2 block splits it into two claims, and two bullets name them: B112 names claim (i), which this
+row tabulates; the block's claim (ii) is not this row's — a fact, not a correction; claim (ii) is tabulated at
+Row 57.453, which B97 names. One claim: a licensed pair in no catalog entry is not a gap of the catalog — the
+parenthesis giving the reason taken with it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.398: `FRAMEWORK.md` §5 names no charter whose subject is a
+catalog of named progressions, so none whose subject is that catalog's relation to the licensing grammar, and the
+derivation does not speak to one.
+
+*At the source now.* The sentence stands at lines 302–304 of the document's blob at this batch's Task 0 commit, found as
+quoted, opening mid-line 302 after the item's account of partial matching and closing the item on line 304. The nearest
+heading at the blob is *"## 9. Open items"*. The lines lie in none of member 44's published ranges: they fall between
+its ranges 275–283 and 312–332, inside the cut 284–311 §6.44's manifest header lists — so the class *in member 44's cut*
+holds at the blobs. The document is not one of the five withheld from the deriving session's pack; no home of the
+decisions register lies at these lines.
+
+#### The arithmetic at this group
+
+- Rows written: **26**, every one a full row; lines turned into pointers: **0** — 26 + 0 = 26, the rows the group's
+  heading names.
+- The full rows' claims: 16 rows of one claim and 10 rows of two — 16 + 20 = 36.
+- **Outgoing statements placed by this group (the full rows' statements): 36.**
+- Listed under *not a statement* at this group: **0** — the member's nine items stand at §6.57's foot.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 36 dispositions over 36
+  statements.
+- **UNPLACED statements at this group: 20.**
+
+#### The distribution at this group, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 16 | 57.465, 57.466 (i), 57.466 (ii), 57.467 (ii), 57.468, 57.469 (i), 57.469 (ii), 57.470 (i), 57.471, 57.472, 57.473, 57.474, 57.475, 57.486, 57.487 (i), 57.490 (ii) |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 20 | 57.448, 57.451, 57.453, 57.454, 57.455, 57.467 (i), 57.470 (ii), 57.478, 57.485, 57.487 (ii), 57.489 (i), 57.489 (ii), 57.490 (i), 57.493 (i), 57.493 (ii), 57.494 (i), 57.494 (ii), 57.495 (i), 57.495 (ii), 57.496 |
+| **Total** | **36** | — |
+
+**The column sums to 36 (0 + 0 + 16 + 0 + 0 + 0 + 20), against 36 statements, so the arithmetic closes at this group.**
+
+#### The current-text axis at this group, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 36 |
+| **Total verdicts** | **36** |
+
+The AGREES statements: none. The DIFFERS statements: none.
+
+#### The marks at this group
+
+- **WITHHELD rows: none** — no full row's sentence lies inside the home of a withheld identity:
+  `item_4_identities_inside` for position 57 is empty, and none of the twenty-three withheld identities is homed in
+  `cowork_progression_schema_design.md`, which is not one of the five documents withheld from the deriving session's
+  pack.
+- **SEEN rows: two — Rows 57.465 and 57.466 (D-503)**, whose sentences lie inside D-503's home (lines 135–136 of
+  `cowork_progression_schema_design.md`), the home's words being exactly the two sentences, located at the data file by
+  both walks the group's header names; each row's claims are THE DERIVATION IS SILENT. Rows 57.455 and 57.467, whose
+  sentences open line 137, stand outside the home's words.
+- **Homes of the decisions register's data file at the full rows' lines**: **D-503** (135–136; Rows 57.465 and 57.466,
+  each marked SEEN), and no other. **Each home's words stand exactly at its cited lines**, as do those of the other
+  seven homes the data file records in the document — **register entries D-502, D-504, D-505, D-506, D-507, D-508 and
+  D-509** — none of which lies at a row's lines; no retired entry is homed in the document. The content of D-506 and
+  D-507 stands at Rows 57.485 to 57.487 and 57.490, homed elsewhere in the document and marked at §6.44's Rows 44.37 and
+  44.46; the mark is never carried by content. No home lies in the L2 reading file.
+- **The marks were counted both ways**: the identities the data file places at the full rows' lines against the mark
+  strings in this sub-section — one SEEN identity holding two rows' sentences, and two SEEN mark strings standing in the
+  sub-section, after Rows 57.465's and 57.466's titles, and no WITHHELD mark string; **and over the whole of §6.57 the
+  SEEN string stands three times — once in group 3's sub-section, after Row 57.398's title, and twice in this one — and
+  the WITHHELD string once, after group 2's Row 57.322's title**, so no line of the table, no item of the bullet list
+  and nothing of group 1's, group 2's or group 3's sub-section carries a mark string of this group's. **No mark of the
+  L2 comparison's own was carried in**: none of this group's L2 blocks carries one at its heading line, and each row's
+  title is its bullet's gloss, never the L2 heading line.
+- **Rows naming L3-S4: none.**
+
+---
+
 #### The distribution at this member, counted at these rows
 
 NOT YET WRITTEN — written with the last full-row group of this member, summing the groups' feet; the table places
@@ -77310,6 +78546,19 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   *(As Row 46.4; the L2 comparison relocated L2 Rows 50.3, 50.69 and 62.41 to L3.)*
 - Row 57.396 (i) — that the licensed root motion is a term owned by the function layer's grammar. *(As Rows 7.77 and
   46.1 (ii); the L2 comparison relocated L2 Row 50.7 to L3.)*
+- Rows 57.465, 57.466 (i), 57.466 (ii), 57.467 (ii), 57.468, 57.469 (i), 57.469 (ii), 57.470 (i), 57.471, 57.472,
+  57.473, 57.474 and 57.475 — the consumer's weighting of its recognitions, from the design's idiom-mixture weighting:
+  one weight per idiom, discovered from the music and seeded by the user's preference in three forward-only phases with
+  no loop, the weights weighting only the use of a recognition and never its finding, the idiom-evidence histogram built
+  from the first phase's recognitions and the blend from the seed toward it at a rate left as one constant to the
+  precision phase, the weights applied to admission and prior strength, the prior strength as the match value times the
+  largest weight over the entry's idioms, admission above one declared threshold, and the mode cue and the factor for
+  entries defined by their lines each lowering the prior strength by one declared factor. *(As Rows 44.12 to 44.14;
+  Rows 57.465 and 57.466 lie on register entry D-503's home, a SEEN home, marked; the L2 comparison relocated
+  L2 Rows 53.33, 53.34, 53.36 to 53.40, 53.43 to 53.45 and 53.47 to L3.)*
+- Rows 57.486 and 57.487 (i) — that the literal Roman numeral is never changed by the recognition of a named
+  progression, nor where a substitution fills a member, from the design's contract and its substitutions. *(As
+  Row 44.37 (ii); the L2 comparison relocated L2 Rows 53.22 and 53.28 to L3.)*
 
 **To *the second axis — voice leading*.**
 
@@ -77484,6 +78733,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 54.12, 54.13 (ii) and 54.35 (ii) — denial and truncation honest, the clipped and denied marks on the affected
   output, and the denied decision's provenance. *(L3-S40 AGREES at each; Rows 54.12 and 54.13 (ii) lie on register entry
   D-263's home, unmarked.)*
+- Row 57.490 (ii) — that the schema span of an entry defined by its lines carries the chords-only mark. *(As
+  Row 44.46 (i); the L2 comparison relocated L2 Row 53.47 to L3.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -79803,6 +81054,7 @@ rows carry no disposition of their own (§6.56's manifest header).
 
 - Row 57.502 (ii) — does the built phrase-boundary profile carry a graded boundary strength by which a consumer could
   weight a vote?
+- **Group 4:** no QUARANTINED row.
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -80861,6 +82113,7 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 57.502 (i) (L3-S8):** the outgoing text gives the phrase gate a fallback for a featureless boundary
   profile, to *"relax admission with vote-weight scaling instead of starving"*, where L3-S8 says *"Every change point
   and both span edges are candidate phrase ends."* and *"No item of evidence forces or forbids a phrase end"*.
+- **Group 4:** no ADOPTED — proposed row and no DIFFERS.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -80925,16 +82178,16 @@ are at its own foot, and the integers below are re-derivable from them.
 | 54 | 56 | 0 | 0 | 42 | 4 | 0 | 6 | 4 | 5 |
 | 55 | 16 | 0 | 0 | 14 | 0 | 0 | 2 | 0 | 0 |
 | 56 | 5 | 0 | 2 | 2 | 0 | 0 | 0 | 1 | 11 |
-| 57 | 115 | 8 | 6 | 23 | 1 | 0 | 0 | 77 | 9 |
-| **Total** | **4650** | **204** | **99** | **1991** | **1213** | **0** | **722** | **421** | **1317** |
+| 57 | 151 | 8 | 6 | 39 | 1 | 0 | 0 | 97 | 9 |
+| **Total** | **4686** | **204** | **99** | **2007** | **1213** | **0** | **722** | **441** | **1317** |
 
-**The arithmetic check:** 204 + 99 + 1991 + 1213 + 0 + 722 + 421 = 4650, against 4650 statements placed (43 + 34 +
+**The arithmetic check:** 204 + 99 + 2007 + 1213 + 0 + 722 + 441 = 4686, against 4686 statements placed (43 + 34 +
 21 + 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 +
 0 + 0 + 4 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 +
-62 + 40 + 42 + 0 + 27 + 25 + 56 + 16 + 5 + 115).
+62 + 40 + 42 + 0 + 27 + 25 + 56 + 16 + 5 + 151).
 
 *(Member 56's row counts its three full rows' statements alone; its 23 pointer rows are counted at the rows they name.)*
-*(Member 57's row counts the statements of its full rows written so far — groups 1 to 3's; its pointer lines are
+*(Member 57's row counts the statements of its full rows written so far — groups 1 to 4's; its pointer lines are
 counted at the rows they name, and its table is at §6.57.)*
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
@@ -80995,13 +82248,13 @@ counted at the rows they name, and its table is at §6.57.)*
 | 54 | 17 | 4 | 35 | 56 |
 | 55 | 0 | 0 | 16 | 16 |
 | 56 | 0 | 0 | 5 | 5 |
-| 57 | 19 | 11 | 85 | 115 |
-| **Total** | **448** | **370** | **3840** | **4658** |
+| 57 | 19 | 11 | 121 | 151 |
+| **Total** | **448** | **370** | **3876** | **4694** |
 
-**The arithmetic check of the verdicts:** 448 + 370 + 3840 = 4658, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 448 + 370 + 3876 = 4694, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 +
 4 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 +
-42 + 0 + 27 + 25 + 56 + 16 + 5 + 115).
+42 + 0 + 27 + 25 + 56 + 16 + 5 + 151).
 
 ## 14. The derivation's independence record, relayed
 
