@@ -29258,3 +29258,87 @@ findings (§8), the summary of context (§9), the plan's tell (§10) and the sel
 *Provenance: CC, 2026-10-30, at boot tip `572377519f007bedbf901ad7686c9def010e33cd`, under
 `cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md`. Every commit identifier here was read from the
 commit's own object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `45b7f750d052b3e5e055f4cec1e5b75bc956e30c` left, appended in the one further commit
+
+**A fresh full guard run in write mode (`python tools/audit/gen_guard_state.py`, the operating mode named), after the
+close commit and before this one.** Its result is at `tools/audit/guard_state.json` → `summary`, which this commit
+carries. Its first line, verbatim: *"wrote tools\audit\guard_state.json"*; its last line, verbatim: *"82 guard(s) run,
+13 failing, 4 not run, 20 historical record(s)"*. **E2 and E3 — MET, AS A2 PREDICTED:**
+
+- the run count is the premise ledger's;
+- zero STOPs in the runner;
+- the failing set is exactly the thirteen of the premise ledger, none added;
+- `tools/audit/gen_l3_outgoing_population.py --check` PASSES;
+- `tools/audit/gen_evidence_pin_membership.py --check` PASSES, and run on its own after the guard run it reads *"ruling
+  records read 170"*, equal to the opening capture's;
+- every verdict line, the NOT RUN and HISTORICAL lines among them, is identical to the opening capture's — compared line
+  by line by the scratch script `t3_compare57g4.py`, which printed *"opening verdict lines: 106  end-state verdict
+  lines: 106"*, *"same guard names in the same order: True"*, *"verdict lines moved: 0"*, *"[NOT RUN] lines identical:
+  True"*, *"[HISTORICAL] lines identical: True"* and *"failing at the end state: 13"*.
+
+**The A2 exceptions, handled as A2 says, were all met inside the close rather than after it.** The defense share and
+the session-start read size went red after the close's `STATUS.md` edits and the forward-bound move, as A2 provides;
+each was regenerated, the read size last, and each compared against the blob at `572377519f…` by explicit hash (report
+§3, 2(c)): both moved only with `STATUS.md`'s size. **The evidence pin, the L0/L1 population and the L3 population stayed
+green throughout and were not regenerated.** All six checks were re-run green after the report and the close section
+were written, before the close was committed, so this run regenerated nothing beyond its own artifact —
+`changed_paths.py` after the run shows `tools/audit/guard_state.json` beside the carried
+`tools/audit/claude_md_finer_archive.json` and no other tracked modification, and no new handoff entry or ruling record
+among the untracked paths. `gen_l2_outgoing_population.py` was not run in any operating mode.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_l3_outgoing_population.py',
+'tools/audit/gen_withheld_family_reading.py']"* — exactly the four tools of the dispatch's FACT; no fifth name.
+
+**A3 to A5, verified at the objects.** `git diff --name-status 572377519f007bedbf901ad7686c9def010e33cd
+45b7f750d052b3e5e055f4cec1e5b75bc956e30c` shows eleven paths, every one accounted for, and **the twenty-five outgoing
+texts A5 names and `cowork_architecture_review_2026_07.md` — `cowork_progression_schema_design.md`, the one this batch
+opened, among them — and the L0/L1 and L2 reading files, are all absent from it**:
+
+- Task 0's two: this dispatch and entry 454;
+- the reading file of Task 1;
+- the close's eight: `STATUS.md`, `STATUS_ARCHIVE.md`, the re-aimed forward-bound tool and its artifact, the defense
+  share, the read-size artifact, the report, and this file.
+
+`git ls-tree` — one command per commit, each hash written literally, the same sixty paths given to both — at the boot
+commit `572377519f…` and at the close, compared by the scratch script `t3_lstree_cmp57g4.py`, shows **the same object at
+the boot commit and at the close for fifty-nine of the sixty paths**: the derivation and the brief
+(`cowork_blind_derivation_l3_2026_10_17.md` `c01793f9…` and `cowork_blind_session_brief_l3.md` `6abb5333…`); the
+twenty-five outgoing texts A5 names, among them the document this batch opened, `cowork_progression_schema_design.md`
+(`fd5d3f25…`); `cowork_architecture_review_2026_07.md` (`3a1e0b5b…`); `CLAUDE.md`, `DECISIONS.md`, `OPEN_ITEMS.md`,
+`BUILD_AND_TEST.md` and `FRAMEWORK.md`; the rendered decisions-register directory `decisions` (tree `40950cd0…`) and the
+register's data file (`9f34b0ca…`); the L0/L1 and L2 reading files (`f3edcfe8…` and `fba58fba…`); the boot pack's
+artifact (`2e991922…`) and its `l3` directory (tree `d8e98615…`, which holds the two input-contract files); the L3,
+L0/L1 and L2 population tools and their artifacts; `tools/audit/gen_l2_withheld_documents.py`,
+`tools/audit/gen_derivation_boot_pack.py`, `tools/audit/gen_guard_state.py`, and
+`tools/audit/gen_evidence_pin_membership.py` with its artifact; entries 446 to 453 and the ruling record of 2026-10-26
+(`22d3686c…`). **The one path that moved is the reading file**, from `83cdfec2…` at the boot commit to `6cf200e1…`, the
+blob the group commit landed, unchanged since.
+
+**§6.1 to §6.56 of the reading file are byte-identical**, compared as A5 orders: the span from the heading *"### 6.1 —
+Member 1:"* to the line before *"### 6.57 — Member 57:"* in the blob at `572377519f…`, against the same span in the
+close's blob, both read from the object store by explicit hash into scratch. The scratch script `t3_span57g4.py` printed
+*"old span bytes: 4114649  new span bytes: 4114649  identical: True"*.
+
+**§6.57 differs only where 1(f) names**: the same script's line diff of §6.57, from its heading to the line before
+*"## 7."*, prints the 26 table lines changed from *NEEDS A FULL ROW* to *FULL ROW BUILT — group 4*, each keeping its
+class; the foot sentence on the groups built; the *Built so far* bullet extended with group 4 and *"10 rows remain NOT
+YET WRITTEN"*; and one inserted block of 1231 lines, opening with group 4's heading and holding the group's sub-section
+through its closing separator — 59 changed lines printed outside the block. **Groups 1 to 3's sub-sections are
+identical** (3784 lines old and new, *"identical: True"*). No other line of §6.57 differs.
+
+**Nothing else differs from the boot commit:** no other tool source — the forward-bound tool's diff from the boot
+object to the close object holds its five authored edits and the appended aiming and nothing else; no file under the
+pack directory and not the pack artifact; not the L0/L1 or L2 reading file; no outgoing text and not `FRAMEWORK.md`; no
+source of the decisions register and no rendered decisions-register file; no governing document other than `STATUS.md`
+and `STATUS_ARCHIVE.md`; not entries 446 to 453, and not the ruling record.
+
+**Declared at the end state:** one search of the worktree listing was written with a look-around and refused by the
+search tool before it ran; the listing was read with the file tools instead.
+
+This commit adds only the guard run's artifact and this portion.
+
+*Provenance: CC, 2026-10-30, appended in the one further commit after the close commit
+`45b7f750d052b3e5e055f4cec1e5b75bc956e30c`; the verdicts are this run's own output, read with the file tools.*
