@@ -30,7 +30,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -202,9 +203,13 @@ position 57 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md`, which stopped after the
 group under its own limit on the batch, and not by a capacity judgment; the three member feet of position 57 were
 written under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md`, which opened
-with them as that dispatch ordered (D-670), making position 57 DONE, and then wrote §7 whole in its own commit.**
-**THE TABULATION IS COMPLETE OVER ITS POPULATION: POSITION 57, THE LAST MEMBER, IS DONE (D-672).** §7 is written; §8, §9
-and §14 stay NOT YET WRITTEN, to be written once each in that order, each whole in its own commit.
+with them as that dispatch ordered (D-670), making position 57 DONE, and then wrote §7 whole in its own commit, and
+stopped at the section boundary after §7 by its own capacity judgment, to leave room for the close — a judgment it wrote
+after §7's commit, so that this clause states the stop and its reason in that batch's place (its report §6); §8 was
+written under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md`, whole in its
+own commit.**
+**THE TABULATION IS COMPLETE OVER ITS POPULATION: POSITION 57, THE LAST MEMBER, IS DONE (D-672).** §7 and §8 are
+written; §9 and §14 stay NOT YET WRITTEN, to be written once each in that order, each whole in its own commit.
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -78704,8 +78709,149 @@ Each equation sets the count this section's entries give against §13's total as
 
 ## 8. The open questions OQ-L3-1 to OQ-L3-14
 
-**NOT YET WRITTEN.** Written once, after the last member; the five ★ questions are listed exactly like the other nine
-and put to nobody.
+**Written once, after the last member.** Each of the derivation's fourteen open questions is quoted from the derivation,
+whole, in a block quote, and is followed by ONE sentence on what the tabulated outgoing text says to it. That sentence
+names the rows of §6.1 to §6.57 whose outgoing statements speak to the question's subject — found by a search over those
+rows' *Outgoing statement.* quotations, and over *The outgoing statement it carries.* at position 57's full rows, and
+read at the row — and quotes them in their own words; where the search finds nothing, the sentence says so and names
+what was searched for. **Nothing here is judged, recommended or answered**: a sentence reports what the rows carry, and
+says nothing about whether a question is settled, open or well put. The five questions the derivation marks as ones its
+session would put to the user carry that mark only inside their own quotation, are listed exactly like the other nine,
+and are put to nobody.
+
+**OQ-L3-1**
+
+> **OQ-L3-1 (face (a); L3-S2) — the minor-mode degree convention.** IC-L2 §0 defines L2's degree as a
+> scale step *"relative to the span's tonality, with any chromatic alteration"*. L2-S21 makes minor one
+> mode whose sixth and seventh degrees *"may each be raised or not"*. Neither says which form an
+> unaltered VI or VII names. *The input-contract statements concerned:* IC-L2 §0 (the Chord row) and
+> L2-S21. A root computed under the wrong convention is a semitone off.
+
+The tabulated outgoing text speaks to the minor mode's variable degrees at Row 42.10, where *"the minor-mode variable sixth and seventh degrees are emission variants (ratified)"*, at Row 42.12, *"the leading-tone/subtonic contrast in minor as the sharpest cell"*, and at Row 57.372, *"minor's variable 6̂/7̂ (Dorian color, subtonic-vs-leading-tone)"*; none of the nine rows a search for the sixth or seventh degree, the raised degrees, the melodic, harmonic and composite minor, an unaltered degree, a degree numeral, a scale step, the lowered seventh and the subtonic finds says which form an unaltered VI or VII names.
+
+**OQ-L3-2**
+
+> **OQ-L3-2 ★ (face (c); L3-S17) — the principal cadence vocabulary.** *Question for the user:* which
+> theory of cadence names the principal type? The candidates are Caplin's typology, which needs a
+> root-position dominant for an authentic cadence and has an evaded category; the American textbook
+> set, under which an inverted V–I is an imperfect authentic cadence; and the extended chorale
+> vocabulary with the subdominant stop. Or is no vocabulary principal, with the features and every
+> declared vocabulary's view published side by side? This is the same kind of question as the
+> charter's DP-N, and exemplar 1 bar 4 is its case.
+
+The tabulated outgoing text names one typology at Row 7.44, *"(perfect authentic, imperfect authentic, half — including Phrygian — deceptive, plagal, evaded; §5.2)"*, and at Row 57.60, *"The §5.2 cadence typology (PAC, IAC, Half incl. Phrygian, Deceptive, Plagal, Evaded)"*, which it sets beside DCML's six labels, splits the perfect from the imperfect cadence by the bass at Row 7.100, where *"an inverted authentic cadence does not have it"*, and cites Caplin at Row 8.10, *"Caplin makes the cadence definitional"*; a search for the subdominant stop finds no row.
+
+**OQ-L3-3**
+
+> **OQ-L3-3 ★ (face (b); L3-S8, L3-S11) — a phrase end with no notated cue.** *Question for the user:*
+> the charter says *"the span's boundaries come from the notated cues, and the cadence is aligned to
+> them"*. At an elided cadence such as exemplar 1 bar 42 or exemplar 3 bar 12 beat 3, the only notated
+> cues are the bar line (bar 42) or nothing beyond the per-voice relations and the metric class (bar 12
+> beat 3). May the cadential evidence place a phrase end there? L3-S8 makes every change point a
+> candidate and lets the evidence decide. That is this session's reading, and it moves the charter's
+> sentence from a rule about *where* boundaries may fall to a statement about *which evidence leads*.
+
+The tabulated outgoing text reads a phrase boundary from the written surface at Row 36.17, *"never from a resolved key, a chord reading, or a cadence"*, takes the grouping's boundaries from one source at Row 8.101, *"Punctuation-span boundaries come from the one phrase-boundary primitive"*, looks for cadences at those boundaries at Row 2.16, *"Cadences are looked for at phrase ends"*, and names *"elided phrase ends"* at Row 57.62 among the textures whose surface punctuation is suppressed.
+
+**OQ-L3-4**
+
+> **OQ-L3-4 (faces (c), (h); L3-S16) — the highest sounding pitch per slice.** The PAC/IAC split in
+> every vocabulary needs the soprano's degree at the arrival. L1 publishes the lowest sounding pitch per
+> slice and no highest one (IC-L1 S-50, exhaustive). *The input-contract statement concerned:* IC-L1
+> S-50 (with S-44's naming and S-51's test). Would S-50's list gain *per slice, the highest sounding
+> pitch of its sounding set*, published under that name with its witness? Until then feature (6)
+> carries a named reason.
+
+The tabulated outgoing text speaks to the soprano at Row 2.7, where *"the soprano arrival degree is a soft optional nudge and this layer never attempts melody identification"*, at Row 2.8, *"the highest sounding voice is often a doubling"*, at Row 36.130, which defines the top voice as *"the highest sounding voice of the texture"*, and at Row 40.22, where *"cadence formulas constrain the melody note"*.
+
+**OQ-L3-5**
+
+> **OQ-L3-5 (faces (b), (d), (h); L3-S9, L3-S23, L3-S42) — thematic parallelism.** Section reading,
+> the evaded cadence, and some phrase ends need a relation saying that a stretch restates an earlier
+> one, transposed or not. No layer beneath publishes it. By IC-L1 S-51's test it is an L1-kind item.
+> It may instead belong to the voice-leading axis. *The input-contract statements concerned:* IC-L1
+> S-50 and S-51, or the charter's spine–axis row. Which layer publishes it, and in what form?
+
+The tabulated outgoing text names metric parallelism among the deferred global cues at Row 36.74, *"a phrase-length prior and metric-parallelism bias"*, and at Row 36.146, *"the global regularisers (phrase-length prior, metric parallelism)"*, and names a harmonic sequence's statements at Row 44.27, *"repeated at successive transpositions"*; a search for the word thematic finds it only inside the word mathematical, at Row 28.2.
+
+**OQ-L3-6**
+
+> **OQ-L3-6 ★ (face (d); L3-S24) — form-function names.** *Question for the user:* does L3 publish
+> names of formal function (exposition, second theme, development, recapitulation) beside the grouping,
+> as exemplar 2 writes them? Adding them amends L3's charter list.
+
+The tabulated outgoing text places Caplin's formal functions outside the grouping layer's scope at Row 8.23, *"William Caplin's theory of classical form"*, lists them at Row 8.35, *"(sentence, period, … — §0)"*, among what that layer does not do, defers sections and form at Row 8.140 as *"the verifiability-gated extension (§9-D3)"*, and names form ground truth at Row 41.63, *"form/section GT (sonata form etc.)"*; a search for exposition, recapitulation and second theme finds no row.
+
+**OQ-L3-7**
+
+> **OQ-L3-7 (faces (e), (h); L3-S28) — the continuo grain.** A figured bass that figures passing bass
+> notes by their own sonority needs the spelled interval content above the lowest sounding pitch at
+> every slice. IC-L1 S-49 publishes it only at cue slices and unspelled. *The input-contract statements
+> concerned:* IC-L1 S-49 and S-50. Would L1 publish it per slice, spelled? With it goes the question
+> whether the charter's *figured bass* means the continuo grain at all.
+
+The tabulated outgoing text defines figured bass at Row 4.21 as *"interval notation above a bass note rather than a chord name"*, and names passing bass notes only as a limitation of chord naming, at Row 22.25, *"Walking bass passing tones can still pull the output toward sus/slash-chord spellings"*; none of the twelve rows a search for continuo, a passing bass, every bass note, thoroughbass and interval content finds says whether a figured bass figures every bass note, and ten of them carry the word continuous.
+
+**OQ-L3-8**
+
+> **OQ-L3-8 ★ (face (a); L3-S7) — the pivot label.** *Question for the user:* IC-L2 carries to this
+> specification whether the label *"this chord is in both tonalities"* is published at L3 or as a
+> display view. Does L3's charter list gain it? It would be a view, deciding nothing.
+
+The tabulated outgoing text speaks to a pivot label at Row 5.9, a *"pivot label"* written *"at modulation boundaries"*, at Row 28.41, *"Pivot chord labels"*, and at Row 28.45, *"No cadence markers, no pivot labels, no tonicization labels."*, and to the pivot chord itself at Row 42.35, *"the pivot is diatonic in both"*.
+
+**OQ-L3-9**
+
+> **OQ-L3-9 (face (a); L3-S5) — the augmented sixth in a display.** L3 publishes no root for the
+> augmented sixths. Whether a display respells them as dominant-seventh symbols is the display's
+> convention. Recorded so the gap is not mistaken for a defect.
+
+The tabulated outgoing text speaks to the augmented sixth's labels at Row 28.43, *"Augmented sixth chord labels (It+6, Fr+6, Ger+6)"*, separates the chord from the dominant seventh by its spelling at Row 7.185, where *"the augmented sixth expands outward to the dominant, the seventh resolves down to the tonic"*, and names the jazz tritone substitute as its enharmonic equal at Row 46.12, *"is enharmonically the German sixth"*.
+
+**OQ-L3-10**
+
+> **OQ-L3-10 ★ (face (h); L3-S40) — L3 as a requester of more music.** *Question for the user:* may L3,
+> like L2, ask the caller for a larger span when its in-span phrase or section reading depends on music
+> beyond the edge, stopping by convergence under the safety cap? If not, L3 marks every edge-crossing
+> unit and stops at the span.
+
+The tabulated outgoing text marks a group cut by the selection at Row 8.63, *"a truncated group is never presented as a complete one"*, tags an edge span left open at Row 8.64, *"the signal that widening the selection would complete it"*, says at Row 8.65 that *"acting on it — invoking L1's"* extension and re-running is the orchestrator's decision, and keeps the phrase-boundary primitive to the loaded span at Row 36.27, *"it inherits the loaded span and requests no extension of its own"*.
+
+**OQ-L3-11**
+
+> **OQ-L3-11 (faces (b), (d), (g); L3-S9, L3-S14, L3-S23, L3-S35) — the measured values.** All
+> weights of the phrase and section models. The fit needs licence-clear music with annotated phrase
+> beginnings and endings and section boundaries, a piece-level held-out split and a declared capacity.
+> Neither exemplar with phrase signs is licence-clear (exemplar 3 non-commercial, exemplar 1
+> unstated). *A measurement, not a ruling.* UNESTABLISHED.
+
+The tabulated outgoing text speaks to the phrase model's values at Row 36.22, a boundary-strength profile *"whose combination weights and peak threshold are"* constants of a later phase, and to annotated material at Row 8.136, *"cadence labels in 921 of 1,284 files"*, at Row 41.15, *"TAVERN (1,060 phrase-level analyses,"* and at Row 41.58, *"GTTM located (~300 pairs) but no single artifact + license unclear"*.
+
+**OQ-L3-12**
+
+> **OQ-L3-12 (faces (b), (d); L3-S12, L3-S42) — grading against annotations.** *For the
+> measurement-design stage:* how an annotation's phrase signs map onto L3's tiling, where the
+> annotation leaves gaps (exemplar 1 bars 26 to 28), writes elisions (`}{`), and places its cadence
+> label at the arrival and its phrase-end sign later (exemplar 1 bars 11 to 12).
+
+The tabulated outgoing text speaks to grading against annotations at Row 36.100, where *"the picked texture boundaries are checked against the corpus's"* analyst-annotated phrase markers, at Row 8.83, *"ground truth: a cadence almost always coincides with a span ending; many punctuation-spans end with no cadence"*, and at Row 8.127, which leaves one case to the measurement as *"a §10 metric detail, not a layer rule"*.
+
+**OQ-L3-13**
+
+> **OQ-L3-13 (face (b); L3-S11) — a case the staged set does not supply.** An elision whose overlap
+> spans several beats rather than one position.
+
+The tabulated outgoing text names the elision at Row 37.42, *"the cadence tone of one phrase simultaneously beginning the next"*, and tiles the grouping at Row 8.58 *"with no gaps or overlap"*; a search for several beats, for more than one beat, slice or position, and for the words overlap of finds no row.
+
+**OQ-L3-14**
+
+> **OQ-L3-14 (faces (c), (e); L3-S17, L3-S25, L3-S29) — cases the staged set does not supply.** A
+> deceptive, an evaded, a plagal and a Phrygian half cadence, to test L3-S16's features against
+> L3-S17's types. A figured bass over a pedal point (L3-S25's pedal clause). A figured passing bass
+> note, the continuo grain of L3-S28. A continuo part with no written upper voices (IC-L1 S-8's
+> recorded cost, L3-S29).
+
+The tabulated outgoing text names the deceptive, evaded and plagal cadences and the Phrygian half cadence at Row 7.44 and at Row 8.59, *"{PAC, IAC, Half, PhrygianHalf, Deceptive, Plagal, Evaded}"*, and defines figured bass at Row 4.21, quoted under OQ-L3-7; a search pairing a figure with a pedal finds no row, a search pairing a figure with passing finds only the passing and neighbor figures of the function layer at Rows 7.73, 7.136, 7.137 and 7.279, and a search for continuo finds the word in its musical sense only at Row 4.21.
 
 ## 9. The derivation's §7 — the eight places the decomposition seemed wrong or incomplete
 
