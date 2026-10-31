@@ -202,10 +202,9 @@ position 57 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md`, which stopped after the
 group under its own limit on the batch, and not by a capacity judgment; the three member feet of position 57 were
 written under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md`, which opened
-with them as that dispatch ordered (D-670), making position 57 DONE.**
-**THE TABULATION IS COMPLETE OVER ITS POPULATION: POSITION 57, THE LAST MEMBER, IS DONE (D-672).** The sections written
-once after the last member — §7, §8, §9 and the relay into §14 — stay NOT YET WRITTEN, to be written once each in that
-order, each whole in its own commit.
+with them as that dispatch ordered (D-670), making position 57 DONE, and then wrote §7 whole in its own commit.**
+**THE TABULATION IS COMPLETE OVER ITS POPULATION: POSITION 57, THE LAST MEMBER, IS DONE (D-672).** §7 is written; §8, §9
+and §14 stay NOT YET WRITTEN, to be written once each in that order, each whole in its own commit.
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -78462,7 +78461,246 @@ blob.**
 
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
-**NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
+**Written once, after the last member, and GENERATED, not written by hand.** A script parsed every row of §6.1 to §6.57
+at this file's committed blob — each row's heading, its claims where it is split, and its *Current-text axis.* paragraph
+— and gathered, for each derived statement in turn, the rows whose axis gives it each verdict, in file order. A row is
+cited by its number, with the claim where the row is split. A row naming two derived statements counts once for each. A
+verdict written once for a range or a list of claims counts once for each claim it stands for, as the members' feet and
+§13 count it: the paragraphs read in that form are those of Rows 1.9, 1.16, 1.24, 1.27, 2.2, 2.22, 4.30, 5.4 and 6.5,
+each verdict written once for its claims (i) and (ii). §6.56's pointer rows carry no axis by design and contribute
+nothing here: a pointer row's statement is counted at the row it names. §6.57's table lines are not rows and are not
+parsed as rows, for the same reason; the member's full rows are parsed like every other row.
+
+**Each entry opens with the derived statement's first sentence, quoted from the derivation.** The derivation gives its
+statements no separate titles, so that first sentence stands as the title. **No sentence of the outgoing text is
+restated here**: the rows carry them, and this section is the index from the derived side. Where no row names a
+statement under either verdict, the entry says **THE OUTGOING TEXT IS SILENT**. A verdict of THE DERIVATION IS SILENT
+names no derived statement, so it appears in no entry; it is counted in the third equation below.
+
+**L3-S1 — "The chord symbol is a view of L2's chord."**
+
+- *AGREES* (11): Rows 15.8(ii), 15.23(i), 42.6(i), 43.28(i), 43.60(ii), 43.62, 48.11, 48.24, 49.26(i), 57.513, 57.514.
+- *DIFFERS* (11): Rows 1.15, 1.18, 10.14(i), 10.24(i), 10.131(i), 10.149, 21.188(ii), 38.11(i), 38.24(ii), 43.44(i), 47.10(ii).
+
+**L3-S2 — "The root is spelled."**
+
+- *AGREES* (8): Rows 10.46, 15.23(ii), 42.6(ii), 48.9(ii), 48.13(i), 48.39(i), 49.26(ii), 52.13(ii).
+- *DIFFERS* (9): Rows 7.19, 7.51, 7.90, 7.220, 10.25(ii), 22.83, 22.84(ii), 22.86, 38.12(i).
+
+**L3-S3 — "The quality is L2's quality field, carried unchanged into the chord-symbol vocabulary: major, minor, diminished, augmented, the five seventh qualities, and the augmented sixths."**
+
+- *AGREES* (7): Rows 7.40, 7.42, 7.183, 7.198(ii), 10.132(ii), 15.43(i), 52.13(i).
+- *DIFFERS* (5): Rows 7.18(i), 7.185, 10.34, 15.23(iii), 48.16.
+
+**L3-S4 — "The bass note is the chord member that L2's figure names, spelled from the root and quality."**
+
+- *AGREES* (6): Rows 15.23(ii), 22.59, 35.90(ii), 35.126, 48.13(ii), 52.13(iii).
+- *DIFFERS* (0): none.
+
+**L3-S5 — "Where L2's chord carries something the three parts cannot express, the chord symbol says so and does not stretch."**
+
+- *AGREES* (13): Rows 4.2, 4.3, 10.25(i), 10.181, 10.221(ii), 15.42(ii), 15.42(iii), 16.27(ii), 16.29, 19.1, 19.3(ii), 48.19, 48.20(ii).
+- *DIFFERS* (8): Rows 10.35, 10.36, 10.82, 10.101, 10.132(i), 15.43(ii), 15.50(ii), 19.84.
+
+**L3-S6 — "Chord-symbol rivals are read off L2's rivals, one for each published L2 span-rival, rival object and whole reading."**
+
+- *AGREES* (2): Rows 40.27(ii), 40.50(i).
+- *DIFFERS* (1): Row 2.6.
+
+**L3-S7 — "L3 does not publish a pivot label (*this chord is degree a in one tonality and degree b in the next*)."**
+
+- *AGREES* (0): none.
+- *DIFFERS* (0): none.
+- **THE OUTGOING TEXT IS SILENT** — no row's current-text axis names this statement as AGREES or DIFFERS.
+
+**L3-S8 — "The phrase reading is an L3 decision."**
+
+- *AGREES* (9): Rows 8.15(ii), 36.19(i), 36.19(ii), 36.83, 36.84, 36.107(i), 36.107(ii), 36.152(iii), 57.62(ii).
+- *DIFFERS* (76): Rows 2.15, 2.16(ii), 2.18, 3.1(ii), 7.33(ii), 7.68(i), 7.116(ii), 7.336, 8.14(ii), 8.16(i), 8.16(ii), 8.24, 8.26(i), 8.28(ii), 8.43, 8.60(i), 8.66, 8.87, 8.95, 8.96(i), 8.97, 8.101(i), 8.105(ii), 8.112, 10.9, 19.30(ii), 19.31(ii), 19.38(iii), 19.39(ii), 19.41, 19.58(iii), 36.4(i), 36.4(ii), 36.6(ii), 36.11(ii), 36.12(ii), 36.14(iii), 36.16(i), 36.21, 36.37(ii), 36.37(iii), 36.38(ii), 36.40(i), 36.45(ii), 36.48(ii), 36.58(i), 36.60(i), 36.60(ii), 36.61, 36.64, 36.65, 36.76(ii), 36.77(ii), 36.78(ii), 36.79(ii), 36.80(ii), 36.81(ii), 36.82, 36.86(ii), 36.91(i), 36.94(iii), 36.109(i), 36.113(i), 36.115(ii), 36.124, 36.125(ii), 36.133(ii), 38.1(ii), 38.71, 40.6, 57.50, 57.153(ii), 57.249, 57.290, 57.511, 57.502(i).
+
+**L3-S9 — "The evidence bearing on a phrase end at a candidate position p falls into four families."**
+
+- *AGREES* (68): Rows 7.264(ii), 7.298(i), 7.298(ii), 20.33(i), 36.17(i), 36.17(ii), 36.18, 36.20, 36.22(i), 36.23, 36.33(ii), 36.34, 36.35(i), 36.38(i), 36.39(ii), 36.45(i), 36.46, 36.47, 36.48(i), 36.49, 36.51, 36.52, 36.53, 36.66(i), 36.67, 36.72, 36.73, 36.76(i), 36.77(i), 36.78(i), 36.79(i), 36.89, 36.90, 36.91(ii), 36.92, 36.95, 36.97, 36.98, 36.109(ii), 36.117, 36.121, 36.122, 36.123, 36.125(i), 36.126, 36.127, 36.128, 36.129, 36.132, 36.144(ii), 36.147(i), 36.148(i), 36.149, 36.150, 36.151, 36.155, 37.61(i), 40.8(ii), 40.9, 40.12(ii), 47.16(ii), 57.154(i), 57.155, 57.156, 57.170, 57.171(i), 57.171(ii), 57.207.
+- *DIFFERS* (5): Rows 36.74(i), 36.146, 37.46, 40.24(iii), 57.157.
+
+**L3-S10 — "A phrase end and its cadential arrival are published as two positions."**
+
+- *AGREES* (10): Rows 3.1(iv), 8.14(ii), 36.10(i), 42.24(ii), 47.1(iii), 47.10(iii), 47.13(ii), 47.18(iii), 47.37(ii), 47.38(ii).
+- *DIFFERS* (2): Rows 8.84(i), 36.63.
+
+**L3-S11 — "An elided phrase boundary is published as one position that is both the arrival of the closing phrase's cadence and the beginning of the next phrase."**
+
+- *AGREES* (1): Row 8.67.
+- *DIFFERS* (0): none.
+
+**L3-S12 — "The phrase reading tiles the working span."**
+
+- *AGREES* (11): Rows 8.14(i), 8.20, 8.28(i), 8.45(i), 8.52(i), 8.58, 8.60(ii), 8.61, 8.62, 19.45, 44.15.
+- *DIFFERS* (7): Rows 8.4(i), 8.68, 8.69, 8.70, 8.72, 36.10(ii), 36.113(ii).
+
+**L3-S13 — "A rival phrase reading, a different placement of a phrase end or a different count of phrases, is carried with its mass, in the same form as L2's boundary rivals."**
+
+- *AGREES* (3): Rows 19.75, 19.76(i), 19.79.
+- *DIFFERS* (0): none.
+
+**L3-S14 — "Every weight of the phrase model is fitted from annotated phrase boundaries, held out by piece, with its capacity declared before the fit, on licence-clear music only."**
+
+- *AGREES* (32): Rows 7.20, 7.21, 7.49, 7.225, 8.71, 8.84(ii), 8.104, 8.138, 16.1(ii), 16.5(i), 16.5(ii), 16.18, 16.19, 16.20(ii), 20.32(ii), 23.44, 36.7(i), 36.22(iii), 36.44, 36.56, 36.93, 36.96, 36.100(i), 36.106(iii), 36.108(i), 36.139(i), 39.7(i), 39.9, 39.10(ii), 39.11(i), 39.62(i), 40.11(ii).
+- *DIFFERS* (0): none.
+
+**L3-S15 — "A cadence is published only at a phrase end L3 has decided, an elided one included, and at most one per phrase end."**
+
+- *AGREES* (21): Rows 2.16(i), 7.70(i), 7.112(i), 7.116(i), 7.230(ii), 7.263, 8.30(i), 8.45(iii), 8.47(i), 8.83, 8.88(ii), 8.116(i), 8.129(i), 10.27(i), 19.81, 28.36(i), 36.6(i), 36.12(i), 36.133(i), 57.62(i), 57.283.
+- *DIFFERS* (13): Rows 8.11(ii), 8.47(ii), 8.59(ii), 8.86, 8.101(ii), 8.116(ii), 8.129(ii), 8.130, 9.89(iii), 28.35, 28.50, 37.31(i), 40.64.
+
+**L3-S16 — "The cadence is published as its defining features, each a view of a lower layer's fact:"**
+
+- *AGREES* (13): Rows 2.1(ii), 7.9, 7.44(ii), 7.48(ii), 7.93, 7.197(ii), 7.230(i), 38.77(iv), 40.16(i), 40.22(ii), 43.29(i), 43.105(i), 48.30(ii).
+- *DIFFERS* (19): Rows 2.4, 2.7(ii), 2.8, 7.1(ii), 7.31(i), 7.52, 7.98, 7.101(ii), 7.105, 7.107(i), 7.120, 7.229, 7.294(ii), 7.301(ii), 8.40(ii), 20.46(ii), 20.48, 36.36(i), 36.130(i).
+
+**L3-S17 — "The cadence type is a view of the defining features under a declared vocabulary."**
+
+- *AGREES* (0): none.
+- *DIFFERS* (29): Rows 2.7(i), 2.9, 7.1(i), 7.8, 7.31(ii), 7.35, 7.44(i), 7.96, 7.99, 7.100, 7.101(i), 7.102, 7.103, 7.104, 7.106, 7.107(ii), 7.115(i), 7.189(i), 7.269, 7.301(i), 7.329(i), 8.11(i), 8.40(i), 8.59(i), 8.88(i), 28.47, 38.26(i), 46.14, 57.60(i).
+
+**L3-S18 — "At a phrase end where no type of the declared vocabulary applies, the cadence field is published as *no cadence* with its reason."**
+
+- *AGREES* (2): Rows 8.30(ii), 8.85.
+- *DIFFERS* (0): none.
+
+**L3-S19 — "The principal cadence is read off L2's principal reading at L3's principal phrase end."**
+
+- *AGREES* (0): none.
+- *DIFFERS* (4): Rows 7.112(ii), 7.114(ii), 7.115(ii), 7.249.
+
+**L3-S20 — "The cadential six-four is handled under both readings L2 admits (`I6/4` and `V(64)`), each read as it stands."**
+
+- *AGREES* (1): Row 7.95.
+- *DIFFERS* (4): Rows 7.37, 7.94, 7.273, 42.36(ii).
+
+**L3-S21 — "L3 reads L1's cadence cues only as their establishment status allows."**
+
+- *AGREES* (1): Row 42.26(ii).
+- *DIFFERS* (0): none.
+
+**L3-S22 — "The section grouping is an L3 decision."**
+
+- *AGREES* (4): Rows 19.39(iii), 38.61, 38.72, 57.352.
+- *DIFFERS* (26): Rows 3.1(i), 3.3, 8.21, 8.22, 8.24, 8.25, 8.34, 8.35(ii), 8.36(i), 8.96(ii), 8.113(i), 8.114(i), 8.115, 8.140, 8.141, 19.30(ii), 19.31(ii), 19.38(iii), 19.38(vii), 19.43(i), 19.58(iii), 19.59(iv), 38.77(i), 57.315(i), 57.315(ii), 57.320(i).
+
+**L3-S23 — "The evidence bearing on a section boundary falls into four families, each entering as fitted terms."**
+
+- *AGREES* (2): Rows 36.50, 40.5(iii).
+- *DIFFERS* (1): Row 7.34.
+
+**L3-S24 — "L3 publishes the grouping (boundaries, nesting and rivals) and not form-function names such as *exposition*, *second theme*, *development* or *recapitulation*."**
+
+- *AGREES* (3): Rows 8.23, 8.35(i), 8.113(ii).
+- *DIFFERS* (0): none.
+
+**L3-S25 — "The figured bass L3 publishes describes the harmony L2 decided, in thoroughbass notation."**
+
+- *AGREES* (5): Rows 4.21, 4.22, 4.24(i), 4.25, 7.41.
+- *DIFFERS* (4): Rows 4.17, 4.23(i), 4.28, 4.29.
+
+**L3-S26 — "Accidentals in the figures are written relative to the key signature in force (IC-L1 S-6), read as a sign of the notation and not as a tonality."**
+
+- *AGREES* (4): Rows 4.27, 16.30(i), 20.62, 21.124.
+- *DIFFERS* (0): none.
+
+**L3-S27 — "The full figure (every spelled interval of L3-S25) is the published fact."**
+
+- *AGREES* (1): Row 19.83(i).
+- *DIFFERS* (2): Rows 4.24(ii), 4.26.
+
+**L3-S28 — "A figured bass at the continuo grain, where every bass note including passing bass notes is figured by the sonority actually sounding above it, needs the spelled interval content above the lowest sounding pitch at every slice."**
+
+- *AGREES* (0): none.
+- *DIFFERS* (0): none.
+- **THE OUTGOING TEXT IS SILENT** — no row's current-text axis names this statement as AGREES or DIFFERS.
+
+**L3-S29 — "L3 never reads the composer's figures, and publishes no comparison between its figured bass and them."**
+
+- *AGREES* (18): Rows 20.12, 20.13, 20.14, 20.15(i), 20.15(ii), 21.116, 21.121(ii), 21.123, 21.134, 21.135, 21.136(ii), 21.141, 21.142, 21.156, 22.80, 22.81, 30.7, 40.14.
+- *DIFFERS* (5): Rows 21.139, 21.143, 21.144, 21.172, 41.57(i).
+
+**L3-S30 — "The harmonic rhythm L3 publishes is, per bar and per phrase unit, the list of L2's harmonic boundaries inside it, each referenced by identity and carrying its metric strength class and period (IC-L1 S-35) and the classes of what changed across it: root, quality, figure, applied target, tonality."**
+
+- *AGREES* (1): Row 38.112.
+- *DIFFERS* (11): Rows 5.3(i), 6.4(i), 6.6, 18.4(i), 21.27, 21.28, 21.29, 22.9, 22.21, 28.58, 40.24(ii).
+
+**L3-S31 — "The harmonic rhythm's uncertainty is read off L2's boundary rivals."**
+
+- *AGREES* (2): Rows 42.23(ii), 49.6.
+- *DIFFERS* (2): Rows 40.41(ii), 40.63(ii).
+
+**L3-S32 — "Every L3 fact, whether a view or a decision, is published with its own mass and its own establishment status."**
+
+- *AGREES* (15): Rows 7.44(iii), 7.222, 7.223, 7.224, 19.24(ii), 19.56(ii), 19.71, 36.31(ii), 36.32(ii), 38.34, 45.1(i), 45.3, 45.4, 45.7(i), 45.12(ii).
+- *DIFFERS* (15): Rows 7.209(i), 8.78(i), 15.16(i), 19.36, 19.72, 36.5(ii), 36.31(i), 36.32(i), 39.17, 43.7(ii), 45.6, 45.12(i), 45.13(ii), 45.14(i), 45.15(i).
+
+**L3-S33 — "L3's establishment statuses are three."**
+
+- *AGREES* (24): Rows 8.36(ii), 8.114(ii), 8.125(ii), 19.51(ii), 20.31(ii), 20.32(i), 21.194(i), 21.194(iii), 21.196, 23.36(ii), 23.38, 36.106(ii), 37.56, 38.56(ii), 38.58(iii), 38.59(ii), 38.60(ii), 39.21, 39.65(ii), 45.13(vi), 45.14(v), 57.318(ii), 57.320(ii), 57.322(ii).
+- *DIFFERS* (0): none.
+
+**L3-S34 — "The mass of a view is the total mass of the L2 readings that give it."**
+
+- *AGREES* (0): none.
+- *DIFFERS* (1): Row 8.77.
+
+**L3-S35 — "The mass of an L3 decision (a phrase reading, a section reading) composes L2's rivals with L3's own model."**
+
+- *AGREES* (0): none.
+- *DIFFERS* (0): none.
+- **THE OUTGOING TEXT IS SILENT** — no row's current-text axis names this statement as AGREES or DIFFERS.
+
+**L3-S36 — "Where two L3 readings tie to the precision computed, both are published with equal mass."**
+
+- *AGREES* (0): none.
+- *DIFFERS* (0): none.
+- **THE OUTGOING TEXT IS SILENT** — no row's current-text axis names this statement as AGREES or DIFFERS.
+
+**L3-S37 — "L3 consumes what L0, L1 and L2 publish, and nothing else."**
+
+- *AGREES* (9): Rows 7.14(i), 7.27, 7.28(i), 7.29, 8.44, 8.78(ii), 8.101(iii), 8.107, 9.90(i).
+- *DIFFERS* (2): Rows 8.42, 8.109.
+
+**L3-S38 — "L3 never revises L2, and L2 reads nothing L3 publishes."**
+
+- *AGREES* (40): Rows 2.1(iv), 3.1(v), 3.5(ii), 3.15, 7.14(ii), 7.50(ii), 7.195(ii), 8.19(ii), 8.27, 8.31(ii), 8.41, 8.48(ii), 8.79(ii), 8.90, 8.98, 8.99, 8.110, 8.111, 9.77, 9.81(i), 9.161, 9.168, 10.49, 10.75, 12.15(ii), 19.35, 19.58(iv), 20.10(i), 20.11(i), 20.45(ii), 20.47(i), 21.58(i), 35.137(i), 37.49, 38.10(ii), 38.24(i), 38.32(ii), 43.32(ii), 43.34, 43.61.
+- *DIFFERS* (100): Rows 2.3(i), 2.6, 2.24, 7.13(i), 7.15, 7.17(i), 7.28(ii), 7.46, 7.53, 7.55, 7.56, 7.62(ii), 7.117, 7.130, 7.131, 7.132, 7.135, 7.149, 7.150, 7.189(ii), 7.191, 7.194, 7.209(ii), 7.210, 7.211, 7.213, 7.217, 7.232(i), 7.238, 7.239, 7.242(i), 7.305, 7.311, 7.319, 8.106, 8.108, 9.65, 9.71, 9.89(i), 9.94, 10.4, 10.5, 10.11(ii), 10.23(i), 10.26(ii), 10.141(ii), 10.146, 10.147(ii), 10.156, 10.178, 10.198, 10.204, 10.205, 10.206, 10.207(ii), 12.13(ii), 13.23(ii), 13.25, 17.2(iii), 19.19(i), 19.19(ii), 19.20, 19.25, 19.27(iv), 19.34(i), 19.34(ii), 19.38(v), 20.44(ii), 21.38, 21.54, 22.1, 22.2, 35.154, 36.111(ii), 38.10(iii), 38.26(iii), 38.36, 38.41, 38.42, 38.43(ii), 38.46, 38.49, 38.53, 38.68, 38.76, 38.105, 39.179(i), 40.40(ii), 40.51, 43.19(ii), 43.24, 43.80(i), 43.80(ii), 43.105(iii), 43.124(ii), 44.30(i), 44.30(ii), 44.30(iii), 45.16(i), 45.21(i).
+
+**L3-S39 — "L3 never re-derives a fact a layer beneath it publishes, and never supplies a fact of a lower layer's kind by computing it from the notation."**
+
+- *AGREES* (17): Rows 7.13(ii), 7.17(ii), 7.25, 7.232(ii), 7.295, 7.299, 8.26(ii), 8.100, 8.102, 9.90(ii), 10.23(ii), 19.80, 36.12(iii), 38.52, 43.18, 47.26, 48.9(i).
+- *DIFFERS* (1): Row 47.23(ii).
+
+**L3-S40 — "L3's publication covers exactly the working span."**
+
+- *AGREES* (40): Rows 7.67, 8.63(i), 10.58, 19.52(i), 19.52(ii), 19.53(i), 19.53(iii), 19.54, 20.55(ii), 20.56, 20.57(ii), 36.27(ii), 36.28, 36.29, 36.30(i), 43.10, 43.45, 43.48, 47.30, 47.31(ii), 50.15(i), 50.17(ii), 54.1(i), 54.6(i), 54.7(i), 54.8, 54.11(i), 54.11(iii), 54.12, 54.13(ii), 54.21(ii), 54.23, 54.24, 54.26, 54.27(ii), 54.28, 54.33, 54.35(ii), 57.126(ii), 57.126(iii).
+- *DIFFERS* (6): Rows 8.64, 8.65, 54.14(i), 54.14(ii), 54.36(i), 54.36(ii).
+
+**L3-S41 — "L3 is deterministic."**
+
+- *AGREES* (3): Rows 36.30(ii), 54.10, 57.126(iv).
+- *DIFFERS* (0): none.
+
+**L3-S42 — "Two dependencies on out-of-scope subjects are stated as statements in their own right."**
+
+- *AGREES* (41): Rows 7.68(ii), 8.8(ii), 8.10(ii), 8.10(iii), 8.14(iii), 8.37(ii), 8.38(ii), 8.38(iii), 8.39, 19.44, 19.46, 19.47, 19.48, 19.50, 19.59(ii), 19.62(i), 19.62(ii), 36.4(iii), 36.14(ii), 36.16(ii), 36.58(ii), 36.81(i), 36.94(ii), 36.152(ii), 37.10(i), 37.17, 37.25, 37.26(i), 37.26(ii), 37.27, 37.41, 37.42(i), 37.43, 37.44, 37.47(ii), 37.94, 37.113, 37.121(i), 37.166, 37.168, 38.17(i).
+- *DIFFERS* (1): Row 37.18.
+
+### The two-way check, stated as arithmetic
+
+Each equation sets the count this section's entries give against §13's total as §13 stands in the same blob.
+
+- **AGREES:** the AGREES entries summed over L3-S1 to L3-S42 = **448**; §13's AGREES total = **448**.
+- **DIFFERS:** the DIFFERS entries summed over L3-S1 to L3-S42 = **370**; §13's DIFFERS total = **370**.
+- **THE DERIVATION IS SILENT:** the claims whose axis reads THE DERIVATION IS SILENT = **3886**; §13's total = **3886**.
+- **All verdicts:** 448 + 370 + 3886 = **4704**; §13's total verdicts = **4704**.
+
+**Derived statements no row names under either verdict:** L3-S7, L3-S28, L3-S35, L3-S36.
 
 ## 8. The open questions OQ-L3-1 to OQ-L3-14
 
