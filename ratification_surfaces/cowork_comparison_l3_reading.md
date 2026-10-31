@@ -29,7 +29,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -115,10 +116,10 @@ its own entry there.
 | 54 | `cowork_bounded_context_design.md` passages | **DONE** (§6.54) |
 | 55 | `cowork_prefit_gates.md` passages | **DONE** (§6.55) |
 | 56 | The L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10 | **DONE** (§6.56) |
-| 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | **TABLE DONE; FULL-ROW GROUPS 1 TO 5 DONE** (§6.57 — every named row pointed or built in full; all five full-row groups built; the member's three feet, summing the groups' feet, and the sections written once after the last member NOT YET WRITTEN) |
+| 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | **DONE** (§6.57 — a member done in named portions under the ruling record of 2026-10-26: its table, its five full-row groups and its three member feet, the feet summing the groups' feet) |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 56, the table of position 57 and all five of its full-row groups —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 57 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -140,7 +141,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, position 55, the passages of `cowork_prefit_gates.md`, position 56, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10, and the table of position 57, the L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 — the first portion of a member done in named portions under the ruling record of 2026-10-26, and all five of its full-row groups, the rows named at §6.57's group headings — its member feet and the sections written once after the last member not yet written.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, position 55, the passages of `cowork_prefit_gates.md`, position 56, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10, and position 57, the L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 — a member done in named portions under the ruling record of 2026-10-26: its table, its five full-row groups, the rows named at §6.57's group headings, and its three member feet summing the groups' feet.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -196,13 +197,15 @@ the group under its own limit on the batch, and not by a capacity judgment; the 
 was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md`, which stopped after
 the group under its own limit on the batch, and not by a capacity judgment; the fourth full-row group of position 57
 was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md`, which stopped after
-the group under its own limit on the batch, and not by a capacity judgment; the fifth and last full-row group of position 57
-was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md`.**
-**The writing now stands inside position 57, at a boundary the ruling record of 2026-10-26 names: its table and all five
-of its full-row groups done, every one of the 122 full rows the table named built; its three member feet, summing the
-groups' feet, and the sections written once after the last member — §7, §8, §9 and the relay into §14 — not yet written,
-and the next writing writes them, the dispatch of the fifth group having cut them from it on the previous batch's
-paragraph on a full row's cost.**
+the group under its own limit on the batch, and not by a capacity judgment; the fifth and last full-row group of
+position 57 was tabulated under
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md`, which stopped after the
+group under its own limit on the batch, and not by a capacity judgment; the three member feet of position 57 were
+written under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md`, which opened
+with them as that dispatch ordered (D-670), making position 57 DONE.**
+**THE TABULATION IS COMPLETE OVER ITS POPULATION: POSITION 57, THE LAST MEMBER, IS DONE (D-672).** The sections written
+once after the last member — §7, §8, §9 and the relay into §14 — stay NOT YET WRITTEN, to be written once each in that
+order, each whole in its own commit.
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -410,7 +413,10 @@ information. Two marks are carried, and only these:
   inside member 36 (`cowork_phrase_boundary_design.md` passages); D-335 inside member 7
   (`cowork_layer5_function_design.md`, whole); D-406 inside member 46 (`cowork_progression_schema_dictionary.md`
   passages); D-502 and D-504 to D-509 inside member 44 (`cowork_progression_schema_design.md` passages); **D-503 and
-  D-510 lie inside no member**, and mark no row. Items 2 to 4 of that §6 record name statements of the two input-contract
+  D-510 lie inside no member**, and mark no row *(former wording, preserved (#12); true until position 57's fourth
+  full-row group, whose Rows 57.465 and 57.466 — sentences the transfer input brought in from lines outside member 44's
+  ranges — lie inside D-503's home and carry the SEEN mark for it, as that group's marks foot records)*. Items 2 to 4 of
+  that §6 record name statements of the two input-contract
   files and passages of pack members 02 and 09, none of which is a member of this population. **Where a row names
   L3-S4**, the row says that §6 item 2 of the derivation flags that statement as coinciding with a ruled sentence the
   L0/L1 input contract carries, for the comparison to check.
@@ -78396,18 +78402,61 @@ The AGREES statements: none. The DIFFERS statements: none.
 
 #### The distribution at this member, counted at these rows
 
-NOT YET WRITTEN — written by the batch after the last full-row group of this member, summing the five groups' feet (the
-dispatch of the fifth group cut them from it); the table places nothing, and a pointer line carries no mark of its own.
+The 415 pointer lines of the table are not counted here: each pointer line's statement is counted at the row of §6.1 to
+§6.56 it names. The 122 full rows' statements are counted at the five groups' feet, which stand at their sub-sections
+above; this foot sums them.
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 8 | 57.62 (i), 57.62 (ii), 57.126 (iii), 57.283, 57.318 (ii), 57.320 (ii), 57.322 (ii), 57.352 |
+| ADOPTED — proposed | 6 | 57.119, 57.259, 57.278, 57.353, 57.354, 57.369 |
+| RELOCATED | 39 | 57.60 (ii), 57.126 (i), 57.126 (ii), 57.126 (iv), 57.153 (i), 57.154 (i), 57.154 (ii), 57.155, 57.156, 57.157, 57.170, 57.171 (i), 57.171 (ii), 57.173, 57.207, 57.318 (i), 57.322 (i), 57.366 (ii), 57.392 (i), 57.395, 57.396 (i), 57.434 (i), 57.504 (ii), 57.465, 57.466 (i), 57.466 (ii), 57.467 (ii), 57.468, 57.469 (i), 57.469 (ii), 57.470 (i), 57.471, 57.472, 57.473, 57.474, 57.475, 57.486, 57.487 (i), 57.490 (ii) |
+| QUARANTINED | 1 | 57.502 (ii) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 107 | 57.50, 57.60 (i), 57.97, 57.107 (i), 57.107 (ii), 57.108, 57.109, 57.110, 57.111, 57.112, 57.113, 57.114, 57.115, 57.116, 57.117, 57.118, 57.124 (i), 57.124 (ii), 57.153 (ii), 57.249, 57.290, 57.315 (i), 57.315 (ii), 57.320 (i), 57.362, 57.363, 57.364, 57.365, 57.366 (i), 57.368, 57.370, 57.371, 57.372, 57.373 (i), 57.373 (ii), 57.377, 57.498, 57.499, 57.500, 57.501, 57.511, 57.513, 57.514, 57.390, 57.391, 57.392 (ii), 57.393 (i), 57.393 (ii), 57.394, 57.396 (ii), 57.398 (i), 57.398 (ii), 57.399, 57.400, 57.401 (i), 57.401 (ii), 57.402, 57.405, 57.427, 57.428, 57.429, 57.430 (i), 57.430 (ii), 57.431, 57.432, 57.433 (i), 57.433 (ii), 57.434 (ii), 57.435 (i), 57.435 (ii), 57.445 (i), 57.445 (ii), 57.502 (i), 57.503, 57.504 (i), 57.535 (i), 57.535 (ii), 57.448, 57.451, 57.453, 57.454, 57.455, 57.467 (i), 57.470 (ii), 57.478, 57.485, 57.487 (ii), 57.489 (i), 57.489 (ii), 57.490 (i), 57.493 (i), 57.493 (ii), 57.494 (i), 57.494 (ii), 57.495 (i), 57.495 (ii), 57.496, 57.516, 57.517, 57.518, 57.519, 57.520, 57.521, 57.522, 57.523, 57.532, 57.533 |
+| **Total** | **161** | — |
+
+**The column sums to 161 (8 + 6 + 39 + 1 + 0 + 0 + 107), against 161 statements — the five groups' 38 + 37 + 40 + 36 +
+10 — so the arithmetic closes at this member; and each value equals §13's row for member 57 as §13 stands at the blob
+this foot was generated from.**
 
 #### The current-text axis at this member, counted at these rows
 
-NOT YET WRITTEN — written by the batch after the last full-row group of this member, summing the five groups' feet (the
-dispatch of the fifth group cut them from it); the table places nothing, and a pointer line carries no mark of its own.
+The 415 pointer lines are not counted here, for the reason above; the five groups' feet are summed.
+
+| Verdict | Count |
+|---|---|
+| AGREES | 19 |
+| DIFFERS | 11 |
+| THE DERIVATION IS SILENT | 131 |
+| **Total verdicts** | **161** |
+
+The AGREES statements: 57.62 (i) (L3-S15), 57.62 (ii) (L3-S8), 57.126 (ii) (L3-S40), 57.126 (iii) (L3-S40), 57.126 (iv)
+(L3-S41), 57.154 (i) (L3-S9), 57.155 (L3-S9), 57.156 (L3-S9), 57.170 (L3-S9), 57.171 (i) (L3-S9), 57.171 (ii) (L3-S9),
+57.207 (L3-S9), 57.283 (L3-S15), 57.318 (ii) (L3-S33), 57.320 (ii) (L3-S33), 57.322 (ii) (L3-S33), 57.352 (L3-S22),
+57.513 (L3-S1), 57.514 (L3-S1). The DIFFERS statements: 57.50 (L3-S8), 57.60 (i) (L3-S17), 57.153 (ii) (L3-S8), 57.157
+(L3-S9), 57.249 (L3-S8), 57.290 (L3-S8), 57.315 (i) (L3-S22), 57.315 (ii) (L3-S22), 57.320 (i) (L3-S22), 57.511 (L3-S8),
+57.502 (i) (L3-S8).
+
+**The three verdicts sum to 161, against 161 statements, and each equals §13's row for member 57 as it stands at the
+blob.**
 
 #### The marks at this member
 
-NOT YET WRITTEN — written by the batch after the last full-row group of this member, summing the five groups' feet (the
-dispatch of the fifth group cut them from it); the table places nothing, and a pointer line carries no mark of its own.
+- **WITHHELD rows: one — Row 57.322 (D-456), group 2**; none at groups 1, 3, 4 and 5, as each group's marks foot states.
+- **SEEN rows: three — Row 57.398 (D-406), group 3, and Rows 57.465 and 57.466 (D-503), group 4**; none at groups 1, 2
+  and 5, as each group's marks foot states.
+- **A pointer line carries no mark of its own**; the row it names carries whatever mark its member gave it — the table's
+  415 pointer lines among them.
+- **Homes of the decisions register's data file met at the full rows' lines**, by group, as the groups' marks feet name
+  them: group 1 — D-084 and the retired entries D-133, D-152 and D-142, none marking a row; group 2 — D-456 (marking),
+  D-524 and D-276, and at the edge, outside their words, D-459 and D-454; group 3 — D-406 (marking) and D-410; group 4 —
+  D-503 (marking); group 5 — none; none in the L2 reading file's range at any group.
+- **The marks were counted both ways at each group**, as each group's marks foot records; over the whole of §6.57 the
+  WITHHELD string stands once and the SEEN string three times, counted again by this batch's script at the blob, from
+  §6.57's heading to the line before this member's first foot.
+- **Rows naming L3-S4: none at any group.**
 
 ---
 
@@ -78426,8 +78475,8 @@ and put to nobody.
 
 ## 10. The TRANSFER LIST — every RELOCATED row, by target charter
 
-**Over the members tabulated so far** (§0 names them). Each tabulated member appends its RELOCATED rows here, by target
-charter, in the commit that tabulates it; where a row travels with another, the row says which.
+**Over every member of the population** (§0: positions 1 to 57 are done). Each tabulated member appends its RELOCATED
+rows here, by target charter, in the commit that tabulates it; where a row travels with another, the row says which.
 
 **To *L0 — The notated record* (the input contract).**
 
@@ -79481,8 +79530,8 @@ member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 4
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
-**Over the members tabulated so far** (§0 names them). Each tabulated member appends its QUARANTINED rows here, in the
-commit that tabulates it, each with the audit question its row writes.
+**Over every member of the population** (§0: positions 1 to 57 are done). Each tabulated member appends its QUARANTINED
+rows here, in the commit that tabulates it, each with the audit question its row writes.
 
 **Member 1 — `ARCHITECTURE.md`, *Layer 4 — the per-slice chord-symbol decoder*.**
 
@@ -81619,8 +81668,8 @@ rows carry no disposition of their own (§6.56's manifest header).
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
-**Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
-tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference and decides nothing.
+**Over every member of the population** (§0: positions 1 to 57 are done). Each tabulated member appends its rows here,
+in the commit that tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference and decides nothing.
 
 **Member 1.** No ADOPTED — proposed row.
 
@@ -82679,8 +82728,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
-are at its own foot, and the integers below are re-derivable from them.
+**Over every member of the population** (§0: positions 1 to 57 are done), counted at this file's own rows; each member's
+statement lists are at its own foot, and the integers below are re-derivable from them.
 
 | Member | Statements | ADOPTED — carried | ADOPTED — proposed | RELOCATED | QUARANTINED | DISCARDED | HISTORICAL | UNPLACED | Not a statement |
 |---|---|---|---|---|---|---|---|---|---|
@@ -82749,8 +82798,8 @@ are at its own foot, and the integers below are re-derivable from them.
 62 + 40 + 42 + 0 + 27 + 25 + 56 + 16 + 5 + 161).
 
 *(Member 56's row counts its three full rows' statements alone; its 23 pointer rows are counted at the rows they name.)*
-*(Member 57's row counts the statements of its full rows — all five groups'; its pointer lines are counted at the rows
-they name, and its table is at §6.57; its member feet are not yet written.)*
+*(Member 57's row counts the statements of its full rows — all five groups', which its three member feet sum; its
+pointer lines are counted at the rows they name; its table, its groups and its feet are at §6.57.)*
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
