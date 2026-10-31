@@ -205,11 +205,11 @@ group under its own limit on the batch, and not by a capacity judgment; the thre
 written under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md`, which opened
 with them as that dispatch ordered (D-670), making position 57 DONE, and then wrote §7 whole in its own commit, and
 stopped at the section boundary after §7 by its own capacity judgment, to leave room for the close — a judgment it wrote
-after §7's commit, so that this clause states the stop and its reason in that batch's place (its report §6); §8 was
-written under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md`, whole in its
-own commit.**
-**THE TABULATION IS COMPLETE OVER ITS POPULATION: POSITION 57, THE LAST MEMBER, IS DONE (D-672).** §7 and §8 are
-written; §9 and §14 stay NOT YET WRITTEN, to be written once each in that order, each whole in its own commit.
+after §7's commit, so that this clause states the stop and its reason in that batch's place (its report §6); §8 and §9
+were written under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md`, each whole
+in its own commit.**
+**THE TABULATION IS COMPLETE OVER ITS POPULATION: POSITION 57, THE LAST MEMBER, IS DONE (D-672).** §7, §8 and §9 are
+written; §14 stays NOT YET WRITTEN, to be written once, whole in its own commit.
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -78855,7 +78855,72 @@ The tabulated outgoing text names the deceptive, evaded and plagal cadences and 
 
 ## 9. The derivation's §7 — the eight places the decomposition seemed wrong or incomplete
 
-**NOT YET WRITTEN.** Written once, after the last member.
+**Written once, after the last member.** Each of the eight points the derivation's §7 makes about the brief's
+decomposition is quoted from the derivation, whole, in a block quote, and is followed by ONE sentence on what the
+tabulated outgoing text says to it, built as §8's sentences are: the rows of §6.1 to §6.57 whose outgoing statements
+speak to the point, found by a search over those rows' quotations and read at the row, quoted in their own words, or the
+search that found nothing, named. **No verdict is given on whether the derivation's §7 is right.**
+
+**Point 1.**
+
+> **Views and decisions are mixed across the faces.** Faces (a), (e) and (f) are views, and (b) and
+> (d) are decisions. Face (c) is a view read at a decided position. Face (g) is therefore two
+> questions: a view's mass is a sum over L2's readings (L3-S34), and a decision's mass composes L2's
+> rivals with L3's own model (L3-S35).
+
+The tabulated outgoing text separates kinds of work at Row 19.58, *"L1 lossless notes, L1.5 derived views, L2 mechanical slicing"*, makes the coarser grains views at Row 38.1, *"make everything coarser a derived view"*, and orders them at Row 37.77, *"lossless facts → mechanical derived views → judgment layers with declared confidence"*; none of the twelve rows a search pairing mass, uncertainty or confidence with inheriting, summing, composing or deriving finds names the mass of a view as a sum over the readings it is read off.
+
+**Point 2.**
+
+> **Faces (b) and (c) share an unnamed object: the alignment of the cadential arrival to the phrase
+> end.** The exemplars place a cadence label and a phrase-end sign at different chords (exemplar 1
+> bars 11 and 12). L3-S10 publishes both positions.
+
+The tabulated outgoing text names the alignment as its own act at Row 8.25, *"alignment of cadences to punctuation-span endings"*, lets a cadence close the span whose ending boundary lies at its arrival or within a window after it at Row 8.84, since *"a cadence's arrival may slightly precede the"* notated span end, tags a cadence *"within the alignment window of no punctuation-span boundary"* as internal at Row 8.86, and calls the reverse definition circular at Row 8.14, *"defining a span by its cadence and then aligning cadences to it in §5.3 would be circular"*.
+
+**Point 3.**
+
+> **Face (c) presumes one vocabulary of cadence types.** The traditions differ on what counts as a
+> cadence, in the same way as the cadential six-four of DP-N (L3-S17, OQ-L3-2 ★).
+
+The tabulated outgoing text carries one typology at Row 7.44, *"(perfect authentic, imperfect authentic, half — including Phrygian — deceptive, plagal, evaded; §5.2)"*, and at Row 57.60 sets *"The §5.2 cadence typology (PAC, IAC, Half incl. Phrygian, Deceptive, Plagal, Evaded)"* beside *"DCML's six labels"*; a search for the subdominant stop finds no row, as §8 says under OQ-L3-2.
+
+**Point 4.**
+
+> **The charter's boundary table has no L0 → L3 row, while L3's consume line names L0** (L3-S37). The
+> figured bass reads the key signature's value and the events' spellings from L0.
+
+The tabulated outgoing text has the note model read the notation at Row 38.8, *"Read the score once"*, and reads a key-signature change as notation at Row 36.49, *"(a new set of accidentals written on the staff)"*; none of the six rows a search pairing the key signature with a figure or an accidental, and for consuming the notated record or reading the score, finds names a figured bass reading the key signature.
+
+**Point 5.**
+
+> **Face (f) does not say what harmonic rhythm adds beyond L2's segmentation.** The answer here is the
+> metric position and the class of each change (L3-S30), so that the segmentation is not published
+> twice.
+
+The tabulated outgoing text describes harmonic rhythm at Row 57.501 as *"Harmonic rhythm (where chord changes occur)"*, as a span's duration at Row 6.6, *"Start tick and end tick (duration = harmonic rhythm)"*, as *"the pattern of slice durations"* at Row 40.24, and pairs it with metric position at Row 9.73, *"Metric position / harmonic rhythm"*.
+
+**Point 6.**
+
+> **Faces (b) and (d) are one object.** Section boundaries must be phrase boundaries (L3-S22), so the
+> two are read as one consistent nested grouping, not as two independent decisions.
+
+The tabulated outgoing text nests the spans at Row 57.352, *"punctuation-spans ⊂ section-spans — the finer tiles the coarser"*, has a section end that *"is a phrase boundary that"* also coincides with a structural boundary at Row 7.34, and names the wider hierarchy at Row 8.21, *"motifs inside phrases inside themes/periods inside sections inside movements"*.
+
+**Point 7.**
+
+> **Face (e)'s *figured bass* is ambiguous between two grains:** the figure of each decided harmony,
+> and the continuo grain that figures every bass note. The first is a view of L2's facts (L3-S25), and
+> the second needs an L1 publication that does not exist (L3-S28, OQ-L3-7).
+
+The tabulated outgoing text writes a chord's inversion *"as the figured-bass figure"* at Row 7.41, defines figured bass at Row 4.21 as *"interval notation above a bass note rather than a chord name"*, and has figured bass annotate *"sounding pitches including suspensions and passing tones"* at Row 4.29.
+
+**Point 8.**
+
+> **The charter's sentence on phrase boundaries meets a hard case at elided cadences** (OQ-L3-3 ★).
+> The faces do not anticipate a phrase end with no notated cue.
+
+The tabulated outgoing text names the elision at Row 37.42, *"the cadence tone of one phrase simultaneously beginning the next"*, and *"elided phrase ends"* at Row 57.62, and bounds a punctuation span by the phrase-boundary primitive at Row 8.14, not *"by requiring a cadence"*; Rows 37.42 and 57.62 are the only rows a search for elision and elided finds.
 
 ## 10. The TRANSFER LIST — every RELOCATED row, by target charter
 
