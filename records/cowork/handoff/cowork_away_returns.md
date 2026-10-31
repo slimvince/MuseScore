@@ -29577,3 +29577,51 @@ the summary of context (§9), the plan's tell (§10) and the self-check (§11).
 *Provenance: CC, 2026-10-31, at boot tip `828cf7d5af930388f71d276f83388a4979175e2d`, under
 `cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md`. Every commit identifier here was read from the
 commit's own object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `a714367e6d5185603de611d5f818c5f45c9c5afb` left, appended in the one further commit
+
+**A fresh full guard run in write mode (`python tools/audit/gen_guard_state.py`, the operating mode named), after the
+close commit and before this one.** Its result is at `tools/audit/guard_state.json` → `summary`, which this commit
+carries. Its first line, verbatim: *"wrote tools\audit\guard_state.json"*; its last line, verbatim: *"82 guard(s) run,
+13 failing, 4 not run, 20 historical record(s)"*. **E2 and E3 — MET, AS A2 PREDICTED:**
+
+- the run count is the premise ledger's;
+- zero STOPs in the runner;
+- the failing set is exactly the thirteen of the premise ledger, none added;
+- `tools/audit/gen_l3_outgoing_population.py --check` PASSES;
+- `tools/audit/gen_evidence_pin_membership.py --check` PASSES, and run on its own after the guard run it reads *"ruling
+  records read 170"*, equal to the opening capture's;
+- every verdict line, the NOT RUN and HISTORICAL lines among them, is identical to the opening capture's — compared line
+  by line by the scratch script `t3_compare.py`, which printed *"opening verdict lines: 106  end-state verdict lines:
+  106"*, *"same guard names in the same order: True"*, *"verdict lines moved: 0"*, *"[NOT RUN] lines identical: True"*,
+  *"[HISTORICAL] lines identical: True"* and *"failing at the end state: 13"*;
+- `gen_guard_classification.py --check` STOPs naming exactly the four tools of the premise ledger, no fifth.
+
+**The A2 exceptions were all met inside the close.** The defense share and the session-start read size went red after
+the close's `STATUS.md` edits and the forward-bound move, as A2 provides; each was regenerated, the read size last, and
+compared against the blob at `828cf7d5…` by explicit hash (report §3, 2(c)): both moved only with `STATUS.md`'s size.
+The evidence pin, the L0/L1 population and the L3 population stayed green and were not regenerated; the four archive
+checks stayed green with the correction line in place. This run regenerated nothing beyond its own artifact —
+`changed_paths.py` after the run shows `tools/audit/guard_state.json` beside the carried
+`tools/audit/claude_md_finer_archive.json` and no other tracked modification, and no new handoff entry or ruling record
+among the untracked paths. `gen_l2_outgoing_population.py` was not run in any operating mode.
+
+**A3 to A5, verified at the objects.** `git diff --name-status 828cf7d5af930388f71d276f83388a4979175e2d
+a714367e6d5185603de611d5f818c5f45c9c5afb` lists eleven paths, every one accounted for: `STATUS.md`,
+`STATUS_ARCHIVE.md`, the reading file, this dispatch, the report, this file, entry 459, `tools/audit/defense_share.json`,
+`tools/audit/gen_status_batch_bound.py`, `tools/audit/session_start_read_size.json` and
+`tools/audit/status_batch_bound.json`. **The twenty-five outgoing texts and `cowork_architecture_review_2026_07.md`,
+the L0/L1 and L2 reading files, the derivation and the brief are absent from it.** `git ls-tree -r` at each commit, one
+command per commit, over the sixty-four paths of A5 (the pack directory recursively) listed 107 entries at each,
+**identical**. Inside the reading file, between the blob at `828cf7d5…` and the close commit's blob
+`fdcae470bf41179f3b55ba75ce7d5bb95d7a5f77`: §6.1 to the line before §6.57's member-feet heading *"old bytes 4671444,
+new bytes 4671444, identical: True"*; §1 to §4 and §15 and §16 identical; §5 changed only at its one sentence, §10 to §12
+only at their openings, §13 only at its opening and its member-57 sentence (`t3_a5.py`).
+
+**Declared at the end state:** the two `git ls-tree` commands read the path list from the scratch file `t3_paths.txt`
+through `cat`, a shell read of a scratch file outside the repository; each commit hash was written literally.
+
+This commit adds only the guard run's artifact and this portion.
+
+*Provenance: CC, 2026-10-31, appended in the one further commit after the close commit
+`a714367e6d5185603de611d5f818c5f45c9c5afb`; the verdicts are this run's own output, read with the file tools.*
