@@ -205,11 +205,11 @@ group under its own limit on the batch, and not by a capacity judgment; the thre
 written under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md`, which opened
 with them as that dispatch ordered (D-670), making position 57 DONE, and then wrote §7 whole in its own commit, and
 stopped at the section boundary after §7 by its own capacity judgment, to leave room for the close — a judgment it wrote
-after §7's commit, so that this clause states the stop and its reason in that batch's place (its report §6); §8 and §9
-were written under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md`, each whole
-in its own commit.**
-**THE TABULATION IS COMPLETE OVER ITS POPULATION: POSITION 57, THE LAST MEMBER, IS DONE (D-672).** §7, §8 and §9 are
-written; §14 stays NOT YET WRITTEN, to be written once, whole in its own commit.
+after §7's commit, so that this clause states the stop and its reason in that batch's place (its report §6); §8, §9 and
+§14 were written under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md`, each
+whole in its own commit, so that the file's population and its once-written sections are complete.**
+**THE TABULATION IS COMPLETE OVER ITS POPULATION AND ITS ONCE-WRITTEN SECTIONS: POSITION 57, THE LAST MEMBER, IS DONE
+(D-672), AND §7, §8, §9 AND §14 ARE WRITTEN.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -83318,10 +83318,113 @@ pointer lines are counted at the rows they name; its table, its groups and its f
 
 ## 14. The derivation's independence record, relayed
 
-**NOT YET WRITTEN.** Written once, after the last member: the derivation's §6 relayed whole, with no verdict word.
+**Written once, after the last member.** The derivation's independence record — its §6, whole — is relayed below
+verbatim from the derivation, in a block quote. It is relayed as facts: this file attaches no word of its own to it and
+says nothing about the deriving session beyond what the quotation itself says.
+
+> **Boot.** At boot this session received the brief alone, with harness scaffolding on the brief's
+> allow-list, no project folder and no repository file. That was declared in the session's first message
+> before §0 was read, and is not repeated here. The fifteen staged files arrived in the second message.
+> None of them was present at boot.
+>
+> **Files opened, each with the extent seen.** A file marked *pre-read* was placed in context by the
+> harness before this session's first act of the second turn, without a call by this session.
+>
+> | File | Extent seen | How |
+> |---|---|---|
+> | The brief, `cowork_blind_session_brief_l3.md` | whole (536 lines) | pre-read at boot |
+> | `00_READ_THIS_FIRST.md` | whole | pre-read |
+> | `01_the_phase_definitions.md` | whole | pre-read |
+> | `02_the_guiding_principles_and_the_conventions.md` | whole (lines 1–774) | read by this session in two parts |
+> | `03_the_writing_standards.md` | whole | pre-read |
+> | `04_the_dispatch_protocol.md` | lines 1–803 of 1,427 | read by this session; the rest was not read, being process rules that bear on no statement |
+> | `05_the_ratified_design_intent.md` | **its heading lines only**, every `#`-heading of the file (a heading search whose output was read whole); **no entry body** | stopped by the stop-on-meeting clause; see below |
+> | `06_the_defect_type_catalog.md` | whole | pre-read |
+> | `07_the_charter_the_layers_and_the_decisions.md` | whole | pre-read |
+> | `08_the_seventeen_research_extracts.md` | whole (lines 1–1,815), all seventeen sources: Ju 2020; Bigo 2018; Karystinaios & Widmer 2022; Sears 2018; Illescas; de Clercq; Feisthauer 2021; Hamanaka 2013; Lazzari 2023; Nápoles López 2020; McLeod & Rohrmeier 2021; BACHI; Hentschel 2021; McLeod & Rohrmeier 2024; Sapp 2005; de Haas 2013; ChoCo 2023 | read by this session |
+> | `09_the_empirical_findings_ledger.md` | whole | pre-read |
+> | `the_l0_l1_specification_the_input_contract.md` | whole (lines 1–1,737) | read by this session |
+> | `the_l2_specification_the_input_contract.md` | whole (lines 1–2,433) | read by this session |
+> | `analysis_DT.txt` (exemplar 2) | whole (72 lines) | pre-read |
+> | `K545-1.mscx` (exemplar 1) | **not whole.** A search over the whole file for staff, bar, harmony-label, fermata, bar-line, repeat and rest lines (positions and label texts only); every `<Harmony>` label text; lines 1,350–1,419 (staff 1, bars 12–14); lines 4,040–4,099 (staff 1, end of bar 41 to the start of bar 43); the metadata lines | read by this session; flagged too large to pre-read |
+> | `op01n08a.mscx` (exemplar 3) | lines 1–2,000 pre-read (staves 1 and 2 whole, staff 3 to bar 13); lines 2,000–2,399 read by this session (staff 3 bars 13–16, staff 4 bars 1–6); a search over the whole file for bar, harmony-label, figured-bass, fermata and bar-line positions. Staff 4's figures after bar 6 were not read, only their positions | pre-read in part, read in part |
+>
+> **Files not opened.** No other file of this project. No fetched source: this session fetched no paper,
+> so every literature FACT is relayed from pack member 08, and no primary of the seventeen was re-read.
+> One tool-output file, the harness's saved copy of the heading search over member 05, was read whole.
+> It is this session's own search output and not a project file.
+>
+> **The stop-on-meeting record.**
+>
+> 1. **Member 05, its heading lines, lines 2,487 and 2,501 of the member.** The heading search displayed
+>    the headings of entries D-482 and D-484. The first is about the fermata scan's copies retiring into
+>    one owned primitive. The second is about the phrase-boundary primitive as a derived view that
+>    inherits the loaded span, requests no extension and publishes a per-profile max-normalised boundary
+>    confidence. They are statements about how this project's analysis handles phrase-boundary evidence,
+>    which is face (b) of the subject. **Seen:** the two heading lines, delivered with the rest of the
+>    heading list in one output. **Action:** this session stopped reading member 05 there and opened no
+>    entry body of it. The same listing also showed headings near the subject that are recorded here:
+>    D-335 (the Roman numeral and a derived function read-out), D-406 and D-502 to D-510 (progression
+>    recognition), and D-504 (a harmonic sequence emitted as key evidence). None entered a statement.
+>    Every design-intent identifier this file cites (D-030, D-031, D-100, D-260, D-261, D-264, D-292,
+>    D-624) is cited **as relayed in IC-L1's or IC-L2's text**, never from member 05.
+> 2. **IC-L1, a ruled statement of L3's design that the cut left in place.** The §0 entry *The lowest
+>    sounding pitch* (lines 82–86), S-44 (lines 1,252–1,254) and S-44's amendment note (lines
+>    1,282–1,288) carry *"the chord's bass note, which L3 publishes, read off the figure L2 decides"*.
+>    **Seen:** whole, while reading the file. This session did not stop reading the file at it. L3-S4
+>    coincides with it and is flagged at L3-S4 for the comparison to check.
+> 3. **IC-L2's mentions of L3, read as statements of what L2 hands over, as the brief §3.1 directs:**
+>    L2-S14's premise (a restated chord after a phrase end is L3's to divide), L2-S19 beside (the pivot
+>    label carried to L3), L2-S26 ruled (a grace note's clash is a fact L3 can read off), L2-S27 (no chord
+>    symbol at L2), L2-S29 beside (*"L3's cadence reading must handle a committed I6/4"*), L2-S31 beside
+>    (a harmonic-rhythm term inside L2 as a candidate measurement), and L2-S49.
+> 4. **Statements about this project's existing implementation on other subjects, seen while reading,
+>    none bearing on §2's subject:** member 02's founding instance of the never-work-from-memory rule
+>    (slice identity, an L1 subject); member 09's entries whose subjects or bounds name implementation
+>    mechanisms (C9 and D-300, C47, C20 and others; L2 subjects); IC-L2's L2-S6 beside (a legacy decoder
+>    declaring "Mixolydian briefly"), L2-S17 (D-528, D-450, D-057, D-056), L2-S18 beside (D-291's
+>    measured share), L2-S22's note on D-261's as-built description, L2-S35 beside (D-339), L2-S38
+>    beside (D-383's measured share) and L2-S36's sizing record. None entered a statement.
+> 5. **Positive statement.** Beyond items 1 and 2, this session met no passage stating how this
+>    project's analysis currently reads a cadence, a phrase, a section, a chord symbol, a figured bass or
+>    a harmonic rhythm.
+>
+> **Also recorded.** Member 02's convention *"THE ORDINARY SESSION-START READ BINDS EVEN WHEN THE OPENING
+> INSTRUCTION NAMES A SINGLE FILE"* contradicts the brief and member 00, which replace that read for this
+> session. The brief and member 00 were followed. The contradiction has the shape the catalog names DT-20.
+>
+> **Where a want was written as an open question instead of filled.** Published facts of a layer
+> beneath: OQ-L3-1 (IC-L2 §0, L2-S21), OQ-L3-4 (IC-L1 S-50), OQ-L3-5 (IC-L1 S-50, S-51, or the axis)
+> and OQ-L3-7 (IC-L1 S-49, S-50). Cases the staged set does not supply: OQ-L3-13 and OQ-L3-14.
+>
+> **Corrections made before delivery, recorded so the draft's history is not hidden (#12).** A re-check
+> of every exemplar citation against the files, after §4 to §7 were written, corrected five sentences.
+> (a) L3-S25 and L3-S28 had cited a `6` over a passing D at exemplar 3 bar 2 as a figured passing bass
+> note. Read in element order, that figure stands on the following E♭, so the case was withdrawn and
+> recorded as not supplied (OQ-L3-14). (b) L3-S2 had said exemplar 3 writes `VII` and writes
+> `V7/IV/III`. It writes `viio/VII` and no chain of depth two, and the chain is cited to L2-S5 instead.
+> (c) L3-S6 and L3-S19 had leaned on IC-L2's reading of bar 31. They now state this session's own reading
+> of the two files. (d) L3-S9 had said rhythmic features help a detector *most* on the half cadence. The
+> extract's table does not support *most*, and the sentence now quotes the authors' *"especially for
+> HC"*. (e) L3-S2's falsifier had named D as the root of V7/IV/III in C minor. It is E♭. A sixth
+> correction, made earlier, relabelled two citations of Chew as relayed through L2-S49, since Chew is not
+> in this session's pack.
+>
+> **Exemplars as cases, not a corpus.** No count was taken from any exemplar, no statement rests on how
+> often anything occurs in them, and the two readings of exemplar 1's piece are used only to show
+> where competent readers differ.
+>
+> **Capacity.** No file was left unread for lack of capacity. Member 04 was read in part by choice.
+> Member 05 was read no further than its headings because of the stop clause. Exemplars 1 and 3 were
+> read in part, as the brief permits.
+
+The rows of this file that carry a SEEN mark, named at their members' and groups' marks feet, are: Rows 7.226, 7.227 and
+7.228; Rows 36.27 to 36.32, 36.87 and 36.88; Rows 44.23 to 44.31, 44.37, 44.43, 44.44 and 44.46; Row 46.1; and Rows
+57.398, 57.465 and 57.466.
+
 **Stated here because it binds every row:** the wider check — whether an outgoing statement is the home of any
-design-intent entry whose heading the deriving session's listing of pack member 05 displayed, other than the
-identities §5 names — is NOT made by this comparison.
+design-intent entry whose heading the deriving session's listing of pack member 05 displayed, other than the identities
+§5 names — is NOT made by this comparison.
 
 ## 15. What the user is asked to rule in this file
 
