@@ -29625,3 +29625,72 @@ This commit adds only the guard run's artifact and this portion.
 
 *Provenance: CC, 2026-10-31, appended in the one further commit after the close commit
 `a714367e6d5185603de611d5f818c5f45c9c5afb`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 COMPARISON — §8, §9 AND §14 WRITTEN, EACH WHOLE IN ITS OWN COMMIT — THE TABULATION AND ITS ONCE-WRITTEN SECTIONS COMPLETE, PROPOSALS ONLY, NOTHING DECIDED, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md`, landed at
+Task 0 as blob `0755304db04c1b0758a183d3c38f6891231d984b`:
+
+- **Task 0** landed this dispatch and handoff entry 460 as they stood (`ddccb87f…`; entry 461 does not exist), pushed and
+  read at the ref file, and took the opening guard capture — the thirteen and nothing else, with the header *"the guard
+  state re-derives"*; the classification's STOP named exactly the four tools; the three blobs were verified.
+- **Task 1, §8** (`0cae2676…`): the fourteen open questions, each quoted whole from the derivation's blob, each with one
+  sentence on what the tabulated outgoing text says to it, built by scripted searches over every row's quotation; the
+  questions the derivation marks for the user listed exactly like the others and put to nobody. With it, the banner names
+  this dispatch, and §0 states the previous batch's stop and its reason in its own clause.
+- **Task 1, §9** (`54392cc3…`): the eight points of the derivation's §7, in the same form.
+- **Task 1, §14** (`e927f9ed…`): the derivation's §6 relayed whole and verbatim, with no verdict word of the file's own;
+  one sentence naming the rows that carry a SEEN mark, found at the marks feet; the standing wider-check sentence kept,
+  moved below the relay. **The reading file is complete over its population and its once-written sections.**
+- **A capacity-judgment file was written before each unit**, the judgments for §9 and §14 before the preceding unit's
+  commit, each judging that its unit could be finished whole; all three are quoted whole in the report.
+- **Every quotation was checked** at the derivation's blob and at the rows by scripts proved on altered copies; the build
+  check, the word scan and the consistency check ran before each commit — the consistency check's one standing flag, Row
+  15.50 (ii), and no other.
+- **Task 2** closed: the three `STATUS.md` entries written first, the `Last updated: ` prefix moved in the same edit (one
+  line carrying it, checked), the 26 ruled terms searched with the one standing hit; the forward bound re-aimed at
+  `e927f9ed…` and **moved exactly the twenty-ninth batch's three entries, with no STOP**; all four archive checks green;
+  the evidence pin and the L3 population stayed green; the defense share and the session-start read size went red as A2
+  provides and were regenerated, the read size last; **the L0/L1 population went red against A2's prediction** — the
+  substring *tie* inside *thirtieth*, in this dispatch's own file name, which the close entries are ordered to name, made a
+  `STATUS.md` residue record appear — and was regenerated, no member moving (report §3, 2(c)).
+- **No summary of the session's context fell** up to the writing of the report.
+
+**NOTHING WAS DECIDED; NO DISPOSITION WAS APPLIED.** Every disposition the reading file carries is a proposal. No row was
+placed, no outgoing text was opened or edited, no derived statement was derived. The derivation, the brief, the pack and
+the earlier reading files were not edited, and §1 to §7, §10 to §13, §15 and §16 of the reading file were not touched.
+No session was booted. No measurement of the analysis was made. No open-items row and no `D-NNN`. No ruling was taken, no
+recommendation was made, and nothing was put to the user. Nothing any layer computes changed.
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_comparison_tabulation_thirtieth_2026_10_31.md`, and is pointed at rather than copied
+(#6): the three capacity files at its head; the ordered first read (§0); Task 0 (§1); the scripts, the search terms and
+rows named, §14, the section commits and the checks (§2); Task 2 (§3); the grades (§4), the observations (§5), the
+declared departures (§6), the file's state and the paragraph 1(h) orders (§7), the findings (§8), the summary of context
+(§9), the plan's tell (§10), the self-check (§11), and every output in its appendices.
+
+### What needs the writing side, named rather than resolved
+
+1. **A2's prediction for the L0/L1 population check was wrong** at this close: a dispatch whose file name carries
+   *thirtieth* moves the `STATUS.md` residue record of that term search, because the search counts *tie* as a substring.
+   Named and reported, not repaired (report §3, §5).
+2. **Row 4.29** speaks to OQ-L3-7's subject without carrying that question's search terms; it is named under Point 7 of
+   §9, and §8's sentence for OQ-L3-7 is bounded to the search it names (report §5).
+3. **The consistency check's one flag**, Row 15.50 (ii) against Row 15.42 (ii) — the script's reach, as read before.
+4. **The classification tool's message still names four tools without an authored verdict**, unchanged.
+5. **What the ordered reads took** (report §7): the larger share of this context before any unit was opened, the
+   dispatch, `CLAUDE.md`'s spans read on top of the same text injected at boot, `DECISIONS.md`, the audit protocol's
+   dispatch section and the derivation the largest — for the pruning iteration the user named.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects. §14 stands, so the break the
+  user named on 2026-10-31 (entries 458 and 459) is reached: the writing side plans the pruning iteration on the
+  mandatory session-start reading and puts its plan to the user in plain words, and only then the method ruling's
+  surface over the completed tabulation (Ruling 4 of the comparison-design sitting).**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-31, at boot tip `0e926612810189df5267ad19e2e2629051dc78fc`, under
+`cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md`. Every commit identifier here was read from the
+commit's own object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
