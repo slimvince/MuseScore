@@ -28,7 +28,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -114,10 +115,10 @@ its own entry there.
 | 54 | `cowork_bounded_context_design.md` passages | **DONE** (§6.54) |
 | 55 | `cowork_prefit_gates.md` passages | **DONE** (§6.55) |
 | 56 | The L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10 | **DONE** (§6.56) |
-| 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | **TABLE DONE; FULL-ROW GROUPS 1 TO 4 DONE** (§6.57 — every named row pointed or named for a full row; groups 1 to 4's full rows built; the remaining full rows NOT YET WRITTEN, named at §6.57's foot) |
+| 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | **TABLE DONE; FULL-ROW GROUPS 1 TO 5 DONE** (§6.57 — every named row pointed or built in full; all five full-row groups built; the member's three feet, summing the groups' feet, and the sections written once after the last member NOT YET WRITTEN) |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 56, the table of position 57 and its first four full-row groups —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 56, the table of position 57 and all five of its full-row groups —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -139,7 +140,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, position 55, the passages of `cowork_prefit_gates.md`, position 56, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10, and the table of position 57, the L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 — the first portion of a member done in named portions under the ruling record of 2026-10-26, and its first four full-row groups, the rows named at §6.57's group headings.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, position 55, the passages of `cowork_prefit_gates.md`, position 56, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10, and the table of position 57, the L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 — the first portion of a member done in named portions under the ruling record of 2026-10-26, and all five of its full-row groups, the rows named at §6.57's group headings — its member feet and the sections written once after the last member not yet written.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -194,11 +195,14 @@ was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabula
 the group under its own limit on the batch, and not by a capacity judgment; the third full-row group of position 57
 was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md`, which stopped after
 the group under its own limit on the batch, and not by a capacity judgment; the fourth full-row group of position 57
-was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md`.**
-**The writing now stands inside position 57, at a boundary the ruling record of 2026-10-26 names: its table and its
-first four full-row groups done; its remaining full rows, named at §6.57's foot, not yet written — and the next
-writing resumes at the fifth group of them, the last, the planned fourth group having been re-cut by document into
-the fourth and the fifth at the dispatch of the fourth.**
+was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md`, which stopped after
+the group under its own limit on the batch, and not by a capacity judgment; the fifth and last full-row group of position 57
+was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md`.**
+**The writing now stands inside position 57, at a boundary the ruling record of 2026-10-26 names: its table and all five
+of its full-row groups done, every one of the 122 full rows the table named built; its three member feet, summing the
+groups' feet, and the sections written once after the last member — §7, §8, §9 and the relay into §14 — not yet written,
+and the next writing writes them, the dispatch of the fifth group having cut them from it on the previous batch's
+paragraph on a full row's cost.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -72612,14 +72616,14 @@ the row; *Document and locator* the document the L2 row's block names and that b
 | 57.513 | L2 Row 47.17(iv) | B121 | `cowork_notation_adoption_increment.md` (locator: lines 135–140) | **FULL ROW BUILT** — group 2 — in member 52's cut |
 | 57.514 | L2 Row 47.18(i) | B121 | `cowork_notation_adoption_increment.md` (locator: lines 165–167) | **FULL ROW BUILT** — group 2 — in member 52's cut |
 | 57.515 | L2 Row 22.92(iii) | B122 | `ARCHITECTURE.md` (locator: lines 2213–2218) | Row 3.5 (§6.3) |
-| 57.516 | L2 Row 55.1 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 3–4) | **NEEDS A FULL ROW** — in member 53's cut |
-| 57.517 | L2 Row 55.2 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 4–5) | **NEEDS A FULL ROW** — in member 53's cut |
-| 57.518 | L2 Row 55.4 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 8–9) | **NEEDS A FULL ROW** — in member 53's cut |
-| 57.519 | L2 Row 55.5 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 14) | **NEEDS A FULL ROW** — in member 53's cut |
-| 57.520 | L2 Row 55.6 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 15) | **NEEDS A FULL ROW** — in member 53's cut |
-| 57.521 | L2 Row 55.7 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 16) | **NEEDS A FULL ROW** — in member 53's cut |
-| 57.522 | L2 Row 55.8 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 17) | **NEEDS A FULL ROW** — in member 53's cut |
-| 57.523 | L2 Row 55.9 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 18) | **NEEDS A FULL ROW** — in member 53's cut |
+| 57.516 | L2 Row 55.1 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 3–4) | **FULL ROW BUILT** — group 5 — in member 53's cut |
+| 57.517 | L2 Row 55.2 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 4–5) | **FULL ROW BUILT** — group 5 — in member 53's cut |
+| 57.518 | L2 Row 55.4 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 8–9) | **FULL ROW BUILT** — group 5 — in member 53's cut |
+| 57.519 | L2 Row 55.5 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 14) | **FULL ROW BUILT** — group 5 — in member 53's cut |
+| 57.520 | L2 Row 55.6 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 15) | **FULL ROW BUILT** — group 5 — in member 53's cut |
+| 57.521 | L2 Row 55.7 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 16) | **FULL ROW BUILT** — group 5 — in member 53's cut |
+| 57.522 | L2 Row 55.8 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 17) | **FULL ROW BUILT** — group 5 — in member 53's cut |
+| 57.523 | L2 Row 55.9 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 18) | **FULL ROW BUILT** — group 5 — in member 53's cut |
 | 57.524 | L2 Row 55.10 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 40) | Row 53.14 (§6.53) |
 | 57.525 | L2 Row 55.11 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 41) | Row 53.15 (§6.53) |
 | 57.526 | L2 Row 55.12 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 42) | Row 53.16 (§6.53) |
@@ -72628,8 +72632,8 @@ the row; *Document and locator* the document the L2 row's block names and that b
 | 57.529 | L2 Row 55.15 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 45) | Row 53.19 (§6.53) |
 | 57.530 | L2 Row 55.16 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 46) | Row 53.20 (§6.53) |
 | 57.531 | L2 Row 55.17 | B123 | `cowork_idiom_entry_mapping.md` (locator: line 47) | Row 53.21 (§6.53) |
-| 57.532 | L2 Row 55.19 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 51–52) | **NEEDS A FULL ROW** — in member 53's cut |
-| 57.533 | L2 Row 55.22 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 56–57) | **NEEDS A FULL ROW** — in member 53's cut |
+| 57.532 | L2 Row 55.19 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 51–52) | **FULL ROW BUILT** — group 5 — in member 53's cut |
+| 57.533 | L2 Row 55.22 | B123 | `cowork_idiom_entry_mapping.md` (locator: lines 56–57) | **FULL ROW BUILT** — group 5 — in member 53's cut |
 | 57.534 | L2 Row 50.54 | B123 | `cowork_progression_schema_dictionary.md` (locator: line 237) | Row 46.40 (§6.46) — the same sentence; Row 46.49 quotes a longer sentence containing its words |
 | 57.535 | L2 Row 50.67 | B123 | `cowork_progression_schema_dictionary.md` (locator: lines 297–299) | **FULL ROW BUILT** — group 3 — in member 46's cut |
 | 57.536 | L2 Row 50.75 | B123 | `cowork_progression_schema_dictionary.md` (locator: lines 321–322) | Row 46.49 (§6.46) |
@@ -72668,8 +72672,8 @@ line is a title and is neither here nor among the lines.
 - Lines written: **537** (57.1 to 57.537): **415 pointer lines** and **122 needs-a-full-row lines** — 415 + 122 = 537,
   the named rows (every claim counted, no row named twice with one claim).
 - A pointer line's statement is counted at the row it names: **it is counted in neither table of the feet.**
-- **Outgoing statements placed by this portion: 0.** The member's full rows are built in named groups below; groups
-  1 to 4's are built, and the last group's are not yet written.
+- **Outgoing statements placed by this portion: 0.** The member's full rows are built in named groups below; all five
+  groups' are built — every full row the named list names.
 - Listed under *not a statement*: **9**.
 - **Every non-blank line of the range is accounted for**: 1 heading line, 277 lines of the 123 bullets, and 652 lines of
   the 9 listed items — 1 + 277 + 652 = 930, the range's non-blank lines.
@@ -72817,7 +72821,8 @@ line is a title and is neither here nor among the lines.
   to 57.501, 57.511, 57.513 and 57.514 (31 rows), at its group heading below; group 3 — Rows 57.390 to 57.396, 57.398 to
   57.402, 57.405, 57.427 to 57.435, 57.445, 57.502 to 57.504 and 57.535 (27 rows), at its group heading below; group 4 —
   Rows 57.448, 57.451, 57.453 to 57.455, 57.465 to 57.475, 57.478, 57.485 to 57.487, 57.489, 57.490 and 57.493 to 57.496
-  (26 rows), at its group heading below; 10 rows remain NOT YET WRITTEN.
+  (26 rows), at its group heading below; group 5 — Rows 57.516 to 57.523, 57.532 and 57.533 (10 rows), at its group
+  heading below; no row remains NOT YET WRITTEN.
 
 #### Full-row group 1 — Rows 57.50, 57.60, 57.62, 57.97, 57.107 to 57.119, 57.124, 57.126, 57.153 to 57.157, 57.170, 57.171, 57.173 and 57.207 (28 rows; `cowork_layer5_function_design.md`, `ARCHITECTURE.md`, `cowork_phrase_boundary_design.md`)
 
@@ -77834,20 +77839,575 @@ The AGREES statements: none. The DIFFERS statements: none.
 
 ---
 
+#### Full-row group 5 — Rows 57.516 to 57.523, 57.532 and 57.533 (10 rows; `cowork_idiom_entry_mapping.md`)
+
+> **Group 5 of the full-row groups, the last.** Ten rows of the named list, in the table's order, in one document — the
+> rows the named list gives to that document and no others, a scope chosen by document and named row by row in the
+> heading; the second of the two groups into which the twenty-seventh dispatch re-cut the planned fourth group by
+> document, confirmed at its ten rows by the dispatch that wrote this group, which cut from it the member's three feet
+> and the sections written once after the last member, on the previous batch's paragraph on a full row's cost (the
+> dispatch's sizing section, stated for challenge); each row built in full in position 56's full-row form, numbered as
+> the table numbered its line — one named L2 row, one identity in this file. In the table's order the ten are the only
+> needs-a-full-row cells that remained after group 4 and are not a contiguous run: Rows 57.516 to 57.523 stand after
+> group 2's Rows 57.511 to 57.514, eight pointer lines (Rows 57.524 to 57.531) stand between them and Rows 57.532 and
+> 57.533, and group 3's Row 57.535 stands after those. The dispatch described the group as the cells of its one document
+> and ordered it checked as such, with its place in the table's order printed as a fact; the check held. Rows built:
+> **10**. Outgoing statements: **10** (Rows 57.516 to 57.533 as the heading names them; 10 rows of one claim and none of
+> two, no row split — the arithmetic is at the foot of this group). Lines turned into pointers: **none**. By class at
+> the table: 10 *in member 53's cut*. **With this group every one of the 122 full rows the table named is built**; the
+> member's three feet and the sections written once after the last member are not written here. Counted at this group by
+> this session; the counts appear here, at the group's feet, at §6.57's *Built so far* bullet and at §13.
+>
+> **How each row was built.** The table's lines were re-read first: a script printed the 10 table lines and the 10 lines
+> of the named list from this file's blob at this batch's Task 0 commit and checked each against the dispatch's table —
+> every L2 row, bullet, document, locator and class equal, every decision cell reading *NEEDS A FULL ROW* — and checked
+> the scope both ways: every needs-a-full-row cell of the table is one of the 10, every one of the 10 is such a cell,
+> and every one of them names `cowork_idiom_entry_mapping.md`. The table's decision was then re-confirmed at this file
+> before any row was written (`decisions57g5.txt`, the report): each place the decision points to was opened — §6.53
+> whole, with its two ranges, its cut and its walk, and its Rows 53.1 to 53.22, the same document's other two tables;
+> §6.46's Rows 46.10, 46.39, 46.40, 46.41 and 46.49 and §6.44's Row 44.11, the rows §6.53 reads its tags as at and the
+> candidates the table's search rested on; and group 3's Row 57.535, the dictionary's glossary entry on the idiom tag,
+> of the same bullet — and a scripted search of every statement and every listed item of §6.1 to §6.56 for each
+> quotation and each run of six of its words printed one candidate, Row 46.49, read by eye: **every one of the 10
+> sentences is tabulated nowhere in this file as a statement** — Row 46.49 tabulates a sentence of the same content in
+> the catalog's own document, and Row 46.10 the same chord pattern as Row 57.521's entry in another document's bullet —
+> so no line became a pointer. The 10 L2 blocks were extracted from the L2 file's blob at this batch's Task 0 commit and
+> read whole; each quotes its statement under *Outgoing statement.*, with a locator equal to the table's cell, none is
+> split, and none carries a mark of the L2 comparison's own at its heading line. Each row quotes, first, B123 whole, its
+> wrapped lines joined with one space (*The L2 entry.*), the same words §6.57's numbered list carries; and second, the
+> statement the L2 row's own block quotes, with the block's bold markers and pipes kept, the document and the section
+> the block names, and the block's own locator (*The outgoing statement it carries.*). The document, 57 lines, was read
+> whole at its blob at the same commit and opened at the located lines: **every one of the 10 quotations stands there as
+> quoted**, at exactly the lines the block locates, and *At the source now.* says where each sentence begins and ends,
+> what its first line carries before it, and where its lines lie against this comparison's members. The homes were
+> walked twice, as the marks paragraph below says. An L2 row is always written with the prefix *L2*.
+>
+> **What kind of text the rows are, and which placement readings applied.** Ten sentences and table rows of one small
+> document, `cowork_idiom_entry_mapping.md`, sent to L3 by the L2 comparison, every one of its L2 rows a passage row of
+> that comparison's member 55: three sentences of the banner (lines 3 to 9), the five body rows of §5.1's table (lines
+> 14 to 18), and two of the three bullets of the closing *Notes for the re-tag* (lines 51 to 57) — every one lying in
+> the cut §6.53's manifest header lists, and tabulated here as a run. **The readings of the unit stated at earlier
+> members apply unchanged.** **The blockquote-marker reading** governs Rows 57.516 to 57.518: the banner's six text
+> lines each open with the quotation-block marker, and its blank line 6 carries the bare marker, so the quotations start
+> after it, as the L2 blocks start them and as the decisions register's own convention drops the marker; **a bold lead
+> that is not quoted** stands before Row 57.516's sentence, the banner's opening *For the StyleTag implementation.*, and
+> **a bold lead that is quoted** opens Rows 57.517 and 57.532, as the L2 blocks quote them. **Tables taken row by row**
+> govern Rows 57.519 to 57.523, each row one unit; **a list marker** is dropped at the head of Rows 57.532 and 57.533,
+> their wrapped second lines joined with one space; **the colon-lead reading** governs Row 57.518, one rule naming two
+> attributes after its colon; **a reason given with a rule is taken with it** at Row 57.532, under the defense reading.
+> **No row of this group is a *listed only* row**, so the listed-sentence clause of the earlier groups has no instance;
+> the glossary reading and the quotation join have none either. **No L2 block of this group is split, and no row is
+> split here.**
+>
+> **Cases no earlier member or group met, each stated for challenge.** (1) **The last full-row group, with the member's
+> three feet and the sections written once after the last member cut from it** by the dispatch that wrote it; their
+> lines stand NOT YET WRITTEN, amended to say so. (2) **One small document's cut tabulated whole as a run**: every
+> sentence of `cowork_idiom_entry_mapping.md` that the L2 comparison relocated to L3 and that lies in §6.53's cut — the
+> banner, §5.1's table and the remarks for the re-tag — is a row of this group. (3) **The two comparisons' population
+> tools cut the document differently**: the L2 comparison's member 55 covered its banner, §5.1's table, §5.3's table and
+> its remarks (lines 3–9, 11–18, 37–48 and 50–57), and this comparison's member 53 covers §5.2's and §5.3's tables
+> (lines 20–35 and 37–48) — which is why these ten sentences reach this file only through the transfer input; each row
+> says so as a fact of the two artifacts, graded nowhere, and no member is widened by hand (**D-671**). (4) **Five table
+> rows quoted with their pipes as the L2 blocks write them**, where §6.53 quoted the same document's other two tables
+> cell by cell, the cells joined by a middle dot: a full row quotes the outgoing statement as the L2 block quotes it;
+> **the alternative**, the middle-dot form, is stated and not taken, because it would quote the L2 block's statement in
+> words that block does not write. (5) **A further tag in a second or remark cell taken as one claim with the entry's
+> tag** (Rows 57.521, 57.522 and 57.523), as §6.53 took the same shape at its Rows 53.2, 53.4, 53.9, 53.10 and 53.18;
+> **the alternative**, a split into the primary tag and the further tag with its condition, is stated and not taken,
+> §6.53 having split a row only where its remark concerned voice leading. (6) **The document numbers its idioms 1 to
+> 5**: every row quoting a tag writes *the document's idiom N*, as §6.53 wrote *the member's idiom N*.
+>
+> **The marks of the full rows, located at the data file.** `item_4_identities_inside` for position 57 is empty. Both
+> walks over `tools/audit/decisions/backbone_decisions.json`, taken at this batch's Task 0 commit by explicit hash, the
+> retired block included — the first by each home's cited line range, the second by where each home's words and each
+> row's sentence actually stand, character by character — set each row's lines against every home the data file records
+> in the document, and **the data file records none**: no record, live or retired, names `cowork_idiom_entry_mapping.md`
+> with a line range, in another form in its home field, or in any other field, as §6.53's manifest header records of its
+> own walk. None of the twenty-three withheld identities and none of the SEEN identities is homed there, and the
+> document is not one of the five withheld from the deriving session's pack. **No full row is marked WITHHELD or SEEN,
+> and no row carries the paragraph *The decisions register at this row*.** The walk over the L2 reading file's range
+> 75368–76315 finds no home: the data file records none in that file, and no L2 block of this group carries a mark of
+> the L2 comparison's own. **Rows naming L3-S4: none.**
+>
+> **How the full rows' subjects were placed.** **Every claim of this group is UNPLACED**: the idiom tags of the
+> catalog's entries, their multiplicity and the two cross-attributes on each entry are attributes of a catalog entry,
+> read as §6.53 read the same document's tags (Rows 53.1 to 53.22, reading them as at Rows 44.11 and 46.40), as §6.46
+> read the tags' multiplicity (Rows 46.40 and 46.49) and as group 3's Row 57.535 read the idiom tag and the two
+> cross-attributes — no charter of `FRAMEWORK.md` §5 names the catalog of named progressions, and the derivation does
+> not speak to one. **This follows §6.53 and departs from no precedent at it.** **The alternative**, **RELOCATED** to
+> *L2 — The tonal reading. The one entangled decision.*, as Row 46.39 placed the taxonomy with its cross-attributes and
+> Row 46.41 the presets' idiom weightings, is stated and not taken, as at §6.53's placement (l): a row stating which
+> idioms or attributes an entry carries does not say how an idiom weighs. **The banner's first sentence names the build
+> it serves in its lead** and states the tagging as a rule of the mapping, naming no code, so it is not QUARANTINED;
+> **the two remarks for the re-tag** state what is correct of the tags and what each entry carries, and are read as
+> rules of the mapping, not as remarks on the re-tagging act, so neither is HISTORICAL. The L2 comparison relocated each
+> of these rows to L3, ruled at its own record; this file places them for this comparison, and its UNPLACED is a fact
+> beside that ruling and not a correction of it. **No derived statement speaks to any claim of this group**: every
+> verdict is THE DERIVATION IS SILENT, as at §6.53's rows. **No statement of this group is ADOPTED, RELOCATED,
+> QUARANTINED, DISCARDED or HISTORICAL.**
+
+---
+
+**Row 57.516 — L2 Row 55.1, one of the twenty-two rows B123 names: the catalog's idiom tags — each entry tagged with its
+idioms from the ratified set.**
+
+*The L2 entry.* "Rows 55.1, 55.2, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 55.10, 55.11, 55.12, 55.13, 55.14, 55.15, 55.16,
+55.17, 55.19, 55.22, 50.54, 50.67, 50.75 and 53.11 — travelling with Row 5.91: the catalog's idiom tags. *(Placed from
+UNPLACED; cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md, Ruling 2.)*" (locator: §10, lines 75862–75864).
+It is one of the twenty-two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "Each §5 entry of `cowork_progression_schema_dictionary.md` is tagged with its
+idiom(s) from the ratified set." — `cowork_idiom_entry_mapping.md`, the opening block (the L2 row's own locator: lines
+3–4).
+
+The lines lie in member 53's cut — the lines 1–19, which §6.53's manifest header lists in no range, the banner among
+them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. One claim:
+each entry of the catalog of named progressions and substitutions is tagged with its idioms from the ratified set.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and group 3's Row 57.535 (i): the idiom tag is an attribute
+of a catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions; the sentence states the
+tagging as a rule of the mapping and names no code, so it is not read as QUARANTINED for the build its lead names.
+
+*At the source now.* The sentence stands at lines 3–4 of the document's blob at this batch's Task 0 commit, found as
+quoted. Each line opens with the quotation-block marker, which the quotation drops, and line 3 carries before the
+sentence the banner's bold lead, *For the StyleTag implementation.*, which the L2 block does not quote; line 4 goes on
+with the sentence Row 57.517 tabulates. The nearest heading at the blob is *"# Idiom mapping — encyclopedia catalog
+entries → the five idioms (for the StyleTag swap)"*, the title at line 1. The lines lie in none of member 53's published
+ranges: they fall before its first range, 20–35, inside the cut 1–19 §6.53's manifest header lists — so the class
+*in member 53's cut* holds at the blobs. The L2 comparison's member 55 covered these lines (its ranges 3–9, 11–18, 37–48
+and 50–57), while this comparison's member 53 covers its ranges 20–35 and 37–48 and not these — a fact of the two
+population artifacts, graded nowhere, and the reason the sentence reaches this file only through the transfer input. The
+document is not one of the five withheld from the deriving session's pack, and the decisions register's data file homes
+nothing in it.
+
+---
+
+**Row 57.517 — L2 Row 55.2, one of the twenty-two rows B123 names: the catalog's idiom tags — the tags multi-valued.**
+
+*The L2 entry.* "Rows 55.1, 55.2, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 55.10, 55.11, 55.12, 55.13, 55.14, 55.15, 55.16,
+55.17, 55.19, 55.22, 50.54, 50.67, 50.75 and 53.11 — travelling with Row 5.91: the catalog's idiom tags. *(Placed from
+UNPLACED; cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md, Ruling 2.)*" (locator: §10, lines 75862–75864).
+It is one of the twenty-two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**Multi-valued** — an entry can legitimately belong to several idioms (e.g. a
+plain ii–V–I is Diatonic-functional; with sevenths it is Seventh-functional)." — `cowork_idiom_entry_mapping.md`, the
+opening block (the L2 row's own locator: lines 4–5).
+
+The lines lie in member 53's cut — the lines 1–19, which §6.53's manifest header lists in no range, the banner among
+them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. One claim:
+the tags are multi-valued, an entry able to belong to several idioms; the parenthesis giving its example, a plain
+supertonic–dominant–tonic progression and the same with sevenths, is taken with it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Rows 46.40 and 46.49, which place the same rule in the catalog's own
+document: the tags are attributes of the catalog's entries.
+
+*At the source now.* The sentence stands at lines 4–5 of the document's blob at this batch's Task 0 commit, found as
+quoted, after the quotation-block marker opening each line, its bold lead quoted with it as the L2 block quotes it; it
+opens mid-line 4 after the sentence Row 57.516 tabulates, and line 5 goes on with the sentence *"Provisional, easy to
+revise."*, which no row of this group quotes. The nearest heading at the blob is *"# Idiom mapping — encyclopedia
+catalog entries → the five idioms (for the StyleTag swap)"*, the title at line 1. The lines lie in none of member 53's
+published ranges: they fall before its first range, 20–35, inside the cut 1–19 §6.53's manifest header lists — so the
+class *in member 53's cut* holds at the blobs. The L2 comparison's member 55 covered these lines (its ranges 3–9, 11–18,
+37–48 and 50–57), while this comparison's member 53 covers its ranges 20–35 and 37–48 and not these — a fact of the two
+population artifacts, graded nowhere, and the reason the sentence reaches this file only through the transfer input. The
+document is not one of the five withheld from the deriving session's pack, and the decisions register's data file homes
+nothing in it.
+
+---
+
+**Row 57.518 — L2 Row 55.4, one of the twenty-two rows B123 names: the catalog's idiom tags — the two cross-attributes,
+tagged separately per entry.**
+
+*The L2 entry.* "Rows 55.1, 55.2, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 55.10, 55.11, 55.12, 55.13, 55.14, 55.15, 55.16,
+55.17, 55.19, 55.22, 50.54, 50.67, 50.75 and 53.11 — travelling with Row 5.91: the catalog's idiom tags. *(Placed from
+UNPLACED; cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md, Ruling 2.)*" (locator: §10, lines 75862–75864).
+It is one of the twenty-two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "Cross-attributes (tagged separately per entry): **mode** (major/minor),
+**chromaticism** (diatonic↔chromatic)." — `cowork_idiom_entry_mapping.md`, the opening block (the L2 row's own locator:
+lines 8–9).
+
+The lines lie in member 53's cut — the lines 1–19, which §6.53's manifest header lists in no range, the banner among
+them — so no member of this comparison tabulated them, and the sentence is tabulated here for the first time. One claim,
+under the colon-lead reading: besides its idioms, each entry carries two cross-attributes, the mode cross-attribute and
+chromaticism, tagged separately per entry. The sentence names two attributes and states one rule, so it is not split.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — travelling with group 3's Row 57.535 (ii), which places the two cross-attributes
+on an entry as attributes of a catalog entry; Row 46.39's placement of the taxonomy with its cross-attributes at L2 is
+not followed, this sentence stating what an entry carries and not how an idiom weighs, as §6.53's placement (l) reads a
+tag.
+
+*At the source now.* The sentence stands at lines 8–9 of the document's blob at this batch's Task 0 commit, found as
+quoted, after the quotation-block marker opening each line: it opens mid-line 8 after the sentence naming the five
+idioms, which no row of this group quotes, and closes the banner on line 9; the banner's blank line 6, between the two
+paragraphs, carries the bare marker and nothing after it. The nearest heading at the blob is *"# Idiom mapping —
+encyclopedia catalog entries → the five idioms (for the StyleTag swap)"*, the title at line 1. The lines lie in none of
+member 53's published ranges: they fall before its first range, 20–35, inside the cut 1–19 §6.53's manifest header lists
+— so the class *in member 53's cut* holds at the blobs. The L2 comparison's member 55 covered these lines (its ranges
+3–9, 11–18, 37–48 and 50–57), while this comparison's member 53 covers its ranges 20–35 and 37–48 and not these — a fact
+of the two population artifacts, graded nowhere, and the reason the sentence reaches this file only through the transfer
+input. The document is not one of the five withheld from the deriving session's pack, and the decisions register's data
+file homes nothing in it.
+
+---
+
+**Row 57.519 — L2 Row 55.5, one of the twenty-two rows B123 names: the catalog's idiom tags — the function map's
+diatonic functions tagged with the document's idiom 1.**
+
+*The L2 entry.* "Rows 55.1, 55.2, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 55.10, 55.11, 55.12, 55.13, 55.14, 55.15, 55.16,
+55.17, 55.19, 55.22, 50.54, 50.67, 50.75 and 53.11 — travelling with Row 5.91: the catalog's idiom tags. *(Placed from
+UNPLACED; cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md, Ruling 2.)*" (locator: §10, lines 75862–75864).
+It is one of the twenty-two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "| Diatonic functions (T / SD / D; descending-fifth/third, ascending-second
+motions) | **1** | the functional backbone |" — `cowork_idiom_entry_mapping.md`, §5.1, the function map (the L2 row's
+own locator: line 14).
+
+The line lies in member 53's cut — the lines 1–19, which §6.53's manifest header lists in no range, §5.1's heading and
+table among them — so no member of this comparison tabulated it, and the table row is tabulated here for the first time,
+taken row by row as one unit. One claim: the entry is tagged with the document's idioms as the second cell gives them,
+the remark cell glossing the tag. The first cell's account of the diatonic functions and their root motions names the
+entry; the row's claim is the entry's idiom tag, of which the derivation says nothing.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40, as §6.53's rows of the same document's other
+tables: the entry's idiom tag is an attribute of a catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog
+of named progressions.
+
+*At the source now.* The row stands at line 14 of the document's blob at this batch's Task 0 commit, found as quoted:
+the first body row of the table under *"## §5.1 — the function map (generative spine)"* (line 11), whose header row and
+separator line stand at lines 12 and 13, its third column the remark column; the L2 block's quotation carries the row's
+cells with their pipes, as the line does, where §6.53 quoted the same document's other two tables cell by cell, the
+cells joined between their quotation marks by a middle dot. The line lies in none of member 53's published ranges: it
+falls before its first range, 20–35, inside the cut 1–19 §6.53's manifest header lists — so the class
+*in member 53's cut* holds at the blobs. The L2 comparison's member 55 covered §5.1's table (its range 11–18, among its
+ranges 3–9, 11–18, 37–48 and 50–57), while this comparison's member 53 covers its ranges 20–35 and 37–48 and not this
+one — a fact of the two population artifacts, graded nowhere, and the reason the row reaches this file only through the
+transfer input. The document is not one of the five withheld from the deriving session's pack, and the decisions
+register's data file homes nothing in it.
+
+---
+
+**Row 57.520 — L2 Row 55.6, one of the twenty-two rows B123 names: the catalog's idiom tags — the applied dominant and
+the applied leading-tone chord tagged with the document's idiom 2.**
+
+*The L2 entry.* "Rows 55.1, 55.2, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 55.10, 55.11, 55.12, 55.13, 55.14, 55.15, 55.16,
+55.17, 55.19, 55.22, 50.54, 50.67, 50.75 and 53.11 — travelling with Row 5.91: the catalog's idiom tags. *(Placed from
+UNPLACED; cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md, Ruling 2.)*" (locator: §10, lines 75862–75864).
+It is one of the twenty-two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "| Secondary dominant `V7/x`, secondary leading-tone `viio7/x` | **2** | applied
+chromaticism |" — `cowork_idiom_entry_mapping.md`, §5.1, the function map (the L2 row's own locator: line 15).
+
+The line lies in member 53's cut — the lines 1–19, which §6.53's manifest header lists in no range, §5.1's heading and
+table among them — so no member of this comparison tabulated it, and the table row is tabulated here for the first time,
+taken row by row as one unit. One claim: the entry is tagged with the document's idioms as the second cell gives them,
+the remark cell glossing the tag.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40, as §6.53's rows of the same document's other
+tables: the entry's idiom tag is an attribute of a catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog
+of named progressions.
+
+*At the source now.* The row stands at line 15 of the document's blob at this batch's Task 0 commit, found as quoted:
+the second body row of the table under *"## §5.1 — the function map (generative spine)"* (line 11), whose header row and
+separator line stand at lines 12 and 13, its third column the remark column; the L2 block's quotation carries the row's
+cells with their pipes, as the line does, where §6.53 quoted the same document's other two tables cell by cell, the
+cells joined between their quotation marks by a middle dot. The line lies in none of member 53's published ranges: it
+falls before its first range, 20–35, inside the cut 1–19 §6.53's manifest header lists — so the class
+*in member 53's cut* holds at the blobs. The L2 comparison's member 55 covered §5.1's table (its range 11–18, among its
+ranges 3–9, 11–18, 37–48 and 50–57), while this comparison's member 53 covers its ranges 20–35 and 37–48 and not this
+one — a fact of the two population artifacts, graded nowhere, and the reason the row reaches this file only through the
+transfer input. The document is not one of the five withheld from the deriving session's pack, and the decisions
+register's data file homes nothing in it.
+
+---
+
+**Row 57.521 — L2 Row 55.7, one of the twenty-two rows B123 names: the catalog's idiom tags — the applied
+supertonic–dominant tagged with the document's idiom 3, idiom 2 added.**
+
+*The L2 entry.* "Rows 55.1, 55.2, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 55.10, 55.11, 55.12, 55.13, 55.14, 55.15, 55.16,
+55.17, 55.19, 55.22, 50.54, 50.67, 50.75 and 53.11 — travelling with Row 5.91: the catalog's idiom tags. *(Placed from
+UNPLACED; cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md, Ruling 2.)*" (locator: §10, lines 75862–75864).
+It is one of the twenty-two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "| Applied ii–V (`IIm7/x → V7/x → x`) | **3** (+ **2**) | sevenths + applied |" —
+`cowork_idiom_entry_mapping.md`, §5.1, the function map (the L2 row's own locator: line 16).
+
+The line lies in member 53's cut — the lines 1–19, which §6.53's manifest header lists in no range, §5.1's heading and
+table among them — so no member of this comparison tabulated it, and the table row is tabulated here for the first time,
+taken row by row as one unit. One claim: the entry is tagged with the document's idiom 3 and, added, idiom 2, as the
+second cell gives them, the remark cell glossing the tag; the added tag in the second cell is taken with the entry's tag
+as one claim, as §6.53's Row 53.2 took its second cell's added tag.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40, as §6.53's rows of the same document's other
+tables: the entry's idiom tag is an attribute of a catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog
+of named progressions.
+
+*At the source now.* The row stands at line 16 of the document's blob at this batch's Task 0 commit, found as quoted:
+the third body row of the table under *"## §5.1 — the function map (generative spine)"* (line 11), whose header row and
+separator line stand at lines 12 and 13, its third column the remark column; the L2 block's quotation carries the row's
+cells with their pipes, as the line does, where §6.53 quoted the same document's other two tables cell by cell, the
+cells joined between their quotation marks by a middle dot. The line lies in none of member 53's published ranges: it
+falls before its first range, 20–35, inside the cut 1–19 §6.53's manifest header lists — so the class
+*in member 53's cut* holds at the blobs. The L2 comparison's member 55 covered §5.1's table (its range 11–18, among its
+ranges 3–9, 11–18, 37–48 and 50–57), while this comparison's member 53 covers its ranges 20–35 and 37–48 and not this
+one — a fact of the two population artifacts, graded nowhere, and the reason the row reaches this file only through the
+transfer input. The document is not one of the five withheld from the deriving session's pack, and the decisions
+register's data file homes nothing in it.
+
+---
+
+**Row 57.522 — L2 Row 55.8, one of the twenty-two rows B123 names: the catalog's idiom tags — the tritone-substitute
+dominant tagged with the document's idiom 5, its German-sixth reading with idiom 2.**
+
+*The L2 entry.* "Rows 55.1, 55.2, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 55.10, 55.11, 55.12, 55.13, 55.14, 55.15, 55.16,
+55.17, 55.19, 55.22, 50.54, 50.67, 50.75 and 53.11 — travelling with Row 5.91: the catalog's idiom tags. *(Placed from
+UNPLACED; cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md, Ruling 2.)*" (locator: §10, lines 75862–75864).
+It is one of the twenty-two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "| Substitute dominant `subV7/x` (tritone sub) | **5** | (its enharmonic German-6th
+reading → **2**) |" — `cowork_idiom_entry_mapping.md`, §5.1, the function map (the L2 row's own locator: line 17).
+
+The line lies in member 53's cut — the lines 1–19, which §6.53's manifest header lists in no range, §5.1's heading and
+table among them — so no member of this comparison tabulated it, and the table row is tabulated here for the first time,
+taken row by row as one unit. One claim: the entry is tagged with the document's idiom 5, and its enharmonic
+German-sixth reading with idiom 2, as the second and remark cells give them; the further tag in the remark cell is taken
+with the entry's tag as one claim, as §6.53's Row 53.4 took a further tag in its remark cell. The German sixth is an
+augmented sixth, which L3-S5 treats in the chord symbol; the row's claim is the entry's idiom tag, of which the
+derivation says nothing.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40, as §6.53's rows of the same document's other
+tables: the entry's idiom tag is an attribute of a catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog
+of named progressions.
+
+*At the source now.* The row stands at line 17 of the document's blob at this batch's Task 0 commit, found as quoted:
+the fourth body row of the table under *"## §5.1 — the function map (generative spine)"* (line 11), whose header row and
+separator line stand at lines 12 and 13, its third column the remark column; the L2 block's quotation carries the row's
+cells with their pipes, as the line does, where §6.53 quoted the same document's other two tables cell by cell, the
+cells joined between their quotation marks by a middle dot. The line lies in none of member 53's published ranges: it
+falls before its first range, 20–35, inside the cut 1–19 §6.53's manifest header lists — so the class
+*in member 53's cut* holds at the blobs. The L2 comparison's member 55 covered §5.1's table (its range 11–18, among its
+ranges 3–9, 11–18, 37–48 and 50–57), while this comparison's member 53 covers its ranges 20–35 and 37–48 and not this
+one — a fact of the two population artifacts, graded nowhere, and the reason the row reaches this file only through the
+transfer input. The document is not one of the five withheld from the deriving session's pack, and the decisions
+register's data file homes nothing in it.
+
+---
+
+**Row 57.523 — L2 Row 55.9, one of the twenty-two rows B123 names: the catalog's idiom tags — modal interchange tagged
+with the document's idiom 2, its triadic borrowings with idiom 4.**
+
+*The L2 entry.* "Rows 55.1, 55.2, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 55.10, 55.11, 55.12, 55.13, 55.14, 55.15, 55.16,
+55.17, 55.19, 55.22, 50.54, 50.67, 50.75 and 53.11 — travelling with Row 5.91: the catalog's idiom tags. *(Placed from
+UNPLACED; cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md, Ruling 2.)*" (locator: §10, lines 75862–75864).
+It is one of the twenty-two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "| Modal interchange (`iv, iiø, ♭VI, ♭III, ♭II`-Neapolitan, Picardy, minor `v`) |
+**2** | mixture; the **♭VII/♭VI triadic** borrowings also → **4** |" — `cowork_idiom_entry_mapping.md`, §5.1, the
+function map (the L2 row's own locator: line 18).
+
+The line lies in member 53's cut — the lines 1–19, which §6.53's manifest header lists in no range, §5.1's heading and
+table among them — so no member of this comparison tabulated it, and the table row is tabulated here for the first time,
+taken row by row as one unit. One claim: the entry is tagged with the document's idiom 2, and its triadic borrowings
+with idiom 4, as the second and remark cells give them; the further tag in the remark cell is taken with the entry's tag
+as one claim, as §6.53's Row 53.18 took the same operation's triadic borrowings at its own table.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40, as §6.53's rows of the same document's other
+tables: the entry's idiom tag is an attribute of a catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog
+of named progressions.
+
+*At the source now.* The row stands at line 18 of the document's blob at this batch's Task 0 commit, found as quoted:
+the fifth and last body row of the table under *"## §5.1 — the function map (generative spine)"* (line 11), whose header
+row and separator line stand at lines 12 and 13, its third column the remark column; the L2 block's quotation carries
+the row's cells with their pipes, as the line does, where §6.53 quoted the same document's other two tables cell by
+cell, the cells joined between their quotation marks by a middle dot. The line lies in none of member 53's published
+ranges: it falls before its first range, 20–35, inside the cut 1–19 §6.53's manifest header lists — so the class
+*in member 53's cut* holds at the blobs. The L2 comparison's member 55 covered §5.1's table (its range 11–18, among its
+ranges 3–9, 11–18, 37–48 and 50–57), while this comparison's member 53 covers its ranges 20–35 and 37–48 and not this
+one — a fact of the two population artifacts, graded nowhere, and the reason the row reaches this file only through the
+transfer input. The document is not one of the five withheld from the deriving session's pack, and the decisions
+register's data file homes nothing in it.
+
+---
+
+**Row 57.532 — L2 Row 55.19, one of the twenty-two rows B123 names: the catalog's idiom tags — several tags on one entry
+correct, the functional idioms overlapping by design.**
+
+*The L2 entry.* "Rows 55.1, 55.2, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 55.10, 55.11, 55.12, 55.13, 55.14, 55.15, 55.16,
+55.17, 55.19, 55.22, 50.54, 50.67, 50.75 and 53.11 — travelling with Row 5.91: the catalog's idiom tags. *(Placed from
+UNPLACED; cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md, Ruling 2.)*" (locator: §10, lines 75862–75864).
+It is one of the twenty-two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**Multi-tag is correct, not a defect** — the functional family (1/2/3) overlaps by
+design (same progression, richer vocabulary), so many entries carry two idiom tags." — `cowork_idiom_entry_mapping.md`,
+the remarks for the re-tag (the L2 row's own locator: lines 51–52).
+
+The lines lie in member 53's cut — the lines 49–57, which §6.53's manifest header lists in no range, the closing remarks
+for the re-tag among them — so no member of this comparison tabulated them, and the sentence is tabulated here for the
+first time. One claim: several idiom tags on one entry are correct and not a defect; the reason after the em dash — the
+functional idioms 1, 2 and 3 overlapping by design, so that many entries carry two tags — is taken with it under the
+defense reading. It is read as a rule of the mapping, stating what is correct of the tags, and not as a remark on the
+re-tagging act its heading names.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 57.517, as Row 46.40 places the tags' multiplicity: an
+attribute of the catalog's entries.
+
+*At the source now.* The sentence stands at lines 51–52 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens line 51 and joining with one space the bullet's second line,
+indented two spaces; its bold lead is quoted with it, as the L2 block quotes it. It is the first of the three bullets
+under the heading. The nearest heading at the blob is *"## Notes for the re-tag"*, at line 50. The lines lie in none of
+member 53's published ranges: they fall after its last range, 37–48, inside the cut 49–57 §6.53's manifest header lists
+— so the class *in member 53's cut* holds at the blobs. The L2 comparison's member 55 covered these lines (its range
+50–57, among its ranges 3–9, 11–18, 37–48 and 50–57), while this comparison's member 53 covers its ranges 20–35 and
+37–48 and not these — a fact of the two population artifacts, graded nowhere, and the reason the sentence reaches this
+file only through the transfer input. The document is not one of the five withheld from the deriving session's pack, and
+the decisions register's data file homes nothing in it.
+
+---
+
+**Row 57.533 — L2 Row 55.22, one of the twenty-two rows B123 names: the catalog's idiom tags — each entry tagged with
+the two cross-attributes, independently of its idioms.**
+
+*The L2 entry.* "Rows 55.1, 55.2, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 55.10, 55.11, 55.12, 55.13, 55.14, 55.15, 55.16,
+55.17, 55.19, 55.22, 50.54, 50.67, 50.75 and 53.11 — travelling with Row 5.91: the catalog's idiom tags. *(Placed from
+UNPLACED; cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md, Ruling 2.)*" (locator: §10, lines 75862–75864).
+It is one of the twenty-two rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "Each entry also gets the two cross-attributes: **mode** (major / minor / either)
+and **chromaticism** (diatonic / chromatic), tagged independently of the idiom." — `cowork_idiom_entry_mapping.md`, the
+remarks for the re-tag (the L2 row's own locator: lines 56–57).
+
+The lines lie in member 53's cut — the lines 49–57, which §6.53's manifest header lists in no range, the closing remarks
+for the re-tag among them — so no member of this comparison tabulated them, and the sentence is tabulated here for the
+first time. One claim: each entry is tagged with the two cross-attributes, the mode cross-attribute and chromaticism,
+independently of its idioms. The sentence names two attributes and states one rule, so it is not split; it is read as a
+rule of the mapping, as Row 57.532. Its values differ from the banner's at Row 57.518 — the banner gives the mode
+cross-attribute the values *"major/minor"* and this sentence *"major / minor / either"* — a fact of the document, graded
+nowhere.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 57.518 and group 3's Row 57.535 (ii).
+
+*At the source now.* The sentence stands at lines 56–57 of the document's blob at this batch's Task 0 commit, found as
+quoted, the quotation dropping the list marker that opens line 56 and joining with one space the bullet's second line,
+indented two spaces. It is the last of the three bullets under the heading; the second, on the galant schemata and the
+line cliché, is quoted by no row of this group. The nearest heading at the blob is *"## Notes for the re-tag"*, at
+line 50. The lines lie in none of member 53's published ranges: they fall after its last range, 37–48, inside the cut
+49–57 §6.53's manifest header lists — so the class *in member 53's cut* holds at the blobs. The L2 comparison's member
+55 covered these lines (its range 50–57, among its ranges 3–9, 11–18, 37–48 and 50–57), while this comparison's member
+53 covers its ranges 20–35 and 37–48 and not these — a fact of the two population artifacts, graded nowhere, and the
+reason the sentence reaches this file only through the transfer input. The document is not one of the five withheld
+from the deriving session's pack, and the decisions register's data file homes nothing in it.
+
+#### The arithmetic at this group
+
+- Rows written: **10**, every one a full row; lines turned into pointers: **0** — 10 + 0 = 10, the rows the group's
+  heading names.
+- The full rows' claims: 10 rows of one claim and none of two — 10 + 0 = 10.
+- **Outgoing statements placed by this group (the full rows' statements): 10.**
+- Listed under *not a statement* at this group: **0** — the member's nine items stand at §6.57's foot.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 10 dispositions over 10
+  statements.
+- **UNPLACED statements at this group: 10.**
+
+#### The distribution at this group, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 10 | 57.516, 57.517, 57.518, 57.519, 57.520, 57.521, 57.522, 57.523, 57.532, 57.533 |
+| **Total** | **10** | — |
+
+**The column sums to 10 (0 + 0 + 0 + 0 + 0 + 0 + 10), against 10 statements, so the arithmetic closes at this group.**
+
+#### The current-text axis at this group, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 10 |
+| **Total verdicts** | **10** |
+
+The AGREES statements: none. The DIFFERS statements: none.
+
+#### The marks at this group
+
+- **WITHHELD rows: none** — no full row's sentence lies inside the home of a withheld identity:
+  `item_4_identities_inside` for position 57 is empty, and none of the twenty-three withheld identities is homed in
+  `cowork_idiom_entry_mapping.md`, which is not one of the five documents withheld from the deriving session's pack.
+- **SEEN rows: none** — no SEEN identity is homed in the document.
+- **Homes of the decisions register's data file at the full rows' lines: none.** The data file records no home in
+  `cowork_idiom_entry_mapping.md` at all — no record, live or retired, names the document in any field — as §6.53's
+  manifest header records of its own walk; and none in the L2 reading file.
+- **The marks were counted both ways**: the identities the data file places at the full rows' lines against the mark
+  strings in this sub-section — no identity at those lines, and neither mark string standing in the sub-section; **and
+  over the whole of §6.57 the SEEN string stands three times — once in group 3's sub-section, after Row 57.398's title,
+  and twice in group 4's, after Rows 57.465's and 57.466's titles — and the WITHHELD string once, after group 2's
+  Row 57.322's title**, so no line of the table, no item of the bullet list and nothing of this group's sub-section
+  carries a mark string. **No mark of the L2 comparison's own was carried in**: none of this group's L2 blocks carries
+  one at its heading line, and each row's title is its bullet's gloss, never the L2 heading line.
+- **Rows naming L3-S4: none.**
+
+---
+
 #### The distribution at this member, counted at these rows
 
-NOT YET WRITTEN — written with the last full-row group of this member, summing the groups' feet; the table places
-nothing, and a pointer line carries no mark of its own.
+NOT YET WRITTEN — written by the batch after the last full-row group of this member, summing the five groups' feet (the
+dispatch of the fifth group cut them from it); the table places nothing, and a pointer line carries no mark of its own.
 
 #### The current-text axis at this member, counted at these rows
 
-NOT YET WRITTEN — written with the last full-row group of this member, summing the groups' feet; the table places
-nothing, and a pointer line carries no mark of its own.
+NOT YET WRITTEN — written by the batch after the last full-row group of this member, summing the five groups' feet (the
+dispatch of the fifth group cut them from it); the table places nothing, and a pointer line carries no mark of its own.
 
 #### The marks at this member
 
-NOT YET WRITTEN — written with the last full-row group of this member, summing the groups' feet; the table places
-nothing, and a pointer line carries no mark of its own.
+NOT YET WRITTEN — written by the batch after the last full-row group of this member, summing the five groups' feet (the
+dispatch of the fifth group cut them from it); the table places nothing, and a pointer line carries no mark of its own.
 
 ---
 
@@ -81055,6 +81615,7 @@ rows carry no disposition of their own (§6.56's manifest header).
 - Row 57.502 (ii) — does the built phrase-boundary profile carry a graded boundary strength by which a consumer could
   weight a vote?
 - **Group 4:** no QUARANTINED row.
+- **Group 5:** no QUARANTINED row.
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -82114,6 +82675,7 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
   profile, to *"relax admission with vote-weight scaling instead of starving"*, where L3-S8 says *"Every change point
   and both span edges are candidate phrase ends."* and *"No item of evidence forces or forbids a phrase end"*.
 - **Group 4:** no ADOPTED — proposed row and no DIFFERS.
+- **Group 5:** no ADOPTED — proposed row and no DIFFERS.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -82178,17 +82740,17 @@ are at its own foot, and the integers below are re-derivable from them.
 | 54 | 56 | 0 | 0 | 42 | 4 | 0 | 6 | 4 | 5 |
 | 55 | 16 | 0 | 0 | 14 | 0 | 0 | 2 | 0 | 0 |
 | 56 | 5 | 0 | 2 | 2 | 0 | 0 | 0 | 1 | 11 |
-| 57 | 151 | 8 | 6 | 39 | 1 | 0 | 0 | 97 | 9 |
-| **Total** | **4686** | **204** | **99** | **2007** | **1213** | **0** | **722** | **441** | **1317** |
+| 57 | 161 | 8 | 6 | 39 | 1 | 0 | 0 | 107 | 9 |
+| **Total** | **4696** | **204** | **99** | **2007** | **1213** | **0** | **722** | **451** | **1317** |
 
-**The arithmetic check:** 204 + 99 + 2007 + 1213 + 0 + 722 + 441 = 4686, against 4686 statements placed (43 + 34 +
+**The arithmetic check:** 204 + 99 + 2007 + 1213 + 0 + 722 + 451 = 4696, against 4696 statements placed (43 + 34 +
 21 + 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 +
 0 + 0 + 4 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 +
-62 + 40 + 42 + 0 + 27 + 25 + 56 + 16 + 5 + 151).
+62 + 40 + 42 + 0 + 27 + 25 + 56 + 16 + 5 + 161).
 
 *(Member 56's row counts its three full rows' statements alone; its 23 pointer rows are counted at the rows they name.)*
-*(Member 57's row counts the statements of its full rows written so far — groups 1 to 4's; its pointer lines are
-counted at the rows they name, and its table is at §6.57.)*
+*(Member 57's row counts the statements of its full rows — all five groups'; its pointer lines are counted at the rows
+they name, and its table is at §6.57; its member feet are not yet written.)*
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -82248,13 +82810,13 @@ counted at the rows they name, and its table is at §6.57.)*
 | 54 | 17 | 4 | 35 | 56 |
 | 55 | 0 | 0 | 16 | 16 |
 | 56 | 0 | 0 | 5 | 5 |
-| 57 | 19 | 11 | 121 | 151 |
-| **Total** | **448** | **370** | **3876** | **4694** |
+| 57 | 19 | 11 | 131 | 161 |
+| **Total** | **448** | **370** | **3886** | **4704** |
 
-**The arithmetic check of the verdicts:** 448 + 370 + 3876 = 4694, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 448 + 370 + 3886 = 4704, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 +
 4 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 +
-42 + 0 + 27 + 25 + 56 + 16 + 5 + 151).
+42 + 0 + 27 + 25 + 56 + 16 + 5 + 161).
 
 ## 14. The derivation's independence record, relayed
 
