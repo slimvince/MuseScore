@@ -29745,3 +29745,68 @@ This commit adds only the guard run's artifact and this portion.
 
 *Provenance: CC, 2026-10-31, appended in the one further commit after the close commit
 `3300e3d6513e586d99a08208340139f65c6903ae`; the verdicts are this run's own output, read with the file tools.*
+
+## THE PER-SESSION READING MEASUREMENT — NOTHING MEASURED: TASK 1 STOPPED AT A BOOT-CHAIN ANCHOR THE DISPATCH AUTHORS AND THE FILE DOES NOT CARRY; NOTHING MOVED, NOTHING DECIDED, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_per_session_reading_measurement_2026_11_01.md`, pinned at Task 0 as
+blob `6c675cf77119f7faac1a5bb0d3590c9e19aca7d6` — step 1 of the pruning iteration the user ordered on 2026-10-31:
+
+- **Task 0** landed the dispatch and entries 461 and 462 as they stood (`6ab3c9ab6f…`), pushed and read at the ref file;
+  the refs and the commit chain were exactly the relayed ones; A1 held at the enumeration; the opening guard capture was
+  the thirteen and nothing else, with the header *"the guard state re-derives"*; the classification's STOP named exactly
+  the four tools; both imported measurements re-derived.
+- **Task 1 STOPPED and committed nothing.** The tool `tools/audit/gen_per_session_reading.py` was written in the imported
+  tools' idiom and **passed all five proofs on planted faults**, with no change between a proof and the run, and an extra
+  check that its one-call-per-folder add-commit lookup equals the per-path lookup (67 paths, 0 mismatched). Its first
+  write-mode run printed **`STOP: the boot-chain anchor '**(x)**' is found 0 time(s) and must be found exactly once`**.
+  Established at the object: entry 152's line 66 opens `**(x) ★ A CORRECTION TO …`, its bold run not closing after the
+  item label, so the dispatch's authored anchor and its premise-ledger FACT do not hold. The dispatch names this STOP as one
+  that commits nothing of Task 1. The tool's source is kept as the loose blob
+  `b909c71ea47ef8c62f9bd74e06c634fb217f517b`; the file and its bytecode cache were removed from `tools/audit/`; nothing was
+  enrolled and `gen_guard_state.py` is unedited.
+- **Task 2** closed: the close entry and the Task 0 entry written first (no Task 1 entry), the `Last updated: ` prefix
+  moved in the same edit (one line carrying it, checked), the 26 ruled terms searched with the one standing hit; the
+  forward bound re-aimed at the Task 0 commit and **moved exactly the thirtieth batch's three entries, with no STOP**; the
+  four archive checks green; the evidence pin green; the defense share and the session-start read size red as A2 provides
+  and regenerated; **the L0/L1 and L3 population checks went red against A2's green prediction** and were regenerated, only
+  residue records moving (the *tie* record of `STATUS.md` leaving with the thirtieth batch's entries; the *paraphrase*
+  record's line number moving 20 → 18), no population member, item-4 passage or tabulation member moving.
+- **No summary of the session's context fell** up to the writing of the report.
+
+**NOTHING WAS MEASURED INTO THE RECORD, NOTHING MOVED, NOTHING WAS DECIDED.** No artifact `per_session_reading.json`
+exists. No fate, class or verdict was authored for any span; no recommendation about any member, span or the pruning
+iteration; no text moved; no governing document edited beyond `STATUS.md` and `STATUS_ARCHIVE.md`; no existing measurement
+tool edited; no algorithm change; no session booted; no open-items row; no `D-NNN`.
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_per_session_reading_measurement_2026_11_01.md`, and is pointed at rather than copied (#6):
+the ordered first read and the injected context (§0), the capacity file, Task 0 (§1), the tool, its three declared readings,
+the proofs and the STOP (§2), Task 2 (§3), the commits (§4), the grades (§5), the departures (§6), the file's state and the
+reads (§7), the findings (§8), the observations (§9), the plan's tell (§10) and the self-check (§11).
+
+### What needs the writing side, named rather than resolved
+
+1. **The entry-152 anchor.** The boot-chain row (ii) needs an anchor that the file carries — its line 66 opens `**(x) ★`
+   (and line 62 `**(vi) ★`) — written by the writing side; this batch did not re-author it.
+2. **The three readings built into the kept tool** (report §2): the protocol partition's joining newlines counted
+   explicitly; the settled-span opening match taken over whitespace-collapsed text, because the two artifacts' `the_opening`
+   is collapsed; one `git log` per folder in place of a per-path call costing about a second. Each is for the writing side to
+   keep or change in the remainder dispatch.
+3. **A2's predictions for the two population checks** — green — were wrong at this close, for the causes report §8 names.
+4. **The classification tool's STOP still names the four tools**, unchanged; no fifth, Task 1 having enrolled nothing.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects. Task 1 did not commit, so the
+  writing side writes the dispatch of the remainder (the measurement tool, with the entry-152 anchor corrected), its check
+  at its sources in a turn of its own; only after that measurement stands do step 2 of the plan (the candidate list read
+  against the artifact's values), step 3 (the user's rulings, each on its own self-contained surface, one per turn — the
+  plan's items (b), (a), (c), (d), (f), with (e) needing only his yes), step 4 (the executing dispatch or dispatches, the
+  measurement re-run so the after-value stands beside the before-value), and only then step 5, the method ruling's surface
+  over the completed L3 tabulation (Ruling 4 of the comparison-design sitting).**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-11-01, at boot tip `63163e31560a2bb663f32dcfae34290f0871026b`, under
+`cc_instruction_per_session_reading_measurement_2026_11_01.md`. Every commit identifier here was read from the commit's own
+object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
