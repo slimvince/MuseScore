@@ -2775,43 +2775,43 @@
     "recorded_hit_count": 30,
     "admitting_hits": [
      {
-      "line_number": 313,
+      "line_number": 224,
       "term": "key signature",
       "tier": "admitting",
       "line": "| D-528 | The key signature and declared mode enter as a WEAK FITTED SOFT PRIOR with no conditional gate anywhere — the probability calculus delivers 'consult it only when unsure', and the hard declared-mode wall is formally retired | LIVE | — | `cowork_joint_estimator_architecture.md` §5a |"
      },
      {
-      "line_number": 405,
+      "line_number": 316,
       "term": "change-point",
       "tier": "admitting",
       "line": "| D-628 | The finest meaningful extension step is the change-point — within a slice the sounding set is constant, so a finer request loads no note and changes no answer | LIVE | — | `ARCHITECTURE.md` |"
      },
      {
-      "line_number": 405,
+      "line_number": 316,
       "term": "sounding set",
       "tier": "admitting",
       "line": "| D-628 | The finest meaningful extension step is the change-point — within a slice the sounding set is constant, so a finer request loads no note and changes no answer | LIVE | — | `ARCHITECTURE.md` |"
      },
      {
-      "line_number": 433,
+      "line_number": 344,
       "term": "key signature",
       "tier": "admitting",
       "line": "| D-056 | Notes always win - the notated key signature is a weak hint, not a bypass | LIVE | — | `ARCHITECTURE.md` |"
      },
      {
-      "line_number": 562,
+      "line_number": 473,
       "term": "fermata",
       "tier": "admitting",
       "line": "| D-482 | The two hand-synchronised copies of the fermata scan retire into one owned primitive, and that retirement changes no output | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |"
      },
      {
-      "line_number": 563,
+      "line_number": 474,
       "term": "fermata",
       "tier": "admitting",
       "line": "| D-483 | The picked boundaries are validated against the analysts' own phrase marks; a fermata-derived phrase list is inadmissible as ground truth because the primitive reads fermatas | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §7 |"
      },
      {
-      "line_number": 764,
+      "line_number": 675,
       "term": "MusicXML",
       "tier": "admitting",
       "line": "| D-199 | The MusicXML declared-mode import fix is intentional and must not be reverted | LIVE | — | `CLAUDE.md` |"
@@ -2819,181 +2819,181 @@
     ],
     "recorded_hits": [
      {
-      "line_number": 186,
+      "line_number": 116,
       "term": "slice",
       "tier": "recorded",
       "line": "| **slice** | The smallest stretch of music analysed: a span during which exactly the same notes are sounding. It begins when any note starts or stops and ends at the next such moment. |"
      },
      {
-      "line_number": 187,
+      "line_number": 117,
       "term": "release",
       "tier": "recorded",
       "line": "| **onset / release** | The moment a note is struck and the moment it stops sounding. |"
      },
      {
-      "line_number": 290,
+      "line_number": 201,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-008 | The true probabilities are deferred to a later step | DEFERRED | — | `ARCHITECTURE.md` |"
      },
      {
-      "line_number": 306,
+      "line_number": 217,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-451 | A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win | LIVE | 2026-08-04 · user | `CLAUDE.md` |"
      },
      {
-      "line_number": 318,
+      "line_number": 229,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-565 | Exact score ties in the decode are real and are broken by a declared TOTAL ORDER on paths, implemented identically in every decoder — no epsilon, no platform dependence | LIVE | 2026-08-04 · user | `cowork_joint_estimator_factorization.md` §5 |"
      },
      {
-      "line_number": 334,
+      "line_number": 245,
       "term": "slice",
       "tier": "recorded",
       "line": "| D-425 | The uncertainty surface's contract IS the full posterior; the local slice is the first delivered step, and the completion is a named step, never an indefinite upgrade | LIVE | — | `cowork_notation_adoption_increment.md` §4 |"
      },
      {
-      "line_number": 342,
+      "line_number": 253,
       "term": "slice",
       "tier": "recorded",
       "line": "| D-023 | The atomic analysis unit is the constant-sonority slice, never the metric beat | LIVE | — | `ARCHITECTURE.md` |"
      },
      {
-      "line_number": 358,
+      "line_number": 269,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-191 | The two-tier regression class policy - functional regression stops, rotation churn is tracked | LIVE | — | `CLAUDE.md` |"
      },
      {
-      "line_number": 373,
+      "line_number": 284,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-282 | Meta-finding: the oracle/tier metric, never a bare proxy - superseded by the robust-unit stop and the two-tier policy | SUPERSEDED BY D-115 and D-191 | — | `cowork_architecture_reassessment.md` §4 ⚠gap |"
      },
      {
-      "line_number": 393,
+      "line_number": 304,
       "term": "slice",
       "tier": "recorded",
       "line": "| D-539 | The standing method for every error slice: decompose it into structural, fitted and ceiling BEFORE building anything — derive, never assert | LIVE | — | `cowork_engage_arc_plan.md` |"
      },
      {
-      "line_number": 405,
+      "line_number": 316,
       "term": "slice",
       "tier": "recorded",
       "line": "| D-628 | The finest meaningful extension step is the change-point — within a slice the sounding set is constant, so a finer request loads no note and changes no answer | LIVE | — | `ARCHITECTURE.md` |"
      },
      {
-      "line_number": 416,
+      "line_number": 327,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-040 | The tie-unresolved atoms are republished additively for the joint estimator | LIVE | — | `ARCHITECTURE.md` |"
      },
      {
-      "line_number": 417,
+      "line_number": 328,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-569 | Collecting, filtering and weighting are THREE separate responsibilities; the collection layer collects and annotates, and does nothing else | LIVE | 2026-08-04 · user | `cowork_layer1_tone_collection_design.md` the opening block (above the first section heading) ⚠gap |"
      },
      {
-      "line_number": 422,
+      "line_number": 333,
       "term": "slice",
       "tier": "recorded",
       "line": "## E. Layer 2 — the slicer — [full entries](decisions/group_E.md)"
      },
      {
-      "line_number": 454,
+      "line_number": 365,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-588 | Preset coverage beyond the analysed corpora is three tiers with NO bare guessing — measured, editorially declared with a stated theory rationale, or self-correcting by detection | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |"
      },
      {
-      "line_number": 481,
+      "line_number": 392,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-321 | Winner selection compares candidate scores exactly, with no epsilon anywhere in the ranking | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` “Floating-point tie policy” |"
      },
      {
-      "line_number": 482,
+      "line_number": 393,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-322 | Any change to optimization flags or to the order of the scoring arithmetic requires a full corpus A/B on both presets | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` “Floating-point tie policy” |"
      },
      {
-      "line_number": 491,
+      "line_number": 402,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-333 | The membership tie-break's direction is an idiom-calibrated number, never a branch on style — the three-tier structure is fixed | LIVE | 2026-08-02 · user | `cowork_layer4_chordsymbol_design.md` §15 |"
      },
      {
-      "line_number": 493,
+      "line_number": 404,
       "term": "slice",
       "tier": "recorded",
       "line": "| D-380 | The carry's meaningful axis is DISTINCT ROOTS, and every above-threshold root is carried at graded confidence — a carry of winner-plus-one discards the third root on about a quarter of slices | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer5_engagement_design.md` “§2.2 The exclusion tail is load-bearing and must be carried” |"
      },
      {
-      "line_number": 530,
+      "line_number": 441,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-383 | Bass, spelling and tonality-consistency DECIDE; a licensed progression is only a tie-break among already-consistent readings and may never override a committed root | LIVE | 2026-08-02 · user | `cowork_layer5_engagement_design.md` “§3.2 The evidence channels, ranked by the research” |"
      },
      {
-      "line_number": 559,
+      "line_number": 470,
       "term": "eligible",
       "tier": "recorded",
       "line": "| D-479 | The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |"
      },
      {
-      "line_number": 566,
+      "line_number": 477,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-490 | FALSIFIED: no threshold can make the fine-grain function override net-positive — the harm rate is flat against both quantities the threshold is built from | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |"
      },
      {
-      "line_number": 602,
+      "line_number": 513,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-585 | The bass-scale-degree / Rule-of-the-Octave prior is admitted as a SOFT prior and tie-breaker only, never a gate | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |"
      },
      {
-      "line_number": 630,
+      "line_number": 541,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-499 | RATIFIED AMENDMENT A-10: four documentation riders — a consolidated ownership page for the notation-derived views, the membership tie-breaker recorded as idiom-calibrated, and the producer-agnostic seam pinned as a design property | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` §9 ⚠gap |"
      },
      {
-      "line_number": 634,
+      "line_number": 545,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-660 | A research-tied name is not renamed but is governed by a two-tier rule, and the terminology cleanup runs in a fixed order with no tree-wide rename | LIVE | — | `CLAUDE.md` |"
      },
      {
-      "line_number": 634,
+      "line_number": 545,
       "term": "tied",
       "tier": "recorded",
       "line": "| D-660 | A research-tied name is not renamed but is governed by a two-tier rule, and the terminology cleanup runs in a fixed order with no tree-wide rename | LIVE | — | `CLAUDE.md` |"
      },
      {
-      "line_number": 677,
+      "line_number": 588,
       "term": "slice",
       "tier": "recorded",
       "line": "| D-545 | The uniform mechanical extractor for idiom discovery is the external library, stopping at the note-and-slice front — OUR OWN key/chord/function inference must NEVER touch the extraction | NOT STATED | — | `ARCHITECTURE.md` |"
      },
      {
-      "line_number": 709,
+      "line_number": 620,
       "term": "slice",
       "tier": "recorded",
       "line": "| D-513 | A corpus registry's content summary is enumeration provenance, not evidence that an annotation layer is present — per-slice presence must be measured | LIVE | — | `cowork_score_census.md` §3 |"
      },
      {
-      "line_number": 783,
+      "line_number": 694,
       "term": "release",
       "tier": "recorded",
       "line": "| D-434 | The writing side runs the standing self-check before a dispatch is released, and records its output | LIVE | — | `cowork_audit_protocol.md` |"
      },
      {
-      "line_number": 806,
+      "line_number": 717,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-611 | The tidy guardrails, in three tiers — and the dormant path and its staged scaffolding are DEFERRED-ENGAGEMENT, not dead code: removing them is a STOP | LIVE | 2026-08-04 · user | `cowork_l1l4_review_charter.md` |"

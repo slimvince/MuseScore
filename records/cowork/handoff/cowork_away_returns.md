@@ -30164,3 +30164,57 @@ This commit adds only the guard run's artifact and this portion.
 
 *Provenance: CC, 2026-11-01, appended in the one further commit after the close commit
 `bead6080d9d0a720a857ccb2350d90dc19894a91`; the verdicts are this run's own output, read with the file tools.*
+
+## THE PRUNING ITERATION, STEP 4, RULINGS 1 AND 3 CARRIED OUT A THIRD TIME — FOUR CLASSES OF HISTORY TEXT TO `DECISIONS_ARCHIVE.md` (RULING 3, COMMITTED); THE TWO FORMER WORDINGS TO `CLAUDE_ARCHIVE.md` NOT COMMITTED (RULING 1 STOPPED AT A RED NO DISPATCH PREDICTED: THE UNFROZEN L3 DERIVATION BOOT PACK RENDERS `CLAUDE.md`'S CONVENTIONS SPAN LIVE); DOCUMENTATION ONLY, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_pruning_rulings_third_execution_2026_11_01.md`, pinned at Task 0 as
+blob `6d59532fff7f64280e4daf3bc8cc588fd68d2acc`, executing the second dispatch (blob
+`abb7ef061d9f0ab922c935dfaa0157324eee8b14`) by citation, with the two premises its run refuted replaced:
+
+- **Task 0** landed the dispatch and handoff entries 470 and 471 (`749ab8c88a7e5221c73fcdc7d96a040c7fb3580b`, pushed). The
+  opening capture was the thirteen plus the per-session tool, as A2 states; the classification STOP named the five tools;
+  the two historical archive checks showed exactly their one predicted differing value each.
+- **Ruling 2** — the eight-line check PASSED; **Ruling 4** — this batch's report is in the two-file form.
+- **Task 1 (Ruling 1) — NOT COMMITTED.** Made, reconciled, both planted faults caught; the historical checks' differing
+  values unchanged; the population confinement check held with exactly the five class-(c) passages. Then the full capture
+  showed `tools/audit/gen_derivation_boot_pack.py --check` red — not predicted. Cause, at the tool's text: the L3 pack is
+  not frozen and its member (2) renders `CLAUDE.md`'s guiding-principles and Conventions spans live. Both files reversed
+  and proved equal to their `<T0>` blobs; both population artifacts restored; the boot-pack check green at the reversed tree.
+- **Task 2 (Ruling 3) — COMMITTED** (`f630b1eb09b2a0c395a94ff2b99b6b5d7936b43c`, pushed). The generator's eight edits; the
+  index regenerated and green, the group files unmoved; the legacy-mark check's two generator citations re-aimed (514 →
+  473, 516 → 475) and its recorded value 79 re-pointed to `DECISIONS_ARCHIVE.md`, green; the archive block byte-reconciled
+  with two planted faults; `DECISIONS.md`'s values in both population artifacts moved only inside its own records and in
+  counts derived from hits; the capture differed from the opening one only in the two predicted reds.
+- **Task 3** closed: three `STATUS.md` entries (the close, Task 2, Task 0), the prefix moved; the forward bound re-aimed at
+  the Task 2 commit and moved exactly the second dispatch's two entries, no STOP; the four archive checks green; the read
+  size, the defense share, the L3 population artifact and the per-session table regenerated, and the L0/L1 artifact carried
+  from its 2(f) regeneration, every passage confined.
+- **No summary of the session's context fell.**
+
+**Everything this section would restate is in the report**, `records/cc/reports/cc_report_pruning_rulings_third_execution_2026_11_01.md`
+(the first read and the eight-line check §1, the capacity file §2, Task 0 §3, Task 1 and its cause §4, Task 2 §5, the
+close §6, the commits §7, the grades and what a fourth dispatch of Ruling 1 would need §8, departures and observations §9),
+with its appendix `records/cc/reports/cc_report_pruning_rulings_third_execution_2026_11_01_appendix.md` (the raw
+printouts, verbatim).
+
+### What needs the writing side, named rather than resolved
+
+1. **Ruling 1 is still to be executed.** A fourth dispatch would need (report §8) a premise and a class for the L3
+   derivation boot pack's member `02` and `derivation_boot_pack.json`, which re-render from `CLAUDE.md`'s
+   guiding-principles and Conventions spans — and whether that pack is regenerated or frozen at such an edit.
+2. **The report's observations (§9).**
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects; then step 4's SECOND dispatch (the
+  measurement tool extended with the dispatch form's invariant share and the sizing of a report's appendix file, and the
+  measurement re-run so the after-values stand beside the before-values); then, one per turn, the user's yes-or-no on carrying
+  the Cowork boot chain's operating paragraphs in the current handoff entry (candidate (e)) and, once the invariant share is
+  measured, the dispatch-form surface (candidate (d)); and only then step 5, the method ruling's surface over the completed L3
+  tabulation (Ruling 4 of the comparison-design sitting).**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-11-01, at boot tip `c483c6968f2de0da68afeb47b48a8807dbe593ed`, under
+`cc_instruction_pruning_rulings_third_execution_2026_11_01.md`. Every commit identifier here was read from the commit's own
+object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*

@@ -498,7 +498,7 @@
    "paths_in_more_than_one_searched_class": [],
    "hits_per_term": {
     "cadence": 979,
-    "phrase": 581,
+    "phrase": 579,
     "inversion": 518,
     "grouping": 242,
     "chord symbol": 208,
@@ -19281,420 +19281,408 @@
       "governing-documents"
      ],
      "in_the_specification_document_set": false,
-     "hit_lines_distinct": 56,
-     "hits": 69,
+     "hit_lines_distinct": 54,
+     "hits": 67,
      "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map",
      "hit_records": [
       {
-       "line_number": 28,
-       "term": "phrase",
-       "tier": "admitting",
-       "line": "> phase-1g entries (D-317…D-342) — D-319…D-341 directly; D-317/D-318 with rephrased plain"
-      },
-      {
-       "line_number": 34,
-       "term": "phrase",
-       "tier": "admitting",
-       "line": "> rephrased at the user's direction (the pedaled note can be in any voice, the D-207"
-      },
-      {
-       "line_number": 160,
+       "line_number": 90,
        "term": "chordsymbol",
        "tier": "admitting",
        "line": "`chordsymbolformatter.cpp`, which the record arm runs. A swept population with two demonstrated"
       },
       {
-       "line_number": 256,
+       "line_number": 173,
        "term": "phrase",
        "tier": "admitting",
        "line": "> **How a whole-document delegation is read.** A delegation that names a DOCUMENT and no section reaches EVERY section of it; a delegation that names SECTIONS reaches those sections and their subsections and no others; and the rule-stating half is judged PER SECTION in both cases. **THIS IS NOW PART OF THE RULE, NOT AN INTERPRETATION OF IT (user, 2026-08-03, phase 1r).** At phase 1q it was this pass's reading of D-430's \"delegates a stated concern to that section BY NAME\", taken on the record's own precedent rather than a preference — `OPEN_ITEMS.md` OI-290 states in terms that \"`ARCHITECTURE.md:1331` delegates 'this layer' and admits all sixteen of that document's entries\" — and the strict alternative was recorded as available to the user. The user then WROTE the reading into `CLAUDE.md` rule (h) itself as the GRANULARITY clause, so D-430's verbatim now carries it and the strict alternative is CLOSED. Its defense, stated with it: the strict reading would evict every document delegated as a whole, signed layer specifications among them, on the accident of how a pointer happens to be phrased, making the rule retroactively destructive rather than refining. THE STRICT ALTERNATIVE, PRESERVED (#12): read literally, a whole-document delegation names no section, so no section of it would be admitted and the seven whole-document homes would lose every entry between them."
       },
       {
-       "line_number": 311,
+       "line_number": 222,
        "term": "chord symbol",
        "tier": "admitting",
        "line": "| D-526 | The joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the chord symbol is a DERIVED fact published once | LIVE | — | `cowork_joint_estimator_architecture.md` §5a |"
       },
       {
-       "line_number": 426,
+       "line_number": 337,
        "term": "grouping",
        "tier": "admitting",
        "line": "| D-605 | The local-key hypothesis derives from key-agnostic signals ONLY and never from the key-area grouping, which is a post-grouping of the resolved key — a hard design rule, not a preference | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 437,
+       "line_number": 348,
        "term": "cadence",
        "tier": "admitting",
        "line": "| D-290 | The key-agnostic local cadence approach is FALSIFIED at its precision ceiling | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 449,
+       "line_number": 360,
        "term": "cadence",
        "tier": "admitting",
        "line": "| D-494 | RATIFIED AMENDMENT A-4: the function layer must gain key-confirmation channels that do not require a cadence, plus an enharmonic-identity rule for key spans | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 470,
+       "line_number": 381,
        "term": "chord symbol",
        "tier": "admitting",
        "line": "| D-280 | Gates read structured fields only - never a chord symbol string and never a Roman numeral | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 475,
+       "line_number": 386,
        "term": "inversion",
        "tier": "admitting",
        "line": "| D-302 | No further local scoring fix for inversions may be attempted — the remaining divergence is not an analyzer defect | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |"
       },
       {
-       "line_number": 486,
+       "line_number": 397,
        "term": "inversion",
        "tier": "admitting",
        "line": "| D-327 | The root-continuity guard reads the reconstructed inversion credit, superseding the designed sounding-third test | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |"
       },
       {
-       "line_number": 488,
+       "line_number": 399,
        "term": "chordsymbol",
        "tier": "admitting",
        "line": "| D-329 | Completeness of the candidate list is the priority — a chord never listed can never be chosen | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer4_chordsymbol_design.md` §4 |"
       },
       {
-       "line_number": 489,
+       "line_number": 400,
        "term": "chordsymbol",
        "tier": "admitting",
        "line": "| D-330 | Never a pooled recompute — the chord is never re-derived from several stretches' notes thrown together | LIVE | 2026-08-02 · user | `cowork_layer4_chordsymbol_design.md` §8 |"
       },
       {
-       "line_number": 490,
+       "line_number": 401,
        "term": "chordsymbol",
        "tier": "admitting",
        "line": "| D-331 | Every chord decision carries its ranked alternatives and its confidence — committed, inherited, and abstained alike, never pruned | LIVE | 2026-08-02 · user | `cowork_layer4_chordsymbol_design.md` §15 |"
       },
       {
-       "line_number": 491,
+       "line_number": 402,
        "term": "chordsymbol",
        "tier": "admitting",
        "line": "| D-333 | The membership tie-break's direction is an idiom-calibrated number, never a branch on style — the three-tier structure is fixed | LIVE | 2026-08-02 · user | `cowork_layer4_chordsymbol_design.md` §15 |"
       },
       {
-       "line_number": 492,
+       "line_number": 403,
        "term": "chordsymbol",
        "tier": "admitting",
        "line": "| D-334 | The bare-fifth chord type stays in the catalogue structurally; whether it wins is an idiom-calibrated number | LIVE | 2026-08-02 · user | `cowork_layer4_chordsymbol_design.md` §15 |"
       },
       {
-       "line_number": 503,
+       "line_number": 414,
        "term": "chord symbol",
        "tier": "admitting",
        "line": "| D-501 | A tool may read a written chord symbol ONLY as a comparison or ground-truth label — never as input that influences what the analyzer computes | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 507,
+       "line_number": 418,
        "term": "bass note",
        "tier": "admitting",
        "line": "| D-536 | The bass note and the chord are chosen TOGETHER — the winner is the (bass, root, template) triple — replacing the sequential commit-the-bass-then-score pipeline | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |"
       },
       {
-       "line_number": 508,
+       "line_number": 419,
        "term": "slash chord",
        "tier": "admitting",
        "line": "| D-537 | The completeness bonus fires ONLY for a root-position reading whose three triad tones are all present — the guard that stops it from demoting genuine slash chords | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |"
       },
       {
-       "line_number": 514,
+       "line_number": 425,
        "term": "cadence",
        "tier": "admitting",
        "line": "## H. Layer 5 and Layer 6 — function, cadence, grouping — [full entries](decisions/group_H.md)"
       },
       {
-       "line_number": 514,
+       "line_number": 425,
        "term": "grouping",
        "tier": "admitting",
        "line": "## H. Layer 5 and Layer 6 — function, cadence, grouping — [full entries](decisions/group_H.md)"
       },
       {
-       "line_number": 518,
+       "line_number": 429,
        "term": "cadence",
        "tier": "admitting",
        "line": "| D-081 | The cadence detector is key-agnostic | LIVE | — | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 519,
+       "line_number": 430,
        "term": "grouping layer",
        "tier": "admitting",
        "line": "| D-082 | The grouping layer is additive, read-only, with no feedback | LIVE | — | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 519,
+       "line_number": 430,
        "term": "grouping",
        "tier": "admitting",
        "line": "| D-082 | The grouping layer is additive, read-only, with no feedback | LIVE | — | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 525,
+       "line_number": 436,
        "term": "cadence",
        "tier": "admitting",
        "line": "| D-336 | Cadence detection is key-agnostic and votes for the key rather than reading one | LIVE | 2026-08-02 · user | `cowork_layer5_function_design.md` §9 |"
       },
       {
-       "line_number": 526,
+       "line_number": 437,
        "term": "cadence",
        "tier": "admitting",
        "line": "| D-337 | A lean toward another degree is a tonicization by default; a key change needs a confirming cadence AND persistence, expressed as a change-cost | LIVE | 2026-08-02 · user | `cowork_layer5_function_design.md` §9 |"
       },
       {
-       "line_number": 529,
+       "line_number": 440,
        "term": "inversion",
        "tier": "admitting",
        "line": "| D-382 | The function layer selects by JOINT CONSISTENCY across tonality, root, inversion and bass — not by maximizing any one score — and every ambiguity kind reasons over the full carried distribution | LIVE | 2026-08-02 · user | `cowork_layer5_engagement_design.md` “§3.1 The objective: select by JOINT CONSISTENCY, not by strengthening one score” |"
       },
       {
-       "line_number": 532,
+       "line_number": 443,
        "term": "contradiction",
        "tier": "admitting",
        "line": "| D-387 | A contradiction between the function context and a committed chord is surfaced on the ONE open mark, enriched with a reason — not on a second parallel flag, and not by overloading the plain undecided mark | LIVE | 2026-08-02 · user | `cowork_layer5_engagement_design.md` “§7.2 The vehicle” |"
       },
       {
-       "line_number": 542,
+       "line_number": 453,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-397 | The homeless analysis objects are ASSIGNED to named owners on the voice-leading dimension — the stock patterns, the melodic phrase, chord voicing, and part-writing advice — as claims, discharged only at each owner's own ratified design | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 544,
+       "line_number": 455,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-400 | A PER-VOICE span kind is admitted to the span typology — melodic phrases overlap across voices by construction and tile only within one voice | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 546,
+       "line_number": 457,
        "term": "grouping layer",
        "tier": "admitting",
        "line": "| D-454 | The grouping layer detects nothing — it assembles what earlier layers decided, and pressure to add detection means the work belongs elsewhere | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §6 |"
       },
       {
-       "line_number": 546,
+       "line_number": 457,
        "term": "grouping",
        "tier": "admitting",
        "line": "| D-454 | The grouping layer detects nothing — it assembles what earlier layers decided, and pressure to add detection means the work belongs elsewhere | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §6 |"
       },
       {
-       "line_number": 547,
+       "line_number": 458,
        "term": "cadence",
        "tier": "admitting",
        "line": "| D-455 | A cadence away from a grouping boundary is surfaced as internal, never snapped to the nearest boundary and never discarded | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §9 |"
       },
       {
-       "line_number": 547,
+       "line_number": 458,
        "term": "grouping",
        "tier": "admitting",
        "line": "| D-455 | A cadence away from a grouping boundary is surfaced as internal, never snapped to the nearest boundary and never discarded | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §9 |"
       },
       {
-       "line_number": 548,
+       "line_number": 459,
        "term": "grouping layer",
        "tier": "admitting",
        "line": "| D-456 | Sections, periods and sentences are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §9 |"
       },
       {
-       "line_number": 548,
+       "line_number": 459,
        "term": "grouping",
        "tier": "admitting",
        "line": "| D-456 | Sections, periods and sentences are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §9 |"
       },
       {
-       "line_number": 548,
+       "line_number": 459,
        "term": "period",
        "tier": "admitting",
        "line": "| D-456 | Sections, periods and sentences are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §9 |"
       },
       {
-       "line_number": 549,
+       "line_number": 460,
        "term": "grouping layer",
        "tier": "admitting",
        "line": "| D-457 | A group truncated by the selection edge is marked as truncated, and a group that runs off the edge unclosed carries an extension cue the grouping layer only surfaces | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.1 |"
       },
       {
-       "line_number": 549,
+       "line_number": 460,
        "term": "grouping",
        "tier": "admitting",
        "line": "| D-457 | A group truncated by the selection edge is marked as truncated, and a group that runs off the edge unclosed carries an extension cue the grouping layer only surfaces | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.1 |"
       },
       {
-       "line_number": 550,
+       "line_number": 461,
        "term": "grouping",
        "tier": "admitting",
        "line": "| D-458 | The codetta refinement is read as the as-built tiling: keep the strong cut, drop the weak one, and record the codetta end as an annexe | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.1 |"
       },
       {
-       "line_number": 551,
+       "line_number": 462,
        "term": "grouping",
        "tier": "admitting",
        "line": "| D-459 | The key-area confidence is a declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics' sigmoid | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.2 |"
       },
       {
-       "line_number": 552,
+       "line_number": 463,
        "term": "grouping",
        "tier": "admitting",
        "line": "| D-460 | A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.4 |"
       },
       {
-       "line_number": 553,
+       "line_number": 464,
        "term": "grouping layer",
        "tier": "admitting",
        "line": "| D-461 | The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §7 |"
       },
       {
-       "line_number": 553,
+       "line_number": 464,
        "term": "grouping",
        "tier": "admitting",
        "line": "| D-461 | The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §7 |"
       },
       {
-       "line_number": 554,
+       "line_number": 465,
        "term": "cadence",
        "tier": "admitting",
        "line": "| D-462 | Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §10 |"
       },
       {
-       "line_number": 554,
+       "line_number": 465,
        "term": "grouping",
        "tier": "admitting",
        "line": "| D-462 | Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §10 |"
       },
       {
-       "line_number": 556,
+       "line_number": 467,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-476 | The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |"
       },
       {
-       "line_number": 557,
+       "line_number": 468,
        "term": "cadence",
        "tier": "admitting",
        "line": "| D-477 | Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §2 |"
       },
       {
-       "line_number": 557,
+       "line_number": 468,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-477 | Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §2 |"
       },
       {
-       "line_number": 558,
+       "line_number": 469,
        "term": "phrase boundary",
        "tier": "admitting",
        "line": "| D-478 | A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |"
       },
       {
-       "line_number": 558,
+       "line_number": 469,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-478 | A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |"
       },
       {
-       "line_number": 559,
+       "line_number": 470,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-479 | The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |"
       },
       {
-       "line_number": 560,
+       "line_number": 471,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-480 | The phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept proportionate | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §8 |"
       },
       {
-       "line_number": 561,
+       "line_number": 472,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-481 | The notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §4.4 |"
       },
       {
-       "line_number": 562,
+       "line_number": 473,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-482 | The two hand-synchronised copies of the fermata scan retire into one owned primitive, and that retirement changes no output | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |"
       },
       {
-       "line_number": 563,
+       "line_number": 474,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-483 | The picked boundaries are validated against the analysts' own phrase marks; a fermata-derived phrase list is inadmissible as ground truth because the primitive reads fermatas | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §7 |"
       },
       {
-       "line_number": 564,
+       "line_number": 475,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-484 | The phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and publishes a per-profile max-normalised boundary confidence | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §2 |"
       },
       {
-       "line_number": 565,
+       "line_number": 476,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-485 | Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §4.4 |"
       },
       {
-       "line_number": 568,
+       "line_number": 479,
        "term": "contradiction",
        "tier": "admitting",
        "line": "| D-492 | The recommended redesign is to demote the override to an annotation — carrying the earlier reading unchanged and surfacing the contradiction — floored by simply disabling it | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |"
       },
       {
-       "line_number": 570,
+       "line_number": 481,
        "term": "cadence",
        "tier": "admitting",
        "line": "| D-495 | RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 570,
+       "line_number": 481,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-495 | RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 601,
+       "line_number": 512,
        "term": "cadence",
        "tier": "admitting",
        "line": "| D-584 | The perfect/imperfect cadence call is made on the BASS-DERIVED inversion; the soprano arrival degree is demoted to a soft optional nudge and the tool never attempts melody identification | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 601,
+       "line_number": 512,
        "term": "inversion",
        "tier": "admitting",
        "line": "| D-584 | The perfect/imperfect cadence call is made on the BASS-DERIVED inversion; the soprano arrival degree is demoted to a soft optional nudge and the tool never attempts melody identification | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 603,
+       "line_number": 514,
        "term": "phrase",
        "tier": "admitting",
        "line": "| D-607 | Polyphonic phrase-boundary detection has NO validated deterministic rule set in the literature — the extension is engineering on monophonic cues, validated against our own corpus, and is not settled science | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |"
       },
       {
-       "line_number": 649,
+       "line_number": 560,
        "term": "chord-symbol",
        "tier": "admitting",
        "line": "| D-315 | A one-line fix was made to MuseScore's own chord-symbol parser and is live in the fork | LIVE | 2026-08-02 · user | `CLAUDE.md` |"
       },
       {
-       "line_number": 668,
+       "line_number": 579,
        "term": "cadence",
        "tier": "admitting",
        "line": "| D-504 | A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only where no cadence existed threw corroboration away | LIVE | — | `cowork_progression_schema_design.md` §4.5 |"
       },
       {
-       "line_number": 778,
+       "line_number": 689,
        "term": "chord-symbol",
        "tier": "admitting",
        "line": "| D-316 | The chord-symbol parser sussus fix is a recorded local patch with an UPSTREAMABLE distribution disposition | LIVE | — | `CLAUDE.md` |"
       },
       {
-       "line_number": 817,
+       "line_number": 728,
        "term": "contradiction",
        "tier": "admitting",
        "line": "| D-649 | Where the implementation contradicts the decision being homed, the decision is written in as what it is with the contradiction stated beside it and no verdict taken | LIVE | — | `cowork_audit_protocol.md` |"
       },
       {
-       "line_number": 846,
+       "line_number": 757,
        "term": "inversion",
        "tier": "admitting",
        "line": "| D-221 | A sparse upper-register lowest note does not earn inversion bonuses | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |"
@@ -20123,7 +20111,7 @@
      "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map",
      "hit_records": [
       {
-       "line_number": 18,
+       "line_number": 20,
        "term": "phrase",
        "tier": "admitting",
        "line": "*★ ARCHIVED 2026-08-17, THE SECOND ACT — the dated entries that PREDATE (or paraphrase) the OI-222 pointer convention fell to `operative-rule-text` in the pinned measurement and stayed when the block above was cleared. They were READ one by one and moved verbatim to `STATUS_ARCHIVE.md` by `records/cc/instructions/cc_instruction_preparation_seventh.md` Task 1, under Ruling 3 of `records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md`, which brings them under Ruling 4's own line. **One candidate did NOT move and is flagged:** the navigational paragraph at the foot of this file is not a completed batch's dated record but a live pointer to the archive and to the gate policy, so the read-before-move safeguard left it at site. The per-entry reconciliation is re-derived by `tools/audit/gen_status_residue_move.py --check`.*"
