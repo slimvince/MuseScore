@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_per_session_reading_measurement_2026_11_01.md, Task 2",
+ "dispatch": "cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -759,38 +759,36 @@
    "base_commit": "6ab3c9ab6f11ed63f3058dc8a4fd2727dd41da65",
    "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md, Task 2",
+   "base_commit": "91e45d621aa4a387271f8a4e89e9742c958c38c6",
+   "the_then_previous_batch": "cc_instruction_per_session_reading_measurement_2026_11_01.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "6ab3c9ab6f11ed63f3058dc8a4fd2727dd41da65",
- "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md",
+ "base_commit": "91e45d621aa4a387271f8a4e89e9742c958c38c6",
+ "the_then_previous_batch": "cc_instruction_per_session_reading_measurement_2026_11_01.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 3,
- "characters_moved": 3079,
+ "entries_moved": 2,
+ "characters_moved": 2246,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2111,
-   "sha256": "264fec3c1922d4f3a3a96d33b88b103e88a605a52300eca9981013521fb0e4ba",
+   "characters": 2022,
+   "sha256": "71e033c5478020c82a5cf4f960cbbed8ad6d3c617bec021939c4b8d8dc9ed92e",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-31 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md`, Task 2, the close. **★★ THE L3 COMPARISON"
+   "opening": "*2026-11-01 (CC — `records/cc/instructions/cc_instruction_per_session_reading_measurement_2026_11_01.md`, Task 2, the close. **★★ STEP 1 OF THE PRUNIN"
   },
   {
    "line_at_base": 10,
-   "characters": 751,
-   "sha256": "2791b72e3756828eb475fea52c970da67090874021017c0ed036fc367046e615",
+   "characters": 224,
+   "sha256": "25180bc22601d1d76fea11a942283a744942265405e91c27b74059c29869027b",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-31 (CC — Same dispatch, Task 1. **THE L3 COMPARISON: §8, §9 AND §14 WRITTEN, EACH WHOLE IN ITS OWN COMMIT, IN THAT ORDER**: a capacity judgme"
-  },
-  {
-   "line_at_base": 12,
-   "characters": 217,
-   "sha256": "f1d113bf729659b03ff81423c2acff55f9a59a9f967ad5fc47ad4952a2e85e7a",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-31 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRY 460 ARE LANDED**, as they stood. **POINTER** — `records/cc/reports/cc_repor"
+   "opening": "*2026-11-01 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRIES 461 AND 462 ARE LANDED**, as they stood. **POINTER** — `records/cc/report"
   }
  ],
  "reconciliation": {

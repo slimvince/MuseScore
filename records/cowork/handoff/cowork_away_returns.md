@@ -29857,3 +29857,65 @@ This commit adds only the guard run's artifact and this portion.
 
 *Provenance: CC, 2026-11-01, appended in the one further commit after the close commit
 `6b970e0715c3a9aeae2cd505232e0cbd9c7836e0`; the verdicts are this run's own output, read with the file tools.*
+
+## THE PER-SESSION READING MEASUREMENT, THE REMAINDER — ONE TOOL ADDED AND ENROLLED, THE TWO TABLES PUBLISHED; NOTHING MOVED, NOTHING DECIDED, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md`, pinned at
+Task 0 as blob `27f6099a391cea20bcc9c3c858e51e8a51b19912` — the remainder of step 1 of the pruning iteration the user ordered
+on 2026-10-31:
+
+- **Task 0** landed this dispatch and entry 463 as they stood (`023353b2…`), pushed and read at the ref file; the refs and the
+  commit chain were exactly the stated ones; A1 held at the enumeration; the opening guard capture was the thirteen and
+  nothing else, with the header *"the guard state re-derives"*; the classification's STOP named exactly the four tools; the
+  two imported measurements and the two population checks re-derived.
+- **Task 1 committed** (`91e45d62…`). The kept blob `b909c71e…` was present; the tool was recovered from it into a scratch
+  file proved equal to it by hash, amended at the ordered sites — the entry-152 anchor `**(x)**` → `**(x) ★` (the locator was
+  already a prefix test), `normalised_opening` → `normalized_opening`, the three derivation choices written into the
+  docstring, the provenance line — and placed in `tools/audit/` by its hash H2 = `851f98ec…` with the git commands (no
+  fallback). **All seven proofs passed at their first run** (P1 to P5 printing exactly the previous report's values; P6
+  `checked 67 mismatched 0`; P7 the old anchor raising the STOP and the corrected one returning lines 61 to 66), with no change
+  to the tool between a proof and the run. The write-mode run and `--check` exit 0; the tool is enrolled; the guard check
+  showed population 83 with the new tool PASS; the classification's STOP names five tools, no verdict authored. The committed
+  tool's blob equals H2.
+- **Task 2** closed: the close, Task 1 and Task 0 entries written first, the `Last updated: ` prefix moved in the same edit
+  (one line carrying it, checked), the 26 ruled terms searched with the one standing hit and no *repeat* or *tie*; the forward
+  bound re-aimed at the Task 1 commit and **moved exactly the previous batch's two entries, with no STOP**; the four archive
+  checks green; the evidence pin and the L0/L1 population green; the read size, the defense share and the L3 population red
+  as A2 provides and regenerated, then the new tool regenerated last — only `STATUS.md`'s size and values built on it moving,
+  the L3 change being the *paraphrase* residue record's line number (18 → 20), no population member, item-4 passage or
+  tabulation member moving.
+- **No summary of the session's context fell** up to the writing of the report.
+
+**NOTHING MOVED, NOTHING WAS DECIDED.** No fate, class or verdict was authored for any span beyond what the imported
+classifier returns; no recommendation about any member, span or the pruning iteration; no text moved; no governing document
+edited beyond `STATUS.md` and `STATUS_ARCHIVE.md`; no existing measurement tool edited; no algorithm change; no session booted;
+no open-items row; no `D-NNN`.
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_per_session_reading_measurement_remainder_2026_11_01.md`, and is pointed at rather than copied
+(#6): the ordered first read and the injected context (§0), the capacity file, Task 0 (§1), the recovery, the amendments and
+their whole diff, the seven proofs, the run and the artifact's values, the word scan and the enrolment (§2), Task 2 (§3), the
+commits (§4), the grades (§5), the departures (§6), the file's state and the reads (§7), the findings (§8), the observations
+(§9), the plan's tell (§10) and the self-check (§11).
+
+### What needs the writing side, named rather than resolved
+
+1. **The classification tool's STOP now names five tools** — the four carried and `gen_per_session_reading.py`; no verdict
+   was authored for any of them.
+2. **The observations of report §9** — entry 463 among the boot chain's three latest entries; the thirtieth L3 dispatch as
+   "the latest dispatch of the arc"; the memory index and the git status snapshot as injected members the table does not
+   carry; two settled spans in a conditional span and two matched by opening only.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects; then step 2 of the plan (the
+  candidate list read against the artifact's values), step 3 (the user's rulings, each on its own self-contained surface, one
+  per turn — the plan's items (b), (a), (c), (d), (f), with (e) needing only his yes), step 4 (the executing dispatch or
+  dispatches, the measurement re-run so the after-value stands beside the before-value), and only then step 5, the method
+  ruling's surface over the completed L3 tabulation (Ruling 4 of the comparison-design sitting).**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-11-01, at boot tip `aa0b81558da334b755f0f93cb2fe11794a3129d5`, under
+`cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md`. Every commit identifier here was read from the
+commit's own object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
