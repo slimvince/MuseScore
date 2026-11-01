@@ -30064,3 +30064,59 @@ This commit adds only the guard run's artifact and this portion.
 
 *Provenance: CC, 2026-11-01, appended in the one further commit after the close commit
 `807f8ca5f9d017abee22553884384401334effb0`; the verdicts are this run's own output, read with the file tools.*
+
+## THE PRUNING ITERATION, STEP 4, FIRST DISPATCH RE-EXECUTED — RULINGS 1 AND 3 AGAIN NOT COMMITTED: RULING 1 STOPPED AT THE POPULATION CONFINEMENT CHECK (`CLAUDE.md`'S BYTE SIZE IS A VALUE INSIDE THE L3 TABULATION POPULATION), RULING 3 AT THE LEGACY-MARK CHECK'S SECOND CITATION (A RECORDED VALUE QUOTED FROM THE TEXT CLASS (i) MOVES); NO TWO FORMER WORDINGS TO `CLAUDE_ARCHIVE.md`, NO FOUR CLASSES OF HISTORY TEXT TO `DECISIONS_ARCHIVE.md`; DOCUMENTATION ONLY, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_pruning_rulings_reexecution_2026_11_01.md`, pinned at Task 0 as blob
+`abb7ef061d9f0ab922c935dfaa0157324eee8b14`, executing the first dispatch's Tasks 1 and 2 by citation to its blob
+`17d9d39c487079ba18fb6ba1380b8ad8750ca822`:
+
+- **Task 0** landed the dispatch and handoff entries 467, 468 and 469 (`f2d0ae14ba2037ba4111c12c52d314b463d77741`, pushed;
+  its subject corrected before the push, report §9 departure 1). The opening capture was the thirteen plus the per-session
+  tool, as A2 states; the classification STOP named the five tools; the two historical archive checks showed exactly their
+  one predicted differing value each.
+- **Ruling 2** — the eight-line check PASSED; **Ruling 4** — this batch's report is in the two-file form.
+- **Task 1 (Ruling 1) — NOT COMMITTED.** Made, reconciled, both planted faults caught; the historical checks' differing
+  values unchanged at the edited tree (the first run's stop cleared). Then the population confinement check: the L0/L1
+  movement was confined to the `CLAUDE.md` hit record, but the L3 artifact moved `CLAUDE.md`'s `bytes` value inside
+  `item_2_the_documents_the_sections_name`, inside `the_tabulation_population` and inside `the_measured_size` — a named STOP
+  class. Both files reversed and proved equal to their `<T0>` blobs; both population artifacts restored.
+- **Task 2 (Ruling 3) — NOT COMMITTED.** The generator edits made, the decisions register's index regenerated and checked,
+  the group files unmoved; the legacy-mark check's two generator citations re-aimed exactly as predicted (514 → 473,
+  516 → 475); then that check STOPPED on its `RECORDED_FIGURES` entry, which looks for *"the 79-entry LEGACY-marked set
+  confirmed"* in `DECISIONS.md` — the eighth ratification event, which class (i) moves. The archive was never touched; the
+  generator and the check reversed, the index regenerated; every file proved equal to its `<T0>` blob.
+- **Task 3** closed: two `STATUS.md` entries (the close, Task 0), the prefix moved; the forward bound re-aimed at the Task 0
+  commit and moved exactly the first dispatch's two entries, no STOP; the four archive checks green; the read size, the
+  defense share and the per-session table regenerated, only `STATUS.md`'s size, the handoff entries Task 0 landed and the
+  values built on them moving; both population checks green at the close (no `DECISIONS.md` movement; the *paraphrase*
+  line back at the value the committed artifact holds), so neither was regenerated.
+- **No summary of the session's context fell.**
+
+**Everything this section would restate is in the report**, `records/cc/reports/cc_report_pruning_rulings_reexecution_2026_11_01.md`
+(the first read and the eight-line check §1, the capacity file §2, Task 0 §3, Task 1 and its cause §4, Task 2 and its cause
+§5, the close §6, the commits §7, the grades and what a later dispatch would need §8, departures and observations §9), with its
+appendix `records/cc/reports/cc_report_pruning_rulings_reexecution_2026_11_01_appendix.md` (the raw printouts, verbatim).
+
+### What needs the writing side, named rather than resolved
+
+1. **Rulings 1 and 3 are still to be executed.** A re-dispatch would need (report §8): for Ruling 1, a class for the movement
+   of `CLAUDE.md`'s byte size in the L3 artifact's item 2, tabulation population and measured size; for Ruling 3, a licence
+   for the legacy-mark check's `RECORDED_FIGURES` entry for the value 79, beside the `A1_GENERATOR_QUOTES` re-aim this run
+   showed predicts correctly — and the confinement question for `DECISIONS.md` in both population artifacts, not yet reached.
+2. **The report's observations (§9)** and its departure 1 (the Task 0 subject corrected before the push).
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects; then step 4's SECOND dispatch (the
+  measurement tool extended with the dispatch form's invariant share and the sizing of a report's appendix file, and the
+  measurement re-run so the after-values stand beside the before-values); then, one per turn, the user's yes-or-no on carrying
+  the Cowork boot chain's operating paragraphs in the current handoff entry (candidate (e)) and, once the invariant share is
+  measured, the dispatch-form surface (candidate (d)); and only then step 5, the method ruling's surface over the completed L3
+  tabulation (Ruling 4 of the comparison-design sitting).**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-11-01, at boot tip `e465d797b644a4ac7c58fd6430ff5b64ec658397`, under
+`cc_instruction_pruning_rulings_reexecution_2026_11_01.md`. Every commit identifier here was read from the commit's own object
+and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*

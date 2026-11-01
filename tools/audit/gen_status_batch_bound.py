@@ -2414,7 +2414,19 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # the head of the dated entries. The then-previous batch is that remainder batch; its close entry's
 # `Last updated: ` prefix was MOVED to this batch's close entry in the same edit that wrote this batch's
 # entries, before `--apply` ran. **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431).
-BASE_COMMIT = "8112c4d2260d381dd35fe050df6837bb0488bcf7"
+#
+# ★★ RE-AIMED 2026-11-01 BY `records/cc/instructions/cc_instruction_pruning_rulings_reexecution_2026_11_01.md`
+# Task 3(b). `BASE_COMMIT` was `8112c4d2260d381dd35fe050df6837bb0488bcf7` and is now
+# `f2d0ae14ba2037ba4111c12c52d314b463d77741`: this batch's Task 0 commit, which is its LAST TASK COMMIT
+# before the close — its Tasks 1 and 2 committed nothing (each was reversed under its dispatch's rule for an
+# unpredicted red). That commit carries no `STATUS.md` change, so its `STATUS.md` object is the one both refs
+# carried when this batch opened (the blob `aac4f7681ccb1870daccb5aaa6390285443ec572`, at the commit
+# `e465d797b644a4ac7c58fd6430ff5b64ec658397` and at `f2d0ae14…`, established at `git rev-parse` of each,
+# one command per commit) — and it carries the step-4 first dispatch's entries at the head of the dated
+# entries. The then-previous batch is that first dispatch; its close entry's `Last updated: ` prefix was
+# MOVED to this batch's close entry in the same edit that wrote this batch's entries, before `--apply` ran.
+# **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431).
+BASE_COMMIT = "f2d0ae14ba2037ba4111c12c52d314b463d77741"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -2628,7 +2640,10 @@ BASE_COMMIT = "8112c4d2260d381dd35fe050df6837bb0488bcf7"
 # *(`PREVIOUS_BATCH_DISPATCH` read "cc_instruction_per_session_reading_measurement_2026_11_01.md" while
 # `cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md` was the executing act; it is re-stated here
 # for `cc_instruction_pruning_rulings_execution_2026_11_01.md`, whose then-previous batch is that one.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md"
+# *(`PREVIOUS_BATCH_DISPATCH` read "cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md" while
+# `cc_instruction_pruning_rulings_execution_2026_11_01.md` was the executing act; it is re-stated here
+# for `cc_instruction_pruning_rulings_reexecution_2026_11_01.md`, whose then-previous batch is that one.)*
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_pruning_rulings_execution_2026_11_01.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -2893,8 +2908,12 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_per_session_reading_measurement_remain
 # while that batch was the executing act; both are re-stated here for
 # `cc_instruction_pruning_rulings_execution_2026_11_01.md`, dated 2026-11-01 in its file name, whose move ran on
 # 2026-11-01, so the two dates agree and `ACT_DATE` keeps its value.)*
+# *(`ACT_DATE` read "2026-11-01" and `DISPATCH` `cc_instruction_pruning_rulings_execution_2026_11_01.md`
+# while that batch was the executing act; both are re-stated here for
+# `cc_instruction_pruning_rulings_reexecution_2026_11_01.md`, dated 2026-11-01 in its file name, whose move ran
+# on 2026-11-01, so the two dates agree and `ACT_DATE` keeps its value.)*
 ACT_DATE = "2026-11-01"
-DISPATCH = "cc_instruction_pruning_rulings_execution_2026_11_01.md"
+DISPATCH = "cc_instruction_pruning_rulings_reexecution_2026_11_01.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -3155,6 +3174,9 @@ DISPATCH = "cc_instruction_pruning_rulings_execution_2026_11_01.md"
 # 2(b) — inside its own Task 2, which that dispatch's heading *"Task 2 — the close"* names in those words.
 # `TASK` read "Task 2" until then and names Task 3 while
 # `cc_instruction_pruning_rulings_execution_2026_11_01.md` is the executing act, that dispatch ordering both
+# halves of the close — this batch's own entries at its 3(a) and this move at its 3(b) — inside its own Task 3,
+# which that dispatch's heading *"Task 3 — the close"* names in those words. It names Task 3 again while
+# `cc_instruction_pruning_rulings_reexecution_2026_11_01.md` is the executing act, that dispatch ordering both
 # halves of the close — this batch's own entries at its 3(a) and this move at its 3(b) — inside its own Task 3,
 # which that dispatch's heading *"Task 3 — the close"* names in those words.)*
 TASK = "Task 3"
@@ -3805,6 +3827,10 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_pruning_rulings_execution_2026_11_01.md, Task 3",
      "base_commit": "8112c4d2260d381dd35fe050df6837bb0488bcf7",
      "the_then_previous_batch": "cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md",
+     "the_kind_of_move": "ordinary"},
+    {"executing_act": "cc_instruction_pruning_rulings_reexecution_2026_11_01.md, Task 3",
+     "base_commit": "f2d0ae14ba2037ba4111c12c52d314b463d77741",
+     "the_then_previous_batch": "cc_instruction_pruning_rulings_execution_2026_11_01.md",
      "the_kind_of_move": "ordinary"},
 ]
 
