@@ -30218,3 +30218,47 @@ printouts, verbatim).
 *Provenance: CC, 2026-11-01, at boot tip `c483c6968f2de0da68afeb47b48a8807dbe593ed`, under
 `cc_instruction_pruning_rulings_third_execution_2026_11_01.md`. Every commit identifier here was read from the commit's own
 object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `c7b6985a9c0be8fb7f975addf2fb0642c0311c29` left, appended in the one further commit
+
+**A fresh full guard run in write mode (`python tools/audit/gen_guard_state.py`, the operating mode named), after the close
+commit and before this one**, run in the background and read from its file. Its result is at `tools/audit/guard_state.json`
+→ `summary`, which this commit carries. Its first line, verbatim: *"wrote tools\audit\guard_state.json"*; its last line,
+verbatim: *"83 guard(s) run, 13 failing, 4 not run, 20 historical record(s)"*. **The condition — MET:**
+
+- the run count is 83; zero STOPs in the runner;
+- the failing set is exactly the thirteen of the premise ledger, none added;
+- `gen_per_session_reading.py --check`, `gen_l0_l1_outgoing_population.py --check`, `gen_l3_outgoing_population.py --check`
+  and `decisions/gen_phase1w_legacy_verification.py --check` PASS; `gen_governing_surface_split.py` PASSES for all five
+  pairs; `decisions/gen_decisions_register.py --check` PASSES;
+- `gen_evidence_pin_membership.py --check` PASSES, and run on its own after the guard run it reads *"ruling records read
+  171"* — unchanged from the opening capture;
+- against the opening capture, exactly one verdict differs — `gen_per_session_reading.py --check` FAIL → PASS — and the NOT
+  RUN and HISTORICAL lines are identical;
+- `gen_guard_classification.py --check` STOPs naming exactly the five tools.
+
+**The A2 exceptions of the close were met inside the close** (report §6, 3(c)). This run regenerated nothing beyond its own
+artifact: `changed_paths.py` after it shows `tools/audit/guard_state.json` beside the carried
+`tools/audit/claude_md_finer_archive.json` and no other tracked modification, and no new handoff entry or ruling record among
+the untracked paths. `gen_l2_outgoing_population.py` was not run in any operating mode.
+
+**A3 to A5, verified at the objects.** `git diff --name-status c483c6968f2de0da68afeb47b48a8807dbe593ed
+c7b6985a9c0be8fb7f975addf2fb0642c0311c29` lists nineteen paths, every one accounted for: the three Task 0 paths (this dispatch
+and entries 470 and 471), the four Task 2 paths (`DECISIONS.md`, `DECISIONS_ARCHIVE.md`, the generator, the legacy-mark
+check) and the twelve close paths (`STATUS.md`, `STATUS_ARCHIVE.md`, `tools/audit/gen_status_batch_bound.py`,
+`tools/audit/status_batch_bound.json`, the five regenerated artifacts `session_start_read_size.json`, `defense_share.json`,
+`per_session_reading.json`, `l0_l1_outgoing_population.json`, `l3_outgoing_population.json`, the report, its appendix and
+this file). **Every file A5 names is absent from it.** **The blobs**, by `git ls-tree` at each commit (one command per
+commit, each hash literal) — at `c483c696…` and at the close: `CLAUDE.md` `807c547d328982f2fec73eb73a5e5fd846ac18da` at
+both (Task 1 not committed); `CLAUDE_ARCHIVE.md` `1abd251820ccfa110150d4f3d58070b214b280ac` at both; `DECISIONS.md`
+`f48596e05dcc043131790b7de3ac30b7ebf5c636` → `4a945aaded7db494934fdbd8b545b8e29e0f4551`; `DECISIONS_ARCHIVE.md`
+`a780627fd6d0813105936796d867dbfb4c1642a7` → `6a30e7455322268b1edf306a5db822ad361b2d37`;
+`tools/audit/decisions/gen_decisions_register.py` `3449a69692a30f79e8bb62849ff8a5c5afe9d798` →
+`d88c45f59697775687a502cfb0811b78101a509b`; `tools/audit/decisions/gen_phase1w_legacy_verification.py`
+`3d498d5593b9bf78c2677361d40ad2cf59ac4137` → `2d64040fb0c5d87b6e075066e16f2a1465d5ada0`. **These are the blobs Decision 1
+rests on.**
+
+This commit adds only the guard run's artifact and this portion.
+
+*Provenance: CC, 2026-11-01, appended in the one further commit after the close commit
+`c7b6985a9c0be8fb7f975addf2fb0642c0311c29`; the verdicts are this run's own output, read with the file tools.*
