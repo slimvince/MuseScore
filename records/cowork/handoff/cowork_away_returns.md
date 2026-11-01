@@ -30120,3 +30120,47 @@ appendix `records/cc/reports/cc_report_pruning_rulings_reexecution_2026_11_01_ap
 *Provenance: CC, 2026-11-01, at boot tip `e465d797b644a4ac7c58fd6430ff5b64ec658397`, under
 `cc_instruction_pruning_rulings_reexecution_2026_11_01.md`. Every commit identifier here was read from the commit's own object
 and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `bead6080d9d0a720a857ccb2350d90dc19894a91` left, appended in the one further commit
+
+**A fresh full guard run in write mode (`python tools/audit/gen_guard_state.py`, the operating mode named), after the close
+commit and before this one**, run in the background and read from its file. Its result is at `tools/audit/guard_state.json`
+→ `summary`, which this commit carries. Its first line, verbatim: *"wrote tools\audit\guard_state.json"*; its last line,
+verbatim: *"83 guard(s) run, 13 failing, 4 not run, 20 historical record(s)"*. **The condition — MET:**
+
+- the run count is 83; zero STOPs in the runner;
+- the failing set is exactly the thirteen of the premise ledger, none added;
+- `gen_per_session_reading.py --check`, `gen_l0_l1_outgoing_population.py --check`, `gen_l3_outgoing_population.py --check`
+  and `decisions/gen_phase1w_legacy_verification.py --check` PASS; `gen_governing_surface_split.py` PASSES for all five
+  pairs; `decisions/gen_decisions_register.py --check` PASSES;
+- `gen_evidence_pin_membership.py --check` PASSES, and run on its own after the guard run it reads *"ruling records read
+  171"* — unchanged from the opening capture;
+- against the opening capture, exactly one verdict differs — `gen_per_session_reading.py --check` FAIL → PASS — and the NOT
+  RUN and HISTORICAL lines are identical;
+- `gen_guard_classification.py --check` STOPs naming exactly the five tools.
+
+**The A2 exceptions of the close were met inside the close** (report §6, 3(c)). This run regenerated nothing beyond its own
+artifact: `changed_paths.py` after it shows `tools/audit/guard_state.json` beside the carried
+`tools/audit/claude_md_finer_archive.json` and no other tracked modification, and no new handoff entry or ruling record among
+the untracked paths. `gen_l2_outgoing_population.py` was not run in any operating mode.
+
+**A3 to A5, verified at the objects.** `git diff --name-status e465d797b644a4ac7c58fd6430ff5b64ec658397
+bead6080d9d0a720a857ccb2350d90dc19894a91` lists fourteen paths, every one accounted for: the four Task 0 paths (this dispatch
+and entries 467 to 469) and the ten close paths (`STATUS.md`, `STATUS_ARCHIVE.md`, `tools/audit/gen_status_batch_bound.py`,
+`tools/audit/status_batch_bound.json`, the three regenerated artifacts `session_start_read_size.json`, `defense_share.json`,
+`per_session_reading.json`, the report, its appendix and this file). **Every file A5 names is absent from it**, both
+population artifacts among them. **The blobs**, by `git ls-tree` at each commit (one command per commit, each hash literal)
+— identical at `e465d797…` and at the close, Tasks 1 and 2 not being committed: `CLAUDE.md`
+`807c547d328982f2fec73eb73a5e5fd846ac18da`; `CLAUDE_ARCHIVE.md` `1abd251820ccfa110150d4f3d58070b214b280ac`; `DECISIONS.md`
+`f48596e05dcc043131790b7de3ac30b7ebf5c636`; `DECISIONS_ARCHIVE.md` `a780627fd6d0813105936796d867dbfb4c1642a7`;
+`tools/audit/decisions/gen_decisions_register.py` `3449a69692a30f79e8bb62849ff8a5c5afe9d798`;
+`tools/audit/decisions/gen_phase1w_legacy_verification.py` `3d498d5593b9bf78c2677361d40ad2cf59ac4137`.
+
+**One observation on the close commit's subject.** It is the ordered subject verbatim — *"Rulings 1 and 3, under its
+dispatch"* — and does not say whether they landed; they did not (this section's heading, the report and the `STATUS.md`
+close entry say so).
+
+This commit adds only the guard run's artifact and this portion.
+
+*Provenance: CC, 2026-11-01, appended in the one further commit after the close commit
+`bead6080d9d0a720a857ccb2350d90dc19894a91`; the verdicts are this run's own output, read with the file tools.*
