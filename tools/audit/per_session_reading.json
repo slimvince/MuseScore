@@ -1,0 +1,3344 @@
+{
+ "what_this_is": "WHAT A SESSION READS BEFORE ITS WORK, MEMBER BY MEMBER, with size and mandate (table 1), and `CLAUDE.md`'s six session-start spans partitioned by the ruled classes and the amendment-record shape (table 2), measured at the tree. A MEASUREMENT ONLY: it moves no text, gives no span a fate, proposes nothing and decides nothing. Every value is computed; none is transcribed (D-431).",
+ "generated_by": "tools/audit/gen_per_session_reading.py",
+ "generated_for": "cc_instruction_per_session_reading_measurement_2026_11_01.md, Task 1 — step 1 of the pruning iteration the user ordered on 2026-10-31",
+ "the_four_mandate_classes": {
+  "a user ruling": "a ruling record, or a user-ruled clause of a governing document, names the read.",
+  "a standing clause": "a `###` section of `cowork_audit_protocol.md`'s dispatch-protocol section carrying the standing-clause marker, or a clause of that kind elsewhere, names the read.",
+  "a dispatch's choice": "the writing side's dispatch orders the read, and no ruling and no standing clause does.",
+  "unwritten practice": "the read recurs every cycle and nothing on the record orders it."
+ },
+ "how_a_size_is_counted": "a whole file is `len(text)` of the file read by the imported `at_tree` (UTF-8, universal newlines); a located portion is its lines joined by newlines, as the imported reader counts a span; a sub-block of table 2 is counted WITH its line endings, the imported finer cut's own unit",
+ "how_an_add_commit_is_found": "one `git log --no-renames --diff-filter=A --name-only` per folder at the repository's top folder, read newest first; the first commit naming a path is its add-commit",
+ "table_1_the_per_session_reading": {
+  "the_ordinary_session_start_read_imported": {
+   "its_one_home": "`tools/audit/session_start_read_size.json`, written by `tools/audit/gen_session_start_read_size.py`; what stands here is that tool's own `measure` called at the tree, and its total is checked against that artifact on every run",
+   "characters_per_member": {
+    "CLAUDE.md": 105876,
+    "STATUS.md": 11524,
+    "DECISIONS.md": 127727,
+    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2826
+   },
+   "total_characters": 247953,
+   "the_reading_of_claude_md": {
+    "regime": "ruled membership",
+    "characters": 105876
+   }
+  },
+  "the_further_members": [
+   {
+    "member": "CLAUDE.md, the whole file as the executing sessions report it injected at boot",
+    "path": "CLAUDE.md",
+    "the_portion_read": "the whole file",
+    "how_it_is_located": "the whole file",
+    "read_by": "Claude Code, per batch — DECLARED by the executing sessions in their reports, not established by this tool (#18)",
+    "the_mandate_class": "unwritten practice",
+    "the_record_that_mandates_it": "no clause of `CLAUDE.md` names the injection; the dispatches' clause \"injected context does not stand in for this read\" carries no stated ground in the record (entry 461 §2, item (a)); the membership block's own provenance paragraph records that until 2026-09-07 the whole-file read was PRACTICE mandated by no clause",
+    "characters": 169617,
+    "characters_the_six_spans_read_with_the_file_tool_add_on_top_of_it": 105876,
+    "characters_of_the_file_outside_the_six_spans": 63741
+   },
+   {
+    "member": "BUILD_AND_TEST.md",
+    "path": "BUILD_AND_TEST.md",
+    "the_portion_read": "the whole file",
+    "how_it_is_located": "the whole file",
+    "read_by": "Claude Code, per batch that builds, tests or runs a tool whose command lives there — every batch of the L3 arc did, each running the guard set",
+    "the_mandate_class": "a user ruling",
+    "the_record_that_mandates_it": "Ruling 3 of `records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md` — a CONDITIONAL read; `CLAUDE.md`'s build-and-test block states the condition",
+    "characters": 27236
+   },
+   {
+    "member": "cowork_audit_protocol.md, the dispatch-protocol section",
+    "path": "cowork_audit_protocol.md",
+    "the_portion_read": "from the line whose text is exactly `## The dispatch protocol these audits are commissioned and run under` to the end of the file",
+    "how_it_is_located": "its heading, found exactly once; a `###` section is MARKED when the nearest non-blank line above its heading is the standing-clause marker, and its span opens at that marker",
+    "read_by": "Claude Code, per batch (every dispatch of the arc orders it IN FULL); Cowork, per sitting that writes a dispatch",
+    "the_mandate_class": {
+     "the_marked_sections": "a user ruling",
+     "the_opening_prose_and_the_unmarked_sections": "a dispatch's choice"
+    },
+    "the_record_that_mandates_it": "Ruling 3 of `records/cowork/rulings/cowork_rulings_2026_08_19_thirteenth_return.md`, as the section's own opening paragraphs state it: the standing clauses are the `###` sections carrying the marker, obtained by reading them here; the dispatches order the whole section",
+    "characters": 108389,
+    "the_opening_prose": {
+     "what_it_is": "from the section's heading through the line before the first `###` section's span opens",
+     "characters": 4493
+    },
+    "the_marked_sections": {
+     "count": 38,
+     "characters": 101700,
+     "the_sections": [
+      {
+       "heading": "One side writes the instruction files and the other executes them, never the reverse",
+       "heading_line_at_the_tree": 237,
+       "characters": 883
+      },
+      {
+       "heading": "Dispatches are written only when they are next; a parked instruction is revalidated first",
+       "heading_line_at_the_tree": 249,
+       "characters": 1052
+      },
+      {
+       "heading": "A running dispatch is never interrupted or steered mid-flight",
+       "heading_line_at_the_tree": 263,
+       "characters": 678
+      },
+      {
+       "heading": "Every dispatch's read-first block names the CURRENT HANDOVER BLOCK of `records/cowork/handoff/cowork_handoff.md`",
+       "heading_line_at_the_tree": 274,
+       "characters": 2393
+      },
+      {
+       "heading": "A ruling record taken from a GENERATED DOCUMENT names the commit it was ruled at",
+       "heading_line_at_the_tree": 307,
+       "characters": 2109
+      },
+      {
+       "heading": "Where the ruled rendering and the committed document have SEPARATED, the ruling record names the BLOB and the member stays unpinned",
+       "heading_line_at_the_tree": 336,
+       "characters": 3277
+      },
+      {
+       "heading": "A dispatch's DECLARED START STATE is stated at the tree the dispatch will meet, including the reds its own inputs cause",
+       "heading_line_at_the_tree": 377,
+       "characters": 2802
+      },
+      {
+       "heading": "Where a derivation reaches its inputs by MORE THAN ONE ROUTE, a prediction about its output is taken from EVERY route",
+       "heading_line_at_the_tree": 415,
+       "characters": 1765
+      },
+      {
+       "heading": "A check on a derived artifact's difference bars the MOVEMENT of a value, not the ADDITION of a derived cross-reference the ordered act causes",
+       "heading_line_at_the_tree": 441,
+       "characters": 2507
+      },
+      {
+       "heading": "A SITTING RECORD is an interim carrier, and the commit that lands it bounds when the sitting was held",
+       "heading_line_at_the_tree": 475,
+       "characters": 2738
+      },
+      {
+       "heading": "A figure enters a dispatch or a report by CITATION to a generated artifact, never by transcription",
+       "heading_line_at_the_tree": 512,
+       "characters": 4043
+      },
+      {
+       "heading": "A published CHARACTER FIGURE names the tool that produced it",
+       "heading_line_at_the_tree": 564,
+       "characters": 1777
+      },
+      {
+       "heading": "A DIRECTION with its artifact named is not a transcribed value",
+       "heading_line_at_the_tree": 590,
+       "characters": 1502
+      },
+      {
+       "heading": "A count of OUTSTANDING work is DERIVED from state, never taken from the membership of a list of asks",
+       "heading_line_at_the_tree": 612,
+       "characters": 2651
+      },
+      {
+       "heading": "The writing side runs the standing self-check too, before a dispatch is released",
+       "heading_line_at_the_tree": 647,
+       "characters": 3011
+      },
+      {
+       "heading": "The three measured conditions a mechanism is judged on — and who decides when one fails",
+       "heading_line_at_the_tree": 686,
+       "characters": 3420
+      },
+      {
+       "heading": "\"Complete\" means complete relative to a NAMED DERIVATION, whose measured miss rate against the record is part of its name",
+       "heading_line_at_the_tree": 729,
+       "characters": 2348
+      },
+      {
+       "heading": "An ENUMERATING PATTERN whose reach has never been measured may STATE its bound on its own artifact instead of owing a detection measurement — and the test is whether an ANALYSIS DECISION consumes it",
+       "heading_line_at_the_tree": 762,
+       "characters": 3095
+      },
+      {
+       "heading": "A RECOGNIZER OVER A POPULATION states, at its own artifact, whether an INDEPENDENTLY-KNOWN population exists to reconcile against — and where none does, it publishes its output as a LOWER BOUND with its reach declared UNMEASURED, never as a census",
+       "heading_line_at_the_tree": 802,
+       "characters": 4637
+      },
+      {
+       "heading": "A maintenance act ESTABLISHES THE CAUSE before it touches the mechanism — and a cause that resists establishment is a STOP, with no fix taken on a named-but-unasserted candidate",
+       "heading_line_at_the_tree": 863,
+       "characters": 2764
+      },
+      {
+       "heading": "Moving an authored judgment WHOLE into a retired block is MAINTENANCE, not a mechanism change",
+       "heading_line_at_the_tree": 926,
+       "characters": 1928
+      },
+      {
+       "heading": "A mechanism change is decided over its WHOLE population BOTH WAYS before it is applied, and only the members the defect's own shape names may move",
+       "heading_line_at_the_tree": 952,
+       "characters": 2570
+      },
+      {
+       "heading": "A generated record that must outlive its own writer is FROZEN at an established snapshot, and the freeze is a hash STOP",
+       "heading_line_at_the_tree": 987,
+       "characters": 2039
+      },
+      {
+       "heading": "A finding that bears on the analysis is SURFACED whatever its size; an apparatus finding is ROWED AND LEFT",
+       "heading_line_at_the_tree": 1015,
+       "characters": 5704
+      },
+      {
+       "heading": "A session may AUTHOR an establishment; its verdicts clear no guard until the reviewed set is applied",
+       "heading_line_at_the_tree": 1091,
+       "characters": 2024
+      },
+      {
+       "heading": "Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor",
+       "heading_line_at_the_tree": 1117,
+       "characters": 2909
+      },
+      {
+       "heading": "A claim that invokes a ruling AS AN APPLICATION quotes that ruling in full, not the branch that supports the claim",
+       "heading_line_at_the_tree": 1154,
+       "characters": 1952
+      },
+      {
+       "heading": "Where a superseded decision's content is a REMOVAL, the specification states the current behaviour and records the removal as a tried-and-closed line",
+       "heading_line_at_the_tree": 1181,
+       "characters": 2386
+      },
+      {
+       "heading": "Where the implementation CONTRADICTS the decision being homed, the shelving is written in AS a shelving, the contradiction stated beside it, and the questions POINTED at their rows",
+       "heading_line_at_the_tree": 1212,
+       "characters": 1941
+      },
+      {
+       "heading": "Two same-dated texts are compared VERBATIM before either is retired into the other; where they bind different acts they are homed SIDE BY SIDE",
+       "heading_line_at_the_tree": 1236,
+       "characters": 2082
+      },
+      {
+       "heading": "A homing act tests a section in a FIXED ORDER — pointer move first, kind half before any write — and a findings-recording owner means HELD, never written by stretch",
+       "heading_line_at_the_tree": 1263,
+       "characters": 3193
+      },
+      {
+       "heading": "Where the record does not settle the question, the surface that returns it to the user gathers FACTS, marks what is UNSETTLED, and CARRIES A RECOMMENDATION",
+       "heading_line_at_the_tree": 1306,
+       "characters": 5617
+      },
+      {
+       "heading": "A correction that reconciles a specification to the arm that SHIPS carries the behavioural non-equivalence visibly, as unmeasured",
+       "heading_line_at_the_tree": 1375,
+       "characters": 1472
+      },
+      {
+       "heading": "A homing dispatch may edit three further files, and the license is scoped to homing acts alone",
+       "heading_line_at_the_tree": 1395,
+       "characters": 2518
+      },
+      {
+       "heading": "Where a licence's letter leaves a known falsity standing in the file it licensed, the session CORRECTS it and REPORTS the widening in the same act",
+       "heading_line_at_the_tree": 1428,
+       "characters": 1796
+      },
+      {
+       "heading": "A task that CANNOT BE STOPPED PARTWAY is dispatched FIRST, with nothing large in front of it — and the ordering is RULED, never left to a preference",
+       "heading_line_at_the_tree": 1452,
+       "characters": 3500
+      },
+      {
+       "heading": "A derivation, a measurement or a sizing over a derived population is published WHOLE or not at all — and a subset is published only under a scope that NAMES its members",
+       "heading_line_at_the_tree": 1499,
+       "characters": 2925
+      },
+      {
+       "heading": "A PER-ENTRY PASS may be stopped at any member boundary, and the stop is RECORDED — what was done, what was not, and that the remainder is untouched rather than partly worked",
+       "heading_line_at_the_tree": 1537,
+       "characters": 5692
+      }
+     ]
+    },
+    "the_unmarked_sections": {
+     "count": 1,
+     "characters": 2157,
+     "the_sections": [
+      {
+       "heading": "When a shell-read policy cannot decide, it DENIES — and the ceiling it cannot see is published in the measured rate",
+       "heading_line_at_the_tree": 896,
+       "characters": 2157
+      }
+     ]
+    },
+    "newlines_joining_one_portion_to_the_next": 39,
+    "the_accounting": "the opening prose + the marked sections + the unmarked sections + the joining newlines = the section, checked on every run (a STOP otherwise)",
+    "paragraphs_opening_STANDING_CLAUSE_ratified_inside_the_last_section": 4,
+    "all_of_those_paragraphs_lie_inside_the_last_section": true
+   },
+   {
+    "member": "the blind derivation of L3, whole",
+    "path": "cowork_blind_derivation_l3_2026_10_17.md",
+    "the_portion_read": "the whole file",
+    "how_it_is_located": "the whole file",
+    "read_by": "Claude Code, per batch of the L3 comparison",
+    "the_mandate_class": "a user ruling",
+    "the_record_that_mandates_it": "Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_08_24_comparison_design_sitting.md`, as the thirtieth dispatch's ruling ledger quotes it; ruled for this comparison, and not a target of the pruning iteration (entry 461 §2)",
+    "characters": 126702
+   }
+  ],
+  "the_arc_dispatches": {
+   "the_folder": "records/cc/instructions",
+   "the_name_prefix": "cc_instruction_l3_comparison_tabulation_",
+   "read_by": "Claude Code, per batch (its own dispatch, whole); Cowork, per sitting that writes the next dispatch (the previous dispatch whole, for its form)",
+   "the_mandate_class": {
+    "the_executing_sides_read": "a dispatch's choice",
+    "the_writing_sides_read_of_the_previous": "unwritten practice"
+   },
+   "the_record_that_mandates_it": "the user's opening line names the dispatch and D-252 binds the executing side to it; its SIZE is the writing side's choice; no record orders the writing side's read of the previous dispatch",
+   "count": 30,
+   "characters_total": 4982224,
+   "characters_mean": 166074,
+   "characters_min": 80466,
+   "characters_max": 259912,
+   "the_last_five": [
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md",
+     "added_in_commit": "2655f50b4586a6c23be669064a7a5cef5316d6cd",
+     "added_at_unix_time": 1793140384,
+     "characters": 239614
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md",
+     "added_in_commit": "337dd396c107a5fcb1bff9bda762b8607f310a5f",
+     "added_at_unix_time": 1793393546,
+     "characters": 259912
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md",
+     "added_in_commit": "3af706175cf8f962ebb7246674109a10ec6fe530",
+     "added_at_unix_time": 1793434098,
+     "characters": 233425
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md",
+     "added_in_commit": "e0c5a01a42f7a5923bdd99804d41571871934260",
+     "added_at_unix_time": 1793452205,
+     "characters": 181526
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md",
+     "added_in_commit": "ddccb87fe3a41c2841c8fe21d937082fc5d343bf",
+     "added_at_unix_time": 1793484378,
+     "characters": 151805
+    }
+   ],
+   "the_population": [
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_2026_10_18.md",
+     "added_in_commit": "b11054f27831c242a6e82f45e2503d93058a7f9e",
+     "added_at_unix_time": 1792352908,
+     "characters": 99009
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_second_2026_10_18.md",
+     "added_in_commit": "8897c9ca9eddd9d9f23580601378b0de0dd54dfd",
+     "added_at_unix_time": 1792361194,
+     "characters": 80466
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_third_2026_10_19.md",
+     "added_in_commit": "309048d400826bea9e783ab6864bc2316aa8c0fd",
+     "added_at_unix_time": 1792395890,
+     "characters": 84717
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_fourth_2026_10_19.md",
+     "added_in_commit": "c3499d9964c844fee0699b472cada99c1b17c2a4",
+     "added_at_unix_time": 1792401607,
+     "characters": 92356
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_fifth_2026_10_19.md",
+     "added_in_commit": "2dffe2cdb81f96a6ee97a7be153943549714be4c",
+     "added_at_unix_time": 1792419511,
+     "characters": 98630
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md",
+     "added_in_commit": "7a89b20613909cdebd63a92ad72ccc7036154c4d",
+     "added_at_unix_time": 1792431890,
+     "characters": 111310
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md",
+     "added_in_commit": "e31c8f91fe3538e3208e79f9ca0e6c7700e123d4",
+     "added_at_unix_time": 1792436445,
+     "characters": 126198
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md",
+     "added_in_commit": "c6ae836ea5a3099f3fb831a0e001ec8e8e15680d",
+     "added_at_unix_time": 1792441525,
+     "characters": 136728
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md",
+     "added_in_commit": "2184cdfbf8ddbce1cf30e6c5c05f5c98f78f9261",
+     "added_at_unix_time": 1792479376,
+     "characters": 153800
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md",
+     "added_in_commit": "fe36a79bc350877365020497a6148fc442369711",
+     "added_at_unix_time": 1792511041,
+     "characters": 172851
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md",
+     "added_in_commit": "21aa1ef662897611bf7c52d9321abf2d03e33563",
+     "added_at_unix_time": 1792518767,
+     "characters": 156452
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twelfth_2026_10_20.md",
+     "added_in_commit": "532971b19d1bc0cae2471c75d1785763811a665c",
+     "added_at_unix_time": 1792524956,
+     "characters": 153985
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_thirteenth_2026_10_21.md",
+     "added_in_commit": "d1b3a26f577c8034b56ac909de3946564cffe243",
+     "added_at_unix_time": 1792563553,
+     "characters": 171675
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_fourteenth_2026_10_23.md",
+     "added_in_commit": "69e0afc218c62ae19847f4dd820b7118cdefd573",
+     "added_at_unix_time": 1792783792,
+     "characters": 185731
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_fifteenth_2026_10_24.md",
+     "added_in_commit": "7b9646abb2e3988dfc10316c63e4f9a644890e6c",
+     "added_at_unix_time": 1792825215,
+     "characters": 181526
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_sixteenth_2026_10_24.md",
+     "added_in_commit": "5fb74669f2ff8da0f3024076771914c59af4317c",
+     "added_at_unix_time": 1792838096,
+     "characters": 169864
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_seventeenth_2026_10_24.md",
+     "added_in_commit": "e555af193e601e84f35fafb95b271a8281687e03",
+     "added_at_unix_time": 1792915123,
+     "characters": 177296
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_eighteenth_2026_10_25.md",
+     "added_in_commit": "11a59b40519ed007860e21495ff62bb0709cc0f0",
+     "added_at_unix_time": 1792923545,
+     "characters": 190948
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md",
+     "added_in_commit": "e79d53c381d043b573f0f802f50ab4c8d0938d43",
+     "added_at_unix_time": 1793000375,
+     "characters": 205990
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md",
+     "added_in_commit": "7e63a04b13c61fe07cf9b745cfd04755df428586",
+     "added_at_unix_time": 1793008683,
+     "characters": 224366
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md",
+     "added_in_commit": "a3af4ad5d036f2dd59a8ebf3983423a75c6a348a",
+     "added_at_unix_time": 1793023171,
+     "characters": 210734
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md",
+     "added_in_commit": "025f235609c2973136c13d4362adfb44b9346b13",
+     "added_at_unix_time": 1793050566,
+     "characters": 166056
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_third_2026_10_26.md",
+     "added_in_commit": "47facb0abf7c32015f906a5eae867188c5f5c669",
+     "added_at_unix_time": 1793087534,
+     "characters": 164756
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md",
+     "added_in_commit": "6eae52922ae65c4fd465c4b06b1e80b2929e4213",
+     "added_at_unix_time": 1793103957,
+     "characters": 188439
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md",
+     "added_in_commit": "e24e800f2ebfaf08e826b0bd4b8d541bea8e4619",
+     "added_at_unix_time": 1793118675,
+     "characters": 212059
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md",
+     "added_in_commit": "2655f50b4586a6c23be669064a7a5cef5316d6cd",
+     "added_at_unix_time": 1793140384,
+     "characters": 239614
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md",
+     "added_in_commit": "337dd396c107a5fcb1bff9bda762b8607f310a5f",
+     "added_at_unix_time": 1793393546,
+     "characters": 259912
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md",
+     "added_in_commit": "3af706175cf8f962ebb7246674109a10ec6fe530",
+     "added_at_unix_time": 1793434098,
+     "characters": 233425
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md",
+     "added_in_commit": "e0c5a01a42f7a5923bdd99804d41571871934260",
+     "added_at_unix_time": 1793452205,
+     "characters": 181526
+    },
+    {
+     "name": "cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md",
+     "added_in_commit": "ddccb87fe3a41c2841c8fe21d937082fc5d343bf",
+     "added_at_unix_time": 1793484378,
+     "characters": 151805
+    }
+   ]
+  },
+  "the_arc_reports": {
+   "the_folder": "records/cc/reports",
+   "the_name_prefix": "cc_report_l3_comparison_tabulation_",
+   "read_by": "Cowork, per sitting (whole); Claude Code, per batch (at the portions its dispatch orders — not sized here)",
+   "the_mandate_class": "a user ruling",
+   "the_record_that_mandates_it": "the user's rule of 2026-09-03 — Claude Code's output is read in full — carried in the handoff entries (entry 461 §4)",
+   "count": 30,
+   "characters_total": 3741155,
+   "characters_mean": 124705,
+   "characters_min": 46542,
+   "characters_max": 520923,
+   "the_last_three": [
+    {
+     "name": "cc_report_l3_comparison_tabulation_twenty_eighth_2026_10_30.md",
+     "added_in_commit": "811b7b086b3181c767d9a9e20a6361317caf5677",
+     "added_at_unix_time": 1793436176,
+     "characters": 142049
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_twenty_ninth_2026_10_31.md",
+     "added_in_commit": "a714367e6d5185603de611d5f818c5f45c9c5afb",
+     "added_at_unix_time": 1793453984,
+     "characters": 90619
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_thirtieth_2026_10_31.md",
+     "added_in_commit": "3300e3d6513e586d99a08208340139f65c6903ae",
+     "added_at_unix_time": 1793486401,
+     "characters": 520923
+    }
+   ],
+   "the_population": [
+    {
+     "name": "cc_report_l3_comparison_tabulation_2026_10_18.md",
+     "added_in_commit": "a72d50eeea12038cefbf4e88a521ea1f4d1172f1",
+     "added_at_unix_time": 1792356385,
+     "characters": 60782
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_second_2026_10_18.md",
+     "added_in_commit": "797a96a99807952cb504583abb34085108a55a55",
+     "added_at_unix_time": 1792364529,
+     "characters": 46542
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_third_2026_10_19.md",
+     "added_in_commit": "5eb99af8a7dca79a35bcaf24f5d14780e762cc83",
+     "added_at_unix_time": 1792398459,
+     "characters": 54986
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_fourth_2026_10_19.md",
+     "added_in_commit": "0db1aeefb23e21d3a2d5db65ee5ecd918ccefc95",
+     "added_at_unix_time": 1792404069,
+     "characters": 61723
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_fifth_2026_10_19.md",
+     "added_in_commit": "2ac7369f58be11b7dbcd1ec28269a83272d18da8",
+     "added_at_unix_time": 1792422608,
+     "characters": 69767
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_sixth_2026_10_19.md",
+     "added_in_commit": "2565e0398ac95e9288ad6dbc22cde43406f7de1d",
+     "added_at_unix_time": 1792434379,
+     "characters": 56766
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_seventh_2026_10_19.md",
+     "added_in_commit": "b520f75fac89acef98c985fd7cea03e091be67e4",
+     "added_at_unix_time": 1792438395,
+     "characters": 57458
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_eighth_2026_10_19.md",
+     "added_in_commit": "d46ed2c70f9a7219d4aa5a815075bf53efc68ebb",
+     "added_at_unix_time": 1792446297,
+     "characters": 72330
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_ninth_2026_10_20.md",
+     "added_in_commit": "01ef1c3eca380b663ddf589a7483d9b0d1b781ef",
+     "added_at_unix_time": 1792482294,
+     "characters": 62175
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_tenth_2026_10_20.md",
+     "added_in_commit": "b317fb30e25ffd3fc5334e074afa061e3244f44e",
+     "added_at_unix_time": 1792515591,
+     "characters": 74764
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_eleventh_2026_10_20.md",
+     "added_in_commit": "a23f352429049db7fa5c096e1b8ed64c53b1c35d",
+     "added_at_unix_time": 1792521796,
+     "characters": 79270
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_twelfth_2026_10_20.md",
+     "added_in_commit": "75bbfa9326db01819b7036f660b71bc1c388365b",
+     "added_at_unix_time": 1792528513,
+     "characters": 134126
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_thirteenth_2026_10_21.md",
+     "added_in_commit": "1efab7f6215e8eafdbfadd854d3930c57f51c95d",
+     "added_at_unix_time": 1792779652,
+     "characters": 117568
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_fourteenth_2026_10_23.md",
+     "added_in_commit": "f72dabfd1e55c33a079d6773a4347b77886465b7",
+     "added_at_unix_time": 1792787284,
+     "characters": 63286
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_fifteenth_2026_10_24.md",
+     "added_in_commit": "e0c849b1b885455352cbec4e341193bb47cdb711",
+     "added_at_unix_time": 1792828089,
+     "characters": 71420
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_sixteenth_2026_10_24.md",
+     "added_in_commit": "a99f70687f8d717fc933118143b099b5e3cc392f",
+     "added_at_unix_time": 1792840956,
+     "characters": 73117
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_seventeenth_2026_10_24.md",
+     "added_in_commit": "7b0dacdb74c8d2025424898da2ad008b2688f9c2",
+     "added_at_unix_time": 1792919299,
+     "characters": 89385
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_eighteenth_2026_10_25.md",
+     "added_in_commit": "4373063daa8d6de87b6743b21f395b8a4cfee8b5",
+     "added_at_unix_time": 1792927162,
+     "characters": 114017
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_nineteenth_2026_10_26.md",
+     "added_in_commit": "b1bbddb25ee998aa17c021b3488cb68baa1523d9",
+     "added_at_unix_time": 1793004855,
+     "characters": 79766
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_twentieth_2026_10_26.md",
+     "added_in_commit": "27e8dbe40709beaced9264eafd98afcb73dd10d4",
+     "added_at_unix_time": 1793013975,
+     "characters": 139118
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_twenty_first_2026_10_26.md",
+     "added_in_commit": "cc91e4788ddc02bdc4fe2a6b036f2fad31bcd109",
+     "added_at_unix_time": 1793027396,
+     "characters": 221926
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_twenty_second_2026_10_26.md",
+     "added_in_commit": "198b5d60234c3fb0f264264374377d16a8b57dc8",
+     "added_at_unix_time": 1793052985,
+     "characters": 152663
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_twenty_third_2026_10_26.md",
+     "added_in_commit": "ced48cb97c5bbf746e065fcf5ff704f0ec56156e",
+     "added_at_unix_time": 1793090029,
+     "characters": 167250
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_twenty_fourth_2026_10_27.md",
+     "added_in_commit": "52075221cdf64c80fceb06551fd439db6252df87",
+     "added_at_unix_time": 1793106734,
+     "characters": 132154
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_twenty_fifth_2026_10_27.md",
+     "added_in_commit": "cffb667be69e3ed8810ca49d8943c1c1ef5a5c0f",
+     "added_at_unix_time": 1793125193,
+     "characters": 228900
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_twenty_sixth_2026_10_27.md",
+     "added_in_commit": "9e25bb664b2030cd699caf4832567afd648671c0",
+     "added_at_unix_time": 1793143262,
+     "characters": 246250
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_twenty_seventh_2026_10_28.md",
+     "added_in_commit": "45b7f750d052b3e5e055f4cec1e5b75bc956e30c",
+     "added_at_unix_time": 1793395873,
+     "characters": 260055
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_twenty_eighth_2026_10_30.md",
+     "added_in_commit": "811b7b086b3181c767d9a9e20a6361317caf5677",
+     "added_at_unix_time": 1793436176,
+     "characters": 142049
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_twenty_ninth_2026_10_31.md",
+     "added_in_commit": "a714367e6d5185603de611d5f818c5f45c9c5afb",
+     "added_at_unix_time": 1793453984,
+     "characters": 90619
+    },
+    {
+     "name": "cc_report_l3_comparison_tabulation_thirtieth_2026_10_31.md",
+     "added_in_commit": "3300e3d6513e586d99a08208340139f65c6903ae",
+     "added_at_unix_time": 1793486401,
+     "characters": 520923
+    }
+   ]
+  },
+  "the_cowork_boot_chain": [
+   {
+    "member": "entry 118, the bridge-fault section",
+    "path": "records/cowork/handoff/cowork_handoff_entry_one_hundred_and_eighteen.md",
+    "the_portion_read": "the `###` section headed `### ★★ THE BRIDGE FAULT — READ THIS BEFORE YOU WRITE ANYTHING`, to the line before the next `###` heading",
+    "read_by": "Cowork, per sitting",
+    "the_mandate_class": "unwritten practice",
+    "the_record_that_mandates_it": "the writing side's own boot instruction — entry 291 §4 step 3 and entry 169's Boot block; no user ruling names these reads",
+    "first_line_at_the_tree": 27,
+    "last_line_at_the_tree": 51,
+    "characters": 2075
+   },
+   {
+    "member": "entry 152, items (v) to (x)",
+    "path": "records/cowork/handoff/cowork_handoff_entry_one_hundred_and_fifty_two.md",
+    "the_portion_read": "from the line opening `**(v)**` through the end of the paragraph whose first line opens `**(x) ★`",
+    "read_by": "Cowork, per sitting",
+    "the_mandate_class": "unwritten practice",
+    "the_record_that_mandates_it": "the writing side's own boot instruction — entry 291 §4 step 3 and entry 169's Boot block; no user ruling names these reads",
+    "first_line_at_the_tree": 61,
+    "last_line_at_the_tree": 66,
+    "characters": 3580
+   },
+   {
+    "member": "entry 169, whole",
+    "path": "records/cowork/handoff/cowork_handoff_entry_one_hundred_and_sixty_nine.md",
+    "the_portion_read": "the whole file",
+    "read_by": "Cowork, per sitting",
+    "the_mandate_class": "unwritten practice",
+    "the_record_that_mandates_it": "the writing side's own boot instruction — entry 291 §4 step 3 and entry 169's Boot block; no user ruling names these reads",
+    "characters": 24913
+   },
+   {
+    "member": "entry 291, whole",
+    "path": "records/cowork/handoff/cowork_handoff_entry_two_hundred_and_ninety_one.md",
+    "the_portion_read": "the whole file",
+    "read_by": "Cowork, per sitting",
+    "the_mandate_class": "unwritten practice",
+    "the_record_that_mandates_it": "the writing side's own boot instruction — entry 291 §4 step 3 and entry 169's Boot block; no user ruling names these reads",
+    "characters": 9655
+   },
+   {
+    "member": "the three handoff entry files with the latest add-commits",
+    "path": "records/cowork/handoff",
+    "the_portion_read": "each whole",
+    "how_it_is_located": "every file of the folder whose name opens `cowork_handoff_entry_`, ordered by its add-commit; the three latest",
+    "read_by": "both sides: the executing side reads the ones its dispatch's read-first block names; the writing side reads the three latest",
+    "the_mandate_class": {
+     "the_executing_sides_read": "a standing clause",
+     "the_writing_sides_read": "unwritten practice"
+    },
+    "the_record_that_mandates_it": "the standing clause `Every dispatch's read-first block names the CURRENT HANDOVER BLOCK`, which this repository carries as numbered entry files; the writing side's three is its own practice",
+    "the_population_count": 383,
+    "the_three": [
+     {
+      "name": "cowork_handoff_entry_four_hundred_and_sixty_one.md",
+      "added_in_commit": "6ab3c9ab6f11ed63f3058dc8a4fd2727dd41da65",
+      "added_at_unix_time": 1793526537,
+      "characters": 15962
+     },
+     {
+      "name": "cowork_handoff_entry_four_hundred_and_sixty_two.md",
+      "added_in_commit": "6ab3c9ab6f11ed63f3058dc8a4fd2727dd41da65",
+      "added_at_unix_time": 1793526537,
+      "characters": 14669
+     },
+     {
+      "name": "cowork_handoff_entry_four_hundred_and_sixty_three.md",
+      "added_in_commit": "023353b20cd77c31552a354fc512c879c7974348",
+      "added_at_unix_time": 1793530857,
+      "characters": 16354
+     }
+    ],
+    "characters": 46985
+   }
+  ],
+  "totals_by_side": {
+   "Claude Code, per batch, in the thirtieth dispatch's shape": {
+    "the_members_it_sums": [
+     {
+      "member": "the ordinary session-start read (imported)",
+      "characters": 247953
+     },
+     {
+      "member": "BUILD_AND_TEST.md",
+      "characters": 27236
+     },
+     {
+      "member": "the dispatch-protocol section of cowork_audit_protocol.md, whole",
+      "characters": 108389
+     },
+     {
+      "member": "the latest dispatch of the arc: cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md",
+      "characters": 151805
+     },
+     {
+      "member": "the blind derivation of L3",
+      "characters": 126702
+     },
+     {
+      "member": "the three handoff entry files with the latest add-commits",
+      "characters": 46985
+     }
+    ],
+    "without_the_injected_copy_of_CLAUDE_md": 709070,
+    "with_it": 878687,
+    "the_injected_copy_added_in_with_it": "CLAUDE.md, the whole file, 169617 characters",
+    "left_out_and_said_so": "the previous report at the portions a dispatch orders, the reading file at its ordered portions, the ruling records a dispatch orders — varies per dispatch and is not sized here"
+   },
+   "Cowork, per sitting, in the shape of the sitting of entry 461": {
+    "the_members_it_sums": [
+     {
+      "member": "the ordinary session-start read (imported)",
+      "characters": 247953
+     },
+     {
+      "member": "entry 118, the bridge-fault section",
+      "characters": 2075
+     },
+     {
+      "member": "entry 152, items (v) to (x)",
+      "characters": 3580
+     },
+     {
+      "member": "entry 169, whole",
+      "characters": 24913
+     },
+     {
+      "member": "entry 291, whole",
+      "characters": 9655
+     },
+     {
+      "member": "the three handoff entry files with the latest add-commits",
+      "characters": 46985
+     },
+     {
+      "member": "the latest report of the arc, whole: cc_report_l3_comparison_tabulation_thirtieth_2026_10_31.md",
+      "characters": 520923
+     },
+     {
+      "member": "the latest dispatch of the arc, whole: cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md",
+      "characters": 151805
+     }
+    ],
+    "characters": 1007889,
+    "left_out_and_said_so": "the verification reads at the objects (the reading file at its sections, the guard state, the ref files, the away-returns close) — varies per batch and is not sized here"
+   }
+  }
+ },
+ "table_2_the_six_spans_partitioned": {
+  "where_the_spans_cut_and_classes_come_from": "the spans from `gen_session_start_read_size.claude_md_reading`; the cut, the shape and the class from `gen_claude_md_finer_spans.spans_of`, `shape_of` and `classify`; the class names from `gen_governing_surface_spans`. Nothing is re-implemented and no class or verdict is added here.",
+  "the_archive_classes_summed_in_archive_class_characters": [
+   "preserved-former-wording",
+   "self-declared-historical-or-superseded",
+   "defense-and-declined-alternatives"
+  ],
+  "the_spans": [
+   {
+    "name": "Guiding principles",
+    "characters": 26908,
+    "characters_given_to_the_finer_cut": 26909,
+    "characters_of_the_blank_lines_between_sub_blocks": 9,
+    "sub_block_count": 44,
+    "by_kind": {
+     "block": {
+      "sub_blocks": 9,
+      "characters": 6116
+     },
+     "numbered-principle sub-block": {
+      "sub_blocks": 24,
+      "characters": 8024
+     },
+     "star-marked sub-block": {
+      "sub_blocks": 11,
+      "characters": 12760
+     }
+    },
+    "by_class": {
+     "operative-rule-text": {
+      "sub_blocks": 43,
+      "characters": 24995
+     },
+     "preserved-former-wording": {
+      "sub_blocks": 1,
+      "characters": 1905
+     }
+    },
+    "by_shape_element": {
+     "archive_pointer_lines_inside_this_span": {
+      "sub_blocks": 3,
+      "characters": 2529
+     },
+     "ruled_date_header": {
+      "sub_blocks": 11,
+      "characters": 13997
+     },
+     "accepted_costs_paragraph_REFUSED_as_pointer_carried": {
+      "sub_blocks": 1,
+      "characters": 845
+     },
+     "declined_alternatives_paragraph_REFUSED_as_pointer_carried": {
+      "sub_blocks": 1,
+      "characters": 845
+     },
+     "former_wording_marker": {
+      "sub_blocks": 1,
+      "characters": 1905
+     }
+    },
+    "star_marked_sub_blocks": {
+     "sub_blocks": 11,
+     "characters": 12760
+    },
+    "sub_blocks_carrying_a_ruled_date_header": {
+     "sub_blocks": 11,
+     "characters": 13997
+    },
+    "archive_class_characters": 1905,
+    "doubt_defaulted_characters": 24973,
+    "settled_sub_blocks": {
+     "sub_blocks": 2,
+     "characters": 2750
+    },
+    "sub_blocks": [
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 3,
+      "last_line_at_the_tree": 3,
+      "characters_with_line_endings": 22,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": false,
+      "the_classifiers_evidence": {
+       "it_is_a_bare_section_heading": true,
+       "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "26229e148e940416e5e3c1b9624b1140ad7803efb69e8272ece797d99f50571e",
+      "the_opening": "## Guiding principles\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 5,
+      "last_line_at_the_tree": 7,
+      "characters_with_line_endings": 197,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "16f3483fc62845e4bca399cbfef9074df2b35b856cb0f32251f5c870e1882a6b",
+      "the_opening": "The standing decision guides for all work in this repository. Every design, build, and\nmeasurement choice is checked against them; they are the guide for making",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 9,
+      "last_line_at_the_tree": 11,
+      "characters_with_line_endings": 197,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "abfb3b613761e70be74b76e48dcf734093ad5d300e327277ebdcc091decbf1f0",
+      "the_opening": "1. **Fact- and theory-based coding only.** Build only on established fact and theory —\n   published research, public algorithms, public software. Fact-finding (",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 12,
+      "last_line_at_the_tree": 13,
+      "characters_with_line_endings": 145,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "e9e8dc74a29eb6bf7e1effaf8e4c0b568a7a801264e27ca22c9a030ca069a46b",
+      "the_opening": "2. **Specific research over general.** Most research so far has been general or on\n   already-handled topics; target the specific open question.\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 14,
+      "last_line_at_the_tree": 16,
+      "characters_with_line_endings": 199,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "8cc7a081304c764658682c313a7c1da6b008957ef8106a3a2459766bd1cff466",
+      "the_opening": "3. **An unexpected finding means we have failed #1** (and possibly #2, #4, #6). Surprise\n   signals that the fact/theory basis was incomplete — treat it as a fa",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 17,
+      "last_line_at_the_tree": 17,
+      "characters_with_line_endings": 52,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "4bffaf9c6696ed62d21e1bc5b2fd0c7fc7e84632df47e366f75191e6770c3973",
+      "the_opening": "4. **Long-term goal: maximum-precision inference.**\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 18,
+      "last_line_at_the_tree": 19,
+      "characters_with_line_endings": 110,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "b73370affe3bca4dabfd9da50392cb29dd88bd08c66b283c784eb148e619a50f",
+      "the_opening": "5. **Investigate when facts may be scarce.** If we are unsure whether facts are scarce,\n   gather more facts.\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 20,
+      "last_line_at_the_tree": 20,
+      "characters_with_line_endings": 77,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "ea7c697a15ca8c2516af96e573f10b9af68a7b6dcda96b1988309755140bcc7c",
+      "the_opening": "6. **Total unification — no duplication of any code.** One path per concern.\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 21,
+      "last_line_at_the_tree": 22,
+      "characters_with_line_endings": 180,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "2546699f5e08774994b06060b0282596fc04ee933ffe18e044c595e4a8103561",
+      "the_opening": "7. **Adhere to layers.** Enhance a layer only with algorithms/methods that belong to it,\n   nothing else. Worst case, this forces a layer redesign rather than a",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 23,
+      "last_line_at_the_tree": 27,
+      "characters_with_line_endings": 525,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "archive_pointer_lines_inside_this_span"
+      ],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "91bf1c73d9a0b80c372ed215e22ebedebd6a3032d6d60d8ad767d7464100b092",
+      "the_opening": "8. **No inference-problem-driven coding until the refactoring, the architectural design and the\n   algorithmic completion are done.** Build-it-right comes BEFOR",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 28,
+      "last_line_at_the_tree": 34,
+      "characters_with_line_endings": 657,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "a604f1f2af4d0d31602ee4b2f923a4d876647e0428995aa4ee6cb5b0fe40874a",
+      "the_opening": "   **★ THIS PRINCIPLE POINTS AT ITS OPERATIONAL HALF — D-592 AND D-593 (written 2026-08-04 on the\n   user's ruling; a POINTER, never a copy, because both are al",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 35,
+      "last_line_at_the_tree": 39,
+      "characters_with_line_endings": 491,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "8116815b75b96e803f9b832283e38f46fb1009288c4adf0948aaeec0f846ad11",
+      "the_opening": "   **★ AND THE ENTRY IS D-172, ONCE (user's ruling, 2026-08-04, `OPEN_ITEMS.md` OI-329).** The\n   widening above briefly gave this one principle two live regist",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 40,
+      "last_line_at_the_tree": 40,
+      "characters_with_line_endings": 76,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "ad8bf73fe0ccccfb691eacad3f0b324ab95e9afbc04320fdee9ba18c8a7fae65",
+      "the_opening": "9. **Test and measure only on corpora known to be non-stale and accurate.**\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 41,
+      "last_line_at_the_tree": 52,
+      "characters_with_line_endings": 1159,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "archive_pointer_lines_inside_this_span"
+      ],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "18a9e9238c848e4164a66007161b146caa31da85e1c71fe1356e7ce73c724350",
+      "the_opening": "10. Documentation is kept in sync with code **so that code can always be compared against its\n    specification, and so that the specification is as correct and",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 53,
+      "last_line_at_the_tree": 60,
+      "characters_with_line_endings": 845,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true,
+       "★_an_archive_placement_was_REFUSED_by_the_standing_pointer_constraint": {
+        "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17",
+        "archive_pointer_lines_inside_this_span": 2,
+        "the_refused_placements": {
+         "a_declined_alternatives_record": {
+          "the_refused_marker": "DECLINED",
+          "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17"
+         },
+         "an_accepted_costs_record": {
+          "the_refused_marker": "THE COSTS THE USER ACCEPTED",
+          "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17"
+         }
+        },
+        "what_follows": "the span falls to the ruled DOUBT DEFAULT and STAYS AT SITE. It is not dropped: the refused marker stands above, so the user can overrule this in one edit rather than rediscover the question."
+       }
+      },
+      "the_amendment_record_shape": [
+       "accepted_costs_paragraph_REFUSED_as_pointer_carried",
+       "archive_pointer_lines_inside_this_span",
+       "declined_alternatives_paragraph_REFUSED_as_pointer_carried"
+      ],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "886a1e11e25f69b7dde7c34a72df2b1b1250404073c3c1cec9a8203d7c8f75fd",
+      "the_opening": "    **★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6).** R3's clause that an apparatus\n    finding's row is **mandatory** no longer holds for a finding the ",
+      "settled_at_an_earlier_sitting": [
+       {
+        "artifact": "tools/audit/claude_md_finer_archive.json",
+        "field": "the_left_at_site_by_the_reading",
+        "how": "by hash — the sub-block stands unchanged",
+        "the_sentence_the_prune_backlog_carries": "re-proposing it is forbidden"
+       }
+      ]
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 61,
+      "last_line_at_the_tree": 65,
+      "characters_with_line_endings": 420,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "9eea94702aef122d33c327de0fd5ffbb01525c24f5f85a8c3442a0df4c259284",
+      "the_opening": "    **★ WHAT IT DOES NOT DO.** It authorizes no fix, no design and no inference change. It moves\n    neither **D-231**'s phases nor #8's three-clause gate. It t",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 66,
+      "last_line_at_the_tree": 66,
+      "characters_with_line_endings": 92,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "3415670d6d1dce403d95b3a66432996694e031a87f510b5decf74867362d511b",
+      "the_opening": "11. **Regression test cases always in sync with code; regression-test between iterations.**\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 67,
+      "last_line_at_the_tree": 69,
+      "characters_with_line_endings": 236,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "8e6837b074006920480dbe40abde7720e815464bdd0b36f077481442bbdc94f5",
+      "the_opening": "12. **No information loss.** Negative/exclusion evidence is information (\"finding by exclusion\") —\n    carry a ruled-out possibility at low confidence rather th",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 70,
+      "last_line_at_the_tree": 79,
+      "characters_with_line_endings": 942,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "0c3daf906a5e04b154727bd30b32f7e4cb719da80f7ce82583aae82fb93bbb4b",
+      "the_opening": "    **★ THE RECOMPUTABLE CLAUSE ABOVE REACHES EVERY COLLAPSE, NOT ONLY AN EXCLUSION (2026-07-06;\n    the record states no ratifier).** The *unless* is written f",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 80,
+      "last_line_at_the_tree": 80,
+      "characters_with_line_endings": 93,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "6597d2472a682bde13352c21e002eb8b48b1039a0d89cbd73e8ac2d4102cd991",
+      "the_opening": "13. **Surface a surprise as a STOP before building around it** (the operational form of #3).\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 81,
+      "last_line_at_the_tree": 81,
+      "characters_with_line_endings": 93,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "37c6720c0444288afd4e5a1f02f8dfa182d5a6215e680faf1a3144d3c36650a8",
+      "the_opening": "14. **Every behavior change is user-ratified as one revertible, provenance-stamped commit.**\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 82,
+      "last_line_at_the_tree": 83,
+      "characters_with_line_endings": 126,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "56f73ee7ee10c7918059537cab77b7e4d9d9e52fc0798c89b1bcb669e152c75c",
+      "the_opening": "15. **Verify at objects/data on the full output surface, never at assertion** (winner *and*\n    carry, not the winner alone).\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 84,
+      "last_line_at_the_tree": 85,
+      "characters_with_line_endings": 150,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "f48de4c0a71e2c12f4d2e7e35bb3001cba2112b4d53949c9b7b8ac90bb4c190d",
+      "the_opening": "16. **Reproducibility.** Every measurement is stamped to corpus-hash + instrument-commit;\n    snapshot the outgoing reference before any re-baseline.\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 86,
+      "last_line_at_the_tree": 99,
+      "characters_with_line_endings": 1216,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "1234b8111ede8cf24c8e61a811a7f47a98041e656e43df2be1ffa7a293cd4298",
+      "the_opening": "17. **The Premise Gate.** Before any inference-affecting design is built or probed:\n    (a) a **premise ledger** — every load-bearing causal claim explicitly la",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 100,
+      "last_line_at_the_tree": 109,
+      "characters_with_line_endings": 961,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "d34765c2a714c2a6ddee724f9eace4e813d23afa981fa6d5fb1748e1e361e3fd",
+      "the_opening": "    **★ WHAT A DESK SIMULATION'S TABLE VALUES ARE, AND WHAT THEY MAY NEVER BECOME (user-ratified\n    2026-07-19).** Every table value a desk simulation under (c",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 110,
+      "last_line_at_the_tree": 115,
+      "characters_with_line_endings": 517,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "fd1c557d7e5970abbcbb2ab734baaad3d54c68d28d4424726ebdc1048bfb88ed",
+      "the_opening": "    **★ EVERY DESK-SIMULATION TRACE RUNS AT IDENTITY WEIGHTS (user-ratified 2026-07-19).** A trace\n    under (c) runs the generative product with every weight a",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 116,
+      "last_line_at_the_tree": 121,
+      "characters_with_line_endings": 481,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "bdda9d3736e35113935d524609f5ddd15761bd80c966f55a55779d4ad7077022",
+      "the_opening": "18. **Unverified causal premises are FORBIDDEN (Class A).** No design may carry load on a\n    causal claim about our own system or data that is checkable but un",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 122,
+      "last_line_at_the_tree": 129,
+      "characters_with_line_endings": 655,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "b3b1f72c9c4319d4f43651dacd9630375f8e9dd7c021ebc68ccf05f21f3dbd6f",
+      "the_opening": "19. **Unestablished instruments are FORBIDDEN (Class B).** An instrument, corpus, gate, or\n    recorded figure is trusted only after being *positively establish",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 130,
+      "last_line_at_the_tree": 133,
+      "characters_with_line_endings": 363,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "5809d74f2b6a6255c8e82f4000856c68d57c10240cebc3f3a354b8d8afd6003c",
+      "the_opening": "20. **Fit/evaluation separation.** No value is graded on data that helped fit it. Every fit\n    event declares its held-out data (split or k-fold) and its capac",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 134,
+      "last_line_at_the_tree": 138,
+      "characters_with_line_endings": 405,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "7bc93ce83f21cfbc31c7a25762e07e8f7c9a499bb924e37e9324bb8d7117c11a",
+      "the_opening": "21. **Ground truth is an instrument too.** The accuracy of ground truth is itself a measured\n    quantity — per-axis annotator agreement, not an assumed binary ",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 139,
+      "last_line_at_the_tree": 156,
+      "characters_with_line_endings": 1666,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "cb79f87a7397e6102a82319e2cede6b286024edeb9fe7823709c23bde76115a5",
+      "the_opening": "    **★ THE CEILING CANNOT BE CITED FROM THE LITERATURE; MEASURING IT HERE IS THE ONLY ROUTE\n    (recorded 2026-08-04 on the user's ruling with the read-wave-3 ",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 157,
+      "last_line_at_the_tree": 177,
+      "characters_with_line_endings": 2032,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "de33d7498c453c999a2b9b6b1623b215303fa65994d07c6e9ae8f27a5bb81503",
+      "the_opening": "    **★ AND THE MEASUREMENT IS NOW COMMISSIONED, IN TWO HALVES, WITH THE RULE THAT ENDS THE CONTACT\n    ROUTE (user-ruled 2026-08-09; the ruling record is `reco",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 178,
+      "last_line_at_the_tree": 201,
+      "characters_with_line_endings": 2324,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "c98c686f679116035e657a55fb521a58799dc74f1880c818ab8d72f8e164f801",
+      "the_opening": "    **★ AND THE CONTACT ROUTE CLOSED BY ANSWER, NOT BY SILENCE — WITH THE ANSWER THAT THE ONE\n    LOCALLY HELD CANDIDATE CANNOT SUPPLY THE QUANTITY EITHER (user",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 202,
+      "last_line_at_the_tree": 221,
+      "characters_with_line_endings": 1905,
+      "the_class": "preserved-former-wording",
+      "the_doubt_default_decided_it": false,
+      "the_classifiers_evidence": {
+       "the_marker_matched": "FORMER WORDING",
+       "the_quotation_that_places_it": "\"**The consequence for this principle: the\n    ceiling is not obtainable from inside any single corpus in this repertoir"
+      },
+      "the_amendment_record_shape": [
+       "former_wording_marker",
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "5a2f8532d2e5681276c15f0e86b02716babec157e07a50e9f4e9ade189a79aa2",
+      "the_opening": "    **★ THAT PARAGRAPH REPLACED A NARROWER ONE, AND THE FORMER WORDING STANDS IN PLACE (#12;\n    user-ruled 2026-08-11 on a surface carrying three alternatives ",
+      "settled_at_an_earlier_sitting": [
+       {
+        "artifact": "tools/audit/claude_md_finer_archive.json",
+        "field": "the_left_at_site_by_the_reading",
+        "how": "by hash — the sub-block stands unchanged",
+        "the_sentence_the_prune_backlog_carries": "re-proposing it is forbidden"
+       }
+      ]
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 222,
+      "last_line_at_the_tree": 226,
+      "characters_with_line_endings": 399,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "39c3f99d43df93b0ed5472a3d76d6c348fb667bc3596ebc5d9e9f7ce1af0d8d7",
+      "the_opening": "22. **Every hard gate carries a pre-declared protocol for the largest change it will face.**\n    A gate written only for incremental change must not be amended ",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 227,
+      "last_line_at_the_tree": 230,
+      "characters_with_line_endings": 336,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "b0836496f38f5c98a050b9472acfee0a44f3f78efe040f8b7fb2e9ae4138c32a",
+      "the_opening": "23. **End-state principles need lawful transitions.** When a planned change must temporarily\n    violate an end-state principle (e.g. #6, one path per concern, ",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "numbered-principle sub-block",
+      "first_line_at_the_tree": 231,
+      "last_line_at_the_tree": 238,
+      "characters_with_line_endings": 659,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "b378e8a1daf85f511abeca64485f703e58408639dbe3d800e230384124d94fe7",
+      "the_opening": "24. **Every reported figure carries its uncertainty.** Sampling noise on the measurement\n    corpus is quantified; a difference within the uncertainty is not a ",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 240,
+      "last_line_at_the_tree": 243,
+      "characters_with_line_endings": 344,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "3b6549e2b37dfd71351d9ce3072e51a35d7fe45286a7e2f9dff3e462ed2de59d",
+      "the_opening": "*Ledger corollary to #17 (ratified with #20–#24):* when a decision selects a **constrained\noptimum** (a design chosen for methodology-compliance rather than raw",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 245,
+      "last_line_at_the_tree": 249,
+      "characters_with_line_endings": 451,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "22f1823d69676cad6299db58fb444f56bb16ee64d9c8460b8d27407b87b245d5",
+      "the_opening": "*Scope of surprise (ratified with #17–19):* surprises are **allowed in explorational runs**\nwhose purpose is to eliminate ignorance (#5 fact-finding); they are ",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 251,
+      "last_line_at_the_tree": 264,
+      "characters_with_line_endings": 1226,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "28aed9aeab8968519a891bec3ff071ca7905a730112553a102cc0bc752c125d2",
+      "the_opening": "*Fact-publication corollary to #6/#7/#12 (ratified by the user, 2026-07-10):* every derived\nanalytical fact is **published exactly once, on the producing layer'",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 266,
+      "last_line_at_the_tree": 278,
+      "characters_with_line_endings": 1132,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "75935705173c55c99f0fd030421bd5d4aeb1ef177ae8fd5d9dab9a7160b075d4",
+      "the_opening": "*Decision-neutrality of the existing implementation (corollary to #4/#6/#19; user-ratified\n2026-07-26):* Designs are chosen from the principles and the ultimate",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 280,
+      "last_line_at_the_tree": 290,
+      "characters_with_line_endings": 1001,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "1debf8bba8dba0a115cb6df2a8ef0dfbf3745e350b08f5e439719d1d31b3ba5c",
+      "the_opening": "*Theory-grounding corollary to #1/#2 (2026-07-19; the record states no ratifier):* where published\nresearch is used to justify a design, **every load-bearing cl",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 292,
+      "last_line_at_the_tree": 303,
+      "characters_with_line_endings": 1084,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "5e779f848497ae5374033a33ece620586463461e4010cadb79c16e945be09547",
+      "the_opening": "*Provenance: principles 1–11 are the user's standing list; #12 (no information loss) and\n#13–16 were ratified by the user on 2026-07-06; #17–19 (the Premise Gat",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 305,
+      "last_line_at_the_tree": 311,
+      "characters_with_line_endings": 659,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "4113610eeacb7635759f1f501332eca773dfa67966bb32349f9e4be1fc38ee32",
+      "the_opening": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293\nwrite list).** The ratified contract for the ORDER OF WORK fro",
+      "settled_at_an_earlier_sitting": []
+     }
+    ]
+   },
+   {
+    "name": "The open-items register",
+    "characters": 14816,
+    "characters_given_to_the_finer_cut": 14817,
+    "characters_of_the_blank_lines_between_sub_blocks": 16,
+    "sub_block_count": 17,
+    "by_kind": {
+     "block": {
+      "sub_blocks": 10,
+      "characters": 5985
+     },
+     "star-marked sub-block": {
+      "sub_blocks": 7,
+      "characters": 8816
+     }
+    },
+    "by_class": {
+     "operative-rule-text": {
+      "sub_blocks": 16,
+      "characters": 11848
+     },
+     "defense-and-declined-alternatives": {
+      "sub_blocks": 1,
+      "characters": 2953
+     }
+    },
+    "by_shape_element": {
+     "ruled_date_header": {
+      "sub_blocks": 6,
+      "characters": 7017
+     },
+     "accepted_costs_paragraph": {
+      "sub_blocks": 1,
+      "characters": 2953
+     },
+     "declined_alternatives_paragraph": {
+      "sub_blocks": 1,
+      "characters": 2953
+     },
+     "archive_pointer_lines_inside_this_span": {
+      "sub_blocks": 2,
+      "characters": 334
+     },
+     "declined_alternatives_paragraph_REFUSED_as_pointer_carried": {
+      "sub_blocks": 1,
+      "characters": 167
+     },
+     "accepted_costs_paragraph_REFUSED_as_pointer_carried": {
+      "sub_blocks": 1,
+      "characters": 167
+     }
+    },
+    "star_marked_sub_blocks": {
+     "sub_blocks": 7,
+     "characters": 8816
+    },
+    "sub_blocks_carrying_a_ruled_date_header": {
+     "sub_blocks": 6,
+     "characters": 7017
+    },
+    "archive_class_characters": 2953,
+    "doubt_defaulted_characters": 11400,
+    "settled_sub_blocks": {
+     "sub_blocks": 1,
+     "characters": 2953
+    },
+    "sub_blocks": [
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 313,
+      "last_line_at_the_tree": 313,
+      "characters_with_line_endings": 114,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": false,
+      "the_classifiers_evidence": {
+       "it_is_a_bare_section_heading": true,
+       "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "a2780fe90991f71dd12dce1160a450fec09df691bb09d910b746a07dbd15000c",
+      "the_opening": "## The open-items register (user-directed, 2026-07-10; split into index + detail files, user-ratified 2026-07-26)\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 315,
+      "last_line_at_the_tree": 336,
+      "characters_with_line_endings": 2048,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "0092ba37c07a17fe816d663508a7b61a62ecb4cd459f657c01a7f83cdabd2c96",
+      "the_opening": "**The register is `OPEN_ITEMS.md` (the lean INDEX) + `open_items/OI-<n>.md` (one detail file per\nitem).** The INDEX `OPEN_ITEMS.md` is the ONE home for every di",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 338,
+      "last_line_at_the_tree": 343,
+      "characters_with_line_endings": 528,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "c928b8ef1b309ef1ff68e480535e5b7ed9fbc2e988c20a667db735e56951d819",
+      "the_opening": "*★ RULE (a) AMENDED 2026-08-17 on the user's Ruling 1 of\n`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md`, executed by\n`records/",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 345,
+      "last_line_at_the_tree": 350,
+      "characters_with_line_endings": 599,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "bcca5e9200459a3dd30d528e9cb23832e9270cc18e52f64ebe0b9f36e5ea7720",
+      "the_opening": "*★ AND RULE (a)'s POINTER NARROWED AGAIN 2026-08-18, on the user's Ruling 3 of\n`records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md`, executed by `",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 352,
+      "last_line_at_the_tree": 362,
+      "characters_with_line_endings": 1054,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "c9178ede241573263073aa739e1ad37f200cc4b54fe15815021e8657d53f1c80",
+      "the_opening": "**★ THE #19 DISTINCTION, WRITTEN AT THE CLAUSE SO A LATER READER CANNOT MISTAKE A NARROWER READ FOR\nA WEAKER ESTABLISHMENT.** What establishes the answer is wha",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 364,
+      "last_line_at_the_tree": 386,
+      "characters_with_line_endings": 2137,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "33cae0eb82009e8d2e0d7e83690c2c24eaa2f4e4f73404dfe1e942e100fbf535",
+      "the_opening": "**★ QUALIFICATION OF RULE (b) — THE APPARATUS ROWS ARE DECLARED NON-GATING (user-ruled\n2026-08-03).** Rule (b) says a stage may not open while a register item g",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 388,
+      "last_line_at_the_tree": 418,
+      "characters_with_line_endings": 2953,
+      "the_class": "defense-and-declined-alternatives",
+      "the_doubt_default_decided_it": false,
+      "the_classifiers_evidence": {
+       "the_marker_matched": "was declined",
+       "which_part": "a declined-alternatives record"
+      },
+      "the_amendment_record_shape": [
+       "accepted_costs_paragraph",
+       "declined_alternatives_paragraph",
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "bb181b6bae1916746af070c653151144093666c92b8692b31dbfb8c859508675",
+      "the_opening": "**★ AND WHAT SUCH A ROW IS OWED — IT STOPS BEING OWED, WITH A PER-ROW LAPSE RECORD (user-ruled\n2026-08-11; the ruling record is `records/cowork/rulings/cowork_r",
+      "settled_at_an_earlier_sitting": [
+       {
+        "artifact": "tools/audit/claude_md_finer_archive.json",
+        "field": "the_refused_by_the_ruling",
+        "how": "by its opening only — the same sub-block, amended since",
+        "the_sentence_the_prune_backlog_carries": "re-proposing it is forbidden"
+       }
+      ]
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 420,
+      "last_line_at_the_tree": 428,
+      "characters_with_line_endings": 847,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "b42a4590e3f1b845b3521c77378f813e53106acf9c0421d2452457d9a97597c5",
+      "the_opening": "**★ RULE (f) — EVERY INDEX STATUS CELL BEGINS WITH ONE CANONICAL TOKEN (user-ruled 2026-08-09; the\nruling record is `records/cowork/rulings/cowork_rulings_2026_",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 430,
+      "last_line_at_the_tree": 435,
+      "characters_with_line_endings": 556,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "9e335d67f8d7d514deaeb7994d56677ad77b58d1bbe767e8f4b5c91ca0b1feb4",
+      "the_opening": "**The two STOPs that make it a mechanism rather than a convention.** A **lint** reports every\nnon-canonical opening, and **the ONE index parser** — the single r",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 437,
+      "last_line_at_the_tree": 446,
+      "characters_with_line_endings": 941,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "9db6257d16ca2e9b3ec7e60ce38c2a7a7472c0a6d952d81e2ecf9f6ce1ee3faa",
+      "the_opening": "*Why the rule is worth a lettered place beside the others.* It is one cause with three faces, and\neach face was found separately: a cell that mentioned another ",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 448,
+      "last_line_at_the_tree": 456,
+      "characters_with_line_endings": 799,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "6810baecba4906cb3c5e89a6105b1fdef3159f950b89e347b55cd6a7b2d3c8a8",
+      "the_opening": "**★ AND WHAT A DISCARD VERDICT DOES TO A ROW ALREADY ON THE BOOKS — IT IS AN INPUT TO THE\nDERIVATION THAT DECIDES GATING, NEVER AN EDIT TO A GATING VERDICT (use",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 458,
+      "last_line_at_the_tree": 463,
+      "characters_with_line_endings": 541,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "c1bbfd9ea6ba7ea19f3e935299097928447c175e1a9699f4d9ed9349264e7546",
+      "the_opening": "**THE RULING. A DISCARD verdict on an already-rowed item is an INPUT to the derivation that decides\ngating — never an edit to a gating verdict.** The gate conti",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 465,
+      "last_line_at_the_tree": 470,
+      "characters_with_line_endings": 511,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "e461864106c6f469e39b529b130e8087b5d38bbbd2a47678d743e6e7deeb3462",
+      "the_opening": "**★ THE GUARD, WHICH IS NOT AN ADDITION BUT #10's OWN REQUIREMENT.** A discard verdict is\n**AUTHORED**, not derived, so feeding it to the cut lets an authored j",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 472,
+      "last_line_at_the_tree": 475,
+      "characters_with_line_endings": 324,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "b33379cee937c166826408f400d9fbd0e17a589cf11391600a4fd6538d33c767",
+      "the_opening": "*Why an input rather than a hand-made correction:* **D-436** reserves to the user the question of\nwhat a derived cut carries, and a hand-removed gate would be t",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 477,
+      "last_line_at_the_tree": 477,
+      "characters_with_line_endings": 167,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": false,
+      "the_classifiers_evidence": {
+       "it_is_an_archive_pointer_left_by_a_previous_act": true,
+       "why_it_stays": "the pointer QUOTES the class and the opening of the span it points at, so a recognizer reading its words places it in that span's class. Archiving it would remove the one breadcrumb a reader has back to the moved span, which is the opposite of what the pointer discipline is for."
+      },
+      "the_amendment_record_shape": [
+       "archive_pointer_lines_inside_this_span",
+       "declined_alternatives_paragraph_REFUSED_as_pointer_carried",
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "7016bd08b5d42112fd27d39840eba3318cd8a04a9b590f199cc2f385467d8a04",
+      "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 8 line(s), `defense-and-declined-alternatives`, opening \"**THE THREE ALTERNATIVES DECLINED, recorded because an ex",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 479,
+      "last_line_at_the_tree": 479,
+      "characters_with_line_endings": 167,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": false,
+      "the_classifiers_evidence": {
+       "it_is_an_archive_pointer_left_by_a_previous_act": true,
+       "why_it_stays": "the pointer QUOTES the class and the opening of the span it points at, so a recognizer reading its words places it in that span's class. Archiving it would remove the one breadcrumb a reader has back to the moved span, which is the opposite of what the pointer discipline is for."
+      },
+      "the_amendment_record_shape": [
+       "accepted_costs_paragraph_REFUSED_as_pointer_carried",
+       "archive_pointer_lines_inside_this_span"
+      ],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "108a019c12ccd121adc1f3ced43d64ecfe594371eb6ebcbc77e0dc53206b3f3a",
+      "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 4 line(s), `defense-and-declined-alternatives`, opening \"**THE COSTS THE USER ACCEPTED, stated before the ruling a",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 481,
+      "last_line_at_the_tree": 486,
+      "characters_with_line_endings": 515,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "53e4c2d489a88f63b24ec6bf1a4fb5b08cef9f894691788204c068455a7493dc",
+      "the_opening": "**★ WHAT IT DOES NOT DO.** It authorizes **NO SWEEP** — it states how a discard verdict is\nconsumed, not that any row should be discarded. It moves **D-231**'s ",
+      "settled_at_an_earlier_sitting": []
+     }
+    ]
+   },
+   {
+    "name": "The decisions register",
+    "characters": 17109,
+    "characters_given_to_the_finer_cut": 17110,
+    "characters_of_the_blank_lines_between_sub_blocks": 2,
+    "sub_block_count": 3,
+    "by_kind": {
+     "block": {
+      "sub_blocks": 2,
+      "characters": 15606
+     },
+     "star-marked sub-block": {
+      "sub_blocks": 1,
+      "characters": 1502
+     }
+    },
+    "by_class": {
+     "operative-rule-text": {
+      "sub_blocks": 3,
+      "characters": 17108
+     }
+    },
+    "by_shape_element": {
+     "ruled_date_header": {
+      "sub_blocks": 2,
+      "characters": 1598
+     },
+     "former_wording_marker": {
+      "sub_blocks": 1,
+      "characters": 15510
+     }
+    },
+    "star_marked_sub_blocks": {
+     "sub_blocks": 1,
+     "characters": 1502
+    },
+    "sub_blocks_carrying_a_ruled_date_header": {
+     "sub_blocks": 2,
+     "characters": 1598
+    },
+    "archive_class_characters": 0,
+    "doubt_defaulted_characters": 17012,
+    "settled_sub_blocks": {
+     "sub_blocks": 0,
+     "characters": 0
+    },
+    "sub_blocks": [
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 488,
+      "last_line_at_the_tree": 488,
+      "characters_with_line_endings": 96,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": false,
+      "the_classifiers_evidence": {
+       "it_is_a_bare_section_heading": true,
+       "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "1651f2ddba48987c6a42fb9c5acf52b1eee84d2ec5c1b31f7e91439d77b24a88",
+      "the_opening": "## The decisions register (shape user-ratified 2026-07-28; content + living surface 2026-08-02)\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 490,
+      "last_line_at_the_tree": 649,
+      "characters_with_line_endings": 15510,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true,
+       "a_former_wording_marker_was_found_and_did_NOT_place_it": {
+        "the_marker_matched": "former wording",
+        "why_it_did_not_place_it": "no quotation accompanies it, so the span POINTS AT a former wording preserved elsewhere rather than carrying one. This is finding F33's largest mis-class answered: the coarse pass placed 15,395 characters of live governing rule text on exactly this signal."
+       }
+      },
+      "the_amendment_record_shape": [
+       "former_wording_marker"
+      ],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "27b50e758dd3d8ff0e2c37dcf8035d63edce3367c976675a5eae7da5cd7c1a63",
+      "the_opening": "**The register is `DECISIONS.md` (the lean INDEX) + `decisions/group_<X>.md` (full entries: the\nverbatim decision, plain restatement, why, status, home, provena",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 651,
+      "last_line_at_the_tree": 665,
+      "characters_with_line_endings": 1502,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "08f83d309dff127f2cfc518bebdc446c38073e43e262f9ea6761c979d6f1ee15",
+      "the_opening": "**★ HOW RULE (c) IS DISCHARGED ONCE IT HAS ALREADY BEEN MISSED (user-ruled 2026-08-09; the ruling\nrecord is `records/cowork/rulings/cowork_rulings_2026_08_09_se",
+      "settled_at_an_earlier_sitting": []
+     }
+    ]
+   },
+   {
+    "name": "This block",
+    "characters": 5213,
+    "characters_given_to_the_finer_cut": 5214,
+    "characters_of_the_blank_lines_between_sub_blocks": 10,
+    "sub_block_count": 20,
+    "by_kind": {
+     "block": {
+      "sub_blocks": 9,
+      "characters": 3889
+     },
+     "star-marked sub-block": {
+      "sub_blocks": 1,
+      "characters": 244
+     },
+     "table-row": {
+      "sub_blocks": 10,
+      "characters": 1071
+     }
+    },
+    "by_class": {
+     "operative-rule-text": {
+      "sub_blocks": 20,
+      "characters": 5204
+     }
+    },
+    "by_shape_element": {
+     "ruled_date_header": {
+      "sub_blocks": 3,
+      "characters": 1928
+     }
+    },
+    "star_marked_sub_blocks": {
+     "sub_blocks": 1,
+     "characters": 244
+    },
+    "sub_blocks_carrying_a_ruled_date_header": {
+     "sub_blocks": 3,
+     "characters": 1928
+    },
+    "archive_class_characters": 0,
+    "doubt_defaulted_characters": 5204,
+    "settled_sub_blocks": {
+     "sub_blocks": 0,
+     "characters": 0
+    },
+    "sub_blocks": [
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 704,
+      "last_line_at_the_tree": 708,
+      "characters_with_line_endings": 392,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "532104eaa87945b25de265473be6189b14a860353fc77573add60a875e855b31",
+      "the_opening": "**Always read these two files at the start of every session:**\n- `C:\\s\\MS\\STATUS.md` — lean since the 2026-07-18 doc split: the current entries, active iteratio",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 710,
+      "last_line_at_the_tree": 712,
+      "characters_with_line_endings": 260,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "eaae68251dd6a39082e49ea9992c0e480a3ea05d0db2787c688a9fc4d27acf48",
+      "the_opening": "**And read this one CONDITIONALLY — it is MANDATORY for a session that builds, tests, or runs a\nmeasurement tool whose command lives there:**\n- `C:\\s\\MS\\BUILD_A",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 714,
+      "last_line_at_the_tree": 720,
+      "characters_with_line_endings": 681,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "4970c7fb12355a427bb2a2a904f20ec631e4ff709049bff55eb22a3d1385c800",
+      "the_opening": "*★ `BUILD_AND_TEST.md` WAS DEMOTED from an unconditional session-start read to a conditional one on\n2026-08-17, on the user's Ruling 3 of `records/cowork/ruling",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 722,
+      "last_line_at_the_tree": 729,
+      "characters_with_line_endings": 680,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "7b9ae1d2d939aad89487fc6408a48b6306f4ee6255d5d45c2c1cef5e42998907",
+      "the_opening": "*★ AND `DECISIONS.md` WAS CONSIDERED FOR THE SAME TREATMENT AND RULED OUT, the ground recorded here\nbecause a later ruling may revisit it and must have the grou",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 731,
+      "last_line_at_the_tree": 733,
+      "characters_with_line_endings": 244,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "da0a6507d1c995e28db771ef21126014e1f9b6dd2486e9974f3ff94278b20cc6",
+      "the_opening": "**★ AND THIS IS WHAT A SESSION READS OF `CLAUDE.md` ITSELF — SIX SPANS AT SESSION START, EIGHT READ\nONLY WHEN THE SESSION'S WORK TOUCHES THEM (user-ruled 2026-0",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 735,
+      "last_line_at_the_tree": 735,
+      "characters_with_line_endings": 39,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "f1b3749b53aa829ef2d6f6ddf035c2f064841f764b02c938e15d9cbce7f19fa8",
+      "the_opening": "**READ AT SESSION START — six spans:**\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 737,
+      "last_line_at_the_tree": 743,
+      "characters_with_line_endings": 419,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "91091e8d5617bc07a2e7d65d06ffc787f21681e7caf6817aee4c8ba17f318760",
+      "the_opening": "- **Guiding principles**, from its heading through the *Delegation pointer* paragraph that closes it.\n- **The open-items register**, whole.\n- **The decisions re",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 745,
+      "last_line_at_the_tree": 745,
+      "characters_with_line_endings": 63,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "29b817aa6366fee81c08328d389a2206e5badd077ad6932f159b1354b2073595",
+      "the_opening": "**READ CONDITIONALLY — eight spans, each with its condition:**\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "table-row",
+      "first_line_at_the_tree": 747,
+      "last_line_at_the_tree": 747,
+      "characters_with_line_endings": 31,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "e5b62a97abf58bd59c13bf69670ff32b9ad0c0a60c765f43858a734e3ef2c24b",
+      "the_opening": "| Span, by heading | Read by |\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "table-row",
+      "first_line_at_the_tree": 748,
+      "last_line_at_the_tree": 748,
+      "characters_with_line_endings": 10,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "ac92d1b091b25afced4265ab8cc2f40af0ad8ffa13d3ba560710a1caa14bfa06",
+      "the_opening": "|---|---|\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "table-row",
+      "first_line_at_the_tree": 749,
+      "last_line_at_the_tree": 749,
+      "characters_with_line_endings": 118,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "4cd27e0690c7950545fd7264d41d59f43a3b44442cbbb012785d728c3433f0d7",
+      "the_opening": "| **Project context** | a session that touches the composing module, or that needs the full project-context pointer |\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "table-row",
+      "first_line_at_the_tree": 750,
+      "last_line_at_the_tree": 750,
+      "characters_with_line_endings": 186,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "182244b3627a210feab88d727e949240b22a5b8d7821610442ed1fd47e79a2fa",
+      "the_opening": "| **Autonomous operation — composing module** | a session that edits code under the composing module, or that runs the standard loop for mismatch reduction work",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "table-row",
+      "first_line_at_the_tree": 751,
+      "last_line_at_the_tree": 751,
+      "characters_with_line_endings": 155,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "a7ce3918e667e472951b55241a5f8f594cefa2319fa30fdb70856bcaa5410282",
+      "the_opening": "| **Build and test commands** — the command blocks below this block | a session that builds, tests, or runs a measurement tool whose command lives there |\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "table-row",
+      "first_line_at_the_tree": 752,
+      "last_line_at_the_tree": 752,
+      "characters_with_line_endings": 188,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "621cce45db070d1a295aebdf1d346da0578c85a8b9f8513af9ee393c68ecf569",
+      "the_opening": "| **Gate threshold and preset policy**, including its blocks (A) to (D) | a session that measures the analysis, changes a gate or a threshold, re-baselines, or ",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "table-row",
+      "first_line_at_the_tree": 753,
+      "last_line_at_the_tree": 753,
+      "characters_with_line_endings": 121,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "07e2dd32dce123c72be86fd430ea13271616979e189ac88bb68056dfe9d3fb9a",
+      "the_opening": "| **Scoring model** | unchanged — a session that touches scoring logic, which is that section's own standing condition |\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "table-row",
+      "first_line_at_the_tree": 754,
+      "last_line_at_the_tree": 754,
+      "characters_with_line_endings": 50,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "eba19d9d54a0eb85a085c96c6c675a8d7f725f48e5ba831c3845896bacfa7ebd",
+      "the_opening": "| **Score corpora** | any task involving scores |\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "table-row",
+      "first_line_at_the_tree": 755,
+      "last_line_at_the_tree": 755,
+      "characters_with_line_endings": 127,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "17ba6d0647206d0e9471f1ff6187c08823f03832ef33b71ae85f9ac37ed1617d",
+      "the_opening": "| **Local patches — do not revert** | a session that edits MuseScore's own code, or that runs or reviews a dependency update |\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "table-row",
+      "first_line_at_the_tree": 756,
+      "last_line_at_the_tree": 756,
+      "characters_with_line_endings": 85,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "cd555eed7c6208d383488207ac2e477589b1461c756cfa5ea78e1809cbbafaea",
+      "the_opening": "| **VS Code extension — bash command rules** | any session that runs bash commands |\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 758,
+      "last_line_at_the_tree": 768,
+      "characters_with_line_endings": 1003,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "208db46e4164f9e00ddb57d6a7f9f7b2a2ca7a72dff01cce40f93700dfa6c010",
+      "the_opening": "**Provenance, and what this act did and did not do.** The membership is the user's ruling of\n2026-09-07, taken on a self-contained surface delivered in its own ",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 770,
+      "last_line_at_the_tree": 772,
+      "characters_with_line_endings": 352,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "6a0e6a69ce36d54648b45a33d77af3d54b8e0aabee9d997ee74fa862d014b9f7",
+      "the_opening": "Do not rely on memory of previous sessions for baseline numbers or iteration state — read STATUS.md.\n`STATUS_ARCHIVE.md` and `records/cowork/handoff/cowork_hand",
+      "settled_at_an_earlier_sitting": []
+     }
+    ]
+   },
+   {
+    "name": "Conventions",
+    "characters": 41071,
+    "characters_given_to_the_finer_cut": 41072,
+    "characters_of_the_blank_lines_between_sub_blocks": 11,
+    "sub_block_count": 20,
+    "by_kind": {
+     "block": {
+      "sub_blocks": 12,
+      "characters": 23065
+     },
+     "star-marked sub-block": {
+      "sub_blocks": 8,
+      "characters": 17996
+     }
+    },
+    "by_class": {
+     "operative-rule-text": {
+      "sub_blocks": 18,
+      "characters": 31650
+     },
+     "preserved-former-wording": {
+      "sub_blocks": 2,
+      "characters": 9411
+     }
+    },
+    "by_shape_element": {
+     "ruled_date_header": {
+      "sub_blocks": 16,
+      "characters": 32362
+     },
+     "former_wording_marker": {
+      "sub_blocks": 2,
+      "characters": 9411
+     }
+    },
+    "star_marked_sub_blocks": {
+     "sub_blocks": 8,
+     "characters": 17996
+    },
+    "sub_blocks_carrying_a_ruled_date_header": {
+     "sub_blocks": 16,
+     "characters": 32362
+    },
+    "archive_class_characters": 9411,
+    "doubt_defaulted_characters": 31635,
+    "settled_sub_blocks": {
+     "sub_blocks": 3,
+     "characters": 7294
+    },
+    "sub_blocks": [
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1536,
+      "last_line_at_the_tree": 1536,
+      "characters_with_line_endings": 15,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": false,
+      "the_classifiers_evidence": {
+       "it_is_a_bare_section_heading": true,
+       "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "56e0f926f36fb34c1ce040121bac9f8c03c0d7b51fa2280b8e39a672253e137f",
+      "the_opening": "## Conventions\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1538,
+      "last_line_at_the_tree": 1615,
+      "characters_with_line_endings": 7103,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "5e03c41cdaf854995a1900fb84b0b6ef66574212752e0bbc2f7053f88e259c34",
+      "the_opening": "- American English throughout — \"analyzer\" not \"analyser\"\n- No confirmation prompts between analyse → implement → build → test steps\n- Commit only when explicit",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 1616,
+      "last_line_at_the_tree": 1639,
+      "characters_with_line_endings": 2268,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "9990ad11fe9eb53e99df5e2fef3460712d8e29cb9ac951f59f75cea3d3ccc3b3",
+      "the_opening": "  **★ WHAT HAPPENS TO A NAME BORROWED FROM THE PUBLISHED RESEARCH, AND IN WHAT ORDER THE CLEANUP\n  RUNS (user-ruled 2026-08-09; the ruling record is `records/co",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1641,
+      "last_line_at_the_tree": 1653,
+      "characters_with_line_endings": 1247,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "77fa69043178ddb106f44a20ac2975ac91a32b20ebe6bfa051a973163f14094c",
+      "the_opening": "- **EVERY DESIGN DECISION CARRIES ITS DEFENSE AT ITS HOME (user-directed, 2026-08-01, at the\n  decisions-register ratification review).** Wherever a design deci",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1655,
+      "last_line_at_the_tree": 1657,
+      "characters_with_line_endings": 238,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "1f72ce832d41e26774bf3261ab620ef61f4656f17e5bae42ad49f2c2c54139aa",
+      "the_opening": "- **ISSUE-EXHAUSTION AND SPECIFICATION COMPLETION BEFORE ANY FIX DESIGN (user-directed,\n  2026-08-02; sharpens #8, which forbade inference-problem coding before",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 1658,
+      "last_line_at_the_tree": 1686,
+      "characters_with_line_endings": 2708,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "182cb568a7a5fea2e4f4ed0d61c54051a7a64f25c90b3c9d716276ea52b5f9f3",
+      "the_opening": "  **★ THE THREE-PHASE STRUCTURE BELOW IS SUPERSEDED AND ITS TRUTH HALF IS REPLACED (user-ruled\n  2026-08-15; the ruling record is `records/cowork/rulings/cowork",
+      "settled_at_an_earlier_sitting": [
+       {
+        "artifact": "tools/audit/claude_md_prune_backlog.json",
+        "field": "the_left_at_site_by_the_reading",
+        "how": "by its opening only — the same sub-block, amended since",
+        "the_sentence_the_prune_backlog_carries": "re-proposing it is forbidden"
+       }
+      ]
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 1687,
+      "last_line_at_the_tree": 1706,
+      "characters_with_line_endings": 1960,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "d2c09f5283fe11a97a29822545c5c2e9e85cb43442303485458ca5b6fce9fc20",
+      "the_opening": "  **★ HOW FAR THE DOC-SYNC HALF REACHES INTO A DOCUMENT'S ACCOUNT OF ITSELF (user-ruled 2026-08-04;\n  D-639).** The sentence above says *\"states something false",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 1707,
+      "last_line_at_the_tree": 1713,
+      "characters_with_line_endings": 663,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "4a6a4716d4edcf8fa94c88e0aeadba54c834c2f8a203da65c9d9c9b6d64f8dc0",
+      "the_opening": "  **★ AND IT BEARS ON A GATE VERDICT — A POINTER, NOT A RULING (the question is open at\n  `OPEN_ITEMS.md` OI-336).** THIS rule decides what PHASE 1 OWES; the no",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 1714,
+      "last_line_at_the_tree": 1752,
+      "characters_with_line_endings": 3724,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "3ad3193abfb075b491412c1f75e5eab4afe0451312be87a6f15ebec39af68e86",
+      "the_opening": "  **★ WHEN PHASE 1 IS COMPLETE — THE FINISH LINE IS CUT BY D-438'S TEST, AND THE APPARATUS RESIDUE\n  DOES NOT GATE THE COMPLETION (user-ruled 2026-08-11; the ru",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 1753,
+      "last_line_at_the_tree": 1774,
+      "characters_with_line_endings": 2087,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "c814d255267934e2800b57168a3ac4243311ac5f94813a685c90d1bf77cdfe8b",
+      "the_opening": "  **★ QUALIFICATION — PHASE 3 WAITS ON THE PHASE-2 ITEMS THAT COULD FIND ANOTHER MEMBER OF THE\n  FAMILY BEING DESIGNED FOR, NOT ON ALL OF PHASE 2 (user-ruled 20",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 1775,
+      "last_line_at_the_tree": 1804,
+      "characters_with_line_endings": 2597,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "2cdd98eb81b111dc9982dee1691740a363fc9821c3f1d3f3a23ecb850c426253",
+      "the_opening": "  **★ NOTE ON PHASE 2 — THE ENUMERATION THIS CLAUSE POINTS AT IS RATIFIED (user, 2026-08-03;\n  D-439).** `cowork_oi200_perspective_inventory.md` §4 is the ONE h",
+      "settled_at_an_earlier_sitting": [
+       {
+        "artifact": "tools/audit/claude_md_prune_backlog.json",
+        "field": "the_left_at_site_by_the_reading",
+        "how": "by hash — the sub-block stands unchanged",
+        "the_sentence_the_prune_backlog_carries": "re-proposing it is forbidden"
+       }
+      ]
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1806,
+      "last_line_at_the_tree": 1814,
+      "characters_with_line_endings": 802,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "4921271bf96624e8f143c52d9dde4adebff12e648fa9d4f402636864007a1d87",
+      "the_opening": "- **MAKE IT WORK FIRST; COMPROMISE ON PERFORMANCE ONLY IF PERFORMANCE PROVES TO BE A PROBLEM\n  (user-directed, 2026-07-28, at the analysis-cost session).** Gett",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1816,
+      "last_line_at_the_tree": 1825,
+      "characters_with_line_endings": 937,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "96d450daa759a57504865dfc53053bde31107ddf3124dcc89695763476ce02af",
+      "the_opening": "- **CANDIDATE ADMISSION IS COMPLETION, NOT REFINEMENT — so #8 permits fixing it now (user-ruled\n  2026-07-28, at the OI-199 pass-2 session).** The rule that dec",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1827,
+      "last_line_at_the_tree": 1834,
+      "characters_with_line_endings": 775,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "738d596da3d0744549587d056c61009674edf95037d0fefac00d369286e829e8",
+      "the_opening": "- **ONE FIX IS DESIGNED ONCE OVER THE WHOLE ENUMERATED FAMILY, NEVER PER SYMPTOM (user-ruled\n  2026-07-28, at the OI-199 pass-2 session).** When several observe",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1836,
+      "last_line_at_the_tree": 1848,
+      "characters_with_line_endings": 1250,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "17bb3ba20643c92474cf2e9d45c0d7ae490f72c7c152d2236391451150b8b9f4",
+      "the_opening": "- **THE WHOLE DECISION SURFACE IS DELIVERED AS USER-VISIBLE TEXT BEFORE ANY CHOICE QUESTION (user\n  mandate 2026-07-05; homed here 2026-08-02 from `records/cowo",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1850,
+      "last_line_at_the_tree": 1928,
+      "characters_with_line_endings": 7422,
+      "the_class": "preserved-former-wording",
+      "the_doubt_default_decided_it": false,
+      "the_classifiers_evidence": {
+       "the_marker_matched": "former wording",
+       "the_quotation_that_places_it": "\"**and how far that reaches is an OPEN\n     QUESTION the user has not answered**: read at its widest it could be taken a"
+      },
+      "the_amendment_record_shape": [
+       "former_wording_marker"
+      ],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "2bc9ce24537b488524686250b38722da6ef1484e28b799a74026d7aa89869b32",
+      "the_opening": "- **HOW A DECISION SURFACE IS WRITTEN, AND IN WHAT ORDER ITS RULES APPLY (consolidated here on the\n  user's direction, 2026-09-21; each part keeps its own home ",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1930,
+      "last_line_at_the_tree": 1948,
+      "characters_with_line_endings": 1867,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "5885c825dfcf7b8dd7f77aeba60d98e20190dcc4a83d82fb04c6899d0a7f71e3",
+      "the_opening": "- **WORKING-TREE FILES ARE READ WITH THE FILE TOOLS; SHELL ACCESS IS LIMITED TO GIT OBJECT QUERIES BY\n  EXPLICIT HASH (user mandate 2026-06-21; homed here 2026-",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "star-marked sub-block",
+      "first_line_at_the_tree": 1949,
+      "last_line_at_the_tree": 1971,
+      "characters_with_line_endings": 1989,
+      "the_class": "preserved-former-wording",
+      "the_doubt_default_decided_it": false,
+      "the_classifiers_evidence": {
+       "the_marker_matched": "former wording",
+       "the_quotation_that_places_it": "\"*).** The PowerShell reading family came inside the guard at the\n  2026-08-07/08 dialect widening, and interpreter code"
+      },
+      "the_amendment_record_shape": [
+       "former_wording_marker",
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "2d7baca9e5a1722aae09ec638b919b6a2f7867c07af81dbb856ee0d243a03a99",
+      "the_opening": "  **★ THE RULE COVERS EVERY READ MECHANISM AND EVERY DIALECT (recorded 2026-08-08 on the user's\n  direction, at the third measured instance family).** The restr",
+      "settled_at_an_earlier_sitting": [
+       {
+        "artifact": "tools/audit/claude_md_finer_archive.json",
+        "field": "the_refused_by_the_ruling",
+        "how": "by hash — the sub-block stands unchanged",
+        "the_sentence_the_prune_backlog_carries": "re-proposing it is forbidden"
+       }
+      ]
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1973,
+      "last_line_at_the_tree": 1980,
+      "characters_with_line_endings": 810,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "e2b2ea2e3b18b7c78ee2baf7fdc9c2c1f8b0daa640b958829a36b7229a968c3f",
+      "the_opening": "- **INVESTIGATE BY DEFAULT; NEVER ASK THE USER WHETHER TO INVESTIGATE OR PROCEED (user mandate\n  2026-06-14; homed here 2026-08-02 from `records/cowork/handoff/",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1982,
+      "last_line_at_the_tree": 1987,
+      "characters_with_line_endings": 599,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "9c7f9d9c7da55decf4c13c694797644b056cdd27310fe42ed8af1790aca157c2",
+      "the_opening": "- **THE ORDINARY SESSION-START READ BINDS EVEN WHEN THE OPENING INSTRUCTION NAMES A SINGLE FILE\n  (ratified 2026-08-29, Ruling 5 of `records/cowork/rulings/cowo",
+      "settled_at_an_earlier_sitting": []
+     }
+    ]
+   },
+   {
+    "name": "The self-check after every coding exercise",
+    "characters": 759,
+    "characters_given_to_the_finer_cut": 760,
+    "characters_of_the_blank_lines_between_sub_blocks": 1,
+    "sub_block_count": 2,
+    "by_kind": {
+     "block": {
+      "sub_blocks": 2,
+      "characters": 759
+     }
+    },
+    "by_class": {
+     "operative-rule-text": {
+      "sub_blocks": 2,
+      "characters": 759
+     }
+    },
+    "by_shape_element": {
+     "ruled_date_header": {
+      "sub_blocks": 1,
+      "characters": 74
+     }
+    },
+    "star_marked_sub_blocks": {
+     "sub_blocks": 0,
+     "characters": 0
+    },
+    "sub_blocks_carrying_a_ruled_date_header": {
+     "sub_blocks": 1,
+     "characters": 74
+    },
+    "archive_class_characters": 0,
+    "doubt_defaulted_characters": 685,
+    "settled_sub_blocks": {
+     "sub_blocks": 0,
+     "characters": 0
+    },
+    "sub_blocks": [
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1989,
+      "last_line_at_the_tree": 1989,
+      "characters_with_line_endings": 74,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": false,
+      "the_classifiers_evidence": {
+       "it_is_a_bare_section_heading": true,
+       "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+      },
+      "the_amendment_record_shape": [
+       "ruled_date_header"
+      ],
+      "carries_a_ruled_date_header": true,
+      "text_sha256": "2b4e20febd2a002ab5ea0f2b46179c5d217b825a4643641d02a3bda9786df0a5",
+      "the_opening": "## The self-check after every coding exercise (user-directed, 2026-07-11)\n",
+      "settled_at_an_earlier_sitting": []
+     },
+     {
+      "kind": "block",
+      "first_line_at_the_tree": 1991,
+      "last_line_at_the_tree": 1998,
+      "characters_with_line_endings": 685,
+      "the_class": "operative-rule-text",
+      "the_doubt_default_decided_it": true,
+      "the_classifiers_evidence": {
+       "no_recognizer_placed_it": true
+      },
+      "the_amendment_record_shape": [],
+      "carries_a_ruled_date_header": false,
+      "text_sha256": "80bbccb3e55a5044c22e0f95ed71e3c7a5cf275598addfa19d1e3dc3eb9eeb26",
+      "the_opening": "After EVERY coding exercise — code, scripts, instruments, and document edits alike —\nand BEFORE reporting the work done: take a step back, re-read the actual di",
+      "settled_at_an_earlier_sitting": []
+     }
+    ]
+   }
+  ],
+  "totals": {
+   "characters_of_the_six_spans": 105876,
+   "characters_given_to_the_finer_cut": 105882,
+   "characters_of_the_blank_lines_between_sub_blocks": 49,
+   "sub_block_count": 106,
+   "how_the_two_counts_relate": "each span is given to the finer cut as its lines joined by newlines with one closing newline added, so the characters given exceed the six spans' own count by one per span",
+   "by_kind": {
+    "block": {
+     "sub_blocks": 44,
+     "characters": 55420
+    },
+    "numbered-principle sub-block": {
+     "sub_blocks": 24,
+     "characters": 8024
+    },
+    "star-marked sub-block": {
+     "sub_blocks": 28,
+     "characters": 41318
+    },
+    "table-row": {
+     "sub_blocks": 10,
+     "characters": 1071
+    }
+   },
+   "by_class": {
+    "operative-rule-text": {
+     "sub_blocks": 102,
+     "characters": 91564
+    },
+    "preserved-former-wording": {
+     "sub_blocks": 3,
+     "characters": 11316
+    },
+    "defense-and-declined-alternatives": {
+     "sub_blocks": 1,
+     "characters": 2953
+    }
+   },
+   "by_shape_element": {
+    "archive_pointer_lines_inside_this_span": {
+     "sub_blocks": 5,
+     "characters": 2863
+    },
+    "ruled_date_header": {
+     "sub_blocks": 39,
+     "characters": 56976
+    },
+    "accepted_costs_paragraph_REFUSED_as_pointer_carried": {
+     "sub_blocks": 2,
+     "characters": 1012
+    },
+    "declined_alternatives_paragraph_REFUSED_as_pointer_carried": {
+     "sub_blocks": 2,
+     "characters": 1012
+    },
+    "former_wording_marker": {
+     "sub_blocks": 4,
+     "characters": 26826
+    },
+    "accepted_costs_paragraph": {
+     "sub_blocks": 1,
+     "characters": 2953
+    },
+    "declined_alternatives_paragraph": {
+     "sub_blocks": 1,
+     "characters": 2953
+    }
+   },
+   "star_marked_sub_blocks": {
+    "sub_blocks": 28,
+    "characters": 41318
+   },
+   "sub_blocks_carrying_a_ruled_date_header": {
+    "sub_blocks": 39,
+    "characters": 56976
+   },
+   "archive_class_characters": 14269,
+   "doubt_defaulted_characters": 90909,
+   "settled_sub_blocks": {
+    "sub_blocks": 6,
+    "characters": 12997
+   }
+  },
+  "the_settled_spans": {
+   "found_by_hash": 4,
+   "found_by_opening_only": 2,
+   "not_found": 2,
+   "how_a_match_is_taken": "by hash when a sub-block's text_sha256 equals the entry's; else by opening when the first 120 characters of the sub-block's text, whitespace collapsed as the settled-span artifacts collapse it, equal the first 120 of the entry's opening. None of the three outcomes is a STOP.",
+   "the_entries": [
+    {
+     "artifact": "tools/audit/claude_md_finer_archive.json",
+     "field": "the_left_at_site_by_the_reading",
+     "text_sha256": "5a2f8532d2e5681276c15f0e86b02716babec157e07a50e9f4e9ade189a79aa2",
+     "the_opening": "**★ THAT PARAGRAPH REPLACED A NARROWER ONE, AND THE FORMER WORDING STANDS IN PLACE (#12; user-ruled 2026-08-11 on a surface carrying three alternatives with the",
+     "found_at_the_tree": "by hash — the sub-block stands unchanged",
+     "the_sub_blocks_it_matched_first_line_at_the_tree": [
+      202
+     ]
+    },
+    {
+     "artifact": "tools/audit/claude_md_finer_archive.json",
+     "field": "the_left_at_site_by_the_reading",
+     "text_sha256": "886a1e11e25f69b7dde7c34a72df2b1b1250404073c3c1cec9a8203d7c8f75fd",
+     "the_opening": "**★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6).** R3's clause that an apparatus finding's row is **mandatory** no longer holds for a finding the worth te",
+     "found_at_the_tree": "by hash — the sub-block stands unchanged",
+     "the_sub_blocks_it_matched_first_line_at_the_tree": [
+      53
+     ]
+    },
+    {
+     "artifact": "tools/audit/claude_md_finer_archive.json",
+     "field": "the_refused_by_the_ruling",
+     "text_sha256": "9417eb75e4441967bd0ec3c0aa61d0252c16c53e97f676c3655a4f18285fa66e",
+     "the_opening": "**★ AND WHAT SUCH A ROW IS OWED — IT STOPS BEING OWED, WITH A PER-ROW LAPSE RECORD (user-ruled 2026-08-11; the ruling record is `cowork_rulings_2026_08_11_fifte",
+     "found_at_the_tree": "by its opening only — the same sub-block, amended since",
+     "the_sub_blocks_it_matched_first_line_at_the_tree": [
+      388
+     ]
+    },
+    {
+     "artifact": "tools/audit/claude_md_finer_archive.json",
+     "field": "the_refused_by_the_ruling",
+     "text_sha256": "a7e9579652801a55916cf1fbac58f7d5e0e1ddc3c487b43818da41898a909635",
+     "the_opening": "*★ [SUPERSEDED by the OI-178 adoption 2026-07-26 — historical] THE OI-168 RE-BASELINE (2026-07-14; report `cc_oi168_fix_report.md`; outgoing reference preserved",
+     "found_at_the_tree": "not found",
+     "the_sub_blocks_it_matched_first_line_at_the_tree": []
+    },
+    {
+     "artifact": "tools/audit/claude_md_finer_archive.json",
+     "field": "the_refused_by_the_ruling",
+     "text_sha256": "b036cf0489111824e0f9a6052865bd32fac05ef7b45af50fd4ddd384cec3b370",
+     "the_opening": "**★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`).** The **primary reported metric AND the Stage-5 fitting-object",
+     "found_at_the_tree": "not found",
+     "the_sub_blocks_it_matched_first_line_at_the_tree": []
+    },
+    {
+     "artifact": "tools/audit/claude_md_finer_archive.json",
+     "field": "the_refused_by_the_ruling",
+     "text_sha256": "2d7baca9e5a1722aae09ec638b919b6a2f7867c07af81dbb856ee0d243a03a99",
+     "the_opening": "**★ THE RULE COVERS EVERY READ MECHANISM AND EVERY DIALECT (recorded 2026-08-08 on the user's direction, at the third measured instance family).** The restricti",
+     "found_at_the_tree": "by hash — the sub-block stands unchanged",
+     "the_sub_blocks_it_matched_first_line_at_the_tree": [
+      1949
+     ]
+    },
+    {
+     "artifact": "tools/audit/claude_md_prune_backlog.json",
+     "field": "the_left_at_site_by_the_reading",
+     "text_sha256": "86a10e6fe5739e2fc9b8c36c751f576b72e4816bb3b5aa47631a8098f2e150fc",
+     "the_opening": "**★ THE THREE-PHASE STRUCTURE BELOW IS SUPERSEDED AND ITS TRUTH HALF IS REPLACED (user-ruled 2026-08-15; the ruling record is `cowork_rulings_2026_08_15_phase_d",
+     "found_at_the_tree": "by its opening only — the same sub-block, amended since",
+     "the_sub_blocks_it_matched_first_line_at_the_tree": [
+      1658
+     ]
+    },
+    {
+     "artifact": "tools/audit/claude_md_prune_backlog.json",
+     "field": "the_left_at_site_by_the_reading",
+     "text_sha256": "2cdd98eb81b111dc9982dee1691740a363fc9821c3f1d3f3a23ecb850c426253",
+     "the_opening": "**★ NOTE ON PHASE 2 — THE ENUMERATION THIS CLAUSE POINTS AT IS RATIFIED (user, 2026-08-03; D-439).** `cowork_oi200_perspective_inventory.md` §4 is the ONE home ",
+     "found_at_the_tree": "by hash — the sub-block stands unchanged",
+     "the_sub_blocks_it_matched_first_line_at_the_tree": [
+      1775
+     ]
+    }
+   ]
+  },
+  "the_marked_defense_clauses_imported": {
+   "from": "`tools/audit/gen_defense_share.py` → `build()`, called at the tree",
+   "the_totals": {
+    "marked_clauses": 34,
+    "characters_those_clauses_hold": 12957,
+    "characters_had_every_clause_been_closed_at_the_next_marked_clause": 51684,
+    "characters_had_every_clause_run_to_its_paragraph_end": 160906,
+    "share_of_the_six_session_start_spans": 12.24,
+    "share_of_the_whole_ordinary_session_start_read": 5.23
+   },
+   "per_span": [
+    {
+     "name": "Guiding principles",
+     "characters": 26908,
+     "marked_clauses": 7,
+     "characters_those_clauses_hold": 3099,
+     "characters_had_every_clause_been_closed_at_the_next_marked_clause": 12530,
+     "characters_had_every_clause_run_to_its_paragraph_end": 47148,
+     "share_of_this_span": 11.52
+    },
+    {
+     "name": "The open-items register",
+     "characters": 14816,
+     "marked_clauses": 6,
+     "characters_those_clauses_hold": 3041,
+     "characters_had_every_clause_been_closed_at_the_next_marked_clause": 4015,
+     "characters_had_every_clause_run_to_its_paragraph_end": 4631,
+     "share_of_this_span": 20.53
+    },
+    {
+     "name": "The decisions register",
+     "characters": 17109,
+     "marked_clauses": 11,
+     "characters_those_clauses_hold": 3345,
+     "characters_had_every_clause_been_closed_at_the_next_marked_clause": 13058,
+     "characters_had_every_clause_run_to_its_paragraph_end": 75156,
+     "share_of_this_span": 19.55
+    },
+    {
+     "name": "This block",
+     "characters": 5213,
+     "marked_clauses": 0,
+     "characters_those_clauses_hold": 0,
+     "characters_had_every_clause_been_closed_at_the_next_marked_clause": 0,
+     "characters_had_every_clause_run_to_its_paragraph_end": 0,
+     "share_of_this_span": 0.0
+    },
+    {
+     "name": "Conventions",
+     "characters": 41071,
+     "marked_clauses": 10,
+     "characters_those_clauses_hold": 3472,
+     "characters_had_every_clause_been_closed_at_the_next_marked_clause": 22081,
+     "characters_had_every_clause_run_to_its_paragraph_end": 33971,
+     "share_of_this_span": 8.45
+    },
+    {
+     "name": "The self-check after every coding exercise",
+     "characters": 759,
+     "marked_clauses": 0,
+     "characters_those_clauses_hold": 0,
+     "characters_had_every_clause_been_closed_at_the_next_marked_clause": 0,
+     "characters_had_every_clause_run_to_its_paragraph_end": 0,
+     "share_of_this_span": 0.0
+    }
+   ],
+   "the_two_denominators": {
+    "the_six_session_start_spans": 105876,
+    "the_whole_ordinary_session_start_read": 247953
+   },
+   "how_these_relate_to_the_sums_above": "a marked clause lies INSIDE a sub-block, so these values overlap table 2's sums and are never added to them"
+  }
+ },
+ "the_bounds_this_artifact_declares_on_itself": [
+  "Table 1's membership is AUTHORED, and a read nobody wrote into it does not appear.",
+  "Each mandate class is the writing side's authored reading of the record, cited per row and challengeable there; the user rules on it.",
+  "The injected copy of `CLAUDE.md` is DECLARED by the executing sessions; this tool measures the file, not the copy.",
+  "The dispatch and report populations are complete only relative to their name prefixes.",
+  "The imported recognizers are patterns over prose whose reach is UNMEASURED (D-673 applies: no analysis decision consumes this enumeration); the doubt default places what no recognizer places; and a sub-block cut at a ★ marker may carry a sentence that continues in the next."
+ ],
+ "what_this_does_not_assert": [
+  "That the membership of table 1 is complete.",
+  "That any mandate class is right.",
+  "That the injected copy of `CLAUDE.md` exists or has the size of the file.",
+  "That the dispatch and report populations are complete beyond the name prefixes.",
+  "That any sub-block's class is right.",
+  "That any size is small or large enough — that is the user's question at step 3.",
+  "That any text should move — this tool proposes nothing."
+ ]
+}

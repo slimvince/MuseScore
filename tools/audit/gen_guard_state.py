@@ -771,6 +771,29 @@ AUTHORED = [
      "clause is MOVABLE, which is Ruling 1's question and not this tool's; or that any unmarked "
      "passage is not a defense"),
 
+    # ---- AUTHORED 2026-11-01, cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md
+    # Task 1 -- THE PER-SESSION READING MEASUREMENT, registered in the act that commits the tool —
+    # the standing new-tool rule. `--check` and never the bare invocation, for the ordinary reason:
+    # run with no flag it REWRITES its committed artifact. No classification verdict is authored for
+    # it at `gen_guard_classification.py`, whose STOP therefore names it beside the four tools it
+    # already named; that verdict is the writing side's to carry to the user.
+    ("tools/audit/gen_per_session_reading.py", ["--check"],
+     "what a session reads before its work, member by member with size and mandate, and "
+     "`CLAUDE.md`'s six session-start spans partitioned by the ruled classes, re-measured at the "
+     "tree. Its subject is the tree AS IT STANDS: the ordinary session-start read, the six spans, "
+     "the finer cut, the classes and the marked defense are IMPORTED from the tools that own them, "
+     "and the dispatch, report and handoff populations are derived from the file system on every "
+     "run. It goes red when `STATUS.md`, a governing surface, a handoff entry or an arc document "
+     "changes, which is the invariant working rather than noise. Its STOPs are what make it a guard "
+     "rather than a record: the protocol heading or a boot-chain anchor found other than exactly "
+     "once, the protocol section's portions not summing to the section, a span's sub-blocks not "
+     "summing to the span, an authored path the tree does not have, a derived member with no "
+     "add-commit, the imported total disagreeing with its committed artifact, or the defense-share "
+     "denominator disagreeing with the reader's six-span total each halt it. ★ WHAT IT DOES NOT "
+     "ASSERT: that the membership of its first table is complete — it is AUTHORED; that any "
+     "mandate class is right; that any sub-block's class is right — the imported recognizers' reach "
+     "is UNMEASURED (D-673); or that any text should move"),
+
     # ---- AUTHORED 2026-08-19, cc_instruction_preparation_twelfth.md Task 3 -------------------
     # THE EPOCH-PINNED PASSES AND WHAT THEIR WRITE PATHS RESOLVE, registered in the act that
     # creates the tool — the standing new-tool rule. `--check` and never the bare invocation, for
