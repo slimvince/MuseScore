@@ -29810,3 +29810,50 @@ reads (§7), the findings (§8), the observations (§9), the plan's tell (§10) 
 *Provenance: CC, 2026-11-01, at boot tip `63163e31560a2bb663f32dcfae34290f0871026b`, under
 `cc_instruction_per_session_reading_measurement_2026_11_01.md`. Every commit identifier here was read from the commit's own
 object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `6b970e0715c3a9aeae2cd505232e0cbd9c7836e0` left, appended in the one further commit
+
+**A fresh full guard run in write mode (`python tools/audit/gen_guard_state.py`, the operating mode named), after the
+close commit and before this one**, run in the background and read from its file. Its result is at
+`tools/audit/guard_state.json` → `summary`, which this commit carries. Its first line, verbatim: *"wrote
+tools\audit\guard_state.json"*; its last line, verbatim: *"82 guard(s) run, 13 failing, 4 not run, 20 historical
+record(s)"*. **The condition, in the branch where Task 1 was not committed — MET:**
+
+- the run count is 82, as the dispatch provides where Task 1 was not committed (no tool enrolled);
+- zero STOPs in the runner;
+- the failing set is exactly the thirteen of the premise ledger, none added;
+- `tools/audit/gen_l3_outgoing_population.py --check` PASSES; `gen_per_session_reading.py` does not exist and is not in
+  the population;
+- `tools/audit/gen_evidence_pin_membership.py --check` PASSES, and run on its own after the guard run it reads *"ruling
+  records read 170"*, equal to the opening capture's;
+- every verdict line, the NOT RUN and HISTORICAL lines among them, is identical to the opening capture's — compared by the
+  scratch script `t3_compare.py`, which printed *"opening verdict lines: 106  end-state verdict lines: 106"*, *"verdict lines
+  moved: 0"*, *"[NOT RUN] identical: True"*, *"[HISTORICAL] identical: True"*, *"[STOP] lines at the end state: 0"* and
+  *"failing at the end state: 13"*;
+- `gen_guard_classification.py --check` STOPs naming exactly the four tools of the premise ledger — the four alone, Task 1
+  having enrolled nothing.
+
+**The A2 exceptions were all met inside the close** (the defense share and the session-start read size red as A2 provides;
+the L0/L1 and L3 populations red against A2's green prediction; each regenerated and compared at the blobs, no population
+member moving — report §3, 2(c)). This run regenerated nothing beyond its own artifact: `changed_paths.py` after the run
+shows `tools/audit/guard_state.json` beside the carried `tools/audit/claude_md_finer_archive.json` and no other tracked
+modification, and no new handoff entry or ruling record among the untracked paths. `gen_l2_outgoing_population.py` was not
+run in any operating mode.
+
+**A3 to A5, verified at the objects.** `git diff --name-status 63163e31560a2bb663f32dcfae34290f0871026b
+6b970e0715c3a9aeae2cd505232e0cbd9c7836e0` lists thirteen paths, every one accounted for: `STATUS.md`, `STATUS_ARCHIVE.md`,
+this dispatch, the report, this file, entries 461 and 462, `tools/audit/defense_share.json`,
+`tools/audit/gen_status_batch_bound.py`, `tools/audit/l0_l1_outgoing_population.json`,
+`tools/audit/l3_outgoing_population.json`, `tools/audit/session_start_read_size.json` and
+`tools/audit/status_batch_bound.json`. **The governing documents, the imported tools, the derivation, every dispatch and
+report of the arc and every handoff entry from 448 to 460 are absent from it.** `git ls-tree -r` at each commit, one command
+per commit, each hash written literally, over the A5 files and the folders `records/cowork/handoff`,
+`records/cc/instructions`, `records/cc/reports`, `records/cowork/rulings` and `ratification_surfaces` recursively: 1,790
+entries at the boot tip and 1,794 at the close; nothing only at the boot tip; only at the close the dispatch, the report and
+entries 461 and 462; one blob changed, this file (`t3_a5.py`). The two regenerated measurement artifacts' moved values are
+named in report §3, 2(c): `STATUS.md`'s size and every total and share built on it, and nothing else.
+
+This commit adds only the guard run's artifact and this portion.
+
+*Provenance: CC, 2026-11-01, appended in the one further commit after the close commit
+`6b970e0715c3a9aeae2cd505232e0cbd9c7836e0`; the verdicts are this run's own output, read with the file tools.*
