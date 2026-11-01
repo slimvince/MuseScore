@@ -2402,7 +2402,19 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # remain in `STATUS.md` and no aiming of this tool can identify them** — a declared state and not a STOP,
 # unchanged by this act. **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431): the
 # membership is DERIVED from the entries' own text at the base commit.
-BASE_COMMIT = "91e45d621aa4a387271f8a4e89e9742c958c38c6"
+#
+# ★★ RE-AIMED 2026-11-01 BY `records/cc/instructions/cc_instruction_pruning_rulings_execution_2026_11_01.md`
+# Task 3(b). `BASE_COMMIT` was `91e45d621aa4a387271f8a4e89e9742c958c38c6` and is now
+# `8112c4d2260d381dd35fe050df6837bb0488bcf7`: this batch's Task 0 commit, which is its LAST TASK COMMIT
+# before the close — its Tasks 1 and 2 committed nothing (each was reversed under its dispatch's rule for an
+# unpredicted red). That commit carries no `STATUS.md` change, so its `STATUS.md` object is the one both refs
+# carried when this batch opened (the blob `a3d66a18f4fbc484c1e06620ba2965b0f59b2841`, at the commit
+# `a18148e529cd9f50aeb831cb531bf8813a472eb4` and at `8112c4d2…`, established at `git rev-parse` of each,
+# one command per commit) — and it carries the per-session reading measurement remainder batch's entries at
+# the head of the dated entries. The then-previous batch is that remainder batch; its close entry's
+# `Last updated: ` prefix was MOVED to this batch's close entry in the same edit that wrote this batch's
+# entries, before `--apply` ran. **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431).
+BASE_COMMIT = "8112c4d2260d381dd35fe050df6837bb0488bcf7"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -2613,7 +2625,10 @@ BASE_COMMIT = "91e45d621aa4a387271f8a4e89e9742c958c38c6"
 # *(`PREVIOUS_BATCH_DISPATCH` read "cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md" while
 # `cc_instruction_per_session_reading_measurement_2026_11_01.md` was the executing act; it is re-stated here
 # for `cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md`, whose then-previous batch is that one.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_per_session_reading_measurement_2026_11_01.md"
+# *(`PREVIOUS_BATCH_DISPATCH` read "cc_instruction_per_session_reading_measurement_2026_11_01.md" while
+# `cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md` was the executing act; it is re-stated here
+# for `cc_instruction_pruning_rulings_execution_2026_11_01.md`, whose then-previous batch is that one.)*
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -2874,8 +2889,12 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_per_session_reading_measurement_2026_1
 # while that batch was the executing act; both are re-stated here for
 # `cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md`, dated 2026-11-01 in its file name,
 # whose move ran on 2026-11-01, so the two dates agree and `ACT_DATE` keeps its value.)*
+# *(`ACT_DATE` read "2026-11-01" and `DISPATCH` `cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md`
+# while that batch was the executing act; both are re-stated here for
+# `cc_instruction_pruning_rulings_execution_2026_11_01.md`, dated 2026-11-01 in its file name, whose move ran on
+# 2026-11-01, so the two dates agree and `ACT_DATE` keeps its value.)*
 ACT_DATE = "2026-11-01"
-DISPATCH = "cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md"
+DISPATCH = "cc_instruction_pruning_rulings_execution_2026_11_01.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -3133,8 +3152,12 @@ DISPATCH = "cc_instruction_per_session_reading_measurement_remainder_2026_11_01.
 # Task 2, which that dispatch's heading *"Task 2 — the close"* names in those words. It names Task 2 again
 # while `cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md` is the executing act, that
 # dispatch ordering both halves of the close — this batch's own entries at its 2(a) and this move at its
-# 2(b) — inside its own Task 2, which that dispatch's heading *"Task 2 — the close"* names in those words.)*
-TASK = "Task 2"
+# 2(b) — inside its own Task 2, which that dispatch's heading *"Task 2 — the close"* names in those words.
+# `TASK` read "Task 2" until then and names Task 3 while
+# `cc_instruction_pruning_rulings_execution_2026_11_01.md` is the executing act, that dispatch ordering both
+# halves of the close — this batch's own entries at its 3(a) and this move at its 3(b) — inside its own Task 3,
+# which that dispatch's heading *"Task 3 — the close"* names in those words.)*
+TASK = "Task 3"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
 #                 moved in the same act that writes this batch's own entries.
@@ -3778,6 +3801,10 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md, Task 2",
      "base_commit": "91e45d621aa4a387271f8a4e89e9742c958c38c6",
      "the_then_previous_batch": "cc_instruction_per_session_reading_measurement_2026_11_01.md",
+     "the_kind_of_move": "ordinary"},
+    {"executing_act": "cc_instruction_pruning_rulings_execution_2026_11_01.md, Task 3",
+     "base_commit": "8112c4d2260d381dd35fe050df6837bb0488bcf7",
+     "the_then_previous_batch": "cc_instruction_per_session_reading_measurement_remainder_2026_11_01.md",
      "the_kind_of_move": "ordinary"},
 ]
 

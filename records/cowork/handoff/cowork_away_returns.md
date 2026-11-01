@@ -29967,3 +29967,57 @@ This commit adds only the guard run's artifact and this portion.
 
 *Provenance: CC, 2026-11-01, appended in the one further commit after the close commit
 `d17a84afdbfbf78c16ff4514df63185fad114a5c`; the verdicts are this run's own output, read with the file tools.*
+
+## THE PRUNING ITERATION, STEP 4, FIRST DISPATCH — RULINGS 1 AND 3 NOT COMMITTED: EACH WAS CARRIED OUT AND BYTE-RECONCILED, THEN REVERSED UNDER THE DISPATCH'S RULE FOR A RED IT DID NOT PREDICT (RULING 1 BY A STANDING RED, RULING 3 BY REDS ITS OWN EDITS CAUSE); DOCUMENTATION ONLY, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_pruning_rulings_execution_2026_11_01.md`, pinned at Task 0 as blob
+`17d9d39c487079ba18fb6ba1380b8ad8750ca822`:
+
+- **Task 0** landed the dispatch, the ruling record and handoff entries 464, 465 and 466 (466 existed at boot), with the
+  evidence-pin membership regenerated exactly as predicted (`8112c4d2260d381dd35fe050df6837bb0488bcf7`, pushed). The
+  opening capture was the thirteen plus the per-session tool, as A2 states; the classification STOP named the five tools.
+- **Ruling 2** (the injected `CLAUDE.md` as the read of the six spans) — the eight-line check PASSED; **Ruling 4** (the
+  two-file report) — this batch's report is in that form.
+- **Task 1 (Ruling 1) — NOT COMMITTED.** Made, reconciled, both planted faults caught; then `gen_claude_md_finer_archive.py
+  --check` and `gen_claude_md_prune_backlog.py --check`, which A2 expected green, were red — and red at the reversed tree
+  too: a STANDING red, one value each (a settled span no longer found exactly once in `CLAUDE.md`). Both files reversed and
+  proved equal to their `<T0>` blobs.
+- **Task 2 (Ruling 3) — NOT COMMITTED.** Made, reconciled (`DECISIONS.md` 127,727 → 117,490 characters had it landed),
+  both planted faults caught, Decision 2's AFTER equal to its BEFORE; then four reds 2(f) did not predict, each caused by the
+  task's edits and green again after the reversal: `decisions/gen_phase1w_legacy_verification.py` (a line citation into the
+  generator), `gen_defense_share.py`, `gen_l0_l1_outgoing_population.py`, `gen_l3_outgoing_population.py`. All three files
+  reversed and proved equal to their `<T0>` blobs.
+- **Task 3** closed: two `STATUS.md` entries (the close, Task 0), the prefix moved; the forward bound re-aimed at the Task 0
+  commit and moved exactly the remainder batch's three entries, no STOP; the four archive checks green; the read size, the
+  defense share, the L3 population and the per-session table regenerated as A2 provides for the close, only `STATUS.md`'s
+  size, the handoff entries Task 0 landed and the values built on them moving.
+- **No summary of the session's context fell.**
+
+**Everything this section would restate is in the report**, `records/cc/reports/cc_report_pruning_rulings_execution_2026_11_01.md`
+(the first read and the eight-line check §1, the capacity file §2, Task 0 §3, Task 1 and its cause §4, Task 2, its sizes
+and its causes §5, the close §6, the commits §7, the grades §8, departures and observations §9), with its appendix
+`records/cc/reports/cc_report_pruning_rulings_execution_2026_11_01_appendix.md` (the raw printouts, verbatim).
+
+### What needs the writing side, named rather than resolved
+
+1. **Rulings 1 and 3 are still to be executed.** A re-dispatch would need: for Ruling 1, a premise on the two HISTORICAL
+   tools' standing red; for Ruling 3, the phase1w line citation `gen_decisions_register.py:514`, and the defense share and
+   both outgoing-population artifacts among the reds the task causes (report §8).
+2. **The report's observations (§9)** — entry 466 as the current handover block; the HISTORICAL tools red at the tree; the
+   generator's platform line endings in write mode.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects; then the re-dispatch of Rulings 1
+  and 3 or step 4's SECOND dispatch (the measurement tool extended with the dispatch form's invariant share and the sizing of
+  a report's appendix file, and the measurement re-run so the after-values stand beside the before-values), in the order the
+  writing side judges; then, one per turn, the user's yes-or-no on carrying the Cowork boot chain's operating paragraphs in
+  the current handoff entry (candidate (e)) and, once the invariant share is measured, the dispatch-form surface (candidate
+  (d)); and only then step 5, the method ruling's surface over the completed L3 tabulation (Ruling 4 of the
+  comparison-design sitting).**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-11-01, at boot tip `a18148e529cd9f50aeb831cb531bf8813a472eb4`, under
+`cc_instruction_pruning_rulings_execution_2026_11_01.md`. Every commit identifier here was read from the commit's own object
+and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
