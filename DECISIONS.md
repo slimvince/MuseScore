@@ -7,85 +7,15 @@
 > decision it violates. The two things change on different clocks, and holding them in one row
 > produces a register that silently goes stale.
 >
-> **Shape ratified by the user, 2026-07-28** (`open_items/OI-208.md`, three rulings).
-> **Populated by the OI-207 decision-conformance adjudication, 2026-08-01.**
-> **Content RATIFIED by the user, 2026-08-02:** the 115 originally-enumerated entries with the
-> user's review corrections applied, and the 113 completion-pass entries (reviewed via the
-> pending-ratification reading aid). **Second ratification event, 2026-08-02:** the 23
-> residual-pass entries (D-232…D-254), with two qualifications recorded in the entries
-> themselves — the four intonation entries (D-244…D-247) ratified-for-now, to be reviewed when
-> that held feature's implementation is revisited; and D-248 (tonicization labels deferred)
-> ratified with its revisit to be PLANNED (row OI-267 — for maximum-precision inference the
-> feature may be needed). **Third ratification event, 2026-08-02:** the 27 phase-1d entries
-> (D-255…D-281 — D-266 and D-278 under individual rulings recorded in their entries and at their
-> homes) and the four OI-270 split entries (D-282…D-285, each superseded-by its named
-> successors). **Fourth ratification event, 2026-08-02:** the 14 phase-1e archive entries
-> (D-286…D-299 — D-286 the Stage-3.1b shelving, the audit's founding case; D-292 under its
-> individual OI-271 ruling, the constraint reaffirmed BINDING with the licence-class
-> verification as the remaining action). **Fifth ratification event, 2026-08-02:** the 16
-> phase-1f entries (D-300…D-315) and D-316 (the third local patch recorded with its
-> upstreamable disposition, the OI-273 ruling). **Sixth ratification event, 2026-08-02:** the 26
-> phase-1g entries (D-317…D-342) — D-319…D-341 directly; D-317/D-318 with rephrased plain
-> restatements under the LEGACY-marking convention (an entry whose subject is the dormant
-> pipeline is explicitly marked, so a ruling about soon-deleted code is never mistaken for one
-> about the live solution); D-342 with the live-handling clarification. The ratification is of
-> each RULE itself; homes and provenance are bookkeeping. **Seventh ratification event,
-> 2026-08-02:** the 58 phase-1h entries (D-343…D-400) — D-385 with its plain restatement
-> rephrased at the user's direction (the pedaled note can be in any voice, the D-207
-> voice-independent class governing); D-345 under the OI-275 transfer treatment (letter
-> legacy-homed and marked; D-003 governs the live estimator). **Eighth ratification event,
-> 2026-08-02:** the 5 phase-1i entries (D-401…D-405), the 79-entry LEGACY-marked set confirmed
-> as drawn (mechanism marked, surviving principle not), the OI-278 ruling (FQ-1 lapses with the
-> legacy path; D-386's phantom second alternative struck), and the transitive-authority
-> refinement of the contract-home case. The register-level ratification does not overwrite
-> per-entry provenance — an entry saying "ratifier not stated" still means the original record
-> of THAT decision does not say; what the 2026-08-02 ratifications establish is that these
-> entries are the standing decisions of record. **Ninth ratification event, 2026-08-03:** the 9
-> phase-1j entries (D-406…D-414), the four status banners behind fourteen contract-home
-> re-classifications, and the OI-279 ruling that corrected `ARCHITECTURE.md` §6.7 over the five
-> idioms (with the D-132 narrowing). **Tenth ratification event, 2026-08-03:** the 9 phase-1l entries
-> (D-415…D-423), ratified AS DRAFTED with the statuses exactly as the record states them — and,
-> recorded separately because they are separate acts, the OI-284 scope ruling on D-417 (the engage
-> criteria govern engaging the dormant spine, not the joint estimator's adoption) and the OI-285
-> ruling committing the ratification surfaces. **D-416's disposition was NOT written**: the check the
-> ruling depended on did not confirm its premise, and the STOP is recorded in that entry's provenance
-> and at `OPEN_ITEMS.md` OI-286. **Eleventh ratification event, 2026-08-04:** the 28 READ WAVE 1
-> entries (D-440…D-467), ratified AS DRAFTED with the statuses exactly as the record states them —
-> several of them "not stated", and left that way. What a ratification of an ENTRY settles is that
-> the register records the decision correctly; it is not a judgment that the decision is good, and it
-> supplies no date and no ratifier the original record never had. Two acts landed in the same commit
-> and are **not** entry ratifications: **D-058** moved to *superseded in fact* (the piece-start
-> shortcut — removed from the code on 2026-06-14 and specified in the present tense until this wave,
-> `OPEN_ITEMS.md` OI-315), and **D-468** was entered (the pinned block-(A) instrument's declared
-> inference arm, recorded but **not** user-ruled — see that entry's provenance).
-> **Twelfth ratification event, 2026-08-04:** the 33 READ WAVE 2 entries (D-469…D-501), ratified AS
-> DRAFTED with the statuses exactly as the record states them — several of them "not stated", and
-> left that way. Two things this event is explicitly not. It is **not a conformance finding**: what
-> is ratified is that the register records each decision correctly, never that the code obeys it.
-> And for **D-494…D-500** it is **not a second ratification of the decision** — those entries carry
-> amendments the user ratified at the 2026-07-02 architecture review, so ratifying the ENTRY records
-> only that the register transcribes that event correctly, and nothing is counted twice. Landing in
-> the same commit and **not** entry ratifications: **D-468**'s ratifier correction was made in the
-> preceding wave, and the riders this wave's dispatch ordered — D-492 marked a phase-3 fix-plan input
-> with the reachability of its subject checked at the code, and the D-474/D-475 consequences recorded
-> at principle #21 and on `OPEN_ITEMS.md` OI-179.
-> **Thirteenth ratification event, 2026-08-04:** the 37 READ WAVE 4 entries (D-547…D-583), ratified AS
-> DRAFTED with the statuses exactly as the record states them. The four entered **SUPERSEDED IN FACT**
-> (D-571, D-572, D-575, D-579) **stay superseded** — the ruling was explicit that they are not entered
-> LIVE and rowed for correction later, because a build that replaced what a decision governed is a fact
-> about the record and not a defect in it. **THIS EVENT SKIPS D-502…D-546, AND THE SKIP IS STATED
-> RATHER THAN LEFT TO BE INFERRED FROM THE RANGE:** the READ WAVE 3 entries and the OI-326 ruling entry
-> carry no entry ratification in their own provenance and none is recorded here, because the ruling this
-> event records names D-547…D-583 and a session may not widen a ratification to a neighbouring range.
-> Landing in the same commit and **not** entry ratifications: the build-it-right rule was widened and
-> homed at `CLAUDE.md` principle #8 (D-557 re-taken at its new home, the former verbatim preserved in
-> its provenance), D-576's caveat was recorded beside the figures it qualifies in gate block (A), and
-> three delegations were written into `ARCHITECTURE.md` on the user's ruling (`OPEN_ITEMS.md` OI-327).
+> **★ THE REGISTER-LEVEL RATIFICATION EVENTS — ARCHIVED 2026-11-01 → `DECISIONS_ARCHIVE.md`.** The shape
+> ruling of 2026-07-28, the population by the OI-207 adjudication of 2026-08-01 and the thirteen
+> ratification events of 2026-08-02 to 2026-08-04 are kept there verbatim, under Ruling 3 of
+> `records/cowork/rulings/cowork_rulings_2026_11_01_pruning_iteration_sitting.md`.
 >
 > **From 2026-08-03 each entry carries its own ratification as a FIELD**, not only as prose inside
 > the provenance — see *Entry ratified* below. It is backfilled mechanically from the provenance
 > markers and from nowhere else; where an entry shows none, its own provenance records none, and the
-> register-level events above are where to look.
+> register-level events — archived to `DECISIONS_ARCHIVE.md`, pointed at above — are where to look.
 >
 > **GENERATED FILE — do not hand-edit.** Source of record:
 > `tools/audit/decisions/backbone_decisions.json`; generator
@@ -119,7 +49,7 @@ Each entry has six parts, and a seventh where the record states one.
   its entry — the quote, the restatement, the status — ratified much later, and conflating the two
   would falsify one of them. The line appears only where the entry's own provenance records such an
   event; its absence means the provenance does not record one, not that the entry was rejected. The
-  register-level ratification events are listed in the preamble above. (Field added 2026-08-03 on the
+  register-level ratification events are archived in `DECISIONS_ARCHIVE.md`; the preamble above points there. (Field added 2026-08-03 on the
   user's ruling of that date; before it, an entry ratification could only be read out of the
   provenance prose.)
 - **Home** — where the decision is actually recorded, as `file:line`. A decision about how a
@@ -226,28 +156,15 @@ project's own and are defined here because they are used before any entry explai
 | Entries whose own ratification the provenance records | 243 |
 | Entries whose home is recorded at SECTION granularity | 146 |
 
-The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **243 of 477** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 234 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
+The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **243 of 477** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 234 do not carry one in their own provenance; the register-level ratification events archived in `DECISIONS_ARCHIVE.md` are the place to look for those, and nothing is inferred from them into the per-entry field.
 
 That last row is the one meant to fall. **477 of 477** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
-Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
-
-| | Count |
-|---|---|
-| Harvested statements | **15224** |
-| Groups of near-identical statements ("clusters") | **14460** |
-| Clusters carrying a recorded disposition | **14460** |
-| — restates | 5547 |
-| — not-a-decision | 5540 |
-| — boilerplate | 74 |
-| — no-spec-home | 655 |
-| — unresolved | 2644 |
-
-The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
+*★ The harvest-and-clusters disposition table — ARCHIVED 2026-11-01 → `DECISIONS_ARCHIVE.md`, as it rendered before the move. Its live values are at `tools/audit/decisions/cluster_dispositions.json` → `header`; the full disposition table, and the numbered rule behind each disposition, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.*
 
 ### The home field's granularity, and what sets a home class
 
-THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the field records the SECTION the entry sits in wherever the home-class criteria reach it. From 2026-08-03 (phase 1q) the three criteria in force are applied together to the whole home population: clause (a), the fifth home case (a user-ratified surface must delegate to the home at all); D-432, the delegation bar (which wordings delegate); and D-430, the section-level unit (the delegation must reach the SECTION the entry sits in, and that section must state rules rather than record findings). Every entry whose class is `contract-home` or `gap` therefore carries a `home_section` block naming its section, the criterion that decided it, and the class it carried before this pass — and, where phase 1n's staged application had already moved it, the class it carried before that (#12: neither movement is lost). Entries classed `process`, `project-convention` or `unhomed`, and every entry homed in a layer specification, carry no section block: the criteria do not reach them. The section is DERIVED from the home document's own headings and the entry's own cited line by tools/audit/decisions/gen_home_classification.py, whose --check re-derives it, so a heading moving inside a home document cannot leave a stale section behind. THE PRECEDING REGIME, superseded and recorded here rather than deleted: from the phase-1n ruling of the same day until phase 1q the field was deliberately MIXED — D-430 was applied to 46 entries across 5 documents, where section granularity decided something, and every other entry carried a document-level home pending the next touch. The user ended that staging on 2026-08-03 by ruling ONE re-classification pass over the whole population (`OPEN_ITEMS.md` OI-291).
+THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the field records the SECTION the entry sits in wherever the home-class criteria reach it. From 2026-08-03 (phase 1q) the three criteria in force are applied together to the whole home population: clause (a), the fifth home case (a user-ratified surface must delegate to the home at all); D-432, the delegation bar (which wordings delegate); and D-430, the section-level unit (the delegation must reach the SECTION the entry sits in, and that section must state rules rather than record findings). Every entry whose class is `contract-home` or `gap` therefore carries a `home_section` block naming its section, the criterion that decided it, and the class it carried before this pass — and, where phase 1n's staged application had already moved it, the class it carried before that (#12: neither movement is lost). Entries classed `process`, `project-convention` or `unhomed`, and every entry homed in a layer specification, carry no section block: the criteria do not reach them. The section is DERIVED from the home document's own headings and the entry's own cited line by tools/audit/decisions/gen_home_classification.py, whose --check re-derives it, so a heading moving inside a home document cannot leave a stale section behind. *★ The account of the preceding regime — the phase-1n staged application this pass superseded — ARCHIVED 2026-11-01 → `DECISIONS_ARCHIVE.md`.*
 
 > **The criterion, as ruled.** A home is a SECTION of a document. It is admitted when a user-ratified surface delegates a stated concern to that section by name, and that section states rules rather than recording findings. (User, 2026-08-03; dispatch cc_instruction_phase1n_criterion_premise_and_reading_regime.md §2.1. Register entry D-430.)
 >
@@ -255,7 +172,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 >
 > **How a whole-document delegation is read.** A delegation that names a DOCUMENT and no section reaches EVERY section of it; a delegation that names SECTIONS reaches those sections and their subsections and no others; and the rule-stating half is judged PER SECTION in both cases. **THIS IS NOW PART OF THE RULE, NOT AN INTERPRETATION OF IT (user, 2026-08-03, phase 1r).** At phase 1q it was this pass's reading of D-430's "delegates a stated concern to that section BY NAME", taken on the record's own precedent rather than a preference — `OPEN_ITEMS.md` OI-290 states in terms that "`ARCHITECTURE.md:1331` delegates 'this layer' and admits all sixteen of that document's entries" — and the strict alternative was recorded as available to the user. The user then WROTE the reading into `CLAUDE.md` rule (h) itself as the GRANULARITY clause, so D-430's verbatim now carries it and the strict alternative is CLOSED. Its defense, stated with it: the strict reading would evict every document delegated as a whole, signed layer specifications among them, on the accident of how a pointer happens to be phrased, making the rule retroactively destructive rather than refining. THE STRICT ALTERNATIVE, PRESERVED (#12): read literally, a whole-document delegation names no section, so no section of it would be admitted and the seven whole-document homes would lose every entry between them.
 >
-> **Scope of application.** APPLIED IN FULL, 2026-08-03 (phase 1q, the user's ruling of that date, option A3 at `OPEN_ITEMS.md` OI-291). The staged application of phase 1n — five documents, 46 entries — is superseded: every entry of the home population carries a section home and a class derived from the criteria in force. The applier is tools/audit/decisions/gen_home_classification.py, whose --check re-derives both the classification and its artifact; it replaces gen_section_homes.py, which applied D-430 alone to the staged subset and is deleted rather than left beside it (#6). **RE-RUN 2026-08-03 (phase 1r), after the user WROTE the delegations the first run's WRITE LIST asked for (the OI-293 list).** The criteria are unchanged; what changed is the delegations they read. All six write-list documents move, two of them only in part, and the movement caused by the written delegations alone is at `home_classification.json` -> `the_phase_1r_re_run`. **THE FILE THIS POINTER FORMERLY NAMED IS REMOVED (user, 2026-08-09, Ruling 1 of `cowork_rulings_2026_08_09_return.md`; recorded here in the D-644 shape — state the current arrangement, record the removal as closed).** `phase1q_reclassification.json` held NEITHER the phase-1q record NOR the present classes: the applying run had been performed by more than one wave since the 2026-08-04 establishment froze it and its snapshot as byte-identical, rewriting it each time (measured at `tools/audit/decisions/phase1q_record_divergence.json`, from git objects by explicit hash). The current arrangement is TWO files with one job each — the phase-1q record at the established, hash-guarded snapshot, and the LIVE derived view at `home_classification.json`, which is where this pointer now aims and which carries `the_phase_1r_re_run`, `the_2026_08_08_apply` and `write_list` unchanged. Every committed state of the removed file remains reachable in git history at the commits the divergence artifact names, so nothing is lost (#12, the recomputable-collapse clause) and one concern has one home (#6). TRIED AND CLOSED: restoring the stale file from the snapshot (a second, unguarded copy of the record — the OI-305 divergence class reopened) and renaming it for what it held (an orphan generated artifact with no writer and no consumer — undeclared dormancy). Because the pass now runs twice over the same entries, each entry carries a THIRD frozen class — `class_before_phase1r`, the class it held between the two runs — so neither movement is lost (#12).
+> **Scope of application.** APPLIED IN FULL, 2026-08-03 (phase 1q, the user's ruling of that date, option A3 at `OPEN_ITEMS.md` OI-291). The staged application of phase 1n — five documents, 46 entries — is superseded: every entry of the home population carries a section home and a class derived from the criteria in force. The applier is tools/audit/decisions/gen_home_classification.py, whose --check re-derives both the classification and its artifact; it replaces gen_section_homes.py, which applied D-430 alone to the staged subset and is deleted rather than left beside it (#6). **RE-RUN 2026-08-03 (phase 1r), after the user WROTE the delegations the first run's WRITE LIST asked for (the OI-293 list).** The criteria are unchanged; what changed is the delegations they read. All six write-list documents move, two of them only in part, and the movement caused by the written delegations alone is at `home_classification.json` -> `the_phase_1r_re_run`. *★ The account of the removed file `phase1q_reclassification.json`, of the two-file arrangement that replaced it and of the alternatives tried and closed — ARCHIVED 2026-11-01 → `DECISIONS_ARCHIVE.md`.* Because the pass now runs twice over the same entries, each entry carries a THIRD frozen class — `class_before_phase1r`, the class it held between the two runs — so neither movement is lost (#12).
 
 ### What was read, and what was not
 
@@ -267,13 +184,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 *Why this is stated at all:* DEFECT_TYPES.md DT-26 — scope-assumed enumeration. A sweep that is complete inside its own file set reads as complete about the whole question. The scope and its measured remainder are therefore stated rather than left implicit.
 
-> **★ Corrections to this scope block, 2026-08-04.** User, 2026-08-04 (R3), dispatch `cc_instruction_phase1_delegations_and_corrections.md`: the three statements `OPEN_ITEMS.md` OI-334 records as false at HEAD are corrected, and the hand-carried residual figure is made COMPUTED rather than authored (#17f, D-431).
->
-> - **'Not read in full'** — the design-document half was false: every per-layer and per-component design document the sentence named, literally and by glob, has since been read in full by the OI-207 reading programme. The sentence now names only what is genuinely not swept.
-> - **'The remainder, measured'** — the unresolved figure was HAND-CARRIED in an authored string that nothing regenerated, and it disagreed with the computed disposition table four sections above it in the same generated file. The field is now a TEMPLATE whose every figure the generator fills from the same computed data it renders that table from, and an unfilled placeholder stops the generator. Two qualifications the old wording did not carry are stated with it: the figure is the committed layer's, at a smaller backbone; and the layer cannot be re-derived at HEAD.
-> - **The home-granularity claim** — that every `contract-home` or `gap` entry carries a `home_section` block — was false of the entries the six read waves entered, whose only writer is `gen_home_classification.py`'s apply mode. It was NOT corrected in prose: the apply was RUN on 2026-08-04 under ruling R2, after the phase-1q record was snapshotted and the snapshot established, and the claim is true at HEAD. The check that measures it is `tools/audit/phase1_completion_inventory.json` -> `...statement_3_the_home_granularity_claim`, and it is computed rather than asserted.
->
-> **Why the former wordings are preserved rather than replaced silently.** #12. Both sentences were true when written; what changed under them was the work — the reading programme finished, and the disposition layer moved when it was regenerated at the ratified backbone. A correction that erased them would lose the record of when the register's own scope claim stopped matching the register. Both are kept verbatim at `tools/audit/decisions/backbone_decisions.json` -> `header.scope.corrections_2026_08_04.former_wording_preserved_verbatim_12`.
+> **★ Corrections to this scope block, 2026-08-04 — ARCHIVED 2026-11-01 → `DECISIONS_ARCHIVE.md`.** The corrected statements stand above; the corrections record, with its former wordings, is kept verbatim there, and its data stays at `tools/audit/decisions/backbone_decisions.json` -> `header.scope.corrections_2026_08_04`.
 
 ---
 

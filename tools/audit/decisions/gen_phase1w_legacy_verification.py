@@ -72,8 +72,14 @@ A1_GENERATOR_QUOTES = [
     # preamble between them and `render_entry`, not the emission site. This is the
     # authored-input maintenance class Ruling 4(b) of `cowork_rulings_2026_08_09_return.md`
     # legitimised — a citation follows its quote; the premise itself is unchanged.
-    (514, "if d.get(\"legacy_subject\"):"),
-    (516, 'else LEGACY_MARK)'),
+    # Re-aimed AGAIN 2026-11-01 (514 -> 473, 516 -> 475) from this tool's own STOP message, by
+    # `cc_instruction_pruning_rulings_third_execution_2026_11_01.md` Task 2(c'), under the user's standing
+    # instruction of 2026-09-22 that staleness is fixed without asking, applied to the act Ruling 14 of
+    # `cowork_rulings_2026_08_09_second_stop.md` licensed once. Cause: Ruling 3 of
+    # `cowork_rulings_2026_11_01_pruning_iteration_sitting.md` amended the register generator above the
+    # emission site; the two quotes above are unmoved, and the quoted text is unchanged.
+    (473, "if d.get(\"legacy_subject\"):"),
+    (475, 'else LEGACY_MARK)'),
 ]
 
 # ── The recorded figures this wave reports as not matching the derived count ─────────────
@@ -114,7 +120,14 @@ RECORDED_FIGURES = [
     },
     {
         'figure': 79,
-        'where': 'DECISIONS.md',
+        # ★ TAUGHT WHERE THE QUOTE NOW LIVES, 2026-11-01, by
+        # `cc_instruction_pruning_rulings_third_execution_2026_11_01.md` Task 2(d'), on Ruling 3 of
+        # `cowork_rulings_2026_11_01_pruning_iteration_sitting.md`, which moved the register's
+        # ratification-event preamble VERBATIM to `DECISIONS_ARCHIVE.md`. This citation halted:
+        # *"recorded figure 79: quote not found anywhere in DECISIONS.md"*. The pointer follows the move,
+        # as the entry for 80 above did. THE QUOTE IS UNTOUCHED; only where it is looked for moves.
+        # Former value, preserved (#12): 'where': 'DECISIONS.md'.
+        'where': 'DECISIONS_ARCHIVE.md',
         'line': None,
         'quote': 'the 79-entry LEGACY-marked set confirmed',
         'note': 'The register\'s own ratified preamble (eighth ratification event, 2026-08-02). '
