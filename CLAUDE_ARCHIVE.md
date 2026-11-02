@@ -149,3 +149,24 @@ start** (open detail files as needed)"*
 - `C:\s\MS\DECISIONS.md` — the decisions register's INDEX (see the register section above); rulings
   bind mechanically only if every session reads them"*
 
+> **From `CLAUDE.md`, Conventions, the block *HOW A DECISION SURFACE IS WRITTEN, AND IN WHAT ORDER ITS RULES APPLY*,
+> step 4 — a bracketed former wording (lines 1890–1894 at `1bfa1a2bcf`), moved 2026-11-02 by
+> `records/cc/instructions/cc_instruction_pruning_rulings_fourth_execution_2026_11_02.md` Task 2, under Ruling 1 of
+> `records/cowork/rulings/cowork_rulings_2026_11_01_pruning_iteration_sitting.md` and the continuous-pruning rule (§5(D)
+> of `records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md`).** A dated pointer stands at the site. In
+> the parent the text began mid-line, after `is no longer owed. `; it is copied from its opening `*(` to its closing `)*`.
+
+**THE SUPERSEDED WORDING, VERBATIM (#12):** *(Former wording, preserved (#12): "**and how far that reaches is an OPEN
+     QUESTION the user has not answered**: read at its widest it could be taken as licence to override
+     #18, #19 or #20 by asserting a benefit to the objective, and §3 of that same record states that the
+     narrowing is not a session's to take. Until he answers, it is applied as written, and any case where
+     the wide reading would change an outcome is flagged to him.")*
+
+> **From `CLAUDE.md`, the same block, its closing paragraph (*WHAT THIS BLOCK IS, AND WHAT IT IS NOT.*) — a bracketed
+> former wording (lines 1925–1928 at `1bfa1a2bcf`), moved in the same act under the same ruling.** A dated pointer stands
+> at the site. In the parent the text began mid-line, after `is the route. `; it is copied the same way.
+
+**THE SUPERSEDED WORDING, VERBATIM (#12):** *(Former wording,
+  preserved (#12): "The per-sitting rulings of 2026-08-15, 2026-08-21, 2026-08-28, 2026-09-04 and
+  2026-09-21 live in their handoff entries and ruling records and are cited here by their dates. **NO
+  DECISIONS-REGISTER IDENTITY IS ALLOCATED for the 2026-09-21 ruling or for this block**")*
