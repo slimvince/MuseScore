@@ -30440,3 +30440,46 @@ one added pair naming this batch's report. Neither the report nor its appendix w
 *Provenance: CC, 2026-11-02, at boot tip `08274008d07b7e102a692f59eaedb0905860c39f`, under
 `cc_instruction_per_session_reading_extension_2026_11_02.md`. Every commit identifier here was read from the commit's own
 object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `7016ca9f8652234414022bceae48b2d687befd3c` left, appended in the one further commit
+
+**A fresh full guard run as a writing run (`python tools/audit/gen_guard_state.py`, the operating mode named), after the
+close commit and before this one.** Its result is at `tools/audit/guard_state.json` → `summary`, which this commit
+carries. Its first line, verbatim: *"wrote tools\audit\guard_state.json"*; its last line, verbatim: *"83 guard(s) run, 13
+failing, 4 not run, 20 historical record(s)"*. **The condition — MET:**
+
+- the run count is 83; zero STOPs in the runner;
+- the failing set is exactly the thirteen of the premise ledger, none added;
+- `gen_per_session_reading.py --check` and `gen_derivation_boot_pack.py --check` PASS; so do
+  `gen_l0_l1_outgoing_population.py --check`, `gen_l3_outgoing_population.py --check`,
+  `decisions/gen_phase1w_legacy_verification.py --check`, `decisions/gen_decisions_register.py --check` and
+  `gen_governing_surface_split.py` for all five pairs;
+- `gen_evidence_pin_membership.py --check` PASSES, and run on its own after the guard run it reads *"ruling records read
+  171"* — unchanged from the opening capture;
+- against the opening capture, exactly one verdict differs — `gen_per_session_reading.py --check` FAIL → PASS — so the
+  NOT RUN and HISTORICAL lines are identical;
+- `gen_guard_classification.py --check` STOPs (exit 2) naming the same five tools as at 0(f).
+
+**The A2 exceptions of the close were met inside the close** (report §6, 3(c) and 3(c′) above). This run regenerated
+nothing beyond its own artifact: `changed_paths.py` after it shows `tools/audit/guard_state.json` beside the carried
+`tools/audit/claude_md_finer_archive.json` and no other tracked modification.
+
+**A3 to A5, verified at the objects.** `git diff --name-status 08274008d07b7e102a692f59eaedb0905860c39f
+7016ca9f8652234414022bceae48b2d687befd3c` lists fourteen paths, every one accounted for: the two Task 0 paths (this
+dispatch and entry 476), the Task 1 path (`tools/audit/gen_derivation_boot_pack.py`), the two Task 2 paths
+(`tools/audit/gen_per_session_reading.py`, `tools/audit/per_session_reading.json`) and the close's paths (`STATUS.md`,
+`STATUS_ARCHIVE.md`, `tools/audit/gen_status_batch_bound.py`, `tools/audit/status_batch_bound.json`,
+`tools/audit/session_start_read_size.json`, `tools/audit/defense_share.json`, `per_session_reading.json` again, the
+report, its appendix and this file). **Every file A5 names is absent from it.** **The blobs**, by `git ls-tree` at each
+commit (one command per commit, each hash literal) — at `08274008…` and at the close: `tools/audit/gen_derivation_boot_pack.py`
+`c115ab7559c96e83b188342ddde5111d9f4d6494` → `b92021db9505ddd3d81fed1e34047fde82e0081a`;
+`tools/audit/gen_per_session_reading.py` `851f98ec4c1a01be133731e56bc01e5f43acf56f` →
+`6d3f308c889e7ec6a1ab58b98f4eef0acee8bea4`; and unchanged at both — `CLAUDE.md` `e644b47d53c645e3695dbf4280971cf4bab14770`,
+`CLAUDE_ARCHIVE.md` `bd6433803a76879ceeaed58d400e931fd094ec90`, `DECISIONS.md` `4a945aaded7db494934fdbd8b545b8e29e0f4551`,
+`DECISIONS_ARCHIVE.md` `6a30e7455322268b1edf306a5db822ad361b2d37`, `tools/audit/derivation_boot_pack.json`
+`cd4a10cf51faecacbeac3aef780f9d2ca9ee84bf`.
+
+This commit adds only the guard run's artifact and this portion.
+
+*Provenance: CC, 2026-11-02, appended in the one further commit after the close commit
+`7016ca9f8652234414022bceae48b2d687befd3c`; the verdicts are this run's own output, read with the file tools.*
