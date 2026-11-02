@@ -9043,8 +9043,11 @@ def build() -> tuple[dict, dict[str, dict[str, str]], list[dict]]:
     # EVERY SUBJECT IS STILL BUILT IN FULL, frozen or not, and that is deliberate: this tool's own
     # STOPs — an anchor no longer found exactly once, a withheld passage that no longer matches, a
     # verdict left unpaired — run only because the build runs.  Stopping the build for a spent
-    # subject would leave this tool checking almost nothing, all three subjects being spent.  What
+    # subject would leave this tool checking almost nothing, every built subject being spent.  What
     # changes for a FROZEN subject is what the manifest KEEPS of that build (Ruling 1, 2026-09-20).
+    # ★ CORRECTED 2026-11-02 by `cc_instruction_per_session_reading_extension_2026_11_02.md` Task 1,
+    # under the user's rule of 2026-09-22: five subjects are built and all five are frozen.  FORMER
+    # WORDING, PRESERVED (#12): "… almost nothing, all three subjects being spent."
     subjects, packs, displaced = {}, {}, []
     for subject in sorted(WITHHELD):
         rec, files = build_subject(subject, sort["entries"], backbone)
