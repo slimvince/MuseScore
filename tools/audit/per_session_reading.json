@@ -14,15 +14,15 @@
   "the_ordinary_session_start_read_imported": {
    "its_one_home": "`tools/audit/session_start_read_size.json`, written by `tools/audit/gen_session_start_read_size.py`; what stands here is that tool's own `measure` called at the tree, and its total is checked against that artifact on every run",
    "characters_per_member": {
-    "CLAUDE.md": 105876,
-    "STATUS.md": 12082,
+    "CLAUDE.md": 105441,
+    "STATUS.md": 11919,
     "DECISIONS.md": 117490,
     "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2826
    },
-   "total_characters": 238274,
+   "total_characters": 237676,
    "the_reading_of_claude_md": {
     "regime": "ruled membership",
-    "characters": 105876
+    "characters": 105441
    }
   },
   "the_further_members": [
@@ -34,8 +34,8 @@
     "read_by": "Claude Code, per batch — DECLARED by the executing sessions in their reports, not established by this tool (#18)",
     "the_mandate_class": "unwritten practice",
     "the_record_that_mandates_it": "no clause of `CLAUDE.md` names the injection; the dispatches' clause \"injected context does not stand in for this read\" carries no stated ground in the record (entry 461 §2, item (a)); the membership block's own provenance paragraph records that until 2026-09-07 the whole-file read was PRACTICE mandated by no clause",
-    "characters": 169617,
-    "characters_the_six_spans_read_with_the_file_tool_add_on_top_of_it": 105876,
+    "characters": 169182,
+    "characters_the_six_spans_read_with_the_file_tool_add_on_top_of_it": 105441,
     "characters_of_the_file_outside_the_six_spans": 63741
    },
    {
@@ -782,28 +782,28 @@
      "the_writing_sides_read": "unwritten practice"
     },
     "the_record_that_mandates_it": "the standing clause `Every dispatch's read-first block names the CURRENT HANDOVER BLOCK`, which this repository carries as numbered entry files; the writing side's three is its own practice",
-    "the_population_count": 391,
+    "the_population_count": 395,
     "the_three": [
      {
-      "name": "cowork_handoff_entry_four_hundred_and_sixty_seven.md",
-      "added_in_commit": "f2d0ae14ba2037ba4111c12c52d314b463d77741",
-      "added_at_unix_time": 1793563784,
-      "characters": 7559
+      "name": "cowork_handoff_entry_four_hundred_and_seventy_four.md",
+      "added_in_commit": "bfd15c7fdd6e010a2ad163cfb0dddd26e46239a1",
+      "added_at_unix_time": 1793605025,
+      "characters": 8835
      },
      {
-      "name": "cowork_handoff_entry_four_hundred_and_seventy.md",
-      "added_in_commit": "749ab8c88a7e5221c73fcdc7d96a040c7fb3580b",
-      "added_at_unix_time": 1793567013,
-      "characters": 7952
+      "name": "cowork_handoff_entry_four_hundred_and_seventy_three.md",
+      "added_in_commit": "bfd15c7fdd6e010a2ad163cfb0dddd26e46239a1",
+      "added_at_unix_time": 1793605025,
+      "characters": 7122
      },
      {
-      "name": "cowork_handoff_entry_four_hundred_and_seventy_one.md",
-      "added_in_commit": "749ab8c88a7e5221c73fcdc7d96a040c7fb3580b",
-      "added_at_unix_time": 1793567013,
-      "characters": 6218
+      "name": "cowork_handoff_entry_four_hundred_and_seventy_two.md",
+      "added_in_commit": "bfd15c7fdd6e010a2ad163cfb0dddd26e46239a1",
+      "added_at_unix_time": 1793605025,
+      "characters": 7261
      }
     ],
-    "characters": 21729
+    "characters": 23218
    }
   ],
   "totals_by_side": {
@@ -811,7 +811,7 @@
     "the_members_it_sums": [
      {
       "member": "the ordinary session-start read (imported)",
-      "characters": 238274
+      "characters": 237676
      },
      {
       "member": "BUILD_AND_TEST.md",
@@ -831,19 +831,19 @@
      },
      {
       "member": "the three handoff entry files with the latest add-commits",
-      "characters": 21729
+      "characters": 23218
      }
     ],
-    "without_the_injected_copy_of_CLAUDE_md": 674135,
-    "with_it": 843752,
-    "the_injected_copy_added_in_with_it": "CLAUDE.md, the whole file, 169617 characters",
+    "without_the_injected_copy_of_CLAUDE_md": 675026,
+    "with_it": 844208,
+    "the_injected_copy_added_in_with_it": "CLAUDE.md, the whole file, 169182 characters",
     "left_out_and_said_so": "the previous report at the portions a dispatch orders, the reading file at its ordered portions, the ruling records a dispatch orders — varies per dispatch and is not sized here"
    },
    "Cowork, per sitting, in the shape of the sitting of entry 461": {
     "the_members_it_sums": [
      {
       "member": "the ordinary session-start read (imported)",
-      "characters": 238274
+      "characters": 237676
      },
      {
       "member": "entry 118, the bridge-fault section",
@@ -863,7 +863,7 @@
      },
      {
       "member": "the three handoff entry files with the latest add-commits",
-      "characters": 21729
+      "characters": 23218
      },
      {
       "member": "the latest report of the arc, whole: cc_report_l3_comparison_tabulation_thirtieth_2026_10_31.md",
@@ -874,7 +874,7 @@
       "characters": 151805
      }
     ],
-    "characters": 972954,
+    "characters": 973845,
     "left_out_and_said_so": "the verification reads at the objects (the reading file at its sections, the guard state, the ref files, the away-returns close) — varies per batch and is not sized here"
    }
   }
@@ -2578,14 +2578,14 @@
    },
    {
     "name": "Conventions",
-    "characters": 41071,
-    "characters_given_to_the_finer_cut": 41072,
+    "characters": 40636,
+    "characters_given_to_the_finer_cut": 40637,
     "characters_of_the_blank_lines_between_sub_blocks": 11,
     "sub_block_count": 20,
     "by_kind": {
      "block": {
       "sub_blocks": 12,
-      "characters": 23065
+      "characters": 22630
      },
      "star-marked sub-block": {
       "sub_blocks": 8,
@@ -2599,7 +2599,7 @@
      },
      "preserved-former-wording": {
       "sub_blocks": 2,
-      "characters": 9411
+      "characters": 8976
      }
     },
     "by_shape_element": {
@@ -2609,7 +2609,7 @@
      },
      "former_wording_marker": {
       "sub_blocks": 2,
-      "characters": 9411
+      "characters": 8976
      }
     },
     "star_marked_sub_blocks": {
@@ -2620,7 +2620,7 @@
      "sub_blocks": 16,
      "characters": 32362
     },
-    "archive_class_characters": 9411,
+    "archive_class_characters": 8976,
     "doubt_defaulted_characters": 31635,
     "settled_sub_blocks": {
      "sub_blocks": 3,
@@ -2911,26 +2911,26 @@
      {
       "kind": "block",
       "first_line_at_the_tree": 1850,
-      "last_line_at_the_tree": 1928,
-      "characters_with_line_endings": 7422,
+      "last_line_at_the_tree": 1924,
+      "characters_with_line_endings": 6987,
       "the_class": "preserved-former-wording",
       "the_doubt_default_decided_it": false,
       "the_classifiers_evidence": {
-       "the_marker_matched": "former wording",
-       "the_quotation_that_places_it": "\"**and how far that reaches is an OPEN\n     QUESTION the user has not answered**: read at its widest it could be taken a"
+       "the_marker_matched": "Former wording",
+       "the_quotation_that_places_it": "\"I cannot think of any example of decision\n     surface that should exclude a recommendation.\""
       },
       "the_amendment_record_shape": [
        "former_wording_marker"
       ],
       "carries_a_ruled_date_header": false,
-      "text_sha256": "2bc9ce24537b488524686250b38722da6ef1484e28b799a74026d7aa89869b32",
+      "text_sha256": "957f6b5039c181f8ead45794414427f259cecc9b22fab12b64ffd01595aaefaf",
       "the_opening": "- **HOW A DECISION SURFACE IS WRITTEN, AND IN WHAT ORDER ITS RULES APPLY (consolidated here on the\n  user's direction, 2026-09-21; each part keeps its own home ",
       "settled_at_an_earlier_sitting": []
      },
      {
       "kind": "block",
-      "first_line_at_the_tree": 1930,
-      "last_line_at_the_tree": 1948,
+      "first_line_at_the_tree": 1926,
+      "last_line_at_the_tree": 1944,
       "characters_with_line_endings": 1867,
       "the_class": "operative-rule-text",
       "the_doubt_default_decided_it": true,
@@ -2947,8 +2947,8 @@
      },
      {
       "kind": "star-marked sub-block",
-      "first_line_at_the_tree": 1949,
-      "last_line_at_the_tree": 1971,
+      "first_line_at_the_tree": 1945,
+      "last_line_at_the_tree": 1967,
       "characters_with_line_endings": 1989,
       "the_class": "preserved-former-wording",
       "the_doubt_default_decided_it": false,
@@ -2974,8 +2974,8 @@
      },
      {
       "kind": "block",
-      "first_line_at_the_tree": 1973,
-      "last_line_at_the_tree": 1980,
+      "first_line_at_the_tree": 1969,
+      "last_line_at_the_tree": 1976,
       "characters_with_line_endings": 810,
       "the_class": "operative-rule-text",
       "the_doubt_default_decided_it": true,
@@ -2992,8 +2992,8 @@
      },
      {
       "kind": "block",
-      "first_line_at_the_tree": 1982,
-      "last_line_at_the_tree": 1987,
+      "first_line_at_the_tree": 1978,
+      "last_line_at_the_tree": 1983,
       "characters_with_line_endings": 599,
       "the_class": "operative-rule-text",
       "the_doubt_default_decided_it": true,
@@ -3049,8 +3049,8 @@
     "sub_blocks": [
      {
       "kind": "block",
-      "first_line_at_the_tree": 1989,
-      "last_line_at_the_tree": 1989,
+      "first_line_at_the_tree": 1985,
+      "last_line_at_the_tree": 1985,
       "characters_with_line_endings": 74,
       "the_class": "operative-rule-text",
       "the_doubt_default_decided_it": false,
@@ -3068,8 +3068,8 @@
      },
      {
       "kind": "block",
-      "first_line_at_the_tree": 1991,
-      "last_line_at_the_tree": 1998,
+      "first_line_at_the_tree": 1987,
+      "last_line_at_the_tree": 1994,
       "characters_with_line_endings": 685,
       "the_class": "operative-rule-text",
       "the_doubt_default_decided_it": true,
@@ -3086,15 +3086,15 @@
    }
   ],
   "totals": {
-   "characters_of_the_six_spans": 105876,
-   "characters_given_to_the_finer_cut": 105882,
+   "characters_of_the_six_spans": 105441,
+   "characters_given_to_the_finer_cut": 105447,
    "characters_of_the_blank_lines_between_sub_blocks": 49,
    "sub_block_count": 106,
    "how_the_two_counts_relate": "each span is given to the finer cut as its lines joined by newlines with one closing newline added, so the characters given exceed the six spans' own count by one per span",
    "by_kind": {
     "block": {
      "sub_blocks": 44,
-     "characters": 55420
+     "characters": 54985
     },
     "numbered-principle sub-block": {
      "sub_blocks": 24,
@@ -3116,7 +3116,7 @@
     },
     "preserved-former-wording": {
      "sub_blocks": 3,
-     "characters": 11316
+     "characters": 10881
     },
     "defense-and-declined-alternatives": {
      "sub_blocks": 1,
@@ -3142,7 +3142,7 @@
     },
     "former_wording_marker": {
      "sub_blocks": 4,
-     "characters": 26826
+     "characters": 26391
     },
     "accepted_costs_paragraph": {
      "sub_blocks": 1,
@@ -3161,7 +3161,7 @@
     "sub_blocks": 39,
     "characters": 56976
    },
-   "archive_class_characters": 14269,
+   "archive_class_characters": 13834,
    "doubt_defaulted_characters": 90909,
    "settled_sub_blocks": {
     "sub_blocks": 6,
@@ -3227,7 +3227,7 @@
      "the_opening": "**★ THE RULE COVERS EVERY READ MECHANISM AND EVERY DIALECT (recorded 2026-08-08 on the user's direction, at the third measured instance family).** The restricti",
      "found_at_the_tree": "by hash — the sub-block stands unchanged",
      "the_sub_blocks_it_matched_first_line_at_the_tree": [
-      1949
+      1945
      ]
     },
     {
@@ -3259,8 +3259,8 @@
     "characters_those_clauses_hold": 12957,
     "characters_had_every_clause_been_closed_at_the_next_marked_clause": 51684,
     "characters_had_every_clause_run_to_its_paragraph_end": 160906,
-    "share_of_the_six_session_start_spans": 12.24,
-    "share_of_the_whole_ordinary_session_start_read": 5.44
+    "share_of_the_six_session_start_spans": 12.29,
+    "share_of_the_whole_ordinary_session_start_read": 5.45
    },
    "per_span": [
     {
@@ -3301,12 +3301,12 @@
     },
     {
      "name": "Conventions",
-     "characters": 41071,
+     "characters": 40636,
      "marked_clauses": 10,
      "characters_those_clauses_hold": 3472,
      "characters_had_every_clause_been_closed_at_the_next_marked_clause": 22081,
      "characters_had_every_clause_run_to_its_paragraph_end": 33971,
-     "share_of_this_span": 8.45
+     "share_of_this_span": 8.54
     },
     {
      "name": "The self-check after every coding exercise",
@@ -3319,8 +3319,8 @@
     }
    ],
    "the_two_denominators": {
-    "the_six_session_start_spans": 105876,
-    "the_whole_ordinary_session_start_read": 238274
+    "the_six_session_start_spans": 105441,
+    "the_whole_ordinary_session_start_read": 237676
    },
    "how_these_relate_to_the_sums_above": "a marked clause lies INSIDE a sub-block, so these values overlap table 2's sums and are never added to them"
   }

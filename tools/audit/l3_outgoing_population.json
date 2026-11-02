@@ -192,7 +192,7 @@
     "resolves_at_the_path_as_written": true,
     "in_the_specification_document_set": false,
     "inventory_class": "governing-documents",
-    "bytes": 170942
+    "bytes": 170510
    },
    {
     "name_as_written": "cowork_layer5_engagement_design.md",
@@ -264,7 +264,7 @@
     "resolves_at_the_path_as_written": true,
     "in_the_specification_document_set": false,
     "inventory_class": "governing-documents",
-    "bytes": 170942
+    "bytes": 170510
    },
    {
     "name_as_written": "records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md",
@@ -300,7 +300,7 @@
     "resolves_at_the_path_as_written": true,
     "in_the_specification_document_set": false,
     "inventory_class": "governing-documents",
-    "bytes": 170942,
+    "bytes": 170510,
     "named_in_sections": [
      "#### Layer 5 — the function/cadence layer",
      "#### Layer 6 — the grouping layer"
@@ -20111,7 +20111,7 @@
      "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map",
      "hit_records": [
       {
-       "line_number": 20,
+       "line_number": 22,
        "term": "phrase",
        "tier": "admitting",
        "line": "*★ ARCHIVED 2026-08-17, THE SECOND ACT — the dated entries that PREDATE (or paraphrase) the OI-222 pointer convention fell to `operative-rule-text` in the pinned measurement and stayed when the block above was cleared. They were READ one by one and moved verbatim to `STATUS_ARCHIVE.md` by `records/cc/instructions/cc_instruction_preparation_seventh.md` Task 1, under Ruling 3 of `records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md`, which brings them under Ruling 4's own line. **One candidate did NOT move and is flagged:** the navigational paragraph at the foot of this file is not a completed batch's dated record but a live pointer to the archive and to the gate policy, so the read-before-move safeguard left it at site. The per-entry reconciliation is re-derived by `tools/audit/gen_status_residue_move.py --check`.*"
@@ -33022,7 +33022,7 @@
   "item_2_listed_not_compared_whole": [
    {
     "name": "CLAUDE.md",
-    "bytes": 170942,
+    "bytes": 170510,
     "inventory_class": "governing-documents",
     "in_the_residue": true,
     "the_statement": "named inside the six item-1 spans; LISTED and not compared whole under the named-documents derivation; the lines that name it are tabulated inside item 1"
@@ -36395,7 +36395,7 @@
   "item_2": {
    "distinct_names": 12,
    "distinct_names_that_resolve": 12,
-   "summed_bytes_of_the_distinct_names_that_resolve": 844831,
+   "summed_bytes_of_the_distinct_names_that_resolve": 844399,
    "distinct_names_that_are_specification_set_members": 4
   },
   "item_3": {

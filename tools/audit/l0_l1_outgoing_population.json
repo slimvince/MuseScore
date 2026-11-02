@@ -2753,13 +2753,13 @@
       "line": "declaration, where that clause is stated once and is not repeated here (#6)."
      },
      {
-      "line_number": 1933,
+      "line_number": 1929,
       "term": "tie",
       "tier": "recorded",
       "line": "through the file tools (Read / Grep / Glob), never through shell text utilities — no `cat`, `wc`,"
      },
      {
-      "line_number": 1954,
+      "line_number": 1950,
       "term": "repeat",
       "tier": "recorded",
       "line": "2026-08-07/08, self-reported at the user's challenge after repeated use for row statuses,"

@@ -30262,3 +30262,55 @@ This commit adds only the guard run's artifact and this portion.
 
 *Provenance: CC, 2026-11-01, appended in the one further commit after the close commit
 `c7b6985a9c0be8fb7f975addf2fb0642c0311c29`; the verdicts are this run's own output, read with the file tools.*
+
+## THE PRUNING ITERATION, STEP 4, RULING 1 CARRIED OUT A FOURTH TIME — THE L3 DERIVATION BOOT PACK FROZEN FIRST, THEN TWO FORMER WORDINGS TO `CLAUDE_ARCHIVE.md`; DOCUMENTATION AND ONE MEASUREMENT-TOOL TABLE ONLY, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_pruning_rulings_fourth_execution_2026_11_02.md`, pinned at Task 0 as
+blob `50edaf8582a3748089caffe03641a3629ed68c62`, executing the third dispatch (blob
+`6d59532fff7f64280e4daf3bc8cc588fd68d2acc`) by citation for Ruling 1, with one task put before it:
+
+- **Task 0** landed the dispatch and handoff entries 472 to 475 (`bfd15c7fdd6e010a2ad163cfb0dddd26e46239a1`, pushed). The
+  opening capture was the thirteen plus the per-session tool, as A2 states; the classification STOP named the five tools;
+  the two historical archive checks showed exactly their one predicted differing value each.
+- **Ruling 2** — the eight-line check PASSED; **Ruling 4** — this batch's report is in the two-file form.
+- **Task 1 — `l3` FROZEN, COMMITTED** (`1bfa1a2bcf84cfe756e5a00a62c73dd28948d3a4`, pushed). Git proved the ten L3 pack
+  files unchanged since the one commit that rendered them (`ca55115f…`), the derivation landing later (`96a24b01…`); the
+  `FROZEN` entry pins their ten blobs; the manifest's comparison against `<T0>` moved only `subjects` → `l3`, exactly as
+  the freeze machinery moves a frozen record; `--check` green with `l3` at its recorded blobs; the capture identical to the
+  opening one.
+- **Task 2 (Ruling 1) — COMMITTED** (`fbf6485ff6fd02dafa3b64c5fa4382acf15d7d09`, pushed). The two parentheticals moved
+  verbatim to `CLAUDE_ARCHIVE.md`, a dated pointer at each site, byte-reconciled with two planted faults; the population
+  movement exactly class (a) on L0/L1 and the five class-(c) places on L3; the capture differed from Task 1's in exactly
+  the two predicted reds; **`gen_derivation_boot_pack.py --check` stayed green**, its FROZEN SOURCES listing now naming
+  `l3/02_the_guiding_principles_and_the_conventions.md`.
+- **Task 3** closed: four `STATUS.md` entries (the close, Tasks 2, 1 and 0), the prefix moved; the forward bound re-aimed at
+  the Task 2 commit and moved exactly the third dispatch's three entries, no STOP; the four archive checks green; the read
+  size, the defense share, the L3 population artifact and the per-session table regenerated, and the L0/L1 artifact
+  carried from Task 2's regeneration, every passage confined.
+- **No summary of the session's context fell.**
+
+**Everything this section would restate is in the report**, `records/cc/reports/cc_report_pruning_rulings_fourth_execution_2026_11_02.md`
+(the first read and the eight-line check §1, the capacity file §2, Task 0 §3, the freeze §4, Ruling 1 §5, the close §6, the
+commits §7, the grades §8, departures and observations §9), with its appendix
+`records/cc/reports/cc_report_pruning_rulings_fourth_execution_2026_11_02_appendix.md` (the raw printouts, verbatim).
+
+### What needs the writing side, named rather than resolved
+
+1. **The report's departures and observations (§9)** — among them that, in `per_session_reading.json`'s table 2, the
+   decision-surface block keeps its archive class after the move, the imported classifier now matching the marker in the
+   new pointer.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects; then step 4's SECOND dispatch (the
+  measurement tool extended with the dispatch form's invariant share and the sizing of a report's appendix file, and the
+  measurement re-run so the after-values stand beside the before-values); then, one per turn, the user's yes-or-no on carrying
+  the Cowork boot chain's operating paragraphs in the current handoff entry (candidate (e)) and, once the invariant share is
+  measured, the dispatch-form surface (candidate (d)); and only then step 5, the method ruling's surface over the completed L3
+  tabulation (Ruling 4 of the comparison-design sitting).**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-11-02, at boot tip `1126176e2a4b48fc01bbb5b545210715366cb24a`, under
+`cc_instruction_pruning_rulings_fourth_execution_2026_11_02.md`. Every commit identifier here was read from the commit's own
+object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
