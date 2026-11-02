@@ -480,6 +480,40 @@ FROZEN: dict[str, dict] = {
     # a pack rendered before the scoping rulings was keyed on its own authored list below, and with its
     # extras leak list scanned from these files on disk (`build_subject`; Ruling 1 of
     # `cowork_rulings_2026_10_16_l2_freeze_leak_list_sitting.md`).
+    "l3": {
+        "finding": ("Its deriving session has RUN: `cowork_blind_derivation_l3_2026_10_17.md` and the released "
+                    "`cowork_blind_session_brief_l3.md` were landed by "
+                    "`records/cc/instructions/cc_instruction_l3_derivation_commit_2026_10_17.md`. The pack "
+                    "directory's files are unchanged in git since the commit that rendered them, and `--check` "
+                    "passed at bfd15c7f…, so the digests recorded here are those of the files on disk, proved equal "
+                    "to their committed blobs: what the session was given, and not a re-render."),
+        "date": "2026-11-02",
+        "reason": ("A spent subject's pack is the record of what its session was given rather than an input "
+                   "to be kept current (Ruling 17(a); D-646). Left live, its member (2) re-renders "
+                   "`CLAUDE.md`'s guiding-principles and Conventions spans, so the first edit of either — "
+                   "Ruling 1 of `cowork_rulings_2026_11_01_pruning_iteration_sitting.md` — turns `--check` "
+                   "red, or, if refreshed, back-dates into a completed derivation's record a text its session "
+                   "never read (#12). Frozen at the blobs it carries, with the hash STOP, before that edit."),
+        "digests": {
+            "00_READ_THIS_FIRST.md": "b3f25abafea31719ee91fa26244636923496165b",
+            "01_the_phase_definitions.md": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+            "02_the_guiding_principles_and_the_conventions.md":
+                "51d1ad73a10f732fec10d792069ecc2833503d5e",
+            "03_the_writing_standards.md": "a41983018cb27ed4a47d24ff8bb9e95181ed0572",
+            "04_the_dispatch_protocol.md": "72b8a1fb58ed50a2fbdc65a08ff4ec68e863e9da",
+            "05_the_ratified_design_intent.md": "fe04029239a93f3908d0a776d98108b22fb7484b",
+            "06_the_defect_type_catalog.md": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+            "07_the_charter_the_layers_and_the_decisions.md":
+                "2ed8a5ca2b531f48519279941059fee259af03b7",
+            "08_the_seventeen_research_extracts.md": "91c8af752315f991c2a681bd7b2b189c0f51dab8",
+            "09_the_empirical_findings_ledger.md": "925c458e6a77b728bc9815ac75fb8c8a6c1bc0f6",
+        },
+    },
+    # `l3` IS FROZEN ABOVE, ITS DERIVING SESSION HAVING RUN; its own ground is in its own entry and is
+    # not restated here (#6).  Frozen by `cc_instruction_pruning_rulings_fourth_execution_2026_11_02.md`
+    # Task 1, before Ruling 1 of `cowork_rulings_2026_11_01_pruning_iteration_sitting.md` edited
+    # `CLAUDE.md` (the derivation recorded in handoff entry 474 §1).  NOT named in
+    # `RENDERED_BEFORE_THE_SCOPING_RULINGS`: its pack was rendered after both scoping rulings.
 }
 
 # ══════════════════════════════════════════════════════════════════════════════════════════════
