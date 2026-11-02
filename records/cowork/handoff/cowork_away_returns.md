@@ -30361,3 +30361,82 @@ This commit adds only the guard run's artifact and this portion.
 
 *Provenance: CC, 2026-11-02, appended in the one further commit after the close commit
 `ac25ae01d9a06eec1fc6be1e9e1c3c7dcb6558da`; the verdicts are this run's own output, read with the file tools.*
+
+## THE PRUNING ITERATION, STEP 4's SECOND DISPATCH — THE PER-SESSION READING MEASUREMENT EXTENDED AND RE-RUN, BEFORE AND AFTER SIDE BY SIDE; ONE STALE TOOL COMMENT CORRECTED; MEASUREMENT AND DOCUMENTATION ONLY, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_per_session_reading_extension_2026_11_02.md`, pinned at Task 0 as
+blob `20968a55882b17b5a75fc84882ff2647dc6a063c`:
+
+- **Task 0** landed the dispatch and handoff entry 476 (`dd06b5fea97a0f7e1fee4ffa35b7aebdc704ebd5`, pushed). The opening
+  capture was the thirteen plus the per-session tool, as A2 states; the classification STOP named the five tools.
+- **Ruling 2** — the eight-line check PASSED; **Ruling 4** — this batch's report is in the two-file form.
+- **Task 1 — the stale comment in `tools/audit/gen_derivation_boot_pack.py`'s `build()` CORRECTED, COMMITTED**
+  (`db25a104f8aa1c7c75903f68a2f905ecd9f88ce7`, pushed): its former wording kept beside it; the tool's `--check` output
+  byte-identical before and after; the capture identical to the opening one.
+- **Task 2 — `tools/audit/gen_per_session_reading.py` EXTENDED BY EDITS 1 TO 9, COMMITTED**
+  (`37d8ebb68f60a62f01b1f618288fd95a8a9a6512`, pushed): the invariant share of each arc dispatch and report against its
+  predecessor, the appendix file beside a report, and Ruling 2's total; P1 to P8 PASS; the regenerated artifact against a
+  run of the unextended tool at the same tree exactly as predicted (additions and `generated_for` only); the capture
+  differing from Task 1's in the one predicted verdict.
+- **Task 3** closed: four `STATUS.md` entries (the close, Tasks 2, 1 and 0), the prefix moved; the forward bound re-aimed
+  at the Task 2 commit and moved exactly the fourth dispatch's four entries, no STOP; the four archive checks green; the
+  read size, the defense share and the per-session table regenerated, both population artifacts unchanged; the report
+  carries the before-and-after table (its §8).
+- **No summary of the session's context fell.**
+
+**Everything this section would restate is in the report**, `records/cc/reports/cc_report_per_session_reading_extension_2026_11_02.md`
+(the first read and the eight-line check §1, the capacity judgment §2, Task 0 §3, Task 1 §4, Task 2 §5, the close §6, the
+commits §7, the before-and-after table §8, the grades §9, departures and observations §10), with its appendix
+`records/cc/reports/cc_report_per_session_reading_extension_2026_11_02_appendix.md` (the raw printouts, verbatim).
+
+### 3(c′) — the last regeneration, after the report and its appendix were final
+
+`python tools/audit/gen_per_session_reading.py` (a writing run), then `--check`, exit 0: *"the per-session reading
+measurement re-derives"*, its printout line *"reports with an appendix beside them 5: reports proper 195320, appendices
+773904 characters"*. **The artifact against the one 3(c) left** (`5a92758406847373bdc008ad421da630b7d32faa` →
+`83c4da75b939920042f116b8749f60ea4d7e473e`), whole:
+
+```
+@@ -1253,8 +1253,15 @@
+    "how_a_pair_is_found": "every file of the folder whose name ends `_appendix.md`, beside the report named by its stem; an appendix with no report beside it is a STOP",
+    "read_by": "Cowork: the report proper in full under the user's rule of 2026-09-03, the appendix at need (Ruling 4 of the 2026-11-01 record)",
+-   "count": 4,
+-   "characters_of_the_reports_proper": 131829,
+-   "characters_of_the_appendices": 578857,
++   "count": 5,
++   "characters_of_the_reports_proper": 195320,
++   "characters_of_the_appendices": 773904,
+    "the_pairs": [
++    {
++     "the_report": "cc_report_per_session_reading_extension_2026_11_02.md",
++     "characters_of_the_report_proper": 63491,
++     "the_appendix": "cc_report_per_session_reading_extension_2026_11_02_appendix.md",
++     "characters_of_the_appendix": 195047,
++     "the_appendix_share_of_the_two_percent": 75.44
++    },
+     {
+      "the_report": "cc_report_pruning_rulings_execution_2026_11_01.md",
+```
+
+**Only that block moved, exactly as predicted**: `count` one higher, the two sums higher by this batch's two sizes, and
+one added pair naming this batch's report. Neither the report nor its appendix was edited after this run.
+
+### What needs the writing side, named rather than resolved
+
+1. **The report's departures and observations (§10)** — among them that at 3(c) the per-session artifact's imported
+   defense totals moved their share against the whole ordinary read, a value computed from the denominator 3(c) names;
+   and that edit 4's block stands with two blank lines on each side, the dispatch's own spacing sentence not being
+   reachable at its anchor.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects; then, one per turn, the user's
+  yes-or-no on carrying the Cowork boot chain's operating paragraphs in the current handoff entry (candidate (e)) and the
+  dispatch-form surface (candidate (d)), which the invariant share now sizes; and only then step 5, the method ruling's
+  surface over the completed L3 tabulation (Ruling 4 of the comparison-design sitting).**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-11-02, at boot tip `08274008d07b7e102a692f59eaedb0905860c39f`, under
+`cc_instruction_per_session_reading_extension_2026_11_02.md`. Every commit identifier here was read from the commit's own
+object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
