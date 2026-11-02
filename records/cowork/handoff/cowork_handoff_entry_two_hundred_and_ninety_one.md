@@ -89,6 +89,10 @@ tonality, chord-vocabulary, elaboration, assignment-evidence, cadential-six-four
    `★_the_live_gating_answer` → `gating_ids`; entry 118's bridge-fault section; entry 152's (v) to (x); entry
    169 whole); **this entry whole; this sitting's ruling record and surface whole**; then what §2 names. It
    proves this entry's, the record's and the surface's sizes at a listing.
+   > ★ AMENDED 2026-11-02 by Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_02_boot_chain_sitting.md` (the
+   > user's word: "B"). The start-up chain is now read at these sections, each located by a heading search, not as whole
+   > entries: entry 118, the first paragraph of "THE BRIDGE FAULT"; entry 152, item (vi); entry 169, its "Boot" block and
+   > "The cadence for your session"; this entry, §3 and §4. The wording of step 3 above is the former wording, kept (#12).
 4. **It writes the paper sizing (§2), lands it, and reports it to the user in plain words.** It asks nothing
    in that turn.
 5. **Its next turn: the check of the sizing at its sources**, corrections at their sites with former wordings
