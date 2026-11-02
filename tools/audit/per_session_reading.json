@@ -15,11 +15,11 @@
    "its_one_home": "`tools/audit/session_start_read_size.json`, written by `tools/audit/gen_session_start_read_size.py`; what stands here is that tool's own `measure` called at the tree, and its total is checked against that artifact on every run",
    "characters_per_member": {
     "CLAUDE.md": 105441,
-    "STATUS.md": 11657,
+    "STATUS.md": 11146,
     "DECISIONS.md": 117490,
     "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2826
    },
-   "total_characters": 237414,
+   "total_characters": 236903,
    "the_reading_of_claude_md": {
     "regime": "ruled membership",
     "characters": 105441
@@ -1252,10 +1252,17 @@
    "the_folder": "records/cc/reports",
    "how_a_pair_is_found": "every file of the folder whose name ends `_appendix.md`, beside the report named by its stem; an appendix with no report beside it is a STOP",
    "read_by": "Cowork: the report proper in full under the user's rule of 2026-09-03, the appendix at need (Ruling 4 of the 2026-11-01 record)",
-   "count": 5,
-   "characters_of_the_reports_proper": 195320,
-   "characters_of_the_appendices": 773904,
+   "count": 6,
+   "characters_of_the_reports_proper": 218252,
+   "characters_of_the_appendices": 887153,
    "the_pairs": [
+    {
+     "the_report": "cc_report_boot_chain_landing_2026_11_02.md",
+     "characters_of_the_report_proper": 22932,
+     "the_appendix": "cc_report_boot_chain_landing_2026_11_02_appendix.md",
+     "characters_of_the_appendix": 113249,
+     "the_appendix_share_of_the_two_percent": 83.16
+    },
     {
      "the_report": "cc_report_per_session_reading_extension_2026_11_02.md",
      "characters_of_the_report_proper": 63491,
@@ -1332,7 +1339,7 @@
     "read_by": "Cowork, per sitting",
     "the_mandate_class": "unwritten practice",
     "the_record_that_mandates_it": "the writing side's own boot instruction — entry 291 §4 step 3 and entry 169's Boot block; no user ruling names these reads",
-    "characters": 9655
+    "characters": 10140
    },
    {
     "member": "the three handoff entry files with the latest add-commits",
@@ -1345,28 +1352,28 @@
      "the_writing_sides_read": "unwritten practice"
     },
     "the_record_that_mandates_it": "the standing clause `Every dispatch's read-first block names the CURRENT HANDOVER BLOCK`, which this repository carries as numbered entry files; the writing side's three is its own practice",
-    "the_population_count": 396,
+    "the_population_count": 398,
     "the_three": [
-     {
-      "name": "cowork_handoff_entry_four_hundred_and_seventy_three.md",
-      "added_in_commit": "bfd15c7fdd6e010a2ad163cfb0dddd26e46239a1",
-      "added_at_unix_time": 1793605025,
-      "characters": 7122
-     },
-     {
-      "name": "cowork_handoff_entry_four_hundred_and_seventy_two.md",
-      "added_in_commit": "bfd15c7fdd6e010a2ad163cfb0dddd26e46239a1",
-      "added_at_unix_time": 1793605025,
-      "characters": 7261
-     },
      {
       "name": "cowork_handoff_entry_four_hundred_and_seventy_six.md",
       "added_in_commit": "dd06b5fea97a0f7e1fee4ffa35b7aebdc704ebd5",
       "added_at_unix_time": 1793616911,
       "characters": 8572
+     },
+     {
+      "name": "cowork_handoff_entry_four_hundred_and_seventy_eight.md",
+      "added_in_commit": "60d9048cda3b0a33b216e3a4e468b29dbe5d14d8",
+      "added_at_unix_time": 1793626075,
+      "characters": 6606
+     },
+     {
+      "name": "cowork_handoff_entry_four_hundred_and_seventy_seven.md",
+      "added_in_commit": "60d9048cda3b0a33b216e3a4e468b29dbe5d14d8",
+      "added_at_unix_time": 1793626075,
+      "characters": 8234
      }
     ],
-    "characters": 22955
+    "characters": 23412
    }
   ],
   "totals_by_side": {
@@ -1374,7 +1381,7 @@
     "the_members_it_sums": [
      {
       "member": "the ordinary session-start read (imported)",
-      "characters": 237414
+      "characters": 236903
      },
      {
       "member": "BUILD_AND_TEST.md",
@@ -1394,13 +1401,13 @@
      },
      {
       "member": "the three handoff entry files with the latest add-commits",
-      "characters": 22955
+      "characters": 23412
      }
     ],
-    "without_the_injected_copy_of_CLAUDE_md": 674501,
-    "with_it": 843683,
+    "without_the_injected_copy_of_CLAUDE_md": 674447,
+    "with_it": 843629,
     "the_injected_copy_added_in_with_it": "CLAUDE.md, the whole file, 169182 characters",
-    "under_ruling_2_of_2026_11_01": 738242,
+    "under_ruling_2_of_2026_11_01": 738188,
     "how_ruling_2_moves_it": "Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_11_01_pruning_iteration_sitting.md`: the injected copy is the read of the six spans, so their file-tool read (105441 characters) leaves the sum and the injected copy stays; the eight-line check's own reads are not sized here",
     "left_out_and_said_so": "the previous report at the portions a dispatch orders, the reading file at its ordered portions, the ruling records a dispatch orders — varies per dispatch and is not sized here"
    },
@@ -1408,7 +1415,7 @@
     "the_members_it_sums": [
      {
       "member": "the ordinary session-start read (imported)",
-      "characters": 237414
+      "characters": 236903
      },
      {
       "member": "entry 118, the bridge-fault section",
@@ -1424,11 +1431,11 @@
      },
      {
       "member": "entry 291, whole",
-      "characters": 9655
+      "characters": 10140
      },
      {
       "member": "the three handoff entry files with the latest add-commits",
-      "characters": 22955
+      "characters": 23412
      },
      {
       "member": "the latest report of the arc, whole: cc_report_l3_comparison_tabulation_thirtieth_2026_10_31.md",
@@ -1439,7 +1446,7 @@
       "characters": 151805
      }
     ],
-    "characters": 973320,
+    "characters": 973751,
     "left_out_and_said_so": "the verification reads at the objects (the reading file at its sections, the guard state, the ref files, the away-returns close) — varies per batch and is not sized here"
    }
   }
@@ -3825,7 +3832,7 @@
     "characters_had_every_clause_been_closed_at_the_next_marked_clause": 51684,
     "characters_had_every_clause_run_to_its_paragraph_end": 160906,
     "share_of_the_six_session_start_spans": 12.29,
-    "share_of_the_whole_ordinary_session_start_read": 5.46
+    "share_of_the_whole_ordinary_session_start_read": 5.47
    },
    "per_span": [
     {
@@ -3885,7 +3892,7 @@
    ],
    "the_two_denominators": {
     "the_six_session_start_spans": 105441,
-    "the_whole_ordinary_session_start_read": 237414
+    "the_whole_ordinary_session_start_read": 236903
    },
    "how_these_relate_to_the_sums_above": "a marked clause lies INSIDE a sub-block, so these values overlap table 2's sums and are never added to them"
   }

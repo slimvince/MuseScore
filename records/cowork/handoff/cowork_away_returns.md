@@ -30483,3 +30483,83 @@ This commit adds only the guard run's artifact and this portion.
 
 *Provenance: CC, 2026-11-02, appended in the one further commit after the close commit
 `7016ca9f8652234414022bceae48b2d687befd3c`; the verdicts are this run's own output, read with the file tools.*
+
+## THE BOOT-CHAIN LANDING — ENTRIES 477 AND 478 AND THE 2026-11-02 RULING RECORD LANDED; THE AMENDMENT PARAGRAPH INSERTED INTO ENTRY 291; DOCUMENTATION ONLY, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_boot_chain_landing_2026_11_02.md`, pinned at Task 0 as blob
+`1dc34966fa8c41e3cb9dc5b4e7862fc0a6b64fbd`:
+
+- **The eight-line check of Ruling 2 of 2026-11-01** — all eight lines identical to the injected copy; the six-span read
+  not performed.
+- **Task 0** landed the dispatch, the 2026-11-02 ruling record and handoff entries 477 and 478, with the evidence-pin
+  artifact regenerated exactly as predicted (`60d9048cda3b0a33b216e3a4e468b29dbe5d14d8`, pushed). The opening capture was
+  the thirteen plus the per-session tool, as A2 states; the classification STOP named the five tools.
+- **Task 1 — the record's four-line amendment paragraph INSERTED into entry 291 §4 step 3, COMMITTED**
+  (`3dbade755a80520af21db8618d6e8ece5d923c07`, pushed): directly after step 3's last line, the wording above it untouched;
+  the four lines compared EQUAL with the record's lines 61–64; one file, four insertions; the capture byte-identical to
+  the opening one.
+- **Task 3** closed: three `STATUS.md` entries (the close, Tasks 1 and 0), the prefix moved; the keyword search hit only
+  the paraphrase paragraph; the forward bound re-aimed at `<T1>` and moved exactly the extension batch's four entries, no
+  STOP; the four archive checks green; the read size, the defense share, the L3 population (one line value in its
+  `STATUS.md` residue record) and the per-session table regenerated; the evidence-pin, L0/L1 and boot-pack checks green
+  and not regenerated.
+- **Ruling 2 of 2026-11-02 observed:** the close and end state were executed without reading any earlier dispatch (the
+  report's §7).
+- **No summary of the session's context fell.**
+
+**Everything this section would restate is in the report**, `records/cc/reports/cc_report_boot_chain_landing_2026_11_02.md`
+(the first read and the eight-line check §1, Task 0 §2, Task 1 §3, the close §4, the commits §5, the grades §6, Ruling 2's
+effect §7, observations §8, departures §9, the tell §10), with its appendix
+`records/cc/reports/cc_report_boot_chain_landing_2026_11_02_appendix.md` (the raw printouts, verbatim).
+
+### 3(c′) — the last regeneration, after the report and its appendix were final
+
+`python tools/audit/gen_per_session_reading.py` (a writing run), then `--check`, exit 0: *"the per-session reading
+measurement re-derives"*, its printout line *"reports with an appendix beside them 6: reports proper 218252, appendices
+887153 characters"*. **The artifact against the one 3(c) left** (`7bd7885cffd03cb92bf632e594610bf16cb0e9e5` →
+`1388622e18fbce34416420b790215548d53c3cbb`), whole:
+
+```
+@@ -1252,10 +1252,17 @@
+    "the_folder": "records/cc/reports",
+    "how_a_pair_is_found": "every file of the folder whose name ends `_appendix.md`, beside the report named by its stem; an appendix with no report beside it is a STOP",
+    "read_by": "Cowork: the report proper in full under the user's rule of 2026-09-03, the appendix at need (Ruling 4 of the 2026-11-01 record)",
+-   "count": 5,
+-   "characters_of_the_reports_proper": 195320,
+-   "characters_of_the_appendices": 773904,
++   "count": 6,
++   "characters_of_the_reports_proper": 218252,
++   "characters_of_the_appendices": 887153,
+    "the_pairs": [
++    {
++     "the_report": "cc_report_boot_chain_landing_2026_11_02.md",
++     "characters_of_the_report_proper": 22932,
++     "the_appendix": "cc_report_boot_chain_landing_2026_11_02_appendix.md",
++     "characters_of_the_appendix": 113249,
++     "the_appendix_share_of_the_two_percent": 83.16
++    },
+     {
+      "the_report": "cc_report_per_session_reading_extension_2026_11_02.md",
+      "characters_of_the_report_proper": 63491,
+```
+
+**Only that block moved, exactly as predicted**: `count` one higher, the two sums higher by this batch's two sizes, and
+one added pair naming this batch's report. Neither the report nor its appendix was edited after this run.
+
+### What needs the writing side, named rather than resolved
+
+1. **The report's observations (§8) and declared departures (§9)** — among them that the measurement tool again orders
+   the three latest handoff entries by name where add-commit times tie (478 before 477), and that the four archive checks
+   of 3(b) ran in one shell call, each with its own output and exit code.
+
+### The plan line
+
+- *"The next act is the writing side's — the check of this batch's return at the objects; then step 5, the method
+  ruling's surface over the completed L3 tabulation (Ruling 4 of
+  `records/cowork/rulings/cowork_rulings_2026_08_24_comparison_design_sitting.md`)."*
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-11-02, at boot tip `f01c88747e7fe5719d79e63f9a1d2f3d3622bcfa`, under
+`cc_instruction_boot_chain_landing_2026_11_02.md`. Every commit identifier here was read from the commit's own object and
+`origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
