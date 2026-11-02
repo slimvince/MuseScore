@@ -23,6 +23,16 @@ WHAT IT IS.  One artifact, `per_session_reading.json`, carrying two tables.
   the IMPORTED defense-share measurement; and, by text hash, the sub-blocks earlier sittings
   already settled, so that nobody re-proposes them.
 
+AND, SINCE 2026-11-02, THREE ADDITIONS (`cc_instruction_per_session_reading_extension_2026_11_02.md`,
+Task 2 — step 4's second dispatch).  (1) THE INVARIANT SHARE: for each dispatch and each report of the
+arc, the characters on lines it shares with its predecessor (the member before it in the population's
+own order), matched line for line with line endings, order ignored, whitespace-only lines apart — the
+figure the dispatch-form question waits for (handoff entry 464 §1).  (2) THE APPENDIX FILE BESIDE A
+REPORT: under Ruling 4 of the 2026-11-01 record a report's raw printouts stand in `<stem>_appendix.md`
+beside it; appendix files leave the populations, are sized beside their reports, and every report of
+the folder with one is listed with both sizes.  (3) RULING 2's AFTER-FIGURE: the Claude Code side's
+per-batch total with the six spans' file-tool read replaced by the injected copy.
+
 WHY IT EXISTS.  The user's instruction of 2026-10-31, in his words: *"After group 5, together with
 the member's feet and closing sections is a natural break: plan a pruning iteration (shrink the
 context occupied every session by mandatory reading ), then continue."*  The plan the writing side
@@ -102,6 +112,7 @@ THE STOPS — each raised as `Stop`, printed as `STOP: …`, exit 2:
   * a boot-chain anchor found other than exactly once, or the closing opener standing before the
     opening one;
   * a dispatch, a report or a handoff entry of a derived population with no add-commit;
+  * an appendix file of the reports folder with no report beside it;
   * the imported measurement's total disagreeing with its own committed artifact at the tree;
   * the defense-share denominator disagreeing with the reader's six-span total.
 
@@ -124,6 +135,7 @@ import os
 import re
 import subprocess
 import sys
+from collections import Counter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
@@ -191,6 +203,7 @@ DISPATCH_FOLDER = "records/cc/instructions"
 DISPATCH_PREFIX = "cc_instruction_l3_comparison_tabulation_"
 REPORT_FOLDER = "records/cc/reports"
 REPORT_PREFIX = "cc_report_l3_comparison_tabulation_"
+APPENDIX_SUFFIX = "_appendix.md"      # Ruling 4 of the 2026-11-01 record: `<stem>_appendix.md` beside `<stem>.md`
 
 DERIVATION_PATH = "cowork_blind_derivation_l3_2026_10_17.md"
 SETTLED_SOURCES = (
@@ -345,7 +358,7 @@ def population_rows(folder: str, prefix: str, commits: dict, sized: bool = True)
     is a STOP. Ordered by (time, name)."""
     rows = []
     for name in sorted(os.listdir(os.path.join(ROOT, folder))):
-        if not name.startswith(prefix):
+        if not name.startswith(prefix) or name.endswith(APPENDIX_SUFFIX):
             continue
         path = folder + "/" + name
         if path not in commits:
@@ -369,6 +382,74 @@ def population_summary(rows: list[dict], latest: int, latest_field: str) -> dict
         "characters_max": max(sizes) if sizes else 0,
         latest_field: rows[-latest:],
         "the_population": rows,
+    }
+
+
+# ── the appendix beside a report (Ruling 4 of the 2026-11-01 record) ────────────────────────────
+def pair_appendices(names: list[str]) -> dict[str, str]:
+    """Every appendix file among `names`, keyed by the report it stands beside: the report of
+    `<stem>_appendix.md` is `<stem>.md`. An appendix with no report beside it is a STOP."""
+    present = set(names)
+    pairs = {}
+    for name in sorted(names):
+        if not name.endswith(APPENDIX_SUFFIX):
+            continue
+        report = name[:-len(APPENDIX_SUFFIX)] + ".md"
+        if report not in present:
+            raise Stop("an appendix file has no report beside it: %s" % name)
+        pairs[report] = name
+    return pairs
+
+
+# ── the invariant share: what a member shares line for line with its predecessor ───────────────
+def shared_with_predecessor(text: str, previous: str) -> dict:
+    """The characters of `text` on lines that also stand in `previous`, matched line for line with
+    their line endings, each line of `previous` matched at most once, order ignored.
+    Whitespace-only lines are counted apart and are not in the share."""
+    available = Counter(previous.splitlines(keepends=True))
+    shared = blank = 0
+    for line in text.splitlines(keepends=True):
+        if available[line] > 0:
+            available[line] -= 1
+            if line.strip():
+                shared += len(line)
+            else:
+                blank += len(line)
+    return {
+        "characters": len(text),
+        "characters_on_lines_shared_with_the_predecessor": shared,
+        "characters_on_whitespace_only_lines_shared_and_not_counted_above": blank,
+        "share_percent": round(100.0 * shared / len(text), 2) if text else 0.0,
+    }
+
+
+def invariant_shares(folder: str, rows: list[dict]) -> dict:
+    """Each member of a derived population against the member before it in the population's own
+    order (add-commit time, then name). The first member has no predecessor."""
+    previous_name = previous_text = None
+    shared_total = own_total = 0
+    for row in rows:
+        text = read(folder + "/" + row["name"])
+        if previous_text is None:
+            row["the_predecessor"] = None
+            row["shared_with_the_predecessor"] = None
+        else:
+            s = shared_with_predecessor(text, previous_text)
+            row["the_predecessor"] = previous_name
+            row["shared_with_the_predecessor"] = s
+            shared_total += s["characters_on_lines_shared_with_the_predecessor"]
+            own_total += s["characters"]
+        previous_name, previous_text = row["name"], text
+    return {
+        "members_with_a_predecessor": max(len(rows) - 1, 0),
+        "their_characters": own_total,
+        "their_characters_on_lines_shared_with_the_predecessor": shared_total,
+        "share_percent": round(100.0 * shared_total / own_total, 2) if own_total else 0.0,
+        "how_a_line_is_shared": "a line of the member, with its line ending, counts as shared when "
+                                "the predecessor holds the same line not already matched; the order "
+                                "of lines is ignored; whitespace-only lines are counted apart and are "
+                                "not in the share. A line changed by one character counts as not "
+                                "shared, and a short common line counts as shared wherever it stands.",
     }
 
 
@@ -627,6 +708,25 @@ def build() -> dict:
     for r in latest_entries:
         r["characters"] = len(read(HANDOFF_FOLDER + "/" + r["name"]))
 
+    dispatch_shares = invariant_shares(DISPATCH_FOLDER, dispatch_rows)
+    report_shares = invariant_shares(REPORT_FOLDER, report_rows)
+    appendix_pairs = pair_appendices(sorted(os.listdir(os.path.join(ROOT, REPORT_FOLDER))))
+    for row in report_rows:
+        beside = appendix_pairs.get(row["name"])
+        row["the_appendix_beside_it"] = (
+            {"name": beside, "characters": len(read(REPORT_FOLDER + "/" + beside))} if beside else None)
+    reports_with_an_appendix = []
+    for report, beside in sorted(appendix_pairs.items()):
+        proper = len(read(REPORT_FOLDER + "/" + report))
+        appendix = len(read(REPORT_FOLDER + "/" + beside))
+        reports_with_an_appendix.append({
+            "the_report": report,
+            "characters_of_the_report_proper": proper,
+            "the_appendix": beside, "characters_of_the_appendix": appendix,
+            "the_appendix_share_of_the_two_percent":
+                round(100.0 * appendix / (proper + appendix), 2) if proper + appendix else 0.0,
+        })
+
     the_dispatches = {
         "the_folder": DISPATCH_FOLDER, "the_name_prefix": DISPATCH_PREFIX,
         "read_by": "Claude Code, per batch (its own dispatch, whole); Cowork, per sitting that "
@@ -639,6 +739,7 @@ def build() -> dict:
                                        "previous dispatch",
     }
     the_dispatches.update(population_summary(dispatch_rows, 5, "the_last_five"))
+    the_dispatches["the_invariant_share"] = dispatch_shares
     the_reports = {
         "the_folder": REPORT_FOLDER, "the_name_prefix": REPORT_PREFIX,
         "read_by": "Cowork, per sitting (whole); Claude Code, per batch (at the portions its "
@@ -648,6 +749,16 @@ def build() -> dict:
                                        "read in full — carried in the handoff entries (entry 461 §4)",
     }
     the_reports.update(population_summary(report_rows, 3, "the_last_three"))
+    the_reports["the_invariant_share"] = report_shares
+    the_reports["the_appendices_beside_them"] = {
+        "count": sum(1 for r in report_rows if r["the_appendix_beside_it"]),
+        "characters_total": sum(r["the_appendix_beside_it"]["characters"]
+                                for r in report_rows if r["the_appendix_beside_it"]),
+        "how_these_relate_to_the_sizes_above": "every size above is of the report proper only; an "
+                                               "appendix file is sized here and in "
+                                               "`the_reports_with_an_appendix_beside_them`, never "
+                                               "added to the report's own size",
+    }
 
     chain_record = ("the writing side's own boot instruction — entry 291 §4 step 3 and entry 169's "
                     "Boot block; no user ruling names these reads")
@@ -715,6 +826,12 @@ def build() -> dict:
             "without_the_injected_copy_of_CLAUDE_md": cc_without,
             "with_it": cc_without + whole,
             "the_injected_copy_added_in_with_it": "CLAUDE.md, the whole file, %d characters" % whole,
+            "under_ruling_2_of_2026_11_01": cc_without + whole - six,
+            "how_ruling_2_moves_it": "Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_11_01_"
+                                     "pruning_iteration_sitting.md`: the injected copy is the read of "
+                                     "the six spans, so their file-tool read (%d characters) leaves the "
+                                     "sum and the injected copy stays; the eight-line check's own reads "
+                                     "are not sized here" % six,
             "left_out_and_said_so": "the previous report at the portions a dispatch orders, the "
                                     "reading file at its ordered portions, the ruling records a "
                                     "dispatch orders — varies per dispatch and is not sized here",
@@ -745,8 +862,10 @@ def build() -> dict:
             "text, gives no span a fate, proposes nothing and decides nothing. Every value is "
             "computed; none is transcribed (D-431).",
         "generated_by": "tools/audit/gen_per_session_reading.py",
-        "generated_for": "cc_instruction_per_session_reading_measurement_2026_11_01.md, Task 1 — "
-                         "step 1 of the pruning iteration the user ordered on 2026-10-31",
+        "generated_for": "cc_instruction_per_session_reading_extension_2026_11_02.md, Task 2 — step 4's "
+                         "second dispatch of the pruning iteration the user ordered on 2026-10-31; "
+                         "first built for step 1 (cc_instruction_per_session_reading_measurement_"
+                         "2026_11_01.md, Task 1)",
         "the_four_mandate_classes": MANDATE_CLASSES,
         "how_a_size_is_counted":
             "a whole file is `len(text)` of the file read by the imported `at_tree` (UTF-8, universal "
@@ -772,6 +891,20 @@ def build() -> dict:
             "the_further_members": further,
             "the_arc_dispatches": the_dispatches,
             "the_arc_reports": the_reports,
+            "the_reports_with_an_appendix_beside_them": {
+                "the_folder": REPORT_FOLDER,
+                "how_a_pair_is_found": "every file of the folder whose name ends `%s`, beside the report "
+                                       "named by its stem; an appendix with no report beside it is a "
+                                       "STOP" % APPENDIX_SUFFIX,
+                "read_by": "Cowork: the report proper in full under the user's rule of 2026-09-03, the "
+                           "appendix at need (Ruling 4 of the 2026-11-01 record)",
+                "count": len(reports_with_an_appendix),
+                "characters_of_the_reports_proper": sum(r["characters_of_the_report_proper"]
+                                                        for r in reports_with_an_appendix),
+                "characters_of_the_appendices": sum(r["characters_of_the_appendix"]
+                                                    for r in reports_with_an_appendix),
+                "the_pairs": reports_with_an_appendix,
+            },
             "the_cowork_boot_chain": boot_chain,
             "totals_by_side": totals_by_side,
         },
@@ -807,6 +940,10 @@ def build() -> dict:
             "The injected copy of `CLAUDE.md` is DECLARED by the executing sessions; this tool "
             "measures the file, not the copy.",
             "The dispatch and report populations are complete only relative to their name prefixes.",
+            "The invariant share is a LINE measure, not a judgement of copying: a line changed by one "
+            "character counts as not shared, and a short common line counts as shared wherever it "
+            "stands. It compares each member with its predecessor only.",
+            "An appendix file is found by its name alone (`<stem>_appendix.md` beside `<stem>.md`).",
             "The imported recognizers are patterns over prose whose reach is UNMEASURED (D-673 "
             "applies: no analysis decision consumes this enumeration); the doubt default places "
             "what no recognizer places; and a sub-block cut at a ★ marker may carry a sentence that "
@@ -817,6 +954,8 @@ def build() -> dict:
             "That any mandate class is right.",
             "That the injected copy of `CLAUDE.md` exists or has the size of the file.",
             "That the dispatch and report populations are complete beyond the name prefixes.",
+            "That a line shared with the predecessor was copied from it, or that a line not shared "
+            "was newly written.",
             "That any sub-block's class is right.",
             "That any size is small or large enough — that is the user's question at step 3.",
             "That any text should move — this tool proposes nothing.",
@@ -846,6 +985,12 @@ def main(argv: list[str]) -> int:
     print("  arc dispatches %d, %d characters; arc reports %d, %d characters"
           % (t1["the_arc_dispatches"]["count"], t1["the_arc_dispatches"]["characters_total"],
              t1["the_arc_reports"]["count"], t1["the_arc_reports"]["characters_total"]))
+    print("  invariant share: dispatches %.2f %%, reports %.2f %%"
+          % (t1["the_arc_dispatches"]["the_invariant_share"]["share_percent"],
+             t1["the_arc_reports"]["the_invariant_share"]["share_percent"]))
+    ap = t1["the_reports_with_an_appendix_beside_them"]
+    print("  reports with an appendix beside them %d: reports proper %d, appendices %d characters"
+          % (ap["count"], ap["characters_of_the_reports_proper"], ap["characters_of_the_appendices"]))
     for name, side in t1["totals_by_side"].items():
         value = side.get("without_the_injected_copy_of_CLAUDE_md", side.get("characters"))
         print("  %s: %d" % (name, value))

@@ -1,7 +1,7 @@
 {
  "what_this_is": "WHAT A SESSION READS BEFORE ITS WORK, MEMBER BY MEMBER, with size and mandate (table 1), and `CLAUDE.md`'s six session-start spans partitioned by the ruled classes and the amendment-record shape (table 2), measured at the tree. A MEASUREMENT ONLY: it moves no text, gives no span a fate, proposes nothing and decides nothing. Every value is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_per_session_reading.py",
- "generated_for": "cc_instruction_per_session_reading_measurement_2026_11_01.md, Task 1 — step 1 of the pruning iteration the user ordered on 2026-10-31",
+ "generated_for": "cc_instruction_per_session_reading_extension_2026_11_02.md, Task 2 — step 4's second dispatch of the pruning iteration the user ordered on 2026-10-31; first built for step 1 (cc_instruction_per_session_reading_measurement_2026_11_01.md, Task 1)",
  "the_four_mandate_classes": {
   "a user ruling": "a ruling record, or a user-ruled clause of a governing document, names the read.",
   "a standing clause": "a `###` section of `cowork_audit_protocol.md`'s dispatch-protocol section carrying the standing-clause marker, or a clause of that kind elsewhere, names the read.",
@@ -306,31 +306,66 @@
      "name": "cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md",
      "added_in_commit": "2655f50b4586a6c23be669064a7a5cef5316d6cd",
      "added_at_unix_time": 1793140384,
-     "characters": 239614
+     "characters": 239614,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md",
+     "shared_with_the_predecessor": {
+      "characters": 239614,
+      "characters_on_lines_shared_with_the_predecessor": 72205,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 112,
+      "share_percent": 30.13
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md",
      "added_in_commit": "337dd396c107a5fcb1bff9bda762b8607f310a5f",
      "added_at_unix_time": 1793393546,
-     "characters": 259912
+     "characters": 259912,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md",
+     "shared_with_the_predecessor": {
+      "characters": 259912,
+      "characters_on_lines_shared_with_the_predecessor": 76287,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 113,
+      "share_percent": 29.35
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md",
      "added_in_commit": "3af706175cf8f962ebb7246674109a10ec6fe530",
      "added_at_unix_time": 1793434098,
-     "characters": 233425
+     "characters": 233425,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md",
+     "shared_with_the_predecessor": {
+      "characters": 233425,
+      "characters_on_lines_shared_with_the_predecessor": 56199,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 111,
+      "share_percent": 24.08
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md",
      "added_in_commit": "e0c5a01a42f7a5923bdd99804d41571871934260",
      "added_at_unix_time": 1793452205,
-     "characters": 181526
+     "characters": 181526,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md",
+     "shared_with_the_predecessor": {
+      "characters": 181526,
+      "characters_on_lines_shared_with_the_predecessor": 28867,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 105,
+      "share_percent": 15.9
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md",
      "added_in_commit": "ddccb87fe3a41c2841c8fe21d937082fc5d343bf",
      "added_at_unix_time": 1793484378,
-     "characters": 151805
+     "characters": 151805,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md",
+     "shared_with_the_predecessor": {
+      "characters": 151805,
+      "characters_on_lines_shared_with_the_predecessor": 43639,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 100,
+      "share_percent": 28.75
+     }
     }
    ],
    "the_population": [
@@ -338,183 +373,395 @@
      "name": "cc_instruction_l3_comparison_tabulation_2026_10_18.md",
      "added_in_commit": "b11054f27831c242a6e82f45e2503d93058a7f9e",
      "added_at_unix_time": 1792352908,
-     "characters": 99009
+     "characters": 99009,
+     "the_predecessor": null,
+     "shared_with_the_predecessor": null
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_second_2026_10_18.md",
      "added_in_commit": "8897c9ca9eddd9d9f23580601378b0de0dd54dfd",
      "added_at_unix_time": 1792361194,
-     "characters": 80466
+     "characters": 80466,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_2026_10_18.md",
+     "shared_with_the_predecessor": {
+      "characters": 80466,
+      "characters_on_lines_shared_with_the_predecessor": 27722,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 87,
+      "share_percent": 34.45
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_third_2026_10_19.md",
      "added_in_commit": "309048d400826bea9e783ab6864bc2316aa8c0fd",
      "added_at_unix_time": 1792395890,
-     "characters": 84717
+     "characters": 84717,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_second_2026_10_18.md",
+     "shared_with_the_predecessor": {
+      "characters": 84717,
+      "characters_on_lines_shared_with_the_predecessor": 43647,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 87,
+      "share_percent": 51.52
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_fourth_2026_10_19.md",
      "added_in_commit": "c3499d9964c844fee0699b472cada99c1b17c2a4",
      "added_at_unix_time": 1792401607,
-     "characters": 92356
+     "characters": 92356,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_third_2026_10_19.md",
+     "shared_with_the_predecessor": {
+      "characters": 92356,
+      "characters_on_lines_shared_with_the_predecessor": 50693,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 87,
+      "share_percent": 54.89
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_fifth_2026_10_19.md",
      "added_in_commit": "2dffe2cdb81f96a6ee97a7be153943549714be4c",
      "added_at_unix_time": 1792419511,
-     "characters": 98630
+     "characters": 98630,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_fourth_2026_10_19.md",
+     "shared_with_the_predecessor": {
+      "characters": 98630,
+      "characters_on_lines_shared_with_the_predecessor": 53623,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 87,
+      "share_percent": 54.37
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md",
      "added_in_commit": "7a89b20613909cdebd63a92ad72ccc7036154c4d",
      "added_at_unix_time": 1792431890,
-     "characters": 111310
+     "characters": 111310,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_fifth_2026_10_19.md",
+     "shared_with_the_predecessor": {
+      "characters": 111310,
+      "characters_on_lines_shared_with_the_predecessor": 55187,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 87,
+      "share_percent": 49.58
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md",
      "added_in_commit": "e31c8f91fe3538e3208e79f9ca0e6c7700e123d4",
      "added_at_unix_time": 1792436445,
-     "characters": 126198
+     "characters": 126198,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md",
+     "shared_with_the_predecessor": {
+      "characters": 126198,
+      "characters_on_lines_shared_with_the_predecessor": 55310,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 87,
+      "share_percent": 43.83
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md",
      "added_in_commit": "c6ae836ea5a3099f3fb831a0e001ec8e8e15680d",
      "added_at_unix_time": 1792441525,
-     "characters": 136728
+     "characters": 136728,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md",
+     "shared_with_the_predecessor": {
+      "characters": 136728,
+      "characters_on_lines_shared_with_the_predecessor": 64234,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 87,
+      "share_percent": 46.98
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md",
      "added_in_commit": "2184cdfbf8ddbce1cf30e6c5c05f5c98f78f9261",
      "added_at_unix_time": 1792479376,
-     "characters": 153800
+     "characters": 153800,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md",
+     "shared_with_the_predecessor": {
+      "characters": 153800,
+      "characters_on_lines_shared_with_the_predecessor": 56313,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 86,
+      "share_percent": 36.61
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md",
      "added_in_commit": "fe36a79bc350877365020497a6148fc442369711",
      "added_at_unix_time": 1792511041,
-     "characters": 172851
+     "characters": 172851,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md",
+     "shared_with_the_predecessor": {
+      "characters": 172851,
+      "characters_on_lines_shared_with_the_predecessor": 64314,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 86,
+      "share_percent": 37.21
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md",
      "added_in_commit": "21aa1ef662897611bf7c52d9321abf2d03e33563",
      "added_at_unix_time": 1792518767,
-     "characters": 156452
+     "characters": 156452,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md",
+     "shared_with_the_predecessor": {
+      "characters": 156452,
+      "characters_on_lines_shared_with_the_predecessor": 53511,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 86,
+      "share_percent": 34.2
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twelfth_2026_10_20.md",
      "added_in_commit": "532971b19d1bc0cae2471c75d1785763811a665c",
      "added_at_unix_time": 1792524956,
-     "characters": 153985
+     "characters": 153985,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md",
+     "shared_with_the_predecessor": {
+      "characters": 153985,
+      "characters_on_lines_shared_with_the_predecessor": 67185,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 86,
+      "share_percent": 43.63
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_thirteenth_2026_10_21.md",
      "added_in_commit": "d1b3a26f577c8034b56ac909de3946564cffe243",
      "added_at_unix_time": 1792563553,
-     "characters": 171675
+     "characters": 171675,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twelfth_2026_10_20.md",
+     "shared_with_the_predecessor": {
+      "characters": 171675,
+      "characters_on_lines_shared_with_the_predecessor": 66573,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 87,
+      "share_percent": 38.78
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_fourteenth_2026_10_23.md",
      "added_in_commit": "69e0afc218c62ae19847f4dd820b7118cdefd573",
      "added_at_unix_time": 1792783792,
-     "characters": 185731
+     "characters": 185731,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_thirteenth_2026_10_21.md",
+     "shared_with_the_predecessor": {
+      "characters": 185731,
+      "characters_on_lines_shared_with_the_predecessor": 73716,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 88,
+      "share_percent": 39.69
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_fifteenth_2026_10_24.md",
      "added_in_commit": "7b9646abb2e3988dfc10316c63e4f9a644890e6c",
      "added_at_unix_time": 1792825215,
-     "characters": 181526
+     "characters": 181526,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_fourteenth_2026_10_23.md",
+     "shared_with_the_predecessor": {
+      "characters": 181526,
+      "characters_on_lines_shared_with_the_predecessor": 55029,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 88,
+      "share_percent": 30.31
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_sixteenth_2026_10_24.md",
      "added_in_commit": "5fb74669f2ff8da0f3024076771914c59af4317c",
      "added_at_unix_time": 1792838096,
-     "characters": 169864
+     "characters": 169864,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_fifteenth_2026_10_24.md",
+     "shared_with_the_predecessor": {
+      "characters": 169864,
+      "characters_on_lines_shared_with_the_predecessor": 51220,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 88,
+      "share_percent": 30.15
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_seventeenth_2026_10_24.md",
      "added_in_commit": "e555af193e601e84f35fafb95b271a8281687e03",
      "added_at_unix_time": 1792915123,
-     "characters": 177296
+     "characters": 177296,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_sixteenth_2026_10_24.md",
+     "shared_with_the_predecessor": {
+      "characters": 177296,
+      "characters_on_lines_shared_with_the_predecessor": 49656,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 89,
+      "share_percent": 28.01
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_eighteenth_2026_10_25.md",
      "added_in_commit": "11a59b40519ed007860e21495ff62bb0709cc0f0",
      "added_at_unix_time": 1792923545,
-     "characters": 190948
+     "characters": 190948,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_seventeenth_2026_10_24.md",
+     "shared_with_the_predecessor": {
+      "characters": 190948,
+      "characters_on_lines_shared_with_the_predecessor": 53154,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 94,
+      "share_percent": 27.84
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md",
      "added_in_commit": "e79d53c381d043b573f0f802f50ab4c8d0938d43",
      "added_at_unix_time": 1793000375,
-     "characters": 205990
+     "characters": 205990,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_eighteenth_2026_10_25.md",
+     "shared_with_the_predecessor": {
+      "characters": 205990,
+      "characters_on_lines_shared_with_the_predecessor": 58587,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 98,
+      "share_percent": 28.44
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md",
      "added_in_commit": "7e63a04b13c61fe07cf9b745cfd04755df428586",
      "added_at_unix_time": 1793008683,
-     "characters": 224366
+     "characters": 224366,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md",
+     "shared_with_the_predecessor": {
+      "characters": 224366,
+      "characters_on_lines_shared_with_the_predecessor": 61259,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 98,
+      "share_percent": 27.3
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md",
      "added_in_commit": "a3af4ad5d036f2dd59a8ebf3983423a75c6a348a",
      "added_at_unix_time": 1793023171,
-     "characters": 210734
+     "characters": 210734,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md",
+     "shared_with_the_predecessor": {
+      "characters": 210734,
+      "characters_on_lines_shared_with_the_predecessor": 55828,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 102,
+      "share_percent": 26.49
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md",
      "added_in_commit": "025f235609c2973136c13d4362adfb44b9346b13",
      "added_at_unix_time": 1793050566,
-     "characters": 166056
+     "characters": 166056,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md",
+     "shared_with_the_predecessor": {
+      "characters": 166056,
+      "characters_on_lines_shared_with_the_predecessor": 43669,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 99,
+      "share_percent": 26.3
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twenty_third_2026_10_26.md",
      "added_in_commit": "47facb0abf7c32015f906a5eae867188c5f5c669",
      "added_at_unix_time": 1793087534,
-     "characters": 164756
+     "characters": 164756,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md",
+     "shared_with_the_predecessor": {
+      "characters": 164756,
+      "characters_on_lines_shared_with_the_predecessor": 35778,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 99,
+      "share_percent": 21.72
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md",
      "added_in_commit": "6eae52922ae65c4fd465c4b06b1e80b2929e4213",
      "added_at_unix_time": 1793103957,
-     "characters": 188439
+     "characters": 188439,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_third_2026_10_26.md",
+     "shared_with_the_predecessor": {
+      "characters": 188439,
+      "characters_on_lines_shared_with_the_predecessor": 41175,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 100,
+      "share_percent": 21.85
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md",
      "added_in_commit": "e24e800f2ebfaf08e826b0bd4b8d541bea8e4619",
      "added_at_unix_time": 1793118675,
-     "characters": 212059
+     "characters": 212059,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md",
+     "shared_with_the_predecessor": {
+      "characters": 212059,
+      "characters_on_lines_shared_with_the_predecessor": 65150,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 111,
+      "share_percent": 30.72
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md",
      "added_in_commit": "2655f50b4586a6c23be669064a7a5cef5316d6cd",
      "added_at_unix_time": 1793140384,
-     "characters": 239614
+     "characters": 239614,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md",
+     "shared_with_the_predecessor": {
+      "characters": 239614,
+      "characters_on_lines_shared_with_the_predecessor": 72205,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 112,
+      "share_percent": 30.13
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md",
      "added_in_commit": "337dd396c107a5fcb1bff9bda762b8607f310a5f",
      "added_at_unix_time": 1793393546,
-     "characters": 259912
+     "characters": 259912,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md",
+     "shared_with_the_predecessor": {
+      "characters": 259912,
+      "characters_on_lines_shared_with_the_predecessor": 76287,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 113,
+      "share_percent": 29.35
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md",
      "added_in_commit": "3af706175cf8f962ebb7246674109a10ec6fe530",
      "added_at_unix_time": 1793434098,
-     "characters": 233425
+     "characters": 233425,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_seventh_2026_10_28.md",
+     "shared_with_the_predecessor": {
+      "characters": 233425,
+      "characters_on_lines_shared_with_the_predecessor": 56199,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 111,
+      "share_percent": 24.08
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md",
      "added_in_commit": "e0c5a01a42f7a5923bdd99804d41571871934260",
      "added_at_unix_time": 1793452205,
-     "characters": 181526
+     "characters": 181526,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_eighth_2026_10_30.md",
+     "shared_with_the_predecessor": {
+      "characters": 181526,
+      "characters_on_lines_shared_with_the_predecessor": 28867,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 105,
+      "share_percent": 15.9
+     }
     },
     {
      "name": "cc_instruction_l3_comparison_tabulation_thirtieth_2026_10_31.md",
      "added_in_commit": "ddccb87fe3a41c2841c8fe21d937082fc5d343bf",
      "added_at_unix_time": 1793484378,
-     "characters": 151805
+     "characters": 151805,
+     "the_predecessor": "cc_instruction_l3_comparison_tabulation_twenty_ninth_2026_10_31.md",
+     "shared_with_the_predecessor": {
+      "characters": 151805,
+      "characters_on_lines_shared_with_the_predecessor": 43639,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 100,
+      "share_percent": 28.75
+     }
     }
-   ]
+   ],
+   "the_invariant_share": {
+    "members_with_a_predecessor": 29,
+    "their_characters": 4883215,
+    "their_characters_on_lines_shared_with_the_predecessor": 1579730,
+    "share_percent": 32.35,
+    "how_a_line_is_shared": "a line of the member, with its line ending, counts as shared when the predecessor holds the same line not already matched; the order of lines is ignored; whitespace-only lines are counted apart and are not in the share. A line changed by one character counts as not shared, and a short common line counts as shared wherever it stands."
+   }
   },
   "the_arc_reports": {
    "the_folder": "records/cc/reports",
@@ -532,19 +779,43 @@
      "name": "cc_report_l3_comparison_tabulation_twenty_eighth_2026_10_30.md",
      "added_in_commit": "811b7b086b3181c767d9a9e20a6361317caf5677",
      "added_at_unix_time": 1793436176,
-     "characters": 142049
+     "characters": 142049,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twenty_seventh_2026_10_28.md",
+     "shared_with_the_predecessor": {
+      "characters": 142049,
+      "characters_on_lines_shared_with_the_predecessor": 40928,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 287,
+      "share_percent": 28.81
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_twenty_ninth_2026_10_31.md",
      "added_in_commit": "a714367e6d5185603de611d5f818c5f45c9c5afb",
      "added_at_unix_time": 1793453984,
-     "characters": 90619
+     "characters": 90619,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twenty_eighth_2026_10_30.md",
+     "shared_with_the_predecessor": {
+      "characters": 90619,
+      "characters_on_lines_shared_with_the_predecessor": 18719,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 166,
+      "share_percent": 20.66
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_thirtieth_2026_10_31.md",
      "added_in_commit": "3300e3d6513e586d99a08208340139f65c6903ae",
      "added_at_unix_time": 1793486401,
-     "characters": 520923
+     "characters": 520923,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twenty_ninth_2026_10_31.md",
+     "shared_with_the_predecessor": {
+      "characters": 520923,
+      "characters_on_lines_shared_with_the_predecessor": 18160,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 166,
+      "share_percent": 3.49
+     },
+     "the_appendix_beside_it": null
     }
    ],
    "the_population": [
@@ -552,181 +823,466 @@
      "name": "cc_report_l3_comparison_tabulation_2026_10_18.md",
      "added_in_commit": "a72d50eeea12038cefbf4e88a521ea1f4d1172f1",
      "added_at_unix_time": 1792356385,
-     "characters": 60782
+     "characters": 60782,
+     "the_predecessor": null,
+     "shared_with_the_predecessor": null,
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_second_2026_10_18.md",
      "added_in_commit": "797a96a99807952cb504583abb34085108a55a55",
      "added_at_unix_time": 1792364529,
-     "characters": 46542
+     "characters": 46542,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_2026_10_18.md",
+     "shared_with_the_predecessor": {
+      "characters": 46542,
+      "characters_on_lines_shared_with_the_predecessor": 13186,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 95,
+      "share_percent": 28.33
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_third_2026_10_19.md",
      "added_in_commit": "5eb99af8a7dca79a35bcaf24f5d14780e762cc83",
      "added_at_unix_time": 1792398459,
-     "characters": 54986
+     "characters": 54986,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_second_2026_10_18.md",
+     "shared_with_the_predecessor": {
+      "characters": 54986,
+      "characters_on_lines_shared_with_the_predecessor": 19534,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 95,
+      "share_percent": 35.53
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_fourth_2026_10_19.md",
      "added_in_commit": "0db1aeefb23e21d3a2d5db65ee5ecd918ccefc95",
      "added_at_unix_time": 1792404069,
-     "characters": 61723
+     "characters": 61723,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_third_2026_10_19.md",
+     "shared_with_the_predecessor": {
+      "characters": 61723,
+      "characters_on_lines_shared_with_the_predecessor": 30990,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 126,
+      "share_percent": 50.21
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_fifth_2026_10_19.md",
      "added_in_commit": "2ac7369f58be11b7dbcd1ec28269a83272d18da8",
      "added_at_unix_time": 1792422608,
-     "characters": 69767
+     "characters": 69767,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_fourth_2026_10_19.md",
+     "shared_with_the_predecessor": {
+      "characters": 69767,
+      "characters_on_lines_shared_with_the_predecessor": 30069,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 137,
+      "share_percent": 43.1
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_sixth_2026_10_19.md",
      "added_in_commit": "2565e0398ac95e9288ad6dbc22cde43406f7de1d",
      "added_at_unix_time": 1792434379,
-     "characters": 56766
+     "characters": 56766,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_fifth_2026_10_19.md",
+     "shared_with_the_predecessor": {
+      "characters": 56766,
+      "characters_on_lines_shared_with_the_predecessor": 23596,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 106,
+      "share_percent": 41.57
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_seventh_2026_10_19.md",
      "added_in_commit": "b520f75fac89acef98c985fd7cea03e091be67e4",
      "added_at_unix_time": 1792438395,
-     "characters": 57458
+     "characters": 57458,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_sixth_2026_10_19.md",
+     "shared_with_the_predecessor": {
+      "characters": 57458,
+      "characters_on_lines_shared_with_the_predecessor": 19191,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 98,
+      "share_percent": 33.4
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_eighth_2026_10_19.md",
      "added_in_commit": "d46ed2c70f9a7219d4aa5a815075bf53efc68ebb",
      "added_at_unix_time": 1792446297,
-     "characters": 72330
+     "characters": 72330,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_seventh_2026_10_19.md",
+     "shared_with_the_predecessor": {
+      "characters": 72330,
+      "characters_on_lines_shared_with_the_predecessor": 14692,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 98,
+      "share_percent": 20.31
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_ninth_2026_10_20.md",
      "added_in_commit": "01ef1c3eca380b663ddf589a7483d9b0d1b781ef",
      "added_at_unix_time": 1792482294,
-     "characters": 62175
+     "characters": 62175,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_eighth_2026_10_19.md",
+     "shared_with_the_predecessor": {
+      "characters": 62175,
+      "characters_on_lines_shared_with_the_predecessor": 21124,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 103,
+      "share_percent": 33.98
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_tenth_2026_10_20.md",
      "added_in_commit": "b317fb30e25ffd3fc5334e074afa061e3244f44e",
      "added_at_unix_time": 1792515591,
-     "characters": 74764
+     "characters": 74764,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_ninth_2026_10_20.md",
+     "shared_with_the_predecessor": {
+      "characters": 74764,
+      "characters_on_lines_shared_with_the_predecessor": 15617,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 103,
+      "share_percent": 20.89
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_eleventh_2026_10_20.md",
      "added_in_commit": "a23f352429049db7fa5c096e1b8ed64c53b1c35d",
      "added_at_unix_time": 1792521796,
-     "characters": 79270
+     "characters": 79270,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_tenth_2026_10_20.md",
+     "shared_with_the_predecessor": {
+      "characters": 79270,
+      "characters_on_lines_shared_with_the_predecessor": 22993,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 140,
+      "share_percent": 29.01
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_twelfth_2026_10_20.md",
      "added_in_commit": "75bbfa9326db01819b7036f660b71bc1c388365b",
      "added_at_unix_time": 1792528513,
-     "characters": 134126
+     "characters": 134126,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_eleventh_2026_10_20.md",
+     "shared_with_the_predecessor": {
+      "characters": 134126,
+      "characters_on_lines_shared_with_the_predecessor": 29095,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 165,
+      "share_percent": 21.69
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_thirteenth_2026_10_21.md",
      "added_in_commit": "1efab7f6215e8eafdbfadd854d3930c57f51c95d",
      "added_at_unix_time": 1792779652,
-     "characters": 117568
+     "characters": 117568,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twelfth_2026_10_20.md",
+     "shared_with_the_predecessor": {
+      "characters": 117568,
+      "characters_on_lines_shared_with_the_predecessor": 27173,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 189,
+      "share_percent": 23.11
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_fourteenth_2026_10_23.md",
      "added_in_commit": "f72dabfd1e55c33a079d6773a4347b77886465b7",
      "added_at_unix_time": 1792787284,
-     "characters": 63286
+     "characters": 63286,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_thirteenth_2026_10_21.md",
+     "shared_with_the_predecessor": {
+      "characters": 63286,
+      "characters_on_lines_shared_with_the_predecessor": 17748,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 149,
+      "share_percent": 28.04
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_fifteenth_2026_10_24.md",
      "added_in_commit": "e0c849b1b885455352cbec4e341193bb47cdb711",
      "added_at_unix_time": 1792828089,
-     "characters": 71420
+     "characters": 71420,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_fourteenth_2026_10_23.md",
+     "shared_with_the_predecessor": {
+      "characters": 71420,
+      "characters_on_lines_shared_with_the_predecessor": 21751,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 144,
+      "share_percent": 30.46
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_sixteenth_2026_10_24.md",
      "added_in_commit": "a99f70687f8d717fc933118143b099b5e3cc392f",
      "added_at_unix_time": 1792840956,
-     "characters": 73117
+     "characters": 73117,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_fifteenth_2026_10_24.md",
+     "shared_with_the_predecessor": {
+      "characters": 73117,
+      "characters_on_lines_shared_with_the_predecessor": 27100,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 144,
+      "share_percent": 37.06
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_seventeenth_2026_10_24.md",
      "added_in_commit": "7b0dacdb74c8d2025424898da2ad008b2688f9c2",
      "added_at_unix_time": 1792919299,
-     "characters": 89385
+     "characters": 89385,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_sixteenth_2026_10_24.md",
+     "shared_with_the_predecessor": {
+      "characters": 89385,
+      "characters_on_lines_shared_with_the_predecessor": 28560,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 149,
+      "share_percent": 31.95
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_eighteenth_2026_10_25.md",
      "added_in_commit": "4373063daa8d6de87b6743b21f395b8a4cfee8b5",
      "added_at_unix_time": 1792927162,
-     "characters": 114017
+     "characters": 114017,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_seventeenth_2026_10_24.md",
+     "shared_with_the_predecessor": {
+      "characters": 114017,
+      "characters_on_lines_shared_with_the_predecessor": 29438,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 154,
+      "share_percent": 25.82
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_nineteenth_2026_10_26.md",
      "added_in_commit": "b1bbddb25ee998aa17c021b3488cb68baa1523d9",
      "added_at_unix_time": 1793004855,
-     "characters": 79766
+     "characters": 79766,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_eighteenth_2026_10_25.md",
+     "shared_with_the_predecessor": {
+      "characters": 79766,
+      "characters_on_lines_shared_with_the_predecessor": 19765,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 172,
+      "share_percent": 24.78
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_twentieth_2026_10_26.md",
      "added_in_commit": "27e8dbe40709beaced9264eafd98afcb73dd10d4",
      "added_at_unix_time": 1793013975,
-     "characters": 139118
+     "characters": 139118,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_nineteenth_2026_10_26.md",
+     "shared_with_the_predecessor": {
+      "characters": 139118,
+      "characters_on_lines_shared_with_the_predecessor": 18862,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 172,
+      "share_percent": 13.56
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_twenty_first_2026_10_26.md",
      "added_in_commit": "cc91e4788ddc02bdc4fe2a6b036f2fad31bcd109",
      "added_at_unix_time": 1793027396,
-     "characters": 221926
+     "characters": 221926,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twentieth_2026_10_26.md",
+     "shared_with_the_predecessor": {
+      "characters": 221926,
+      "characters_on_lines_shared_with_the_predecessor": 25615,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 278,
+      "share_percent": 11.54
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_twenty_second_2026_10_26.md",
      "added_in_commit": "198b5d60234c3fb0f264264374377d16a8b57dc8",
      "added_at_unix_time": 1793052985,
-     "characters": 152663
+     "characters": 152663,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twenty_first_2026_10_26.md",
+     "shared_with_the_predecessor": {
+      "characters": 152663,
+      "characters_on_lines_shared_with_the_predecessor": 35638,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 231,
+      "share_percent": 23.34
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_twenty_third_2026_10_26.md",
      "added_in_commit": "ced48cb97c5bbf746e065fcf5ff704f0ec56156e",
      "added_at_unix_time": 1793090029,
-     "characters": 167250
+     "characters": 167250,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twenty_second_2026_10_26.md",
+     "shared_with_the_predecessor": {
+      "characters": 167250,
+      "characters_on_lines_shared_with_the_predecessor": 15562,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 168,
+      "share_percent": 9.3
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_twenty_fourth_2026_10_27.md",
      "added_in_commit": "52075221cdf64c80fceb06551fd439db6252df87",
      "added_at_unix_time": 1793106734,
-     "characters": 132154
+     "characters": 132154,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twenty_third_2026_10_26.md",
+     "shared_with_the_predecessor": {
+      "characters": 132154,
+      "characters_on_lines_shared_with_the_predecessor": 15723,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 176,
+      "share_percent": 11.9
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_twenty_fifth_2026_10_27.md",
      "added_in_commit": "cffb667be69e3ed8810ca49d8943c1c1ef5a5c0f",
      "added_at_unix_time": 1793125193,
-     "characters": 228900
+     "characters": 228900,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twenty_fourth_2026_10_27.md",
+     "shared_with_the_predecessor": {
+      "characters": 228900,
+      "characters_on_lines_shared_with_the_predecessor": 17716,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 171,
+      "share_percent": 7.74
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_twenty_sixth_2026_10_27.md",
      "added_in_commit": "9e25bb664b2030cd699caf4832567afd648671c0",
      "added_at_unix_time": 1793143262,
-     "characters": 246250
+     "characters": 246250,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twenty_fifth_2026_10_27.md",
+     "shared_with_the_predecessor": {
+      "characters": 246250,
+      "characters_on_lines_shared_with_the_predecessor": 37391,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 237,
+      "share_percent": 15.18
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_twenty_seventh_2026_10_28.md",
      "added_in_commit": "45b7f750d052b3e5e055f4cec1e5b75bc956e30c",
      "added_at_unix_time": 1793395873,
-     "characters": 260055
+     "characters": 260055,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twenty_sixth_2026_10_27.md",
+     "shared_with_the_predecessor": {
+      "characters": 260055,
+      "characters_on_lines_shared_with_the_predecessor": 43479,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 397,
+      "share_percent": 16.72
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_twenty_eighth_2026_10_30.md",
      "added_in_commit": "811b7b086b3181c767d9a9e20a6361317caf5677",
      "added_at_unix_time": 1793436176,
-     "characters": 142049
+     "characters": 142049,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twenty_seventh_2026_10_28.md",
+     "shared_with_the_predecessor": {
+      "characters": 142049,
+      "characters_on_lines_shared_with_the_predecessor": 40928,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 287,
+      "share_percent": 28.81
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_twenty_ninth_2026_10_31.md",
      "added_in_commit": "a714367e6d5185603de611d5f818c5f45c9c5afb",
      "added_at_unix_time": 1793453984,
-     "characters": 90619
+     "characters": 90619,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twenty_eighth_2026_10_30.md",
+     "shared_with_the_predecessor": {
+      "characters": 90619,
+      "characters_on_lines_shared_with_the_predecessor": 18719,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 166,
+      "share_percent": 20.66
+     },
+     "the_appendix_beside_it": null
     },
     {
      "name": "cc_report_l3_comparison_tabulation_thirtieth_2026_10_31.md",
      "added_in_commit": "3300e3d6513e586d99a08208340139f65c6903ae",
      "added_at_unix_time": 1793486401,
-     "characters": 520923
+     "characters": 520923,
+     "the_predecessor": "cc_report_l3_comparison_tabulation_twenty_ninth_2026_10_31.md",
+     "shared_with_the_predecessor": {
+      "characters": 520923,
+      "characters_on_lines_shared_with_the_predecessor": 18160,
+      "characters_on_whitespace_only_lines_shared_and_not_counted_above": 166,
+      "share_percent": 3.49
+     },
+     "the_appendix_beside_it": null
+    }
+   ],
+   "the_invariant_share": {
+    "members_with_a_predecessor": 29,
+    "their_characters": 3680373,
+    "their_characters_on_lines_shared_with_the_predecessor": 699415,
+    "share_percent": 19.0,
+    "how_a_line_is_shared": "a line of the member, with its line ending, counts as shared when the predecessor holds the same line not already matched; the order of lines is ignored; whitespace-only lines are counted apart and are not in the share. A line changed by one character counts as not shared, and a short common line counts as shared wherever it stands."
+   },
+   "the_appendices_beside_them": {
+    "count": 0,
+    "characters_total": 0,
+    "how_these_relate_to_the_sizes_above": "every size above is of the report proper only; an appendix file is sized here and in `the_reports_with_an_appendix_beside_them`, never added to the report's own size"
+   }
+  },
+  "the_reports_with_an_appendix_beside_them": {
+   "the_folder": "records/cc/reports",
+   "how_a_pair_is_found": "every file of the folder whose name ends `_appendix.md`, beside the report named by its stem; an appendix with no report beside it is a STOP",
+   "read_by": "Cowork: the report proper in full under the user's rule of 2026-09-03, the appendix at need (Ruling 4 of the 2026-11-01 record)",
+   "count": 4,
+   "characters_of_the_reports_proper": 131829,
+   "characters_of_the_appendices": 578857,
+   "the_pairs": [
+    {
+     "the_report": "cc_report_pruning_rulings_execution_2026_11_01.md",
+     "characters_of_the_report_proper": 25664,
+     "the_appendix": "cc_report_pruning_rulings_execution_2026_11_01_appendix.md",
+     "characters_of_the_appendix": 88629,
+     "the_appendix_share_of_the_two_percent": 77.55
+    },
+    {
+     "the_report": "cc_report_pruning_rulings_fourth_execution_2026_11_02.md",
+     "characters_of_the_report_proper": 42897,
+     "the_appendix": "cc_report_pruning_rulings_fourth_execution_2026_11_02_appendix.md",
+     "characters_of_the_appendix": 261900,
+     "the_appendix_share_of_the_two_percent": 85.93
+    },
+    {
+     "the_report": "cc_report_pruning_rulings_reexecution_2026_11_01.md",
+     "characters_of_the_report_proper": 30008,
+     "the_appendix": "cc_report_pruning_rulings_reexecution_2026_11_01_appendix.md",
+     "characters_of_the_appendix": 73269,
+     "the_appendix_share_of_the_two_percent": 70.94
+    },
+    {
+     "the_report": "cc_report_pruning_rulings_third_execution_2026_11_01.md",
+     "characters_of_the_report_proper": 33260,
+     "the_appendix": "cc_report_pruning_rulings_third_execution_2026_11_01_appendix.md",
+     "characters_of_the_appendix": 155059,
+     "the_appendix_share_of_the_two_percent": 82.34
     }
    ]
   },
@@ -782,14 +1338,8 @@
      "the_writing_sides_read": "unwritten practice"
     },
     "the_record_that_mandates_it": "the standing clause `Every dispatch's read-first block names the CURRENT HANDOVER BLOCK`, which this repository carries as numbered entry files; the writing side's three is its own practice",
-    "the_population_count": 395,
+    "the_population_count": 396,
     "the_three": [
-     {
-      "name": "cowork_handoff_entry_four_hundred_and_seventy_four.md",
-      "added_in_commit": "bfd15c7fdd6e010a2ad163cfb0dddd26e46239a1",
-      "added_at_unix_time": 1793605025,
-      "characters": 8835
-     },
      {
       "name": "cowork_handoff_entry_four_hundred_and_seventy_three.md",
       "added_in_commit": "bfd15c7fdd6e010a2ad163cfb0dddd26e46239a1",
@@ -801,9 +1351,15 @@
       "added_in_commit": "bfd15c7fdd6e010a2ad163cfb0dddd26e46239a1",
       "added_at_unix_time": 1793605025,
       "characters": 7261
+     },
+     {
+      "name": "cowork_handoff_entry_four_hundred_and_seventy_six.md",
+      "added_in_commit": "dd06b5fea97a0f7e1fee4ffa35b7aebdc704ebd5",
+      "added_at_unix_time": 1793616911,
+      "characters": 8572
      }
     ],
-    "characters": 23218
+    "characters": 22955
    }
   ],
   "totals_by_side": {
@@ -831,12 +1387,14 @@
      },
      {
       "member": "the three handoff entry files with the latest add-commits",
-      "characters": 23218
+      "characters": 22955
      }
     ],
-    "without_the_injected_copy_of_CLAUDE_md": 675026,
-    "with_it": 844208,
+    "without_the_injected_copy_of_CLAUDE_md": 674763,
+    "with_it": 843945,
     "the_injected_copy_added_in_with_it": "CLAUDE.md, the whole file, 169182 characters",
+    "under_ruling_2_of_2026_11_01": 738504,
+    "how_ruling_2_moves_it": "Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_11_01_pruning_iteration_sitting.md`: the injected copy is the read of the six spans, so their file-tool read (105441 characters) leaves the sum and the injected copy stays; the eight-line check's own reads are not sized here",
     "left_out_and_said_so": "the previous report at the portions a dispatch orders, the reading file at its ordered portions, the ruling records a dispatch orders — varies per dispatch and is not sized here"
    },
    "Cowork, per sitting, in the shape of the sitting of entry 461": {
@@ -863,7 +1421,7 @@
      },
      {
       "member": "the three handoff entry files with the latest add-commits",
-      "characters": 23218
+      "characters": 22955
      },
      {
       "member": "the latest report of the arc, whole: cc_report_l3_comparison_tabulation_thirtieth_2026_10_31.md",
@@ -874,7 +1432,7 @@
       "characters": 151805
      }
     ],
-    "characters": 973845,
+    "characters": 973582,
     "left_out_and_said_so": "the verification reads at the objects (the reading file at its sections, the guard state, the ref files, the away-returns close) — varies per batch and is not sized here"
    }
   }
@@ -3330,6 +3888,8 @@
   "Each mandate class is the writing side's authored reading of the record, cited per row and challengeable there; the user rules on it.",
   "The injected copy of `CLAUDE.md` is DECLARED by the executing sessions; this tool measures the file, not the copy.",
   "The dispatch and report populations are complete only relative to their name prefixes.",
+  "The invariant share is a LINE measure, not a judgement of copying: a line changed by one character counts as not shared, and a short common line counts as shared wherever it stands. It compares each member with its predecessor only.",
+  "An appendix file is found by its name alone (`<stem>_appendix.md` beside `<stem>.md`).",
   "The imported recognizers are patterns over prose whose reach is UNMEASURED (D-673 applies: no analysis decision consumes this enumeration); the doubt default places what no recognizer places; and a sub-block cut at a ★ marker may carry a sentence that continues in the next."
  ],
  "what_this_does_not_assert": [
@@ -3337,6 +3897,7 @@
   "That any mandate class is right.",
   "That the injected copy of `CLAUDE.md` exists or has the size of the file.",
   "That the dispatch and report populations are complete beyond the name prefixes.",
+  "That a line shared with the predecessor was copied from it, or that a line not shared was newly written.",
   "That any sub-block's class is right.",
   "That any size is small or large enough — that is the user's question at step 3.",
   "That any text should move — this tool proposes nothing."
