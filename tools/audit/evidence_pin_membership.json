@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 171,
+  "ruling_records_read": 172,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -312,6 +312,7 @@
   "records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md",
   "records/cowork/rulings/cowork_rulings_2026_10_26_l3_position_57_sitting.md",
   "records/cowork/rulings/cowork_rulings_2026_11_01_pruning_iteration_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_11_02_boot_chain_sitting.md",
   "records/cowork/rulings/cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {
