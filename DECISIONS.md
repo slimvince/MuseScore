@@ -142,8 +142,8 @@ project's own and are defined here because they are used before any entry explai
 | Decisions recorded | **477** |
 | — of which live | 427 |
 | — of which superseded in fact | 7 |
-| — of which superseded by | 9 |
-| — of which deferred | 21 |
+| — of which superseded by | 16 |
+| — of which deferred | 19 |
 | — of which shelved with evidence | 2 |
 | Decisions whose date is not stated in the record | 95 |
 | Decisions whose ratifier is not stated in the record | 163 |
@@ -591,15 +591,15 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-440 | The language-model integration is purpose-built and does not wait for the plugin-API reform | DEFERRED | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-441 | Analysis and modification are phases of ONE conversation; a follow-up instruction re-uses the reasoning rather than re-analysing | DEFERRED | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-442 | A validation failure goes back to the language model as a tool-call error and is never shown to the user | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §4.3 |
-| D-443 | Tool use is the only capability the provider abstraction requires; a provider without it is read-only | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §8.1 |
+| D-440 | The language-model integration is purpose-built and does not wait for the plugin-API reform | SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-441 | Analysis and modification are phases of ONE conversation; a follow-up instruction re-uses the reasoning rather than re-analysing | SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-442 | A validation failure goes back to the language model as a tool-call error and is never shown to the user | SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` | 2026-08-04 · user | `docs/llm_integration.md` §4.3 |
+| D-443 | Tool use is the only capability the provider abstraction requires; a provider without it is read-only | SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` | 2026-08-04 · user | `docs/llm_integration.md` §8.1 |
 | D-444 | The core access layer is a facade over interfaces that already exist, not a redesign | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §5.2 |
 | D-445 | A musical address does not identify a single note, so the note entity carries its own identifier | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §5.3 |
-| D-446 | The language model resolves how the user names a passage; no index is built and the kinds of reference are not enumerated | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §6 |
-| D-447 | The model's tool definitions are generated from the operation set, never maintained by hand | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §8.2 |
-| D-448 | The operation set is curated from observed use, not an exposure of every editing method | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §4.2 |
+| D-446 | The language model resolves how the user names a passage; no index is built and the kinds of reference are not enumerated | SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` | 2026-08-04 · user | `docs/llm_integration.md` §6 |
+| D-447 | The model's tool definitions are generated from the operation set, never maintained by hand | SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` | 2026-08-04 · user | `docs/llm_integration.md` §8.2 |
+| D-448 | The operation set is curated from observed use, not an exposure of every editing method | SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` | 2026-08-04 · user | `docs/llm_integration.md` §4.2 |
 
 ## O. Intonation — [full entries](decisions/group_O.md)
 

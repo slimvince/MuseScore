@@ -17,13 +17,13 @@
 
 **Why.** Stated with the decision in the design document read in full this wave (`docs/llm_integration.md` §3.1): the general plugin API needs a complete redesign, that reform is a large long-term project requiring community buy-in, and the language-model integration has a narrower scope that a purpose-built internal interface can serve now. Note that this does not contradict D-143 — the bridge is confined to the core access layer precisely so it CAN become a plugin later.
 
-**Status.** DEFERRED · date not stated · ratifier not stated
+**Status.** SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` · date not stated · ratifier not stated
 
 **Entry ratified.** 2026-08-04 · by user
 
 **Home.** `ARCHITECTURE.md:8113-8116`
 
-**Provenance.** Recorded in ARCHITECTURE.md §19.2, whose own section banner marks the whole LLM integration as design-phase; the design document it summarises (`docs/llm_integration.md`) carries the banner "Design phase. No code written yet." and `src/llm/` does not exist at HEAD (checked this wave). Entered by the phase-1 reads wave 1 from the full read of `docs/llm_integration.md`; the record names no ratifier and no date, and none is inferred. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** Recorded in ARCHITECTURE.md §19.2, whose own section banner marks the whole LLM integration as design-phase; the design document it summarises (`docs/llm_integration.md`) carries the banner "Design phase. No code written yet." and `src/llm/` does not exist at HEAD (checked this wave). Entered by the phase-1 reads wave 1 from the full read of `docs/llm_integration.md`; the record names no ratifier and no date, and none is inferred. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ USER RULING 2026-11-07 (Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`, applied under Ruling 1 item 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`): a language model is never used at run time in the finished product, so this decision about a language model in the shipped product is SUPERSEDED BY that ruling (was deferred). The quoted wording and the 2026-08-04 entry ratification are kept (#12).
 
 ### D-441 — Analysis and modification are phases of ONE conversation; a follow-up instruction re-uses the reasoning rather than re-analysing
 
@@ -36,13 +36,13 @@
 
 **Why.** Stated with the decision in `docs/llm_integration.md` §3.6, read in full this wave: the conversation history IS the working context, which is what makes a question-then-fix exchange cheap, and it is the same model that makes a coding assistant effective.
 
-**Status.** DEFERRED · date not stated · ratifier not stated
+**Status.** SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` · date not stated · ratifier not stated
 
 **Entry ratified.** 2026-08-04 · by user
 
 **Home.** `ARCHITECTURE.md:8135-8138`
 
-**Provenance.** Recorded in ARCHITECTURE.md §19.2 alongside the other language-model decisions, all of which the register already carries as deferred (D-139…D-143). Entered by the phase-1 reads wave 1; the record names no ratifier and no date. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** Recorded in ARCHITECTURE.md §19.2 alongside the other language-model decisions, all of which the register already carries as deferred (D-139…D-143). Entered by the phase-1 reads wave 1; the record names no ratifier and no date. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ USER RULING 2026-11-07 (Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`, applied under Ruling 1 item 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`): a language model is never used at run time in the finished product, so this decision about a language model in the shipped product is SUPERSEDED BY that ruling (was deferred). The quoted wording and the 2026-08-04 entry ratification are kept (#12).
 
 ### D-442 — A validation failure goes back to the language model as a tool-call error and is never shown to the user
 
@@ -53,7 +53,7 @@
 
 **Why.** derivation not recorded — the design document states the rule and the retry loop, but gives no reason for hiding the failed attempt from the user rather than surfacing it.
 
-**Status.** NOT STATED · date not stated · ratifier not stated
+**Status.** SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` · date not stated · ratifier not stated
 
 **Entry ratified.** 2026-08-04 · by user
 
@@ -61,7 +61,7 @@
 
 **Home section.** **§4.3** — `### 4.3 Validation Layer` (heading at line 296). A delegation at ARCHITECTURE.md:8096 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** `docs/llm_integration.md` §4.3, read in full by the phase-1 reads wave 1. The document's banner reads "Design phase. No code written yet." and `src/llm/` does not exist at HEAD, so the record does not say whether this rule is in force; "not stated" is entered rather than a status inferred from the surrounding section's deferral. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** `docs/llm_integration.md` §4.3, read in full by the phase-1 reads wave 1. The document's banner reads "Design phase. No code written yet." and `src/llm/` does not exist at HEAD, so the record does not say whether this rule is in force; "not stated" is entered rather than a status inferred from the surrounding section's deferral. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ USER RULING 2026-11-07 (Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`, applied under Ruling 1 item 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`): a language model is never used at run time in the finished product, so this decision about a language model in the shipped product is SUPERSEDED BY that ruling (was not stated). The quoted wording and the 2026-08-04 entry ratification are kept (#12).
 
 ### D-443 — Tool use is the only capability the provider abstraction requires; a provider without it is read-only
 
@@ -74,7 +74,7 @@
 
 **Why.** Stated with the decision: the modification path is built entirely out of tool calls (`docs/llm_integration.md` §3.2, §8.2), so a provider that cannot call tools has no way to express a change — the restriction follows from the stateless tool-call model rather than being an added policy.
 
-**Status.** NOT STATED · date not stated · ratifier not stated
+**Status.** SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` · date not stated · ratifier not stated
 
 **Entry ratified.** 2026-08-04 · by user
 
@@ -82,7 +82,7 @@
 
 **Home section.** **§8.1** — `### 8.1 Multi-provider abstraction` (heading at line 599). A delegation at ARCHITECTURE.md:8096 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** `docs/llm_integration.md` §8.1, read in full by the phase-1 reads wave 1; §3.5 states the same abstraction from the other side. ARCHITECTURE.md §19.1 records the multi-provider choice but NOT the tool-use requirement or the read-only consequence, which is why this is entered rather than treated as carried. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** `docs/llm_integration.md` §8.1, read in full by the phase-1 reads wave 1; §3.5 states the same abstraction from the other side. ARCHITECTURE.md §19.1 records the multi-provider choice but NOT the tool-use requirement or the read-only consequence, which is why this is entered rather than treated as carried. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ USER RULING 2026-11-07 (Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`, applied under Ruling 1 item 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`): a language model is never used at run time in the finished product, so this decision about a language model in the shipped product is SUPERSEDED BY that ruling (was not stated). The quoted wording and the 2026-08-04 entry ratification are kept (#12).
 
 ### D-444 — The core access layer is a facade over interfaces that already exist, not a redesign
 
@@ -102,7 +102,7 @@
 
 **Home section.** **§5.2** — `### 5.2 The existing interfaces already define most of this` (heading at line 363). A delegation at ARCHITECTURE.md:8096 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** `docs/llm_integration.md` §5.2, read in full by the phase-1 reads wave 1. The layer is named in ARCHITECTURE.md §19.4 as the thing the bridge is confined to (D-143), but the facade decision and its audit are recorded only in the design document. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** `docs/llm_integration.md` §5.2, read in full by the phase-1 reads wave 1. The layer is named in ARCHITECTURE.md §19.4 as the thing the bridge is confined to (D-143), but the facade decision and its audit are recorded only in the design document. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ NOTE 2026-11-07 (Ruling 1 item 2 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`): Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` removes the language-model bridge as one of the core access layer's two consumers. The rules themselves use no language model, and that ruling does not speak to the other consumer, a future plugin interface. Status unchanged.
 
 ### D-445 — A musical address does not identify a single note, so the note entity carries its own identifier
 
@@ -123,7 +123,7 @@
 
 **Home section.** **§5.3** — `### 5.3 The information model — key design point` (heading at line 397). A delegation at ARCHITECTURE.md:8096 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** `docs/llm_integration.md` §5.3, read in full by the phase-1 reads wave 1. D-139 carries the stateless every-call-carries-its-address half from ARCHITECTURE.md:6962; the consequence that an address is not enough is recorded only here. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** `docs/llm_integration.md` §5.3, read in full by the phase-1 reads wave 1. D-139 carries the stateless every-call-carries-its-address half from ARCHITECTURE.md:6962; the consequence that an address is not enough is recorded only here. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ NOTE 2026-11-07 (Ruling 1 item 2 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`): Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` removes the language-model bridge as one of the core access layer's two consumers. The rules themselves use no language model, and that ruling does not speak to the other consumer, a future plugin interface. Status unchanged.
 
 ### D-446 — The language model resolves how the user names a passage; no index is built and the kinds of reference are not enumerated
 
@@ -136,7 +136,7 @@
 
 **Why.** Stated with the decision: the space of references is open-ended, so an enumeration would be incomplete by construction; §6 lists five families of reference precisely to show that the list does not close.
 
-**Status.** NOT STATED · date not stated · ratifier not stated
+**Status.** SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` · date not stated · ratifier not stated
 
 **Entry ratified.** 2026-08-04 · by user
 
@@ -144,7 +144,7 @@
 
 **Home section.** **§6** — `## 6. Score Addressing` (heading at line 479). A delegation at ARCHITECTURE.md:8096 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** `docs/llm_integration.md` §6, read in full by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** `docs/llm_integration.md` §6, read in full by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ USER RULING 2026-11-07 (Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`, applied under Ruling 1 item 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`): a language model is never used at run time in the finished product, so this decision about a language model in the shipped product is SUPERSEDED BY that ruling (was not stated). The quoted wording and the 2026-08-04 entry ratification are kept (#12).
 
 ### D-447 — The model's tool definitions are generated from the operation set, never maintained by hand
 
@@ -156,7 +156,7 @@
 
 **Why.** Stated with the decision — no manual maintenance, so the two cannot drift. This is #6 (one path per concern) applied to the tool surface: a hand-kept second list is the duplication that goes stale.
 
-**Status.** NOT STATED · date not stated · ratifier not stated
+**Status.** SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` · date not stated · ratifier not stated
 
 **Entry ratified.** 2026-08-04 · by user
 
@@ -164,7 +164,7 @@
 
 **Home section.** **§8.2** — `### 8.2 Tool definitions` (heading at line 611). A delegation at ARCHITECTURE.md:8096 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** `docs/llm_integration.md` §8.2, read in full by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** `docs/llm_integration.md` §8.2, read in full by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ USER RULING 2026-11-07 (Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`, applied under Ruling 1 item 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`): a language model is never used at run time in the finished product, so this decision about a language model in the shipped product is SUPERSEDED BY that ruling (was not stated). The quoted wording and the 2026-08-04 entry ratification are kept (#12).
 
 ### D-448 — The operation set is curated from observed use, not an exposure of every editing method
 
@@ -176,7 +176,7 @@
 
 **Why.** Stated with the decision: the set is chosen by observing real use in the two earlier read-only phases, so the curation has an evidence source rather than being a guess at what will be needed.
 
-**Status.** NOT STATED · date not stated · ratifier not stated
+**Status.** SUPERSEDED BY Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` · date not stated · ratifier not stated
 
 **Entry ratified.** 2026-08-04 · by user
 
@@ -184,5 +184,5 @@
 
 **Home section.** **§4.2** — `### 4.2 Operation Set` (heading at line 284). A delegation at ARCHITECTURE.md:8096 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** `docs/llm_integration.md` §4.2, read in full by the phase-1 reads wave 1. ARCHITECTURE.md §19.4's phase table records the count but not the curation rule or its evidence source. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** `docs/llm_integration.md` §4.2, read in full by the phase-1 reads wave 1. ARCHITECTURE.md §19.4's phase table records the count but not the curation rule or its evidence source. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ USER RULING 2026-11-07 (Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`, applied under Ruling 1 item 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`): a language model is never used at run time in the finished product, so this decision about a language model in the shipped product is SUPERSEDED BY that ruling (was not stated). The quoted wording and the 2026-08-04 entry ratification are kept (#12).
 
