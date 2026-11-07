@@ -2471,7 +2471,19 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # dated entries. The then-previous batch is that extension; its close entry's `Last updated: ` prefix was
 # MOVED to this batch's close entry in the same edit that wrote this batch's entries, before `--apply` ran.
 # **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431).
-BASE_COMMIT = "3dbade755a80520af21db8618d6e8ece5d923c07"
+#
+# ★★ RE-AIMED 2026-11-07 BY `records/cc/instructions/cc_instruction_records_landing_2026_11_07.md`
+# Task 3(b). `BASE_COMMIT` was `3dbade755a80520af21db8618d6e8ece5d923c07` and is now
+# `113b2ce680e527e81342d8f79d5acbad281334d7`: this batch's Task 0 commit, which is its LAST TASK COMMIT
+# before the close — the batch has no Task 1 or Task 2. That commit carries no `STATUS.md` change, so its
+# `STATUS.md` object is the one both refs carried when this batch opened (the blob
+# `748b4b265363bbc64b3352eab5ee46667b3f25fb`, at the commit `864deb43c5dae6415a8c8b9e98901e7b2c2a96ae` and at
+# `113b2ce6…`, established at `git rev-parse` of each, one command per commit) — and it carries the
+# boot-chain landing's entries at the head of the dated entries. The then-previous batch is that landing;
+# its close entry's `Last updated: ` prefix was MOVED to this batch's close entry in the same edit that
+# wrote this batch's entries, before `--apply` ran. **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS WRITTEN
+# HERE** (D-431).
+BASE_COMMIT = "113b2ce680e527e81342d8f79d5acbad281334d7"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -2700,7 +2712,10 @@ BASE_COMMIT = "3dbade755a80520af21db8618d6e8ece5d923c07"
 # *(`PREVIOUS_BATCH_DISPATCH` read "cc_instruction_pruning_rulings_fourth_execution_2026_11_02.md" while
 # `cc_instruction_per_session_reading_extension_2026_11_02.md` was the executing act; it is re-stated here
 # for `cc_instruction_boot_chain_landing_2026_11_02.md`, whose then-previous batch is that one.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_per_session_reading_extension_2026_11_02.md"
+# *(`PREVIOUS_BATCH_DISPATCH` read "cc_instruction_per_session_reading_extension_2026_11_02.md" while
+# `cc_instruction_boot_chain_landing_2026_11_02.md` was the executing act; it is re-stated here
+# for `cc_instruction_records_landing_2026_11_07.md`, whose then-previous batch is that one.)*
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_boot_chain_landing_2026_11_02.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -2985,8 +3000,12 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_per_session_reading_extension_2026_11_
 # while that batch was the executing act; both are re-stated here for
 # `cc_instruction_boot_chain_landing_2026_11_02.md`, dated 2026-11-02 in its file name, whose move ran on
 # 2026-11-02, so the two dates agree and `ACT_DATE` keeps its value.)*
-ACT_DATE = "2026-11-02"
-DISPATCH = "cc_instruction_boot_chain_landing_2026_11_02.md"
+# *(`ACT_DATE` read "2026-11-02" and `DISPATCH` `cc_instruction_boot_chain_landing_2026_11_02.md`
+# while that batch was the executing act; both are re-stated here for
+# `cc_instruction_records_landing_2026_11_07.md`, dated 2026-11-07 in its file name, whose move ran on
+# 2026-11-07, so the two dates agree and `ACT_DATE` takes that value.)*
+ACT_DATE = "2026-11-07"
+DISPATCH = "cc_instruction_records_landing_2026_11_07.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -3920,6 +3939,10 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_boot_chain_landing_2026_11_02.md, Task 3",
      "base_commit": "3dbade755a80520af21db8618d6e8ece5d923c07",
      "the_then_previous_batch": "cc_instruction_per_session_reading_extension_2026_11_02.md",
+     "the_kind_of_move": "ordinary"},
+    {"executing_act": "cc_instruction_records_landing_2026_11_07.md, Task 3",
+     "base_commit": "113b2ce680e527e81342d8f79d5acbad281334d7",
+     "the_then_previous_batch": "cc_instruction_boot_chain_landing_2026_11_02.md",
      "the_kind_of_move": "ordinary"},
 ]
 

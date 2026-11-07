@@ -30606,3 +30606,97 @@ This commit adds only the guard run's artifact and this portion.
 
 *Provenance: CC, 2026-11-02, appended in the one further commit after the close commit
 `601bbb4f29e0f8a24bb722a7c32ae7dcab8041b5`; the verdicts are this run's own output, read with the file tools.*
+
+## THE RECORDS LANDING OF 2026-11-07 — HANDOFF ENTRIES 479 TO 569, 46 RULING RECORDS AND 37 RATIFICATION DOCUMENTS LANDED; DOCUMENTATION ONLY, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_records_landing_2026_11_07.md`, pinned at Task 0 as blob
+`78e4498da26365b7f83936f9125f5f9363cf1ce7`:
+
+- **The eight-line check of Ruling 2 of 2026-11-01** — all eight lines identical to the injected copy; the six-span read
+  not performed.
+- **Task 0** landed handoff entries 479 to 569 (entry 569 was on disk at boot), the 46 ruling records, the 37
+  ratification documents and the dispatch — 175 paths, proved against `changed_paths.py`'s enumeration with no stray in
+  the four folders — with the evidence-pin artifact regenerated exactly as predicted (`ruling_records_read` 172 → 218,
+  the 46 paths added, nothing else) (`113b2ce680e527e81342d8f79d5acbad281334d7`, pushed). Every landed blob ends with a
+  complete line and holds no zero byte; the four expected sizes held. The opening capture was the thirteen plus the
+  per-session tool, as A2 states; the classification STOP named the five tools.
+- **A1 did not hold as written — the report's Finding 1.** Two tracked files beyond the standing one carry working-tree
+  modifications at boot: `docs/research_papers/BIBLIOGRAPHY.md` and `docs/research_papers/README.md`. Neither is a
+  landing-set path or in the four folders, so no named STOP fired; both were held back from every commit; the opening
+  capture's failing set was exactly A2's, so no guard verdict moved on them.
+- **Task 3** closed: two `STATUS.md` entries (the close and Task 0), the prefix moved; the keyword search hit only the
+  paraphrase paragraph; the forward bound re-aimed at `<T0>` and moved exactly the boot-chain landing's three entries, no
+  STOP; the four archive checks green; the read size, the defense share, the L3 population (one line value in its
+  `STATUS.md` residue record, 20 → 18) and the per-session table regenerated; the evidence-pin, L0/L1 and boot-pack
+  checks green and not regenerated. One per-session field the dispatch's list does not name moved and is reported by
+  field: `the_cowork_boot_chain` → `the_population_count` 398 → 489, the landed entries joining it.
+- **Ruling 2 of 2026-11-02 observed:** the dispatch was executed without reading any earlier dispatch (the report's §10).
+- **No summary of the session's context fell.**
+
+**Everything this section would restate is in the report**, `records/cc/reports/cc_report_records_landing_2026_11_07.md`
+(the first read and the eight-line check §1, capacity §2, Task 0 §3, the close §4, the commits §5, the grades §6,
+Finding 1 §7, observations §8, departures §9, the no-earlier-dispatch paragraph §10, the appendix §11, the tell §12, the
+self-check §13), with its appendix `records/cc/reports/cc_report_records_landing_2026_11_07_appendix.md` (the raw
+printouts, verbatim).
+
+### 3(c′) — the last regeneration, after the report and its appendix were final
+
+`python tools/audit/gen_per_session_reading.py` (a writing run, exit 0), its printout line *"reports with an appendix
+beside them 7: reports proper 241593, appendices 1083378 characters"*; then `--check`, exit 0. **The artifact against
+the one 3(c) left** (`63f2a0756c2c7e7703ac478ce01125c29c88734f` → `01c0ef1c3111f49d15b16c15145654f60feba177`), whole:
+
+```
+@@ -1252,9 +1252,9 @@
+    "the_folder": "records/cc/reports",
+    "how_a_pair_is_found": "every file of the folder whose name ends `_appendix.md`, beside the report named by its stem; an appendix with no report beside it is a STOP",
+    "read_by": "Cowork: the report proper in full under the user's rule of 2026-09-03, the appendix at need (Ruling 4 of the 2026-11-01 record)",
+-   "count": 6,
+-   "characters_of_the_reports_proper": 218252,
+-   "characters_of_the_appendices": 887153,
++   "count": 7,
++   "characters_of_the_reports_proper": 241593,
++   "characters_of_the_appendices": 1083378,
+    "the_pairs": [
+     {
+      "the_report": "cc_report_boot_chain_landing_2026_11_02.md",
+@@ -1297,6 +1297,13 @@
+      "the_appendix": "cc_report_pruning_rulings_third_execution_2026_11_01_appendix.md",
+      "characters_of_the_appendix": 155059,
+      "the_appendix_share_of_the_two_percent": 82.34
++    },
++    {
++     "the_report": "cc_report_records_landing_2026_11_07.md",
++     "characters_of_the_report_proper": 23341,
++     "the_appendix": "cc_report_records_landing_2026_11_07_appendix.md",
++     "characters_of_the_appendix": 196225,
++     "the_appendix_share_of_the_two_percent": 89.37
+     }
+    ]
+   },
+```
+
+**Only that block moved, exactly as predicted**: `count` one higher, the two sums higher by this batch's two sizes
+(23,341 and 196,225 characters), and one added pair naming this batch's report. Neither the report nor its appendix was
+edited after this run.
+
+### What needs the writing side, named rather than resolved
+
+1. **Finding 1 (the report's §7)** — the two modified files under `docs/research_papers/` and the untracked
+   `docs/research_papers/polyph9-release/` beside them: whose edit, and whether they land, is not this batch's to decide;
+   the next dispatch's A1 should state them.
+2. **The boot chain's three latest are now entries 479, 492 and 493** (the report's §8): all 91 landed entries share one
+   add-commit time, so the measurement tool picked the three alphabetically last file names. The sized three are not the
+   current handover block.
+3. **The report's declared departures (§9)** — among them one working-tree read of `CLAUDE.md` through PowerShell for the
+   eight-line check's last line, then matched with the Grep tool.
+
+### The plan line
+
+- *"The next act is the writing side's — the check of this batch's return at the objects; then the second dispatch,
+  applying Ruling 1 items 1 to 6 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`."*
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-11-07, at boot tip `864deb43c5dae6415a8c8b9e98901e7b2c2a96ae`, under
+`cc_instruction_records_landing_2026_11_07.md`. Every commit identifier here was read from the commit's own object and
+`origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
