@@ -30700,3 +30700,52 @@ edited after this run.
 *Provenance: CC, 2026-11-07, at boot tip `864deb43c5dae6415a8c8b9e98901e7b2c2a96ae`, under
 `cc_instruction_records_landing_2026_11_07.md`. Every commit identifier here was read from the commit's own object and
 `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `8ac62876975b891fef7ed2fc87257383dcf2c33f` left, appended in the one further commit
+
+The close commit `8ac62876975b891fef7ed2fc87257383dcf2c33f` (parent `113b2ce680e527e81342d8f79d5acbad281334d7`, the
+Task 0 commit) was pushed and `origin/master` read at its ref file equal to it.
+
+**A fresh full guard run as a writing run (`python tools/audit/gen_guard_state.py`, the operating mode named), after the
+close commit and before this one.** Its result is at `tools/audit/guard_state.json` → `summary`, which this commit
+carries. Its first line, verbatim: *"wrote tools\audit\guard_state.json"*; its last line, verbatim: *"83 guard(s) run, 13
+failing, 4 not run, 20 historical record(s)"*. **The condition — MET:**
+
+- the run count is 83; zero STOPs in the runner;
+- the failing set is exactly the thirteen of the premise ledger, none added — `gen_phase3_gate_partition.py`,
+  `gen_filing_convention_application.py`, `gen_artifact_inventory.py`, `gen_artifact_inventory_surface.py`,
+  `gen_test_construction_evidence.py`, `gen_retirement_caller_check.py`, `decisions/apply_soft_discard.py`,
+  `decisions/apply_residue_discard.py`, `gen_epoch_write_path.py`, `gen_recognizer_establishment_sort.py`,
+  `decisions/gen_cluster_dispositions.py --verify`, `decisions/gen_home_classification.py`,
+  `decisions/gen_phase1p_delegation_bar.py`;
+- `gen_per_session_reading.py --check`, `gen_evidence_pin_membership.py --check`, `gen_derivation_boot_pack.py --check`
+  and `gen_l3_outgoing_population.py --check` PASS; the evidence-pin artifact's `counts.ruling_records_read` reads 218;
+- against the opening capture (a `diff` of the two printouts), **exactly one verdict differs —
+  `gen_per_session_reading.py --check` FAIL → PASS** — beside the header line (a `--check` against a writing run) and the
+  tally (14 → 13 failing); the NOT RUN and HISTORICAL lines are identical;
+- `gen_guard_classification.py --check` STOPs (exit 2) naming the same five tools as at 0(f) —
+  `gen_l0_l1_outgoing_population.py`, `gen_l2_withheld_documents.py`, `gen_l3_outgoing_population.py`,
+  `gen_per_session_reading.py`, `gen_withheld_family_reading.py`; no further name.
+
+This run regenerated nothing beyond its own artifact: `changed_paths.py` after it shows `tools/audit/guard_state.json`
+beside the carried `tools/audit/claude_md_finer_archive.json` and the two `docs/research_papers/` modifications of
+Finding 1, and no other tracked modification; the untracked population is unchanged.
+
+**A4 and A5, verified at the objects.** `git diff --name-status 864deb43c5dae6415a8c8b9e98901e7b2c2a96ae
+8ac62876975b891fef7ed2fc87257383dcf2c33f` lists 187 paths — 177 additions and 10 modifications — every one accounted
+for. **Additions:** the 174 landed records (91 handoff entries, 46 ruling records, 37 ratification documents), this
+dispatch, and the report and its appendix. **Modifications:** `tools/audit/evidence_pin_membership.json` (Task 0) and the
+close's nine — `STATUS.md`, `STATUS_ARCHIVE.md`, `tools/audit/gen_status_batch_bound.py`,
+`tools/audit/status_batch_bound.json`, `tools/audit/session_start_read_size.json`, `tools/audit/defense_share.json`,
+`tools/audit/l3_outgoing_population.json`, `tools/audit/per_session_reading.json` and this file. No path outside the
+landing set lies outside A4. **A4 HELD. Every file A5 names is absent from it — A5 HELD**: no governing document, nothing
+under `docs/`, no tool under `tools/audit/` but `gen_status_batch_bound.py`, nothing under `tools/audit/decisions/` or
+`tools/audit/derivation_boot_pack/`, no already-tracked ruling record, handoff entry, ratification document, dispatch or
+report; each landed file appears once, as an addition. **E3 — HELD**: at the close tree every check 3(b) and 3(c) name
+passed in this run, and only `guard_state.json` was stale before it. **E4 — HELD**: the condition held at a fresh run,
+committed only after the run that produced it.
+
+This commit adds only the guard run's artifact and this portion.
+
+*Provenance: CC, 2026-11-07, appended in the one further commit after the close commit
+`8ac62876975b891fef7ed2fc87257383dcf2c33f`; the verdicts are this run's own output, read with the file tools.*
