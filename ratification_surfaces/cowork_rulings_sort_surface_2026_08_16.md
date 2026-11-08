@@ -952,25 +952,25 @@ recorded act.
 
 ### D-440 — The language-model integration is purpose-built and does not wait for the plugin-API reform
 
-- **Recorded at:** `ARCHITECTURE.md:8113-8116` · **status:** `deferred` · **group:** N
+- **Recorded at:** `ARCHITECTURE.md:8113-8116` · **status:** `superseded-by` · **group:** N
 - **What the entry says the decision is:** The language-model bridge is built as its own focused module against the interfaces that already exist, rather than waiting for the general plugin API to be redesigned. The two are separate projects on separate timetables and may converge later.
 - **Decided by:** the decisions register's own `home_is_layer_spec` — the entry is recorded in a LAYER'S OWN SPECIFICATION, which is where a decision about what the analysis is or does lives
 
 ### D-441 — Analysis and modification are phases of ONE conversation; a follow-up instruction re-uses the reasoning rather than re-analysing
 
-- **Recorded at:** `ARCHITECTURE.md:8135-8138` · **status:** `deferred` · **group:** N
+- **Recorded at:** `ARCHITECTURE.md:8135-8138` · **status:** `superseded-by` · **group:** N
 - **What the entry says the decision is:** Asking about the music and then changing it happen in a single conversation. When the model has already worked out what is wrong, an instruction to fix it is carried out from what it already reasoned through, not by analysing the music again.
 - **Decided by:** the decisions register's own `home_is_layer_spec` — the entry is recorded in a LAYER'S OWN SPECIFICATION, which is where a decision about what the analysis is or does lives
 
 ### D-442 — A validation failure goes back to the language model as a tool-call error and is never shown to the user
 
-- **Recorded at:** `docs/llm_integration.md:304-305` · **status:** `not stated` · **group:** N
+- **Recorded at:** `docs/llm_integration.md:304-305` · **status:** `superseded-by` · **group:** N
 - **What the entry says the decision is:** When the checks reject something the model proposed — a note outside an instrument's range, parallel fifths, a malformed bar — the rejection is returned to the model, which corrects itself and tries again. The user never sees the rejected attempt; only output that passed the checks reaches the music.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
 ### D-443 — Tool use is the only capability the provider abstraction requires; a provider without it is read-only
 
-- **Recorded at:** `docs/llm_integration.md:601-604` · **status:** `not stated` · **group:** N
+- **Recorded at:** `docs/llm_integration.md:601-604` · **status:** `superseded-by` · **group:** N
 - **What the entry says the decision is:** The user picks which language-model provider to use. The only thing the system demands of a provider is that it can call tools. One that cannot may still be used to answer questions about the music, but it may not be used to change the music.
 - **Decided by:** USER-RULED at the 2026-08-17 sitting — the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT
 
@@ -988,13 +988,13 @@ recorded act.
 
 ### D-447 — The model's tool definitions are generated from the operation set, never maintained by hand
 
-- **Recorded at:** `docs/llm_integration.md:613-615` · **status:** `not stated` · **group:** N
+- **Recorded at:** `docs/llm_integration.md:613-615` · **status:** `superseded-by` · **group:** N
 - **What the entry says the decision is:** What the model is told it can do is derived from the operations themselves. Adding an operation makes it available to the model with no second list to keep in step.
 - **Decided by:** USER-RULED at the 2026-08-17 sitting — the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT
 
 ### D-448 — The operation set is curated from observed use, not an exposure of every editing method
 
-- **Recorded at:** `docs/llm_integration.md:286-288` · **status:** `not stated` · **group:** N
+- **Recorded at:** `docs/llm_integration.md:286-288` · **status:** `superseded-by` · **group:** N
 - **What the entry says the decision is:** The model gets a chosen set of about forty editing operations covering the changes that matter, rather than everything the editor can do. Which ones are chosen is decided by watching what the read-only phases actually reach for.
 - **Decided by:** USER-RULED at the 2026-08-17 sitting — the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT
 
