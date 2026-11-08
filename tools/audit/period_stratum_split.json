@@ -2273,7 +2273,7 @@
   "★_the_inherited_establishment_caveat": "#19, INHERITED AND NOT DISCHARGED HERE. Every count below is a re-derivation over the two candidate artifacts, and the generator that produced those artifacts (`tools/audit/gen_doc_change_candidates.py`) has itself never been positively established — it was written in one batch, and its own artifact marks assumption A3 UNESTABLISHED for every generator family. What THIS tool establishes is that the split follows from those artifacts and reconciles with the totals they publish of themselves. It establishes nothing about whether the enumeration underneath them is complete or correct, and a reader may not take a clean re-derivation here as evidence that it is. What would settle the inherited half is an establishment pass over that generator — an act named here and not started.",
   "the_document_set": {
    "artifact": "tools/audit/specification_document_set.json",
-   "sha256": "4a3e70df108120c6249582e0c0c5a88514805fe59a1f106772900b15ee1b0193",
+   "sha256": "09f4db3f9b7326eaad56cd15e788a710898899dbaa43c9e8543a9cb15e286502",
    "members": [
     "ARCHITECTURE.md",
     "cowork_bounded_context_design.md",

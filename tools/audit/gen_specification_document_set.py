@@ -569,6 +569,21 @@ GRADES: dict[str, dict] = {
     "docs/chordlist_bug_report.md": g(
         PROVENANCE,
         "Named once, in the same version-history paragraph."),
+    # ── EXCLUDED, added 2026-11-08 for the §19 superseded banner (`ARCHITECTURE.md` line 8089) ──
+    "records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md": g(
+        PROVENANCE,
+        "Named once, in the §19 superseded banner, recording where the user's ruling that "
+        "supersedes the section was taken — a ruling record named where a ruling was taken, as "
+        "for the 2026-08-11 fourteenth-stop and the 2026-08-09 second-stop records above."),
+    "records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md": g(
+        PROVENANCE,
+        "Named once, in the same banner, recording under which ruling the banner was applied — "
+        "a ruling record named where a ruling was taken."),
+    "docs/llm_triage_design.md": g(
+        BARE_CITATION,
+        "Named once, in the same banner, in a sentence of its own about the test-time second "
+        "opinion: '… is discussed in X.' It is neither an explicit delegation clause nor a named "
+        "home with sections (`CLAUDE.md` rule (i)); the same grade as the 'See X.' namings above."),
 }
 
 # ── AUTHORED — the EXCLUSIONS, fed to the derivation beside the grades (the D-677 shape) ────

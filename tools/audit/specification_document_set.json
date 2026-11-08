@@ -55,14 +55,14 @@
   }
  },
  "counted": {
-  "targets_named_in_ARCHITECTURE.md": 68,
-  "namings_scanned": 199,
+  "targets_named_in_ARCHITECTURE.md": 71,
+  "namings_scanned": 202,
   "targets_by_form": {
-   "bare-appended-citation": 17,
+   "bare-appended-citation": 18,
    "explicit-delegation-clause": 23,
    "named-home-with-sections": 2,
    "naming-that-delegates-no-concern": 5,
-   "provenance-attribution": 21
+   "provenance-attribution": 23
   },
   "targets_ADMITTED": 25,
   "targets_ADMITTED_less_exclusions": 24,
@@ -1551,6 +1551,20 @@
    "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
   },
   {
+   "target": "docs/llm_triage_design.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, in the same banner, in a sentence of its own about the test-time second opinion: '… is discussed in X.' It is neither an explicit delegation clause nor a named home with sections (`CLAUDE.md` rule (i)); the same grade as the 'See X.' namings above.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 8089,
+     "line_text": "> **★ SUPERSEDED 2026-11-07 by Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`** (the user: \"LLM:S are only to be used during development of the software solution (in order to better it). Never at run-time in the finished product.\"). This section and its subsections describe a language model at run time in the finished product. Their text is kept below as it stood (#12) and is not a design to build. The test-time second opinion that ruling allows is discussed in `docs/llm_triage_design.md`. Applied under Ruling 1 item 3 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
    "target": "docs/nct_detection_design.md",
    "form": "naming-that-delegates-no-concern",
    "admitted": false,
@@ -1855,6 +1869,34 @@
     }
    ],
    "namings_counted": 2
+  },
+  {
+   "target": "records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, in the same banner, recording under which ruling the banner was applied — a ruling record named where a ruling was taken.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 8089,
+     "line_text": "> **★ SUPERSEDED 2026-11-07 by Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`** (the user: \"LLM:S are only to be used during development of the software solution (in order to better it). Never at run-time in the finished product.\"). This section and its subsections describe a language model at run time in the finished product. Their text is kept below as it stood (#12) and is not a design to build. The test-time second opinion that ruling allows is discussed in `docs/llm_triage_design.md`. Applied under Ruling 1 item 3 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, in the §19 superseded banner, recording where the user's ruling that supersedes the section was taken — a ruling record named where a ruling was taken, as for the 2026-08-11 fourteenth-stop and the 2026-08-09 second-stop records above.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 8089,
+     "line_text": "> **★ SUPERSEDED 2026-11-07 by Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`** (the user: \"LLM:S are only to be used during development of the software solution (in order to better it). Never at run-time in the finished product.\"). This section and its subsections describe a language model at run time in the finished product. Their text is kept below as it stood (#12) and is not a design to build. The test-time second opinion that ruling allows is discussed in `docs/llm_triage_design.md`. Applied under Ruling 1 item 3 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`."
+    }
+   ],
+   "namings_counted": 1
   }
  ],
  "the_authored_exclusions": [
