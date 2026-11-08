@@ -9347,7 +9347,8 @@
       "plain": "The language-model bridge is built as its own focused module against the interfaces that already exist, rather than waiting for the general plugin API to be redesigned. The two are separate projects on separate timetables and may converge later.",
       "home": "ARCHITECTURE.md:8113-8116",
       "home_is_layer_spec": true,
-      "status": "superseded-by", "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
+      "status": "superseded-by",
+      "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
       "date": "not stated",
       "ratified_by": [
         "not stated"
@@ -9370,7 +9371,8 @@
       "plain": "Asking about the music and then changing it happen in a single conversation. When the model has already worked out what is wrong, an instruction to fix it is carried out from what it already reasoned through, not by analysing the music again.",
       "home": "ARCHITECTURE.md:8135-8138",
       "home_is_layer_spec": true,
-      "status": "superseded-by", "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
+      "status": "superseded-by",
+      "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
       "date": "not stated",
       "ratified_by": [
         "not stated"
@@ -9393,7 +9395,8 @@
       "plain": "When the checks reject something the model proposed — a note outside an instrument's range, parallel fifths, a malformed bar — the rejection is returned to the model, which corrects itself and tries again. The user never sees the rejected attempt; only output that passed the checks reaches the music.",
       "home": "docs/llm_integration.md:304-305",
       "home_is_layer_spec": false,
-      "status": "superseded-by", "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
+      "status": "superseded-by",
+      "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
       "date": "not stated",
       "ratified_by": [
         "not stated"
@@ -9431,7 +9434,8 @@
       "plain": "The user picks which language-model provider to use. The only thing the system demands of a provider is that it can call tools. One that cannot may still be used to answer questions about the music, but it may not be used to change the music.",
       "home": "docs/llm_integration.md:601-604",
       "home_is_layer_spec": false,
-      "status": "superseded-by", "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
+      "status": "superseded-by",
+      "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
       "date": "not stated",
       "ratified_by": [
         "not stated"
@@ -9545,7 +9549,8 @@
       "plain": "Musicians point at music in open-ended ways — from a rehearsal mark, from where the choir enters, from the first C sharp in the cello, from something said earlier in the conversation. The system does not try to list those ways or build a lookup for them. It makes sure the model has the structural facts and the search tools, and lets the model do the resolving.",
       "home": "docs/llm_integration.md:518-521",
       "home_is_layer_spec": false,
-      "status": "superseded-by", "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
+      "status": "superseded-by",
+      "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
       "date": "not stated",
       "ratified_by": [
         "not stated"
@@ -9583,7 +9588,8 @@
       "plain": "What the model is told it can do is derived from the operations themselves. Adding an operation makes it available to the model with no second list to keep in step.",
       "home": "docs/llm_integration.md:613-615",
       "home_is_layer_spec": false,
-      "status": "superseded-by", "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
+      "status": "superseded-by",
+      "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
       "date": "not stated",
       "ratified_by": [
         "not stated"
@@ -9621,7 +9627,8 @@
       "plain": "The model gets a chosen set of about forty editing operations covering the changes that matter, rather than everything the editor can do. Which ones are chosen is decided by watching what the read-only phases actually reach for.",
       "home": "docs/llm_integration.md:286-288",
       "home_is_layer_spec": false,
-      "status": "superseded-by", "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
+      "status": "superseded-by",
+      "superseded_by": "Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`",
       "date": "not stated",
       "ratified_by": [
         "not stated"
