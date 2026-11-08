@@ -10139,7 +10139,7 @@ one published flag, and it makes S-13's declared failure case findable rather th
 > **Why this document is in the population:** a term-search hit retained by Ruling 33 as a member of
 > the ruled specification document set.
 >
-> **What it is.** The design of a natural-language interface to the score — a consumer of the analysis
+> **What it is.** [★ ANNOTATED 2026-11-08 under Ruling 1 item 5 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`, this description's wording kept (#12): the document describes a language model at run time in the finished product, which Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` rules out; the document is superseded. The dispositions are not changed.] The design of a natural-language interface to the score — a consumer of the analysis
 > rather than a part of it, and the only document in the population written from the READING side. Its
 > own banner says *"Design phase. No code written yet."*, which is why **no row of this document is
 > QUARANTINED**: there is no implementation to ask the audit about.

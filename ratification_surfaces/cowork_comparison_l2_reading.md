@@ -72465,7 +72465,7 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
 > **What kind of text this member is, and which placement readings apply.** Passages of the design of the
 > language-model integration, a product tool outside the analysis: what the tool is shown and not shown, how it joins
 > its records, the markers by which a user names a passage to it, the table of what its view of the music includes,
-> the analysis it is handed as context, and its future as a plugin. **The placement readings are those of the earlier
+> the analysis it is handed as context, and its future as a plugin. [★ ANNOTATED 2026-11-08 under Ruling 1 item 5 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`, this member's wording kept (#12): its description of the language-model integration as *a product tool outside the analysis* is stale. Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` rules that a language model is never used at run time in the finished product; the integration is superseded, and a language model may only give a second opinion when the product is tested and struggles with inference. The dispositions are not changed.] **The placement readings are those of the earlier
 > members, applied unchanged.** A statement about a product tool outside the analysis is listed under *not a
 > statement*, the fifth batch's reading, and so is every row of the table of what the tool's view includes but one; a
 > table's header and separator rows are listed. Where a line names analysis the tool is handed — the chord symbols, the
@@ -72554,7 +72554,7 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
 
 #### Not a statement — listed so the arithmetic closes (34)
 
-1. "The practical boundary: if a property is stored via the `Pid` property system on an `EngravingObject`, it is intentional and belongs in the LLM's view." (192–193) — *a statement about a product tool outside the analysis*, what the language-model integration is shown.
+1. "The practical boundary: if a property is stored via the `Pid` property system on an `EngravingObject`, it is intentional and belongs in the LLM's view." (192–193) — *a statement about a product tool outside the analysis*, what the language-model integration is shown. [★ ANNOTATED 2026-11-08 under Ruling 1 item 5 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`, for items 1 to 34 of this list, their wording kept (#12): *a product tool outside the analysis* is stale for the language-model integration, which Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` supersedes. The dispositions are not changed.]
 2. "If it lives in `LayoutData` and is regenerated on each layout pass, it is computed and should be excluded." (194–195) — *a statement about a product tool outside the analysis*, what the language-model integration is not shown.
 3. "**MusicalAddress as join key:** Harmony, Annotation, and Note at the same MusicalAddress are co-located." (414–415) — *a statement about a product tool outside the analysis*, how the language-model integration joins its records.
 4. ""What chord symbol is sounding at this note?" is a match on the composite key — equivalent to a SQL join." (415–416) — *a statement about a product tool outside the analysis*, how the language-model integration joins its records.

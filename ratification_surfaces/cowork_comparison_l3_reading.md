@@ -30463,7 +30463,7 @@ labels read as titles under rule (1) are neither here nor among the rows.
 20. "Revisit after a scoring stabilisation phase, not during active iteration." (3211–3212) — when to revisit a refactor:
     development conduct.
 21. "The LLM integration design (`docs/llm_integration.md`) and the Authoritative Chord Symbol Mode (§4.1f) depend on
-    `useExistingChordSymbols`." (3233–3235) — the defense of keeping the fields of Row 21.102.
+    `useExistingChordSymbols`." (3233–3235) — the defense of keeping the fields of Row 21.102. [★ ANNOTATED 2026-11-08 under Ruling 1 item 6 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`, the wording kept (#12): the language-model half of this defense no longer holds, because Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` supersedes `docs/llm_integration.md`. The other half, the Authoritative Chord Symbol Mode (§4.1f), stands. Row 21.102's proposed QUARANTINED is not changed.]
 22. "Removing them would require an explicit feature-abandonment decision." (3235–3236) — a rule on removing fields of the
     code: development conduct.
 23. The heading line "#### §4.1c Part 2 — Jazz Mode (chord-symbol-driven boundaries)" (3376) — *a heading*, the first line
