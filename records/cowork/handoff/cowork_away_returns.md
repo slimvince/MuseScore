@@ -30749,3 +30749,62 @@ This commit adds only the guard run's artifact and this portion.
 
 *Provenance: CC, 2026-11-07, appended in the one further commit after the close commit
 `8ac62876975b891fef7ed2fc87257383dcf2c33f`; the verdicts are this run's own output, read with the file tools.*
+
+# ═══ THE LANGUAGE-MODEL CORRECTION OF 2026-11-07, SECOND RESUME — RULING 1 ITEMS 1 TO 6 APPLIED; DOCUMENTATION AND RECORD-KEEPING ONLY, NO ALGORITHM CHANGED (dispatch `cc_instruction_llm_correction_second_resume_2026_11_08.md`, performed 2026-11-08) ═══
+
+**The whole of this batch is the report**, `records/cc/reports/cc_report_llm_correction_second_resume_2026_11_08.md`, with
+its appendix beside it, `records/cc/reports/cc_report_llm_correction_second_resume_2026_11_08_appendix.md` (95,734
+bytes, the raw printouts). Neither is edited after 3(c′) below. This section points at them and does not restate them.
+
+- **The two stopped batches' reports.** The first stopped batch's report and appendix landed earlier, at `d46a7b48…`.
+  **The resume batch's report and appendix** (`records/cc/reports/cc_report_llm_correction_resume_2026_11_07.md` and its
+  `_appendix.md`) **landed at `<T0>` = `9a2b3c2d9a00f94ea2cf67f2dcf0832a3a65fbce`**, as they stood. That batch appended no
+  section here, so this section is the first in this file for the language-model correction.
+- **The commits:** `<T0>` `9a2b3c2d…` (the landing set: handoff entries 581 to 585, the resume report and appendix, this
+  dispatch); `<T1>` `1e563b8c9cb52dd1e6fff1039f9abe09be4f4682` (the three grades; the set and split artifacts);
+  `<T2>` `468aac14856d2cabf6cc5f9ee58678b7073d5c24` (the four in-line annotations). Then the close commit, which carries
+  this section. Each was pushed and `origin/master` was read equal at its ref file.
+- **What needs the writing side:** the report's §9 observations (the boot chain's three latest are entries 581, 582
+  and 583 by the name-order tie-break, not 583 to 585; the `DECISIONS.md` member movement in
+  `per_session_reading.json`, whose cause is the first stopped batch's decisions-register change; two of the dispatch's
+  commands are refused by the shell-read guard) and its §8 declared departures. **No tool was carried red by this
+  batch** (the report's §11).
+
+### 3(c′) — the last regeneration, after the report and its appendix were final
+
+`python tools/audit/gen_per_session_reading.py` (a writing run, exit 0), its printout line *"reports with an appendix
+beside them 10: reports proper 296208, appendices 1281838 characters"*; then `--check`, exit 0. **The artifact against
+the one 3(c) left** (`d6cfdf32e66ae7d48fc2a3bfada880a52cab3d77` → `0935d11722a6fd11979815a673e40750c5ee7d0b`, numstat
+`10 3`), whole:
+
+```
+@@ -1255,3 +1255,3 @@
+-   "count": 9,
+-   "characters_of_the_reports_proper": 271541,
+-   "characters_of_the_appendices": 1186440,
++   "count": 10,
++   "characters_of_the_reports_proper": 296208,
++   "characters_of_the_appendices": 1281838,
+@@ -1279,0 +1280,7 @@
++    {
++     "the_report": "cc_report_llm_correction_second_resume_2026_11_08.md",
++     "characters_of_the_report_proper": 24667,
++     "the_appendix": "cc_report_llm_correction_second_resume_2026_11_08_appendix.md",
++     "characters_of_the_appendix": 95398,
++     "the_appendix_share_of_the_two_percent": 79.46
++    },
+```
+
+**Only that block moved, exactly as predicted**: `count` one higher, the two sums higher by this batch's two sizes
+(24,667 and 95,398 characters, as the tool reads them), and one added pair naming this batch's report.
+
+### The plan line
+
+- *"The next act is the writing side's — the check of this batch's return at the objects; then L3 family 7's check (the
+  language-model family surface)."*
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-11-08, at boot tip `257ad5bfc1915f63c1e0b7e54da5692e6003e64b`, under
+`cc_instruction_llm_correction_second_resume_2026_11_08.md`. Every commit identifier here was read from the commit's own
+object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
