@@ -30808,3 +30808,61 @@ the one 3(c) left** (`d6cfdf32e66ae7d48fc2a3bfada880a52cab3d77` → `0935d11722a
 *Provenance: CC, 2026-11-08, at boot tip `257ad5bfc1915f63c1e0b7e54da5692e6003e64b`, under
 `cc_instruction_llm_correction_second_resume_2026_11_08.md`. Every commit identifier here was read from the commit's own
 object and `origin/master` at its ref file after each push; the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `6b65a82a45e9053ba3ddf6c3ec76a3938272e41b` left, appended in the one further commit
+
+The close commit `6b65a82a45e9053ba3ddf6c3ec76a3938272e41b` (parent `468aac14856d2cabf6cc5f9ee58678b7073d5c24`, `<T2>`)
+was pushed and `origin/master` read at its ref file equal to it.
+
+**A fresh full guard run as a writing run (`python tools/audit/gen_guard_state.py`, named), after the close commit and
+before this one.** Its result is at `tools/audit/guard_state.json` → `summary`, which this commit carries. Its first
+line, verbatim: *"wrote tools\audit\guard_state.json"*; its last line, verbatim: *"83 guard(s) run, 13 failing, 4 not
+run, 20 historical record(s)"*. **The condition — MET:**
+
+- the run count is 83; zero STOPs in the runner;
+- the failing set is exactly the thirteen standing reds, and no tool was carried red by this batch —
+  `gen_phase3_gate_partition.py`, `gen_filing_convention_application.py`, `gen_artifact_inventory.py`,
+  `gen_artifact_inventory_surface.py`, `gen_test_construction_evidence.py`, `gen_retirement_caller_check.py`,
+  `decisions/apply_soft_discard.py`, `decisions/apply_residue_discard.py`, `gen_epoch_write_path.py`,
+  `gen_recognizer_establishment_sort.py`, `decisions/gen_cluster_dispositions.py --verify`,
+  `decisions/gen_home_classification.py`, `decisions/gen_phase1p_delegation_bar.py`;
+- `gen_specification_document_set.py --check`, `gen_period_stratum_split.py --check`, `gen_per_session_reading.py
+  --check`, `gen_session_start_read_size.py --check`, `gen_defense_share.py --check` and
+  `gen_l3_outgoing_population.py --check` PASS;
+- against the opening capture (compared verdict by verdict), **exactly two verdicts differ —
+  `gen_specification_document_set.py --check` and `gen_per_session_reading.py --check`, each FAIL → PASS** — beside
+  the header line (a `--check` against a writing run) and the tally (15 → 13 failing); the NOT RUN and HISTORICAL lines
+  are identical; no tool went PASS → FAIL;
+- `gen_guard_classification.py --check` STOPs (exit 2) naming the same five tools as at 0(f) —
+  `gen_l0_l1_outgoing_population.py`, `gen_l2_withheld_documents.py`, `gen_l3_outgoing_population.py`,
+  `gen_per_session_reading.py`, `gen_withheld_family_reading.py`; no further name.
+
+**A4 and A5, verified at the objects.** `git diff --name-status 257ad5bfc1915f63c1e0b7e54da5692e6003e64b
+6b65a82a45e9053ba3ddf6c3ec76a3938272e41b` lists **25 paths — 10 additions and 15 modifications** — every one accounted
+for. **Additions (10):** the landing set's eight — `records/cc/instructions/cc_instruction_llm_correction_second_resume_2026_11_08.md`,
+`records/cc/reports/cc_report_llm_correction_resume_2026_11_07.md`,
+`records/cc/reports/cc_report_llm_correction_resume_2026_11_07_appendix.md`, and handoff entries
+`…_five_hundred_and_eighty_one.md`, `…_eighty_two.md`, `…_eighty_three.md`, `…_eighty_four.md`, `…_eighty_five.md` —
+and this batch's report and appendix, `records/cc/reports/cc_report_llm_correction_second_resume_2026_11_08.md` and
+`…_appendix.md`. **Modifications (15):** Task 1's `tools/audit/gen_specification_document_set.py`,
+`tools/audit/specification_document_set.json`, `tools/audit/period_stratum_split.json`; Task 2's
+`ratification_surfaces/cowork_comparison_l0_l1_reading.md`, `ratification_surfaces/cowork_comparison_l2_reading.md`,
+`ratification_surfaces/cowork_comparison_l3_reading.md`; Task 3's `STATUS.md`, `STATUS_ARCHIVE.md`,
+`tools/audit/gen_status_batch_bound.py`, `tools/audit/status_batch_bound.json`, `tools/audit/session_start_read_size.json`,
+`tools/audit/defense_share.json`, `tools/audit/l3_outgoing_population.json`, `tools/audit/per_session_reading.json` and
+this file. **A4 HELD.** Every file A5 names is absent from the list — no governing document (`CLAUDE.md`,
+`CLAUDE_ARCHIVE.md`, `DECISIONS.md`, `DECISIONS_ARCHIVE.md`, `cowork_audit_protocol.md`, `FRAMEWORK.md`,
+`OPEN_ITEMS.md`, `BUILD_AND_TEST.md`, `ARCHITECTURE.md`), nothing under `decisions/` or `docs/`, no tool under
+`tools/audit/` but the set tool and `gen_status_batch_bound.py`, nothing under `tools/audit/decisions/`, no ruling
+record, and no already-tracked handoff entry, ratification document, dispatch or report but the three reading files and
+this file; each landed file appears once, as an addition. **A5 HELD.** The A1 standing items stay unstaged and
+uncommitted. **E3 — HELD**: at the close tree every check 3(b) and 3(c) name passed in this run, and only
+`guard_state.json` was stale before it. **E4 — HELD**: the condition held at a fresh run, committed only after the run
+that produced it.
+
+This commit adds only the guard run's artifact and this portion. *(Declared: the dispatch's Task 4 says "that file
+only", while its A4 names both `guard_state.json` and this end-state portion; both are committed, as the previous
+batch's end state did.)*
+
+*Provenance: CC, 2026-11-08, appended in the one further commit after the close commit
+`6b65a82a45e9053ba3ddf6c3ec76a3938272e41b`; the verdicts are this run's own output, read with the file tools.*
