@@ -1,5 +1,5 @@
 # LLM Integration in MuseScore Studio — Design Document
-
+> **★ SUPERSEDED 2026-11-07 by Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`** (the user: "LLM:S are only to be used during development of the software solution (in order to better it). Never at run-time in the finished product."). This document describes a language model at run time in the finished product. Its text is kept below as it stood (#12) and is not a design to build. The test-time second opinion that ruling allows is discussed in `docs/llm_triage_design.md`. Applied under Ruling 1 item 3 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`.  
 > **Status:** Design phase. No code written yet.  
 > This document captures architectural decisions and rationale from the initial
 > design session (May 2026). It is the starting point for implementation, not a

@@ -34,7 +34,7 @@ section is other than named, reporting before writing.
   (LLM Integration). Draft clause: *"The ONE detailed design for this section's scope is
   `docs/llm_integration.md`, which this section points at and does not restate."* The user's
   ratification took the delegation route with the stated caveat resolved in its favour (the
-  document is authoritative, not stale).
+  document is authoritative, not stale). ★ NOTE 2026-11-07 (Ruling 1 item 4 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`): Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` supersedes `docs/llm_integration.md` and `ARCHITECTURE.md` §19. This bullet's wording is kept as the 2026-08-08 record; the delegation it made now points at a superseded design.
 
 ## Route (ii) — RE-HOME THE ENTRIES (thirteen documents, session work per entry)
 

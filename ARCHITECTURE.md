@@ -8086,7 +8086,7 @@ a session changes an architectural decision.
 ---
 
 ## 19. LLM Integration — Claude Composer
-
+> **★ SUPERSEDED 2026-11-07 by Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md`** (the user: "LLM:S are only to be used during development of the software solution (in order to better it). Never at run-time in the finished product."). This section and its subsections describe a language model at run time in the finished product. Their text is kept below as it stood (#12) and is not a design to build. The test-time second opinion that ruling allows is discussed in `docs/llm_triage_design.md`. Applied under Ruling 1 item 3 of `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`.  
 > **Full design document:** `docs/llm_integration.md`  
 > This section is a summary and entry point. Read the full document before
 > working on any LLM integration code.
