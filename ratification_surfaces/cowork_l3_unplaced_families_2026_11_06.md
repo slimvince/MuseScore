@@ -17,8 +17,13 @@ inventory's D-599 notes are preliminary readings; this file adds no test of its 
 
 **What is not in this cut.** The rows the inventory records as reached by a ruling, and the rows it records as
 *reached in substance* or *settled by a record's own derivation, not ruled* (its sections 1A.2, 1B.2, 1E.2, 1F.2, 1F.3,
-1I.2, 1J.2, 1M.2, 1M.3, 1R.2 and 1S.2). Those are confirmed by number on a surface or at the application act, as the
-inventory says at each; they are not families here.
+1I.2, 1J.2, 1M.2, 1M.3, 1R.2 and 1S.2). Those are confirmed by number on a surface (the 39 reached in substance, as
+the inventory says at each) or, for the 7 settled by a record's own derivation, on a surface or at the application act,
+as the inventory says at each; they are not families here. *(★ CORRECTED 2026-11-08 by the sitting booted on entry 596:
+the inventory says "on a surface" only for the rows reached in substance. Former wording, kept (#12): "Those are
+confirmed by number on a surface or at the application act, as the inventory says at each; they are not families
+here." The confirmation surface is
+`ratification_surfaces/cowork_l3_step_one_remainder_surface_2026_11_08.md`.)*
 
 **The total.** The inventory's count lines give these open figures: 10 (§1), 10 (§1A), 0 (§1B), 32 (§1C), 22 (§1D),
 14 (§1E), 16 (§1F), 21 (§1G), 14 (§1H), 5 (§1I), 6 (§1J), 8 (§1K), 0 (§1L), 0 (§1M), 4 (§1N), 0 (§1O), 0 (§1P), 2 (§1Q),

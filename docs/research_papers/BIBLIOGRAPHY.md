@@ -105,6 +105,24 @@ pattern; the renames were confirmed at the folder's own listing, each file at th
 The Cowork session had recorded the intended names here when its own rename attempt failed to reach the
 folder; the Local cells above were updated in one act once the listing showed the new names.*
 
+## The thematic-parallelism branch — added 2026-11-03 (OQ-L3-5)
+
+Six works bearing on OQ-L3-5 of the L3 derivation (`cowork_blind_derivation_l3_2026_10_17.md`): which
+layer publishes the relation that one stretch of music restates an earlier one, and in what form. Four
+rows were added on 2026-11-03 and two more later the same day (see *Corrections*). **Four are held in
+this folder, one elsewhere in this repository, and one (GTTM) is not held.** Each row says where its
+identity was read and how far the work was read. Redistribution tiers marked *by default* are defaults
+and not findings.
+
+| Source | URL | Local | Redist. |
+|---|---|---|---|
+| Hamanaka, Hirata & Tojo, "Computational Music Theory and Its Applications to Expressive Performance and Composition," ch. 8 of Kirke & Miranda (eds.), *Guide to Computing for Expressive Music Performance*, Springer, 2013, pp. 205–234 — identity as the L3 pack's first-pass extract records it (`tools/audit/derivation_boot_pack/l3/08_the_seventeen_research_extracts.md`, its Hamanaka entry) and as `reading_pass/population.md` records it at its whole read (lines 414–416); the derivation cites its p. 210 | https://doi.org/10.1007/978-1-4471-4123-5_8 | ✓ elsewhere in this repository, not in this folder: `external resarch summary/Computational Music Theory and Its.pdf` (1,255,357 bytes at that folder's listing), supplied by the user and read whole at its 30 page images on 2026-08-31 (`reading_pass/population.md`, lines 409–423); the extract that record names is `reading_pass/extracts/hamanaka-hirata-tojo-2013-computational-music-theory-gttm.md` | PAYWALL by default (Springer chapter) |
+| Hamanaka, Hirata & Tojo (浜中雅俊, 平田圭二, 東条敏), "Grouping Structure Generator Based on Music Theory GTTM" (音楽理論GTTMに基づくグルーピング構造獲得システム), IPSJ Journal (情報処理学会論文誌) 48(1), Jan. 2007, pp. 284–299 — the English title, the three authors, *Vol. 48 No. 1, Jan. 2007* and the page number 284 read at PDF page 2's image on 2026-11-03 (PDF page 1 is a JAIST cover sheet); the Japanese title, the authors' Japanese names and the journal's name do not render in this environment's page images unless a font fix is applied (the PDF does not embed its Japanese fonts) and are carried from the earlier text fetch and, for the journal, from the running head on p. 292 read after that fix (handoff entry 495); it states the exGTTM computation of GPR6 (parallelism) at pp. 291–292 | https://dspace.jaist.ac.jp/dspace/bitstream/10119/7778/1/A10383.pdf | ✓ (`A10383.pdf`, 1,297,684 bytes; placed by the user on 2026-11-03) | LINK by default (institutional repository; licence not checked) |
+| Cambouropoulos, "Musical Parallelism and Melodic Segmentation: A Computational Approach," *Music Perception* 23(3), 2006, pp. 249–267, DOI `10.1525/mp.2006.23.3.249` — title, author, journal, volume, issue, year and pages read at p. 249's image on 2026-11-03; the DOI is not printed on that page and is carried from the earlier search | https://doi.org/10.1525/mp.2006.23.3.249 | ✓ (`Camb_MusPerc2006.pdf`, 1,177,256 bytes, 20 PDF pages; placed by the user on 2026-11-03); read whole at its page images on 2026-11-03 | **PAYWALL** — p. 249 prints *"© 2006 by the Regents of the University of California. All rights reserved"*; rule 3 binds, do not redistribute |
+| Lerdahl & Jackendoff, *A Generative Theory of Tonal Music* (GTTM), MIT Press, 1983 — the source of the parallelism preference rule (GPR6); not fetched, no open copy found | (book) | — (wanted) | PAYWALL |
+| Hirata, Tojo & Hamanaka, "An Algebraic Approach to Time-Span Reduction," chapter 10 of an edited book, from p. 251 — chapter number, title, the three authors and the first page read at the opening page's image on 2026-11-03; **the book's title, editors, publisher and year are not on that page and are not established here**. It concerns distance between GTTM time-span trees | (none recorded) | ✓ (`CMA2016.pdf`, 992,695 bytes; placed by the user on 2026-11-03); the opening page only has been read | PAYWALL by default (publisher not identified) |
+| Tojo & Hirata, "Distance and Similarity of Time-span Trees," *Journal of Information Processing* 21(2), Apr. 2013, pp. 256–263, DOI `10.2197/ipsjjip.21.256` — read at PDF page 2's image on 2026-11-03; PDF page 1 is a JAIST cover sheet whose fields render blank (recorded by the sitting that booted on handoff entry 496) | https://doi.org/10.2197/ipsjjip.21.256 | ✓ (`20068.pdf`, 1,024,898 bytes; placed by the user on 2026-11-03); PDF pages 1 and 2 only have been read | LINK by default — p. 256 prints *"© 2013 Information Processing Society of Japan"*; licence not checked |
+
 ## Maintenance rules
 
 1. **The citation register is COMPLETE by policy** — every source the grounding docs lean on has a row
@@ -150,3 +168,41 @@ same size — the file the DCRR-004 row points at and row 23 was read from, whic
 listing. **Whether the two were byte-identical was not checked by the session that recorded the duplicate,
 no earlier check is on the record, and it is now not checkable; the deletion was the user's decision on the recorded question.** Both acts were confirmed at
 the folder's own listing before this note was written: the new name present, the two old names absent.
+
+**2026-11-03 — four rows ADDED under maintenance rule 1, on the user's word** ("I assume the
+BIBLIOGRAPHY.md needs to be updated"). The section *"The thematic-parallelism branch — added 2026-11-03
+(OQ-L3-5)"* is new, written by the Cowork session that booted on
+`records/cowork/handoff/cowork_handoff_entry_four_hundred_and_ninety_one.md`. Its four works were found
+during that session's research on OQ-L3-5; none is held in this folder and none was read at its page
+images. **The Hamanaka 2013 chapter was already cited by the L3 derivation and summarised in the L3
+pack's research extracts, and had no row here until now.** The local copies are wanted under rule 2.
+**Nothing else in this file changed.**
+
+**2026-11-03, later — the thematic-parallelism branch updated under rules 1 and 2: three Local cells
+flipped, one corrected, two rows added.** Written by the Cowork session that booted on
+`records/cowork/handoff/cowork_handoff_entry_four_hundred_and_ninety_seven.md`. The user placed four
+PDFs in this folder on 2026-11-03: `A10383.pdf`, `Camb_MusPerc2006.pdf`, `CMA2016.pdf` and `20068.pdf`.
+Each was identified at its own opening page's image by this session, sizes at the folder's listing:
+*(i)* `A10383.pdf` is the 2007 IPSJ paper — Local flipped to ✓; its pagination month added; the identity
+statement replaced, since it is now read at the page. *(ii)* `Camb_MusPerc2006.pdf` is the Cambouropoulos
+2006 article — Local flipped to ✓; the subtitle and pages added; **the tier is now a finding, not a
+default**: p. 249 prints the University of California's "All rights reserved" notice, so rule 3 binds.
+*(iii)* `CMA2016.pdf` and `20068.pdf` are two works by Hirata and Tojo (with Hamanaka on the first) on
+distance between GTTM time-span trees, read at their opening pages by the session that booted on handoff
+entry 496 in the course of OQ-L3-5 and **added as rows under rule 1**; no read beyond their opening pages
+is on the record. *(iv)* **The Hamanaka 2013 chapter's Local cell is corrected**: the chapter is held in
+this repository at `external resarch summary/Computational Music Theory and Its.pdf` and was read whole
+on 2026-08-31 (`reading_pass/population.md`, lines 409–423), which the cell omitted — the omission was
+found by the session that booted on handoff entry 492 and confirmed here at that folder's listing. The
+copy was not moved into this folder. The section's opening paragraph is rewritten to match.
+**FORMER WORDINGS, PRESERVED (#12):** the opening paragraph's last sentences read *"**None is held in
+this folder.** Each row says how far its identity was checked; none was read at its page images."* and
+began *"Four works bearing on OQ-L3-5"*. The Hamanaka 2013 Local cell read *"— (a first-pass extract is
+held in the pack; no copy here)"*. The 2007 paper's source cell read *"IPSJ Journal 48(1), 2007, pp.
+284–299 — identity as returned by a text fetch of the repository PDF on 2026-11-03, not read at page 1's
+image; it states the exGTTM computation of GPR6 (parallelism) at p. 291"* and its Local cell *"— (wanted;
+open-hosted at the JAIST repository)"*. The Cambouropoulos source cell read *"Cambouropoulos, "Musical
+Parallelism and Melodic Segmentation," *Music Perception* 23(3), 2006, DOI `10.1525/mp.2006.23.3.249` —
+identity from a search result and the DOI only; not fetched"*, its Local cell *"— (wanted)"* and its
+tier *"PAYWALL by default (UC Press)"*. The README index gains the four files. **Nothing else in this
+file changed.**

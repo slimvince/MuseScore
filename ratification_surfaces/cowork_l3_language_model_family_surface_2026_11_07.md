@@ -5,6 +5,11 @@
 > file's rows are re-marked by the application act (route record §2 step 2 **[relayed]**). **[checked]** means read at
 > the object by this sitting; **[relayed]** means not. **The check (coherence, completeness, correctness, overstatement)
 > has NOT yet run on this surface;** it is a turn of its own, after this landing.
+>
+> **★ CORRECTED 2026-11-08 by the check (§7).** The check has run, with Ruling 1 of
+> `records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` applied. **The placement this surface
+> proposed in §2 and §3A does not hold; the proposal is now §7C: HISTORICAL — a superseded plan.** The sentence above
+> (*"has NOT yet run"*) is the former wording, kept (#12).
 
 ---
 
@@ -32,6 +37,11 @@ proposed disposition, lines 73550–73553 **[checked]**; the four others *"read 
 records that it departs from the member listing that had filed the line as *not a statement* (§6.33 item 3; §6.51 items
 17, 35, 36, 37), and states that departure for challenge **[checked at the entries]**. At Row 57.124 the reading file
 adds that L3-S39 *"binds L3 itself, not a reader outside the analysis"* (line 73547 **[checked]**).
+
+**★ CORRECTED 2026-11-08 by the check (§7B).** *"A planned bridge outside the analysis whose module is to be created"*
+is the reading file's wording, quoted as it stands. By Ruling 1 of the test-only record it is no longer a plan: a
+language model at run time in the finished product is ruled out, and both source passages now stand under a superseded
+banner (`ARCHITECTURE.md` line 8089; `docs/llm_integration.md` line 2 **[checked]**).
 
 ## 1. The records this surface rests on, quoted
 
@@ -103,9 +113,17 @@ outside the analysis — the language-model bridge, *"whose module is to be crea
 what it receives. **No genuine choice is found; the placement follows from the two rulings.** What remains for the user
 is ratifying the derivation (D-599).
 
+**★ CORRECTED 2026-11-08 by the check (§7C).** The paragraph above is the former wording, kept (#12). It rests on the
+bridge being a planned consumer. Ruling 1 of the test-only record rules that consumer out, so neither ruling reaches
+the six sentences. No genuine choice is found still holds, but for a different placement: HISTORICAL — a superseded
+plan (§7C).
+
 ## 3. The placement — a derivation, with the alternatives named
 
 ### 3A. Rows 57.124 (i), 57.124 (ii), 57.498, 57.499, 57.500, 57.501 — outside every charter, carried for the language-model bridge's own specification (6)
+
+**★ OVERTAKEN 2026-11-08 by the check (§7C).** This placement is no longer proposed. The heading and the text of §3A
+below are the former wording, kept (#12).
 
 **The derivation.** Each sentence states what a planned reader outside the analysis takes from it (57.124 (ii), 57.498
 to 57.501) or how it treats what it takes (57.124 (i)). That is that reader's design, not the analysis's. On the
@@ -129,7 +147,9 @@ the analysis publishes.
   specification about a reader outside it. No ruling found asks for one for this reader; the user may want one, as for
   the tool.
 - **HISTORICAL** — the label's definition is a superseded plan; no superseding ruling for the bridge was found (as
-  suggestion-tool alternative A).
+  suggestion-tool alternative A). **★ CORRECTED 2026-11-08 by the check (§7C):** a superseding ruling now exists,
+  Ruling 1 of the test-only record, and this is the placement now proposed. The words *"no superseding ruling for the
+  bridge was found"* are the former wording, kept (#12).
 - **ADOPTED — proposed as dormant notes** — puts a product's design into the analysis specification (as suggestion-tool
   alternative B).
 - **Back to *not a statement*, as the member listings §6.33 and §6.51 had them** — the reading file's own departure,
@@ -146,7 +166,8 @@ and, once the application act amends `FRAMEWORK.md`, the catalog matches); no pr
 L2; no preset chooses the catalog L3 reads, and L3's method uses no idiom tag; a display turns published facts into text;
 L3 owns the answers to its own questions. *(As stated in the family-6 ruling record of today, §1.)*
 
-**Family 7: 6 of 6 placed if ratified.**
+**Family 7: 6 of 6 placed if ratified.** *(★ 2026-11-08: still 6 of 6, as HISTORICAL — §7C. §4's statement holds for
+that placement too: HISTORICAL adds nothing to L3.)*
 
 ## 5. Not checked by this sitting
 
@@ -163,7 +184,99 @@ The families file at families 4 to 9 and §2 to §4 (lines 125–190); the inven
 suggestion-tool ruling record whole; the code-interfaces ruling record at lines 36–85; `DECISIONS.md` at D-599 and a
 search for D-142.
 
+## 7. The check — 2026-11-08
+
+Run by the Cowork sitting that booted on `records/cowork/handoff/cowork_handoff_entry_five_hundred_and_eighty_six.md`,
+as entry 563 §3 step 4 asks: the surface's sources re-read, Ruling 1 of
+`records/cowork/rulings/cowork_rulings_2026_11_07_llm_test_only_sitting.md` applied, and the placement re-tested.
+**[checked]** here means read at the object by this sitting.
+
+### 7A. What holds at the objects [checked]
+
+- **The six entries** of the L3 reading file, at lines 73527, 75088, 75119, 75150 and 75181: the quoted sentences, the
+  sources and line numbers they give, the departure from §6.33's or §6.51's listing each one states, and the proposed
+  UNPLACED with its ground, all as §0 gives them. (Row 57.499's entry places its sentence in *"§8, the composing module
+  as the language model's context provider"* and names the nearest heading at the blob as *"## 10. Relationship to
+  the Composing Module"*; the table's *"under §10"* follows the heading.)
+- **The sources at their lines:** `ARCHITECTURE.md` lines 8144–8146; `docs/llm_integration.md` lines 582 and 708–710.
+  Both documents now carry the superseded banner applied under Ruling 1 item 3 of
+  `records/cowork/rulings/cowork_rulings_2026_11_07_llm_correction_sitting.md`: `ARCHITECTURE.md` line 8089, at the head
+  of §19; `docs/llm_integration.md` line 2.
+- **The quotations of §1** from the suggestion-tool record (its lines 38–62, 66–73, 104–105) and the code-interfaces
+  record (its lines 55–60).
+- **The definition of HISTORICAL**, at the L3 reading file's line 394: *"it records an event, a build state, a
+  superseded plan, or a status; not a rule."*
+
+### 7B. What Ruling 1 changes
+
+1. **The six sentences describe a language model at run time in the finished product**, handed the analysis as its
+   context (`ARCHITECTURE.md` §19.3; `docs/llm_integration.md` §7.3 and the section under *"## 10. Relationship to the
+   Composing Module"*). Ruling 1: a language model is used only during development, as a second opinion when the
+   product is tested; never at run time, and not part of the finished product. So the design these sentences belong to
+   is no longer planned. It is a superseded plan, and both documents that state it are marked superseded.
+2. **The one use Ruling 1 allows, the test-time second opinion, is designed the other way round**
+   (`docs/llm_triage_design.md`, read whole): the model is given the notes, not the analysis (*"Do not over-reduce
+   before the LLM sees it"*, lines 163–174, closing *"independence is the whole point"*), and printed chord symbols
+   are stripped for the independent pass (lines 176–182); the analysis's own output is what the model's opinion is
+   compared with (lines 29–32, 235–245). So the six sentences do not describe the test-time tool. Row 57.124 (i) and
+   (ii) — the model does not work the harmony out from the pitches; it receives the analysis — state the opposite of
+   that tool's design.
+
+### 7C. The placement, re-tested
+
+- **The code-interfaces Ruling 1** (*"carried for the build of the analysis"*) covers plans for how the analysis's own
+  code is built (Rows 21.157 and 47.44 (iii)). The six sentences say what a language model is handed, not how the
+  analysis's code is built. **It does not reach them.**
+- **The suggestion-tool Ruling 1** carries the design of a tool outside the analysis *"if one is built"*, for that
+  tool's own specification. The run-time bridge will not be built (Ruling 1). The test-time tool's own design document
+  contradicts the six sentences (§7B item 2), so carrying them for its specification would carry a design that tool
+  rejects. **It does not reach them.**
+- **So the derivation of §2 and §3A fails.** Its ground was that the bridge is a planned consumer outside the analysis.
+- **What follows: HISTORICAL — a superseded plan**, for all six row-parts: 57.124 (i), 57.124 (ii), 57.498, 57.499,
+  57.500, 57.501. The definition (§7A) names a superseded plan; Ruling 1 is the superseding ruling; both source passages
+  stand under its banner. §3's own alternative HISTORICAL was not proposed only because no superseding ruling had been
+  found, and one now exists.
+- **Tested against D-599:** the definition and Ruling 1 decide it, so there is no genuine choice. What remains for the
+  user is ratifying the derivation. **The other alternatives, named and not proposed:** carried outside every charter
+  for the test-time tool's specification (contradicts that tool's design, above); back to *not a statement*, as the
+  member listings §6.33 and §6.51 had them (the reading file's departure, stated there for challenge; under
+  HISTORICAL the row is placed either way); left UNPLACED (against the route ruling); the A.1-style boundary statement
+  of §3 (there is no run-time reader left for it to bound).
+- **The L2 twins** (Rows 36.1, 54.1 to 54.4) were ruled RELOCATED to L3 by nothing-from-L3 Ruling 5 **[relayed]**.
+  Placing the L3 rows as HISTORICAL decides nothing about L2.
+
+### 7D. Corrections made at their sites, former wordings kept (#12)
+
+1. The status block: the check has run; the placement is now §7C.
+2. §0: the reading file's *"planned bridge"* wording, marked as no longer a plan.
+3. §2: the derivation's ground, marked as overtaken.
+4. §3A: marked as no longer proposed.
+5. §3, the HISTORICAL alternative: *"no superseding ruling … was found"* corrected; this is now the placement proposed.
+6. §4's closing count: still 6 of 6, as HISTORICAL.
+
+### 7E. Overstatement sweep
+
+The absolutes in §0 to §6 were read at their lines. *"No genuine choice is found"* (§2) is corrected above, and the
+same conclusion now rests on §7C. *"No ruling found asks for one for this reader"* (§3) still stands: it covers only the
+records read. *"No part adds a published fact, an input, a field, a check or a setting to L3"* (§4) holds for HISTORICAL
+too. *"A deferred, retired entry decides nothing here"* (§1, D-142) stands. In this section, *"read whole"* applies to
+`docs/llm_triage_design.md` only.
+
+### 7F. Documentation or algorithm
+
+**Documentation only. Algorithm: no change.** HISTORICAL adds nothing to L3. The method that stands is the one §4
+states. Ruling 1 itself changed no algorithm either: no language model is part of L2's or L3's method (the test-only
+record §2).
+
+### 7G. Not checked by this check
+
+§0's line numbers in the families file and the inventory (not re-read); the L2 twins' rows and ruled lines; L3-S30 and
+L3-S39 at the L3 derivation; D-142's own record; the display-family ruling record.
+
+**Family 7: 6 of 6 placed if ratified, as HISTORICAL — a superseded plan.**
+
 ---
 
 *Provenance: Cowork, 2026-11-07 (Stockholm), the sitting booted on entry 562. The user's words: the opening instruction;
-"shortened"; "yes" (family 6); "continue"; "continue".*
+"shortened"; "yes" (family 6); "continue"; "continue".* *§7 and the corrections it lists: Cowork, 2026-11-08
+(Stockholm), the sitting booted on entry 586. The user's words: the opening instruction; "shortened".*
