@@ -16,7 +16,7 @@
 > otherwise. Apart from the wordings marked *text ratified*, nothing in this file is ratified; the ratification act
 > over the file is the user's, on a decision surface over this text.
 
-*Application in progress: this file carries the amendments of §L.1 to §L.25 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.16 to §L.55 are applied by later Claude Code sessions, one stretch each; the banner above is true of the file only when the last of them removes this line.*
+*Application in progress: this file carries the amendments of §L.1 to §L.33 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.34 to §L.55 are applied by later Claude Code sessions, one stretch each (was: "§L.16 to §L.55"; staleness fix shown, records/cc/instructions/cc_instruction_l3_application_session_4_task_1_stretch_3_2026_11_22.md, §3 item 4); the banner above is true of the file only when the last of them removes this line.*
 
 ---
 
@@ -1662,6 +1662,361 @@ which L3-S6, L3-S18 and L3-S20 touch, are the charter's own open questions and a
 
 - *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1):*
   > **D (4 row-parts: 19.4, 19.5, 19.6, 19.8) — ADOPTED.** Nothing L3 publishes is written into the score except by the user's explicit act. Ground: this side's reading of the charter's shape (L3 publishes; the score is the notated record the layers read); no register entry found on the subject (the index searched, the `decisions/` group files not).
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1, part A
+
+*Part A, as `ratification_surfaces/cowork_l3_tier3_span_kinds_surface_2026_11_04.md` states it after the check:*
+
+> ## 2. Part A — each kind of span is named by what bounds it, as a distinct kind; the bare word "region" is not used (8 row-parts)
+>
+> **The rows, in the old documents' own words:**
+> - **Row 19.37** (line 24433), `ARCHITECTURE.md`: *"**The span typology** — a "region" is a *family* of spans, each named
+>   by its bounding criterion."* Proposal: *"that every kind of span L3 publishes be named by the criterion that bounds
+>   it."*
+> - **Row 19.40** (24514), the same bullet: *""Region" unqualified is **banned** as ambiguous; every layer names the span
+>   it operates on."* ADOPTED — proposed, travelling with Row 19.37.
+> - **Row 38.62 (i) and (ii)** (47658), `cowork_target_architecture.md`: *"**★ Spans are a typed family, not one "region" —
+>   name each by its bounding criterion (user-ratified 2026-06-29).**"* Proposal for (i): *"that the spans L3 publishes be
+>   held as a family of distinct kinds, never as one kind under one bare word."* (ii) travels with Row 19.37.
+> - **Row 38.64 (i) and (ii)** (47688): *"Each segmentation is a distinct **span type**, defined by **what event bounds
+>   it** and serving **one analytical need**; the bare word "region" must name exactly one of them, never several."* (i)
+>   travels with Row 19.37, (ii) with Row 19.40.
+> - **Row 38.83 (i)** (48007): *"every layer names the span it operates on by its type — "chord-span", "key-span",
+>   "punctuation-span", "decision-context span" —"*. Travels with Row 19.40.
+> - **Row 38.84** (48024): *""Region" unqualified is banned as ambiguous."* Travels with Row 19.40, *"which tabulates the
+>   same sentence"*.
+>
+> The derivation is silent on all eight.
+>
+> **Why the record already settles it:**
+> - **D-028** (`DECISIONS.md` line 258, LIVE **[checked]**): *"The span typology - every layer names the span it operates
+>   on; bare 'region' is banned"*, home `ARCHITECTURE.md`. The reading file places D-028's home at `ARCHITECTURE.md` lines
+>   1141–1142 and names Row 19.40 as lying in it (lines 23765 and 25431 **[checked]**). So Row 19.40 is the home text of a
+>   live register entry, and the rows travelling with it say the same or close to it (weak point 2 states the one
+>   difference in wording). Adopting them carries that entry into L3's specification. *[Corrected by the check, §9 item 4.
+>   Former wording: "and the rows travelling with it restate it."]*
+> - **The rulings already define each L3 span kind by what bounds it** (each **[checked]** at its record):
+>   - a **phrase unit** is bounded by phrase ends as L3 decides them (phrase-units Ruling 1 of 2026-11-02, §2: *"The phrase
+>     reading tiles the working span with two kinds of unit — phrases, and the stretches between phrases … — and each unit
+>     carries which kind it is"*; the derivation's glossary, line 40: a phrase end is *"given as a position in the record
+>     (a change point or span edge)"*);
+>   - a **section** is bounded by section boundaries L3 decides, each of them a boundary of the phrase reading (sections
+>     Ruling 1 (2) of 2026-11-03: *"a section boundary is always a phrase boundary"*; Ruling 2: sections may contain
+>     sections, *"each level tiling the level above"*);
+>   - a **key area** is bounded by changes of tonality in L2's principal reading (key-areas Ruling 2 of 2026-11-03: *"a
+>     maximal run of consecutive spans of L2's segmentation sharing one tonality in L2's principal reading, closed and a
+>     new one opened at every change of tonality"*);
+>   - L3 reads two kinds it does not decide: the **harmonic span**, bounded by L2's decision (one chord and one tonality
+>     each, the glossary line 29), and the **working span**, bounded by the caller's request (glossary line 28).
+>
+>   So the rule names, at the level of a principle, what the rulings did kind by kind.
+> - **The derivation does not use "region" as the name of a span.** A search of it for *region* finds one line (382
+>   **[checked]**), a relayed fact about a grouping theory whose rule *"needs region and chord distances supplied from
+>   outside"* (Hamanaka, Hirata & Tojo 2013). There the word is that theory's term for a key region in a distance measure,
+>   not a name the derivation gives a span (this side's reading).
+>
+> **Weak points:**
+> 1. **D-028's index row records no date and no ratifier** (the column shows "—"). It is marked LIVE. The outgoing Row
+>    38.62 says *"user-ratified 2026-06-29"*; that is the old document's own claim **[relayed]**, not checked against any
+>    ruling record. The register entry, not the old document's parenthesis, is the ground.
+> 2. **Row 38.64 (ii) and Rows 19.40 / 38.84 differ in wording.** One says the bare word must name *"exactly one of them,
+>    never several"*; the other two ban it outright. Both are met if L3's specification does not use the word at all, which
+>    is the derivation's present state (the line 382 reading above). Nothing is chosen between them.
+> 3. **"Serving one analytical need"** (Row 38.64 (i)) is carried as written. On this side's reading it describes why the
+>    kinds are distinct and adds no test of its own; the bounding event is what the rule fixes.
+> 4. **The old names are not adopted.** Row 38.83 (i) lists *"chord-span", "key-span", "punctuation-span", "decision-context
+>    span"*. What is adopted is the rule, not those names; the names are Row 19.38's, which the reading file places
+>    separately (RELOCATED, UNPLACED and HISTORICAL by claim, line 24479 **[checked]**). L3's specification would use the
+>    names the derivation and the rulings already use (harmonic span, working span, phrase unit, section, key area).
+> 5. **"Every layer"** in Rows 19.40 and 38.83 (i) speaks of the whole system. Adopted into L3's specification it states
+>    only L3's part. D-028 already states the whole.
+> 6. **The bare word "span".** The glossary lets bare *span* stand for the harmonic span (line 29). That names exactly one
+>    kind, so it is consistent with the rule; whether the application act writes it out in full each time is an editorial
+>    matter for that act, not a question here.
+
+- *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1):*
+  > **A (8 row-parts: 19.37, 19.40, 38.62 (i), 38.62 (ii), 38.64 (i), 38.64 (ii), 38.83 (i), 38.84) — ADOPTED.** L3's kinds of span are distinct kinds, each named by what bounds it, and the bare word "region" is not used. Grounds: **D-028** (`DECISIONS.md` line 258, LIVE; the index records no date or ratifier): *"The span typology - every layer names the span it operates on; bare 'region' is banned"*, Row 19.40 lying in its home (the reading file, lines 23765 and 25431); the rulings that define each L3 kind by its bound (phrase units, phrase-units Ruling 1 of 2026-11-02; sections, sections Rulings 1 (2) and 2 of 2026-11-03; key areas, key-areas Ruling 2 of 2026-11-03). The old names (chord-span, key-span, punctuation-span) are not adopted; Row 19.38 keeps its own placements.
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1, part B
+
+*Part B, as `ratification_surfaces/cowork_l3_tier3_span_kinds_surface_2026_11_04.md` states it after the check:*
+
+> ## 3. Part B — the music is segmented several ways at once (1 row-part)
+>
+> - **Row 38.63** (line 47674): *"A tonal stream is segmented **many ways at once**, not one."* The derivation is silent.
+>   **Proposal:** *"that L3's specification state that the music is segmented several ways at once, L2's harmonic spans,
+>   L3's phrase units and its sections among them."*
+> - **Settled by:** the rulings themselves. Over one working span the analysis publishes at least four segmentations, each
+>   ruled: L2's harmonic spans (the glossary, from the charter and L2's input contract **[relayed]**); L3's phrase units
+>   (phrase-units Ruling 1); its sections, nested to any depth (sections Rulings 1 and 2); and its key areas (key-areas
+>   Rulings 1 and 2), with a sequence of key areas for each rival whole reading L2 publishes (key-areas Ruling 2, *"this
+>   side's proposal, put with A and ruled with it"*). The statement says in one sentence what those rulings already did.
+> - **Weak point:** the proposal's list (*"among them"*) is open. The key areas, ruled after the reading file was written,
+>   belong in it; the application act writes the list as it stands then.
+
+- *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1):*
+  > **B (1 row-part: 38.63) — ADOPTED.** The music is segmented several ways at once: L2's harmonic spans, L3's phrase units, its sections and its key areas, each ruled.
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1, part C
+
+*Part C, as `ratification_surfaces/cowork_l3_tier3_span_kinds_surface_2026_11_04.md` states it after the check:*
+
+> ## 4. Part C — for any two kinds of span, the specification says whether one nests in the other or the two cut across; it never states nesting where they cut across (2 row-parts)
+>
+> **The rows:**
+> - **Row 38.83 (ii)** (line 48007): *"for any two it relates, states whether they **nest** or **cross-cut**."* Proposal:
+>   *"that L3's specification state, for any two spans it relates, whether one nests in the other or the two cross-cut."*
+> - **Row 57.354** (74603): *"Asserting containment where the truth is cross-cutting (e.g. nesting key-areas inside
+>   punctuation-spans) is a modelling error."* Proposal, travelling with Rows 38.83 (ii) and 57.353: *"that L3 never state
+>   that one span kind nests in another where the two cut across each other, key areas inside phrase units among them."*
+>
+> The derivation is silent on both.
+>
+> **Why the record already settles it.** The rule asks the specification to state each relation; the relations themselves
+> are fixed by the rulings (points 1 and 2) or follow from them on this side's reading (points 3 and 4), except one, which
+> is open and stays open (point 5): *[Corrected by the check, §9 item 10. Former wording: "are already fixed by the
+> rulings, except one, which is open and stays open (point 5):"]*
+>
+> 1. **Harmonic spans nest in key areas.** A key area is *"a maximal run of consecutive spans of L2's segmentation"*
+>    (key-areas Ruling 2 **[checked]**), so each harmonic span lies whole inside one key area. The same ruling gives each rival whole reading its own
+>    sequence of key areas; that a rival's own spans then nest in its own key areas is this side's reading. *[Corrected by
+>    the check, §9 item 5. Former wording: "For a rival whole reading, its own spans nest in its own key areas (the same
+>    ruling)."]*
+> 2. **Phrase units nest in sections, and sections in sections.** *"Each section is a run of consecutive units, sections at
+>    one level tile the level above"* (L3-S22, derivation lines 701–703 **[checked]**; ratified, sections Rulings 1 (2) and
+>    2).
+> 3. **Key areas and phrase units cut across each other.** Phrase-units Ruling 2, item g **[checked]**: *"a change of
+>    tonality may fall inside a phrase unit and a phrase may end without one"*, ratifying Rows 7.63, 8.52 (ii), 19.39 (iv)
+>    and 57.353; the same item says *"The key-areas half waits for the key-areas family."* Key-areas Ruling 2 then closed a
+>    key area at every change of tonality, deciding *"nothing beyond L2's reading"* *[corrected by the check, §9 item 6;
+>    former wording: "and at nothing else"]*, and that record's §4 notes Row 8.76 (key areas *"not nested
+>    in punctuation-spans"*) as *"consistent with Ruling 2"*. Putting the two rulings together — this side's reading — a key
+>    area may begin inside a phrase unit and a phrase unit may end inside a key area, so neither kind nests in the other.
+>    Row 57.354's own example is this pair.
+> 4. **Key areas and sections cut across each other** — this side's reading, from points 2 and 3: a change of tonality
+>    inside a phrase unit is also inside that unit's section; and a section boundary, being a phrase-unit boundary, need not
+>    change tonality.
+> 5. **Harmonic spans and phrase units — OPEN, not settled here.** The old text's *"chord-spans ⊂ punctuation-spans"* is
+>    Row 19.39 (ii), placed UNPLACED by the reading file (line 24509 **[checked]**), because L3-S8 makes *"Every change point
+>    and both span edges"* candidate phrase ends, a change point not being only a boundary of L2's spans (as that row
+>    quotes it **[relayed]**). That row is tier item 14's (the UNPLACED rows), not this cut's. Adopting Row 38.83 (ii) obliges
+>    the specification to state this relation once item 14 places it; it does not decide it.
+>
+> The phrase reading and the top level of sections each cover the working span (L3-S12, L3-S22 **[checked]**); L2's
+> reading, and so its harmonic spans and the key areas read off them, is a reading *"for the working span"* (glossary line
+> 33, from L2 **[relayed]**). *[Corrected by the check, §9 item 7. Former wording: "All of the kinds above lie inside the
+> working span, and the phrase reading and the top level of sections each cover it (L3-S12, L3-S22 [checked])."]*
+>
+> **Weak points:**
+> 1. Points 3 and 4 are this side's readings joining two rulings each. Neither ruling states the relation in those words.
+> 2. Point 5 is a real gap in what can be stated today. It is a gap in placement, not a choice for this cut: the row is
+>    already routed to item 14.
+> 3. "Cut across" means that in general neither kind contains the other. In a given passage a key area and a section may
+>    happen to begin and end together; the rule does not forbid that, it forbids stating containment as a rule.
+
+- *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1):*
+  > **C (2 row-parts: 38.83 (ii), 57.354) — ADOPTED.** For each pair of kinds of span the specification states whether one nests in the other or the two cut across, and never states containment where they cut across. As the surface §4 states them: harmonic spans nest in key areas and phrase units nest in sections (settled by the rulings); key areas cut across phrase units and across sections (this side's reading, joining two rulings each); **whether a phrase end may fall inside a harmonic span is NOT decided by this ruling** — Row 19.39 (ii), UNPLACED, tier item 14's; the specification states that relation once item 14 places it.
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1, part A
+
+*Part A, as `ratification_surfaces/cowork_l3_tier3_architecture_rules_surface_2026_11_04.md` states it after the check:*
+
+> ## 2. Part A — cost: every cost-driving choice a setting, optional refinements separable, re-analysis local (3 row-parts)
+>
+> **The rows, in the old documents' own words:**
+> - **Row 19.29 (i) and (ii)** (line 24281): *"**(a)** every cost-driving choice is an explicit *setting*, never a
+>   hardcoded constant; **(b)** every optional expensive refinement is a cleanly separable on/off stage."* Proposals:
+>   (i) *"that every choice of L3 that drives its cost be an explicit setting and never a constant written into the
+>   code"*; (ii) *"that every optional expensive refinement of L3 be a separable stage that can be turned on and off."*
+> - **Row 19.53 (ii)** (24715): *"**(R2)** re-analysis is incremental over the dirty span plus a bounded margin"*.
+>   Proposal: *"that L3's re-analysis after an edit cover only the edited span and a bounded margin around it."* Claims
+>   (i) and (iii) of the same row are ADOPTED — carried by L3-S40, whose defense holds L3 to *"the bounded-context rule
+>   that cost scales with the working span"* (as the row quotes it).
+>
+> The derivation is silent on all three.
+>
+> **Why the record already settles it:**
+> - **D-035** (`DECISIONS.md` line 265, LIVE **[checked]**): *"The effort setting - every cost-driving choice is a
+>   setting, never a hardcoded constant"*, home `ARCHITECTURE.md`; Row 19.29 lies in its home (reading file line 25429
+>   **[checked]**).
+> - **D-030** (line 260, LIVE **[checked]**): *"Bounded context - cost scales with the working span, not the whole
+>   score"*; Row 19.53 lies in its home (line 25431 **[checked]**). Claim (ii) is the re-analysis half of the same
+>   sentence whose other two halves L3-S40 already carries.
+> - **The tractability record of 2026-10-05** (`records/cowork/rulings/cowork_rulings_2026_10_05_l2_tractability_sitting.md`
+>   **[checked]**) already reads these settings for L2 without deciding any dial: Ruling 1 (iv), *"An effort setting may
+>   not quietly reduce how many readings the search keeps"*; §1b item 3, *"A dial the user rules and the end user turns is
+>   not the "quiet" reduction Ruling 1 (iv) bars"*; and **D-202** (line 659, **DEFERRED** **[checked]**), the effort
+>   control as one setting with several dials, deferred until a measurement shows which pieces must be switchable (as
+>   that record quotes it).
+>
+> **Weak points:**
+> 1. **No dial is decided, and none is proposed.** Adopting the rule says only that a cost-driving choice of L3, where one
+>    exists, is a setting rather than a constant. Which settings L3 has, and their defaults, are D-202's deferred question.
+> 2. **The tractability ruling is L2's.** That a setting may not quietly reduce the readings L3 keeps is not ruled for
+>    L3; on this side's reading it follows for L3 from Row 19.77 below (D-297): a reading L3 has computed and then drops
+>    is a loss.
+> 3. **"Bounded margin" and context growth.** For L2, context grows by convergence under a safety cap (tractability
+>    Ruling 1 (ii)), and what "the answer stops changing" means is open (OQ-L2-6). Row 19.53 (ii) says the margin is
+>    bounded; it does not say how the bound is set, and adopting it decides nothing about OQ-L2-6.
+> 4. **D-035's index row names only claim (a).** Claim (b), the separable stage, stands in the same sentence of its home
+>    (the row's locator, lines 1070–1072); that it is covered by D-035 is this side's reading of the home's extent.
+
+- *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1):*
+  > **A (3 row-parts: 19.29 (i), 19.29 (ii), 19.53 (ii)) — ADOPTED.** Every cost-driving choice of L3 is an explicit setting, never a constant written into the code; every optional expensive refinement is a separable stage that can be turned on and off; re-analysis after an edit covers the edited span and a bounded margin. Grounds: **D-035** and **D-030** (`DECISIONS.md` lines 265 and 260, LIVE), Rows 19.29 and 19.53 lying in their homes (the reading file, lines 25429 and 25431). **Not decided:** which effort settings L3 has and their defaults (D-202, DEFERRED); how the margin's bound is set (OQ-L2-6 untouched).
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1, part B
+
+*Part B, as `ratification_surfaces/cowork_l3_tier3_architecture_rules_surface_2026_11_04.md` states it after the check:*
+
+> ## 3. Part B — style lives only in the fitted values, never in the structure (1 row-part)
+>
+> - **Row 19.33** (line 24357): *"Style-specificity lives **only** in the *calibration* of the judgment layers (their
+>   priors/weights), **never in structure**."* Proposal: *"that any style-specific behavior of L3 live only in the fitted
+>   values of its model, never in its structure."* The derivation is silent.
+> - **Settled by: D-024** (line 254, LIVE **[checked]**): *"The fact layers are style-agnostic; style lives only in
+>   calibration"*, home `ARCHITECTURE.md`; Rows 19.32 and 19.33 lie in its home (line 25430 **[checked]**). L3 is a
+>   judgment layer; the half of D-024 that speaks to it is *"style lives only in calibration"*.
+> - **Weak points:**
+>   1. **The naming-scheme question stays open, and this rule bears on how it is answered, not on what the answer is.**
+>      Sections Ruling 3 of 2026-11-03 *[corrected by the check, §12 item 2; former wording: "Ruling 6"]* left open *"which naming scheme (sonata-form labels, Caplin's theme types, or both)"*
+>      (`cowork_rulings_2026_11_03_l3_sections_sitting.md`, line 161 **[checked]**). Under this rule, whichever scheme is
+>      chosen, a dependence on style sits in fitted values (for example the mass a name receives), not in a separate
+>      structure per style. That is the content of D-024 carried into L3; it chooses no scheme.
+>   2. Under the user's rule of 2026-10-07 (no design rule may block the ultimate objective in the long run; a rule is
+>      tested by measurement as soon as there is reason to suspect breaking it would improve inference), this rule holds
+>      until such a reason appears. This sitting met none, and did not search for one. *[Corrected by the check, §12
+>      item 7. Former wording: "None is on the record this sitting read."]*
+
+- *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1):*
+  > **B (1 row-part: 19.33) — ADOPTED.** Any style-specific behaviour of L3 lives only in the fitted values of its model, never in its structure. Ground: **D-024** (line 254, LIVE), Row 19.33 in its home (line 25430). **Not decided:** which naming scheme sections use (sections Ruling 3 of 2026-11-03 left it open).
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1, part C
+
+*Part C, as `ratification_surfaces/cowork_l3_tier3_architecture_rules_surface_2026_11_04.md` states it after the check:*
+
+> ## 4. Part C — what L3 reads, and what counts as losing information (5 row-parts)
+>
+> **The rows:**
+> - **Row 19.56 (iii)** (line 24761): *"within its scope uses *all* the information L1 carries losslessly (notated
+>   spelling, metric weight, voice)"*. Proposal: *"that L3 read, within its scope, all of the information the layers
+>   beneath it publish without loss — the notated spelling, the metric weight and the voice — and discard none of it."*
+> - **Row 19.76 (ii)** (25094): *"…the ruled-out reading is carried on the output surface at low confidence, unless the
+>   elimination is recomputable from what that surface does keep."* Proposal: *"that a reading L3 rules out need not be
+>   published where its exclusion can be recomputed from what L3 does publish."* Claim (i) is ADOPTED — carried by L3-S13.
+> - **Row 19.77** (25111): *"NEVER COMPUTING a possibility is not information loss; only DISCARDING a computed one is."*
+>   Proposal: *"that an alternative L3 decides on measured evidence never to compute is no loss of information, and that
+>   only a reading L3 computed and then left out of its publication is."*
+> - **Row 19.78** (25126): *"A layer that decides, on measured evidence, not to work out a particular alternative at all
+>   has lost nothing"*. ADOPTED — proposed, travelling with Row 19.77.
+> - **Row 19.82** (25182): *"A published fact that no one reads is either **declared dormant**, with its future consumer
+>   named, or removed."* Proposal: *"that an L3 fact no consumer reads be either declared dormant, with its future consumer
+>   named, or removed — evidence-class facts being published broadly as Row 19.81 states."*
+>
+> The derivation is silent on all five.
+>
+> **Why the record already settles it:**
+> - **Row 19.56 (iii): D-033** (line 263, LIVE **[checked]**): *"Each layer owns one evidence-source-times-question
+>   contribution and uses all of L1's information"*; Row 19.56 lies in its home (line 25432 **[checked]**). With it,
+>   L3-S37 as ratified: L3 reads everything L2 publishes plus L0's and L1's published facts, and nothing else (as the
+>   L3-S38 ratification record of 2026-11-03 states the decided method **[checked there]**; L3-S37's own text
+>   **[relayed]**).
+> - **Row 19.76 (ii): D-099** (line 266, LIVE **[checked]**): *"Negative evidence is information - a ruled-out possibility
+>   is carried, not dropped"*; Rows 19.75 and 19.76 lie in its home (line 25433 **[checked]**). The exception in claim (ii)
+>   is part of the same sentence of the home; a ruled-out reading that can be recomputed from what is published is not
+>   dropped information.
+> - **Rows 19.77 and 19.78: D-297** (line 290, LIVE, 2026-08-02 · user **[checked]**): *"Correction of record: never
+>   computing a possibility is not information loss; only discarding a computed one is"*; both rows lie in its home (line
+>   25433 **[checked]**). The tractability record read D-297 for L2 (Ruling 1 (iii)).
+> - **Row 19.82:** **no register entry was found homed at it** (the marks name D-100's home as falling in Rows 19.80 and
+>   19.81, line 25433 **[checked]**). It is consistent with: **D-100** (line 267, LIVE): every derived fact published once,
+>   on its producer's surface, evidence-class facts broadly even where no consumer is named (read for L2 by the
+>   publication-to-next-layer Ruling 1 of 2026-10-06, line 37 **[checked]**) — which the proposal keeps; **D-581** (line
+>   308, LIVE, 2026-08-04 · user **[checked]**): *"Information not yet consumed is NOT automatically a defect"*, classified
+>   preserved-awaiting-consumer, lost, should-already, or unclear — the row's "declared dormant, with its future consumer
+>   named" is that first class; and **D-297**: removing a fact means no longer computing it, which is no loss.
+>
+> **Weak points:**
+> 1. **"Voice" in Row 19.56 (iii).** The proposal names notated spelling, metric weight and voice as examples. Which of
+>    them L0 and L1 publish is their input contracts' matter, not read by this sitting. Adopted, the statement reads "all
+>    that the layers beneath publish", the three named as the old text names them.
+> 2. **Row 19.82 rests on consistency, not on a register entry.** And D-295 (line 509, LIVE, 2026-08-02 · user
+>    **[checked]**: *"every inferred object must be displayable"*) together with D-522 (line 302, LIVE **[checked]**:
+>    *"Explaining an inference to the end user is a late-bound DISPLAY consumer of facts that already exist"*) means
+>    *[corrected by the check, §12 item 8; former wording: "(line 302, LIVE: explaining to the end user is a display
+>    *consumer*)"]*, on this side's reading, that a fact the display reads is a fact someone
+>    reads. So "no one reads" reaches only a fact no display and no later layer reads.
+> 3. **Row 19.76 (ii) narrows what L3 must publish** (a redundant ruled-out reading may be left out). It changes nothing
+>    that is inferred, and nothing is lost, since the reading can be recomputed from what is published.
+
+- *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1):*
+  > **C (5 row-parts: 19.56 (iii), 19.76 (ii), 19.77, 19.78, 19.82) — ADOPTED.** L3 reads, within its scope, all the information the layers beneath it publish without loss and discards none of it; a reading L3 rules out need not be published where its exclusion can be recomputed from what L3 publishes; an alternative L3 decides on measured evidence never to compute is no loss of information, and only a reading L3 computed and then left out of its publication is; an L3 fact no consumer reads is either declared dormant with its future consumer named, or removed, evidence-class facts being published broadly. Grounds: **D-033**, **D-099**, **D-297** (LIVE; Rows 19.56, 19.76, 19.77, 19.78 in their homes, lines 25432–25433); for Row 19.82, which no register entry is homed at, consistency with **D-100**, **D-581** and D-297, a display being a reader (D-295, D-522).
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1, part D
+
+*Part D, as `ratification_surfaces/cowork_l3_tier3_architecture_rules_surface_2026_11_04.md` states it after the check:*
+
+> ## 5. Part D — the analysis code depends on no type of the score editor (1 row-part)
+>
+> - **Row 20.7** (line 25741): *"**The analysis library (`composing`) depends on no MuseScore or engraving types**"*.
+>   Proposal: *"that the code computing L3's facts depend on no type of the score editor."* The derivation is silent.
+> - **Settled by: D-229** (line 491, LIVE **[checked]**): *"The MuseScore-dependency rule - one general rule for what our
+>   code may depend on"*; Rows 20.7 to 20.9 lie in its home (line 27106 **[checked]**). With it **D-072** (line 488, LIVE
+>   **[checked]**): *"The dependency rule - the analysis library knows nothing about the score format"*.
+> - **Weak point:** this is a rule on the code. The specification states it as a requirement on any implementation of
+>   L3; nothing about the present code is examined or claimed here.
+
+- *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1):*
+  > **D (1 row-part: 20.7) — ADOPTED.** The code computing L3's facts depends on no type of the score editor. Grounds: **D-229** (line 491, LIVE), Row 20.7 in its home (line 27106); **D-072** (line 488, LIVE).
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1, part E
+
+*Ruling 1, part E, as the record quotes it:*
+
+> A reading missing from L3's own candidate readings is remedied inside L3, by widening its candidate set; a backward edge is not the remedy, except as the deliberate, surfaced, measured and documented exception D-466 admits.
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1, part F
+
+*Part F, as `ratification_surfaces/cowork_l3_tier3_architecture_rules_surface_2026_11_04.md` states it after the check:*
+
+> ## 7. Part F — the grouping is an explanatory output, not an accuracy requirement (2 row-parts)
+>
+> - **Row 8.105 (i)** (line 10437, WITHHELD — D-461): *"L6 is a deliberate **explainability** layer, not an accuracy
+>   requirement"*. Proposal: *"that the phrase and section grouping be held as an explanatory output of the analysis, not
+>   as an accuracy requirement on it."* Claim (ii), *"does not grow detection of its own"*, is UNPLACED (L3-S8 DIFFERS)
+>   and is tier item 14's, not this cut's.
+> - **Row 36.111 (i)** (42101, WITHHELD — D-480): *"So this primitive is **not** an accuracy requirement"*. ADOPTED —
+>   proposed, travelling with Row 8.105 (i). Claim (ii) is UNPLACED (L3-S38 DIFFERS) and is item 14's.
+>
+> The derivation is silent on both claims (i).
+>
+> **Settled by:**
+> - **D-461** (line 464, LIVE, 2026-08-04 · user **[checked]**): *"The grouping layer is an explainability layer, not an
+>   accuracy requirement, and is deliberately kept thin"*, home `cowork_layer6_grouping_design.md` §7; Row 8.105 lies in
+>   it (line 11245 **[checked]**).
+> - **D-480** (line 471, LIVE, 2026-08-04 · user **[checked]**): *"The phrase-boundary primitive is NOT an accuracy
+>   requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept
+>   proportionate"*; Row 36.111 lies in its home (lines 42120–42124 **[checked]**).
+> - **L3-S38 as ratified:** *"L2 reads nothing L3 publishes"* — so nothing L3 publishes can carry the accuracy of L2's
+>   reading (this side's reading of the two together).
+>
+> **Weak points:**
+> 1. **"Not an accuracy requirement" does not exempt L3's own facts from measurement.** Each still carries its
+>    establishment status (for example sections Ruling 3 *[corrected by the check, §12 item 3; former wording: "Ruling
+>    6"]*: form-function names UNESTABLISHED until measured). On this
+>    side's reading, the rule says the analysis's accuracy is not made to depend on the grouping; it does not say the
+>    grouping is never measured.
+> 2. **Both rows carry the WITHHELD mark:** the deriving session was not shown D-461 or D-480. That the derivation is
+>    silent here is consistent with that.
+> 3. **"Kept thin" and "kept proportionate"** are not in claims (i); they stand with claims (ii), item 14.
+
+- *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1):*
+  > **F (2 row-parts: 8.105 (i), 36.111 (i)) — ADOPTED.** The phrase and section grouping is an explanatory output of the analysis, not an accuracy requirement on it. Grounds: **D-461** and **D-480** (lines 464 and 471, LIVE, 2026-08-04 · user), Rows 8.105 and 36.111 in their homes. This does not exempt L3's own facts from measurement; each carries its establishment status. Claims (ii) of both rows (UNPLACED) stay with tier item 14.
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_literature_facts_sitting.md, Ruling 1
+
+*Ruling 1, as the record quotes it:*
+
+> As facts of the published literature, recorded with D-607's standing: almost all published work on locating phrase endings addresses a single melodic line, and the cues it uses are validated on single lines; for several simultaneous voices no validated deterministic rule set has been established, and L3's phrase model rests on fitted terms instead.
 
 ---
 
