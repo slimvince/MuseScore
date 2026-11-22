@@ -16,7 +16,7 @@
 > otherwise. Apart from the wordings marked *text ratified*, nothing in this file is ratified; the ratification act
 > over the file is the user's, on a decision surface over this text.
 
-*Application in progress: this file carries the amendments of §L.1 to §L.33 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.34 to §L.55 are applied by later Claude Code sessions, one stretch each (was: "§L.16 to §L.55"; staleness fix shown, records/cc/instructions/cc_instruction_l3_application_session_4_task_1_stretch_3_2026_11_22.md, §3 item 4); the banner above is true of the file only when the last of them removes this line.*
+*Application in progress: this file carries the amendments of §L.1 to §L.40 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.41 to §L.55 are applied by later Claude Code sessions, one stretch each (was: "§L.16 to §L.55"; staleness fix shown, records/cc/instructions/cc_instruction_l3_application_session_4_task_1_stretch_3_2026_11_22.md, §3 item 4); the banner above is true of the file only when the last of them removes this line.*
 
 ---
 
@@ -2017,6 +2017,46 @@ which L3-S6, L3-S18 and L3-S20 touch, are the charter's own open questions and a
 *Ruling 1, as the record quotes it:*
 
 > As facts of the published literature, recorded with D-607's standing: almost all published work on locating phrase endings addresses a single melodic line, and the cues it uses are validated on single lines; for several simultaneous voices no validated deterministic rule set has been established, and L3's phrase model rests on fitted terms instead.
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 2, Part A.1
+
+*Ruling 2, Part A.1, as the record quotes it:*
+
+> A chord-suggestion tool, if one is built, lies outside the analysis. It may read L3's published matches and the same catalog L3 reads. Nothing in the analysis depends on it.
+
+---
+
+## Notes — lists the records place here, not ruled
+
+### records/cowork/rulings/cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 1
+
+*The record's own words for this list:*
+
+> **How it is recorded — the writing side's proposal as put, not a ruled act:** the application act lists the seven
+> items in one list in the amended L3 specification's notes, beside Ruling 2's boundary statement, without adding them to
+> the specification itself.
+
+*The seven items, as the record gives them (its lines 43–50):*
+
+> - 38.81 (ii): knowledge of longer progressions *"would be core, not merely helpful, to a future chord-suggestion tool"*;
+> - 38.82, second part: *"read predictively to suggest"*;
+> - 57.107 (ii), predictive half: *"read predictively it serves a future chord-suggestion tool"*;
+> - 57.445 (ii): *"composition (read a span to suggest what could follow, precede, or replace it)"*;
+> - 57.433 (ii), second half: the span is *"the input to recognise and suggest"*;
+> - 46.27, composing half: *"composition offers it (proposes the substituted form)"*;
+> - 46.37, whole: *"Every entry is usable in both directions; the component privileges neither, and new entries are added
+>   with both readings in mind."*
+
+### records/cowork/rulings/cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1
+
+*The list and the record's own words for it, as the record gives them (its lines 34–39):*
+
+> - **Outside every charter, carried for a display's own specification (12, and Row 48.20 (ii)'s second half):** Rows
+>   4.6, 4.18, 4.19, 48.26 (ii), 48.27 (ii), 48.35, 48.36 (i), 48.36 (iii), 22.58 (i), 50.2 (i), 40.60, 7.36; and *one
+>   shared presentation formatter* (48.20 (ii)). This applies the suggestion-tool Ruling 1's placement to a display — the
+>   writing side's reading of that ruling with display Ruling 1 part A, now ratified for these rows. How it is recorded,
+>   the writing side's proposal as put and not a ruled act: the application act lists them in one list in the amended L3
+>   specification's notes, beside the chord-suggestion tool's list, without adding them to the specification itself.
 
 ---
 
