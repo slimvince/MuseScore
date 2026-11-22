@@ -16,7 +16,7 @@
 > otherwise. Apart from the wordings marked *text ratified*, nothing in this file is ratified; the ratification act
 > over the file is the user's, on a decision surface over this text.
 
-*Application in progress: this file carries the amendments of §L.1 to §L.40 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.41 to §L.55 are applied by later Claude Code sessions, one stretch each (was: "§L.16 to §L.55"; staleness fix shown, records/cc/instructions/cc_instruction_l3_application_session_4_task_1_stretch_3_2026_11_22.md, §3 item 4); the banner above is true of the file only when the last of them removes this line.*
+*Application in progress: this file carries the amendments of §L.1 to §L.48 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.49 to §L.55 are applied by later Claude Code sessions, one stretch each (was: "§L.16 to §L.55"; staleness fix shown, records/cc/instructions/cc_instruction_l3_application_session_4_task_1_stretch_3_2026_11_22.md, §3 item 4); the banner above is true of the file only when the last of them removes this line.*
 
 ---
 
@@ -1817,6 +1817,12 @@ which L3-S6, L3-S18 and L3-S20 touch, are the charter's own open questions and a
 - *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1):*
   > **C (2 row-parts: 38.83 (ii), 57.354) — ADOPTED.** For each pair of kinds of span the specification states whether one nests in the other or the two cut across, and never states containment where they cut across. As the surface §4 states them: harmonic spans nest in key areas and phrase units nest in sections (settled by the rulings); key areas cut across phrase units and across sections (this side's reading, joining two rulings each); **whether a phrase end may fall inside a harmonic span is NOT decided by this ruling** — Row 19.39 (ii), UNPLACED, tier item 14's; the specification states that relation once item 14 places it.
 
+### Added — records/cowork/rulings/cowork_rulings_2026_11_08_l3_chord_span_pair_group_sitting.md, Ruling 1, the relation of harmonic spans and phrase units (beside span-kinds part C)
+
+*Ruling 1, as the record quotes it:*
+
+> Harmonic spans and phrase units cut across each other: a phrase end may fall inside a harmonic span of L2's reading, and a harmonic span may end inside a phrase unit.
+
 ### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1, part A
 
 *Part A, as `ratification_surfaces/cowork_l3_tier3_architecture_rules_surface_2026_11_04.md` states it after the check:*
@@ -2024,6 +2030,12 @@ which L3-S6, L3-S18 and L3-S20 touch, are the charter's own open questions and a
 
 > A chord-suggestion tool, if one is built, lies outside the analysis. It may read L3's published matches and the same catalog L3 reads. Nothing in the analysis depends on it.
 
+### Added — records/cowork/rulings/cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1
+
+*Ruling 1, as ruled:*
+
+> For each key area of L2's principal reading (a key area as the key-areas Ruling 2 defines it), L3 publishes D-276's counts: for each scale degree 1..7, the sounding duration and onset count of every chromatic inflection of that degree observed in the key area, computed from L1's published note facts relative to L2's tonic and mode, un-rounded, with their establishment status. No mode label is published (D-276).
+
 ---
 
 ## Notes — lists the records place here, not ruled
@@ -2057,6 +2069,55 @@ which L3-S6, L3-S18 and L3-S20 touch, are the charter's own open questions and a
 >   writing side's reading of that ruling with display Ruling 1 part A, now ratified for these rows. How it is recorded,
 >   the writing side's proposal as put and not a ruled act: the application act lists them in one list in the amended L3
 >   specification's notes, beside the chord-suggestion tool's list, without adding them to the specification itself.
+
+### records/cowork/rulings/cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 1
+
+*The list and the record's own words for it, as the record gives them (its lines 38–44):*
+
+> **Rows 21.157** (*"the planned orchestration layer must carry the fields taken from a written chord symbol through,
+> whichever analysis engine produced the winning result"*) **and 47.44 (iii)** (*"what of the old segment-first machinery
+> moves to the grouping layer and what is deleted is decided as that layer is built"*), as the surface states them: both
+> are plans for how the analysis's own code is built. **Placed by the user outside every charter, carried for the build of
+> the analysis, not for its specification.** How it is recorded, the writing side's proposal as put and not a ruled act:
+> the application act lists them in the amended L3 specification's notes, like the other lists, without adding them to the
+> specification itself.
+
+### records/cowork/rulings/cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2
+
+*§2A's list and the record's own words for it, as the record gives them (its lines 55–60):*
+
+> - **§2A — outside every charter, carried for the application's own specification (7, and Row 57.514's last part):**
+>   Rows 48.1 (i), 48.3 (i), 48.4, 48.31, 52.11 (iii), 57.368, 50.20; and Row 57.514's *"and the notation consumers read
+>   it"*. This applies the suggestion-tool and display-family placement to the application's interfaces to the analysis —
+>   the writing side's reading of those rulings with architecture-rules part D, now ratified for these rows. Recorded, as
+>   the writing side's proposal, in one list in the amended L3 specification's notes, beside the chord-suggestion tool's
+>   and the display lists.
+
+*§2B's two rows, which the record adds to the display-family record's list above, as the record gives them (its lines 61–62):*
+
+> - **§2B — added to the display list, carried for a display's own specification (2):** Rows 4.16 and 4.20 (the
+>   chord-symbol formatter's code).
+
+### records/cowork/rulings/cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1
+
+*The row the record adds to the display-family record's list above, and its words, as the record gives them (its lines 48–50):*
+
+> - **Outside every charter, carried for a display's own specification (1):** Row 57.373 (i), *the presentation layer may
+>   format a reading* — the display-family Ruling 1's placement (2026-11-07) applied to this row, the writing side's
+>   reading, now ratified for it; listed with the display list in the amended L3 specification's notes.
+
+### records/cowork/rulings/cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1
+
+*The list and the record's own words for it, as the record gives them (its lines 43–50):*
+
+> - **2C — outside every charter, carried for the framework (9):** Rows 19.57 (i), 19.57 (ii), 19.65, 19.66 (i), 19.66
+>   (ii), 19.67, 19.68, 19.69, 19.70 — the stack not homogeneous, the count not a cap, growth by axis and component, and
+>   the three co-equal gates for admitting a layer or axis. Ground: Ruling 2 of 2026-08-29 ratifies the decomposition as
+>   *"the framework this project's detail specifications are derived inside"*, and the banner says *"the decomposition,
+>   charters and boundary contracts govern"*; a rule of the decomposition's shape, growth or admission is the
+>   framework's, not one detail specification's. How it is recorded, the writing side's proposal as put and not a ruled
+>   act: the application act lists the nine in one list in the amended L3 specification's notes, beside the other lists,
+>   without adding them to the specification itself.
 
 ---
 
