@@ -16,8 +16,6 @@
 > otherwise. Apart from the wordings marked *text ratified*, nothing in this file is ratified; the ratification act
 > over the file is the user's, on a decision surface over this text.
 
-*Application in progress: this file carries the amendments of §L.1 to §L.48 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.49 to §L.55 are applied by later Claude Code sessions, one stretch each (was: "§L.16 to §L.55"; staleness fix shown, records/cc/instructions/cc_instruction_l3_application_session_4_task_1_stretch_3_2026_11_22.md, §3 item 4); the banner above is true of the file only when the last of them removes this line.*
-
 ---
 
 ## 0. Terms
@@ -2035,6 +2033,12 @@ which L3-S6, L3-S18 and L3-S20 touch, are the charter's own open questions and a
 *Ruling 1, as ruled:*
 
 > For each key area of L2's principal reading (a key area as the key-areas Ruling 2 defines it), L3 publishes D-276's counts: for each scale degree 1..7, the sounding duration and onset count of every chromatic inflection of that degree observed in the key area, computed from L1's published note facts relative to L2's tonic and mode, un-rounded, with their establishment status. No mode label is published (D-276).
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_08_l3_bass_role_per_event_group_sitting.md, Ruling 1
+
+*Ruling 1, the sentence the record rules as the row's proposal (its lines 32–35):*
+
+> L3 publishes, per slice, which member of L2's chord the lowest sounding note is, or that it is not a chord tone (with L2's elaboration relation for it where L2 has one), read off L1's lowest sounding pitch per slice and its witness note and L2's chord and chord-tone assignment. It is named apart from the chord symbol's bass note (L3-S4), which stays the structural bass.
 
 ---
 
