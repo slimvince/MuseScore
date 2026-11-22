@@ -12,11 +12,11 @@
 > ruling record it names (Rulings 12 to 17, `records/cowork/rulings/`, 2026-11-13 and 2026-11-14); one that says
 > *staleness fix shown* marks a correction the writing side made and showed the user without a question (the user's
 > rule of 2026-09-22). Statements under *Statements added by the L3 family rulings* carry no L3-S number. The open
-> questions of §4 stand with their ANSWERED marks where a ruling answered them (OQ-L3-2, OQ-L3-3, OQ-L3-4, OQ-L3-5, OQ-L3-6, OQ-L3-8 and OQ-L3-10) and open
+> questions of §4 stand with their ANSWERED marks where a ruling answered them (OQ-L3-2, OQ-L3-3, OQ-L3-4, OQ-L3-5, OQ-L3-6, OQ-L3-7, OQ-L3-8 and OQ-L3-10) and open
 > otherwise. Apart from the wordings marked *text ratified*, nothing in this file is ratified; the ratification act
 > over the file is the user's, on a decision surface over this text.
 
-*Application in progress: this file carries the amendments of §L.1 to §L.15 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.16 to §L.55 are applied by later Claude Code sessions, one stretch each; the banner above is true of the file only when the last of them removes this line.*
+*Application in progress: this file carries the amendments of §L.1 to §L.25 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.16 to §L.55 are applied by later Claude Code sessions, one stretch each; the banner above is true of the file only when the last of them removes this line.*
 
 ---
 
@@ -195,6 +195,8 @@ projection.**
   if a spelled root is replaced by an enharmonic equivalent; or if the published pitch class is not the
   spelled root's projection. **Not falsified by:** two different spelled roots that share one pitch
   class in two different spans.
+- *Ruled (records/cowork/rulings/cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, Ruling 1).* Stands as derived.
+  > L3's chord symbol publishes the root spelled — the span's spelled tonic transposed by the degree's diatonic interval, the degree's alteration applied, applied chains resolved from the far end (L3-S2) — with the pitch class the charter names published in the same item as its projection.
 
 **L3-S3. The quality is L2's quality field, carried unchanged into the chord-symbol vocabulary: major,
 minor, diminished, augmented, the five seventh qualities, and the augmented sixths. The Neapolitan is
@@ -249,8 +251,9 @@ symbol shows the structural bass.**
 and does not stretch.** (i) **Augmented sixths:** the root field carries a named reason ("no root in the
 theory that names this chord"), while quality and bass are published. No dominant-seventh respelling is
 put in its place. (ii) **Elaborations:** suspensions, retardations and sounding ninths, which L2 holds as
-assignments and not in the chord (L2-S4, L2-S8), are not written into the chord symbol. They are read
-in the figured bass (L3-S25). (iii) **A silent span:** the chord symbol carries L2's named reason
+assignments and not in the chord (L2-S4, L2-S8), are not written into the chord symbol. They are read in the continuo-grain figured bass (L3-S28), which gives under every bass note what actually sounds
+above it; of the elaborations, the span figure (L3-S25) figures only those L2 assigns as a suspension or an
+appoggiatura. (was: "They are read in the figured bass (L3-S25)."; records/cowork/rulings/cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (h); staleness fix shown, ratification_surfaces/cowork_l3_application_release_statement_texts_surface_2026_11_13_part_6.md, under Ruling 7 of the second Part B ruling record) (iii) **A silent span:** the chord symbol carries L2's named reason
 ("silent") and no root (L2-S44). (iv) **Tonality and applied target:** the chord symbol is absolute and
 expresses neither. Both stay on L2's chord, which the chord symbol stands beside (L3-S3).
 - *Defense.* (i) The augmented sixths are traditionally explained as voice-leading chords built over
@@ -308,6 +311,8 @@ reading, even where a merged rival carries more mass.**
   stretch and identical symbol are published separately; if a merged rival's mass differs from the sum
   of the L2 masses it references; or if the principal chord symbol differs from the one read off L2's
   principal reading. **Not falsified by:** a merged rival's mass exceeding the principal symbol's mass.
+- *Recorded (records/cowork/rulings/cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (i)).* Stands as derived — recorded by the record as this side's derivation, not ruled; challengeable.
+  > L3-S6's merging rule stands as derived; DP-N is not decided here.
 
 **L3-S7. At each change of tonality in L2's principal reading, L3 publishes the pivot label as a view: the decided
 chord of the span on each side of the change, re-expressed as a scale degree in the other tonality, each carrying a
@@ -563,6 +568,14 @@ piece, with its capacity declared before the fit, on licence-clear music only. N
   by hand in a shipped model, if evaluation and fit data overlap, or if the fit pool holds music under
   a non-commercial or unstated licence. **Not falsified by:** a hand-declared provisional value in a
   desk simulation, marked as such.
+- *Ruled (records/cowork/rulings/cowork_rulings_2026_11_04_l3_fit_and_rest_sitting.md, Ruling 1).* Stands as derived.
+  > **The statements, as ratified (the derivation's wording, unchanged; …):**
+- *Beside L3-S14 (records/cowork/rulings/cowork_rulings_2026_11_04_l3_fit_and_rest_sitting.md, Ruling 1).*
+  > **Not decided by this ruling, carried:**
+  > - The observation of the first cut's §5: the amended second sentence of L2-S38 (L2 fit Ruling 1) no longer contains *"on held-out folds, with its capacity budget declared in advance"*. Principle #20 binds L2 directly. Left for the application act or a later L2 coherence pass.
+  > - Whether L3's weights are fitted to the graded measure, as L2's now are (the first cut's §1, L3-S14). L3-S14 does not say; not raised.
+  > - OQ-L3-11 (L3-S14's fit) is a measurement, not a ruling; OQ-L3-12 is the measurement stage's.
+  > - Claims of the same rows graded against other statements, or where the derivation is silent (among them the UNPLACED claims against L3-S8 and L3-S22 that the third cut's §2 names), are not placed by this ruling.
 
 ### 3c. Face (c) — the cadence at each phrase end, and its type
 
@@ -925,8 +938,8 @@ the figures for as long as it sounds. Nothing is decided in computing any of thi
   clause is settled in form, and no staged case exhibits it (OQ-L3-14).
 - *Premise.* The span figure plus the suspension and appoggiatura figures is what a thoroughbass
   reader of the decided harmony needs. **False-negative path:** a passing sonority over a bass note
-  that a continuo player would figure on its own. That grain needs the spelled interval content above
-  the lowest sounding pitch per slice, which no layer beneath publishes (L3-S28, OQ-L3-7). In the bars
+  that a continuo player would figure on its own. That grain is served by the second figured bass of L3-S28, read off the spelled intervals above the lowest
+  sounding pitch that L1 publishes at every slice (OQ-L3-7 ANSWERED — figured-bass record, Ruling 1). (was: "That grain needs the spelled interval content above the lowest sounding pitch per slice, which no layer beneath publishes (L3-S28, OQ-L3-7)."; records/cowork/rulings/cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, Ruling 1; staleness fix shown, ratification_surfaces/cowork_l3_application_release_edit_order_2026_11_14.md) In the bars
   of exemplar 3 whose figures were read (staff 4, bars 1 to 6), the passing D of bar 2 carries no
   figure, and the `6` that follows it stands on the E♭ its analyst reads as `i6` [FACT at the file;
   this session reads a `<FiguredBass>` element as attached to the chord that follows it, as bar 1's
@@ -937,6 +950,8 @@ the figures for as long as it sounds. Nothing is decided in computing any of thi
   figured with its resolution; if a passing note is figured; or if the two six-four readings give
   different figures over the same bass. **Not falsified by:** the figure being abbreviated in a
   rendering (L3-S27).
+- *Recorded (records/cowork/rulings/cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, §2 (e)).* Stands as derived — recorded by the record as this side's derivation, not ruled; challengeable.
+  > **(e) The span figure** (L3-S25 to L3-S27) rests on the charter's list, L2-S28's definition of the figure and the method stated with the 2026-10-08 Ruling 1; no question raised on it.
 
 **L3-S26. Accidentals in the figures are written relative to the key signature in force (IC-L1 S-6),
 read as a sign of the notation and not as a tonality. An accidental is written where a figured
@@ -962,6 +977,8 @@ interval's spelled pitch differs from what the signature gives.**
   spelled pitch held fixed. **Decision rule:** falsified if the spelled intervals change, or if the
   accidentals do not change to match the new signature. **Not falsified by:** a figure carrying no
   accidental because the signature supplies the interval.
+- *Recorded (records/cowork/rulings/cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, §2 (e)).* Stands as derived — recorded by the record as this side's derivation, not ruled; challengeable.
+  > **(e) The span figure** (L3-S25 to L3-S27) rests on the charter's list, L2-S28's definition of the figure and the method stated with the 2026-10-08 Ruling 1; no question raised on it.
 
 **L3-S27. The full figure (every spelled interval of L3-S25) is the published fact. An abbreviated
 figure in the conventional short forms is a view of it under a declared convention, which a consumer
@@ -985,11 +1002,14 @@ names when it asks for one.**
 - *Falsifier.* CODE. **Observable:** published figures. **Decision rule:** falsified if L3 publishes
   only an abbreviated figure, or if an abbreviated rendering cannot be regenerated from the full figure
   and the named convention. **Not falsified by:** two conventions abbreviating one figure differently.
+- *Recorded (records/cowork/rulings/cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, §2 (e)).* Stands as derived — recorded by the record as this side's derivation, not ruled; challengeable.
+  > **(e) The span figure** (L3-S25 to L3-S27) rests on the charter's list, L2-S28's definition of the figure and the method stated with the 2026-10-08 Ruling 1; no question raised on it.
 
-**L3-S28. A figured bass at the continuo grain, where every bass note including passing bass notes is
-figured by the sonority actually sounding above it, needs the spelled interval content above the
-lowest sounding pitch at every slice. No layer beneath publishes it. L3 does not compute it, and the
-want is OQ-L3-7, naming IC-L1 S-49 and S-50.**
+**L3-S28. L3 publishes a second figured bass, at the continuo grain, named apart from the span figure of L3-S25.
+Under every bass note, passing bass notes included, it gives what actually sounds above it. It is read off the
+spelled intervals above the lowest sounding pitch that L1 publishes at every slice, and written by L3-S26's
+accidental rule and L3-S27's full-figure rule. L3 does not compute that interval content itself. The span figure of
+L3-S25 is unchanged (OQ-L3-7 ANSWERED — figured-bass record, Ruling 1).** (was: "A figured bass at the continuo grain, where every bass note including passing bass notes is figured by the sonority actually sounding above it, needs the spelled interval content above the lowest sounding pitch at every slice. No layer beneath publishes it. L3 does not compute it, and the want is OQ-L3-7, naming IC-L1 S-49 and S-50."; records/cowork/rulings/cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, Ruling 1; text ratified, records/cowork/rulings/cowork_rulings_2026_11_14_l3_application_release_statement_texts_sixth_sitting.md, Ruling 17)
 - *Defense.* IC-L1 publishes the interval content above the lowest sounding pitch only at the two
   slices of a cue, Y and Z, as unspelled semitone distances [RULED — IC-L1 S-49], and the lowest
   sounding pitch at every slice [RULED — IC-L1 S-50]. S-50 is exhaustive [RULED — IC-L1 beside S-50,
@@ -997,15 +1017,27 @@ want is OQ-L3-7, naming IC-L1 S-49 and S-50.**
   re-derive an L1-defined quantity. The input contract records exactly this shape for L2's want of the
   lowest sounding pitch per slice: L2 *"writes the want instead"*, and the ruling that answered it
   declined *"L2 computes the pitch itself — one named fact with two producers"* [RULED — L2-S28; OQ-L2-11
-  answer]. No staged case of a figured passing bass note was met (L3-S25's premise; OQ-L3-14).
-- *Source class.* Given — IC-L1 (what is published) and IC-L2 (the precedent). Derived (the want).
-- *Status.* **Open** (OQ-L3-7).
-- *Premise.* The continuo grain is part of what the charter's *figured bass* means. **False-negative
-  path:** the charter means only the span figure. L3-S25 then suffices and the want lapses. The
-  question is put with OQ-L3-7.
-- *Falsifier.* CODE. **Observable:** L3's figured bass inputs. **Decision rule:** falsified if L3
-  computes interval content over the sounding set itself. **Not falsified by:** L3 computing an interval
-  between two events that L2's facts name, such as a suspended event and the structural bass (L3-S25).
+  answer]. No staged case of a figured passing bass note was met (L3-S25's premise; OQ-L3-14). The user ruled that L1 publishes, at every slice, the spelled intervals above its lowest sounding pitch, and that L3
+  reads its continuo-grain figure off that publication (figured-bass record, Ruling 1, alternative B); L3 computing the
+  intervals itself was declined (alternative C: one fact, two producers; D-100; the 2026-10-08 precedent). The one harm
+  of B named, a reader mistaking the continuo figure for the harmony, is reduced by naming the two outputs apart; the
+  continuo figure's use in comparison with composer figures is not shown. (added; records/cowork/rulings/cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, Ruling 1; text ratified, records/cowork/rulings/cowork_rulings_2026_11_14_l3_application_release_statement_texts_sixth_sitting.md, Ruling 17)
+- *Source class.* Given — IC-L1 (the spelled intervals above the lowest sounding pitch at every slice, which IC-L1 gains by the
+  figured-bass record, Ruling 1) and IC-L2 (the precedent). Derived (the continuo-grain figure written from them). (was: "Given — IC-L1 (what is published) and IC-L2 (the precedent). Derived (the want)."; records/cowork/rulings/cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, Ruling 1; text ratified, records/cowork/rulings/cowork_rulings_2026_11_14_l3_application_release_statement_texts_sixth_sitting.md, Ruling 17)
+- *Status.* Settled (OQ-L3-7 ANSWERED — figured-bass record, Ruling 1). The record gives the output no name beyond *"named apart
+  from the span figure"*, and does not state whether a bass note held under moving upper voices carries one figure or
+  one at each slice. No staged case of a figured passing bass note was met (OQ-L3-14, which the record carries as a
+  measurement matter). (was: "**Open** (OQ-L3-7)."; records/cowork/rulings/cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, Ruling 1; text ratified, records/cowork/rulings/cowork_rulings_2026_11_14_l3_application_release_statement_texts_sixth_sitting.md, Ruling 17)
+- *Premise.* The continuo grain is part of what the charter's *figured bass* means. **False-negative path:** the charter means
+  only the span figure. The second output is then an addition to L3's *Publishes* list, which the figured-bass record
+  reads as not needed, since the list names *"the figured bass"* without a grain (the record's reading, not a ruling). (was: "The continuo grain is part of what the charter's *figured bass* means. **False-negative path:** the charter means only the span figure. L3-S25 then suffices and the want lapses. The question is put with OQ-L3-7."; records/cowork/rulings/cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, Ruling 1; text ratified, records/cowork/rulings/cowork_rulings_2026_11_14_l3_application_release_statement_texts_sixth_sitting.md, Ruling 17)
+- *Falsifier.* CODE. **Observable:** L3's figured bass inputs and outputs. **Decision rule:** falsified if L3 computes interval
+  content over the sounding set itself; if a bass note, a passing bass note included, carries no continuo-grain figure;
+  if a continuo-grain figure differs from the spelled intervals L1 publishes above the lowest sounding pitch, as written
+  by L3-S26's and L3-S27's rules; if the two figured basses are published under one name; or if adding the
+  continuo-grain output changes any span figure of L3-S25 (the same music analysed with and without it). **Not
+  falsified by:** L3 computing an interval between two events that L2's facts name, such as a suspended event and the
+  structural bass (L3-S25). (was: "CODE. **Observable:** L3's figured bass inputs. **Decision rule:** falsified if L3 computes interval content over the sounding set itself. **Not falsified by:** L3 computing an interval between two events that L2's facts name, such as a suspended event and the structural bass (L3-S25)."; records/cowork/rulings/cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, Ruling 1; text ratified, records/cowork/rulings/cowork_rulings_2026_11_14_l3_application_release_statement_texts_sixth_sitting.md, Ruling 17)
 
 **L3-S29. L3 never reads the composer's figures, and publishes no comparison between its figured bass
 and them. A comparison is the measurement layer's act or a display's.**
@@ -1056,6 +1088,10 @@ series of its span durations in beats of the notated meter. It does not republis
   if a listed boundary is not one of L2's, if its metric class differs from L1's, if a change class is
   wrong for the two adjacent spans, or if the record restates a span's chord fields. **Not falsified
   by:** a bar with no boundary, published as an empty list with its reason.
+- *Beside L3-S30 (records/cowork/rulings/cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, Ruling 1).*
+  > L3 publishes no separate grouping of L2's spans by root and quality. The coarse view is formed by a consumer from L3-S30's change classes (the changes marked root or quality changed), a view and not a re-derivation.
+- *Recorded (records/cowork/rulings/cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (e)).* Stands as derived — recorded by the record as this side's derivation, not ruled; challengeable.
+  > L3-S30 and L3-S31 stand as derived; §9 point 5 is answered by L3-S30.
 
 **L3-S31. The harmonic rhythm's uncertainty is read off L2's boundary rivals. The expected count of
 boundaries of each class in a bar is the sum, over the change points in it, of the mass of L2 readings
@@ -1079,6 +1115,8 @@ The distribution of counts needs the whole readings and rival objects (L3-S34). 
   falsified if the expected count differs from the sum of boundary marginals; if a count distribution
   is formed as a product of marginals where a covering rival object exists; or if L2 reads the record.
   **Not falsified by:** expected counts that are not integers.
+- *Recorded (records/cowork/rulings/cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (e)).* Stands as derived — recorded by the record as this side's derivation, not ruled; challengeable.
+  > L3-S30 and L3-S31 stand as derived; §9 point 5 is answered by L3-S30.
 
 ### 3g. Face (g) — uncertainty on every read-off fact
 
@@ -1102,6 +1140,10 @@ and never read as a frequency of being right.**
 - *Falsifier.* CODE. **Observable:** every published L3 item. **Decision rule:** falsified if an item
   lacks a mass or an establishment status, or if a mass is labelled calibrated. **Not falsified by:** a
   mass of one where L2 publishes a single reading.
+- *Ruled (records/cowork/rulings/cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* Stands as derived.
+  > L3-S32, L3-S33, L3-S34 and L3-S36 as derived
+- *Beside L3-S32 (records/cowork/rulings/cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).*
+  > L3's mass and status rules as the five statements give them; against the older documents, the confidence contract's Class-M margins, max-normalised strengths and squashed composites are replaced, for L3, by the model's own distribution.
 
 **L3-S33. L3's establishment statuses are three. A *read-off* status is carried by a view, and it is
 the weakest status among the items the view reads. *Decided* is carried by an L3 decision whose model
@@ -1122,6 +1164,8 @@ fact read at a position an L3 decision fixes, is provisional.**
   phrase end is marked other than provisional before the phrase model is established, or if a view
   carries a stronger status than an input it reads. **Not falsified by:** a chord symbol marked
   read-off while its cadence is provisional.
+- *Ruled (records/cowork/rulings/cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* Stands as derived.
+  > L3-S32, L3-S33, L3-S34 and L3-S36 as derived
 
 **L3-S34. The mass of a view is the total mass of the L2 readings that give it. It is computed from the
 L2 rival form that covers the view's extent: per-span marginals for a fact read off one span (the chord
@@ -1143,6 +1187,8 @@ mass (L2-S42) and, where whole readings are needed, the mass beyond the ranked l
   multi-span view's mass is a product of marginals where a covering rival object or whole reading
   exists; or if a view's published masses and its unaccounted mass do not sum to one for the stretch.
   **Not falsified by:** a large unaccounted mass.
+- *Ruled (records/cowork/rulings/cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* Stands as derived.
+  > L3-S32, L3-S33, L3-S34 and L3-S36 as derived
 
 **L3-S35. The mass of an L3 decision (a phrase reading, a section reading) composes L2's rivals with
 L3's own model. L3's model gives, for each L2 reading r, a normalised distribution over L3 readings d,
@@ -1168,6 +1214,10 @@ mass given L2's principal reading and its marginal mass.**
   falsified if the principal phrase reading is not the best given L2's principal reading; if the
   marginal differs from the stated sum; or if either mass is missing. **Not falsified by:** a rival's
   marginal mass exceeding the principal's.
+- *Ruled (records/cowork/rulings/cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* Stands as derived.
+  > L3-S35 as derived and in the form of Ruling 1 (both masses per rival), its principal the best L3 reading given L2's principal reading (charter line 532).
+- *Beside L3-S35 (records/cowork/rulings/cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 1).*
+  > every L3 rival of an L3 decision is published with both masses, under distinct names: its mass given L2's principal reading (the conditional) and its marginal mass over L2's published readings (the overall), with the unaccounted remainder published.
 
 **L3-S36. Where two L3 readings tie to the precision computed, both are published with equal mass. The
 principal is chosen between them by a declared, deterministic order that the publication names, and the
@@ -1183,6 +1233,8 @@ tie is flagged.**
 - *Falsifier.* CODE. **Observable:** the publication at an exact tie. **Decision rule:** falsified if a
   tied reading is absent or the tie is not flagged. **Not falsified by:** the principal being the one
   the declared order picks.
+- *Ruled (records/cowork/rulings/cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* Stands as derived.
+  > L3-S32, L3-S33, L3-S34 and L3-S36 as derived
 
 ### 3h. Face (h) — the boundaries of the layer
 
@@ -1204,6 +1256,10 @@ consume line names L0. This file reads the consume line as governing.**
 - *Falsifier.* CODE. **Observable:** L3's inputs. **Decision rule:** falsified if L3 reads any value
   not published by L0, L1 or L2, or any intermediate quantity of L2. **Not falsified by:** L3 reading an
   L0 fact directly.
+- *Ruled (records/cowork/rulings/cowork_rulings_2026_11_03_l3_boundaries_sitting.md, Ruling 2).* Stands as derived.
+  > L3-S37 and L3-S39 as derived
+- *Beside L3-S37 (records/cowork/rulings/cowork_rulings_2026_11_03_l3_boundaries_sitting.md, Ruling 2).*
+  > L3's input rules become part of its ratified specification as the two statements give them; no change against the currently decided method (the charter's consume line; mass-and-status Ruling 1; the OQ-L3-4, OQ-L3-5 and OQ-L3-7 rulings, which applied L3-S39's rule). No inference changes.
 
 **L3-S38. L3 never revises L2, and L2 reads nothing L3 publishes. No L3 fact may change an L2 fact, a
 rival or a mass. Where the music suggests that an L3 reading would improve L2's (a phrase symmetry
@@ -1222,6 +1278,10 @@ edge.**
 - *Falsifier.* CODE. **Observable:** L2's inputs and published record before and after L3 runs.
   **Decision rule:** falsified if any L2 field differs. **Not falsified by:** L3 publishing a rival
   phrase reading at odds with L2's principal tonality placement.
+- *Ruled (records/cowork/rulings/cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* Stands as derived.
+  > L3-S38 as derived
+- *Beside L3-S38 (records/cowork/rulings/cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).*
+  > L3-S38 becomes part of L3's ratified specification as its text gives it. **No change against the currently decided method**, which was stated with the question: L3 reads everything L2 publishes (its reading, its rivals with mass) plus L0's and L1's published facts, and nothing else (L3-S37, ratified); never revises L2; L2 reads nothing L3 publishes; a backward edge is tested by measurement as soon as there is reason to suspect it helps; key areas read off L2's principal reading, a new one at every change of tonality (key-areas Ruling 2). No inference changes.
 
 **L3-S39. L3 never re-derives a fact a layer beneath it publishes, and never supplies a fact of a
 lower layer's kind by computing it from the notation. Where it wants one, it writes an open question
@@ -1236,13 +1296,15 @@ sounding pitch per slice (OQ-L3-7, IC-L1 S-49 and S-50).**
   precedent for L2 [RULED — L2-S47, and the OQ-L2-11 answer's declined option B]. IC-L1's test places a
   computable, decision-free item over the notation at L1 [RULED — IC-L1 S-51].
 - *Source class.* Given — charter and brief (the rule). Derived (the list).
-- *Status.* Settled. The list is a list of wants, each open.
+- *Status.* Settled. The list is the list of wants this derivation found. Three are answered: OQ-L3-4 (cadence-features record, Ruling 2), OQ-L3-5 (thematic-parallelism record, Ruling 1) and OQ-L3-7 (figured-bass record, Ruling 1). OQ-L3-1 stays open, carried as an investigation (chord-symbol record, §2 (g)). (was: "Settled. The list is a list of wants, each open."; records/cowork/rulings/cowork_rulings_2026_11_03_l3_boundaries_sitting.md, Ruling 2; staleness fix shown, ratification_surfaces/cowork_l3_application_release_statement_texts_surface_2026_11_13_part_7.md, under Ruling 7 of the second Part B ruling record)
 - *Premise.* The list is complete. **False-negative path:** a want this session did not notice. The
   falsifier surfaces it.
 - *Falsifier.* CODE. **Observable:** L3's inputs. **Decision rule:** falsified if L3 computes, from L0
   facts or from L1's sounding sets, any quantity of the kind IC-L1 S-51 assigns to L1, or any quantity
   IC-L1 or IC-L2 defines as a publication. **Not falsified by:** L3 computing an interval between two
   events that L2's facts name (L3-S25), or reading an L0 fact that no layer defines (L3-S26).
+- *Ruled (records/cowork/rulings/cowork_rulings_2026_11_03_l3_boundaries_sitting.md, Ruling 2).* Stands as derived.
+  > L3-S37 and L3-S39 as derived
 
 **L3-S40. L3's publication covers exactly the working span. A phrase unit or section that crosses a
 span edge is published with a mark saying it is cut by the span. L3's in-span facts can depend on music
@@ -1286,6 +1348,8 @@ equals a single fresh run over the final span and the edited record.**
 - *Falsifier.* CODE. **Observable:** the publication after enlargements against a fresh run.
   **Decision rule:** falsified if any published field differs. **Not falsified by:** internal caches
   differing.
+- *Ruled (records/cowork/rulings/cowork_rulings_2026_11_04_l3_fit_and_rest_sitting.md, Ruling 1).* Stands as derived.
+  > **The statements, as ratified (the derivation's wording, unchanged; …):**
 
 **L3-S42. Two dependencies on out-of-scope subjects are stated as statements in their own right.** (i)
 **The voice-leading axis.** L3's phrase is the harmonic spine's phrase, which tiles. The accepted melodic
@@ -1308,6 +1372,8 @@ measurement-design stage's (OQ-L3-12).
 - *Falsifier.* RESIDUAL — a modelling premise.
 - *Beside L3-S42 (records/cowork/rulings/cowork_rulings_2026_11_03_l3_thematic_parallelism_sitting.md, Ruling 1).*
   > L3-S42's premise (lines 1186–1188) is answered — the relation is published by L1, not the axis.
+- *Ruled (records/cowork/rulings/cowork_rulings_2026_11_04_l3_fit_and_rest_sitting.md, Ruling 1).* Stands as derived.
+  > **The statements, as ratified (the derivation's wording, unchanged; …):**
 
 ---
 
@@ -1381,6 +1447,9 @@ ruling, and each carries the question it would ask.
   every slice. IC-L1 S-49 publishes it only at cue slices and unspelled. *The input-contract statements
   concerned:* IC-L1 S-49 and S-50. Would L1 publish it per slice, spelled? With it goes the question
   whether the charter's *figured bass* means the continuo grain at all.
+
+  **ANSWERED (records/cowork/rulings/cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, Ruling 1):**
+  > L1 publishes, at every slice, the spelled intervals above its lowest sounding pitch. L3 publishes a second figured bass at the continuo grain, read off that publication, named apart from the span figure, giving under every bass note — passing bass notes included — what actually sounds above it, written by L3-S26's accidental rule and L3-S27's full-figure rule. The span figure of L3-S25 is unchanged.
 - **OQ-L3-8 ★ (face (a); L3-S7) — the pivot label.** *Question for the user:* IC-L2 carries to this
   specification whether the label *"this chord is in both tonalities"* is published at L3 or as a
   display view. Does L3's charter list gain it? It would be a view, deciding nothing.
@@ -1390,6 +1459,11 @@ ruling, and each carries the question it would ask.
 - **OQ-L3-9 (face (a); L3-S5) — the augmented sixth in a display.** L3 publishes no root for the
   augmented sixths. Whether a display respells them as dominant-seventh symbols is the display's
   convention. Recorded so the gap is not mistaken for a defect.
+
+  **RECORDED ANSWER (records/cowork/rulings/cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (e)):**
+  > not a question for the user. L3 publishes the quality, the bass and a named reason in place of the root; a dominant-seventh respelling would assert a chord L2 did not decide, so it is a display's own act.
+
+  *Recorded by the record as this side's derivation, not ruled; challengeable.*
 - **OQ-L3-10 ★ (face (h); L3-S40) — L3 as a requester of more music.** *Question for the user:* may L3,
   like L2, ask the caller for a larger span when its in-span phrase or section reading depends on music
   beyond the edge, stopping by convergence under the safety cap? If not, L3 marks every edge-crossing
@@ -1414,7 +1488,7 @@ ruling, and each carries the question it would ask.
   note, the continuo grain of L3-S28. A continuo part with no written upper voices (IC-L1 S-8's
   recorded cost, L3-S29).
 
-**Questions for the user, counted from the ★ marks: 5 of 14** (OQ-L3-2, 3, 6, 8, 10). DP-N and DP-Q,
+**Questions for the user, counted from the ★ marks: 5 of 14** (OQ-L3-2, 3, 6, 8, 10); all five are now ANSWERED, each by the record its ANSWERED mark names. (was: "(OQ-L3-2, 3, 6, 8, 10)."; staleness fix shown, records/cc/instructions/cc_instruction_l3_application_session_3_task_1_stretch_2_2026_11_22.md, §3 item 6) DP-N and DP-Q,
 which L3-S6, L3-S18 and L3-S20 touch, are the charter's own open questions and are not counted here.
 
 ---
@@ -1430,6 +1504,164 @@ which L3-S6, L3-S18 and L3-S20 touch, are the charter's own open questions and a
 *Ruling 2 (K2), as ruled:*
 
 > a key area is a maximal run of consecutive spans of L2's segmentation sharing one tonality in L2's principal reading, closed and a new one opened at every change of tonality; it decides nothing beyond L2's reading. Each rival whole reading L2 publishes gives its own sequence of key areas, carrying whatever L2 publishes for that reading (this side's proposal, put with A and ruled with it).
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1, part A
+
+*Part A, as `ratification_surfaces/cowork_l3_tier3_display_surface_2026_11_04.md` states it after the check:*
+
+> ## 2. Part A — every display string is made outside the analysis, from published facts (10 row-parts)
+>
+> **The rows, in the old documents' own words:**
+> - **Row 4.2** (line 2100) and **Row 4.3** (2116), `ARCHITECTURE.md` §4.3: the formatter is *"Kept separate from
+>   `ChordAnalyzer` so the analysis layer remains display-agnostic"*; *"analysis produces data, formatters produce
+>   strings."* Graded AGREES with L3-S5.
+> - **Row 19.1** (23848) and **Row 19.3 (ii)** (23874), `ARCHITECTURE.md` §2.3: *"Analysis components produce structured
+>   data — they never produce display strings"*; the separation *"must be maintained throughout."* AGREES with L3-S5.
+> - **Row 15.42 (iii)** (21811): *"display renderings are presentation, facts are published"*. AGREES with L3-S5.
+> - **Row 7.329 (ii)** (8245) and **Row 7.330** (8263), the old function-layer design: translating cadence labels is
+>   *"a display/formatting task on the structured cadence-type identifiers"*. The derivation is silent.
+> - **Row 21.191** (30195), **Row 21.205** (30399) and **Row 57.119** (73487): Roman numerals and Nashville numbers are
+>   *"presentation choices, not separate analyses"*, and *"encode the same information"*. The derivation is silent.
+>
+> **The proposal** (Row 4.2): *"that every display string be produced outside the analysis, from published facts, and
+> that the analysis carry no display convention — L3-S5 carries this for the chord symbol's root only."*
+>
+> **Why the record already settles it:**
+> - **L3-S5** (derivation `cowork_blind_derivation_l3_2026_10_17.md` lines 258–260 **[checked]**): a display that needs a
+>   root for every chord *"reads the quality and the bass and chooses its own convention, as a display act, and never
+>   publishes it back into the analysis."* L3-S27 (lines 848–850 and its status line 863 **[checked]**) says the same of
+>   the figured bass: the full figure *"is the published fact"*, an abbreviated figure *"a view of it under a declared
+>   convention"*, and *"Which convention a display defaults to is the display's own choice."* Where else the derivation
+>   names a display (L3-S29, lines 892–893 and 909–910 **[checked]**: a comparison with the composer's figures is *"the
+>   measurement layer's act or a display's"*) it agrees. The proposal states the rule once for all of L3. *[Corrected by
+>   the check, §10 items 3 and 4. Former wording: "L3-S25's status line (863 [checked]) says the same of the figured bass:
+>   … The derivation already applies the rule in the two places it speaks of display; …"]*
+> - **The chord-symbol Ruling 1 of 2026-11-03** (the user's word "confirmed" **[checked]**) has L3 publish the chord
+>   symbol as fields — the spelled root with its pitch class, the quality, the bass. **The pivot-label Ruling 1** of the
+>   same day (the user's word "yes" **[checked]**) publishes the pivot as a re-expressed degree with a flag. That neither
+>   ruling publishes a text string is this side's reading; neither says so in terms. *[Corrected by the check, §10 item 5.
+>   Former wording: "as structured fields — … the bass — not as a string. … with a flag, not as a label string."]*
+> - **D-100** (`DECISIONS.md` line 267, LIVE **[checked]**): *"Every derived fact is published exactly once, on the
+>   producing layer's output surface"*. A Roman numeral and a Nashville number made from the same decided chord are two
+>   ways of writing one fact, so they are renderings, not two facts.
+>
+> **Weak points:**
+> 1. *"The analysis carry no display convention"* must not be read against the chord-symbol ruling. A spelled root is
+>    information the reading decided (F♯ is not G♭), not a way of writing it; the ruling published it on that ground. The
+>    proposal concerns how facts are turned into text.
+> 2. L3 publishes some facts in the form the ground-truth annotations use (the figure *"written in the figured-bass manner
+>    the ground truth uses"*, `FRAMEWORK.md` glossary line 97, as the chord-symbol record quotes it **[relayed]**). That
+>    is the form of a published fact, fixed so it can be graded, not a display string. A display may still abbreviate it.
+> 3. Row 4.2's own sentence names a component of the old code (`ChordAnalyzer`). What is adopted is the rule, not the
+>    component; the code's present state stays with the QUARANTINED audit questions of Rows 15.42 (i)–(ii) and 19.3 (i).
+
+- *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1):*
+  > **A (10 row-parts: 4.2, 4.3, 7.329 (ii), 7.330, 15.42 (iii), 19.1, 19.3 (ii), 21.191, 21.205, 57.119) — ADOPTED.** Every display string is produced outside the analysis, from published facts; the analysis carries no display convention; a Roman numeral and a Nashville number are two renderings of one decided chord. Grounds: L3-S5's premise, L3-S27, L3-S29; the chord-symbol and pivot-label Rulings 1 of 2026-11-03; D-100.
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1, part B
+
+*Part B, as `ratification_surfaces/cowork_l3_tier3_display_surface_2026_11_04.md` states it after the check:*
+
+> ## 3. Part B — the tonic / subdominant / dominant summary is no published fact (10 row-parts)
+>
+> **The rows:**
+> - **Row 7.5 (i) and (ii)** (line 3235), the old function-layer design: *"The three-role summary (tonic / subdominant /
+>   dominant) is a lossy, deterministically-derivable read-out, not a stored output; it is built only if and when an
+>   accessibility/teaching display needs it, and never drives analysis."*
+> - Travelling with it: **Row 7.6** (3252), a first-class three-role analysis *"rejected (it would invent judgments no
+>   data can verify)"*; **Row 7.24** (3534); **Row 7.59** (4090), *"Optionally derive the three-role read-out … by a fixed
+>   lookup; not part of the analysis"*; **Row 7.226 (ii)** (6732); **Row 7.227** (6748), rejected because it *"would have
+>   to resolve the few context-dependent role cases, which no reference data can verify"*; **Row 7.228** (6763), *"The
+>   read-out, if built for accessibility, defaults those cases to their tonic-side bucket"*; **Row 7.274** (7429), the
+>   glossary entry; **Row 7.294 (i)** (7712), no three-role prediction target, *"the literature outputs Roman numerals and
+>   treats the three roles as a derived view"*. The derivation is silent on all of them. Rows 7.226–7.228 carry the SEEN
+>   mark: the deriving session saw D-335's heading line only.
+>
+> **The proposal** (Row 7.5): *"that the tonic / subdominant / dominant summary be no published fact of the analysis — at
+> most a read-out a display computes from the published chord — and that no decision read it"*, Row 7.228's tonic-side
+> default carried for any such read-out.
+>
+> **Why the record already settles it:**
+> - **D-335** (`DECISIONS.md` line 435, LIVE, 2026-08-02 · user **[checked]**): *"The function layer outputs the Roman
+>   numeral; the tonic/subdominant/dominant summary is a derived read-out, never a stored output"*. Rows 7.226 to 7.228
+>   lie in D-335's home (the old function-layer design §9, lines 621–626); the other rows say the same at other places of
+>   that document. D-335 speaks of the old function layer; that its subject is now L3's is this side's reading, on the
+>   charter's placing of the cadence and the chord symbol at L3. Adopting the proposal carries a live ruling of the
+>   user's into L3's specification. *[Corrected by the check, §10 item 6. Former wording: "The rows above are D-335's home
+>   text and its glosses."]*
+> - **The ruled standard for departing from a design rule** (`CLAUDE.md`, *HOW A DECISION SURFACE IS WRITTEN*, step 4,
+>   citing the 2026-10-07 ruling **[checked]**): a rule holds while there is no reason to suspect that breaking it would
+>   improve the inference. The summary *"never drives analysis"* (Row 7.5 (ii)), and the literature *"outputs Roman
+>   numerals and treats the three roles as a derived view"* (Row 7.294 (i)); so, on this side's reading, publishing it
+>   would not change what is inferred. *[Corrected by the check, §10 item 7. Former wording: "No decision reads the
+>   summary and the grading is against Roman numerals (Row 7.294 (i)), so publishing it would not change what is
+>   inferred."]*
+> - **D-295** (line 509, LIVE **[checked]**), *"every inferred object must be displayable"*, is met: the summary can be
+>   displayed, computed by the display from the published chord.
+>
+> **Weak point — the tension with the pivot label, stated.** The pivot-label ruling put a re-expression of L2's decided
+> facts at L3 rather than at a display, after the lesson *"What harm is there in exposing such names?"* (entry 499, as
+> that record quotes it **[relayed]**). By that lesson, L3 could publish the summary too. **The difference is the harm D-335
+> names:** the pivot label re-expresses the decided chord and settles nothing (that record: *"No chord is named 'the
+> pivot'"*), whereas the summary must put the few context-dependent chords on one side or the other, a judgment Row 7.227
+> says *"no reference data can verify"*. Publishing it at L3 would publish that judgment as a fact of the analysis. One
+> variant was considered and is not recommended: L3 publishes the summary with a flag on the context-dependent chords in
+> place of the tonic-side default. It meets the harm, but it would overturn a live ruling without any reason to expect a
+> gain in inference, which the step 4 standard requires. **If the user sees a gain this side does not, the variant is
+> the alternative to raise.**
+
+- *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1):*
+  > **B (10 row-parts: 7.5 (i), 7.5 (ii), 7.6, 7.24, 7.59, 7.226 (ii), 7.227, 7.228, 7.274, 7.294 (i)) — ADOPTED.** The tonic / subdominant / dominant summary is no published fact of the analysis — at most a read-out a display computes from the published chord, defaulting its context-dependent cases to the tonic side — and no decision reads it. Grounds: D-335 (LIVE, user, 2026-08-02); the `CLAUDE.md` decision-surface step 4 standard; D-295 met by the display read-out. **Declined variant:** L3 publishes the summary with a flag on the context-dependent chords — it would overturn D-335 with no reason to expect a gain in inference.
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1, part C
+
+*Part C, as `ratification_surfaces/cowork_l3_tier3_display_surface_2026_11_04.md` states it after the check:*
+
+> ## 4. Part C — the grouping has one producer, L3, and it is what a display reads (1 row-part)
+>
+> - **Row 8.54** (line 9601), the old grouping design: *"The contract to the display layer above is this structure; L6 is
+>   its only producer."* The derivation is silent. **Proposal:** *"that the grouping have L3 as its only producer, and be
+>   the surface a display reads."*
+> - **Settled by:** the charter's L3 *Publishes* list, which includes the phrase and section grouping (as the route
+>   record §2 restates it **[checked there]**; `FRAMEWORK.md` itself not read **[relayed]**); the key-areas Ruling 2 of
+>   2026-11-03, which adds key areas to L3's grouping (Rows 3.1 (iii), 8.12 and the others ADOPTED, that record's lines
+>   89–90 **[checked]**; *corrected by the check, §10 item 8; former wording: "[checked at that record's line 127 by
+>   search]"*); and D-100 (one
+>   fact, one home, on the producing layer's surface).
+> - **Weak point:** "L6" is an old layer name. What is adopted is "L3 is the grouping's only producer"; no layer number
+>   from the old documents enters the specification.
+
+- *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1):*
+  > **C (1 row-part: 8.54) — ADOPTED.** The grouping has L3 as its only producer and is the surface a display reads. Grounds: the charter's L3 *Publishes* list [relayed]; key-areas Ruling 2; D-100.
+
+### Added — records/cowork/rulings/cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1, part D
+
+*Part D, as `ratification_surfaces/cowork_l3_tier3_display_surface_2026_11_04.md` states it after the check:*
+
+> ## 5. Part D — nothing L3 publishes is written into the score except by the user's own act (4 row-parts)
+>
+> - **Row 19.5** (line 23902), `ARCHITECTURE.md` §2.9: *"It never modifies the main score automatically."* Travelling with
+>   it: **Row 19.4** (23889), *"The system presents analytical findings and suggestions"*; **Row 19.6** (23916), *"All
+>   score modifications require explicit user action"*; **Row 19.8** (23944), the user acts on a suggestion *"explicitly
+>   through standard MuseScore editing"*. The derivation is silent. **Proposal:** *"that nothing L3 publishes be written
+>   into the score except by the user's explicit act."*
+> - **Settled by — this side's reading, the weakest of the four parts:** no register entry on this subject was found
+>   (`DECISIONS.md` searched for *explicit user*, *modif… the score*, *display-agnostic*, *formatter*, *Nashville*: one
+>   hit, line 90, a passage naming the formatter's source file under D-311, whose subject is a file split, not this
+>   **[checked]**; the `decisions/` group files not searched). The ground is the charter's shape: L3's outputs are things
+>   it *publishes*, and the score is L0's notated record, which the layers beneath L3 read and L3 reads through them. A
+>   layer that wrote into the score would change what it and they read. *[Corrected by the check, §10 item 9. Former
+>   wording: "… *Nashville*: no matching entry [checked by search]). … which every layer reads. A layer that wrote into
+>   the score would change its own input."]* So the sentence, read as a statement about L3, restates what L3 already is; it adds no step and removes none.
+> - **Weak points:** (1) the rule in `ARCHITECTURE.md` is about the whole application, not one layer; adopting it into
+>   L3's specification states only L3's part of it. (2) Row 19.4 says nothing about L3 in particular; it travels because
+>   it opens the same paragraph. (3) The disposition vocabulary has no charter for the user interface, so the alternative
+>   to adopting is to leave the rows as proposals, which the route record allows. This side sees no gain in that, and
+>   found no harm in adopting. *[Corrected by the check, §10 item 10. Former wording: "Nothing is gained by that; no harm
+>   in adopting was found."]*
+
+- *In short (records/cowork/rulings/cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1):*
+  > **D (4 row-parts: 19.4, 19.5, 19.6, 19.8) — ADOPTED.** Nothing L3 publishes is written into the score except by the user's explicit act. Ground: this side's reading of the charter's shape (L3 publishes; the score is the notated record the layers read); no register entry found on the subject (the index searched, the `decisions/` group files not).
 
 ---
 
