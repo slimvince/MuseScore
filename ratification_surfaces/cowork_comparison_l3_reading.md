@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.28 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.29 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.30 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.31 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -47712,6 +47712,10 @@ reference knowledge with a read-only query interface.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read: none of `FRAMEWORK.md` §5's charters, nor its NOT A LAYER items, names
 a knowledge-base component, and the derivation names none. (ii) **UNPLACED** — travelling with (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (13): ADOPTED — proposed: 46.16, 46.17, 46.18 (i), 46.19 (i), 46.20, 46.21 (ii), 46.23, 44.2, 44.21, 38.20 (i), 38.20 (ii)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — "§3.1, follow wholly (13): ADOPTED — proposed: 46.16, 46.17, 46.18 (i), 46.19 (i), 46.20, 46.21 (ii), 46.23, 44.2, 44.21, 38.20 (i), 38.20 (ii)".
+
 ---
 
 **Row 38.21 — consumed by the function and grouping layers; built shareable for a chord-suggestion tool.**
@@ -47728,6 +47732,10 @@ layer; (ii) built shareable for a future chord-suggestion tool.
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — travelling with Row 38.20 (i). (ii) **UNPLACED** — read: no charter of
 `FRAMEWORK.md` §5 names a tool that suggests chords, generation lying outside the analysis.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (i), its half on the published match: **ADOPTED — proposed** — "§3.2, split by use (3): 38.21 (i), 44.34 (ii), 46.46 (i) — in each, the half on the published match ADOPTED — proposed under L3, the half on use as evidence (for 46.46 (i), the "ranked" half) RELOCATED to L2, travelling with the DP-O candidate of the key sitting's Ruling 2".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (i), its half on use as evidence: **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "§3.2, split by use (3): 38.21 (i), 44.34 (ii), 46.46 (i) — in each, the half on the published match ADOPTED — proposed under L3, the half on use as evidence (for 46.46 (i), the "ranked" half) RELOCATED to L2, travelling with the DP-O candidate of the key sitting's Ruling 2".
 
 ---
 
@@ -48757,6 +48765,8 @@ functional grammar.
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — travelling with Row 38.20 (i). (ii) **UNPLACED** — read: as at Row 19.38
 (vi).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (i) **HISTORICAL** — "Decided against in so far as a preset selects the catalog L3 reads: 38.79 (i), the remainder ("idiom-specific") going with the idiom-tag rows".
 
 ---
 
@@ -61810,6 +61820,8 @@ terms list, the first bullet's second entry, *Member* (locator: lines 23–25).
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 44.1.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (13): ADOPTED — proposed: 46.16, 46.17, 46.18 (i), 46.19 (i), 46.20, 46.21 (ii), 46.23, 44.2, 44.21, 38.20 (i), 38.20 (ii)".
+
 ---
 
 **Row 44.3 — the term *Prinner*: a galant schema of a descending melody over a descending bass, an entry defined by its
@@ -62125,6 +62137,8 @@ decision settles the tonality and the chord together (`FRAMEWORK.md` §5). (iii)
 adds no layer for the recognition of a named progression and names none, and the derivation does not speak to it; read
 beside Row 38.20 (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (iii) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "RELOCATED to L2 (*The tonal reading. The one entangled decision.*): 44.19 (iii), with parts (i) and (ii) of the same row".
+
 ---
 
 **Row 44.20 — the name to the grouping layer: a schema span cutting across the punctuation-spans, read-only and
@@ -62155,6 +62169,8 @@ the punctuation-spans; (ii) it is read-only and additive.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 38.20 (i): no charter of `FRAMEWORK.md` §5, nor its NOT A LAYER
 items, names a knowledge-base component.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (13): ADOPTED — proposed: 46.16, 46.17, 46.18 (i), 46.19 (i), 46.20, 46.21 (ii), 46.23, 44.2, 44.21, 38.20 (i), 38.20 (ii)".
 
 ---
 
@@ -62520,6 +62536,10 @@ claims: (i) the recognition of a named progression yields evidence and a name; (
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 8.18: the derivation names no recognised progression schema,
 and none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it covers. (ii) **UNPLACED** —
 travelling with Row 44.19 (iii).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (ii), its half on the published match: **ADOPTED — proposed** — "§3.2, split by use (3): 38.21 (i), 44.34 (ii), 46.46 (i) — in each, the half on the published match ADOPTED — proposed under L3, the half on use as evidence (for 46.46 (i), the "ranked" half) RELOCATED to L2, travelling with the DP-O candidate of the key sitting's Ruling 2".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (ii), its half on use as evidence: **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "§3.2, split by use (3): 38.21 (i), 44.34 (ii), 46.46 (i) — in each, the half on the published match ADOPTED — proposed under L3, the half on use as evidence (for 46.46 (i), the "ranked" half) RELOCATED to L2, travelling with the DP-O candidate of the key sitting's Ruling 2".
 
 ---
 
@@ -64671,6 +64691,8 @@ content — organisation and catalog*, the bullet led *The ii–V family* (locat
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.1: the entries are records of the catalog of named
 progressions, which no charter of `FRAMEWORK.md` §5 names.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (13): ADOPTED — proposed: 46.16, 46.17, 46.18 (i), 46.19 (i), 46.20, 46.21 (ii), 46.23, 44.2, 44.21, 38.20 (i), 38.20 (ii)".
+
 ---
 
 **Row 46.17 — the turnarounds as catalog entries.**
@@ -64687,6 +64709,8 @@ progressions & schemas*, under *5. The content — organisation and catalog*, th
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.1: the entries are records of the catalog of named
 progressions, which no charter of `FRAMEWORK.md` §5 names.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (13): ADOPTED — proposed: 46.16, 46.17, 46.18 (i), 46.19 (i), 46.20, 46.21 (ii), 46.23, 44.2, 44.21, 38.20 (i), 38.20 (ii)".
 
 ---
 
@@ -64711,6 +64735,8 @@ continued by their root pattern.
 progressions, which no charter of `FRAMEWORK.md` §5 names. (ii) **UNPLACED** — read as at Row 8.18: the derivation names
 no recognised progression schema, and none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it
 covers.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (13): ADOPTED — proposed: 46.16, 46.17, 46.18 (i), 46.19 (i), 46.20, 46.21 (ii), 46.23, 44.2, 44.21, 38.20 (i), 38.20 (ii)".
 
 *The decisions register at this row.* The data file homes **the retired entry D-412** at lines 179 to 181, the opening
 of this bullet; its home ends on line 181 inside the bullet, which runs to line 183. The data file prints its `status`
@@ -64746,6 +64772,8 @@ the current commit encode the Axis loop as one entry in its canonical rotation, 
 that order alone? (iii) **UNPLACED** — read as at Row 8.18: the derivation names no recognised progression schema, and
 none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it covers.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (13): ADOPTED — proposed: 46.16, 46.17, 46.18 (i), 46.19 (i), 46.20, 46.21 (ii), 46.23, 44.2, 44.21, 38.20 (i), 38.20 (ii)".
+
 *The decisions register at this row.* The data file homes **register entry D-411** at lines 185 to 188, on which this
 row's claims lie; its home begins on line 185 inside this bullet, which opens on line 184, and ends on line 188 inside
 it, the bullet running to line 189. The decisions register's INDEX records **D-411** *"The Axis loop is ONE entry in one
@@ -64773,6 +64801,8 @@ words after it (locator: lines 190–195).
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.1: the entries are records of the catalog of named
 progressions, which no charter of `FRAMEWORK.md` §5 names.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (13): ADOPTED — proposed: 46.16, 46.17, 46.18 (i), 46.19 (i), 46.20, 46.21 (ii), 46.23, 44.2, 44.21, 38.20 (i), 38.20 (ii)".
+
 ---
 
 **Row 46.21 — each galant schema defined by voice-leading and metric placement; the catalog holding only its harmonic
@@ -64792,6 +64822,8 @@ holds only its harmonic pattern.
 eighteenth-century outer-voice patterns"* (`FRAMEWORK.md` §5), as Row 44.3 placed the Prinner. (ii) **UNPLACED** — read
 as at Row 7.85: `FRAMEWORK.md` §5 names no charter whose subject is a catalog of named progressions, and the derivation
 does not speak to one.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — "§3.1, follow wholly (13): ADOPTED — proposed: 46.16, 46.17, 46.18 (i), 46.19 (i), 46.20, 46.21 (ii), 46.23, 44.2, 44.21, 38.20 (i), 38.20 (ii)".
 
 ---
 
@@ -64822,6 +64854,8 @@ bullet led *Advanced jazz cycles* (locator: line 198).
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.1: the entries are records of the catalog of named
 progressions, which no charter of `FRAMEWORK.md` §5 names.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (13): ADOPTED — proposed: 46.16, 46.17, 46.18 (i), 46.19 (i), 46.20, 46.21 (ii), 46.23, 44.2, 44.21, 38.20 (i), 38.20 (ii)".
 
 ---
 
@@ -65188,6 +65222,10 @@ threshold and the decision are precision-phase, at the consumer.
 catalog of named progressions, and the derivation does not speak to one. (ii)
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail specification fixes how the
 candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the L2 block).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (i), its half on the published match: **ADOPTED — proposed** — "§3.2, split by use (3): 38.21 (i), 44.34 (ii), 46.46 (i) — in each, the half on the published match ADOPTED — proposed under L3, the half on use as evidence (for 46.46 (i), the "ranked" half) RELOCATED to L2, travelling with the DP-O candidate of the key sitting's Ruling 2".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (i), its "ranked" half: **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "§3.2, split by use (3): 38.21 (i), 44.34 (ii), 46.46 (i) — in each, the half on the published match ADOPTED — proposed under L3, the half on use as evidence (for 46.46 (i), the "ranked" half) RELOCATED to L2, travelling with the DP-O candidate of the key sitting's Ruling 2".
 
 ---
 
@@ -80577,6 +80615,10 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   progression, nor where a substitution fills a member, from the design's contract and its substitutions. *(As
   Row 44.37 (ii); the L2 comparison relocated L2 Rows 53.22 and 53.28 to L3.)*
 - Row 38.11 (i) — the key-independent chord symbol for each slice, a judgment of the old layer table's chord-symbol layer. *(cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a).)*
+- Row 44.19 (iii) — that no stage is added for the recognition of a named progression. *(cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1; as Rows 44.19 (i) and (ii).)*
+- Row 38.21 (i), its half on use as evidence — the catalog consumed by the old function layer (the progression prior / substitution-inversion). *(cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1; travelling with the DP-O candidate of the key sitting's Ruling 2.)*
+- Row 44.34 (ii), its half on use as evidence — that the recognition of a named progression, as evidence, adds no new layer. *(cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1; travelling with the DP-O candidate of the key sitting's Ruling 2.)*
+- Row 46.46 (i), its "ranked" half — that the catalog returns ranked structural matches. *(cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1; travelling with the DP-O candidate of the key sitting's Ruling 2.)*
 
 **To *the second axis — voice leading*.**
 
