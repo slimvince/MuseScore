@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.24 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.25 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.28 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.29 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -2167,6 +2167,8 @@ publishes it back into the analysis"*.
 from published facts, and that the analysis carry no display convention — L3-S5 carries this for the chord symbol's
 root only.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "A (10 row-parts: 4.2, 4.3, 7.329 (ii), 7.330, 15.42 (iii), 19.1, 19.3 (ii), 21.191, 21.205, 57.119) — ADOPTED".
+
 ---
 
 **Row 4.3 — the separation maintained throughout: analysis produces data, formatters produce strings.**
@@ -2179,6 +2181,8 @@ produce strings." — the purpose paragraph (locator: lines 3814–3815).
 *Current-text axis.* L3-S5: **AGREES**, as at Row 4.2.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 4.2.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "A (10 row-parts: 4.2, 4.3, 7.329 (ii), 7.330, 15.42 (iii), 19.1, 19.3 (ii), 21.191, 21.205, 57.119) — ADOPTED".
 
 ---
 
@@ -3325,6 +3329,10 @@ computed only if a display needs it, not a stored output; (ii) it never drives a
 subdominant / dominant summary be no published fact of the analysis — at most a read-out a display computes from the
 published chord — and that no decision read it.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — as proposed; "B (10 row-parts: 7.5 (i), 7.5 (ii), 7.6, 7.24, 7.59, 7.226 (ii), 7.227, 7.228, 7.274, 7.294 (i)) — ADOPTED".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — as proposed; "B (10 row-parts: 7.5 (i), 7.5 (ii), 7.6, 7.24, 7.59, 7.226 (ii), 7.227, 7.228, 7.274, 7.294 (i)) — ADOPTED".
+
 ---
 
 **Row 7.6 — a first-class three-role analysis rejected.**
@@ -3337,6 +3345,8 @@ verify)." — the scope paragraph (locator: line 24).
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 7.5.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "B (10 row-parts: 7.5 (i), 7.5 (ii), 7.6, 7.24, 7.59, 7.226 (ii), 7.227, 7.228, 7.274, 7.294 (i)) — ADOPTED".
 
 ---
 
@@ -3631,6 +3641,8 @@ which corpus and measure was the function-only residual found small and concentr
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 7.5.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "B (10 row-parts: 7.5 (i), 7.5 (ii), 7.6, 7.24, 7.59, 7.226 (ii), 7.227, 7.228, 7.274, 7.294 (i)) — ADOPTED".
 
 ---
 
@@ -4217,6 +4229,8 @@ analysis." — §4, step 6 (locator: line 150).
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 7.5.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "B (10 row-parts: 7.5 (i), 7.5 (ii), 7.6, 7.24, 7.59, 7.226 (ii), 7.227, 7.228, 7.274, 7.294 (i)) — ADOPTED".
 
 ---
 
@@ -6963,6 +6977,8 @@ heading line only).*
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.4. (ii)
 **ADOPTED — proposed** — travelling with Row 7.5.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — as proposed; "B (10 row-parts: 7.5 (i), 7.5 (ii), 7.6, 7.24, 7.59, 7.226 (ii), 7.227, 7.228, 7.274, 7.294 (i)) — ADOPTED".
+
 ---
 
 **Row 7.227 — D1: a first-class three-role analysis rejected.** *SEEN — §6 item 1 (D-335; the heading line only).*
@@ -6978,6 +6994,8 @@ defense.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 7.5.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "B (10 row-parts: 7.5 (i), 7.5 (ii), 7.6, 7.24, 7.59, 7.226 (ii), 7.227, 7.228, 7.274, 7.294 (i)) — ADOPTED".
+
 ---
 
 **Row 7.228 — D1: the read-out defaults the context-dependent cases to the tonic side.** *SEEN — §6 item 1 (D-335; the
@@ -6992,6 +7010,8 @@ heading line only).*
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 7.5: the proposal there, carrying this default for
 any display read-out.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "B (10 row-parts: 7.5 (i), 7.5 (ii), 7.6, 7.24, 7.59, 7.226 (ii), 7.227, 7.228, 7.274, 7.294 (i)) — ADOPTED".
 
 ---
 
@@ -7673,6 +7693,8 @@ the Roman numeral; a read-out, not a stored output." — §12 (locator: lines 72
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 7.5.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "B (10 row-parts: 7.5 (i), 7.5 (ii), 7.6, 7.24, 7.59, 7.226 (ii), 7.227, 7.228, 7.274, 7.294 (i)) — ADOPTED".
+
 ---
 
 **Row 7.275 — glossary: class-(b) error.**
@@ -7972,6 +7994,8 @@ the tonality and the chord are decided, jointly or apart, is that charter's subj
 Row 7.47.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (ii) **RELOCATED** to ***L1 — Change points, candidates and notated evidence*** — "(the key-agnostic cues)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — as proposed; "B (10 row-parts: 7.5 (i), 7.5 (ii), 7.6, 7.24, 7.59, 7.226 (ii), 7.227, 7.228, 7.274, 7.294 (i)) — ADOPTED".
 
 ---
 
@@ -8508,6 +8532,8 @@ proposal of Row 4.2 at §12: every display string produced outside the analysis,
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 2).* (i) **HISTORICAL** — "recorded as decided against **in so far as they fix one list as the only one**; their lists remain candidates for declared vocabularies.".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — as proposed; "A (10 row-parts: 4.2, 4.3, 7.329 (ii), 7.330, 15.42 (iii), 19.1, 19.3 (ii), 21.191, 21.205, 57.119) — ADOPTED".
+
 ---
 
 **Row 7.330 — translating the label strings a display task on structured identifiers.**
@@ -8521,6 +8547,8 @@ the structured cadence-type identifiers §7 carries (L5 is display-agnostic), **
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 7.329 (ii).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "A (10 row-parts: 4.2, 4.3, 7.329 (ii), 7.330, 15.42 (iii), 19.1, 19.3 (ii), 21.191, 21.205, 57.119) — ADOPTED".
 
 ---
 
@@ -9922,6 +9950,8 @@ tonality may fall inside a phrase unit, the key areas cutting across the phrase 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that the grouping have L3 as its only producer, and be the
 surface a display reads.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "C (1 row-part: 8.54) — ADOPTED".
+
 ---
 
 **Row 8.55 — grouping already in production, scattered and key-dependent.**
@@ -10811,6 +10841,8 @@ explanatory output of the analysis, not as an accuracy requirement on it. (ii) *
 that a derived statement differs from; read: the two texts above.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — as proposed; "F (2 row-parts: 8.105 (i), 36.111 (i)) — ADOPTED".
 
 ---
 
@@ -22292,6 +22324,8 @@ display chord symbol and the Nashville number with the formatter from the commit
 grading-form symbol? (iii) **ADOPTED — proposed** — the proposal of Row 4.2 at §12: every display string produced
 outside the analysis, from published facts.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* (iii) **ADOPTED — proposed** — as proposed; "A (10 row-parts: 4.2, 4.3, 7.329 (ii), 7.330, 15.42 (iii), 19.1, 19.3 (ii), 21.191, 21.205, 57.119) — ADOPTED".
+
 ---
 
 **Row 15.43 — the seventh carried into the display; a class with no root rendered as no symbol.**
@@ -24324,6 +24358,8 @@ QUARANTINED.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 4.2.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "A (10 row-parts: 4.2, 4.3, 7.329 (ii), 7.330, 15.42 (iii), 19.1, 19.3 (ii), 21.191, 21.205, 57.119) — ADOPTED".
+
 ---
 
 **Row 19.2 — formatting handled by separate formatter classes.**
@@ -24352,6 +24388,8 @@ throughout." — the same sub-section (locator: lines 751–752). Two claims: (i
 *PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does `ChordSymbolFormatter` alone turn analysis results
 into display strings at the current commit? (ii) **ADOPTED — proposed**, travelling with Row 4.2.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — as proposed; "A (10 row-parts: 4.2, 4.3, 7.329 (ii), 7.330, 15.42 (iii), 19.1, 19.3 (ii), 21.191, 21.205, 57.119) — ADOPTED".
+
 ---
 
 **Row 19.4 — the system presents findings and suggestions.**
@@ -24364,6 +24402,8 @@ Principles*, sub-section *2.9 Analyze and Suggest — Never Modify Without Expli
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 19.5.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "D (4 row-parts: 19.4, 19.5, 19.6, 19.8) — ADOPTED".
 
 ---
 
@@ -24379,6 +24419,8 @@ Principles*, sub-section *2.9 Analyze and Suggest — Never Modify Without Expli
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that nothing L3 publishes be written into the score except
 by the user's explicit act.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "D (4 row-parts: 19.4, 19.5, 19.6, 19.8) — ADOPTED".
+
 ---
 
 **Row 19.6 — every modification of the score requires the user's explicit action.**
@@ -24391,6 +24433,8 @@ by the user's explicit act.
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 19.5.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "D (4 row-parts: 19.4, 19.5, 19.6, 19.8) — ADOPTED".
 
 ---
 
@@ -24420,6 +24464,8 @@ applying tuning — they do so explicitly through standard MuseScore editing." �
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 19.5.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "D (4 row-parts: 19.4, 19.5, 19.6, 19.8) — ADOPTED".
 
 ---
 
@@ -24772,6 +24818,10 @@ cleanly separable stage that can be turned on and off.
 explicit setting and never a constant written into the code. (ii) **ADOPTED — proposed.** *Proposal:* that every
 optional expensive refinement of L3 be a separable stage that can be turned on and off.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — as proposed; "A (3 row-parts: 19.29 (i), 19.29 (ii), 19.53 (ii)) — ADOPTED".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — as proposed; "A (3 row-parts: 19.29 (i), 19.29 (ii), 19.53 (ii)) — ADOPTED".
+
 ---
 
 **Row 19.30 — the founding principle: the finest grain where harmony is well-defined, everything coarser a derived
@@ -24851,6 +24901,8 @@ priors/weights), **never in structure**." — the same bullet (locator: lines 10
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that any style-specific behavior of L3 live only in the
 fitted values of its model, never in its structure.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "B (1 row-part: 19.33) — ADOPTED".
 
 ---
 
@@ -24933,6 +24985,8 @@ criterion." — the same sub-section, the bullet it leads (locator: line 1100).
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that every kind of span L3 publishes be named by the
 criterion that bounds it.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "A (8 row-parts: 19.37, 19.40, 38.62 (i), 38.62 (ii), 38.64 (i), 38.64 (ii), 38.83 (i), 38.84) — ADOPTED".
 
 ---
 
@@ -25023,6 +25077,8 @@ the same bullet (locator: lines 1141–1142).
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 19.37.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "A (8 row-parts: 19.37, 19.40, 38.62 (i), 38.62 (ii), 38.64 (i), 38.64 (ii), 38.83 (i), 38.84) — ADOPTED".
 
 ---
 
@@ -25235,6 +25291,8 @@ the working span"*. (ii) **THE DERIVATION IS SILENT**. (iii) L3-S40: **AGREES**,
 re-analysis after an edit cover only the edited span and a bounded margin around it. (iii) **ADOPTED — carried**
 (L3-S40).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — as proposed; "A (3 row-parts: 19.29 (i), 19.29 (ii), 19.53 (ii)) — ADOPTED".
+
 ---
 
 **Row 19.54 — whole-score analysis the degenerate case.**
@@ -25285,6 +25343,8 @@ DERIVATION IS SILENT**.
 names no single charter. (ii) **RELOCATED** — to ***the uncertainty surface***, as Row 19.24 (ii). (iii) **ADOPTED —
 proposed.** *Proposal:* that L3 read, within its scope, all of the information the layers beneath it publish without
 loss — the notated spelling, the metric weight and the voice — and discard none of it.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* (iii) **ADOPTED — proposed** — as proposed; "C (5 row-parts: 19.56 (iii), 19.76 (ii), 19.77, 19.78, 19.82) — ADOPTED".
 
 ---
 
@@ -25620,6 +25680,8 @@ elimination is recomputable from what that surface keeps.
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S13). (ii) **ADOPTED — proposed.** *Proposal:* that a reading L3
 rules out need not be published where its exclusion can be recomputed from what L3 does publish.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — as proposed; "C (5 row-parts: 19.56 (iii), 19.76 (ii), 19.77, 19.78, 19.82) — ADOPTED".
+
 ---
 
 **Row 19.77 — never computing a possibility is not information loss; only discarding a computed one is.**
@@ -25635,6 +25697,8 @@ possibility is not information loss; only DISCARDING a computed one is.**" — t
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that an alternative L3 decides on measured evidence never to
 compute is no loss of information, and that only a reading L3 computed and then left out of its publication is.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "C (5 row-parts: 19.56 (iii), 19.76 (ii), 19.77, 19.78, 19.82) — ADOPTED".
+
 ---
 
 **Row 19.78 — a layer that does not work out an alternative at all has lost nothing.**
@@ -25647,6 +25711,8 @@ lost nothing — you cannot lose what you never had." — the same bullet (locat
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 19.77.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "C (5 row-parts: 19.56 (iii), 19.76 (ii), 19.77, 19.78, 19.82) — ADOPTED".
 
 ---
 
@@ -25704,6 +25770,8 @@ named, or removed." — the same bullet (locator: lines 1258–1259).
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that an L3 fact no consumer reads be either declared
 dormant, with its future consumer named, or removed — evidence-class facts being published broadly as Row 19.81 states.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "C (5 row-parts: 19.56 (iii), 19.76 (ii), 19.77, 19.78, 19.82) — ADOPTED".
 
 ---
 
@@ -26267,6 +26335,8 @@ Bridge Architecture*, *The MuseScore-Dependency Rule*, its item 1 (locator: line
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that the code computing L3's facts depend on no type of
 the score editor.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "D (1 row-part: 20.7) — ADOPTED".
+
 ---
 
 **Row 20.8 — the bridge layer reads the score model only through the bridge pattern, never layout.**
@@ -26651,6 +26721,8 @@ reading among them, *"provisional"* until its model is fitted and established on
 *PROPOSED DISPOSITION.* (i) **ADOPTED — proposed.** *Proposal:* that L3's specification record, as a fact of the
 published literature, that no validated deterministic rule set places phrase boundaries in polyphonic music, its
 phrase model resting on fitted terms instead. (ii) **ADOPTED — carried** by L3-S33.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_literature_facts_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — as proposed; "Rows 20.31 (i), 56.2 (i) and 56.2 (ii) — ADOPTED".
 
 ---
 
@@ -30748,6 +30820,8 @@ are alternative formatters on the same `ChordAnalysisResult`." — the same bull
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that the Roman numeral and the Nashville number be two display
 renderings of the one decided chord, never two analyses (the proposal of Row 4.2).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "A (10 row-parts: 4.2, 4.3, 7.329 (ii), 7.330, 15.42 (iii), 19.1, 19.3 (ii), 21.191, 21.205, 57.119) — ADOPTED".
+
 ---
 
 **Row 21.192 — the setting for inferring the tonality.**
@@ -30951,6 +31025,8 @@ both would clutter the staff with redundant text." — the same bullet (locator:
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* as Row 21.191, travelling with it: the Roman numeral and the
 Nashville number encode the same decided information.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "A (10 row-parts: 4.2, 4.3, 7.329 (ii), 7.330, 15.42 (iii), 19.1, 19.3 (ii), 21.191, 21.205, 57.119) — ADOPTED".
 
 ---
 
@@ -42669,6 +42745,8 @@ weight of the phrase model is fitted from annotated phrase boundaries, held out 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — proposed** — travelling with Row 20.31 (i). (ii) **ADOPTED — carried** (L3-S33),
 as Row 20.31 (ii). (iii) **RELOCATED** — to ***the measurement of the analysis***, as Row 20.32 (ii).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_literature_facts_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "Row 36.106 (i) — ADOPTED in the narrower wording"; "That L3's specification record, as a fact of the published literature, that the phrase-boundary cues are validated on single melodic lines only."; "The row's own text is carried as written".
+
 ---
 
 **Row 36.107 — a surface-only primitive missing purely harmonic boundaries, recovered downstream.**
@@ -42766,6 +42844,8 @@ key/function)"*; L3-S38 says *"L2 reads nothing L3 publishes."*
 own subject that a derived statement differs from; read: the two texts above.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_fifth_cut_surface_2026_11_03.md, §3: "What is superseded is the route: a later layer's decided facts fed back to choose the chord or the key"; "a means to key".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — as proposed; "F (2 row-parts: 8.105 (i), 36.111 (i)) — ADOPTED".
 
 *The decisions register at this row.* The quoted statement lies inside the home of **D-480** (lines 303–309), *"The
 phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at
@@ -48113,6 +48193,8 @@ never revises L2"*.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that a reading missing from L3's own candidate readings be
 remedied inside L3, by widening its candidate set, and never by a backward edge.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* **ADOPTED — proposed** — "E (2 row-parts: 38.47, 38.48) — ADOPTED in the narrower wording"; "A reading missing from L3's own candidate readings is remedied inside L3, by widening its candidate set; a backward edge is not the remedy, except as the deliberate, surfaced, measured and documented exception D-466 admits."; "The rows' own text is carried as written".
+
 ---
 
 **Row 38.48 — a coverage miss fixed by widening that layer's candidate set, not by a backward edge.**
@@ -48127,6 +48209,8 @@ the section *2. The layer model*, the paragraph led *Control flow — forward-on
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 38.47.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* **ADOPTED — proposed** — "E (2 row-parts: 38.47, 38.48) — ADOPTED in the narrower wording"; "A reading missing from L3's own candidate readings is remedied inside L3, by widening its candidate set; a backward edge is not the remedy, except as the deliberate, surfaced, measured and documented exception D-466 admits."; "The rows' own text is carried as written".
 
 ---
 
@@ -48373,6 +48457,10 @@ typed family, not one kind under one bare word; (ii) each is named by its boundi
 *PROPOSED DISPOSITION.* (i) **ADOPTED — proposed.** *Proposal:* that the spans L3 publishes be held as a family of
 distinct kinds, never as one kind under one bare word. (ii) **ADOPTED — proposed**, travelling with Row 19.37.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — as proposed; "A (8 row-parts: 19.37, 19.40, 38.62 (i), 38.62 (ii), 38.64 (i), 38.64 (ii), 38.83 (i), 38.84) — ADOPTED".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — as proposed; "A (8 row-parts: 19.37, 19.40, 38.62 (i), 38.62 (ii), 38.64 (i), 38.64 (ii), 38.83 (i), 38.84) — ADOPTED".
+
 ---
 
 **Row 38.63 — the music segmented many ways at once.**
@@ -48386,6 +48474,8 @@ the paragraph led *★ Spans are a typed family, not one "region" …* (locator:
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that L3's specification state that the music is segmented
 several ways at once, L2's harmonic spans, L3's phrase units and its sections among them.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "B (1 row-part: 38.63) — ADOPTED".
 
 ---
 
@@ -48403,6 +48493,10 @@ the bare word names exactly one of them, never several.
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 19.37. (ii) **ADOPTED — proposed**, travelling
 with Row 19.40.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — as proposed; "A (8 row-parts: 19.37, 19.40, 38.62 (i), 38.62 (ii), 38.64 (i), 38.64 (ii), 38.83 (i), 38.84) — ADOPTED".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — as proposed; "A (8 row-parts: 19.37, 19.40, 38.62 (i), 38.62 (ii), 38.64 (i), 38.64 (ii), 38.83 (i), 38.84) — ADOPTED".
 
 ---
 
@@ -48731,6 +48825,10 @@ span it operates on by its type; (ii) for any two spans it relates, it says whet
 *PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 19.40. (ii) **ADOPTED — proposed.** *Proposal:*
 that L3's specification state, for any two spans it relates, whether one nests in the other or the two cross-cut.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — as proposed; "A (8 row-parts: 19.37, 19.40, 38.62 (i), 38.62 (ii), 38.64 (i), 38.64 (ii), 38.83 (i), 38.84) — ADOPTED".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — as proposed; "C (2 row-parts: 38.83 (ii), 57.354) — ADOPTED".
+
 ---
 
 **Row 38.84 — the bare word banned as ambiguous.**
@@ -48743,6 +48841,8 @@ led *Naming discipline (the contract):* (locator: line 274).
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 19.40, which tabulates the same sentence.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "A (8 row-parts: 19.37, 19.40, 38.62 (i), 38.62 (ii), 38.64 (i), 38.64 (ii), 38.83 (i), 38.84) — ADOPTED".
 
 ---
 
@@ -71937,6 +72037,10 @@ published literature beside Row 20.31 (i)'s, that almost all published work on l
 single melodic line. (ii) **ADOPTED — proposed**. *Proposal:* that it record, with the same standing, that nothing
 comparable has been established for several simultaneous voices — both travelling with Row 20.31 (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_literature_facts_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — as proposed; "Rows 20.31 (i), 56.2 (i) and 56.2 (ii) — ADOPTED".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_literature_facts_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — as proposed; "Rows 20.31 (i), 56.2 (i) and 56.2 (ii) — ADOPTED".
+
 *At the source now.* The sentence stands at lines 1614–1616 of the document's blob at this batch's Task 0 commit, found
 as quoted; it opens on line 1614, after the bold sentence that opens the paragraph at line 1612, and the nearest heading
 at the blob is *"#### Layer 1 — the lossless note model (Built+Live)"*, under *3. Directory Structure*. The lines lie in
@@ -74305,6 +74409,8 @@ same content at another place of the document, lines 4255–4256, not this one.
 Roman numeral and the Nashville number encode the same decided information, two display renderings of one decided chord
 (the proposal of Row 4.2).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_display_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "A (10 row-parts: 4.2, 4.3, 7.329 (ii), 7.330, 15.42 (iii), 19.1, 19.3 (ii), 21.191, 21.205, 57.119) — ADOPTED".
+
 *At the source now.* The sentence stands at lines 7136–7138 of the document's blob at this batch's Task 0 commit, found
 as quoted, opening in line 7136 after the sentence on the chord-function notation preference. The nearest heading at the
 blob is *"#### Chord track population (grand staff)"*, under *11. Intonation*. The lines lie in none of member 28's
@@ -75439,6 +75545,8 @@ the example.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* travelling with Rows 38.83 (ii) and 57.353: that L3 never
 state that one span kind nests in another where the two cut across each other, key areas inside phrase units among them.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_span_kinds_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "C (2 row-parts: 38.83 (ii), 57.354) — ADOPTED".
 
 *At the source now.* The sentence stands at lines 269–270 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 269 after the sentence Row 57.353 carries and closing the bullet. The nearest heading at the
