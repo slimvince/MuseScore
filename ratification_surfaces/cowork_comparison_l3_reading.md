@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION lines in this file are those of §L.1 to §L.4 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.5 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION and RULED PLACEMENT lines in this file are those of §L.1 to §L.12 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.13 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -1255,6 +1255,8 @@ key-agnostic local cadence cues (`FRAMEWORK.md` §5, L1; DP-I, *"split — cues 
 L3-S21 cites them as IC-L1 S-45 to S-47). *(The L2 comparison placed the same statement RELOCATED to L1, at its Row
 4.4.)*
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* **RELOCATED** to ***L1 — Change points, candidates and notated evidence*** — "(the key-agnostic cues)".
+
 ---
 
 **Row 2.5 — earlier layers carry both readings forward with an uncertainty mark.**
@@ -1316,6 +1318,12 @@ arrival"* among the cadence's defining features, of which every type is a determ
 two texts above and OQ-L3-4. (ii) **UNPLACED** — the same, read: the two texts above. (iii) **ADOPTED — proposed.**
 *Proposal:* that L3 never attempt to identify a structural melody among the voices.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as decided against **in so far as they keep the fact unpublished**".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (iii) **ADOPTED — proposed** — as proposed; "L3 never attempts to identify a structural melody among the voices".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
+
 ---
 
 **Row 2.8 — this layer may not decide a full close from the melody note.** *WITHHELD — D-584.*
@@ -1334,6 +1342,8 @@ degree of the highest sounding pitch at the arrival"* as feature (6) and writes 
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above, the derivation's OQ-L3-4, and Row 2.7.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as decided against **in so far as they keep the fact unpublished**".
+
 ---
 
 **Row 2.9 — the top voice may nudge the confidence; it never decides.** *WITHHELD — D-584.*
@@ -1350,6 +1360,10 @@ type of the declared vocabularies is a deterministic function of L3-S16's featur
 sounding pitch's degree.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 2.7 (ii); read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* Its perfect/imperfect half: **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_mass_sitting.md, Ruling 1).* Its confidence half: **HISTORICAL** — "Recorded as decided against **in so far as they lower confidence by a fixed rule**: … and Row 2.9's confidence half".
 
 ---
 
@@ -1776,6 +1790,8 @@ phrase units. (iv) **ADOPTED — carried** (L3-S10). (v) **ADOPTED — carried**
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 2).* (i) **HISTORICAL** — "the ten rows that call the grouping flat are recorded as decided against".
+
 ---
 
 **Row 3.2 — the forward-only rebuild of the scattered live machinery.**
@@ -1805,6 +1821,8 @@ says *"It is a nested grouping over the units of the phrase reading"*, published
 derivation's §0 term for a section says *"Sections may nest."*
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above, and L3-S24, which publishes no form-function names.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 2).* **HISTORICAL** — "the ten rows that call the grouping flat are recorded as decided against".
 
 ---
 
@@ -3202,6 +3220,10 @@ highest sounding pitch at the arrival"* among the cadence's defining features.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above and OQ-L3-4. (ii) **UNPLACED** — the same; read: the two texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as decided against **in so far as they keep the fact unpublished**".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
+
 ---
 
 **Row 7.2 — the top-voice primitive demoted to an optional cue.**
@@ -3308,6 +3330,8 @@ lower confidence — the plagal and evaded cadences"*; L3-S17 says *"Which vocab
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above and OQ-L3-2.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 2).* **HISTORICAL** — "recorded as decided against **in so far as they fix one list as the only one**; their lists remain candidates for declared vocabularies.".
 
 ---
 
@@ -3673,6 +3697,10 @@ split in every vocabulary until OQ-L3-4 is ruled"*.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read: the two texts above, as Row 7.1 (ii). (ii) **UNPLACED** — read: the two
 texts above and OQ-L3-4, as Row 7.1 (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as decided against **in so far as they keep the fact unpublished**".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
+
 ---
 
 **Row 7.32 — a top-voice primitive optional, not a build gate.**
@@ -3726,6 +3754,8 @@ section boundary *"falls into four families, each entering as fitted terms"*, th
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by item (3)".
+
 ---
 
 **Row 7.35 — the output conforms to the DCML standard at full completeness.**
@@ -3743,6 +3773,8 @@ harmony-annotation standard"*; L3-S17 says *"Which vocabulary is principal is no
 
 *PROPOSED DISPOSITION.* **UNPLACED** — the sentence binds both the chord labels (L2's subject) and the cadence labels
 (L3's); read: the two texts above and OQ-L3-2.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 2).* **HISTORICAL** — "recorded as decided against **in so far as they fix one list as the only one**; their lists remain candidates for declared vocabularies.".
 
 ---
 
@@ -3774,6 +3806,10 @@ layer follows the **DCML convention** so its output is directly comparable to th
 L3-S20 handles it *"under both readings L2 admits (`I6/4` and `V(64)`)"* and says *"DP-N is not decided"*.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above and the charter's DP-N, which L3-S20 cites.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1).* **HISTORICAL** — "Row 7.37 in so far as it fixes one label for the analysis's output".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1).* Its rest: **RELOCATED** to ***the measurement of the analysis*** — "its stated purpose, comparison with the ground truth, belongs to *the measurement of the analysis*, as the L2 ruling placed Row 23.109 (i) and Row 5.42's six-four half".
 
 ---
 
@@ -3882,6 +3918,8 @@ L3-S17 says *"Which vocabulary is principal is not decided here (OQ-L3-2 ★)"*.
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read: the two texts above and OQ-L3-2. (ii) **ADOPTED — carried** (L3-S16).
 (iii) **ADOPTED — carried** (L3-S32).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 2).* (i) **HISTORICAL** — "recorded as decided against **in so far as they fix one list as the only one**; their lists remain candidates for declared vocabularies.".
 
 ---
 
@@ -4009,6 +4047,8 @@ cadence's chords *"in the arrival span's tonality"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*: the key-agnostic local
 cadence cues are L1's publication (the charter's DP-I; the derivation's L3-S21 cites them as IC-L1 S-45 to S-47).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* **RELOCATED** to ***L1 — Change points, candidates and notated evidence*** — "(the key-agnostic cues)".
 
 ---
 
@@ -4666,6 +4706,8 @@ suspension, not a tonic arrival"* and collapses the pair; L3-S20 handles it *"un
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above and the charter's DP-N.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1).* **HISTORICAL** — "Recorded as decided against: Row 7.94 (the collapse)".
+
 ---
 
 **Row 7.95 — a second-inversion tonic spelling never a tonic arrival.**
@@ -4679,6 +4721,8 @@ bullet (locator: line 259).
 under `V(64)` *"the arrival is bar 11 beat 1"*, the dominant, and under `I6/4` *"the arrival is bar 12"*, the V.
 
 *PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S20).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1).* **ADOPTED — carried** (L3-S20) — as proposed; "L3-S20 filed as the L3 statement. Row 7.95 carried (AGREES).".
 
 ---
 
@@ -4719,6 +4763,8 @@ seventh raises the cadence's vote weight.
 authentic cadence not require the dominant's seventh. (ii) **RELOCATED** — to *L2 — The tonal reading. The one entangled
 decision.*, as Row 7.53.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* (i) **ADOPTED — proposed** — "as types or rules of the declared vocabularies; each wording written from its source when that vocabulary is declared.".
+
 ---
 
 **Row 7.98 — the key-agnostic limit resolved downstream.**
@@ -4742,6 +4788,8 @@ being settled before L3 reads.
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: the aggregation of the
 votes into the tonality is L2's.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed; "(the aggregation into the tonality), as the reading file proposes".
+
 ---
 
 **Row 7.99 — the authentic-versus-passing call a key-layer judgment.**
@@ -4761,6 +4809,8 @@ judgement"*; L3-S17 makes the type *"a view of the defining features"* read at L
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, travelling with Row
 7.98.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "Row 7.99 **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*".
+
 ---
 
 **Row 7.100 — the bass five-to-one the perfect criterion, not the family gate.**
@@ -4776,6 +4826,8 @@ inverted authentic cadence does not have it)." — §5.2, the authentic bullet (
 L3-S17 says feature (6) *"blocks the PAC/IAC split in every vocabulary until OQ-L3-4 is ruled"*.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above and OQ-L3-4, as Row 7.1 (i).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
 
 ---
 
@@ -4798,6 +4850,10 @@ at the arrival"* among the defining features.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read: the two texts above and OQ-L3-4. (ii) **UNPLACED** — read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as decided against **in so far as they keep the fact unpublished**".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
+
 ---
 
 **Row 7.102 — perfect: dominant and tonic both in root position.**
@@ -4815,6 +4871,8 @@ are in **root position**"*; L3-S17 says feature (6) *"blocks the PAC/IAC split i
 ruled"*.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above and OQ-L3-4.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
 
 ---
 
@@ -4834,6 +4892,8 @@ L3-S17 says feature (6) *"blocks the PAC/IAC split in every vocabulary until OQ-
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above and OQ-L3-4.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
+
 ---
 
 **Row 7.104 — the branch is total: perfect or imperfect, no third outcome.**
@@ -4850,6 +4910,8 @@ cannot be computed carries a named reason"* and that feature (6) *"blocks the PA
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above, L3-S18 (*type not computable* kept distinct from *no
 cadence*) and OQ-L3-4.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* **HISTORICAL** — "Row 7.104: the perfect/imperfect split is computable wherever its features carry values; *type not computable* only where a feature is missing.".
 
 ---
 
@@ -4868,6 +4930,8 @@ every type a deterministic function.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as decided against **in so far as they keep the fact unpublished**".
+
 ---
 
 **Row 7.106 — the perfect/imperfect call not rested on the top voice.**
@@ -4884,6 +4948,8 @@ melodic-arrival sub-bullet (locator: lines 294–295).
 sounding pitch's degree.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above and OQ-L3-4.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
 
 ---
 
@@ -4906,6 +4972,10 @@ inversion"*; L3-S17 says feature (6) *"blocks the PAC/IAC split in every vocabul
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read: the two texts above. (ii) **UNPLACED** — read: the two texts above and
 OQ-L3-4.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as decided against **in so far as they keep the fact unpublished**".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
+
 ---
 
 **Row 7.108 — no melody identification.**
@@ -4920,6 +4990,8 @@ melody, and does not state that it never does.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — the proposal of Row 2.7 (iii): that L3 never attempt to identify a
 structural melody among the voices.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* **ADOPTED — proposed** — as proposed; "L3 never attempts to identify a structural melody among the voices".
 
 ---
 
@@ -4936,6 +5008,8 @@ the vocabularies to be declared.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that the half cadence so defined be a type of a vocabulary
 declared under L3-S17.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* **ADOPTED — proposed** — "as types or rules of the declared vocabularies; each wording written from its source when that vocabulary is declared.".
 
 ---
 
@@ -4954,6 +5028,8 @@ admitted as a half cadence; (ii) at lower weight.
 does not settle whether the *"weight"* is the cadence's tonic-vote weight (§5.2's vote) or its own confidence; the
 first would be RELOCATED as Row 7.53 is, the second set against L3-S19.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* (i) **ADOPTED — proposed** — "as types or rules of the declared vocabularies; each wording written from its source when that vocabulary is declared.".
+
 ---
 
 **Row 7.111 — the Phrygian half cadence.**
@@ -4967,6 +5043,8 @@ pre-dominant moving to the dominant with the **bass descending a semitone** into
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 7.109.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* **ADOPTED — proposed** — "as types or rules of the declared vocabularies; each wording written from its source when that vocabulary is declared.".
 
 ---
 
@@ -4986,6 +5064,8 @@ L3-S19 says a cadence's *"mass is computed from L2's rival objects and ranked wh
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15). (ii) **UNPLACED** — a rule on L3's own subject that a
 derived statement differs from; read: the two texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_mass_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Recorded as decided against **in so far as they lower confidence by a fixed rule**".
+
 ---
 
 **Row 7.113 — the deceptive cadence.**
@@ -5000,6 +5080,8 @@ instead on the submediant (the lowered submediant in minor)." — §5.2, the dec
 disagree on, and defines none.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 7.109.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* **ADOPTED — proposed** — "as types or rules of the declared vocabularies; each wording written from its source when that vocabulary is declared.".
 
 ---
 
@@ -5020,6 +5102,10 @@ rule"*; L3-S19 computes a cadence's mass *"from L2's rival objects and ranked wh
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — proposed** — travelling with Row 7.109. (ii) **UNPLACED** — read: the two texts
 above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* (i) **ADOPTED — proposed** — "as types or rules of the declared vocabularies; each wording written from its source when that vocabulary is declared.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_mass_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Recorded as decided against **in so far as they lower confidence by a fixed rule**".
 
 ---
 
@@ -5042,6 +5128,8 @@ mass *"from L2's rival objects and ranked whole readings"*.
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read: the two texts above, L3-S16's premise and OQ-L3-5. (ii) **UNPLACED** —
 read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_mass_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Recorded as decided against **in so far as they lower confidence by a fixed rule**".
 
 ---
 
@@ -5124,6 +5212,8 @@ relative weights are deferred)." — §5.2 (locator: lines 322–323).
 chords *"in the arrival span's tonality"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, as Row 7.52.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* **RELOCATED** to ***L1 — Change points, candidates and notated evidence*** — "(the key-agnostic cues)".
 
 ---
 
@@ -6192,6 +6282,8 @@ nothing L3 publishes."*
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read: the two texts above and OQ-L3-4. (ii) **RELOCATED** — to *L2 — The
 tonal reading. The one entangled decision.*, as Row 7.53.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
+
 ---
 
 **Row 7.190 — a tonicization that stays home.**
@@ -6812,6 +6904,8 @@ does not read a resolved key"*; L3-S16 reads the cadence's chords *"in the arriv
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, as Row 7.52 (Row 2.4
 at §10 carries the same statement from `ARCHITECTURE.md`).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* **RELOCATED** to ***L1 — Change points, candidates and notated evidence*** — "(the key-agnostic cues)".
+
 ---
 
 **Row 7.230 — D2: the event-pair feature test with the phrase gate is the corrected design.** *WITHHELD — D-336.*
@@ -7108,6 +7202,8 @@ computes a cadence's mass *"from L2's rival objects and ranked whole readings"*.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 7.112 (ii).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_mass_sitting.md, Ruling 1).* Its by-rule part: **HISTORICAL** — "Recorded as decided against **in so far as they lower confidence by a fixed rule**".
+
 ---
 
 **Row 7.250 — defensible tonicization-versus-modulation disagreements are non-errors.**
@@ -7391,6 +7487,8 @@ instrumentation)." — §12 (locator: lines 712–714).
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above and OQ-L3-4, as Row 7.1 (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
+
 ---
 
 **Row 7.270 — glossary: tonicization.**
@@ -7445,6 +7543,8 @@ suspension, not a tonic arrival." — §12 (locator: lines 718–719).
 L3-S20 handles it *"under both readings L2 admits (`I6/4` and `V(64)`)"*, *"and DP-N is not decided"*.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 7.94.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1).* **HISTORICAL** — "Row 7.273 (the glossary entry) in so far as it picks one theory".
 
 ---
 
@@ -7757,6 +7857,8 @@ entangled decision.*, as Row 7.124. (iv) **RELOCATED** — to *L2 — The tonal 
 the tonality and the chord are decided, jointly or apart, is that charter's subject. (v) **UNPLACED** — travelling with
 Row 7.47.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (ii) **RELOCATED** to ***L1 — Change points, candidates and notated evidence*** — "(the key-agnostic cues)".
+
 ---
 
 **Row 7.295 — the function layer defines none of its own inputs.**
@@ -7870,6 +7972,10 @@ outgoing top voice is *"at most a **soft, optional confidence nudge**"*; L3-S16 
 sounding pitch at the arrival"* as feature (6).
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — as Row 7.1 (i). (ii) **UNPLACED** — as Row 7.1 (ii).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as decided against **in so far as they keep the fact unpublished**".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
 
 ---
 
@@ -8279,6 +8385,8 @@ complete"*; L3-S17 says *"Which vocabulary is principal is not decided here (OQ-
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read: the two texts above and OQ-L3-2. (ii) **ADOPTED — proposed** — the
 proposal of Row 4.2 at §12: every display string produced outside the analysis, from published facts.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 2).* (i) **HISTORICAL** — "recorded as decided against **in so far as they fix one list as the only one**; their lists remain candidates for declared vocabularies.".
 
 ---
 
@@ -8902,6 +9010,8 @@ two texts above and OQ-L3-2. (ii) **UNPLACED** — the same; read: the two texts
 
 *RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (ii) **HISTORICAL** — "the cadence is L3's, read off L2's decided chords at L3's decided phrase ends, not detected by the old function layer and read by the grouping layer; follows from the charter".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 2).* (i) **HISTORICAL** — "recorded as decided against **in so far as they fix one list as the only one**; their lists remain candidates for declared vocabularies.".
+
 ---
 
 **Row 8.12 — the glossary entry *Key-area [MT]*: a maximal run sharing one local key.**
@@ -9094,6 +9204,8 @@ says the section grouping *"is a nested grouping over the units of the phrase re
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 2).* **HISTORICAL** — "the ten rows that call the grouping flat are recorded as decided against".
+
 ---
 
 **Row 8.22 — the glossary entry *GTTM*: no such trees built.**
@@ -9111,6 +9223,8 @@ nested grouping over the units of the phrase reading"*, defended by *"Lerdahl & 
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 2).* **HISTORICAL** — "the ten rows that call the grouping flat are recorded as decided against".
 
 ---
 
@@ -9131,6 +9245,8 @@ form-function names"*.
 
 *PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S24).
 
+*RULED PLACEMENT (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 3).* Held, travelling with the naming-scheme question — "their proposed disposition, "ADOPTED — carried (L3-S24)", no longer stands as proposed".
+
 ---
 
 **Row 8.24 — grouping is assembly, not detection.**
@@ -9149,6 +9265,8 @@ texts above.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* Its section side: **HISTORICAL** — "recorded as overtaken by the charter".
+
 ---
 
 **Row 8.25 — the grouping assembled into one non-nested structure.**
@@ -9166,6 +9284,8 @@ annotates"*; L3-S22 says *"It is a nested grouping over the units of the phrase 
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 2).* **HISTORICAL** — "the ten rows that call the grouping flat are recorded as decided against".
 
 ---
 
@@ -9313,6 +9433,8 @@ GTTM reductions — §0)"*; L3-S22 says *"It is a nested grouping over the units
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 2).* **HISTORICAL** — "the ten rows that call the grouping flat are recorded as decided against".
+
 ---
 
 **Row 8.35 — no formal functions and no multi-span sections.**
@@ -9331,6 +9453,10 @@ form-function names"*. (ii) L3-S22: **DIFFERS**.
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S24). (ii) **UNPLACED** — a rule on L3's own subject that a
 derived statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter".
+
+*RULED PLACEMENT (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 3).* (i) Held, travelling with the naming-scheme question — "their proposed disposition, "ADOPTED — carried (L3-S24)", no longer stands as proposed".
 
 ---
 
@@ -9354,6 +9480,8 @@ an unfitted weight, a stand-in value or a provisional input."*
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above. (ii) **ADOPTED — carried** (L3-S33).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as overtaken by the charter".
+
 ---
 
 **Row 8.37 — melody identification, voice leading and the melodic phrase are not this layer's.**
@@ -9370,6 +9498,8 @@ overlaps across voices, is the axis's, and L3 reads no fact of the axis in this 
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — proposed.** *Proposal:* that L3 never attempt to identify a melody or structural
 line among the voices. (ii) **ADOPTED — carried** (L3-S42).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* (i) **ADOPTED — proposed** — "follow from Ruling 1c of the 2026-11-03 cadence-features record"; that ruling: "L3 never attempts to identify a structural melody among the voices".
 
 ---
 
@@ -9390,6 +9520,8 @@ across voices, is the axis's"*.
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — proposed** — travelling with Row 8.37 (i). (ii) **RELOCATED** — to *the second
 axis — voice leading*. (iii) **ADOPTED — carried** (L3-S42).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* (i) **ADOPTED — proposed** — "follow from Ruling 1c of the 2026-11-03 cadence-features record"; that ruling: "L3 never attempts to identify a structural melody among the voices".
 
 ---
 
@@ -9427,6 +9559,10 @@ defining features.
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above and OQ-L3-4. (ii) **UNPLACED** — the same; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as decided against **in so far as they keep the fact unpublished**".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
 
 ---
 
@@ -9742,6 +9878,8 @@ at a phrase end L3 has decided"*.
 two texts above and OQ-L3-2. (ii) **UNPLACED** — the same; read: the two texts above.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (ii) **HISTORICAL** — "the cadence is L3's, read off L2's decided chords at L3's decided phrase ends, not detected by the old function layer and read by the grouping layer; follows from the charter".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 2).* (i) **HISTORICAL** — "recorded as decided against **in so far as they fix one list as the only one**; their lists remain candidates for declared vocabularies.".
 
 ---
 
@@ -10262,6 +10400,8 @@ L3-S17 says *"Feature (6) blocks the PAC/IAC split in every vocabulary until OQ-
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above and OQ-L3-4. (ii) **ADOPTED — carried** (L3-S15).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* (i) **HISTORICAL** — "Rows 8.88 (i) and 38.26 (i) recorded as decided against".
+
 ---
 
 **Row 8.89 — an unresolved mark surfaced on the groups that contain it.** *WITHHELD — D-460.*
@@ -10387,6 +10527,8 @@ over the units of the phrase reading"*.
 two texts above. (ii) **UNPLACED** — the same.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 2).* (ii) **HISTORICAL** — "the ten rows that call the grouping flat are recorded as decided against".
 
 ---
 
@@ -10665,6 +10807,10 @@ L3-S22 says *"The section grouping is an L3 decision."*
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above. (ii) **ADOPTED — carried** (L3-S24).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as overtaken by the charter".
+
+*RULED PLACEMENT (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 3).* (ii) Held, travelling with the naming-scheme question — "their proposed disposition, "ADOPTED — carried (L3-S24)", no longer stands as proposed".
+
 ---
 
 **Row 8.114 — forms and sections a higher layer's, buildable with an unvalidated mark.** *WITHHELD — D-456.*
@@ -10687,6 +10833,8 @@ says *"The section grouping is an L3 decision."*
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above. (ii) **ADOPTED — carried** (L3-S33).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as overtaken by the charter".
+
 ---
 
 **Row 8.115 — the core's four outputs.** *WITHHELD — D-456.*
@@ -10703,6 +10851,8 @@ the hosted schema spans"*, without sections; L3-S22 says *"The section grouping 
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter".
 
 ---
 
@@ -11099,6 +11249,8 @@ L3-S22 says *"The section grouping is an L3 decision."*
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter".
+
 ---
 
 **Row 8.141 — sections out by default.**
@@ -11114,6 +11266,8 @@ grouping is an L3 decision."*
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter".
 
 ---
 
@@ -24412,6 +24566,8 @@ two derived statements differ from; read: the two texts above, as at Row 8.24.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (ii), its section side: **HISTORICAL** — "recorded as overtaken by the charter".
+
 ---
 
 **Row 19.31 — the atomic unit the constant-sonority slice; phrases, key-areas and sections groupings derived from it.**
@@ -24434,6 +24590,8 @@ grouping is an L3 decision"*.
 points bound the slices. (ii) **UNPLACED** — travelling with Row 19.30 (ii); read: the two texts above.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (ii), its section side: **HISTORICAL** — "recorded as overtaken by the charter".
 
 ---
 
@@ -24585,6 +24743,10 @@ covers, as at Row 8.18. (vii) **HISTORICAL** — a status at the time of writing
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (iii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (vii) **HISTORICAL** — as proposed; "recorded as overtaken by the charter".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 2).* (iii) **HISTORICAL** — "the ten rows that call the grouping flat are recorded as decided against".
+
 ---
 
 **Row 19.39 — how the span kinds relate: nesting and cross-cutting.**
@@ -24679,6 +24841,8 @@ grouping is an L3 decision"*, its top level covering the working span.
 
 *PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status at the time of writing, travelling with Row 19.38 (vii). (ii)
 **HISTORICAL.**
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (i) **HISTORICAL** — as proposed; "recorded as overtaken by the charter".
 
 ---
 
@@ -24926,6 +25090,8 @@ derived statements differ from; read: the two texts above, as at Row 8.24. (iv) 
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (iii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (iii), its section side: **HISTORICAL** — "recorded as overtaken by the charter".
+
 ---
 
 **Row 19.59 — six layers not a ceiling: the half-tier, the vocabulary, the recognition consumer, the axis, and grouping
@@ -24958,6 +25124,8 @@ Row 19.56 (i). (ii) **RELOCATED** — to ***the second axis — voice leading***
 are the axis's voice-linear view, motion and interval profiles, texture classification and requester built and dormant
 at the current commit, and does the record that measured the orthogonality reproduce it? (iv) **UNPLACED** — read: the
 two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (iv) **HISTORICAL** — "recorded as overtaken by the charter".
 
 ---
 
@@ -26490,6 +26658,8 @@ L3-S16 reads the cadence's chords *"in the arrival span's tonality"*.
 (ii) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which publishes the key-agnostic
 local cadence cues, as Row 2.4.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (ii) **RELOCATED** to ***L1 — Change points, candidates and notated evidence*** — "(the key-agnostic cues)".
+
 ---
 
 **Row 20.47 — the key-area grouping not read, a post-grouping of the decided tonality.** *WITHHELD — D-605.*
@@ -26521,6 +26691,8 @@ hypothesis"*, the cadence taken before the tonality it bears on; L3-S16 reads th
 span's tonality"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.45.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed; "(the aggregation into the tonality), as the reading file proposes".
 
 ---
 
@@ -34885,6 +35057,8 @@ ruled"*.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `detectCadences()` label a perfect authentic cadence on V
 or viio then I with a confidence of 0.8 or more on both, at the current commit?
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* **QUARANTINED** — "Row 28.47 **QUARANTINED** for the audit".
+
 ---
 
 **Row 28.48 — the plagal cadence: IV to I.**
@@ -40762,6 +40936,8 @@ arrival"* among the cadence's defining features.
 two texts above, as Rows 2.9 and 7.31 (i). (ii)
 **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which computes from every eligible voice.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as decided against **in so far as they keep the fact unpublished**".
+
 ---
 
 **Row 36.37 — the products: the per-voice and texture profiles, the picked ticks, and the region flag.**
@@ -42650,6 +42826,8 @@ defining features.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above, as Row 36.36 (i). (ii) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***,
 which computes from every eligible voice.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as decided against **in so far as they keep the fact unpublished**".
 
 ---
 
@@ -47276,6 +47454,8 @@ two texts above, and L3-S16, under which the cadence is read off L2's decided ch
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides where the tonality changes.
 (iii) **HISTORICAL** — the gated Stage-5 step of a superseded plan, as Row 19.26.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* (i) **HISTORICAL** — "Rows 8.88 (i) and 38.26 (i) recorded as decided against".
+
 ---
 
 **Row 38.27 — the residual coupling of key and chord, where a key-first reading plateaus.**
@@ -48130,6 +48310,8 @@ among them is the second axis's. (ii) **UNPLACED** — read: as at Row 19.38 (vi
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose rivals carry tonicization against
 modulation and whose pivot is one span with the other tonality's reading as a rival (L2-S19). (iv) **ADOPTED — carried**
 (L3-S16).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (i) **HISTORICAL** — as proposed; "recorded as overtaken by the charter".
 
 ---
 
@@ -57960,6 +58142,8 @@ candidate scoring the premise conditions, as Row 16.10 placed this document's de
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the chord per span as
 degree, quality, figure and applied target.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1).* (ii) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "Row 42.36 (ii) (*"representable as its own degree class"*) is the `Cad64` reading the L2 ruling already excluded by name; nothing is added at L3.".
+
 ---
 
 **Row 42.37 — P7: segment boundaries depending on meter and fermatas, not on the key.**
@@ -63983,6 +64167,10 @@ inversion"*; L3-S17 says *"Which vocabulary is principal is not decided here"*.
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the entry is a record of the catalog of named progressions, which no
 charter of `FRAMEWORK.md` §5 names (Row 44.1), while the cadence types it lists are L3's subject, L3-S17 publishing each
 type as a view under declared vocabularies and choosing none principal.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* Its "perfect/imperfect by inversion" clause: **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 2).* **HISTORICAL** — "recorded as decided against **in so far as they fix one list as the only one**; their lists remain candidates for declared vocabularies.".
 
 ---
 
@@ -73215,6 +73403,8 @@ to an annotation standard's labels bears on grading, which L3-S42 (ii) gives to 
 comparison relocated the row this one quotes, L2 Row 5.340, to L3; this claim is placed elsewhere, as a fact beside the
 disposition and not a correction of that comparison.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 2).* (i) **HISTORICAL** — "recorded as decided against **in so far as they fix one list as the only one**; their lists remain candidates for declared vocabularies.".
+
 *At the source now.* The sentence stands at lines 868–870 of the document's blob at this batch's Task 0 commit, found as
 quoted: it opens at the end of line 868, after the item's bold lead, which Row 7.329 tabulates, so it begins one line
 before the L2 row's own locator, and ends on line 870, where §6.7's item 77 places it. The nearest heading at the blob
@@ -74631,6 +74821,10 @@ a nested grouping over the units of the phrase reading"*.
 two texts above, travelling with Row 8.25. (ii) **UNPLACED** — a rule on L3's own subject that a derived statement
 differs from; read: the two texts above, travelling with Row 8.34.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 2).* (i) **HISTORICAL** — "the ten rows that call the grouping flat are recorded as decided against".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 2).* (ii) **HISTORICAL** — "the ten rows that call the grouping flat are recorded as decided against".
+
 *At the source now.* The label stands at line 341 of the document's blob at this batch's Task 0 commit, found as quoted,
 the quotation dropping the list marker that opens the line and keeping the bold markers; the bullet's body goes on at
 lines 341–344 with the sentences §6.8 lists as items 32 and 33. The nearest heading at the blob is *"## 9. Architecture
@@ -74704,6 +74898,8 @@ L3-S22 says *"The section grouping is an L3 decision."*
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above, travelling with Row 8.36 (i). (ii) **ADOPTED — carried** (L3-S33), travelling with Row 8.36 (ii).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as overtaken by the charter".
 
 *At the source now.* The sentence stands at line 140 of the document's blob at this batch's Task 0 commit, found as
 quoted, closing the bullet after the sentence Row 8.36 tabulates. The nearest heading at the blob is *"## 2. The layer
@@ -80204,6 +80400,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   relocated L2 Row 5.340 to L3.)*
 - Rows 57.318 (i) and 57.322 (i) — that formal functions and multi-span sections, and sections, periods and sentences,
   lack a ground truth in the held corpus. *(The L2 comparison relocated L2 Rows 41.45 and 41.125 to L3.)*
+- Row 7.37, its rest — that the DCML conventions for variants serve comparison with the ground truth. *(cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
