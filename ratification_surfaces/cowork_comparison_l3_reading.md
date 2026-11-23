@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION and RULED PLACEMENT lines in this file are those of §L.1 to §L.12 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.13 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.20 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.21 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -679,6 +679,8 @@ decided in computing it, and it reads no sounding note."*
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what does `ChordSliceDecoder` compute per slice, from which
 inputs, and does any code path that runs at the current commit consume its output?
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a)).* **QUARANTINED** — as proposed, "The proposals stand (seven RELOCATED to L2, three QUARANTINED)"; "decided against by the charter's lines 489–492, with which the method stated beside the 2026-10-08 Ruling 1 agrees". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 1.16 — production runs the legacy path; the decoder runs only under a diagnostic.**
@@ -731,6 +733,8 @@ function of that span's four chord fields and its tonality"* and that *"Nothing 
 
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do `decideSlice`, `decode` and `redecodeRange` do what the row
 says, and is any of them reached at the current commit?
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a)).* **QUARANTINED** — as proposed, "The proposals stand (seven RELOCATED to L2, three QUARANTINED)"; "decided against by the charter's lines 489–492, with which the method stated beside the 2026-10-08 Ruling 1 agrees". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -1292,6 +1296,8 @@ principal reading, even where a merged rival carries more mass."*
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
 tonality and the chord together among rivals.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (f)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "the charter's line 478". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 2.7 — the perfect/imperfect call on the bass-derived inversion; the soprano a soft nudge; no melody
@@ -1792,6 +1798,8 @@ phrase units. (iv) **ADOPTED — carried** (L3-S10). (v) **ADOPTED — carried**
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 2).* (i) **HISTORICAL** — "the ten rows that call the grouping flat are recorded as decided against".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_key_areas_sitting.md, Ruling 2).* (iii) **ADOPTED — proposed** — "Rows 3.1(iii), 3.4, 8.12, 8.75, 20.47(ii), 57.278 and 57.369 ADOPTED (the definition as ruled)".
+
 ---
 
 **Row 3.2 — the forward-only rebuild of the scattered live machinery.**
@@ -1838,6 +1846,8 @@ derivation's §0 term for a section says *"Sections may nest."*
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 3.1 (iii). *Proposal:* that a key area be a run of
 consecutive spans sharing one tonality.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_key_areas_sitting.md, Ruling 2).* **ADOPTED — proposed** — "Rows 3.1(iii), 3.4, 8.12, 8.75, 20.47(ii), 57.278 and 57.369 ADOPTED (the definition as ruled)".
+
 ---
 
 **Row 3.5 — a key area's opening and closing; a region below the confidence test keeps its own key; Roman numerals
@@ -1864,6 +1874,10 @@ differs and that span's tonality clears a declared confidence test. (ii) **ADOPT
 whose tonality differs without clearing the test keep its own tonality while being grouped into the enclosing key area —
 L3-S38 carries the first half only. (iii) **UNPLACED** — read: the outgoing sentence, L3-S7, and the L2 comparison's
 §10, which relocates the same clause to L3 (its Row 22.92(iii), placed from UNPLACED by ruling).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_key_areas_sitting.md, Ruling 2).* (i) **HISTORICAL** — "Rows 3.5(i) and 3.5(ii) decided against".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_key_areas_sitting.md, Ruling 2).* (ii) **HISTORICAL** — "Rows 3.5(i) and 3.5(ii) decided against".
 
 ---
 
@@ -2365,6 +2379,8 @@ a published fact of L3.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, §2 (b)).* The remainder of its figured-bass item: **ADOPTED — carried** (L3-S27) — "a display may still render it (L3-S27's views)"; "Row 4.17 differs only where it treats the figured bass as a formatting choice rather than a published fact; the charter places it among L3's outputs". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 4.18 — the planned spelling conventions.**
@@ -2456,6 +2472,8 @@ the derivation flags L3-S4 as coinciding with a ruled sentence the L0/L1 input c
 check.)* (ii) **QUARANTINED.** *Audit question:* what does `ChordAnalysisTone::isBass` mark, and is it the lowest
 sounding pitch?
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, Ruling 1).* (i) **ADOPTED — carried** (L3-S28) — "Rows 4.23(i), 4.28 and 4.29 placed with the new output".
+
 ---
 
 **Row 4.24 — step 2: each upper tone's interval above the bass, reduced within the octave.**
@@ -2473,6 +2491,8 @@ says *"The full figure (every spelled interval of L3-S25) is the published fact"
 *"a second convention choice, which the declared convention fixes"*.
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S25). (ii) **UNPLACED** — read: the two texts above.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, §2 (c)).* (ii), its remainder: **ADOPTED — carried** (L3-S27) — "L3-S27's full figure, short forms a view under a named convention"; "on this side's reading of D-295 (octave reduction loses 9 against 2)". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -2505,6 +2525,8 @@ abbreviated figure"*.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, §2 (c)).* Its remainder: **ADOPTED — carried** (L3-S27) — "L3-S27's full figure, short forms a view under a named convention"; "on this side's reading of D-295 (octave reduction loses 9 against 2)". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 4.27 — step 5: accidentals where a tone departs from the key signature.**
@@ -2536,6 +2558,8 @@ decided"*, the chord, its figure and the assignments being L2's.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, Ruling 1).* **ADOPTED — carried** (L3-S28) — "Rows 4.23(i), 4.28 and 4.29 placed with the new output".
+
 ---
 
 **Row 4.29 — figured bass annotates every sounding pitch, suspensions and passing tones included.**
@@ -2553,6 +2577,8 @@ passing tones"*; L3-S25 figures the chord members and the suspensions and appogg
 of the other relations are not figured"*, and is falsified *"if a passing note is figured"*.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above, and L3-S28 on the continuo grain.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, Ruling 1).* **ADOPTED — carried** (L3-S28) — "Rows 4.23(i), 4.28 and 4.29 placed with the new output".
 
 ---
 
@@ -2720,6 +2746,8 @@ identity"*, and says *"It does not republish the segmentation."*
 *PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* where does `analyzeHarmonicRhythm()` place its boundaries,
 and is that function reached at the current commit? (ii) **QUARANTINED.** *Audit question:* which chord analysis runs at
 each boundary, and on which arm?
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (a)).* (i) **QUARANTINED** — as proposed, "QUARANTINED with their audit questions, as proposed"; "Descriptions of the old code"; its L2 twin: "Row 23.314 (recorded as derivation, challengeable)". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -3053,6 +3081,8 @@ root, quality, figure, applied target, tonality"*, because *"A single count woul
 *PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* the same as Row 5.4 (i), with whether a change of figure
 alone survives the default mode. (ii) **QUARANTINED.** *Audit question:* the same as Row 5.4 (i).
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (a)).* (i) **QUARANTINED** — as proposed, "QUARANTINED with their audit questions, as proposed"; "Descriptions of the old code"; its L2 twin: "30.16(i) (ruled, adjacent spans Ruling 1)". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 6.5 — the chord staff keeps every detected event, with carry-in notes.**
@@ -3087,6 +3117,8 @@ with *"the series of its span durations in beats of the notated meter"* per phra
 
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what does each region carry, and is any harmonic-rhythm value
 computed beyond the region's start and end?
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (a)).* **QUARANTINED** — as proposed, "QUARANTINED with their audit questions, as proposed"; "Descriptions of the old code"; its L2 twin: "30.19 (proposed only)". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -3498,6 +3530,8 @@ notes."*
 chord carries is L2's decision. (ii) **RELOCATED** — to *L0 — The notated record* (the input contract): spelled pitch is
 given there, and one reader of it is that charter's concern.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (c)).* (i) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "proposals stand"; "each augmented sixth is its own L2 chord kind (chord-vocabulary Ruling 1)". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 7.19 — elsewhere the layer does not depend on spelling.**
@@ -3513,6 +3547,8 @@ L3-S2 says *"The root is spelled."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, travelling with Row
 7.18 (i): the sentence bounds the spelling use of the labelling the row relocates.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (b)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "the degree is L2's decided field". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -3809,7 +3845,7 @@ L3-S20 handles it *"under both readings L2 admits (`I6/4` and `V(64)`)"* and say
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1).* **HISTORICAL** — "Row 7.37 in so far as it fixes one label for the analysis's output".
 
-*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1).* Its rest: **RELOCATED** to ***the measurement of the analysis*** — "its stated purpose, comparison with the ground truth, belongs to *the measurement of the analysis*, as the L2 ruling placed Row 23.109 (i) and Row 5.42's six-four half".
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1).* Its remainder: **RELOCATED** to ***the measurement of the analysis*** — "its stated purpose, comparison with the ground truth, belongs to *the measurement of the analysis*, as the L2 ruling placed Row 23.109 (i) and Row 5.42's six-four half".
 
 ---
 
@@ -4030,6 +4066,8 @@ L3-S2 takes the root from the degree: *"the span's spelled tonic transposed by t
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: the degree is L2's
 decided chord field.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (b)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "the degree is L2's decided field". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -4643,6 +4681,8 @@ L3-S2 makes the root *"the span's spelled tonic transposed by the diatonic inter
 alteration applied"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.51.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (b)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "the degree is L2's decided field". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -6215,6 +6255,8 @@ augmented-sixth bullet (locator: lines 514–516).
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.18 (i).
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (c)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "proposals stand"; "each augmented sixth is its own L2 chord kind (chord-vocabulary Ruling 1)". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 7.186 — modal mixture: a borrowed degree changing the quality, not the key.**
@@ -6601,6 +6643,8 @@ fact may change an L2 fact, a rival or a mass."*
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the uncertainty surface* (NOT A LAYER). (ii) **RELOCATED** — to *L2 — The
 tonal reading. The one entangled decision.*, as Row 7.15.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* (i) **RELOCATED** to ***the uncertainty surface*** — as proposed; "Agrees with its twin — RELOCATED to *the uncertainty surface*, as proposed."; its L2 twin: "7.209(i)↔5.218(i)".
+
 ---
 
 **Row 7.210 — case 1: agreement reinforces.**
@@ -6774,6 +6818,8 @@ applied secondary leading tone)." — §8, the spelling bullet (locator: line 61
 distinction"*; L3-S2 says *"The root is spelled."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.19.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (b)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "the degree is L2's decided field". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -9027,6 +9073,8 @@ local key." — §0, the third entry (locator: lines 59–60).
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that L3 publish key areas — maximal runs of consecutive spans
 of L2's segmentation sharing one tonality, each closing at a change of tonality — as a grouping of its own.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_key_areas_sitting.md, Ruling 2).* **ADOPTED — proposed** — "Rows 3.1(iii), 3.4, 8.12, 8.75, 20.47(ii), 57.278 and 57.369 ADOPTED (the definition as ruled)".
+
 ---
 
 **Row 8.13 — the glossary entry *Modulation / local key [MT]*: the local key is committed upstream.**
@@ -9388,6 +9436,8 @@ rival or a mass."*
 *PROPOSED DISPOSITION.* (i) **ADOPTED — proposed.** *Proposal:* that a grouping unit containing a span whose L2 reading
 is left unresolved carry that mark visibly at that location, unchanged. (ii) **ADOPTED — carried** (L3-S38).
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_key_areas_sitting.md, §2c).* (i) **QUARANTINED** — "placed QUARANTINED, this side's derivation"; audit question: "does any built code hand the function layer's open marks to a grouping step, and does that step pass them unchanged?"; "one treatment with the open-mark rows placed QUARANTINED by Ruling 3 of `cowork_rulings_2026_10_06_l2_publication_to_next_layer_sitting.md`". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 8.32 — the recognised-schema spans hosted as cross-cutting labels.**
@@ -9596,6 +9646,8 @@ consumes from L2 *"the charter's list and its rivals (L2-S45)"*, and the cadence
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_boundaries_sitting.md, Ruling 2).* **HISTORICAL** — "HISTORICAL — a rule replaced by L3-S37"; "Rows 8.42 and 8.109 HISTORICAL".
 
 ---
 
@@ -9965,6 +10017,8 @@ says *"Where they do, L3 asks for a larger span from the caller, as L2 does."*
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above and OQ-L3-10.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_edge_of_span_sitting.md, Ruling 1).* **HISTORICAL** — "Recorded as decided against: the outgoing texts' "the grouping layer only tags the edge and never acts on the tag" — Rows 8.64, 8.65, 54.14(ii), 54.36(i)".
+
 ---
 
 **Row 8.65 — the cue only surfaced; acting on it is the orchestrator's, never the grouping's.** *WITHHELD — D-457.*
@@ -9985,6 +10039,8 @@ may do so put to the user (*"OQ-L3-10 ★"*).
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above and OQ-L3-10.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_edge_of_span_sitting.md, Ruling 1).* **HISTORICAL** — "Recorded as decided against: the outgoing texts' "the grouping layer only tags the edge and never acts on the tag" — Rows 8.64, 8.65, 54.14(ii), 54.36(i)".
 
 ---
 
@@ -10165,6 +10221,8 @@ a new one at each local-key change**." — §5.2 (locator: lines 246–248).
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.12.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_key_areas_sitting.md, Ruling 2).* **ADOPTED — proposed** — "Rows 3.1(iii), 3.4, 8.12, 8.75, 20.47(ii), 57.278 and 57.369 ADOPTED (the definition as ruled)".
+
 ---
 
 **Row 8.76 — a key change may fall within a punctuation-span; key areas not nested in them.**
@@ -10199,6 +10257,8 @@ it."*
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* **HISTORICAL** — "HISTORICAL — a rule replaced by L3-S34, contingent on L3-S34's ratification."; "8.77's contingency now met".
+
 ---
 
 **Row 8.78 — any confidence the grouping publishes: a bounded margin, not a calibrated probability, from the declared key confidence.** *WITHHELD — D-459.*
@@ -10227,6 +10287,8 @@ the model's own distribution, not calibrated, comparable only within one working
 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), whose charter is that every
 published fact carries its own mass and its own establishment status. (ii) **ADOPTED — carried** (L3-S37).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* (i) **RELOCATED** to ***the uncertainty surface*** — as proposed; "Agrees with its twin — RELOCATED to *the uncertainty surface*, as proposed."; its L2 twin: "8.78(i)↔41.92(i)".
 
 ---
 
@@ -10739,6 +10801,8 @@ from L2 *"the charter's list and its rivals (L2-S45)"*.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_boundaries_sitting.md, Ruling 2).* **HISTORICAL** — "HISTORICAL — replaced by L3-S37 and mass-and-status Ruling 1"; "Rows 8.42 and 8.109 HISTORICAL".
 
 ---
 
@@ -14949,6 +15013,8 @@ decision; L3-S1 says *"The chord symbol is a view of L2's chord"* and *"Nothing 
 member decides is the chord per span L2 publishes. (ii) **RELOCATED** — to *L2 — The tonal reading. The one entangled
 decision.*, which publishes per sounding note the chord-tone assignment (the derivation's §0 cites L2-S8 for it).
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a)).* (i) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "The proposals stand (seven RELOCATED to L2, three QUARANTINED)"; "decided against by the charter's lines 489–492, with which the method stated beside the 2026-10-08 Ruling 1 agrees". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 10.15 — the chord and the membership as one decision.**
@@ -15111,6 +15177,8 @@ quality, and bass/inversion)"*; L3-S1 says *"Nothing is decided in computing it.
 to *L2 — The tonal reading. The one entangled decision.*, which publishes per span the rivals with their mass. (iv)
 **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, travelling with Row 10.18.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a)).* (i) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "The proposals stand (seven RELOCATED to L2, three QUARANTINED)"; "decided against by the charter's lines 489–492, with which the method stated beside the 2026-10-08 Ruling 1 agrees". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 10.25 — no function or numeral here; the numeral as the chord symbol read in the key.**
@@ -15131,6 +15199,8 @@ the root as *"the span's spelled tonic transposed by the diatonic interval of th
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S5). (ii) **RELOCATED** — to *L2 — The tonal reading. The one
 entangled decision.*, which publishes the chord as degree, quality, figure and applied target against the tonality, as
 Rows 7.51 and 7.90.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (b)).* (ii) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "the degree is L2's decided field". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -15275,6 +15345,8 @@ half-diminished, diminished-seventh, minor-major"*; L3-S3 carries *"the five sev
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, whose chord vocabulary
 the derivation's L3-S3 cites as L2-S4's.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (c)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "Row 10.34's minor-major seventh is proposed for OQ-L2-1's closure measurement, not in the vocabulary now." Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 10.35 — the added notes, read off the membership decision.**
@@ -15294,6 +15366,8 @@ altered tone above the basic quality"*; L3-S5 says elaborations — *"suspension
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, which publishes the
 chord's figure with its seventh or other added members and, per sounding note, the chord-tone assignment.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (d)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "chord-vocabulary Ruling 2". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 10.36 — the recognized vocabulary: every quality at every root, with whatever added notes membership finds.**
@@ -15310,6 +15384,8 @@ finds)* — large by construction (`C6`, `Am7`, `Cmaj9`, `G7♭9`, …)." — §
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, travelling with Row
 10.35.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (d)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "chord-vocabulary Ruling 2". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -15971,6 +16047,8 @@ chord's sixth or ninth; L3-S5 says sounding ninths *"are not written into the ch
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, travelling with Row
 10.35.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (d)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "chord-vocabulary Ruling 2". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 10.83 — commit, inherit or abstain, against the two certainty conditions.**
@@ -16243,6 +16321,8 @@ added note; L3-S5 says sounding ninths *"are not written into the chord symbol"*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, travelling with Row
 10.35.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (d)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "chord-vocabulary Ruling 2". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -16675,6 +16755,8 @@ L3-S1 says *"Nothing is decided in computing it."*
 entangled decision.*, as Row 10.28. (iv) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row
 10.24 (iii) and (iv).
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a)).* (i) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "The proposals stand (seven RELOCATED to L2, three QUARANTINED)"; "decided against by the charter's lines 489–492, with which the method stated beside the 2026-10-08 Ruling 1 agrees". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 10.132 — the chord symbol carries the added members; the function layer reads them from the carry.**
@@ -16698,6 +16780,8 @@ L3-S5 says sounding ninths *"are not written into the chord symbol"*.
 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, whose chord carries
 its seventh and other added members as its figure, travelling with Row 10.35. (ii) **ADOPTED — carried** (L3-S3).
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (d)).* (i) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "chord-vocabulary Ruling 2". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -16959,6 +17043,8 @@ catalogue); each slice's reading is cached; re-naming only a sub-range keeps edi
 says of the chord symbol *"Nothing is decided in computing it."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 10.15.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "The proposals stand (seven RELOCATED to L2, three QUARANTINED)"; "decided against by the charter's lines 489–492, with which the method stated beside the 2026-10-08 Ruling 1 agrees". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -21630,6 +21716,8 @@ L2's: the model's own distribution, not calibrated"*.
 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** to *the uncertainty surface*. (ii) **HISTORICAL** — a deferred step.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* (i) **QUARANTINED** — "corrected to QUARANTINED, travelling with L2's Row 17.16 and that row's audit question (*"what does the shipped slice publish for each segment, and is any published value a partial candidate score rather than a mass?"*), as its twin Row 17.18(i) was recorded".
+
 ---
 
 **Row 15.17 — the batch render unchanged; the slice's consumer the later record.**
@@ -21758,6 +21846,8 @@ question:* are the root and bass spellings derived on the line of fifths from th
 which bass do they spell? *(§6 item 2 of the derivation flags L3-S4 as coinciding with a ruled sentence the L0/L1 input
 contract carries, for the comparison to check.)* (iii) **QUARANTINED.** *Audit question:* from which input is the
 augmented sixth's sub-type derived, and does it read the sounding notes?
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (c)).* (iii) **QUARANTINED** — as proposed, "proposals stand"; "each augmented sixth is its own L2 chord kind (chord-vocabulary Ruling 1)". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -22104,6 +22194,8 @@ reason"* *"while quality and bass are published"*.
 the extensions, so that the formatter renders the seventh? (ii) **QUARANTINED.** *Audit question:* for a class with no
 root, what does the record publish and what does the display render?
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (e)).* (ii) **QUARANTINED** — as proposed, "Rows 15.43(ii) and 15.50(ii) stay QUARANTINED"; "L3 publishes the quality, the bass and a named reason in place of the root; a dominant-seventh respelling would assert a chord L2 did not decide, so it is a display's own act". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 15.44 — the boundary between inference and presentation guarded both ways.**
@@ -22229,6 +22321,8 @@ of the augmented sixths that *"the root field carries a named reason"* *"while q
 published Roman numeral, looked up at the region's start? (ii) **QUARANTINED.** *Audit question:* what does the implode
 write for a class with no root, and are its symbols rendered by the formatter? (iii) **QUARANTINED.** *Audit question:*
 on the record arm, do the exposure gates, the two-mode source-key search and the re-annotation constant stand as stated?
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (e)).* (ii) **QUARANTINED** — as proposed, "Rows 15.43(ii) and 15.50(ii) stay QUARANTINED"; "L3 publishes the quality, the bass and a named reason in place of the root; a dominant-seventh respelling would assert a chord L2 did not decide, so it is a display's own act". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -23807,6 +23901,8 @@ does not republish the segmentation."*
 boundaries, and is it reached at the current commit (as Row 5.3 (i))? (ii) **QUARANTINED.** *Audit question:* does the
 chord staff's population read the boundaries this component detects?
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (a)).* (i) **QUARANTINED** — as proposed, "QUARANTINED with their audit questions, as proposed"; "Descriptions of the old code"; its L2 twin: "20.4 (named in the any-boundary-set Ruling 1's placement of Row 30.16(ii), as the reading file records it [relayed — that record not read])". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 18.5 — the chord staff: a part the user adds, written on demand with a harmonic reduction.**
@@ -24684,6 +24780,8 @@ calibrated, comparable only within one working span's publication"*.
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, whose rule the class of a published confidence
 is.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* **RELOCATED** to ***the uncertainty surface*** — as proposed; "Agrees with its twin — RELOCATED to *the uncertainty surface*, as proposed."; its L2 twin: "19.36↔21.47".
+
 ---
 
 **Row 19.37 — a region a family of spans, each named by its bounding criterion.**
@@ -25321,6 +25419,8 @@ calibrated"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, as Row 19.36.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* **RELOCATED** to ***the uncertainty surface*** — as proposed; "Agrees with its twin — RELOCATED to *the uncertainty surface*, as proposed."; its L2 twin: "19.72↔21.69".
+
 ---
 
 **Row 19.73 — unbounded values permitted inside a layer, squashed at the boundary.**
@@ -25499,6 +25599,8 @@ written into the chord symbol."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
 chord and its elaboration assignments.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (d)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "chord-vocabulary Ruling 2". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -26674,6 +26776,8 @@ key-area grouping; (ii) the key-area grouping is a downstream post-grouping of t
 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.45.
 (ii) **ADOPTED — proposed**, travelling with Row 8.12.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_key_areas_sitting.md, Ruling 2).* (ii) **ADOPTED — proposed** — "Rows 3.1(iii), 3.4, 8.12, 8.75, 20.47(ii), 57.278 and 57.369 ADOPTED (the definition as ruled)".
 
 ---
 
@@ -28119,6 +28223,8 @@ target, tonality"*.
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose segmentation
 decides where one span gives way to the next.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (b)).* **QUARANTINED** — "corrected to QUARANTINED, travelling with L2's Row 23.72, with that row's audit question (*"which fields make two regions' readings the same on each path at the current commit, and which path merges adjacent regions by them?"*)"; "since L2 placed the same three sentences (Rows 23.72 to 23.74) so by the adjacent-spans Ruling 1". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 21.28 — adjacent regions of the same root and quality merged.**
@@ -28136,6 +28242,8 @@ classes.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.27.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (b)).* **QUARANTINED** — "corrected to QUARANTINED, travelling with L2's Row 23.72, with that row's audit question (*"which fields make two regions' readings the same on each path at the current commit, and which path merges adjacent regions by them?"*)"; "since L2 placed the same three sentences (Rows 23.72 to 23.74) so by the adjacent-spans Ruling 1". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 21.29 — extensions, inversions and slash-chord bass notes secondary, not identity.**
@@ -28151,6 +28259,8 @@ the same paragraph (locator: lines 2830–2831).
 keys"*, where L3-S30 counts a change of figure among *"the classes of what changed"* at a boundary.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.27.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (b)).* **QUARANTINED** — "corrected to QUARANTINED, travelling with L2's Row 23.72, with that row's audit question (*"which fields make two regions' readings the same on each path at the current commit, and which path merges adjacent regions by them?"*)"; "since L2 placed the same three sentences (Rows 23.72 to 23.74) so by the adjacent-spans Ruling 1". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -29754,6 +29864,8 @@ measurement layer as a reference and never as analysis input"*.
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), whose subject is the
 standing of what the score carries, as Row 21.121 (ii).
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, §2 (a)).* **RELOCATED** to ***L0 — The notated record*** — as proposed, "Their proposals stand: the four Row 21 rows RELOCATED to L0"; "treat the composer's written symbols as input; `FRAMEWORK.md` §3.1 and IC-L1 S-8 [relayed] decide against them". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 21.140 — as the analysis stands, the identifier infers the chord from the notes.**
@@ -29814,6 +29926,8 @@ where L3-S29 says *"L3 never reads the composer's figures"*, the figures and cho
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 21.139.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, §2 (a)).* **RELOCATED** to ***L0 — The notated record*** — as proposed, "Their proposals stand: the four Row 21 rows RELOCATED to L0"; "treat the composer's written symbols as input; `FRAMEWORK.md` §3.1 and IC-L1 S-8 [relayed] decide against them". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 21.144 — the analysis to confirm or annotate what the composer declared.**
@@ -29830,6 +29944,8 @@ declared"*, where L3-S29 *"publishes no comparison between its figured bass and 
 measurement layer's act or a display's."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 21.139.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, §2 (a)).* **RELOCATED** to ***L0 — The notated record*** — as proposed, "Their proposals stand: the four Row 21 rows RELOCATED to L0"; "treat the composer's written symbols as input; `FRAMEWORK.md` §3.1 and IC-L1 S-8 [relayed] decide against them". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -30220,6 +30336,8 @@ present"*, where L3-S29 holds them *"usable by a measurement layer as a referenc
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 21.139.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, §2 (a)).* **RELOCATED** to ***L0 — The notated record*** — as proposed, "Their proposals stand: the four Row 21 rows RELOCATED to L0"; "treat the composer's written symbols as input; `FRAMEWORK.md` §3.1 and IC-L1 S-8 [relayed] decide against them". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 21.173 — a fine-grained boundary detector for fast harmonic rhythm.**
@@ -30439,6 +30557,8 @@ tonality"*.
 *PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does `analyzeForChordSymbols` exist, on by default, at the
 current commit? (ii) **QUARANTINED.** *Audit question:* does the chord-symbol analysis that setting enables run without
 any inference of the tonality at the current commit, and on which arm?
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a)).* (ii) **QUARANTINED** — as proposed, "The proposals stand (seven RELOCATED to L2, three QUARANTINED)"; "decided against by the charter's lines 489–492, with which the method stated beside the 2026-10-08 Ruling 1 agrees". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -31180,6 +31300,8 @@ applied target, tonality"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.27.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (c)).* **HISTORICAL** — "corrected to HISTORICAL — a plan"; "as its twin Row 24.34 was ruled". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 22.10 — both operating modes needed, neither left undecided.**
@@ -31355,6 +31477,8 @@ L2's boundaries *"the classes of what changed across it: root, quality, figure, 
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the notation bridge merge adjacent slices of the same
 root and quality into one region in the operating mode that preserves all changes, at the current commit, on the
 record arm as well as the legacy arm?
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (a)).* **QUARANTINED** — as proposed, "QUARANTINED with their audit questions, as proposed"; "Descriptions of the old code"; its L2 twin: "24.52 (ruled)". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -32305,6 +32429,8 @@ rootPc detection"*, where L3-S2 holds *"the spelled root is the fact and the pit
 unchanged by the fix, and does it reproduce? (ii) **QUARANTINED.** *Audit question:* is the root pitch class the
 comparators read independent of the root's spelling at the current commit?
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, Ruling 1).* (ii) **QUARANTINED** — as proposed; "Rows 22.84(ii) and 22.86 stay QUARANTINED.".
+
 ---
 
 **Row 22.85 — the iterative bass-movement loop placed in a function.**
@@ -32339,6 +32465,8 @@ replaced by an enharmonic equivalent"*.
 
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `pitchClassNameFromTpc()` respell those sharps as flats at
 the current commit, and under which signatures?
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, Ruling 1).* **QUARANTINED** — as proposed; "Rows 22.84(ii) and 22.86 stay QUARANTINED.".
 
 ---
 
@@ -35217,6 +35345,8 @@ quality, figure, applied target, tonality"*.
 
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which regions does the region tuning collapse at the current
 commit, and does a change of figure alone survive the collapse?
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (a)).* **QUARANTINED** — as proposed, "QUARANTINED with their audit questions, as proposed"; "Descriptions of the old code"; its L2 twin: "30.81 (proposed only)". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -40818,6 +40948,8 @@ L3-S32 makes L3's mass *"the model's own distribution, not calibrated"*.
 **RELOCATED** — to ***the uncertainty surface***, as Row 8.78 (i). (iii)
 **RELOCATED** — to ***the uncertainty surface***, whose frames decide what may override what.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* (i) **RELOCATED** to ***the uncertainty surface*** — as proposed; "Agrees with its twin — RELOCATED to *the uncertainty surface*, as proposed."; its L2 twin: "36.31(i)↔40.28".
+
 *The decisions register at this row.* The quoted statement lies inside the home of **D-484** (lines 83–94), *"The
 phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and
 publishes a per-profile max-normalised boundary confidence"*, which the decisions register's INDEX records as LIVE,
@@ -40848,6 +40980,8 @@ contract's Class-M sense"*; L3-S32 makes L3's mass *"the model's own distributio
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, as Row 36.31 (i). (ii)
 **RELOCATED** — to ***the uncertainty surface***, as Row 36.31 (ii). (iii)
 **RELOCATED** — to ***the uncertainty surface***, as Row 36.31 (iii).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* (i) **RELOCATED** to ***the uncertainty surface*** — as proposed; "Agrees with its twin — RELOCATED to *the uncertainty surface*, as proposed."; its L2 twin: "36.32(i)↔40.29".
 
 *The decisions register at this row.* The quoted statement lies inside the home of **D-484** (lines 83–94), *"The
 phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and
@@ -47174,6 +47308,8 @@ per sounding note, as Row 19.27 (iii). (iii)
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one entangled decision couples
 tonality and chord as a cost.
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a)).* (i) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "proposed placed as Row 10.14(i) is — RELOCATED to L2"; "the chord that layer decided being L2's chord". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 38.12 — the table, layer 5: the function, the chord symbol read in the key.**
@@ -47194,6 +47330,8 @@ says the root *"is the span's spelled tonic transposed by the diatonic interval 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose chord is
 the degree, quality, figure and applied target read against the tonality. (ii)
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with (i).
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (b)).* (i) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "the degree is L2's decided field". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -47413,6 +47551,8 @@ reading consumes nothing L3 publishes. (ii)
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one entangled decision couples
 tonality and chord as a cost. (iii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose
 chord is the degree read against the tonality.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a)).* (ii) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "The proposals stand (seven RELOCATED to L2, three QUARANTINED)"; "decided against by the charter's lines 489–492, with which the method stated beside the 2026-10-08 Ruling 1 agrees". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -49690,6 +49830,8 @@ never read as a frequency of being right."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, whose published facts carry their own mass and
 establishment status.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* **RELOCATED** to ***the uncertainty surface*** — as proposed; "Agrees with its twin — RELOCATED to *the uncertainty surface*, as proposed."; its L2 twin: "39.17↔9.22".
 
 ---
 
@@ -54862,6 +55004,8 @@ block).
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (iii) **ADOPTED — proposed** — "accelerating harmonic rhythm before a candidate position, read from L2's published boundaries, enters as a candidate term admitted only if a held-out measurement repays it (as L3-S9 (iv))".
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (d)).* (ii) **HISTORICAL** — "corrected to HISTORICAL — a superseded plan"; "as their twins Rows 44.33(ii), 44.50(vi) and 44.76(iii) were ruled by the nothing-from-L3 Ruling 4; the slice-duration reading of harmonic rhythm is also met by Ruling 62 item 3". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 40.25 — what the key layer produced on the member's date.**
@@ -55166,6 +55310,8 @@ the tonality per span. (ii) **UNPLACED** — a statement at a boundary of L3, wh
 derived statement differs from; read: the two texts above, and `FRAMEWORK.md` §5's L3 → L2 row, *Nothing*. (iii)
 **RELOCATED** — to ***L0 — The notated record***, where IC-L1 S-8 makes the chord symbols written in the score
 annotation, never analysis input.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (d)).* (ii) **HISTORICAL** — "corrected to HISTORICAL — a superseded plan"; "as their twins Rows 44.33(ii), 44.50(vi) and 44.76(iii) were ruled by the nothing-from-L3 Ruling 4; the slice-duration reading of harmonic rhythm is also met by Ruling 62 item 3". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -55553,6 +55699,8 @@ of a change of tonality. (iii) **RELOCATED** — to ***L2 — The tonal reading.
 publishes the tonality per span with its rivals and their mass. (iv)
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose rivals differ in where the
 boundaries fall.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (d)).* (ii) **HISTORICAL** — "corrected to HISTORICAL — a superseded plan"; "as their twins Rows 44.33(ii), 44.50(vi) and 44.76(iii) were ruled by the nothing-from-L3 Ruling 4; the slice-duration reading of harmonic rhythm is also met by Ruling 62 item 3". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -56956,6 +57104,8 @@ L3-S29 says *"L3 never reads the composer's figures"*.
 figures as a reference and never as analysis input (IC-L1 S-8). (ii) **QUARANTINED.** *Audit question:* is the chorale
 figured-bass set pinned at the current commit, is `DCMLab/figured-bass` a realization script holding no ground truth,
 and does the parser drop the DLC `figbass` column?
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, §2 (a)).* (i) **RELOCATED** to ***the measurement of the analysis*** — as proposed, "Row 41.57(i) RELOCATED to the measurement of the analysis"; "treat the composer's written symbols as input; `FRAMEWORK.md` §3.1 and IC-L1 S-8 [relayed] decide against them". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 *The decisions register at this row.* The decisions register's data file homes **the retired entry D-369** at this
 document's line 268, this table row's one line; the row's claim (ii) carries its content — a fact of the data file,
@@ -58685,6 +58835,8 @@ Row 36.31 (i). (iii) **QUARANTINED.** *Audit question:* which of the key decoder
 margin or the per-slice emission sigmoid, is published as its boundary confidence at the current commit, and what reads
 the other?
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* (ii) **HISTORICAL** — "corrected to HISTORICAL, on the ground of the weight-meaning Ruling 4"; "its reach to 43.7(ii) is this side's reading".
+
 *The decisions register at this row.* The decisions register's data file homes **the retired entry D-350** at this
 document's line 55, this table row's one line, on which this row's claims lie — a fact of the data file, moving no
 disposition and carrying no mark.
@@ -59417,6 +59569,8 @@ and its tonality"*.
 the chord per span as degree, quality, figure and applied target. (ii)
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail specification fixes how the
 candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the L2 block).
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a)).* (i) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "The proposals stand (seven RELOCATED to L2, three QUARANTINED)"; "decided against by the charter's lines 489–492, with which the method stated beside the 2026-10-08 Ruling 1 agrees". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 *The decisions register at this row.* The quoted statement lies inside the home of **register entry D-345** (lines
 169–175), *"The style preset first enters the analysis at the key/mode layer, as a deliberately weak prior over the
@@ -62904,6 +63058,8 @@ declared frame"*; L3-S32 makes L3's mass *"comparable only within one working sp
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, as Row 19.72.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* **RELOCATED** to ***the uncertainty surface*** — as proposed; "Agrees with its twin — RELOCATED to *the uncertainty surface*, as proposed."; its L2 twin: "45.6↔52.4".
+
 *The decisions register at this row.* Register entry **D-268**'s words stand on these lines — its verbatim runs from
 *"**Rules of use:**"* (line 54) to the close of the bullet led *U5. Abstention.* (line 66) — while the data file's home
 for it cites lines 36 to 48, which hold the close of the third class's bullet and the amendment paragraph of 2026-10-14,
@@ -63059,6 +63215,8 @@ calibrated"*.
 run was the split of the phrase-boundary strength into its spike and surface populations measured, and does its spread
 reproduce? (iv) **HISTORICAL** — a status of the fitting stage: no map fitted for the boundary strength.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* (i) **RELOCATED** to ***the uncertainty surface*** — as proposed; "Agrees with its twin — RELOCATED to *the uncertainty surface*, as proposed."; its L2 twin: "45.12(i)↔52.10(i)".
+
 ---
 
 **Row 45.13 — the key decision's confidence: the whole-sequence margin, of the margin class; as built the boundary
@@ -63106,6 +63264,8 @@ calibration that remains — a status of the plan. (v) **QUARANTINED.** *Audit q
 margin's Class-P maps fitted, do the named artifacts hold them at the current commit, and does any path that runs read
 them? (vi) **RELOCATED** — to ***the uncertainty surface***, on which a carrier without a fitted map carries the
 empirically-unvalidated mark, as Row 21.194 (i).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* (ii) **HISTORICAL** — "corrected to HISTORICAL, on the ground of the weight-meaning Ruling 4"; "the reach is this side's reading".
 
 ---
 
@@ -65273,6 +65433,8 @@ degree, quality, figure and applied target, as Row 43.60 (ii). (iii)
 span into harmonic spans whose boundaries are a subset of L1's change points (`FRAMEWORK.md` §5), and which merges
 adjacent spans with identical chords (L2-S14, as the derivation's L3-S10 relays it).
 
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a)).* (ii) **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "The proposals stand (seven RELOCATED to L2, three QUARANTINED)"; "decided against by the charter's lines 489–492, with which the method stated beside the 2026-10-08 Ruling 1 agrees". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
 ---
 
 **Row 47.11 — the layer knowing nothing of weighting, keys, chords or function.**
@@ -65517,6 +65679,8 @@ the consuming layers; L3-S39 says *"L3 never re-derives a fact a layer beneath i
 points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
 change points (`FRAMEWORK.md` §5). (ii) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***,
 which publishes per change point its metric strength class (`FRAMEWORK.md` §5).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_boundaries_sitting.md, Ruling 2).* (ii) **RELOCATED** to ***L1 — Change points, candidates and notated evidence*** — as proposed; "RELOCATED to L1, as proposed — L1 publishes the slices and every change point's metric strength class (charter lines 337–343)".
 
 *The decisions register at this row.* The data file homes **the retired entry D-540** at lines 130 to 139, on which this
 row's claims lie. The data file prints its `status` as *live*, the fifteenth batch's D-399 shape, relayed as printed;
@@ -66470,6 +66634,8 @@ segment"*; L3-S3 says *"Nothing in the quality is re-read from the sounding note
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***: which quality the
 chord carries is L2's decision, as Row 7.18 (i) placed the reading of the augmented sixth.
+
+*RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (c)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "proposals stand"; "each augmented sixth is its own L2 chord kind (chord-vocabulary Ruling 1)". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
 ---
 
@@ -70449,6 +70615,12 @@ two texts above and OQ-L3-10, as Row 8.64 read the surfacing of the same tag. (i
 subject that a derived statement differs from; read: the two texts above and OQ-L3-10, as Row 8.65 read the cue left to
 another to act on.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_edge_of_span_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Recorded as decided against: the outgoing texts' "the grouping layer only tags the edge and never acts on the tag" — Rows 8.64, 8.65, 54.14(ii), 54.36(i)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_edge_of_span_sitting.md, Ruling 1).* (i), its tag-only portion: **HISTORICAL** — "Recorded as decided against: the outgoing texts' "the grouping layer only tags the edge and never acts on the tag" — … and the tag-only part of Rows 54.14(i) and 54.36(ii)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_edge_of_span_sitting.md, Ruling 1).* (i), its marking portion: **ADOPTED — carried** (L3-S40) — "their marking part agrees with L3-S40's cut mark".
+
 *The decisions register at this row.* The decisions register's data file homes **register entry D-263** at this
 document's lines 103 to 107, the whole of item 10, on which this row's sentence lies; the decisions register's INDEX
 records it as *"A refused or truncated extension is marked on the output, never silently absorbed"* (group C, LIVE,
@@ -70869,6 +71041,12 @@ tag"*; L3-S40 says *"Where they do, L3 asks for a larger span from the caller, a
 two texts above and OQ-L3-10, as Row 8.65 read the request left to another. (ii) **UNPLACED** — a rule on L3's own
 subject that a derived statement differs from; read: the two texts above and OQ-L3-10, as Row 8.64 read the surfacing of
 the same tag.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_edge_of_span_sitting.md, Ruling 1).* (i) **HISTORICAL** — "Recorded as decided against: the outgoing texts' "the grouping layer only tags the edge and never acts on the tag" — Rows 8.64, 8.65, 54.14(ii), 54.36(i)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_edge_of_span_sitting.md, Ruling 1).* (ii), its tag-only portion: **HISTORICAL** — "Recorded as decided against: the outgoing texts' "the grouping layer only tags the edge and never acts on the tag" — … and the tag-only part of Rows 54.14(i) and 54.36(ii)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_edge_of_span_sitting.md, Ruling 1).* (ii), its marking portion: **ADOPTED — carried** (L3-S40) — "their marking part agrees with L3-S40's cut mark".
 
 #### Not a statement, at this member
 
@@ -74682,6 +74860,8 @@ stated for challenge in the group's header. One claim: a change of tonality star
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* as Row 8.75, travelling with it and with Row 8.12: that a
 change of tonality closes one key area and starts the next.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_key_areas_sitting.md, Ruling 2).* **ADOPTED — proposed** — "Rows 3.1(iii), 3.4, 8.12, 8.75, 20.47(ii), 57.278 and 57.369 ADOPTED (the definition as ruled)".
+
 *At the source now.* The sentence stands at lines 253–254 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 253 after the sentence on the key area's confidence and ending on line 254, before the italic
 parenthesis on contract compliance that opens there. The nearest heading at the blob is *"### 5.2 Key-area grouping"*.
@@ -75300,6 +75480,8 @@ maximal run of consecutive segments sharing one tonality.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* as Row 8.12, travelling with it: that L3 publish the run of
 consecutive spans of L2's segmentation sharing one tonality, maximal, as a grouping of its own.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_key_areas_sitting.md, Ruling 2).* **ADOPTED — proposed** — "Rows 3.1(iii), 3.4, 8.12, 8.75, 20.47(ii), 57.278 and 57.369 ADOPTED (the definition as ruled)".
 
 *At the source now.* The sentence stands at lines 27–28 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 27 after the entry on the marginal mass, with the italic term its quotation keeps. The nearest
@@ -80051,6 +80233,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
 - Rows 57.486 and 57.487 (i) — that the literal Roman numeral is never changed by the recognition of a named
   progression, nor where a substitution fills a member, from the design's contract and its substitutions. *(As
   Row 44.37 (ii); the L2 comparison relocated L2 Rows 53.22 and 53.28 to L3.)*
+- Row 38.11 (i) — the key-independent chord symbol for each slice, a judgment of the old layer table's chord-symbol layer. *(cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (a).)*
 
 **To *the second axis — voice leading*.**
 
@@ -80400,7 +80583,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   relocated L2 Row 5.340 to L3.)*
 - Rows 57.318 (i) and 57.322 (i) — that formal functions and multi-span sections, and sections, periods and sentences,
   lack a ground truth in the held corpus. *(The L2 comparison relocated L2 Rows 41.45 and 41.125 to L3.)*
-- Row 7.37, its rest — that the DCML conventions for variants serve comparison with the ground truth. *(cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1.)*
+- Row 7.37, its remainder — that the DCML conventions for variants serve comparison with the ground truth. *(cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
@@ -80599,6 +80782,7 @@ rows here, in the commit that tabulates it, each with the audit question its row
 - Row 8.5 — does the as-built carry the cue and scope fields, and do they read `Unknown` at the current commit?
 - Row 8.6 (i), with Row 8.123 (ii) — does any production path call or consume the grouping layer at the current commit?
 - Row 8.6 (ii) — was the batch gate unchanged on all three presets at the build, and on which corpus and run?
+- Row 8.31 (i) — does any built code hand the function layer's open marks to a grouping step, and does that step pass them unchanged? *(cowork_rulings_2026_11_03_l3_key_areas_sitting.md, §2c.)*
 - Row 8.55 — do `detectCadences()`, `detectPivotChords()` and the `KeyArea` grouping exist, do they read the
   key-dependent degree logic, and does any of them run at the current commit?
 - Row 8.57 (i) — which of the old grouping paths run at the current commit, and on which arm?
@@ -80844,6 +81028,7 @@ rows here, in the commit that tabulates it, each with the audit question its row
   stated, untruncated?
 - Row 15.15 — is the slice computed after the decode, each content score computed again with `segmentContentScore`,
   under the scoreable filter stated?
+- Row 15.16 (i) — what does the shipped slice publish for each segment, and is any published value a partial candidate score rather than a mass? *(cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2.)*
 - Row 15.17 (i) — does the batch `.ours.json` render carry an empty alternatives list at the current commit?
 - Row 15.18 — does `gen_posterior_slice.py` write the reference slice in shared-label form, and are the scoreable sets
   independent of the span on the corpus, as stated?
@@ -81136,6 +81321,9 @@ inference layer*.**
   code calls it?
 - Row 21.26 — do both bridges set `previousBassPc` and `bassIsStepwiseFromPrevious` before each call at the current
   commit, and on which arm do they run?
+- Row 21.27 — which fields make two regions' readings the same on each path at the current commit, and which path merges adjacent regions by them? *(cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (b).)*
+- Row 21.28 — which fields make two regions' readings the same on each path at the current commit, and which path merges adjacent regions by them? *(cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (b).)*
+- Row 21.29 — which fields make two regions' readings the same on each path at the current commit, and which path merges adjacent regions by them? *(cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (b).)*
 - Row 21.33 — does `notationharmonicrhythmbridge.cpp` branch on `useRegionalAccumulation` at the current commit, and
   which branch runs by default?
 - Row 21.34 — does the regional path at the current commit run the chain the bullet names, the Jaccard boundary detector
