@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.23 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.24 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.24 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.25 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -44281,6 +44281,8 @@ bullet led *"phrase"* (locator: lines 66–67). *Layer 6* names `ARCHITECTURE.md
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject, the unit of the harmonic grouping, that a derived
 statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_04_l3_fit_and_rest_sitting.md, Ruling 1).* **HISTORICAL** — "the old rule that the harmonic-grouping unit is always the punctuation-span and never "phrase" is replaced by the charter's L3 block and L3-S42".
 
 ---
 
