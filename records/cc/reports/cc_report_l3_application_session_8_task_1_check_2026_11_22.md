@@ -163,7 +163,7 @@ given; where they were not settled by the table, they were read at the successor
 **Pairing differences outside the rows above, written as the instruction orders:** successor lines 2042 (blank, traced
 to session 7 hunk 2), 2043 (`---`, traced to session 5 hunk 2, its row *"2027–2028 (`---`, blank)"*), 2044 (blank, session 5 hunk 2) and 2125 (blank,
 session 6 hunk 4) — pairing difference: blank line (or `---`), no text; derivation lines 8 (blank, removed by session 7 hunk 1) and 1375
-(`---`, removed by session 2 hunk 40), which the full diff keeps — pairing difference, no text. With the six named in rows 1, 4
+(`---`, removed by session 2 hunk 39; was: "removed by session 2 hunk 40", an error found at the git objects by the Cowork sitting that wrote handoff entry 1192, its §2 item 6, and corrected under the user's rule of 2026-09-22 by `records/cc/instructions/cc_instruction_l3_application_session_9_task_2_banner_2026_11_23.md` §3.2), which the full diff keeps — pairing difference, no text. With the six named in rows 1, 4
 and 61b above (successor lines 18, 314, 1495, 1499 and 1505, and derivation line 299), these are the script's twelve.
 
 **Session hunks whose lines reach no line of the successor, each matched to its table row:** session 2 hunk 1's in-progress line
