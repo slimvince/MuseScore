@@ -40,7 +40,7 @@
 >
 > **EVERY DISPOSITION BELOW IS A PROPOSAL.** Nothing here is applied to any outgoing text, to the derivation, to the
 > brief, to the boot pack, to the decisions register or to the open-items register. The transfer list at §10 is written
-> inside this file and nowhere else.
+> inside this file and nowhere else. *(former wording, preserved (#12); true of every writing before the application act)* Rows carrying a RULED DISPOSITION line are placed by the record and ruling the line names, rows carrying a RECORDED DISPOSITION line as that record's own derivation, challengeable at the row; every other row remains a proposal (the application act of `records/cc/instructions/cc_instruction_l3_application_2026_11_08.md`, Task 3).
 >
 > **What the user is asked to rule in this file: NOTHING.** §15 says so in terms.
 >
@@ -51,13 +51,15 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
+*Application in progress: the RULED DISPOSITION lines in this file are those of §L.1 to §L.4 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.5 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+
 ---
 
 ## 0. Progress — which members are done, and where this stops
 
 The order is the artifact's: `tools/audit/l3_outgoing_population.json` → `the_tabulation_population` → `the_members`,
 in its `position` order. **No count from that artifact is restated here** (#17f, **D-431**); each member's size is at
-its own entry there.
+its own entry there. *(former wording, preserved (#12); true of every writing before the application act)* Rows carrying a RULED DISPOSITION line are placed by the record and ruling the line names, rows carrying a RECORDED DISPOSITION line as that record's own derivation, challengeable at the row; every other row remains a proposal (the application act of `records/cc/instructions/cc_instruction_l3_application_2026_11_08.md`, Task 3).
 
 | Position | Member | State |
 |---|---|---|
@@ -1444,6 +1446,10 @@ flag is never read as an absent phrase end."*
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above and L3-S9 (ii), which computes cadential-progression evidence at every candidate position.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* Its phrase side: **HISTORICAL** — "Ruling 1 settles their phrase side only.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* Its cadence side: **HISTORICAL** — "D-495 (the flat-profile fallback) loses its subject at L3 … Algorithm: the old fallback rule drops out; no new mechanism.".
+
 ---
 
 **Row 2.16 — cadences are looked for at phrase ends, read as a published fact of the layer beneath.** *WITHHELD — D-495.*
@@ -1463,6 +1469,8 @@ graded phrase-boundary profile"*; L3-S8 says *"The phrase reading is an L3 decis
 the graded phrase-boundary profile as relocated to L3 by the L0/L1 comparison, its Ruling 48 — relayed, not re-read.)*
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15). (ii) **UNPLACED** — read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -1494,6 +1502,10 @@ down by the graded strength the profile already carries"*; L3-S8 makes every cha
 no item of evidence forcing or forbidding one.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 2.15.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* Its phrase side: **HISTORICAL** — "Ruling 1 settles their phrase side only.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* Its cadence side: **HISTORICAL** — "D-495 (the flat-profile fallback) loses its subject at L3 … Algorithm: the old fallback rule drops out; no new mechanism.".
 
 ---
 
@@ -1761,6 +1773,8 @@ level above"*. (ii) The outgoing text takes the punctuation-spans *"from the L1.
 the L2 comparison's record that the L0/L1 comparison relocated the graded phrase-boundary profile to L3. (iii) **ADOPTED
 — proposed.** *Proposal:* that L3 publish key areas — runs of the local tonality — as a grouping that may cut across the
 phrase units. (iv) **ADOPTED — carried** (L3-S10). (v) **ADOPTED — carried** (L3-S38).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -3691,6 +3705,8 @@ rests on a phrase boundary taken from an earlier layer.
 *PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status of the earlier specifications. (ii) **UNPLACED** — a rule on L3's
 own subject that a derived statement differs from; read: the two texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
 ---
 
 **Row 7.34 — a section end: a phrase boundary that coincides with a structural score boundary.**
@@ -4162,6 +4178,8 @@ punctuation-span-bounded." — §5.0, the key-span sub-bullet (locator: lines 16
 L3's phrase reading, the phrase units not being bounded by changes of tonality (it travels with the key-area proposal
 of Row 3.1 (iii) at §12).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* Its phrase half: **ADOPTED — carried** (L3-S8) — "a change of tonality may fall inside a phrase unit and a phrase may end without one; follows from Ruling 1 (no evidence forces or forbids a phrase end)".
+
 ---
 
 **Row 7.64 — the decision-context span: what the layer analyses together.**
@@ -4248,6 +4266,8 @@ L3-S8 says *"The phrase reading is an L3 decision."*
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above. (ii) **ADOPTED — carried** (L3-S42).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -5040,6 +5060,8 @@ phrase boundary; L3-S8 says *"No item of evidence forces or forbids a phrase end
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15). (ii) **UNPLACED** — read: the two texts above and L3-S9's
 relay of de Clercq (*"The fermata delineates the phrase and not necessarily the exact arrival"*).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -8362,6 +8384,10 @@ candidate phrase ends, and *"No item of evidence forces or forbids a phrase end"
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* Its phrase side: **HISTORICAL** — "Ruling 1 settles their phrase side only.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* Its cadence side: **HISTORICAL** — "D-495 (the flat-profile fallback) loses its subject at L3 … Algorithm: the old fallback rule drops out; no new mechanism.".
+
 ---
 
 **Row 7.337 — the graded profile already carries the signal.**
@@ -8745,6 +8771,8 @@ post-cadential codetta, an introduction before the first phrase)"*.
 two texts above. (ii) **QUARANTINED** — *Audit question:* is the codetta refinement switched off by default, so that it
 changes no output unless enabled?
 
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_phrase_units_sitting.md, Ruling 1).* (i) **HISTORICAL** — "Rows 8.4 (i), 8.68, 8.69, 8.70, 8.72, 36.10 (ii) and 36.113 (ii) recorded as decided against.".
+
 ---
 
 **Row 8.5 — the cue and scope fields carried, and unknown.**
@@ -8872,6 +8900,8 @@ published only at a phrase end L3 has decided"*.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above and OQ-L3-2. (ii) **UNPLACED** — the same; read: the two texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (ii) **HISTORICAL** — "the cadence is L3's, read off L2's decided chords at L3's decided phrase ends, not detected by the old function layer and read by the grouping layer; follows from the charter".
+
 ---
 
 **Row 8.12 — the glossary entry *Key-area [MT]*: a maximal run sharing one local key.**
@@ -8936,6 +8966,8 @@ span edges are candidate phrase ends."*
 derived statement differs from and another agrees with; read: the texts above and OQ-L3-3. (iii) **ADOPTED — carried**
 (L3-S42).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
 ---
 
 **Row 8.15 — the glossary entry *Slice [L6]*: the constant-sonority atom, the finest unit grouped.**
@@ -8976,6 +9008,10 @@ the primitive's job upstream, not L6's"*; L3-S8 says *"The phrase reading is an 
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above. (ii) **UNPLACED** — the same.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -9111,6 +9147,8 @@ phrase reading is an L3 decision"* and L3-S22 *"The section grouping is an L3 de
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that two derived statements differ from; read: the
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
 ---
 
 **Row 8.25 — the grouping assembled into one non-nested structure.**
@@ -9147,6 +9185,8 @@ reading is an L3 decision."*
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above. (ii) **ADOPTED — carried** (L3-S39).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
 ---
 
 **Row 8.27 — the grouping changes no Roman numeral, key or cadence.**
@@ -9178,6 +9218,8 @@ L3-S8 says *"The phrase reading is an L3 decision."*
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S12). (ii) **UNPLACED** — a rule on L3's own subject that a
 derived statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -9440,6 +9482,8 @@ item of evidence forces or forbids a phrase end"*.
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 ---
 
 **Row 8.44 — the local-key spans consumed.**
@@ -9475,6 +9519,8 @@ most one per phrase end"*.
 unit carry the notated evidence that opened and closed it, with that evidence's scope — the whole texture or one part —
 so that a local boundary is never presented as a global one. (iii) **ADOPTED — carried** (L3-S15).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **RELOCATED** to ***L1 — Change points, candidates and notated evidence*** — "the notated evidence and its scope stay at L1 (relayed through L3-S9 (i)); L3 does not copy them onto its units (#6)".
+
 ---
 
 **Row 8.46 — the key areas produced.**
@@ -9507,6 +9553,8 @@ L3-S15 publishes such evidence *"as an evidence-class fact named for the pattern
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15). (ii) **UNPLACED** — a rule on L3's own subject that a derived
 statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Rows 8.47 (ii), 8.86, 8.116 (ii), 8.129 (ii) and 8.130 recorded as decided against.".
 
 ---
 
@@ -9583,6 +9631,8 @@ SILENT**. (iii) **THE DERIVATION IS SILENT**.
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S12). (ii) **ADOPTED — proposed.** *Proposal:* that a change of
 tonality may fall inside a phrase unit, the key areas cutting across the phrase units and neither nested in the other.
 (iii) **UNPLACED** — read as at Row 8.18.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii), its phrase half: **ADOPTED — carried** (L3-S8) — "a change of tonality may fall inside a phrase unit and a phrase may end without one; follows from Ruling 1 (no evidence forces or forbids a phrase end)".
 
 ---
 
@@ -9691,6 +9741,8 @@ at a phrase end L3 has decided"*.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above and OQ-L3-2. (ii) **UNPLACED** — the same; read: the two texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (ii) **HISTORICAL** — "the cadence is L3's, read off L2's decided chords at L3's decided phrase ends, not detected by the old function layer and read by the grouping layer; follows from the charter".
+
 ---
 
 **Row 8.60 — the span partitioned at the primitive's ticks, each span half-open.**
@@ -9709,6 +9761,8 @@ primitive"*; L3-S8 says *"The phrase reading is an L3 decision."*
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above. (ii) **ADOPTED — carried** (L3-S12).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -9815,6 +9869,8 @@ change point and both span edges are candidate phrase ends."*
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 ---
 
 **Row 8.67 — an interlocking boundary serves both spans, with no gap.**
@@ -9849,6 +9905,8 @@ post-cadential codetta, an introduction before the first phrase)"*.
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_phrase_units_sitting.md, Ruling 1).* **HISTORICAL** — "Rows 8.4 (i), 8.68, 8.69, 8.70, 8.72, 36.10 (ii) and 36.113 (ii) recorded as decided against.".
+
 ---
 
 **Row 8.69 — telling a structural end from a codetta is a refinement, not required.**
@@ -9866,6 +9924,8 @@ says *"Each unit carries which of the two it is."*
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_phrase_units_sitting.md, Ruling 1).* **HISTORICAL** — "Rows 8.4 (i), 8.68, 8.69, 8.70, 8.72, 36.10 (ii) and 36.113 (ii) recorded as decided against.".
 
 ---
 
@@ -9885,6 +9945,8 @@ post-cadential codetta"* among its examples.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_phrase_units_sitting.md, Ruling 1).* **HISTORICAL** — "Rows 8.4 (i), 8.68, 8.69, 8.70, 8.72, 36.10 (ii) and 36.113 (ii) recorded as decided against.".
 
 ---
 
@@ -9919,6 +9981,8 @@ as a span boundary"*; L3-S12's units include *"a post-cadential codetta"*, each 
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_phrase_units_sitting.md, Ruling 1).* **HISTORICAL** — "Rows 8.4 (i), 8.68, 8.69, 8.70, 8.72, 36.10 (ii) and 36.113 (ii) recorded as decided against.".
 
 ---
 
@@ -10122,6 +10186,8 @@ when the final harmony is prolonged."*
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above. (ii) **ADOPTED — carried** (L3-S14).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "the cadential arrival (L3-S10) is not held to a fixed window".
+
 ---
 
 **Row 8.85 — a span with no cadence ends without one, and is not forced to carry one.**
@@ -10154,6 +10220,8 @@ such"*; L3-S15 publishes cadential evidence at other positions *"as an evidence-
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 1).* **HISTORICAL** — "Rows 8.47 (ii), 8.86, 8.116 (ii), 8.129 (ii) and 8.130 recorded as decided against.".
+
 ---
 
 **Row 8.87 — an internal cadence recorded, not resolved, since the boundary and the cadence are decided upstream.**
@@ -10171,6 +10239,8 @@ both upstream and not L6's to override (§8)." — §5.3 (locator: lines 285–2
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -10296,6 +10366,8 @@ phrase reading is an L3 decision."*
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
 ---
 
 **Row 8.96 — no further detection rule, and no hierarchy.** *WITHHELD — D-454.*
@@ -10314,6 +10386,8 @@ over the units of the phrase reading"*.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above. (ii) **UNPLACED** — the same.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
 ---
 
 **Row 8.97 — pressure to add detection points to an earlier layer or out of scope.** *WITHHELD — D-454.*
@@ -10331,6 +10405,8 @@ detection that should be a primitive) or is an **out-of-scope extension** (§9-D
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -10392,6 +10468,10 @@ L3-S15 says *"A cadence is published only at a phrase end L3 has decided"*.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above. (ii) **UNPLACED** — the same. (iii) **ADOPTED — carried** (L3-S37).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (ii) **HISTORICAL** — "the cadence is L3's, read off L2's decided chords at L3's decided phrase ends, not detected by the old function layer and read by the grouping layer; follows from the charter".
+
 ---
 
 **Row 8.102 — no second boundary detector, cadence detector or key segmenter.**
@@ -10451,6 +10531,8 @@ of its own.
 *PROPOSED DISPOSITION.* (i) **ADOPTED — proposed.** *Proposal:* that the phrase and section grouping be held as an
 explanatory output of the analysis, not as an accuracy requirement on it. (ii) **UNPLACED** — a rule on L3's own subject
 that a derived statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -10561,6 +10643,8 @@ L3 decision."*
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
 ---
 
 **Row 8.113 — D3: sections, periods and sentences out of the core for proportionality.** *WITHHELD — D-456.*
@@ -10639,6 +10723,8 @@ publishes cadential evidence at other positions *"as an evidence-class fact name
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15). (ii) **UNPLACED** — a rule on L3's own subject that a derived
 statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Rows 8.47 (ii), 8.86, 8.116 (ii), 8.129 (ii) and 8.130 recorded as decided against.".
 
 ---
 
@@ -10835,6 +10921,8 @@ L3-S15 publishes such evidence *"as an evidence-class fact named for the pattern
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15). (ii) **UNPLACED** — a rule on L3's own subject that a derived
 statement differs from; read: the two texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Rows 8.47 (ii), 8.86, 8.116 (ii), 8.129 (ii) and 8.130 recorded as decided against.".
+
 ---
 
 **Row 8.130 — the glossary entry *Internal cadence [L6]*.**
@@ -10851,6 +10939,8 @@ surfaced as one; L3-S15 says *"A cadence is published only at a phrase end L3 ha
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 1).* **HISTORICAL** — "Rows 8.47 (ii), 8.86, 8.116 (ii), 8.129 (ii) and 8.130 recorded as decided against.".
 
 ---
 
@@ -12621,6 +12711,8 @@ figure and applied target against the tonality. (iii) **UNPLACED** — a rule on
 differs from; read: the two texts above. (iv) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*:
 the tonality per span is L2's. (v) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row
 9.85.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (iii) **HISTORICAL** — "the cadence is L3's, read off L2's decided chords at L3's decided phrase ends, not detected by the old function layer and read by the grouping layer; follows from the charter".
 
 ---
 
@@ -14617,6 +14709,8 @@ evidence*, which publishes the notated boundary evidence per change point.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, and Row 8.14 (ii), where the same unit's definition is placed.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -24316,6 +24410,8 @@ rivals and their mass.
 points mark the finest grain at which the sounding harmony changes. (ii) **UNPLACED** — a rule on L3's own subject that
 two derived statements differ from; read: the two texts above, as at Row 8.24.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
 ---
 
 **Row 19.31 — the atomic unit the constant-sonority slice; phrases, key-areas and sections groupings derived from it.**
@@ -24336,6 +24432,8 @@ grouping is an L3 decision"*.
 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
 points bound the slices. (ii) **UNPLACED** — travelling with Row 19.30 (ii); read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -24485,6 +24583,8 @@ L3-S15, which publishes a cadence only at a phrase end L3 has decided. (vi) **UN
 recognised progression schema, and none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it
 covers, as at Row 8.18. (vii) **HISTORICAL** — a status at the time of writing; read beside the text L3-S22 quotes.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (iii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 ---
 
 **Row 19.39 — how the span kinds relate: nesting and cross-cutting.**
@@ -24508,6 +24608,8 @@ change point and both span edges are candidate phrase ends"*, a change point not
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides
 both spans. (ii) **UNPLACED** — read: the two texts above. (iii) **ADOPTED — carried** (L3-S22). (iv) **ADOPTED —
 proposed**, travelling with Row 7.63. (v) **UNPLACED** — travelling with Row 19.38 (vi).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (iv), its phrase half: **ADOPTED — carried** (L3-S8) — "a change of tonality may fall inside a phrase unit and a phrase may end without one; follows from Ruling 1 (no evidence forces or forbids a phrase end)".
 
 ---
 
@@ -24540,6 +24642,8 @@ absent flag is never read as an absent phrase end."*
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -24819,6 +24923,8 @@ reading is an L3 decision"* and L3-S22 *"The section grouping is an L3 decision.
 facts and makes no harmonic decision. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled
 decision.***, the one decision the charter names beneath L3. (iii) **UNPLACED** — a rule on L3's own subject that two
 derived statements differ from; read: the two texts above, as at Row 8.24. (iv) **ADOPTED — carried** (L3-S38).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (iii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -34602,6 +34708,8 @@ published only at a phrase end L3 has decided"*.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the basic cadence detection find a cadential chord pair
 followed by a new key region, a long held chord or a rest, at the current commit?
 
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* **QUARANTINED** — as proposed; "QUARANTINED as proposed: the reading file's vocabulary places a statement of *"how the implementation currently works"* there, and under the phase rule a disagreement between specification and code is evidence reserved for the audit".
+
 ---
 
 **Row 28.36 — full accuracy needs phrase structure analysis, not yet implemented.**
@@ -34819,6 +34927,8 @@ lines 7306–7307).
 
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `detectCadences()` label a half cadence wherever the last
 in-selection region is V or viio, at the current commit?
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* **QUARANTINED** — as proposed; "QUARANTINED as proposed: the reading file's vocabulary places a statement of *"how the implementation currently works"* there, and under the phase rule a disagreement between specification and code is evidence reserved for the audit".
 
 ---
 
@@ -39954,6 +40064,10 @@ delimits Layer 6's punctuation-span"*; L3-S8 says *"No item of evidence forces o
 two texts above. (ii) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, as Rows 7.68 (i), 8.16 and 19.41. (iii) **ADOPTED — carried** (L3-S42), as Row 7.68 (ii).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 ---
 
 **Row 36.5 — the terms-table entry *Boundary-strength profile*: the graded strength, published as a margin-class
@@ -39997,6 +40111,10 @@ its *"main consumer"*; L3-S8 says *"The phrase reading is an L3 decision."*
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15), as Row 2.16 (i). (ii) **UNPLACED** — a rule on L3's own
 subject that a derived statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii), its phrase side: **HISTORICAL** — "Ruling 1 settles their phrase side only.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (ii), its cadence side: **HISTORICAL** — "the cadence is read at L3's decided phrase ends, not at a gate fed by peaks picked from the page; follows from the morning's Ruling 1 and the charter. Algorithm: nothing beyond Ruling 1.".
 
 ---
 
@@ -40069,6 +40187,8 @@ phrases (a post-cadential codetta, an introduction before the first phrase)."*
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S10). (ii) **UNPLACED** — a rule on L3's own subject that a
 derived statement differs from; read: the two texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_phrase_units_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Rows 8.4 (i), 8.68, 8.69, 8.70, 8.72, 36.10 (ii) and 36.113 (ii) recorded as decided against.".
+
 ---
 
 **Row 36.11 — a graded boundary-strength profile from the notation alone; the picked ticks and the region flag from
@@ -40090,6 +40210,8 @@ profile; L3-S8 says the L3 decision *"publishes the principal partition with its
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, as Rows 10.8
 (ii) and 20.23 placed the boundary-strength profile and the primitive. (ii) **UNPLACED** — a rule on L3's own subject
 that a derived statement differs from; read: the two texts above, as Rows 7.68 (i), 8.16 and 19.41.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -40114,6 +40236,10 @@ strength *"as an"* input from this primitive; L3-S8 says *"The phrase reading is
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15), as Row 2.16 (i). (ii) **UNPLACED** — a rule on L3's own
 subject that a derived statement differs from; read: the two texts above. (iii) **ADOPTED — carried** (L3-S39), as Row
 7.295.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii), its phrase side: **HISTORICAL** — "Ruling 1 settles their phrase side only.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (ii), its cadence side: **HISTORICAL** — "the cadence is read at L3's decided phrase ends, not at a gate fed by peaks picked from the page; follows from the morning's Ruling 1 and the charter. Algorithm: nothing beyond Ruling 1.".
 
 ---
 
@@ -40154,6 +40280,10 @@ the cadence gate consumes"*; L3-S8 says *"The phrase reading is an L3 decision."
 Row 8.10 placed it. (iii) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, as Rows 7.68 (i), 8.16 and 19.41.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (iii), its phrase side: **HISTORICAL** — "Ruling 1 settles their phrase side only.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (iii), its cadence side: **HISTORICAL** — "the cadence is read at L3's decided phrase ends, not at a gate fed by peaks picked from the page; follows from the morning's Ruling 1 and the charter. Algorithm: nothing beyond Ruling 1.".
+
 ---
 
 **Row 36.15 — one owned primitive for any instrumentation, replacing a duplicated, fermata-only computation.**
@@ -40192,6 +40322,8 @@ punctuation-span; L3-S8 says *"No item of evidence forces or forbids a phrase en
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above, as Rows 7.68 (i), 8.16 and 19.41. (ii) **ADOPTED — carried** (L3-S42), as Row 7.68 (ii).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -40303,6 +40435,8 @@ the notated boundary evidence; L3-S9 cites IC-L1 S-39, S-41 and S-50 for it, as 
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -40654,6 +40788,10 @@ the L3 decision *"publishes the principal partition with its rivals and their ma
 that a derived statement differs from; read: the two texts above, as Rows 7.68 (i), 8.16 and 19.41. (iii) **UNPLACED** —
 a rule on L3's own subject that a derived statement differs from; read: the two texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (iii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 ---
 
 **Row 36.38 — the products notation facts carrying no judgement of key, chord or function.**
@@ -40673,6 +40811,8 @@ facts"*; L3-S8 says *"The phrase reading is an L3 decision."*
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which consumes
 the notated record only and makes no tonality claim. (ii) **UNPLACED** — a rule on L3's own subject that a derived
 statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -40715,6 +40855,8 @@ phrase reading is an L3 decision."*
 two texts above, as Rows 7.68 (i), 8.16 and 19.41. (ii)
 **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, as Rows 10.8 (ii) and 20.23 placed the
 boundary-strength profile and the primitive.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 ---
 
@@ -40813,6 +40955,8 @@ wherever it occurs"*; L3-S8 says *"No item of evidence forces or forbids a phras
 publishes the notated boundary evidence; L3-S9 cites IC-L1 S-39, S-41 and S-50 for it. (ii) **UNPLACED** — a rule on
 L3's own subject that a derived statement differs from; read: the two texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 ---
 
 **Row 36.46 — a fermata on an eligible voice.**
@@ -40866,6 +41010,8 @@ boundary"*; L3-S8 says *"No item of evidence forces or forbids a phrase end"*.
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which
 publishes the notated boundary evidence; L3-S9 cites IC-L1 S-39, S-41 and S-50 for it. (ii) **UNPLACED** — a rule on
 L3's own subject that a derived statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -41043,6 +41189,10 @@ L3-S8 says the L3 decision *"publishes the principal partition with its rivals a
 two texts above, as Rows 7.68 (i), 8.16 and 19.41. (ii) **RELOCATED** — to ***the second axis — voice leading***, the
 melodic phrase of one voice being the axis's object, as Row 8.10 placed it.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i), its phrase side: **HISTORICAL** — "Ruling 1 settles their phrase side only.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (i), its cadence side: **HISTORICAL** — "the cadence is read at L3's decided phrase ends, not at a gate fed by peaks picked from the page; follows from the morning's Ruling 1 and the charter. Algorithm: nothing beyond Ruling 1.".
+
 ---
 
 **Row 36.59 — the notated markers spiking the texture profile.**
@@ -41083,6 +41233,10 @@ with its rivals and their mass"*.
 two texts above. (ii) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, as Rows 7.68 (i), 8.16 and 19.41.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 *The decisions register at this row.* The quoted statement lies inside the home of **D-481** (lines 188–193), *"The
 notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked"*, which the
 decisions register's INDEX records as LIVE, group H, entry ratified 2026-08-04 · user — the identity the artifact's
@@ -41110,6 +41264,8 @@ with its rivals and their mass"*.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, as Rows 7.68 (i), 8.16 and 19.41.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -41145,6 +41301,8 @@ of the phrase as L3 decides it."*
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "the phrase end is where L3 decides it, not at a picked peak; follows from Ruling 1 of the morning's record".
+
 ---
 
 **Row 36.64 — a region ending a phrase when a picked tick falls within it.**
@@ -41161,6 +41319,8 @@ ticks falls within it; L3-S8 says the L3 decision *"publishes the principal part
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -41180,6 +41340,8 @@ end"*.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -41376,6 +41538,8 @@ entering as a fitted term.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above. (ii) **HISTORICAL** — a deferral of a build.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "the phrase-length term (L3-S9 family (iii)) is in the model from the start as a fitted weight"; the term itself is L3-S9 family (iii).
+
 ---
 
 **Row 36.75 — both open items, not in the first build.**
@@ -41411,6 +41575,8 @@ L3-S8 says the L3 decision *"publishes the principal partition with its rivals a
 publishes the notated boundary evidence; L3-S9 cites IC-L1 S-39, S-41 and S-50 for it. (ii) **UNPLACED** — a rule on
 L3's own subject that a derived statement differs from; read: the two texts above, as Rows 7.68 (i), 8.16 and 19.41.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 ---
 
 **Row 36.77 — a phrase ended by a rest with no fermata: a boundary.**
@@ -41432,6 +41598,8 @@ the marker forcing it; L3-S8 says *"No item of evidence forces or forbids a phra
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which
 publishes the notated boundary evidence; L3-S9 cites IC-L1 S-39, S-41 and S-50 for it. (ii) **UNPLACED** — a rule on
 L3's own subject that a derived statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -41455,6 +41623,8 @@ the profile; L3-S8 says the L3 decision *"publishes the principal partition with
 publishes the notated boundary evidence; L3-S9 cites IC-L1 S-39, S-41 and S-50 for it. (ii) **UNPLACED** — a rule on
 L3's own subject that a derived statement differs from; read: the two texts above, as Rows 7.68 (i), 8.16 and 19.41.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 ---
 
 **Row 36.79 — a section break: a double bar line spikes the profile, a boundary.**
@@ -41474,6 +41644,8 @@ says *"No item of evidence forces or forbids a phrase end"*.
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which
 publishes the notated boundary evidence; L3-S9 cites IC-L1 S-39, S-41 and S-50 for it. (ii) **UNPLACED** — a rule on
 L3's own subject that a derived statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -41495,6 +41667,8 @@ boundary"*; L3-S8 says the L3 decision *"publishes the principal partition with 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, as Rows 10.8
 (ii) and 20.23 placed the boundary-strength profile and the primitive. (ii) **UNPLACED** — a rule on L3's own subject
 that a derived statement differs from; read: the two texts above, as Rows 7.68 (i), 8.16 and 19.41.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -41519,6 +41693,8 @@ low aggregate; L3-S8 says the L3 decision *"publishes the principal partition wi
 being the axis's object, as Row 8.10 placed it. (ii) **UNPLACED** — a rule on L3's own subject that a derived statement
 differs from; read: the two texts above, as Rows 7.68 (i), 8.16 and 19.41.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 ---
 
 **Row 36.82 — the cadence gate seeing no whole-texture phrase end there.**
@@ -41536,6 +41712,8 @@ whole-texture phrase end there"*; L3-S8 says *"The phrase reading is an L3 decis
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -41611,6 +41789,8 @@ the cadence at that phrase end.
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which computes
 the notated evidence the primitive is made of. (ii) **UNPLACED** — a rule on L3's own subject that a derived statement
 differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 *The decisions register at this row.* The quoted statement lies inside the home of **D-476** (lines 250–253), *"The
 phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function
@@ -41715,6 +41895,8 @@ L3-S8 says the L3 decision *"publishes the principal partition with its rivals a
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above, as Rows 7.68 (i), 8.16 and 19.41. (ii) **ADOPTED — carried** (L3-S9).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 *The decisions register at this row.* The quoted statement lies inside the home of **D-478** (lines 260–265), *"A phrase
 boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals"*, which the decisions
 register's INDEX records as LIVE, group H, entry ratified 2026-08-04 · user — the identity the artifact's
@@ -41790,6 +41972,8 @@ L3-S8 says the L3 decision *"publishes the principal partition with its rivals a
 **RELOCATED** — to ***the second axis — voice leading***, the melodic phrase of one voice being the axis's object, as
 Row 8.10 placed it. (iii) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, as Rows 7.68 (i), 8.16 and 19.41.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (iii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 *The decisions register at this row.* The quoted statement lies inside the home of **D-479** (lines 266–272), *"The
 boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are
@@ -42082,6 +42266,8 @@ says *"The phrase reading is an L3 decision."*
 two texts above. (ii) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which publishes the
 notated boundary evidence; L3-S9 cites IC-L1 S-39, S-41 and S-50 for it, as Row 36.22 (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
 ---
 
 **Row 36.110 — output movement at the graded step clearing the gate.**
@@ -42138,6 +42324,8 @@ deriving session's pack; a fact of the decisions register, relayed, moving no di
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that a phrase alignment by stable runs of L2's tonality be
 named as the fallback should the phrase reading prove too hard.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "the stable-key-run fallback is not adopted".
+
 *The decisions register at this row.* The quoted statement lies inside the home of **D-480** (lines 303–309), *"The
 phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at
 all — so it is built right but kept proportionate"*, which the decisions register's INDEX records as LIVE, group H,
@@ -42165,6 +42353,10 @@ lie between phrases (a post-cadential codetta, an introduction before the first 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
 two texts above, as Rows 7.68 (i), 8.16 and 19.41. (ii) **UNPLACED** — a rule on L3's own subject that a derived
 statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_phrase_units_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Rows 8.4 (i), 8.68, 8.69, 8.70, 8.72, 36.10 (ii) and 36.113 (ii) recorded as decided against.".
 
 ---
 
@@ -42202,6 +42394,8 @@ peak-picking runs on"*; L3-S8 says the L3 decision *"publishes the principal par
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, as Rows 10.8
 (ii) and 20.23 placed the boundary-strength profile and the primitive. (ii) **UNPLACED** — a rule on L3's own subject
 that a derived statement differs from; read: the two texts above, as Rows 7.68 (i), 8.16 and 19.41.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -42343,6 +42537,8 @@ with its rivals and their mass"*.
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, as Rows 7.68 (i), 8.16 and 19.41.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 ---
 
 **Row 36.125 — the glossary entry *Notated-marker spike*.**
@@ -42365,6 +42561,8 @@ marker, as Row 36.45 (ii) states its effect; L3-S8 says *"No item of evidence fo
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which
 publishes the notated boundary evidence; L3-S9 cites IC-L1 S-39, S-41 and S-50 for it. (ii) **UNPLACED** — a rule on
 L3's own subject that a derived statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -42502,6 +42700,10 @@ ticks feed"*; L3-S8 says *"The phrase reading is an L3 decision."*
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15), as Row 2.16 (i). (ii) **UNPLACED** — a rule on L3's own
 subject that a derived statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii), its phrase side: **HISTORICAL** — "Ruling 1 settles their phrase side only.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (ii), its cadence side: **HISTORICAL** — "the cadence is read at L3's decided phrase ends, not at a gate fed by peaks picked from the page; follows from the morning's Ruling 1 and the charter. Algorithm: nothing beyond Ruling 1.".
 
 ---
 
@@ -42723,6 +42925,8 @@ entering as a fitted term.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, as Row 36.74 (i).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "the phrase-length term (L3-S9 family (iii)) is in the model from the start as a fitted weight"; the term itself is L3-S9 family (iii).
 
 ---
 
@@ -43872,6 +44076,8 @@ is published only at a phrase end L3 has decided"*.
 two texts above. (ii) **RELOCATED** — to ***the second axis — voice leading***, which re-derives no fact the spine
 publishes.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (i) **HISTORICAL** — "the cadence is L3's, read off L2's decided chords at L3's decided phrase ends, not detected by the old function layer and read by the grouping layer; follows from the charter".
+
 ---
 
 **Row 37.32 — the entry *The voice-linear view*: per-voice event series over the same lossless notes.**
@@ -44134,6 +44340,8 @@ onset, the time since that voice's preceding attack, the spelled melodic interva
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a statement about the harmonic spine's reach that a derived statement differs
 from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **RELOCATED** to ***the second axis — voice leading*** — "no conflict of substance with L3-S9: reading per-voice surface cues as phrase evidence is not modelling voice leading, which the framework gives its own axis".
 
 ---
 
@@ -46601,6 +46809,8 @@ points mark the finest grain at which the sounding harmony changes, as Row 19.30
 own subject that a derived statement differs from; read: the two texts above, and L3-S22, which says *"The section
 grouping is an L3 decision."*, as Row 19.30 (ii).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
 ---
 
 **Row 38.2 — the atomic unit the constant-sonority slice, never the metric beat.**
@@ -47809,6 +48019,8 @@ evidence forces or forbids a phrase end, and an absent flag is never read as an 
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, as at Row 19.41.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
 ---
 
@@ -54132,6 +54344,8 @@ L3-S8 says *"No item of evidence forces or forbids a phrase end"*.
 differs from; read: the two texts above, and L3-S9, whose family (i) names *"the boundary flags with their scope
 (FERMATA, REST-BEGINS by voice, ALL-SILENT,"* among the evidence at a candidate phrase end.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 ---
 
 **Row 40.7 — the fermata undiscussed as key evidence, and absent from the note model's documented facts.**
@@ -54463,6 +54677,8 @@ publishes slices and L2 decides the segmentation. (iii) **UNPLACED** — a state
 bearing on a phrase end, that a derived statement differs from; read: the two texts above. (iv)
 **RELOCATED** — to ***L0 — The notated record***, which gives the metric position and the bar (`FRAMEWORK.md` §5, the L0
 block).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (iii) **ADOPTED — proposed** — "accelerating harmonic rhythm before a candidate position, read from L2's published boundaries, enters as a candidate term admitted only if a held-out measurement repays it (as L3-S9 (iv))".
 
 ---
 
@@ -55175,6 +55391,8 @@ published even without a named consumer"*.
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on how a fact is published, which binds L3's own publication, that a
 derived statement differs from; read: the two texts above, and `CLAUDE.md`'s fact-publication corollary with its
 amendment of 2026-07-12, which the derivation relays as D-100.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* **HISTORICAL** — "evidence-class facts are published without a named consumer, each with its establishment status (`CLAUDE.md`, the fact-publication corollary's amendment of 2026-07-12); and the pattern evidence has a consumer in any case, L3's phrase decision (L3-S9 (ii)). Documentation only.".
 
 #### Not a statement, at this member
 
@@ -72955,6 +73173,8 @@ as an input; L3-S8 says *"The phrase reading is an L3 decision."*
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, as Row 7.33 (ii) placed the next sentence of the same bullet.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
 *At the source now.* The sentence stands at lines 93–94 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 93 and keeping the bullet's bold lead; the next sentence,
 which Row 7.33 tabulates, begins on line 94. The nearest heading at the blob is *"## 3. Context & scope (external
@@ -73655,6 +73875,8 @@ Rows 10.8 (ii) and 20.23 placed the boundary-strength profile and the primitive,
 **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two texts above, as
 Rows 36.37 (ii) and 36.61.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
 *At the source now.* The sentence stands at lines 116–117 of the document's blob at this batch's Task 0 commit, found as
 quoted; line 117 goes on with the sentence on the stated mechanisms and their constants. The nearest heading at the blob
 is *"## 4. The model (the rules)"*. The located lines lie in none of member 36's published ranges: they fall between its
@@ -73810,6 +74032,8 @@ family (i) reads *"the spelled melodic interval"*.
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which publishes
 the notated boundary evidence and the per-voice relations; L3-S9 cites IC-L1 S-39, S-41 and S-50 for its family (i), as
 Row 36.53; the difference above is recorded with the relocation and decides nothing.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_phrase_units_sitting.md, Ruling 2).* **RELOCATED** to ***L1 — Change points, candidates and notated evidence*** — as proposed; "semitone versus spelled interval is L1's publication (RELOCATED as proposed)".
 
 *At the source now.* The item stands at lines 123–124 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens it; it is one of the three items line 120 leads. The nearest
@@ -74181,6 +74405,8 @@ computed by an earlier layer"*, the phrase boundaries among them; L3-S8 says *"T
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, travelling with Row 8.24, whose rule it defends.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
+
 *At the source now.* The sentence stands at lines 107–109 of the document's blob at this batch's Task 0 commit, found as
 quoted: it opens on line 107 after the bold sentence Row 8.24 tabulates and ends on line 109, before the sentence
 Row 8.25 tabulates. The nearest heading at the blob is *"## 1. The core principle"*. The lines lie inside member 8's one
@@ -74223,6 +74449,8 @@ never presented as a global one, annotating the distinction rather than removing
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* as Row 8.45 (ii), travelling with it: that each phrase unit
 carry the scope of the notated evidence that opened and closed it, the whole texture or one part, so that a local
 boundary is never presented as a global one.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **RELOCATED** to ***L1 — Change points, candidates and notated evidence*** — "the notated evidence and its scope stay at L1 (relayed through L3-S9 (i)); L3 does not copy them onto its units (#6)".
 
 *At the source now.* The sentence stands at lines 169–171 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 169 after the bullet's first sentence, which Row 8.45 tabulates, and closing the bullet. The
@@ -74355,6 +74583,8 @@ claim: the grouping is held to the assembly and the carries, with no detection o
 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, travelling with Rows 8.24 and 8.105 (ii).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "recorded as overtaken by the charter and Ruling 48, a consequence recorded under D-599 and not a separate choice".
 
 *At the source now.* The sentence stands at lines 311–312 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 311 after the sentence that ends *"not a new Layer-6 mechanism."* and closing the section. The
@@ -74589,6 +74819,8 @@ segmentations of one stream, not a hierarchy.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* as Row 7.63, travelling with it and with Row 19.39 (iv):
 that a change of tonality may fall inside a phrase unit and a phrase unit's end need not change tonality, the two
 segmentations independent and neither nested in the other.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* Its phrase half: **ADOPTED — carried** (L3-S8) — "a change of tonality may fall inside a phrase unit and a phrase may end without one; follows from Ruling 1 (no evidence forces or forbids a phrase end)".
 
 *At the source now.* The sentence stands at lines 267–269 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 267 and keeping the bold markers; line 269 goes on with
@@ -76421,6 +76653,10 @@ and both span edges are candidate phrase ends."* and *"No item of evidence force
 two texts above, travelling with Rows 2.15 and 7.336, which tabulate the same rule from other documents' sentences. (ii)
 **QUARANTINED** — *audit question:* does the built phrase-boundary profile carry a graded boundary strength by which a
 consumer could weight a vote? — travelling with Row 7.337.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (i), its phrase side: **HISTORICAL** — "Ruling 1 settles their phrase side only.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (i), its cadence side: **HISTORICAL** — "D-495 (the flat-profile fallback) loses its subject at L3 … Algorithm: the old fallback rule drops out; no new mechanism.".
 
 *At the source now.* The sentence stands at lines 324–325 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 324; the next amendment, *A-6*, opens at line 326. The
@@ -79121,6 +79357,8 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   57.170, 57.171 (i) and 57.171 (ii) and DIFFERS at Row 57.157; the L2 comparison relocated these rows to L3.)*
 - Row 57.207 — that the surface-only primitive should not be expected to reach the accuracy of tonally informed systems.
   *(As Row 36.107 (i); L3-S9 AGREES; the L2 comparison relocated L2 Row 40.113 to L3.)*
+- Row 8.45 (ii) — that each phrase unit carry the notated evidence that opened and closed it, with that evidence's scope. *(cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1.)*
+- Row 57.259 — that each phrase unit carry the scope of the notated evidence that opened and closed it. *(As Row 8.45 (ii), travelling with it; cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1.)*
 
 **To *L2 — The tonal reading. The one entangled decision.***
 
@@ -79697,6 +79935,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   given no idiom as a voicing. *(As Rows 46.21 (i), 46.35 (ii) and 46.36.)*
 - Row 57.395 — that the Prinner is a named galant schema, from the dictionary's terms table. *(As Row 44.3; the L2
   comparison relocated L2 Row 50.6 to L3.)*
+- Row 37.46 — that the harmonic spine is structurally blind to how the lines move. *(cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1.)*
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -83430,11 +83669,11 @@ design-intent entry whose heading the deriving session's listing of pack member 
 
 **NOTHING.** The ruling on these dispositions comes separately, framed by the writing side as a decision surface over
 these rows. Nothing in this file is a recommendation about that ruling, about the derivation, about the method, or
-about any open question.
+about any open question. *(former wording, preserved (#12); true of every writing before the application act)* Rows carrying a RULED DISPOSITION line are placed by the record and ruling the line names, rows carrying a RECORDED DISPOSITION line as that record's own derivation, challengeable at the row; every other row remains a proposal (the application act of `records/cc/instructions/cc_instruction_l3_application_2026_11_08.md`, Task 3).
 
 ## 16. What this file does NOT do
 
-- **It applies no disposition.** Every one is a proposal. No outgoing text is edited, and the derivation is untouched.
+- **It applies no disposition.** Every one is a proposal. No outgoing text is edited, and the derivation is untouched. *(former wording, preserved (#12); true of every writing before the application act)* Rows carrying a RULED DISPOSITION line are placed by the record and ruling the line names, rows carrying a RECORDED DISPOSITION line as that record's own derivation, challengeable at the row; every other row remains a proposal (the application act of `records/cc/instructions/cc_instruction_l3_application_2026_11_08.md`, Task 3).
 - **It establishes nothing** (**#19**). Every verdict in it is this session's authored reading, and every one is
   re-placeable by the user at the two quoted texts.
 - **It states no verdict on the derivation or on the deriving session's independence.**
