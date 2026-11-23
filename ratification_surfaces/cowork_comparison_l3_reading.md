@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.22 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.23 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.23 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.24 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -1300,6 +1300,8 @@ tonality and the chord together among rivals.
 
 *RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md, §2 (f)).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — as proposed, "RELOCATED to L2 as proposed"; "the charter's line 478". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "RELOCATED to L2, naming L2-S30 (1), as proposed".
+
 ---
 
 **Row 2.7 — the perfect/imperfect call on the bass-derived inversion; the soprano a soft nudge; no melody
@@ -1626,6 +1628,8 @@ publishes."*
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
 tonality at each moment; the backward read it describes is the case L3-S38's *"measured backward edge"* names.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "The cut now stands: HISTORICAL 29 (the twelve of Ruling 1, the five of that ruling, and the twelve derived)".
+
 ---
 
 **Row 2.25 — the labeller's predicate survives for the brief residue.**
@@ -1881,6 +1885,8 @@ L3-S38 carries the first half only. (iii) **UNPLACED** — read: the outgoing se
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_key_areas_sitting.md, Ruling 2).* (ii) **HISTORICAL** — "Rows 3.5(i) and 3.5(ii) decided against".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Rows 3.5(ii) and 3.15 as key-areas Ruling 2 decides them (decided against; 3.15 by travel with 3.5(ii), this side's derivation)".
+
 ---
 
 **Row 3.6 — the rule requires a smoothed key sequence, by no one implementation.**
@@ -2025,6 +2031,8 @@ rule's stated intent." — the same block (locator: lines 2248–2250).
 *Current-text axis.* L3-S38: **AGREES** — as to the island keeping its own key; the grouping half is not spoken to.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 3.5 (ii).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "Rows 3.5(ii) and 3.15 as key-areas Ruling 2 decides them (decided against; 3.15 by travel with 3.5(ii), this side's derivation)".
 
 ---
 
@@ -4117,6 +4125,8 @@ decision reads; L3-S38 says *"L2 reads nothing L3 publishes."*
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: the tonality, and the
 evidence it weighs, are L2's.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **QUARANTINED** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "QUARANTINED 4 (7.53, 7.62(ii), 7.117, 7.189(ii), derivation)"; "each with its twin's audit question"; the twin, the L2 reading file's Row 5.59: "does the dormant cadence detector cast a weighted tonic vote per region, and what does the vote change?".
+
 ---
 
 **Row 7.54 — step 3: tonicization by default; modulation on a confirming cadence and persistence.**
@@ -4256,6 +4266,8 @@ nothing L3 publishes."*
 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15. (ii)
 **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.53.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **QUARANTINED** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "QUARANTINED 4 (7.53, 7.62(ii), 7.117, 7.189(ii), derivation)"; "each with its twin's audit question"; the twin, the L2 reading file's Row 5.69(ii): "does the dormant function layer confirm a key-span by a cadence whose arrival falls inside it, by that test alone?".
 
 ---
 
@@ -5224,6 +5236,8 @@ relay of de Clercq (*"The fermata delineates the phrase and not necessarily the 
 *"L2 reads nothing L3 publishes."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.53.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **QUARANTINED** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "QUARANTINED 4 (7.53, 7.62(ii), 7.117, 7.189(ii), derivation)"; "each with its twin's audit question"; the twin, the L2 reading file's Row 5.125: "does the dormant cadence detector cast a weighted tonic vote per region, and what does the vote change?".
 
 ---
 
@@ -6356,6 +6370,8 @@ tonal reading. The one entangled decision.*, as Row 7.53.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* (i) **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **QUARANTINED** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "QUARANTINED 4 (7.53, 7.62(ii), 7.117, 7.189(ii), derivation)"; "each with its twin's audit question"; the twin, the L2 reading file's Row 5.198(ii): "does the dormant cadence detector cast a weighted tonic vote per region, and what does the vote change?".
+
 ---
 
 **Row 7.190 — a tonicization that stays home.**
@@ -6679,6 +6695,8 @@ tonal reading. The one entangled decision.*, as Row 7.15.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_mass_and_status_sitting.md, Ruling 2).* (i) **RELOCATED** to ***the uncertainty surface*** — as proposed; "Agrees with its twin — RELOCATED to *the uncertainty surface*, as proposed."; its L2 twin: "7.209(i)↔5.218(i)".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "The cut now stands: HISTORICAL 29 (the twelve of Ruling 1, the five of that ruling, and the twelve derived)".
+
 ---
 
 **Row 7.210 — case 1: agreement reinforces.**
@@ -6696,6 +6714,8 @@ the key; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "The cut now stands: HISTORICAL 29 (the twelve of Ruling 1, the five of that ruling, and the twelve derived)".
+
 ---
 
 **Row 7.211 — case 2: an uncertain earlier layer, select among its readings.**
@@ -6712,6 +6732,8 @@ selection-among-carried-readings of §5.5)." — §8, the four-case model (locat
 mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.13 (i).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "The cut now stands: HISTORICAL 29 (the twelve of Ruling 1, the five of that ruling, and the twelve derived)".
 
 ---
 
@@ -6741,6 +6763,8 @@ contradiction is decisive.**" — §8, the four-case model (locator: lines 592�
 L3-S38 says *"L3 never revises L2"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "The cut now stands: HISTORICAL 29 (the twelve of Ruling 1, the five of that ruling, and the twelve derived)".
 
 ---
 
@@ -6804,6 +6828,8 @@ channels (future layers) are added as further instances." — §8 (locator: line
 cadence-confirmed modulation recompute"*; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "The cut now stands: HISTORICAL 29 (the twelve of Ruling 1, the five of that ruling, and the twelve derived)".
 
 ---
 
@@ -7031,6 +7057,8 @@ says *"No L3 fact may change an L2 fact, a rival or a mass."*
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.13 (i).
 (ii) **ADOPTED — carried** (L3-S39).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (i) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "The cut now stands: HISTORICAL 29 (the twelve of Ruling 1, the five of that ruling, and the twelve derived)".
+
 ---
 
 **Row 7.233 — D4: a note-separable case is a lower layer's, a function-separable one this layer's.**
@@ -7116,6 +7144,8 @@ later evidence"*; L3-S38 says *"L3 never revises L2"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "The cut now stands: HISTORICAL 29 (the twelve of Ruling 1, the five of that ruling, and the twelve derived)".
+
 ---
 
 **Row 7.239 — D7: every later layer bears on every earlier inference.**
@@ -7133,6 +7163,8 @@ the earlier layer's confidence — firing a localized, forward, convergence-boun
 earlier inference"*; L3-S38 says *"L2 reads nothing L3 publishes."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "The cut now stands: HISTORICAL 29 (the twelve of Ruling 1, the five of that ruling, and the twelve derived)".
 
 ---
 
@@ -7180,6 +7212,8 @@ publishes."*
 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15. (ii)
 **HISTORICAL** — a plan.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (i) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "The cut now stands: HISTORICAL 29 (the twelve of Ruling 1, the five of that ruling, and the twelve derived)".
 
 ---
 
@@ -8113,6 +8147,8 @@ decisive later evidence"*; L3-S38 says *"L3 never revises L2"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "The cut now stands: HISTORICAL 29 (the twelve of Ruling 1, the five of that ruling, and the twelve derived)".
+
 ---
 
 **Row 7.306 — the canonical control-flow contract should carry it.**
@@ -8321,6 +8357,8 @@ resolver"*; L3-S38 says *"L2 reads nothing L3 publishes."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.53 (Row 2.24 at
 §10 places the key layer's consumption of cadence facts the same way).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, §1b: "The cut now stands: HISTORICAL 29 (the twelve of Ruling 1, the five of that ruling, and the twelve derived)".
 
 ---
 
@@ -10793,6 +10831,8 @@ mass."*
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: deciding and correcting
 the chord read over each span is L2's.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
+
 ---
 
 **Row 8.107 — the grouping groups the already-corrected stream.**
@@ -10821,6 +10861,8 @@ fired by the §8 override mechanism." — §8 (locator: lines 333–334).
 override mechanism"*; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 8.106.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
 
 ---
 
@@ -12598,6 +12640,8 @@ rival or a mass."*
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: selection among the
 chord readings is L2's decision, as Row 7.13 (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
+
 ---
 
 **Row 9.66 — the selection generalizes the resolver; today only one arm reads the whole pool.**
@@ -12686,6 +12730,8 @@ leading-tone-rotation cases"*; L3-S38 says *"L2 reads nothing L3 publishes."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: the evidence for the
 tonality is L2's, as Row 7.53.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **QUARANTINED** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "QUARANTINED, each with its twin's audit question (2), derivation"; the twin, the L2 reading file's Row 8.73: "does the dormant resolver decide a relative-pair slice by the cadence tonic-vote and the three same-collection cues?".
 
 ---
 
@@ -12968,6 +13014,8 @@ the tonality per span is L2's. (v) **RELOCATED** — to *L2 — The tonal readin
 
 *RULED DISPOSITION (cowork_rulings_2026_11_02_l3_cadence_placement_sitting.md, Ruling 2).* (iii) **HISTORICAL** — "the cadence is L3's, read off L2's decided chords at L3's decided phrase ends, not detected by the old function layer and read by the grouping layer; follows from the charter".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (i) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
+
 ---
 
 **Row 9.90 — it reads the chord layer's carry forward, never re-derives from the notes, and works within the key
@@ -13043,6 +13091,8 @@ localized-forward-convergence-bounded mechanism"*; L3-S38 says *"L3 never revise
 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
 
 ---
 
@@ -14871,6 +14921,8 @@ fact, a rival or a mass."*
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: the selection among the
 carried readings of a slice belongs to the chord decision and its rivals, as Row 7.13 (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
+
 ---
 
 **Row 10.5 — the function layer settles the carried readings at its gated entry.**
@@ -14887,6 +14939,8 @@ L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, travelling with Row
 10.4.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
 
 ---
 
@@ -14999,6 +15053,8 @@ in the chord layer's commits; L3-S38 says *"No L3 fact may change an L2 fact, a 
 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis*. (ii) **RELOCATED** — to *L2 — The tonal
 reading. The one entangled decision.*, as Row 2.3 (i).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
 
 ---
 
@@ -15259,6 +15315,8 @@ Architectural Layer 5"*; L3-S38 says *"L2 reads nothing L3 publishes."*
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, which decides the
 tonality and the chord as one entangled decision. (ii) **RELOCATED** — to *L2 — The tonal reading. The one entangled
 decision.*, as Row 2.24.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
 
 ---
 
@@ -16960,6 +17018,8 @@ resolves the carried readings"*; L3-S38 says *"No L3 fact may change an L2 fact,
 span the rivals with their mass. (ii) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row
 10.4.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
+
 ---
 
 **Row 10.142 — it annotates and does not transform.**
@@ -17032,6 +17092,8 @@ back-edge from this layer." — the same bullet (locator: lines 400–401).
 Layer 5"*; L3-S38 says *"L2 reads nothing L3 publishes."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 10.26 (ii).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
 
 ---
 
@@ -17184,6 +17246,8 @@ lines 427–429).
 Layer 5"*; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.294 (iv).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
 
 ---
 
@@ -17769,6 +17833,8 @@ the same bullet (locator: lines 525–526).
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 10.156.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
+
 ---
 
 **Row 10.199 — Temperley's root-proximity smoothing not adopted, left to the function layer.**
@@ -17860,6 +17926,8 @@ a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 10.4.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
+
 ---
 
 **Row 10.205 — a confidently committed slice can be overturned by the function layer.**
@@ -17879,6 +17947,8 @@ says *"L3 never revises L2"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.150.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "HISTORICAL (18): the three of Ruling 1; and, as this side's derivation (surface §3)".
+
 ---
 
 **Row 10.206 — a commit not a final word.**
@@ -17895,6 +17965,8 @@ L3-S38 says *"L3 never revises L2"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, travelling with Row
 10.205.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "RELOCATED to L2, naming L2-S43 (1), derivation".
 
 ---
 
@@ -17919,6 +17991,8 @@ layer carried**"*; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a 
 confidence on every decision, committed and inherited included, never pruned (as Row 7.308)? (ii) **RELOCATED** — to *L2
 — The tonal reading. The one entangled decision.*, as Row 10.205. (iii) **RELOCATED** — to *L2 — The tonal reading. The
 one entangled decision.*, travelling with Row 10.205.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **QUARANTINED** — "the 100 DIFFERS as the eight cuts file them"; cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, §2: "QUARANTINED, each with its twin's audit question (2), derivation"; cowork_l3_s38_second_cut_surface_2026_11_03.md, §3: "does the dormant function layer override only by selecting among the chord engine's carried readings?".
 
 ---
 
@@ -19594,6 +19668,8 @@ the carried readings at the Layer-5 engagement; L3-S38 says *"No L3 fact may cha
 *PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status of a delivered design, its content tabulated at member 9. (ii)
 **HISTORICAL** — a status of a delivered design, its content tabulated at member 9.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — as proposed; "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_third_cut_surface_2026_11_03.md, §3 A: "The comparison's own proposal is HISTORICAL, kept"; "a status of a delivered design".
+
 ---
 
 **Row 12.14 — arc #10: what the delegated joint key-and-chord design contains.**
@@ -20644,6 +20720,8 @@ says *"No L3 fact may change an L2 fact, a rival or a mass."*
 *PROPOSED DISPOSITION.* (i) **QUARANTINED** — *Audit question:* on which run was the decoder's abstention rate measured,
 and does it reproduce? (ii) **HISTORICAL** — a build state, its design tabulated at member 10.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — as proposed; "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_third_cut_surface_2026_11_03.md, §3 A: "The comparison's own proposal is HISTORICAL, kept"; "a build state".
+
 ---
 
 **Row 13.24 — the bounded-window joint step unlocked and deferred to the go/no-go measurement.**
@@ -20673,6 +20751,8 @@ progression grammar)." — the same item (locator: lines 47–49).
 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **HISTORICAL** — a build state, its design tabulated at member 10.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — as proposed; "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_third_cut_surface_2026_11_03.md, §3 A: "The comparison's own proposal is HISTORICAL, kept"; "a build state".
 
 ---
 
@@ -23759,6 +23839,8 @@ rival or a mass."*
 *Forward-only, with two scoped escapes*, as SUPERSEDED BY D-001. (ii) **HISTORICAL** — the same superseded architecture.
 (iii) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, as Row 7.238.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (iii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_third_cut_surface_2026_11_03.md, §3 B: "The forward override — following Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md`".
+
 #### Not a statement, at this member
 
 Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
@@ -24506,6 +24588,10 @@ never revises L2"*, a cadence being L3's (L3-S15).
 identities the signal would revise. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***,
 as Rows 2.3 (i) and 7.238 placed the cadence-confirmed recompute.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (i) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_third_cut_surface_2026_11_03.md, §3 C: "The route back into the chord or the key — nothing-from-L3 Ruling 2"; "What is superseded is the route: a later layer's decided facts fed back to choose the chord or the key".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_third_cut_surface_2026_11_03.md, §3 C: "The route back into the chord or the key — nothing-from-L3 Ruling 2"; "What is superseded is the route: a later layer's decided facts fed back to choose the chord or the key".
+
 ---
 
 **Row 19.20 — Phase E designed as a bidirectional interface.**
@@ -24521,6 +24607,8 @@ sub-section (locator: lines 1018–1019).
 interface"*; L3-S38 says *"L3 never revises L2, and L2 reads nothing L3 publishes."*
 
 *PROPOSED DISPOSITION.* **HISTORICAL** — a design instruction for the superseded Phase E, travelling with Row 19.18.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — as proposed; "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_third_cut_surface_2026_11_03.md, §3 A: "The comparison's own proposal is HISTORICAL, kept"; "a design instruction for the superseded Phase E".
 
 ---
 
@@ -24606,6 +24694,8 @@ reading on L3's evidence being *"a question for a measured backward edge"*.
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose committed
 reading the override would overturn, as Rows 2.3 (i) and 7.238 placed it.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_third_cut_surface_2026_11_03.md, §3 B: "The forward override — following Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md`".
+
 ---
 
 **Row 19.26 — the one coupled decision a gated joint step.**
@@ -24645,6 +24735,8 @@ D-001. (ii) **HISTORICAL** — the same stack, whose slicer the charter's L2 suc
 (iii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which holds the chord and its
 elaboration assignments together. (iv) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as
 Row 19.25.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (iv) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_third_cut_surface_2026_11_03.md, §3 B: "The forward override — following Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md`".
 
 ---
 
@@ -24783,6 +24875,10 @@ L2"*.
 and 7.238 placed the override. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose
 tonality and chord the two instances would change.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (i) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_third_cut_surface_2026_11_03.md, §3 B: "The forward override — following Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md`".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_third_cut_surface_2026_11_03.md, §3 B: "The forward override — following Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md`".
+
 ---
 
 **Row 19.35 — forward-only a strong default; a backward edge only as a measured, documented exception.**
@@ -24886,6 +24982,8 @@ covers, as at Row 8.18. (vii) **HISTORICAL** — a status at the time of writing
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (vii) **HISTORICAL** — as proposed; "recorded as overtaken by the charter".
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 2).* (iii) **HISTORICAL** — "the ten rows that call the grouping flat are recorded as decided against".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (v) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_third_cut_surface_2026_11_03.md, §3 D: "The shared cadence detector"; "So the sentence's one detector feeding both is a superseded plan on both halves".
 
 ---
 
@@ -26762,6 +26860,8 @@ change an L2 fact, a rival or a mass."*
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose gate policy accepts the case.
 (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 7.13 (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_fourth_cut_surface_2026_11_03.md, §3 A: "The comparison points to a row already filed HISTORICAL".
+
 ---
 
 **Row 20.45 — the local-key hypothesis from key-agnostic signals only, never from the key-area grouping.** *WITHHELD —
@@ -28432,6 +28532,8 @@ history"*, where L3-S38 says *"L2 reads nothing L3 publishes."*
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose chord
 decision that context would serve, as Row 2.24.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_fourth_cut_surface_2026_11_03.md, §3 A: "The comparison points to a row already filed HISTORICAL".
+
 ---
 
 **Row 21.39 — the completeness bonus.**
@@ -28677,6 +28779,8 @@ applies … cadence … reasoning"* to improve the chords' agreement, where L3-S
 a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **HISTORICAL** — a plan of the earlier layer stack for its Phase 2.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — as proposed; "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_fourth_cut_surface_2026_11_03.md, §3 B: "The comparison's own proposal is HISTORICAL, kept"; "a plan of the earlier layer stack for its Phase 2".
 
 ---
 
@@ -31218,6 +31322,8 @@ publishes."*
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose chord
 decision the context would inform, as Row 21.38.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_fourth_cut_surface_2026_11_03.md, §3 A: "The comparison points to a row already filed HISTORICAL".
+
 ---
 
 **Row 22.2 — the remaining texture fixes first, among them a phrase-aware look-ahead of the tonality.**
@@ -31237,6 +31343,8 @@ a measured backward edge"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose chord and
 tonality decisions the three fixes are to.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_fourth_cut_surface_2026_11_03.md, §3 C: "A work list whose L2 twin is HISTORICAL; the comparison's RELOCATED not followed".
 
 ---
 
@@ -39658,6 +39766,8 @@ phrase-boundary and cadence evidence"*; L3-S38 says *"L2 reads nothing L3 publis
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `HarmonicFunctionContext` carry phrase-boundary or
 cadence evidence at the current commit, and does the chord competition read it?
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_fifth_cut_surface_2026_11_03.md, §3: "an event, a build state".
+
 ---
 
 **Row 35.155 — the planned extension E4.**
@@ -42654,6 +42764,8 @@ key/function)"*; L3-S38 says *"L2 reads nothing L3 publishes."*
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — proposed** — travelling with Row 8.105 (i). (ii) **UNPLACED** — a rule on L3's
 own subject that a derived statement differs from; read: the two texts above.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_fifth_cut_surface_2026_11_03.md, §3: "What is superseded is the route: a later layer's decided facts fed back to choose the chord or the key"; "a means to key".
 
 *The decisions register at this row.* The quoted statement lies inside the home of **D-480** (lines 303–309), *"The
 phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at
@@ -47324,6 +47436,8 @@ whose tonality reading consumes nothing L3 publishes. (iii) **HISTORICAL** — t
 plan, as Row 19.26. (iv) **QUARANTINED.** *Audit question:* is the key and mode reading the analysis's largest source of
 error at the current commit, and on which run was that established?
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (iii) **HISTORICAL** — as proposed; "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_sixth_cut_surface_2026_11_03.md, §3 A: "The gated Stage-5 step — the comparison's own proposal HISTORICAL, kept".
+
 ---
 
 **Row 38.11 — the table, layer 4: the chord symbol and its non-chord tones, one judgment.**
@@ -47638,6 +47752,8 @@ two texts above, and L3-S16, under which the cadence is read off L2's decided ch
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* (i) **HISTORICAL** — "Rows 8.88 (i) and 38.26 (i) recorded as decided against".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (iii) **HISTORICAL** — as proposed; "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_sixth_cut_surface_2026_11_03.md, §3 A: "The gated Stage-5 step — the comparison's own proposal HISTORICAL, kept".
+
 ---
 
 **Row 38.27 — the residual coupling of key and chord, where a key-first reading plateaus.**
@@ -47800,6 +47916,8 @@ identity, cadence, function"*; L3-S38 says *"No L3 fact may change an L2 fact, a
 
 *PROPOSED DISPOSITION.* **HISTORICAL** — the gated Stage-5 step of a superseded plan, as Row 19.26.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — as proposed; "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_sixth_cut_surface_2026_11_03.md, §3 A: "The gated Stage-5 step — the comparison's own proposal HISTORICAL, kept".
+
 ---
 
 **Row 38.37 — a forward consumer picking from a menu.**
@@ -47879,6 +47997,8 @@ fact may change an L2 fact, a rival or a mass."*
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 19.34 (i)
 placed the override.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_sixth_cut_surface_2026_11_03.md, §3 B: "The forward override — following Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md` and the third cut's §3 B".
+
 ---
 
 **Row 38.42 — every later layer bringing its evidence to bear on every earlier inference.**
@@ -47895,6 +48015,8 @@ forward-only, no backward edges (user-ratified 2026-06-22).*, the same bullet (l
 all of them"*; L3-S38 says *"L3 never revises L2"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 19.34 (i).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_sixth_cut_surface_2026_11_03.md, §3 B: "The forward override — following Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md` and the third cut's §3 B".
 
 ---
 
@@ -47918,6 +48040,8 @@ mass."*
 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, whose rule how a confidence is formed is.
 (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 19.25.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_sixth_cut_surface_2026_11_03.md, §3 B: "The forward override — following Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md` and the third cut's §3 B".
 
 ---
 
@@ -47971,6 +48095,8 @@ never revises L2"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 19.34 (ii).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_sixth_cut_surface_2026_11_03.md, §3 B: "The forward override — following Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md` and the third cut's §3 B".
+
 ---
 
 **Row 38.47 — coverage failures staying in their layer.**
@@ -48018,6 +48144,8 @@ a later layer"*; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a ma
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose tonality and
 chord the judgments named are.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_sixth_cut_surface_2026_11_03.md, §3 C: "departs from the comparison's RELOCATED"; "The twin, the same sentence, is HISTORICAL by one-decision Ruling 3".
 
 ---
 
@@ -48084,6 +48212,8 @@ its second bullet (locator: lines 183–185).
 *"(chord / cadence / function)"* evidence; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **HISTORICAL** — the gated Stage-5 step of a superseded plan, as Row 19.26.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — as proposed; "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_sixth_cut_surface_2026_11_03.md, §3 A: "The gated Stage-5 step — the comparison's own proposal HISTORICAL, kept".
 
 ---
 
@@ -48335,6 +48465,8 @@ cadence confirmation)"*; L3-S38 says *"L2 reads nothing L3 publishes."*
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides
 where the tonality changes, as Row 19.38 (ii).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_sixth_cut_surface_2026_11_03.md, §3 D: "departs from the comparison's RELOCATED"; "The sentence defines a key change by establishment and cadence confirmation".
+
 ---
 
 **Row 38.69 — the local key area, the unit re-read at a modulation.**
@@ -48459,6 +48591,8 @@ feeds both"*; L3-S38 says *"L2 reads nothing L3 publishes."*
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above, and L3-S15, which publishes a cadence only at a phrase
 end L3 has decided, as at Row 19.38 (v).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_sixth_cut_surface_2026_11_03.md, §3 E: "departs from the comparison's UNPLACED"; "The third cut filed 19.38(v) HISTORICAL as its derivation".
 
 ---
 
@@ -48955,6 +49089,8 @@ the same bullet (locator: lines 369–371).
 L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **HISTORICAL** — the gated Stage-5 step of a superseded plan, as Row 19.26.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — as proposed; "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_sixth_cut_surface_2026_11_03.md, §3 A: "The gated Stage-5 step — the comparison's own proposal HISTORICAL, kept".
 
 ---
 
@@ -52679,6 +52815,8 @@ selects among its own carried readings, the cadence's place in it named in the d
 *Audit question:* does the as-built resolver of abstained slices lead with the progression channel at the current
 commit?
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (i) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_seventh_cut_surface_2026_11_03.md, §3 B: "the old selection and the old pipeline, departing from the comparison's RELOCATED".
+
 ---
 
 **Row 39.180 — the fine-grain override reconciled as an annotation, not an override.**
@@ -55323,6 +55461,8 @@ above, and `FRAMEWORK.md` §5's contract table, whose L3 → L2 row is *Nothing*
 published fact that `FRAMEWORK.md` §5 names on no charter's list; read: L3's list of what it publishes, and L3-S24,
 under which adding an output to L3 is a ruling.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_seventh_cut_surface_2026_11_03.md, §3 A: "departs from the comparison's UNPLACED"; §2, the twin's placement: "a superseded plan. What is superseded is the route: a later layer's decided facts fed back to choose the chord or the key.".
+
 ---
 
 **Row 40.41 — the key layer's shopping list: the evidence the tonality reading would consume.**
@@ -55515,6 +55655,8 @@ rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one
 entangled decision settles the tonality and the chord together (`FRAMEWORK.md` §5).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_seventh_cut_surface_2026_11_03.md, §3 B: "the old selection and the old pipeline, departing from the comparison's RELOCATED".
 
 ---
 
@@ -59106,6 +59248,8 @@ the tonality per span as tonic and mode (`FRAMEWORK.md` §5). (ii)
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one entangled decision settles the
 tonality and the chord together (`FRAMEWORK.md` §5), as Row 40.51.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_seventh_cut_surface_2026_11_03.md, §3 C: "the key layer's residual handed to the old function layer".
+
 *The decisions register at this row.* The quoted statement lies inside the home of **register entry D-343** (lines
 76–88), *"The key/mode layer owns the candidate space and the note-evidence model outright; the residual is SELECTED
 from its carried alternatives, never re-scored"*, which the decisions register's INDEX records as LIVE, group F, entry
@@ -59227,6 +59371,8 @@ cadence in a candidate key is decisive"*; L3-S38 says *"L3 never revises L2"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 38.46
 placed a cadence overturning a confident key.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_seventh_cut_surface_2026_11_03.md, §3 D: "the cadence-confirmed modulation"; "the cadence-confirmed modulation re-run".
 
 ---
 
@@ -60232,6 +60378,10 @@ tonality and the chord together (`FRAMEWORK.md` §5), as Row 40.51. (iii)
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the chord per span as
 degree, quality, figure and applied target.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (i) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_seventh_cut_surface_2026_11_03.md, §3 C: "the key layer's residual handed to the old function layer".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_seventh_cut_surface_2026_11_03.md, §3 C: "the key layer's residual handed to the old function layer".
+
 ---
 
 **Row 43.81 — the change-cost tuning entangled with the later layer.**
@@ -60716,6 +60866,8 @@ candidate score over its readings is formed and what its terms are (`FRAMEWORK.m
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one entangled decision settles the
 tonality and the chord together (`FRAMEWORK.md` §5), as Row 40.51.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (iii) **QUARANTINED** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_seventh_cut_surface_2026_11_03.md, §3 E as corrected at its §6 item 2: "QUARANTINED, each with the audit question its twin carries"; §2, Row 7.9(ii)'s audit question: "does the dormant key decoder decide the key before and apart from any chord, and what reads its key-spans?".
+
 ---
 
 **Row 43.106 — built on the hidden-Markov key path with a high self-transition.**
@@ -61078,6 +61230,8 @@ on the key; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
 L2 block). (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one entangled
 decision settles the tonality and the chord together (`FRAMEWORK.md` §5), as Row 40.51.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **QUARANTINED** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_seventh_cut_surface_2026_11_03.md, §3 E as corrected at its §6 item 2: "QUARANTINED, each with the audit question its twin carries"; §2, Row 7.9(ii)'s audit question: "does the dormant key decoder decide the key before and apart from any chord, and what reads its key-spans?".
 
 *The decisions register at this row.* The decisions register's data file homes **the retired entry D-358** at this
 document's lines 523 to 536, on which this row's sentence lies — a fact of the data file, moving no disposition and
@@ -62169,6 +62323,12 @@ entangled decision settles the tonality and the chord together (`FRAMEWORK.md` �
 tonality and the chord together (`FRAMEWORK.md` §5), as Row 40.51. (iii)
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one entangled decision settles the
 tonality and the chord together (`FRAMEWORK.md` §5), as Row 40.51.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (i) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_eighth_cut_surface_2026_11_03.md, §3 A: "a superseded plan. What is superseded is the route: a recogniser over decided chords feeding its output back to revise the key".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_eighth_cut_surface_2026_11_03.md, §3 A: "a superseded plan. What is superseded is the route: a recogniser over decided chords feeding its output back to revise the key".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (iii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_eighth_cut_surface_2026_11_03.md, §3 A: "a superseded plan. What is superseded is the route: a recogniser over decided chords feeding its output back to revise the key".
 
 *The decisions register at this row.* The quoted statement lies inside the home of **register entry D-504** (lines
 161–178), *"A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only
@@ -63417,6 +63577,8 @@ the tonality per span, as Rows 38.46, 43.24 and 44.30 placed the cadence confirm
 *Audit question:* on which run was the cadence vote found not calibratable, and does the finding reproduce? (iv)
 **HISTORICAL** — a finding recorded as an item outside the arc's scope.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (i) **QUARANTINED** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_eighth_cut_surface_2026_11_03.md, §3 B: "QUARANTINED, with the audit question its twin carries by travel"; §2, Row 5.59's audit question: "does the dormant cadence detector cast a weighted tonic vote per region, and what does the vote change?".
+
 ---
 
 **Row 45.17 — the legacy path's confidence: a sigmoid with hard-coded sentinels, unreliable; retiring at engagement.**
@@ -63537,6 +63699,8 @@ mass."*
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides
 the tonality per span, as Rows 38.46 and 43.24 placed the cadence overturning a key — §6.43's placement (p). (ii)
 **RELOCATED** — to ***the uncertainty surface***, as Row 39.46 placed the frames' contradiction quantities.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (i) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_eighth_cut_surface_2026_11_03.md, §3 C: "the cadence-confirmed modulation re-run".
 
 *The decisions register at this row.* The data file's home for register entry **D-601** cites lines 89 to 101 — the
 formula's last line and the lead in the cut, these lines, and line 101; its words stand at lines 107 to 111, in the cut,
@@ -79808,6 +79972,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   predicate kept for the genuinely brief residue.
 - Row 2.24 — the local-modulation / key-area detector at the key layer, consuming the cadence and key-area facts the
   layers above publish. *(L3-S38 DIFFERS at the row.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Row 2.24: "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Row 3.6 — that the per-span key sequence the key areas group over has already been smoothed, by no one implementation.
 - Rows 7.4, 7.7, 7.23, 7.38, 7.196 (i), 7.226 (i) and 7.268 — that the layer's output is the Roman numeral, read from the
   chord in the key. *(L2 publishes the chord as degree, quality, figure and applied target against the tonality.)*
@@ -79824,18 +79989,21 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   *(As Row 2.3 (i); L3-S38 DIFFERS at Rows 7.15, 7.28 (ii), 7.55, 7.130, 7.131, 7.132, 7.149, 7.150, 7.191, 7.194,
   7.209 (ii), 7.210, 7.213, 7.217, 7.238, 7.239, 7.242 (i), 7.305 and 7.311.)*
   *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* — Rows 7.15, 7.28 (ii), 7.55, 7.130, 7.131, 7.132, 7.149, 7.150, 7.191, 7.194 and 7.311: "The rows are re-marked, and the 33 rows other than 2.6 taken off the reading file's §10 row by row, by the application dispatch, not now."
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Rows 7.209 (ii), 7.210, 7.213, 7.217, 7.238, 7.239, 7.242 (i) and 7.305: "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 7.12, 7.13 (i), 7.16, 7.17 (i), 7.46, 7.56, 7.57, 7.135 to 7.145, 7.147, 7.148, 7.192, 7.193, 7.196 (iii),
   7.198 (i), 7.211, 7.212, 7.232 (i), 7.233, 7.255, 7.256, 7.257, 7.276, 7.285, 7.287, 7.340 and 7.341 — the chord
   layer's carried uncertain readings resolved by selection, per ambiguity kind, with an open mark where nothing decides.
   *(As Row 2.3 (ii) with Rows 2.5 and 2.6; L3-S38 DIFFERS at Rows 7.13 (i), 7.17 (i), 7.46, 7.56, 7.135, 7.211 and
   7.232 (i).)*
   *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, Ruling 1).* — Rows 7.13 (i), 7.17 (i), 7.46, 7.56 and 7.135: "The rows are re-marked, and taken off the reading file's §10 row by row, by the application dispatch, not now."
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Rows 7.211 and 7.232 (i): "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 7.154, 7.155, 7.156, 7.200, 7.201 and 7.202 — that the emitted reading is the selected source's committed
   identity, carried whole.
 - Rows 7.53, 7.62 (ii), 7.97 (ii), 7.98, 7.99, 7.117, 7.118, 7.119, 7.189 (ii), 7.282 and 7.319 — the cadence's vote for
   the tonic, its weight, and the key-layer aggregation that absorbs a passing motion. *(L3-S38 DIFFERS at Rows 7.53,
   7.62 (ii), 7.117, 7.189 (ii) and 7.319, L3-S16 at Row 7.98, L3-S17 at Row 7.99; Row 2.24 places the key layer's
   consumption of cadence facts the same way.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Rows 7.53, 7.62 (ii), 7.117, 7.189 (ii) and 7.319: "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 7.60, 7.61, 7.64, 7.65, 7.66, 7.67, 7.277 and 7.278 — the slice, the key-span and the decision-context span, with
   its extent and its extension request. *(L3-S40 AGREES at Row 7.67, citing L2-S22.)*
   *Row 7.67 is not transferred (cowork_rulings_2026_11_03_l3_edge_of_span_sitting.md, Ruling 1)* — re-marked ADOPTED — carried (L3-S40): "proposed RELOCATED to L2 only because L3's right to ask was open".
@@ -79857,11 +80025,13 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   §0 and L2-S40 to L2-S42 for them.)*
 - Rows 8.106 and 8.108 — the function layer's fine-grain reading of each slice, and the override that corrects a
   confidently-wrong commit by selection among carried readings. *(L3-S38 DIFFERS at both.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Rows 8.106 and 8.108: "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Row 8.132 — that handling the non-chord tones is the chord layer's lever, not the grouping's. *(L2 publishes the
   chord-tone assignment and elaboration relation per sounding note; the derivation's §0 cites L2-S8 for it.)*
 - Rows 9.33 (ii), 9.34 (ii), 9.64, 9.65, 9.66 (i), 9.67, 9.89 (i) and 9.130 — the selection among the chord layer's
   carried readings by joint consistency across key, root, inversion and bass, over the whole distinct-root carry.
   *(L3-S38 DIFFERS at Rows 9.65 and 9.89 (i).)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Rows 9.65 and 9.89 (i): "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 9.42, 9.43, 9.44, 9.45, 9.46, 9.48, 9.56, 9.57, 9.58, 9.59 (i), 9.87, 9.88 and 9.129 (ii) — the carry of
   distinct roots, each with its best voicing, its variants and its confidence, the excluded roots kept at low
   confidence, capped on distinct roots, its depths fitted later. *(L2 publishes rivals with their mass; the derivation's
@@ -79869,6 +80039,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
 - Rows 9.68, 9.69, 9.70, 9.71, 9.72, 9.73, 9.74 (i), 9.75, 9.76, 9.78 and 9.79 — the selection's evidence channels and
   their order: bass and inversion, spelling and key consistency deciding, the cadence vote supporting, the licensed
   progression a tie-break only, metric position a feature, the weights fitted later. *(L3-S38 DIFFERS at Row 9.71.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Row 9.71: "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 9.35 (ii), 9.77, 9.80 (i), 9.81 (i), 9.146, 9.155, 9.156, 9.157 (ii), 9.158, 9.161, 9.162, 9.163, 9.167 and
   9.168 — the fine-grain override demoted to an annotation: the committed chord carried unchanged, the contradiction
   surfaced, no recompute. *(L3-S38 AGREES at Rows 9.77, 9.81 (i), 9.161 and 9.168.)*
@@ -79882,6 +80053,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
 - Rows 9.39 (ii), 9.91, 9.92, 9.93, 9.95 (i) and 9.105 (iii) — the joint key and chord step, a distinct and bounded step
   that re-ranks the key under chord evidence, the carry designed to feed it.
 - Row 9.94 — the one bounded cross-layer recompute, never a back-edge. *(L3-S38 DIFFERS at the row.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Row 9.94: "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Row 9.103 — the single owner of the chord's quality read from the key.
 - Rows 9.38 (ii), 9.99, 9.118, 9.119, 9.120, 9.121, 9.122, 9.123, 9.124 (i), 9.125, 9.126, 9.127, 9.128, 9.129 (i),
   9.131, 9.132 (ii), 9.133, 9.134, 9.135, 9.136, 9.137, 9.143, 9.144, 9.164, 9.165, 9.166, 9.169, 9.175 and 9.176 —
@@ -79922,6 +80094,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   selection, overriding its confident commits, and carrying the coupling of tonality and chord. *(As Rows 7.13 (i) and
   7.150; L3-S38 DIFFERS at every row here but 10.207 (iii).)*
   *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, Ruling 1).* — Rows 10.23 (i), 10.147 (ii) and 10.178: "The rows are re-marked, and taken off the reading file's §10 row by row, by the application dispatch, not now."
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Rows 10.4, 10.5, 10.11 (ii), 10.26 (ii), 10.141 (ii), 10.146, 10.156, 10.198, 10.204, 10.205 and 10.207 (ii): "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 10.6 (ii), 10.25 (ii), 10.27 (i), 10.27 (ii), 10.27 (iii), 10.49, 10.75 and 10.135 — the limits of the chord
   layer: the chord decided per slice, no numeral, no cadence, no grouping for display, no change to the notes, no later
   result read, no pedal-point flag carried. *(L3-S2 DIFFERS at Row 10.25 (ii); L3-S15 AGREES at Row 10.27 (i); L3-S38
@@ -79966,9 +80139,11 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   readings are evaluated, and from which tables, to the layer's detail specification.)*
 - Row 17.2 (iii) — the confidence-weighted forward override, a confident inference overturned by decisive later evidence
   through a localized forward recompute. *(As Row 7.238; L3-S38 DIFFERS at the row.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Row 17.2 (iii): "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 19.19 (i), 19.19 (ii), 19.25, 19.27 (iv), 19.34 (i) and 19.34 (ii) — the confidence-weighted forward override
   and its two instances, a confident commit overturned by later evidence through a localized forward recompute, and a
   confirmed cadence revising the chords in it and confirming the key. *(As Row 7.238; L3-S38 DIFFERS at each.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Rows 19.19 (i), 19.19 (ii), 19.25, 19.27 (iv), 19.34 (i) and 19.34 (ii): "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 19.27 (iii) and 19.84 — the chord and its non-chord tones owned together, and a chord named with everything
   found, the added notes included. *(L3-S5 DIFFERS at Row 19.84.)*
 - Rows 19.38 (i), 19.38 (ii), 19.38 (iv), 19.39 (i) and 19.58 (ii) — the chord-span, the key-span and the
@@ -79980,6 +80155,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   found one at a time without it. *(As Row 1.5; the member marks both lines LEGACY-scoped.)*
 - Row 20.44 (ii) — the gate exception retiring when the function/cadence layer pins a chord's root rotation. *(As Row
   7.13 (i); L3-S38 DIFFERS at the row.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Row 20.44 (ii): "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 20.45 (i), 20.45 (ii), 20.46 (i), 20.47 (i), 20.48 and 20.49 (ii) — a local-key hypothesis derived from
   key-agnostic signals only and never from the key-area grouping, the evidence a modulation decision may use, and the
   feed-forward flow, binding every such decision on any arm. *(All WITHHELD — D-605; L3-S38 AGREES at Rows 20.45 (ii)
@@ -79999,6 +80175,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   as-written operating modes. *(L3-S30 DIFFERS at Rows 21.27, 21.28 and 21.29.)*
 - Row 21.38 — a future context for the chord's candidate scoring carrying the progression, the cadence history among
   it. *(As Row 2.24; L3-S38 DIFFERS at the row.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Row 21.38: "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 21.51 and 21.56 — a bare triad's root not resolvable from the local notes alone, and no contextual heuristic
   added to the vertical identifier.
 - Rows 21.154, 21.155, 21.171, 21.173, 21.174, 21.175, 21.176, 21.177, 21.178, 21.182, 21.183, 21.184, 21.185 and 21.186 —
@@ -80007,8 +80184,10 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   subsets and smoothing, and the contextual ideas reused from the vertical path.
 - Row 22.1 — the full temporal context the chord analysis would take, phrase and cadence fields among it. *(As Row
   21.38; L3-S38 DIFFERS at the row.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Row 22.1: "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Row 22.2 — the remaining texture fixes, a phrase-aware look-ahead of the tonality among them. *(L3-S38 DIFFERS at the
   row.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Row 22.2: "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 22.6, 22.8 (i) and 22.8 (ii) — a second strategy for arpeggiated or single-line spans, the strategies'
   confidences compared, and abstention a valid outcome.
 - Rows 22.9, 22.10 and 22.29 — the identity of a preserve-all region keyed to root and quality or to the full sonority,
@@ -80069,6 +80248,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   confidence, the thresholds constants of the precision phase, its two instances, and no single layer owning a
   judgment's final answer. *(As Rows 19.25 and 19.34; L3-S38 DIFFERS at Rows 38.41, 38.42, 38.43 (ii), 38.46 and
   38.49.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Rows 38.41, 38.42, 38.43 (ii), 38.46 and 38.49: "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 38.7 (ii), 38.13 (i), 38.13 (ii), 38.112, 38.113, 38.115, 38.116, 38.117, 38.118, 38.119, 38.120 and 38.121 — the
   member's display grouping: adjacent slices carrying one analysis merged on the full label into the stretch over which
   one chord is read, embellishments grouping with their chord, the non-chord-tone decision in the analysis and never in
@@ -80078,6 +80258,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   stretch of one chord and one local key, the key-span bounded by a change of key, the decision-context span, and the
   gradients tonicization and the pivot. *(As Rows 19.38 (i), (ii) and (iv); L3-S38 DIFFERS at Row 38.68; L2-S19
   publishes the pivot as one span with the other tonality's reading as a rival.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Row 38.68: "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 39.1, 39.7 (i), 39.9, 39.10 (ii), 39.11 (i), 39.30, 39.62 (ii), 39.81 and 39.82 — the fit's own rules:
   hand-chosen constants replaced by values fitted against a declared objective, the constants a fit may change, the
   fitting pool of open licences and the music never fitted, values fitted on the fitting split only, the pruning and
@@ -80103,6 +80284,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   by bass, spelling, key consistency and cadence with a licensed progression only a tie-break, and one owner for the
   chord quality read with the key. *(As Row 9.155; L3-S38 DIFFERS at Row 39.179 (i); Row 39.107 (ii) lies on the home of
   register entry D-312, unmarked; L2-S8 publishes pedal point among the elaboration relations.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Row 39.179 (i): "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 40.5 (iv), 40.8 (i), 40.19 (ii), 40.24 (i), 40.27 (i), 40.28, 40.30, 40.31, 40.33, 40.34 (ii), 40.37, 40.40 (i),
   40.41 (i), 40.63 (i), 40.63 (ii), 40.63 (iii) and 40.63 (iv) — the evidence and the publication of the tonality
   reading: a double bar line, the fermata and the phrase-boundary view for the cost of a change of tonality, the
@@ -80119,6 +80301,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   progression grammar: the collection/tonic split dissolving the first, the chord needing the collection more than the
   tonic, the pipeline from collection to tonic, the forward-override for the rare remainder, and grammaticality scored
   per candidate key over the alternatives already carried. *(L3-S38 DIFFERS at Row 40.51.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Row 40.51: "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 41.27 (ii) and 41.29 (i) — the jazz fit deferred to the conversion of jazz ground truth, and the classical
   common-practice idiom fitted now, the one the held annotated music covers. *(As Rows 16.23 and 23.1; both lie on
   register entry D-422's home, unmarked.)*
@@ -80165,6 +80348,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   relative pair and the seam of tonicization and modulation. *(L3-S38 DIFFERS at Rows 43.19 (ii), 43.24, 43.80 (i),
   43.80 (ii), 43.105 (iii) and 43.124 (ii), as at Rows 38.46 and 40.51; Rows 43.19 (i), 43.19 (ii), 43.20 (i) and
   43.20 (ii) lie on register entry D-343's home, unmarked.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Rows 43.19 (ii), 43.24, 43.80 (i), 43.80 (ii), 43.105 (iii) and 43.124 (ii): "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 43.44 (i), 43.60 (ii), 43.78 (ii), 43.80 (iii), 43.82 (i), 43.114 (iii), 43.117 (i) and 43.119 — the chord read
   with the key: the member's chord-symbol layer reading the chosen key and using the preset, an applied chord told from
   a change of tonality, the root and spelling of the symmetric chords, and the chord layer reading the notated spelling
@@ -80190,10 +80374,12 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   arbitration, and the new frame comparing it with the home key's confidence. *(L3-S38 DIFFERS at Row 44.30 (i), (ii)
   and (iii), as at Row 40.51; all these statements but those of Rows 44.17 and 44.18 lie on register entry D-504's home,
   and those of Rows 44.25, 44.26, 44.27 (i), 44.27 (ii) and 44.28 (i) on D-505's as well, SEEN homes, marked.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Rows 44.30 (i), 44.30 (ii) and 44.30 (iii): "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 45.16 (i) and 45.21 (i) — the cadence vote as evidence for the tonic of a span, and the cadential vote weight
   accumulated in a candidate key as frame F-A's contradiction against the key's confidence. *(L3-S38 DIFFERS at both, as
   at Rows 38.46, 43.24 and 44.30; Row 45.21 (i) lies on the lines the data file's home for register entry D-601 cites,
   unmarked.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — Rows 45.16 (i) and 45.21 (i): "the 100 DIFFERS and Rows 3.5(ii), 3.15 re-marked, and the rows the reading file's §10 carries taken off it row by row, by the application dispatch, not now."
 - Rows 45.24 and 45.25 — frame F-B's contradiction, the plausibility of the contradicting context with a cadential fit
   among its terms, and its selection restricted to carried alternatives or neighboring committed harmony, never
   re-derived. *(As Row 9.163 placed this frame; both rows lie on the lines the data file's home for register entry D-601
@@ -80759,11 +80945,14 @@ rows here, in the commit that tabulates it, each with the audit question its row
 - Row 7.11 — on which corpus and measure is tonicization-versus-modulation the largest share of the residual the lower
   layers hand forward?
 - Row 7.22 — on which corpus and measure was the function-only residual found small and concentrated in those classes?
+- Row 7.53 — does the dormant cadence detector cast a weighted tonic vote per region, and what does the vote change? *(cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1.)*
+- Row 7.62 (ii) — does the dormant function layer confirm a key-span by a cadence whose arrival falls inside it, by that test alone? *(cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1.)*
 - Row 7.72 — do the as-built modulation recompute, cadence vote and resolver operate on the spans named, and does the
   slice carry the key at chord-rhythm granularity?
 - Row 7.74 — does the built resolver take a metrically strong slice as a local maximum of the metric weight, with no
   threshold?
 - Row 7.80, with Row 7.86 — which root motions does the coded licensing test admit at the current commit?
+- Row 7.117 — does the dormant cadence detector cast a weighted tonic vote per region, and what does the vote change? *(cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1.)*
 - Row 7.128 — are §5.3 and §5.4 implemented by the dormant modulation-span detector and the forward-recompute unit, and
   is either reached at the current commit?
 - Row 7.129 — does the built hysteresis sit on the detector's committed spans with the minimum-chords floor as a
@@ -80783,6 +80972,7 @@ rows here, in the commit that tabulates it, each with the audit question its row
 - Row 7.180, with Row 7.181 — does the inline Roman-numeral formatter path emit applied labels without the chromatic
   guard, and is that path reached at the current commit?
 - Row 7.182 (i) — is the unified emitter consumed by any path that runs at the current commit?
+- Row 7.189 (ii) — does the dormant cadence detector cast a weighted tonic vote per region, and what does the vote change? *(cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1.)*
 - Row 7.204 (i) — is the function confidence's internal value an unbounded additive of its three components, and on
   which run was it observed near the stated value?
 - Row 7.207 — which incumbents do the built override sites compare, and does any of them read the function confidence?
@@ -80905,6 +81095,7 @@ rows here, in the commit that tabulates it, each with the audit question its row
 - Row 9.61 — on which path, and with which cap, was the spread of roots per slice measured?
 - Row 9.63 — do the legacy path and the decoder draw from one scored grid, and has the count of voicings the decoder's
   cap admits been measured on the decoder path?
+- Row 9.71 — does the dormant resolver decide a relative-pair slice by the cadence tonic-vote and the three same-collection cues? *(cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1.)*
 - Row 9.74 (ii) — does the as-built resolver test the licensed progression first on the transition and share-tone kinds,
   as Row 9.10 asks?
 - Row 9.95 (ii) — which free cross-layer search was measured, on which corpus, and does the inert result reproduce?
@@ -80968,6 +81159,7 @@ rows here, in the commit that tabulates it, each with the audit question its row
   tonality, and does it reproduce?
 - Row 10.207 (i) — does the chord layer carry its ranked alternatives and its confidence on every decision, committed
   and inherited included, never pruned (as Row 7.308)?
+- Row 10.207 (ii) — does the dormant function layer override only by selecting among the chord engine's carried readings? *(cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1.)*
 - Row 10.209, with Row 10.212 — does a lock-in test assert that the alternatives and the confidence stay carried, and the
   added-note carry beside them?
 - Row 10.210 — is the chord layer's carried confidence vertical-fit only, and are its carried alternatives capped at
@@ -82033,6 +82225,7 @@ No QUARANTINED row: the member places no statement (§6.34's manifest header).
   through `ScoringSnapshot`, at the current commit?
 - Row 35.154 — does `HarmonicFunctionContext` carry phrase-boundary or cadence evidence at the current commit, and does
   the chord competition read it?
+  *NOT QUARANTINED (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* — placed **HISTORICAL** at the row.
 - Row 35.156 — does `analyzeChord()` compute only from the sounding tones and the tonality at the current commit, and is
   it reached on any path that runs?
 - Row 35.157 — which quantities does `analyzeChord()` evaluate for each cell at the current commit, and does its
@@ -82585,6 +82778,7 @@ No QUARANTINED row: the member's ranges record no measured property of the code 
 - Row 43.102 — does the per-region key resolver at the current commit pick one key per coarse region with a margin
   against flipping and a fixed window?
 - Row 43.103 — on which run was the held-out baseline of the per-region resolver measured, and does it reproduce?
+- Row 43.105 (iii) — does the dormant key decoder decide the key before and apart from any chord, and what reads its key-spans? *(cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1.)*
 - Row 43.109 — does the key decoder's candidate scoring at the current commit rate every tonic against every mode the
   member names?
 - Row 43.113 — does the key decoder at the current commit read pitch classes only, and no notated spelling?
@@ -82594,6 +82788,7 @@ No QUARANTINED row: the member's ranges record no measured property of the code 
   result reproduce?
 - Row 43.123 — is the key decoder's per-slice emission collection-fit only at the current commit, carrying no evidence
   from the shape of a sonority?
+- Row 43.124 (ii) — does the dormant key decoder decide the key before and apart from any chord, and what reads its key-spans? *(cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1.)*
 - Row 43.125 — on which run or simulation did the key decoder's under-modulation on keys established by dominant
   implication show, and does it reproduce?
 
@@ -82627,6 +82822,7 @@ No QUARANTINED row: the member's ranges record no measured property of the code 
   and does any override site read the unbounded sum?
 - Row 45.15 (iv) — on which run and corpus was the function confidence's mid-range inversion re-confirmed, and does it
   reproduce?
+- Row 45.16 (i) — does the dormant cadence detector cast a weighted tonic vote per region, and what does the vote change? *(cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1.)*
 - Row 45.16 (iii) — on which run was the cadence vote found not calibratable, and does the finding reproduce?
 - Row 45.17 (i) — does any path that runs at the current commit publish the legacy path's sigmoid and its hard-coded
   sentinels?
