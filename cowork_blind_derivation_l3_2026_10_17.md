@@ -1,5 +1,14 @@
 # The blind derivation of L3 — the read-off facts: cadence and its type, phrase and section grouping, chord symbol, figured bass, harmonic rhythm
 
+> **★ THIS IS THE RECORD OF THE BLIND ACT, AND ITS BODY IS NOT REWRITTEN (D-674, branch one; the L3 route
+> ruling of 2026-11-02, `records/cowork/rulings/cowork_rulings_2026_11_02_l3_route_sitting.md` §2 step 2).**
+> Written 2026-10-17 by a fresh Cowork session with nothing mounted, under the brief `cowork_blind_session_brief_l3.md`
+> (its own banner below); compared in `ratification_surfaces/cowork_comparison_l3_reading.md`; its statements and open
+> questions dispositioned by the ruling records of 2026-11-02 to 2026-11-08 listed at
+> `records/cc/instructions/cc_instruction_l3_application_2026_11_08.md` §L. **The derived L3 specification as amended
+> by those rulings is `cowork_derived_specification_l3_2026_11_08.md`: the NEW file the route ruling's step 2 names.
+> The amendments stand there, not here.** Everything below this banner stands as it was written at blob `c01793f98c51e0267fb0dc7487613ac477cc1fbb`.
+
 > **STATUS: DRAFT — BLIND DERIVATION, NOT COMPARED, NOT RATIFIED.**
 > Written 2026-10-17 by a fresh Cowork session with nothing mounted, under the brief
 > `cowork_blind_session_brief_l3.md` (released 2026-10-17). The file name carries the brief's date, which
