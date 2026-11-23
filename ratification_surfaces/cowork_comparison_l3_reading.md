@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.20 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.21 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.22 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.23 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -1238,6 +1238,8 @@ rival or a mass."*
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose decision
 a modulation recompute and a chord override would change. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one
 entangled decision.***, which commits the principal reading among its rivals.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* (i) **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
 
 ---
 
@@ -3444,6 +3446,8 @@ readings Layer 4 carried**"*; L3-S38 says *"No L3 fact may change an L2 fact, a 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: selection among
 the chord readings is L2's decision. (ii) **ADOPTED — carried** (L3-S39).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, Ruling 1).* (i) **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design"; "Of the first cut (5), re-filed from QUARANTINED, which the first-cut record §1b held as this side's derivation".
+
 ---
 
 **Row 7.14 — the layer consumes the layers beneath and does not feed them.**
@@ -3478,6 +3482,8 @@ of the dependent layers over the affected region with the new local key"*; L3-S3
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: the decision of the
 tonality and its revision are L2's.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
+
 ---
 
 **Row 7.16 — the candidate set closed by Layer 4.**
@@ -3508,6 +3514,8 @@ L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.13 (i).
 (ii) **ADOPTED — carried** (L3-S39).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, Ruling 1).* (i) **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design"; "Of the first cut (5), re-filed from QUARANTINED, which the first-cut record §1b held as this side's derivation".
 
 ---
 
@@ -3681,6 +3689,8 @@ mass."*
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S37). (ii) **RELOCATED** — to *L2 — The tonal reading. The one
 entangled decision.*: the override of the tonality is L2's decision.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
 
 ---
 
@@ -3988,6 +3998,8 @@ the slices the chord layer left open; L3-S38 says *"No L3 fact may change an L2 
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.13 (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design"; "Of the first cut (5), re-filed from QUARANTINED, which the first-cut record §1b held as this side's derivation".
+
 ---
 
 **Row 7.47 — prolongation or reduction out of scope.**
@@ -4135,6 +4147,8 @@ chords beneath; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mas
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
+
 ---
 
 **Row 7.56 — step 4: resolve the carried readings by selection.**
@@ -4151,6 +4165,8 @@ step 4 (locator: lines 145–146).
 cadence and progression context"*; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.13 (i).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design"; "Of the first cut (5), re-filed from QUARANTINED, which the first-cut record §1b held as this side's derivation".
 
 ---
 
@@ -4323,6 +4339,8 @@ the caller, as L2 does"*.
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: the decisions this span
 serves are L2's, and the derivation's L3-S40 cites L2-S22 for L2 being *"the layer that asks for more music"*; whether
 L3 may itself request is OQ-L3-10, listed at §8 and put to nobody.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_edge_of_span_sitting.md, Ruling 1).* **ADOPTED — carried (L3-S40)** — "Row 7.67 (proposed RELOCATED to L2 only because L3's right to ask was open) may be re-marked ADOPTED — carried (L3-S40). The re-marking is the application dispatch's act."
 
 ---
 
@@ -5415,6 +5433,8 @@ weight"*; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
+
 ---
 
 **Row 7.131 — the modulation recompute the first instance of the forward override.**
@@ -5433,6 +5453,8 @@ revises L2"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
+
 ---
 
 **Row 7.132 — the new local key committed and the key-span's chords re-read.**
@@ -5450,6 +5472,8 @@ key-span are re-read in the new key (their degrees change), and any uncertain sl
 chords; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
 
 ---
 
@@ -5497,6 +5521,8 @@ carried uncertain readings* (locator: lines 377–379).
 layer; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.13 (i).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design"; "Of the first cut (5), re-filed from QUARANTINED, which the first-cut record §1b held as this side's derivation".
 
 ---
 
@@ -5715,6 +5741,8 @@ L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
+
 ---
 
 **Row 7.150 — a confidently committed fine-grain reading overridden by selection.**
@@ -5733,6 +5761,8 @@ override firing per the confidence-weighted threshold of §8." — §5.5, the ov
 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
 
 ---
 
@@ -6357,6 +6387,8 @@ key"*; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
+
 ---
 
 **Row 7.192 — resolving a share-tone abstention.**
@@ -6401,6 +6433,8 @@ contextually-wrong root is overridden **by this layer** when the surrounding cad
 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
 
 ---
 
@@ -8169,6 +8203,8 @@ keeps the general mechanism (§8) from becoming a back-edge." — §15, item 3 (
 L3-S38 says *"L3 never revises L2"*.
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.15.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
 
 ---
 
@@ -15154,6 +15190,8 @@ readings this layer carried**"*; L3-S38 says *"No L3 fact may change an L2 fact,
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 7.13 (i).
 (ii) **ADOPTED — carried** (L3-S39), as Row 7.13 (ii).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, Ruling 1).* (i) **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
+
 ---
 
 **Row 10.24 — what it does: per slice a chord symbol, the two note sets, the rivals, a confidence and an open mark.**
@@ -17014,6 +17052,8 @@ not re-enter this layer"*; L3-S38 says *"No L3 fact may change an L2 fact, a riv
 *PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.* (ii) **RELOCATED** —
 to *L2 — The tonal reading. The one entangled decision.*, as Row 10.4.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
+
 ---
 
 **Row 10.148 — cheap to name, each reading cached, a stretch named again after an edit.**
@@ -17455,6 +17495,8 @@ Architectural Layer 5." — the same bullet (locator: lines 487–488).
 layer; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
 *PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 10.4.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, Ruling 1).* **HISTORICAL** — "from the comparison's proposal RELOCATED to *L2 — The tonal reading. The one entangled decision.*: HISTORICAL — rules of a superseded design".
 
 ---
 
@@ -79754,6 +79796,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   markers. *(L2 publishes the chord as degree, quality, figure and applied target, and the tonality per span.)*
 - Row 2.3(i) — the confidence-weighted forward override's two instances, the cadence-confirmed modulation recompute and
   the fine-grain chord override. *(L3-S38 DIFFERS at the row.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* — Row 2.3 (i): "The rows are re-marked, and the 33 rows other than 2.6 taken off the reading file's §10 row by row, by the application dispatch, not now."
 - Row 2.3(ii), with Rows 2.5 and 2.6 — the earlier layers carrying both readings forward with an uncertainty mark, and
   the carried readings resolved by selecting the functionally and cadentially coherent one, never re-derived. *(L3-S38
   and L3-S6 DIFFER at Row 2.6.)*
@@ -79780,11 +79823,13 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   7.311 — the confidence-weighted forward override, with its modulation recompute and its fine-grain chord override.
   *(As Row 2.3 (i); L3-S38 DIFFERS at Rows 7.15, 7.28 (ii), 7.55, 7.130, 7.131, 7.132, 7.149, 7.150, 7.191, 7.194,
   7.209 (ii), 7.210, 7.213, 7.217, 7.238, 7.239, 7.242 (i), 7.305 and 7.311.)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_first_cut_sitting.md, Ruling 1).* — Rows 7.15, 7.28 (ii), 7.55, 7.130, 7.131, 7.132, 7.149, 7.150, 7.191, 7.194 and 7.311: "The rows are re-marked, and the 33 rows other than 2.6 taken off the reading file's §10 row by row, by the application dispatch, not now."
 - Rows 7.12, 7.13 (i), 7.16, 7.17 (i), 7.46, 7.56, 7.57, 7.135 to 7.145, 7.147, 7.148, 7.192, 7.193, 7.196 (iii),
   7.198 (i), 7.211, 7.212, 7.232 (i), 7.233, 7.255, 7.256, 7.257, 7.276, 7.285, 7.287, 7.340 and 7.341 — the chord
   layer's carried uncertain readings resolved by selection, per ambiguity kind, with an open mark where nothing decides.
   *(As Row 2.3 (ii) with Rows 2.5 and 2.6; L3-S38 DIFFERS at Rows 7.13 (i), 7.17 (i), 7.46, 7.56, 7.135, 7.211 and
   7.232 (i).)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, Ruling 1).* — Rows 7.13 (i), 7.17 (i), 7.46, 7.56 and 7.135: "The rows are re-marked, and taken off the reading file's §10 row by row, by the application dispatch, not now."
 - Rows 7.154, 7.155, 7.156, 7.200, 7.201 and 7.202 — that the emitted reading is the selected source's committed
   identity, carried whole.
 - Rows 7.53, 7.62 (ii), 7.97 (ii), 7.98, 7.99, 7.117, 7.118, 7.119, 7.189 (ii), 7.282 and 7.319 — the cadence's vote for
@@ -79793,6 +79838,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   consumption of cadence facts the same way.)*
 - Rows 7.60, 7.61, 7.64, 7.65, 7.66, 7.67, 7.277 and 7.278 — the slice, the key-span and the decision-context span, with
   its extent and its extension request. *(L3-S40 AGREES at Row 7.67, citing L2-S22.)*
+  *Row 7.67 is not transferred (cowork_rulings_2026_11_03_l3_edge_of_span_sitting.md, Ruling 1)* — re-marked ADOPTED — carried (L3-S40): "proposed RELOCATED to L2 only because L3's right to ask was open".
 - Rows 7.73, 7.75, 7.76, 7.77, 7.78 (i), 7.81, 7.82, 7.83, 7.84, 7.279 and 7.280 — the prevailing harmony, the
   progression, and the licensed-progression grammar with its completion.
 - Rows 7.18 (i), 7.19, 7.89, 7.185, 7.220 and 7.251 — the qualities only spelling separates: the German sixth against
@@ -79875,6 +79921,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   10.205, 10.206, 10.207 (ii) and 10.207 (iii) — the function layer settling the chord layer's uncertain slices by
   selection, overriding its confident commits, and carrying the coupling of tonality and chord. *(As Rows 7.13 (i) and
   7.150; L3-S38 DIFFERS at every row here but 10.207 (iii).)*
+  *LEAVES L3 (cowork_rulings_2026_11_03_l3_s38_second_cut_sitting.md, Ruling 1).* — Rows 10.23 (i), 10.147 (ii) and 10.178: "The rows are re-marked, and taken off the reading file's §10 row by row, by the application dispatch, not now."
 - Rows 10.6 (ii), 10.25 (ii), 10.27 (i), 10.27 (ii), 10.27 (iii), 10.49, 10.75 and 10.135 — the limits of the chord
   layer: the chord decided per slice, no numeral, no cadence, no grouping for display, no change to the notes, no later
   result read, no pedal-point flag carried. *(L3-S2 DIFFERS at Row 10.25 (ii); L3-S15 AGREES at Row 10.27 (i); L3-S38
