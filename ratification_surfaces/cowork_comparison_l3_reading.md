@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.40 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.41 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.41 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.42 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -2378,6 +2378,8 @@ line 3867).
 superseded nor describing what runs, and no charter holds code structure, so none of the five is defensible in one
 sentence.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* Outside every charter — added to the display list, carried for a display's own specification; listed in the successor's notes.
+
 ---
 
 **Row 4.17 — the planned notation conventions: lead sheet, Nashville, Roman numeral, figured bass.**
@@ -2441,6 +2443,8 @@ configuration struct — the migration path is already established." — the sam
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 4.16.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* Outside every charter — added to the display list, carried for a display's own specification; listed in the successor's notes.
 
 ---
 
@@ -30357,6 +30361,8 @@ the winning harmonic result." — the same paragraph (locator: lines 3577–3578
 *PROPOSED DISPOSITION.* **UNPLACED** — read: a rule binding a planned orchestration layer, which no charter of
 `FRAMEWORK.md` §5 names, to carry the fields taken from a written symbol through whichever engine produced the result;
 the derivation is silent, and the outgoing sentence is the whole of what was read.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 1).* Outside every charter — carried for the build of the analysis, not for its specification; listed in the successor's notes.
 
 ---
 
@@ -66549,6 +66555,8 @@ at the orchestrator's `changePointSlices` call on the production region key path
 any path that runs reach it? (iii) **UNPLACED** — read: a decision about which of the older stack's code is moved or
 deleted, which no charter of `FRAMEWORK.md` §5 names and the derivation does not speak to.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 1).* (iii) Outside every charter — carried for the build of the analysis, not for its specification; listed in the successor's notes.
+
 #### Not a statement, at this member
 
 Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
@@ -66826,6 +66834,8 @@ path, and no charter of `FRAMEWORK.md` §5 holds the code's interfaces, so none 
 sentence. (ii) **HISTORICAL** — a status of the day the contract was written, naming the older stack's function the
 record replaces.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* (i) Outside every charter — carried for the application's own specification; listed in the successor's notes.
+
 ---
 
 **Row 48.2 — the span seam's consumers: the section layer, the composing bridge, the implode bridge, the tuning
@@ -66864,6 +66874,8 @@ path, and no charter of `FRAMEWORK.md` §5 holds the code's interfaces, so none 
 sentence. (ii) **HISTORICAL** — a status of the day the contract was written, naming the older stack's function the
 record replaces.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* (i) Outside every charter — carried for the application's own specification; listed in the successor's notes.
+
 ---
 
 **Row 48.4 — no second computation: the note seam a lookup into the span seam's record.**
@@ -66877,6 +66889,8 @@ section *1. The two seams (both audited; both read THIS record)*, the same item 
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.3: the one record both seams read is an interface of the
 application's notation path, which no charter of `FRAMEWORK.md` §5 holds.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* Outside every charter — carried for the application's own specification; listed in the successor's notes.
 
 ---
 
@@ -67372,6 +67386,8 @@ the table, the row *single-note context (10)* (locator: line 178).
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 4.16: the seam is an interface of the application's notation path,
 and no charter of `FRAMEWORK.md` §5 holds the code's interfaces, so none of the five is defensible in one sentence.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* Outside every charter — carried for the application's own specification; listed in the successor's notes.
 
 ---
 
@@ -69028,6 +69044,8 @@ responsibility (the score editor / integration code)." — the section *2. Const
 application's score editor and its integration code, and no charter of `FRAMEWORK.md` §5 names the application's
 interfaces.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* Outside every charter — carried for the application's own specification; listed in the successor's notes.
+
 ---
 
 **Row 50.21 — the note model built or widened only when told to.**
@@ -69947,6 +69965,8 @@ retire with the legacy path. (v) **QUARANTINED.** *Audit question:* is the funct
 surface at the current commit, and are the live section reads `sectionanalyzer.cpp` and `sectioncadencedetection.cpp`?
 (vi) **QUARANTINED.** *Audit question:* does accessibility consume, at the current commit, only the pre-formatted
 annotation string and no field of a record?
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* (iii) Outside every charter — carried for the application's own specification; listed in the successor's notes.
 
 ---
 
@@ -75940,6 +75960,8 @@ claim: the record is the one output surface the notation path reads.
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.1 (i): the notation path is the application's, and no charter
 of `FRAMEWORK.md` §5 holds the code's interfaces or names the surface an application path reads.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* Outside every charter — carried for the application's own specification; listed in the successor's notes.
+
 *At the source now.* The sentence stands at lines 21–22 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 21 after the bold lead *Terms, defined at first use.* with the italic term its quotation keeps,
 and ending on line 22, before the entry on the segment. The nearest heading at the blob is the document's title, *"# The
@@ -76173,6 +76195,8 @@ correction. One claim: a subset of the published lists shown for display is a re
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.1 (i): what a display shows of the published lists is the
 application's presentation, which no charter of `FRAMEWORK.md` §5 holds.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* **ADOPTED — proposed** — "§2D — ADOPTED, travelling with Row 4.2 (1): Row 57.377 (a subset of the published lists shown for display is a read the presentation makes downstream)".
+
 *At the source now.* The sentence stands at lines 110–114 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 110 after the sentence that supersedes the earlier wording of the candidate lists and ending on
 line 114, before the constrained-optimum record. The nearest heading at the blob is *"### 3.3 Per segment — the
@@ -76373,6 +76397,12 @@ presentation facts together, where L3-S1 publishes the chord symbol as L3's view
 `FRAMEWORK.md` §5 lists the presentation facts; the L2 comparison relocated the claim to L3 as to the derived chord
 facts alone, and a disposition of the whole claim would choose between its components.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* "the derived chord facts" **ADOPTED — carried** (L3-S1) — "the derived chord facts ADOPTED, carried by L3-S1".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* "the posterior" **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "the posterior (57.513) and segments, tonalities, chord classes, … the posterior (57.514) RELOCATED to L2 — The tonal reading. The one entangled decision.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* "the (ratified) presentation facts" **HISTORICAL** — "the (ratified) presentation facts decided against, in so far as they put presentation facts on the analysis's published surface".
+
 *At the source now.* The sentence stands at lines 135–140 of the document's blob at this batch's Task 0 commit, found as
 quoted, the bold lead kept as the block writes it. The nearest heading at the blob is *"## 3. Decision A — the shape of
 the output-surface contract"*. The lines lie in none of member 52's published ranges: they fall between its ranges 66–74
@@ -76408,6 +76438,14 @@ presentation facts — and the notation consumers read it.
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 57.513; read: one record carrying L2's facts, the derived
 chord facts and the presentation facts for the application's notation consumers, which no charter of `FRAMEWORK.md` §5
 holds whole; the L2 comparison relocated the claim to L3 as to the derived chord facts alone.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* "the derived chord facts" **ADOPTED — carried** (L3-S1) — "the derived chord facts ADOPTED, carried by L3-S1".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* "segments, tonalities, chord classes, … the posterior" **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "the posterior (57.513) and segments, tonalities, chord classes, … the posterior (57.514) RELOCATED to L2 — The tonal reading. The one entangled decision.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* "the (ratified) presentation facts" **HISTORICAL** — "the (ratified) presentation facts decided against, in so far as they put presentation facts on the analysis's published surface".
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2).* "and the notation consumers read it" Outside every charter — carried for the application's own specification; listed in the successor's notes.
 
 *At the source now.* The sentence stands at lines 165–167 of the document's blob at this batch's Task 0 commit, found as
 quoted, the option's bold lead whole. The nearest heading at the blob is *"## 3. Decision A — the shape of the
@@ -80852,6 +80890,8 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
 - Row 24.2, its idiom part on the weighting as evidence — that the idioms first do work by weighting which entries count. *(cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1; with the candidate.)*
 - Row 57.454, its idiom part on the weight vector — that the consumer consumes the idiom-mixture weight vector. *(cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1; with the candidate.)*
 - Row 57.118, its part on the style weights — that each substitution carries its style weights. *(cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1; with the candidate.)*
+- Row 57.513, its part "the posterior" — that the estimator's published surface carries the posterior. *(cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2.)*
+- Row 57.514, its part "segments, tonalities, chord classes, … the posterior" — that the estimator publishes its own record of segments, tonalities, chord classes and the posterior. *(cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2; as Row 57.513's part "the posterior".)*
 
 **To *the second axis — voice leading*.**
 
