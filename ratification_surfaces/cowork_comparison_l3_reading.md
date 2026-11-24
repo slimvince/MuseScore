@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.39 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.40 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.40 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.41 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -2231,6 +2231,8 @@ name is written to a display.
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the outgoing sentence and L3-S5's premise; it is a display convention, no
 charter of `FRAMEWORK.md` §5 is a display layer, and none of the five dispositions is defensible in one sentence.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* Outside every charter — carried for a display's own specification; listed in the successor's notes.
+
 ---
 
 **Row 4.7 — the analysis layer's own note-spelling enumeration.**
@@ -2409,6 +2411,8 @@ a published fact of L3.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the outgoing bullet and L3-S5 (i); a display convention, as at Row 4.6.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* Outside every charter — carried for a display's own specification; listed in the successor's notes.
+
 ---
 
 **Row 4.19 — the planned symbol vocabulary.**
@@ -2422,6 +2426,8 @@ augmented "+" vs "aug"" — the same list (locator: lines 3887–3888).
 does not speak to the choice.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the outgoing bullet and L3-S3; a display convention, as at Row 4.6.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* Outside every charter — carried for a display's own specification; listed in the successor's notes.
 
 ---
 
@@ -3855,6 +3861,8 @@ the layer emits the fuller label and never a reduced stand-in." — §3, *Produc
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 7.35; read: the sentence, the derivation's L3-S17 and L3-S27
 (the full figure as the published fact), neither of which speaks to a label standard.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* Outside every charter — carried for a display's own specification; listed in the successor's notes.
 
 ---
 
@@ -32238,6 +32246,8 @@ augmented sixth and not to its label in the Roman-numeral rendering, nor to a pr
 sub-section around it are the whole of what was read. (ii) **QUARANTINED.** *Audit question:* does any preset reach the
 formatter at the current commit?
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* (i) Outside every charter — carried for a display's own specification; listed in the successor's notes.
+
 ---
 
 **Row 22.59 — the lowest tone under an organ point perhaps no member of the upper voices' chord.**
@@ -55954,6 +55964,8 @@ inside it, tabulated under the first reading of rule (1); the parenthesis is pro
 *PROPOSED DISPOSITION.* **UNPLACED** — a want of the product's display, which no charter of `FRAMEWORK.md` §5 names;
 read: the sentence above, and the next row.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* Outside every charter — carried for a display's own specification; listed in the successor's notes.
+
 *The decisions register at this row.* The decisions register's data file homes **register entry D-522** at this
 document's lines 215 to 224, the whole of range 9, on which this row's sentence lies; the decisions register's INDEX
 records it as *"Explaining an inference to the end user is a late-bound DISPLAY consumer of facts that already exist —
@@ -55976,6 +55988,8 @@ section *8b. Declared future consumers, named by the user (2026-07-13)*, the sam
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on how a display consumer reads the published facts, which no charter of
 `FRAMEWORK.md` §5 names; read: the sentence above, and L3-S29, under which a comparison with the composer's figures is
 *"the measurement layer's act or a display's"*.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* **ADOPTED — proposed** — "Row 40.61, on D-522 (its home marked ⚠gap at the index, not opened)".
 
 *The decisions register at this row.* The decisions register's data file homes **register entry D-522** at this
 document's lines 215 to 224, the whole of range 9, on which this row's sentence lies; the decisions register's INDEX
@@ -67098,6 +67112,8 @@ family as one class with the Italian pitch content? (iii) **UNPLACED** — read 
 presentation, which `FRAMEWORK.md` §3.3 keeps outside what the analysis depends on; no charter of §5 is a display layer,
 so none of the five is defensible in one sentence.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* (iii) **HISTORICAL** — "Decided against (1): Row 48.17 (iii), in so far as it makes the augmented-sixth sub-type a display's re-derivation from the notes; the sub-type is L2's chord kind (the chord-vocabulary Ruling 1), which a display renders.".
+
 ---
 
 **Row 48.18 — the record's chord-symbol string the grading form only.**
@@ -67134,6 +67150,8 @@ act"*.
 keeps outside what the analysis depends on; no charter of §5 is a display layer, so none of the five is defensible in
 one sentence.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* **ADOPTED — carried** (L3-S5) — "ADOPTED (3): Row 48.19 and the first half of Row 48.20 (ii) (never published on the record), travelling with Row 4.2 (display Ruling 1 part A)".
+
 ---
 
 **Row 48.20 — verified fully derivable; one shared formatter each, never on the record; the record preset-independent.**
@@ -67158,6 +67176,10 @@ no class of exception? (ii) **UNPLACED** — read as at Row 4.6: a statement abo
 keeps outside what the analysis depends on; no charter of §5 is a display layer, so none of the five is defensible in
 one sentence. (iii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose published facts
 depend on no preset (`FRAMEWORK.md` §3.3), as Row 43.41 placed the preset-free facts at their layer.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* (ii), its first half "never published on the record": **ADOPTED — carried** (L3-S5) — "ADOPTED (3): Row 48.19 and the first half of Row 48.20 (ii) (never published on the record), travelling with Row 4.2 (display Ruling 1 part A)".
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* (ii) "one shared presentation formatter" Outside every charter — carried for a display's own specification; listed in the successor's notes.
 
 ---
 
@@ -67258,6 +67280,8 @@ carries its own mass and its own establishment status (`FRAMEWORK.md` §5). (ii)
 statement about presentation, which `FRAMEWORK.md` §3.3 keeps outside what the analysis depends on; no charter of §5 is
 a display layer, so none of the five is defensible in one sentence.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* (ii) Outside every charter — carried for a display's own specification; listed in the successor's notes.
+
 ---
 
 **Row 48.27 — the table row *ranked alternatives*: the record's full lists with display facts; the suffix showing the
@@ -67277,6 +67301,8 @@ lists with each candidate's display facts; (ii) the displayed numeric suffix sho
 carries its own mass and its own establishment status (`FRAMEWORK.md` §5). (ii) **UNPLACED** — read as at Row 4.6: a
 statement about presentation, which `FRAMEWORK.md` §3.3 keeps outside what the analysis depends on; no charter of §5 is
 a display layer, so none of the five is defensible in one sentence.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* (ii) Outside every charter — carried for a display's own specification; listed in the successor's notes.
 
 ---
 
@@ -67415,6 +67441,8 @@ row dispositioned; row-level source: the artifact)*, the table, the row *accessi
 keeps outside what the analysis depends on; no charter of §5 is a display layer, so none of the five is defensible in
 one sentence.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* Outside every charter — carried for a display's own specification; listed in the successor's notes.
+
 ---
 
 **Row 48.36 — the legacy gates keeping their function, their input the published mass and gap, their values declared
@@ -67442,6 +67470,10 @@ one sentence. (ii) **RELOCATED** — to ***the uncertainty surface***, whose rul
 own mass and its own establishment status (`FRAMEWORK.md` §5). (iii) **UNPLACED** — read as at Row 4.6: a statement
 about presentation, which `FRAMEWORK.md` §3.3 keeps outside what the analysis depends on; no charter of §5 is a display
 layer, so none of the five is defensible in one sentence.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* (i) Outside every charter — carried for a display's own specification; listed in the successor's notes.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* (iii) Outside every charter — carried for a display's own specification; listed in the successor's notes.
 
 ---
 
@@ -68672,6 +68704,8 @@ shared staff-eligibility predicate, as Row 20.22 asked of the chord-staff helper
 **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change points are those of eligible
 notes (`FRAMEWORK.md` §5), as the derivation's §0 takes them from IC-L1 §0, and as Row 36.3 (i) placed the eligibility
 test.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_display_family_sitting.md, Ruling 1).* (i) Outside every charter — carried for a display's own specification; listed in the successor's notes.
 
 ---
 
