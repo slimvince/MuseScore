@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.32 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.33 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.34 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.35 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -61872,6 +61872,8 @@ before this table)*, the terms list, the entry *Substitution* (locator: lines 29
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the substitution is defined by the catalog's mappings, read as at Row 7.85,
 and no charter of `FRAMEWORK.md` §5 names the relation of a chord to the chord it stands in for.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_substitution_part1_sitting.md, Ruling 1).* **ADOPTED — proposed** — "ADOPTED — proposed: Row 44.4 (the term *substitution*, of the catalog L3 reads)".
+
 ---
 
 **Row 44.5 — the term *The committed progression*: the ordered committed chords of a region with their numerals and the
@@ -64947,6 +64949,8 @@ ending in a colon and carrying its claim (locator: lines 205–207).
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.4: the recognition of a substituted surface as the function it
 stands for, and its offer in composition, belong to no charter of `FRAMEWORK.md` §5.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_substitution_part1_sitting.md, Ruling 1).* Its analysis half: **ADOPTED — proposed** — "Split: Row 46.27 — the analysis half ADOPTED — proposed; the composition half moved to the chord-suggestion-tool surface".
 
 ---
 
@@ -74078,6 +74082,8 @@ LAYER items, names a knowledge-base component, and the derivation names none. (i
 Row 38.20 (i), and as at Row 38.21 (ii): no charter of `FRAMEWORK.md` §5 names a tool that suggests chords, generation
 lying outside the analysis.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_further_rows_sitting.md, Ruling 1).* (ii), its half "read forward for the analysis": **ADOPTED — proposed** — "§3.3, split by use (3): 57.107 (ii) — read forward for the analysis ADOPTED — proposed, read predictively moved to the chord-suggestion-tool surface; 57.399 — loading the catalog L3 reads from the active styles **decided against in so far as a style subset selects the catalog L3 reads** (as lead-rows Row 38.79 (i)), listing entries by style moved to the idiom-tag surface; 57.433 (ii) — input to recognise ADOPTED — proposed, input to suggest moved to the chord-suggestion-tool surface".
+
 *At the source now.* The sentence stands at lines 5686–5693 of the document's blob at this batch's Task 0 commit, found
 as quoted; the quotation opens after the paragraph's bold lead on line 5686, *The Harmonic Vocabulary — the queried
 progression & substitution component.*, a title under the first reading rule. The nearest heading at the blob is *"## 7.
@@ -76853,6 +76859,8 @@ the active catalog is loaded.
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 38.20: a query of the catalog's read-only interface, and none of
 `FRAMEWORK.md` §5's charters, nor its NOT A LAYER items, names a knowledge-base component.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_further_rows_sitting.md, Ruling 1).* Its half on loading the catalog L3 reads from the active styles: **HISTORICAL** — "§3.3, split by use (3): 57.107 (ii) — read forward for the analysis ADOPTED — proposed, read predictively moved to the chord-suggestion-tool surface; 57.399 — loading the catalog L3 reads from the active styles **decided against in so far as a style subset selects the catalog L3 reads** (as lead-rows Row 38.79 (i)), listing entries by style moved to the idiom-tag surface; 57.433 (ii) — input to recognise ADOPTED — proposed, input to suggest moved to the chord-suggestion-tool surface".
+
 *At the source now.* The sentence stands at lines 94–95 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 94; it is the first of the four queries the line before
 it introduces, and the next opens at line 96. The nearest heading at the blob is *"## 4. The query interface — what a
@@ -77053,6 +77061,8 @@ chords or functions.
 derivation uses the word only of a cadential progression, as at L3-S9 (ii) and L3-S16, and defines no progression in
 general, and no charter of `FRAMEWORK.md` §5 names one.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_further_rows_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed: 57.427 (the glossary's *progression*, a term of the catalog L3 reads), 57.428 (*schema*), 57.430 (i) (*entry*), 57.503 (the functional skeleton as a key-relative sequence of (degree, quality) pairs), 57.504 (i) (one entry instantiates in every key)".
+
 *At the source now.* The entry stands at line 287 of the document's blob at this batch's Task 0 commit, found as quoted,
 the quotation dropping the list marker that opens line 287. It is the glossary's first entry. The nearest heading at the
 blob is *"## 10. Glossary"*. The line lies in none of member 46's published ranges: it falls between its ranges 224–246
@@ -77087,6 +77097,8 @@ of several chords, one conventional enough to have a name.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 7.85: `FRAMEWORK.md` §5 names no charter whose subject is a
 catalog of named progressions, and the derivation does not speak to one.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_further_rows_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed: 57.427 (the glossary's *progression*, a term of the catalog L3 reads), 57.428 (*schema*), 57.430 (i) (*entry*), 57.503 (the functional skeleton as a key-relative sequence of (degree, quality) pairs), 57.504 (i) (one entry instantiates in every key)".
 
 *At the source now.* The entry stands at line 288 of the document's blob at this batch's Task 0 commit, found as quoted,
 the quotation dropping the list marker that opens line 288. The nearest heading at the blob is *"## 10. Glossary"*. The
@@ -77159,6 +77171,8 @@ entry, by its functional skeleton, and a substitution entry, by its substitution
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 44.1: the term names a record of the catalog of named
 progressions, which no charter of `FRAMEWORK.md` §5 names, and the derivation does not speak to one. (ii) **UNPLACED** —
 travelling with (i).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_further_rows_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed: 57.427 (the glossary's *progression*, a term of the catalog L3 reads), 57.428 (*schema*), 57.430 (i) (*entry*), 57.503 (the functional skeleton as a key-relative sequence of (degree, quality) pairs), 57.504 (i) (one entry instantiates in every key)".
 
 *At the source now.* The entry stands at lines 291–292 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 291. The nearest heading at the blob is *"## 10.
@@ -77267,6 +77281,8 @@ the queries that recognize and suggest.
 read-only queries, and none of `FRAMEWORK.md` §5's charters, nor its NOT A LAYER items, names a knowledge-base
 component. (ii) **UNPLACED** — read as at Row 38.20: a query of the catalog's read-only interface, and none of
 `FRAMEWORK.md` §5's charters, nor its NOT A LAYER items, names a knowledge-base component.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_further_rows_sitting.md, Ruling 1).* (ii), its half "input to recognise": **ADOPTED — proposed** — "§3.3, split by use (3): 57.107 (ii) — read forward for the analysis ADOPTED — proposed, read predictively moved to the chord-suggestion-tool surface; 57.399 — loading the catalog L3 reads from the active styles **decided against in so far as a style subset selects the catalog L3 reads** (as lead-rows Row 38.79 (i)), listing entries by style moved to the idiom-tag surface; 57.433 (ii) — input to recognise ADOPTED — proposed, input to suggest moved to the chord-suggestion-tool surface".
 
 *At the source now.* The entry stands at lines 295–296 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 295. The nearest heading at the blob is *"## 10.
@@ -77470,6 +77486,8 @@ entry's functional skeleton is a sequence of pairs of scale degree and chord qua
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.2: the skeleton is the succession of chord positions a catalog
 entry specifies, travelling with Row 44.1.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_further_rows_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed: 57.427 (the glossary's *progression*, a term of the catalog L3 reads), 57.428 (*schema*), 57.430 (i) (*entry*), 57.503 (the functional skeleton as a key-relative sequence of (degree, quality) pairs), 57.504 (i) (one entry instantiates in every key)".
+
 *At the source now.* The sentences stand at lines 77–79 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 77; the L2 block's *"…"* stands for the clause the blob
 holds there on the bass-line and galant entries, *", or, for the bass-line and galant entries, of bass/melody
@@ -77513,6 +77531,8 @@ progressions. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one ent
 per span as degree, quality, figure and applied target (`FRAMEWORK.md` §5), as Row 46.4 placed the function map's slots
 instantiated per target degree. The L2 comparison relocated the row this one quotes, L2 Row 62.41, to L3; this claim is
 placed elsewhere, as a fact beside the disposition and not a correction of that comparison.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_further_rows_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed: 57.427 (the glossary's *progression*, a term of the catalog L3 reads), 57.428 (*schema*), 57.430 (i) (*entry*), 57.503 (the functional skeleton as a key-relative sequence of (degree, quality) pairs), 57.504 (i) (one entry instantiates in every key)".
 
 *At the source now.* The sentences stand at lines 77–79 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 77; the L2 block's *"…"* stands for the clause on the
