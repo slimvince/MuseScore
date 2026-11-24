@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.41 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.42 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.42 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.43 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -67409,6 +67409,8 @@ modal color.
 a count per key run of the chromatic inflections of each degree, which no charter of `FRAMEWORK.md` §5 lists among its
 publications, L2 publishing the tonality as tonic and mode.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — "ADOPTED, carried by the new L3 publication (10): Rows 48.32 (ii), 57.362, 57.363, 57.364, 57.365, 57.366 (i), 57.370, 57.371, 57.372, 57.373 (ii)".
+
 ---
 
 **Row 48.33 — the table row *pedal*: the pedal fields read from the ornament labels.**
@@ -75772,6 +75774,8 @@ reading is published for the presentation layer, by the ratified decision of 202
 of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
 and mode; the derivation names no such count.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1).* **ADOPTED — proposed** — "ADOPTED, carried by the new L3 publication (10): Rows 48.32 (ii), 57.362, 57.363, 57.364, 57.365, 57.366 (i), 57.370, 57.371, 57.372, 57.373 (ii)".
+
 *At the source now.* The sentence stands at lines 96–97 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 96 after the bold lead *The ratified presentation obligations.* and ending on line 97, before
 the sentence on the ornament labels. The nearest heading at the blob is *"## 1. The verified current state (all read at
@@ -75807,6 +75811,8 @@ claim: the un-rounded modal reading is published.
 of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
 and mode; the derivation names no such count.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1).* **ADOPTED — proposed** — "ADOPTED, carried by the new L3 publication (10): Rows 48.32 (ii), 57.362, 57.363, 57.364, 57.365, 57.366 (i), 57.370, 57.371, 57.372, 57.373 (ii)".
+
 *At the source now.* The sentence stands at lines 292–294 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 292 after the sentence on the legacy record's mode field and the bridge's mode priors. The
 nearest heading at the blob is *"## 5. Decision C — the mode field and the 21-value presentation question"*. The lines
@@ -75841,6 +75847,8 @@ correction. One claim: the un-rounded modal reading is published beside the tona
 of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
 and mode; the derivation names no such count.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1).* **ADOPTED — proposed** — "ADOPTED, carried by the new L3 publication (10): Rows 48.32 (ii), 57.362, 57.363, 57.364, 57.365, 57.366 (i), 57.370, 57.371, 57.372, 57.373 (ii)".
+
 *At the source now.* The sentence stands at lines 296–297 of the document's blob at this batch's Task 0 commit, found as
 quoted, the option's bold lead whole, the bold markers kept as the block writes them. The nearest heading at the blob is
 *"## 5. Decision C — the mode field and the 21-value presentation question"*. The lines lie in none of member 52's
@@ -75872,6 +75880,8 @@ condition, which the decision includes, the un-rounded modal reading is preserve
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.32 (ii): a count per tonality run of the chromatic inflections
 of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
 and mode; the derivation names no such count.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1).* **ADOPTED — proposed** — "ADOPTED, carried by the new L3 publication (10): Rows 48.32 (ii), 57.362, 57.363, 57.364, 57.365, 57.366 (i), 57.370, 57.371, 57.372, 57.373 (ii)".
 
 *At the source now.* The sentence stands at lines 96–97 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 96 after the parenthesis on the constrained-optimum record, the bold markers kept. The nearest
@@ -75919,6 +75929,8 @@ tonality as tonic and mode; the derivation names no such count. (ii)
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***: it says what the tonal reading's states
 are not, the mode being L2's to decide. The L2 comparison relocated the row this one quotes, L2 Row 48.32, to L3; this
 claim is placed elsewhere, as a fact beside the disposition and not a correction of that comparison.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "ADOPTED, carried by the new L3 publication (10): Rows 48.32 (ii), 57.362, 57.363, 57.364, 57.365, 57.366 (i), 57.370, 57.371, 57.372, 57.373 (ii)".
 
 *At the source now.* The sentence stands at lines 97–101 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 97 after the bold sentence Row 57.365 carries; the paragraph goes on at line 102 with the
@@ -76025,6 +76037,8 @@ the ratified un-rounded publication of modal color.
 of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
 and mode; the derivation names no such count.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1).* **ADOPTED — proposed** — "ADOPTED, carried by the new L3 publication (10): Rows 48.32 (ii), 57.362, 57.363, 57.364, 57.365, 57.366 (i), 57.370, 57.371, 57.372, 57.373 (ii)".
+
 *At the source now.* The sentence stands at lines 28–29 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 28 after the sentence Row 57.369 carries. The nearest heading at the blob is the document's
 title. The lines lie in none of member 48's published ranges: they fall before its first range, 36–46, inside the cut
@@ -76060,6 +76074,8 @@ computed from the published note facts relative to the tonic and mode.
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.32 (ii): a count per tonality run of the chromatic inflections
 of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
 and mode; the derivation names no such count.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1).* **ADOPTED — proposed** — "ADOPTED, carried by the new L3 publication (10): Rows 48.32 (ii), 57.362, 57.363, 57.364, 57.365, 57.366 (i), 57.370, 57.371, 57.372, 57.373 (ii)".
 
 *At the source now.* The sentence stands at lines 139–141 of the document's blob at this batch's Task 0 commit, found as
 quoted, the first sentence of §3.4. The nearest heading at the blob is *"### 3.4 Per key run — the un-rounded modal
@@ -76102,6 +76118,8 @@ as its count.
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.32 (ii): a count per tonality run of the chromatic inflections
 of each degree, which no charter of `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic
 and mode; the derivation names no such count.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1).* **ADOPTED — proposed** — "ADOPTED, carried by the new L3 publication (10): Rows 48.32 (ii), 57.362, 57.363, 57.364, 57.365, 57.366 (i), 57.370, 57.371, 57.372, 57.373 (ii)".
 
 *At the source now.* The sentence stands at lines 141–144 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening on line 141 after the sentence Row 57.371 carries, the combining circumflex marks of the degrees kept as
@@ -76147,6 +76165,10 @@ tonality as tonic and mode; the derivation names no such count. (ii) **UNPLACED*
 at Row 48.32 (ii): a count per tonality run of the chromatic inflections of each degree, which no charter of
 `FRAMEWORK.md` §5 lists among its publications, L2 publishing the tonality as tonic and mode; the derivation names no
 such count.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1).* (i) Outside every charter — carried for a display's own specification; listed in the successor's notes.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_modal_counts_family_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — "ADOPTED, carried by the new L3 publication (10): Rows 48.32 (ii), 57.362, 57.363, 57.364, 57.365, 57.366 (i), 57.370, 57.371, 57.372, 57.373 (ii)".
 
 *At the source now.* The sentence stands at lines 144–145 of the document's blob at this batch's Task 0 commit, found as
 quoted, its inner quotation marks as the document writes them, opening on line 144 after the sentence Row 57.372
