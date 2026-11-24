@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.36 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.37 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.38 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.39 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -33935,6 +33935,8 @@ entangled decision.*** at Rows 7.73 to 7.84, but the vocabulary it might fold in
 as Row 24.1 found, and no derived statement speaks to either store; the bullet and the section around it are the whole
 of what was read.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* Its part on the build-timing half: **HISTORICAL** — "24.4 (the owed decision made: two stores, the pair table L2's, the catalog the reference L3 reads; whether L2 also draws on the catalog waits on DP-O's catalog term; the build-timing half HISTORICAL)".
+
 ---
 
 **Row 24.5 — two stores at present: a pairwise rule set in the function layer and the catalog.**
@@ -33962,6 +33964,8 @@ made, explicitly, when the component that queries this catalog is built." — th
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: as Row 24.4, the decision between one store and two; no charter of
 `FRAMEWORK.md` §5 names the vocabulary, and no derived statement speaks to either store.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* **HISTORICAL** — "24.6 ("not to be settled by drift" met; the timing half HISTORICAL)"; the rest, "a requirement the rulings have met, read as a status", so that "the whole of Row 24.6 is HISTORICAL".
 
 ---
 
@@ -48793,6 +48797,8 @@ functional grammar.
 *RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (i), its remainder's part on a catalog per idiom: **HISTORICAL** — "38.79 (i)'s remainder — a catalog per idiom decided against, entries specific to idioms ADOPTED — proposed as their tags".
 
 *RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (i), its remainder's part on the entries specific to idioms: **ADOPTED — proposed** — "38.79 (i)'s remainder — a catalog per idiom decided against, entries specific to idioms ADOPTED — proposed as their tags".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* (ii), its part on the yes/no grammar: **HISTORICAL** — "38.79 (ii) (read for the analysis: the whole progression is L2's decision, weighed link by link; "composed from" the catalog in L2 waits on DP-O's catalog term; the yes/no grammar HISTORICAL)".
 
 ---
 
@@ -76807,6 +76813,10 @@ comparison. (ii) **UNPLACED** — read as at Row 7.85, whose sentence says the c
 test: `FRAMEWORK.md` §5 names no charter whose subject is a catalog of named progressions, and the derivation does not
 speak to one.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* (ii), its part on the "licensed root motion" it names: **HISTORICAL** — "57.396 (ii) (the catalog defines none of L2's chord-pair knowledge; the "licensed root motion" it names HISTORICAL by L2 Ruling 1)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* (ii), its part on the catalog defining none of L2's chord-pair knowledge: **ADOPTED — proposed** — "57.396 (ii) (the catalog defines none of L2's chord-pair knowledge; the "licensed root motion" it names HISTORICAL by L2 Ruling 1)".
+
 *At the source now.* The row stands at line 19 of the document's blob at this batch's Task 0 commit, found as quoted: a
 body row of the terms table under *"## 0. Terms (read first — nothing below uses a term before its row)"* (line 7),
 whose header row and separator line stand at lines 11 and 12, and the L2 block's quotation carries its cells with their
@@ -76850,6 +76860,10 @@ catalog to the grammar.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 7.85: `FRAMEWORK.md` §5 names no charter whose subject is a
 catalog of named progressions, so none whose subject is that catalog's relation to the licensing grammar, and the
 derivation does not speak to one. (ii) **UNPLACED** — travelling with (i).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed, as rules about the catalog L3 reads, "the grammar" read as L2's counted pair table"; "57.398 (i), 57.495 (i) (the catalog and the grammar not derived from each other)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "§3.3, HISTORICAL — a superseded plan (5), the consistency test: 57.398 (ii), 57.405, 57.493 (ii), 57.494 (ii), 57.495 (ii). Ground: L2 Ruling 1; L2 holds no yes/no licensed set for an entry's pairs to be tested against".
 
 *At the source now.* The sentence stands at lines 40–41 of the document's blob at this batch's Task 0 commit, found as
 quoted: it opens mid-line 40 after the second maintenance instruction, which §6.46 lists as item 2, and ends on line 41
@@ -77063,6 +77077,8 @@ consistency test.
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 57.398 (ii).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* **HISTORICAL** — "§3.3, HISTORICAL — a superseded plan (5), the consistency test: 57.398 (ii), 57.405, 57.493 (ii), 57.494 (ii), 57.495 (ii). Ground: L2 Ruling 1; L2 holds no yes/no licensed set for an entry's pairs to be tested against".
 
 *At the source now.* The sentence stands at line 155 of the document's blob at this batch's Task 0 commit, found as
 quoted: it opens on line 155 after the sentence on what the catalog owns, which ends there, and the line goes on with an
@@ -77889,6 +77905,8 @@ catalog component only; its italic lead names the change and is quoted with it.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.39: the catalog the one owner of the named progressions,
 `FRAMEWORK.md` §5 naming no charter whose subject is a catalog of named progressions.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed, as rules about the catalog L3 reads, "the grammar" read as L2's counted pair table"; "57.451 (a catalog change changes the catalog only)".
 
 *At the source now.* The sentence stands at line 201 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens the line and stopping at the bullet's first sentence. The
@@ -78743,6 +78761,10 @@ catalog of named progressions, so none whose subject is that catalog's relation 
 derivation does not speak to one. (ii) **UNPLACED** — travelling with (i), the consistency test being the one coupling
 of the map, as at Row 57.398 (ii).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed, as rules about the catalog L3 reads, "the grammar" read as L2's counted pair table"; "57.493 (i) (a grammar change needs no catalog edit)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "§3.3, HISTORICAL — a superseded plan (5), the consistency test: 57.398 (ii), 57.405, 57.493 (ii), 57.494 (ii), 57.495 (ii). Ground: L2 Ruling 1; L2 holds no yes/no licensed set for an entry's pairs to be tested against".
+
 *At the source now.* The sentence stands at lines 199–200 of the document's blob at this batch's Task 0 commit, found as
 quoted, the bullet's second sentence, after its first, on a change of the grammar, which §6.44 lists as item 13. The
 nearest heading at the blob is *"## 6. Architecture decisions (with the alternatives weighed)"*, the member's decision
@@ -78784,6 +78806,12 @@ tagged around.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 57.398: `FRAMEWORK.md` §5 names no charter whose subject is a
 catalog of named progressions, so none whose subject is that catalog's relation to the licensing grammar, and the
 derivation does not speak to one. (ii) **UNPLACED** — travelling with (i).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* (i), its part on the consistency test: **HISTORICAL** — "57.494 (i) — a catalog change needs no edit of the grammar, follows; "but a new entry must PASS the consistency test", HISTORICAL — a superseded plan".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* (i), its part on a catalog change needing no edit of the grammar: **ADOPTED — proposed** — "57.494 (i) — a catalog change needs no edit of the grammar, follows; "but a new entry must PASS the consistency test", HISTORICAL — a superseded plan".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "§3.3, HISTORICAL — a superseded plan (5), the consistency test: 57.398 (ii), 57.405, 57.493 (ii), 57.494 (ii), 57.495 (ii). Ground: L2 Ruling 1; L2 holds no yes/no licensed set for an entry's pairs to be tested against".
 
 *At the source now.* The sentence stands at lines 201–203 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening mid-line 201 after the bullet's first sentence, which Row 57.451 tabulates. The nearest heading at the
@@ -78828,6 +78856,10 @@ one way, from the catalog to the grammar; its italic lead states claim (i) and i
 catalog of named progressions, so none whose subject is that catalog's relation to the licensing grammar, and the
 derivation does not speak to one. (ii) **UNPLACED** — travelling with (i), as Row 57.398 (ii).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed, as rules about the catalog L3 reads, "the grammar" read as L2's counted pair table"; "57.398 (i), 57.495 (i) (the catalog and the grammar not derived from each other)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "§3.3, HISTORICAL — a superseded plan (5), the consistency test: 57.398 (ii), 57.405, 57.493 (ii), 57.494 (ii), 57.495 (ii). Ground: L2 Ruling 1; L2 holds no yes/no licensed set for an entry's pairs to be tested against".
+
 *At the source now.* The sentence stands at lines 204–206 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 204; it is the map's last bullet, and the bold *Build
 riders* lead follows on line 207. The nearest heading at the blob is *"## 6. Architecture decisions (with the
@@ -78866,6 +78898,8 @@ parenthesis giving the reason taken with it.
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.398: `FRAMEWORK.md` §5 names no charter whose subject is a
 catalog of named progressions, so none whose subject is that catalog's relation to the licensing grammar, and the
 derivation does not speak to one.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_pairwise_grammar_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed, as rules about the catalog L3 reads, "the grammar" read as L2's counted pair table"; "57.496 (a licensed pair in no entry is no gap of the catalog)".
 
 *At the source now.* The sentence stands at lines 302–304 of the document's blob at this batch's Task 0 commit, found as
 quoted, opening mid-line 302 after the item's account of partial matching and closing the item on line 304. The nearest
