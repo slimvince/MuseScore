@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.35 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.36 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.36 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.37 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -33899,6 +33899,10 @@ charter of `FRAMEWORK.md` §5 names it, and no derived statement speaks to a pro
 
 *RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* Its part on the annotation: **ADOPTED — proposed** — "§3.3, split by use (4): 24.2 — the prior RELOCATED to L2 with key Ruling 2's candidate, the annotation ADOPTED — proposed, the idiom weighting moved to the idiom-tag surface; 57.445 (i) — to recognise ADOPTED — proposed, to disambiguate RELOCATED to L2 with the candidate; 57.454 — the decided chords and the catalog as inputs ADOPTED — proposed, the idiom filter and weight vector moved to the idiom-tag surface; 57.470 (ii) — the old §4.4 annotation ADOPTED — proposed, the old §4.3 evidence contribution RELOCATED to L2 with the candidate, the old §4.6 harmonic-sequence output RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* Its idiom part, on the weighting as evidence: **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***: "24.2's idiom part — the weighting as evidence RELOCATED to L2 with the candidate, a weight deciding which matches L3 publishes decided against".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* Its idiom part, on a weight deciding which matches L3 publishes: **HISTORICAL** — "24.2's idiom part — the weighting as evidence RELOCATED to L2 with the candidate, a weight deciding which matches L3 publishes decided against".
+
 ---
 
 **Row 24.3 — the function layer making no use of the catalog at present.**
@@ -47769,6 +47773,12 @@ inference; (ii) the genre labels in the component, the genre-aware behavior at i
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — travelling with Row 38.20 (i). (ii) **UNPLACED** — travelling with Row 38.20
 (i); read beside Row 19.33, which proposes style-specific behavior only in fitted values.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (ii) (labels) **ADOPTED — proposed** — "38.22 (ii) — the labels ADOPTED — proposed, selection decided against as above, weights RELOCATED to L2 with key Ruling 2's candidate, detection waiting on the open question the L2 tail-style-and-idiom record §1 holds".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (ii) (selection) **HISTORICAL** — "38.22 (ii) — the labels ADOPTED — proposed, selection decided against as above, weights RELOCATED to L2 with key Ruling 2's candidate, detection waiting on the open question the L2 tail-style-and-idiom record §1 holds"; "selection decided against as above", that is, "decided against in so far as it selects the catalog L3 reads".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (ii) (weights) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***: "38.22 (ii) — the labels ADOPTED — proposed, selection decided against as above, weights RELOCATED to L2 with key Ruling 2's candidate, detection waiting on the open question the L2 tail-style-and-idiom record §1 holds".
+
 ---
 
 **Row 38.23 — the dependency order: key and mode, chord symbol, function, grouping.**
@@ -48779,6 +48789,10 @@ functional grammar.
 (vi).
 
 *RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (i) **HISTORICAL** — "Decided against in so far as a preset selects the catalog L3 reads: 38.79 (i), the remainder ("idiom-specific") going with the idiom-tag rows".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (i), its remainder's part on a catalog per idiom: **HISTORICAL** — "38.79 (i)'s remainder — a catalog per idiom decided against, entries specific to idioms ADOPTED — proposed as their tags".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (i), its remainder's part on the entries specific to idioms: **ADOPTED — proposed** — "38.79 (i)'s remainder — a catalog per idiom decided against, entries specific to idioms ADOPTED — proposed as their tags".
 
 ---
 
@@ -62524,6 +62538,8 @@ factors — is the consumer's and only the consumer's, its directions fixed and 
 candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the L2 block); style reaches the
 analysis only through the priors and weights of the layers that judge (`FRAMEWORK.md` §8.3).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (9): ADOPTED — proposed, as content of the catalog L3 reads: 46.38, 46.40, 46.49, 44.32 (i), 57.516, 57.517, 57.532, 57.535 (i), 46.45 (one catalog, a shared convention a single entry — the writing side's derivation)".
+
 ---
 
 **Row 44.33 — the matcher idiom-general; the idiom weights grading and never excluding.**
@@ -65124,6 +65140,8 @@ lines 227–228).
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11: the tags are attributes of the catalog's entries.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (9): ADOPTED — proposed, as content of the catalog L3 reads: 46.38, 46.40, 46.49, 44.32 (i), 57.516, 57.517, 57.532, 57.535 (i), 46.45 (one catalog, a shared convention a single entry — the writing side's derivation)".
+
 ---
 
 **Row 46.39 — the taxonomy the ratified five-idiom set, with its two cross-attributes.**
@@ -65158,6 +65176,8 @@ concepts*, the same bullet (locator: line 237).
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11: the tags are attributes of the catalog's entries.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (9): ADOPTED — proposed, as content of the catalog L3 reads: 46.38, 46.40, 46.49, 44.32 (i), 57.516, 57.517, 57.532, 57.535 (i), 46.45 (one catalog, a shared convention a single entry — the writing side's derivation)".
 
 ---
 
@@ -65200,6 +65220,10 @@ leads, a bold sentence tabulated under the first reading of rule (1) (locator: l
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.1: the consumer is the older stack's recognition consumer,
 whose recognition no charter of `FRAMEWORK.md` §5 names.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (selection) **HISTORICAL** — "46.43 — travels with 38.22 (ii)'s behaviour half"; as there, "selection decided against as above", that is, "decided against in so far as it selects the catalog L3 reads".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (weights) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***: "46.43 — travels with 38.22 (ii)'s behaviour half"; as there, "weights RELOCATED to L2 with key Ruling 2's candidate".
+
 ---
 
 **Row 46.44 — the catalog carrying the style label; the style weighting a graded prior; style detection a future
@@ -65222,6 +65246,10 @@ threshold are the consumer's; (iii) style detection is a future classifier.
 producer is a score and never a constraint"* (`FRAMEWORK.md` §5, the L2 block). (iii) **HISTORICAL** — a plan: style
 detection left to a future classifier.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (i), its part on the label: **ADOPTED — proposed** — "46.44 (i) — the label ADOPTED — proposed, the preset selecting the active subset decided against in so far as it selects the catalog L3 reads".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (i), its part on the preset selecting the active subset: **HISTORICAL** — "46.44 (i) — the label ADOPTED — proposed, the preset selecting the active subset decided against in so far as it selects the catalog L3 reads".
+
 ---
 
 **Row 46.45 — one catalog, not per-style silos: a shared convention a single entry.**
@@ -65236,6 +65264,8 @@ led *Style behavior is the consumer's.* (locator: lines 242–243).
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 7.85: `FRAMEWORK.md` §5 names no charter whose subject is a
 catalog of named progressions, and the derivation does not speak to one.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (9): ADOPTED — proposed, as content of the catalog L3 reads: 46.38, 46.40, 46.49, 44.32 (i), 57.516, 57.517, 57.532, 57.535 (i), 46.45 (one catalog, a shared convention a single entry — the writing side's derivation)".
 
 ---
 
@@ -65304,6 +65334,8 @@ after its number (locator: lines 321–322).
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11: the tags are attributes of the catalog's entries.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (9): ADOPTED — proposed, as content of the catalog L3 reads: 46.38, 46.40, 46.49, 44.32 (i), 57.516, 57.517, 57.532, 57.535 (i), 46.45 (one catalog, a shared convention a single entry — the writing side's derivation)".
 
 ---
 
@@ -74451,6 +74483,8 @@ defended here as the sentence's whole subject.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_substitution_part2_sitting.md, Ruling 1).* **RELOCATED** — to ***the second axis — voice leading***, for the voice-leading implications: "Split by subject (1): Row 57.118 — the voice-leading implications … RELOCATED to the second axis (`FRAMEWORK.md`, *The second axis — voice leading*)".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* Its part on the style weights: **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***: "57.118's style weights RELOCATED to L2 with the candidate".
+
 *At the source now.* The item stands at line 5763 of the document's blob at this batch's Task 0 commit, found as quoted,
 the quotation dropping the list marker that opens the line; it is one of the six items that line 5757 leads. The nearest
 heading at the blob is *"### 7.3 Substitution Network"*. The line lies in none of member 24's published ranges: it falls
@@ -77579,6 +77613,8 @@ entry's pointer to §6 and §12.1 is taken with it.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 44.11: the tags are attributes of the catalog's entries. (ii)
 **UNPLACED** — travelling with (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (9): ADOPTED — proposed, as content of the catalog L3 reads: 46.38, 46.40, 46.49, 44.32 (i), 57.516, 57.517, 57.532, 57.535 (i), 46.45 (one catalog, a shared convention a single entry — the writing side's derivation)".
+
 *At the source now.* The entry stands at lines 297–299 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 297. The quotation stops before the parenthesis on line
 299 that closes the entry, *"(Formerly the placeholder "style tag" — the retired `{Baroque, Jazz, Default}`
@@ -77932,6 +77968,10 @@ progression, a catalog queried and not owned among them; no charter of `FRAMEWOR
 names a knowledge-base component or the recognition of a schema.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* Its half on the decided chords and the catalog as inputs: **ADOPTED — proposed** — "§3.3, split by use (4): 24.2 — the prior RELOCATED to L2 with key Ruling 2's candidate, the annotation ADOPTED — proposed, the idiom weighting moved to the idiom-tag surface; 57.445 (i) — to recognise ADOPTED — proposed, to disambiguate RELOCATED to L2 with the candidate; 57.454 — the decided chords and the catalog as inputs ADOPTED — proposed, the idiom filter and weight vector moved to the idiom-tag surface; 57.470 (ii) — the old §4.4 annotation ADOPTED — proposed, the old §4.3 evidence contribution RELOCATED to L2 with the candidate, the old §4.6 harmonic-sequence output RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* Its idiom part, on the filter: **HISTORICAL** — "57.454's idiom part — the filter decided against in so far as it selects the catalog L3 reads, the weight vector RELOCATED to L2 with the candidate".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* Its idiom part, on the weight vector: **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***: "57.454's idiom part — the filter decided against in so far as it selects the catalog L3 reads, the weight vector RELOCATED to L2 with the candidate".
 
 *At the source now.* The sentence stands at lines 95–96 of the document's blob at this batch's Task 0 commit, found as
 quoted, the sentence opening the section with its bold lead *Consumes:*. The bold lead *Produces — …* that Rows 57.485
@@ -79032,6 +79072,8 @@ each entry of the catalog of named progressions and substitutions is tagged with
 of a catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions; the sentence states the
 tagging as a rule of the mapping and names no code, so it is not read as QUARANTINED for the build its lead names.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (9): ADOPTED — proposed, as content of the catalog L3 reads: 46.38, 46.40, 46.49, 44.32 (i), 57.516, 57.517, 57.532, 57.535 (i), 46.45 (one catalog, a shared convention a single entry — the writing side's derivation)".
+
 *At the source now.* The sentence stands at lines 3–4 of the document's blob at this batch's Task 0 commit, found as
 quoted. Each line opens with the quotation-block marker, which the quotation drops, and line 3 carries before the
 sentence the banner's bold lead, *For the StyleTag implementation.*, which the L2 block does not quote; line 4 goes on
@@ -79068,6 +79110,8 @@ supertonic–dominant–tonic progression and the same with sevenths, is taken w
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Rows 46.40 and 46.49, which place the same rule in the catalog's own
 document: the tags are attributes of the catalog's entries.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (9): ADOPTED — proposed, as content of the catalog L3 reads: 46.38, 46.40, 46.49, 44.32 (i), 57.516, 57.517, 57.532, 57.535 (i), 46.45 (one catalog, a shared convention a single entry — the writing side's derivation)".
 
 *At the source now.* The sentence stands at lines 4–5 of the document's blob at this batch's Task 0 commit, found as
 quoted, after the quotation-block marker opening each line, its bold lead quoted with it as the L2 block quotes it; it
@@ -79346,6 +79390,8 @@ re-tagging act its heading names.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 57.517, as Row 46.40 places the tags' multiplicity: an
 attribute of the catalog's entries.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (9): ADOPTED — proposed, as content of the catalog L3 reads: 46.38, 46.40, 46.49, 44.32 (i), 57.516, 57.517, 57.532, 57.535 (i), 46.45 (one catalog, a shared convention a single entry — the writing side's derivation)".
 
 *At the source now.* The sentence stands at lines 51–52 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 51 and joining with one space the bullet's second line,
@@ -80707,6 +80753,11 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
 - Row 57.445 (i), its half "to disambiguate" — that the analysis direction reads an existing progression to disambiguate it. *(cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1; with the candidate.)*
 - Row 57.470 (ii), its part on the old §4.3 evidence contribution — that the §4.3 output, the evidence contribution, is emitted. *(cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1; with the candidate.)*
 - Row 57.470 (ii), its part on the old §4.6 harmonic-sequence output — that the §4.6 output, the harmonic sequence, is emitted. *(cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1; with the sequence term at DP-O (D-504, D-505).)*
+- Row 38.22 (ii), its part on the weights — that the genre-aware weights are the consumer's. *(cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1; with key Ruling 2's candidate.)*
+- Row 46.43, its part on the weights — that style behavior, in its weights, is the consumer's. *(cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1; travelling with Row 38.22 (ii)'s weights, with key Ruling 2's candidate.)*
+- Row 24.2, its idiom part on the weighting as evidence — that the idioms first do work by weighting which entries count. *(cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1; with the candidate.)*
+- Row 57.454, its idiom part on the weight vector — that the consumer consumes the idiom-mixture weight vector. *(cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1; with the candidate.)*
+- Row 57.118, its part on the style weights — that each substitution carries its style weights. *(cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1; with the candidate.)*
 
 **To *the second axis — voice leading*.**
 
