@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.34 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.35 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.35 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.36 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -74449,6 +74449,8 @@ relation of a chord to the chord it stands in for, and the derivation does not s
 implications touch *the second axis — voice leading* and the style weights the style system, but neither half is
 defended here as the sentence's whole subject.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_substitution_part2_sitting.md, Ruling 1).* **RELOCATED** — to ***the second axis — voice leading***, for the voice-leading implications: "Split by subject (1): Row 57.118 — the voice-leading implications … RELOCATED to the second axis (`FRAMEWORK.md`, *The second axis — voice leading*)".
+
 *At the source now.* The item stands at line 5763 of the document's blob at this batch's Task 0 commit, found as quoted,
 the quotation dropping the list marker that opens the line; it is one of the six items that line 5757 leads. The nearest
 heading at the blob is *"### 7.3 Substitution Network"*. The line lies in none of member 24's published ranges: it falls
@@ -76943,6 +76945,8 @@ and none of `FRAMEWORK.md` §5's charters names the recognition of one. (ii) **U
 charter of `FRAMEWORK.md` §5 names the relation of a chord to the chord it stands in for, and the derivation does not
 speak to one.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_substitution_part2_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — "ADOPTED — proposed (5): Row 57.401 (ii) (matching through a substitution, the match carrying the mapping); Rows 57.429 and 57.432 (the glossary terms *substitution* and *substitution mapping*, as terms of the catalog L3 reads); Row 57.487 (ii) (*"recorded only in the annotation"*: the annotation is the published match; its part (i) already proposed RELOCATED to L2 by the reading file; its L2 side ruled RELOCATED to L3 by the L2 nothing-from-L3 Ruling 5); Row 57.489 (i) (the match records what the chord stands in for)".
+
 *At the source now.* The sentence stands at lines 97–102 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation opening with the document's own quotation marks around the word it defines; it opens mid-line 97
 after the sentence Row 57.400 tabulates and ends on line 102, before the bold sentence on what the first version builds,
@@ -77134,6 +77138,8 @@ chord with another that fills the same functional slot.
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.4: no charter of `FRAMEWORK.md` §5 names the relation of a
 chord to the chord it stands in for, and the derivation does not speak to one.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_substitution_part2_sitting.md, Ruling 1).* **ADOPTED — proposed** — "ADOPTED — proposed (5): Row 57.401 (ii) (matching through a substitution, the match carrying the mapping); Rows 57.429 and 57.432 (the glossary terms *substitution* and *substitution mapping*, as terms of the catalog L3 reads); Row 57.487 (ii) (*"recorded only in the annotation"*: the annotation is the published match; its part (i) already proposed RELOCATED to L2 by the reading file; its L2 side ruled RELOCATED to L3 by the L2 nothing-from-L3 Ruling 5); Row 57.489 (i) (the match records what the chord stands in for)".
+
 *At the source now.* The entry stands at lines 289–290 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 289. The nearest heading at the blob is *"## 10.
 Glossary"*. The lines lie in none of member 46's published ranges: they fall between its ranges 224–246 and 307–314,
@@ -77244,6 +77250,8 @@ entry's rule mapping a substituted surface chord to the function it replaces.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.4: no charter of `FRAMEWORK.md` §5 names the relation of a
 chord to the chord it stands in for, and the derivation does not speak to one.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_substitution_part2_sitting.md, Ruling 1).* **ADOPTED — proposed** — "ADOPTED — proposed (5): Row 57.401 (ii) (matching through a substitution, the match carrying the mapping); Rows 57.429 and 57.432 (the glossary terms *substitution* and *substitution mapping*, as terms of the catalog L3 reads); Row 57.487 (ii) (*"recorded only in the annotation"*: the annotation is the published match; its part (i) already proposed RELOCATED to L2 by the reading file; its L2 side ruled RELOCATED to L3 by the L2 nothing-from-L3 Ruling 5); Row 57.489 (i) (the match records what the chord stands in for)".
 
 *At the source now.* The entry stands at line 294 of the document's blob at this batch's Task 0 commit, found as quoted,
 the quotation dropping the list marker that opens line 294. The nearest heading at the blob is *"## 10. Glossary"*. The
@@ -78570,6 +78578,8 @@ to L3; this claim is placed elsewhere, as a fact beside the disposition and not 
 **UNPLACED** — travelling with Row 57.489 (i): the annotation is the recognition's own record, which no charter of
 `FRAMEWORK.md` §5 names.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_substitution_part2_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — "ADOPTED — proposed (5): Row 57.401 (ii) (matching through a substitution, the match carrying the mapping); Rows 57.429 and 57.432 (the glossary terms *substitution* and *substitution mapping*, as terms of the catalog L3 reads); Row 57.487 (ii) (*"recorded only in the annotation"*: the annotation is the published match; its part (i) already proposed RELOCATED to L2 by the reading file; its L2 side ruled RELOCATED to L3 by the L2 nothing-from-L3 Ruling 5); Row 57.489 (i) (the match records what the chord stands in for)".
+
 *At the source now.* The sentence stands at line 115 of the document's blob at this batch's Task 0 commit, found as
 quoted. It closes the section, after the sentence Row 57.489 tabulates, and carries the document's own inner quotation
 marks around its example, which the L2 block quotes as they stand. Its two claims are the content of register entry
@@ -78604,6 +78614,8 @@ consumer records what the chord stands in for — a `♭II7` resolving to `I` re
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 44.4: no charter of `FRAMEWORK.md` §5 names the relation of a
 chord to the chord it stands in for, and the derivation does not speak to one. (ii) **UNPLACED** — travelling with
 Row 57.401 (ii), where a chord may match a member through a substitution entry's mapping.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_substitution_part2_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "ADOPTED — proposed (5): Row 57.401 (ii) (matching through a substitution, the match carrying the mapping); Rows 57.429 and 57.432 (the glossary terms *substitution* and *substitution mapping*, as terms of the catalog L3 reads); Row 57.487 (ii) (*"recorded only in the annotation"*: the annotation is the published match; its part (i) already proposed RELOCATED to L2 by the reading file; its L2 side ruled RELOCATED to L3 by the L2 nothing-from-L3 Ruling 5); Row 57.489 (i) (the match records what the chord stands in for)".
 
 *At the source now.* The sentence stands at lines 113–114 of the document's blob at this batch's Task 0 commit, found as
 quoted. It opens the section and is followed on line 115 by the sentence Row 57.487 tabulates. Row 38.80 tabulates a
@@ -80776,6 +80788,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
 - Row 57.395 — that the Prinner is a named galant schema, from the dictionary's terms table. *(As Row 44.3; the L2
   comparison relocated L2 Row 50.6 to L3.)*
 - Row 37.46 — that the harmonic spine is structurally blind to how the lines move. *(cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1.)*
+- Row 57.118, its part on the voice-leading implications — that each substitution carries its voice-leading implications. *(cowork_rulings_2026_11_06_l3_catalog_substitution_part2_sitting.md, Ruling 1.)*
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
