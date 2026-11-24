@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.38 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.39 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.39 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.40 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -47757,6 +47757,8 @@ layer; (ii) built shareable for a future chord-suggestion tool.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (i), its half on use as evidence: **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "§3.2, split by use (3): 38.21 (i), 44.34 (ii), 46.46 (i) — in each, the half on the published match ADOPTED — proposed under L3, the half on use as evidence (for 46.46 (i), the "ranked" half) RELOCATED to L2, travelling with the DP-O candidate of the key sitting's Ruling 2".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 2).* (ii) **ADOPTED — proposed** — "38.21 (ii) — ADOPTED — proposed, as that statement".
+
 ---
 
 **Row 38.22 — curated knowledge a component queried by the layers; the genre labels there, the behavior at the
@@ -48837,6 +48839,8 @@ not one "region" …*, the same nested bullet (locator: lines 257–260). Two cl
 
 *PROPOSED DISPOSITION.* (i) **HISTORICAL** — a deferral. (ii) **UNPLACED** — travelling with Row 38.21 (ii).
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 1).* (ii) Outside every charter — the design of a future chord-suggestion tool, carried for that tool's own specification; listed in the successor's notes.
+
 ---
 
 **Row 38.82 — the catalog a shared asset of the analyzer and the suggester.**
@@ -48851,6 +48855,10 @@ numbering.
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 38.21 (ii).
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 1).* "read predictively to suggest" Outside every charter — the design of a future chord-suggestion tool, carried for that tool's own specification; listed in the successor's notes.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 2).* Its part on the shared catalog: **ADOPTED — proposed** — "follows in part: the shared catalog by the statement".
 
 ---
 
@@ -64712,7 +64720,13 @@ type as a view under declared vocabularies and choosing none principal.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 1).* Its "perfect/imperfect by inversion" clause: **HISTORICAL** — "recorded as decided against **in so far as they make the bass-derived inversion the only criterion**".
 
-*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 2).* **HISTORICAL** — "recorded as decided against **in so far as they fix one list as the only one**; their lists remain candidates for declared vocabularies.".
+*RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 2).* Its part "The list as the list of cadence types": **HISTORICAL** — "recorded as decided against **in so far as they fix one list as the only one**; their lists remain candidates for declared vocabularies.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 2).* Its "perfect/imperfect by inversion" clause: **HISTORICAL** — "Decided against in so far as the bass-derived inversion is the only criterion".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 2).* Its part "The list as the list of cadence types": **HISTORICAL** — "Decided against in so far as it fixes one list as the only one; the list stays a candidate for a declared vocabulary".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 2).* Its part "The catalog holds cadential formulas (authentic, half, deceptive, plagal, Phrygian half) as named-progression entries": **ADOPTED — proposed** — "Entries like any other; whether the final catalog holds them waits on the catalog's final content, confirmed at the ratification act of the amended L3 specification".
 
 ---
 
@@ -64974,6 +64988,8 @@ stands for, and its offer in composition, belong to no charter of `FRAMEWORK.md`
 
 *RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_substitution_part1_sitting.md, Ruling 1).* Its analysis half: **ADOPTED — proposed** — "Split: Row 46.27 — the analysis half ADOPTED — proposed; the composition half moved to the chord-suggestion-tool surface".
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 1).* "composition offers it (proposes the substituted form)" Outside every charter — the design of a future chord-suggestion tool, carried for that tool's own specification; listed in the successor's notes.
+
 ---
 
 **Row 46.28 — the operation of the secondary dominant or tonicization.**
@@ -65130,6 +65146,8 @@ lines 225–226).
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 7.85: `FRAMEWORK.md` §5 names no charter whose subject is a
 catalog of named progressions, and the derivation does not speak to one.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 1).* Outside every charter — the design of a future chord-suggestion tool, carried for that tool's own specification; listed in the successor's notes.
 
 ---
 
@@ -74122,6 +74140,10 @@ lying outside the analysis.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_further_rows_sitting.md, Ruling 1).* (ii), its half "read forward for the analysis": **ADOPTED — proposed** — "§3.3, split by use (3): 57.107 (ii) — read forward for the analysis ADOPTED — proposed, read predictively moved to the chord-suggestion-tool surface; 57.399 — loading the catalog L3 reads from the active styles **decided against in so far as a style subset selects the catalog L3 reads** (as lead-rows Row 38.79 (i)), listing entries by style moved to the idiom-tag surface; 57.433 (ii) — input to recognise ADOPTED — proposed, input to suggest moved to the chord-suggestion-tool surface".
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 1).* (ii) "read predictively it serves a future chord-suggestion tool" Outside every charter — the design of a future chord-suggestion tool, carried for that tool's own specification; listed in the successor's notes.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 2).* (ii), its part "that a future tool may use the catalog": **ADOPTED — proposed** — "split as 38.82: that a future tool may use the catalog, by the statement".
+
 *At the source now.* The sentence stands at lines 5686–5693 of the document's blob at this batch's Task 0 commit, found
 as quoted; the quotation opens after the paragraph's bold lead on line 5686, *The Harmonic Vocabulary — the queried
 progression & substitution component.*, a title under the first reading rule. The nearest heading at the blob is *"## 7.
@@ -77342,6 +77364,8 @@ component. (ii) **UNPLACED** — read as at Row 38.20: a query of the catalog's 
 
 *RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_further_rows_sitting.md, Ruling 1).* (ii), its half "input to recognise": **ADOPTED — proposed** — "§3.3, split by use (3): 57.107 (ii) — read forward for the analysis ADOPTED — proposed, read predictively moved to the chord-suggestion-tool surface; 57.399 — loading the catalog L3 reads from the active styles **decided against in so far as a style subset selects the catalog L3 reads** (as lead-rows Row 38.79 (i)), listing entries by style moved to the idiom-tag surface; 57.433 (ii) — input to recognise ADOPTED — proposed, input to suggest moved to the chord-suggestion-tool surface".
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 1).* (ii) "the input to … suggest" Outside every charter — the design of a future chord-suggestion tool, carried for that tool's own specification; listed in the successor's notes.
+
 *At the source now.* The entry stands at lines 295–296 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 295. The nearest heading at the blob is *"## 10.
 Glossary"*. The lines lie in none of member 46's published ranges: they fall between its ranges 224–246 and 307–314,
@@ -77456,6 +77480,8 @@ charter of `FRAMEWORK.md` §5 names a tool that suggests chords, generation lyin
 *RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* (i), its half "to recognise": **ADOPTED — proposed** — "§3.3, split by use (4): 24.2 — the prior RELOCATED to L2 with key Ruling 2's candidate, the annotation ADOPTED — proposed, the idiom weighting moved to the idiom-tag surface; 57.445 (i) — to recognise ADOPTED — proposed, to disambiguate RELOCATED to L2 with the candidate; 57.454 — the decided chords and the catalog as inputs ADOPTED — proposed, the idiom filter and weight vector moved to the idiom-tag surface; 57.470 (ii) — the old §4.4 annotation ADOPTED — proposed, the old §4.3 evidence contribution RELOCATED to L2 with the candidate, the old §4.6 harmonic-sequence output RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
 
 *RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* (i), its half "to disambiguate": **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "§3.3, split by use (4): 24.2 — the prior RELOCATED to L2 with key Ruling 2's candidate, the annotation ADOPTED — proposed, the idiom weighting moved to the idiom-tag surface; 57.445 (i) — to recognise ADOPTED — proposed, to disambiguate RELOCATED to L2 with the candidate; 57.454 — the decided chords and the catalog as inputs ADOPTED — proposed, the idiom filter and weight vector moved to the idiom-tag surface; 57.470 (ii) — the old §4.4 annotation ADOPTED — proposed, the old §4.3 evidence contribution RELOCATED to L2 with the candidate, the old §4.6 harmonic-sequence output RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_catalog_suggestion_tool_and_cadential_entries_sitting.md, Ruling 1).* (ii) Outside every charter — the design of a future chord-suggestion tool, carried for that tool's own specification; listed in the successor's notes.
 
 *At the source now.* The entry stands at lines 304–305 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 304. It is the glossary's last entry; §11's heading
