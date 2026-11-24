@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.31 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.32 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.32 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.33 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -33878,6 +33878,8 @@ Harmonic Vocabulary, the catalog of progressions and substitutions; no charter o
 vocabulary or its recognition consumer, as Row 8.18 found for the span that consumer would emit, and no derived statement
 speaks to a progression catalog; the bullet and the section around it are the whole of what was read.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* **HISTORICAL** — "§3.5, HISTORICAL (1): 24.1 (the old dormancy of the function layer's use of the catalog)".
+
 ---
 
 **Row 24.2 — the recognition consumer the work that would make the catalog a prior and an annotation.**
@@ -33892,6 +33894,10 @@ first do any work, by weighting which entries count." — the same bullet (locat
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: as Row 24.1, what the recognition consumer would make of the catalog; no
 charter of `FRAMEWORK.md` §5 names it, and no derived statement speaks to a progression catalog.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* Its part on the prior: **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "§3.3, split by use (4): 24.2 — the prior RELOCATED to L2 with key Ruling 2's candidate, the annotation ADOPTED — proposed, the idiom weighting moved to the idiom-tag surface; 57.445 (i) — to recognise ADOPTED — proposed, to disambiguate RELOCATED to L2 with the candidate; 57.454 — the decided chords and the catalog as inputs ADOPTED — proposed, the idiom filter and weight vector moved to the idiom-tag surface; 57.470 (ii) — the old §4.4 annotation ADOPTED — proposed, the old §4.3 evidence contribution RELOCATED to L2 with the candidate, the old §4.6 harmonic-sequence output RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* Its part on the annotation: **ADOPTED — proposed** — "§3.3, split by use (4): 24.2 — the prior RELOCATED to L2 with key Ruling 2's candidate, the annotation ADOPTED — proposed, the idiom weighting moved to the idiom-tag surface; 57.445 (i) — to recognise ADOPTED — proposed, to disambiguate RELOCATED to L2 with the candidate; 57.454 — the decided chords and the catalog as inputs ADOPTED — proposed, the idiom filter and weight vector moved to the idiom-tag surface; 57.470 (ii) — the old §4.4 annotation ADOPTED — proposed, the old §4.3 evidence contribution RELOCATED to L2 with the candidate, the old §4.6 harmonic-sequence output RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
 
 ---
 
@@ -48791,6 +48797,8 @@ problem is fuzzy prototype-matching, needing the functional-substitution overlay
 *Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read: as at Row 19.38 (vi). (ii) **UNPLACED** — travelling with (i).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed: 38.80 (i) (the matches read off L2's decided chords, changing none; their place L3's read-off — the writing side's reading of *"Layer 5"*); 57.400 (for a stretch of decided chords, the entries it fits); 57.448 (where no entry fits, no match is published); 57.455 (the matching runs over L2's decided chords); 57.485 (additive, as part 1's Rows 44.20 (ii) and 44.37 (i))".
 
 ---
 
@@ -76881,6 +76889,8 @@ skeleton that span realizes.
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.97: the derivation names no recognized progression schema, and
 none of `FRAMEWORK.md` §5's charters names the recognition of one.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed: 38.80 (i) (the matches read off L2's decided chords, changing none; their place L3's read-off — the writing side's reading of *"Layer 5"*); 57.400 (for a stretch of decided chords, the entries it fits); 57.448 (where no entry fits, no match is published); 57.455 (the matching runs over L2's decided chords); 57.485 (additive, as part 1's Rows 44.20 (ii) and 44.37 (i))".
+
 *At the source now.* The sentence stands at lines 96–97 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 96; it ends mid-line 97, before the sentence Row 57.401
 tabulates. The nearest heading at the blob is *"## 4. The query interface — what a consumer supplies, and gets back"*.
@@ -77369,6 +77379,10 @@ reads a span to suggest what could follow, precede or replace it.
 and none of `FRAMEWORK.md` §5's charters names the recognition of one. (ii) **UNPLACED** — read as at Row 38.21 (ii): no
 charter of `FRAMEWORK.md` §5 names a tool that suggests chords, generation lying outside the analysis.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* (i), its half "to recognise": **ADOPTED — proposed** — "§3.3, split by use (4): 24.2 — the prior RELOCATED to L2 with key Ruling 2's candidate, the annotation ADOPTED — proposed, the idiom weighting moved to the idiom-tag surface; 57.445 (i) — to recognise ADOPTED — proposed, to disambiguate RELOCATED to L2 with the candidate; 57.454 — the decided chords and the catalog as inputs ADOPTED — proposed, the idiom filter and weight vector moved to the idiom-tag surface; 57.470 (ii) — the old §4.4 annotation ADOPTED — proposed, the old §4.3 evidence contribution RELOCATED to L2 with the candidate, the old §4.6 harmonic-sequence output RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* (i), its half "to disambiguate": **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "§3.3, split by use (4): 24.2 — the prior RELOCATED to L2 with key Ruling 2's candidate, the annotation ADOPTED — proposed, the idiom weighting moved to the idiom-tag surface; 57.445 (i) — to recognise ADOPTED — proposed, to disambiguate RELOCATED to L2 with the candidate; 57.454 — the decided chords and the catalog as inputs ADOPTED — proposed, the idiom filter and weight vector moved to the idiom-tag surface; 57.470 (ii) — the old §4.4 annotation ADOPTED — proposed, the old §4.3 evidence contribution RELOCATED to L2 with the candidate, the old §4.6 harmonic-sequence output RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
 *At the source now.* The entry stands at lines 304–305 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 304. It is the glossary's last entry; §11's heading
 follows at line 307. The nearest heading at the blob is *"## 10. Glossary"*. The lines lie in none of member 46's
@@ -77768,6 +77782,8 @@ where nothing is recognized, the consumer produces nothing.
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.97: the derivation names no recognized progression schema, and
 none of `FRAMEWORK.md` §5's charters names the recognition of one.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed: 38.80 (i) (the matches read off L2's decided chords, changing none; their place L3's read-off — the writing side's reading of *"Layer 5"*); 57.400 (for a stretch of decided chords, the entries it fits); 57.448 (where no entry fits, no match is published); 57.455 (the matching runs over L2's decided chords); 57.485 (additive, as part 1's Rows 44.20 (ii) and 44.37 (i))".
+
 *At the source now.* The sentence stands at line 101 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens the line. It is the last of the four bullets the bold lead at
 line 97 introduces, the outputs the consumer produces; §8's risk on catalog completeness points back to it (*"on an
@@ -77887,6 +77903,8 @@ quoted with it, as the L2 block quotes it.
 progression, a catalog queried and not owned among them; no charter of `FRAMEWORK.md` §5, nor its NOT A LAYER items,
 names a knowledge-base component or the recognition of a schema.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* Its half on the decided chords and the catalog as inputs: **ADOPTED — proposed** — "§3.3, split by use (4): 24.2 — the prior RELOCATED to L2 with key Ruling 2's candidate, the annotation ADOPTED — proposed, the idiom weighting moved to the idiom-tag surface; 57.445 (i) — to recognise ADOPTED — proposed, to disambiguate RELOCATED to L2 with the candidate; 57.454 — the decided chords and the catalog as inputs ADOPTED — proposed, the idiom filter and weight vector moved to the idiom-tag surface; 57.470 (ii) — the old §4.4 annotation ADOPTED — proposed, the old §4.3 evidence contribution RELOCATED to L2 with the candidate, the old §4.6 harmonic-sequence output RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
 *At the source now.* The sentence stands at lines 95–96 of the document's blob at this batch's Task 0 commit, found as
 quoted, the sentence opening the section with its bold lead *Consumes:*. The bold lead *Produces — …* that Rows 57.485
 and 57.486 tabulate follows at line 97. The nearest heading at the blob is *"## 3. Inputs and outputs (the contract)"*.
@@ -77918,6 +77936,8 @@ in the first phase, the recognition is run over the committed progression.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.97: the derivation names no recognized progression schema, and
 none of `FRAMEWORK.md` §5's charters names the recognition of one.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed: 38.80 (i) (the matches read off L2's decided chords, changing none; their place L3's read-off — the writing side's reading of *"Layer 5"*); 57.400 (for a stretch of decided chords, the entries it fits); 57.448 (where no entry fits, no match is published); 57.455 (the matching runs over L2's decided chords); 57.485 (additive, as part 1's Rows 44.20 (ii) and 44.37 (i))".
 
 *At the source now.* The sentence stands at line 137 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation opening mid-line 137 after the numbered item's number and its bold lead
@@ -78188,6 +78208,12 @@ one quotes, L2 Row 53.39, to L3; this claim is placed elsewhere, as a fact besid
 of that comparison. (ii) **UNPLACED** — read as at Row 57.97: the derivation names no recognized progression schema, and
 none of `FRAMEWORK.md` §5's charters names the recognition of one, the outputs being the recognition's.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* (ii), its part on the old §4.4 annotation: **ADOPTED — proposed** — "§3.3, split by use (4): 24.2 — the prior RELOCATED to L2 with key Ruling 2's candidate, the annotation ADOPTED — proposed, the idiom weighting moved to the idiom-tag surface; 57.445 (i) — to recognise ADOPTED — proposed, to disambiguate RELOCATED to L2 with the candidate; 57.454 — the decided chords and the catalog as inputs ADOPTED — proposed, the idiom filter and weight vector moved to the idiom-tag surface; 57.470 (ii) — the old §4.4 annotation ADOPTED — proposed, the old §4.3 evidence contribution RELOCATED to L2 with the candidate, the old §4.6 harmonic-sequence output RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* (ii), its part on the old §4.3 evidence contribution: **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "§3.3, split by use (4): 24.2 — the prior RELOCATED to L2 with key Ruling 2's candidate, the annotation ADOPTED — proposed, the idiom weighting moved to the idiom-tag surface; 57.445 (i) — to recognise ADOPTED — proposed, to disambiguate RELOCATED to L2 with the candidate; 57.454 — the decided chords and the catalog as inputs ADOPTED — proposed, the idiom filter and weight vector moved to the idiom-tag surface; 57.470 (ii) — the old §4.4 annotation ADOPTED — proposed, the old §4.3 evidence contribution RELOCATED to L2 with the candidate, the old §4.6 harmonic-sequence output RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* (ii), its part on the old §4.6 harmonic-sequence output: **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "§3.3, split by use (4): 24.2 — the prior RELOCATED to L2 with key Ruling 2's candidate, the annotation ADOPTED — proposed, the idiom weighting moved to the idiom-tag surface; 57.445 (i) — to recognise ADOPTED — proposed, to disambiguate RELOCATED to L2 with the candidate; 57.454 — the decided chords and the catalog as inputs ADOPTED — proposed, the idiom filter and weight vector moved to the idiom-tag surface; 57.470 (ii) — the old §4.4 annotation ADOPTED — proposed, the old §4.3 evidence contribution RELOCATED to L2 with the candidate, the old §4.6 harmonic-sequence output RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
 *At the source now.* The sentence stands at line 145 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation opening mid-line after the numbered item's number and its bold lead *"**Weight and emit.**"*,
 which the L2 block does not quote. The nearest heading at the blob is *"### 4.5 The idiom-mixture weighting (structure
@@ -78440,6 +78466,8 @@ consumer produces is additive over the function layer, the older stack's *Layer 
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.37 (i), and as Row 44.37 (i) reads it, as at Row 8.51: that the
 recognition is additive over the function layer it reads.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (5): ADOPTED — proposed: 38.80 (i) (the matches read off L2's decided chords, changing none; their place L3's read-off — the writing side's reading of *"Layer 5"*); 57.400 (for a stretch of decided chords, the entries it fits); 57.448 (where no entry fits, no match is published); 57.455 (the matching runs over L2's decided chords); 57.485 (additive, as part 1's Rows 44.20 (ii) and 44.37 (i))".
 
 *At the source now.* The sentence stands at line 97 of the document's blob at this batch's Task 0 commit, found as
 quoted. The line is a bold lead closed by a colon, the four bullets of lines 98 to 101 following it, and the L2 block
@@ -80643,6 +80671,10 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
 - Row 46.46 (i), its "ranked" half — that the catalog returns ranked structural matches. *(cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1; travelling with the DP-O candidate of the key sitting's Ruling 2.)*
 - Row 44.34 (i), its half on the evidence — that the recognition of a named progression yields evidence. *(cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1; with key Ruling 2's candidate.)*
 - Row 44.28 (ii), its half on the key motion as evidence of the local key — that a single internally-sequential entry's implication of a key motion is carried by its schema span. *(cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1; with the sequence term at DP-O (D-504, D-505).)*
+- Row 24.2, its part on the prior — that the catalog is the function layer's multi-chord disambiguation prior. *(cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1; with key Ruling 2's candidate.)*
+- Row 57.445 (i), its half "to disambiguate" — that the analysis direction reads an existing progression to disambiguate it. *(cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1; with the candidate.)*
+- Row 57.470 (ii), its part on the old §4.3 evidence contribution — that the §4.3 output, the evidence contribution, is emitted. *(cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1; with the candidate.)*
+- Row 57.470 (ii), its part on the old §4.6 harmonic-sequence output — that the §4.6 output, the harmonic sequence, is emitted. *(cowork_rulings_2026_11_06_l3_catalog_recognition_part2_sitting.md, Ruling 1; with the sequence term at DP-O (D-504, D-505).)*
 
 **To *the second axis — voice leading*.**
 
