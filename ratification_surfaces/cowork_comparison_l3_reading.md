@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.30 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.31 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.31 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.32 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -9889,6 +9889,8 @@ hold several schemas." — §3, under *Produces* (locator: lines 179–180).
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (6): ADOPTED — proposed: 8.50, 8.52 (iii) (a match may cross a phrase-unit boundary; one phrase unit may hold several); 44.33 (i) (the matcher the same for every idiom); 44.35 (chords only); 44.20 (ii), 44.37 (i) (read-only and additive: publishing the matches revises nothing L2 published and changes no other L3 output)".
+
 ---
 
 **Row 8.51 — the schema spans read-only and additive, hosted here and produced by the consumer.**
@@ -9923,6 +9925,8 @@ tonality may fall inside a phrase unit, the key areas cutting across the phrase 
 (iii) **UNPLACED** — read as at Row 8.18.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii), its phrase half: **ADOPTED — carried** (L3-S8) — "a change of tonality may fall inside a phrase unit and a phrase may end without one; follows from Ruling 1 (no evidence forces or forbids a phrase end)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1).* (iii) **ADOPTED — proposed** — "§3.1, follow wholly (6): ADOPTED — proposed: 8.50, 8.52 (iii) (a match may cross a phrase-unit boundary; one phrase unit may hold several); 44.33 (i) (the matcher the same for every idiom); 44.35 (chords only); 44.20 (ii), 44.37 (i) (read-only and additive: publishing the matches revises nothing L2 published and changes no other L3 output)".
 
 ---
 
@@ -10652,6 +10656,8 @@ rules (§5.1–§5.4) stand alone — so hosting the annotation adds no detectio
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1).* **HISTORICAL** — "§3.5, HISTORICAL (1): 8.94 (the dormant state of the old consumer)".
 
 ---
 
@@ -62156,6 +62162,8 @@ the punctuation-spans; (ii) it is read-only and additive.
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 8.52 (iii). (ii) **UNPLACED** — read as at Row 8.51.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1).* (ii) **ADOPTED — proposed** — "§3.1, follow wholly (6): ADOPTED — proposed: 8.50, 8.52 (iii) (a match may cross a phrase-unit boundary; one phrase unit may hold several); 44.33 (i) (the matcher the same for every idiom); 44.35 (chords only); 44.20 (ii), 44.37 (i) (read-only and additive: publishing the matches revises nothing L2 published and changes no other L3 output)".
+
 ---
 
 **Row 44.21 — the catalog in the Harmonic Vocabulary, queried and not owned.**
@@ -62369,6 +62377,10 @@ the tonality per span as tonic and mode (`FRAMEWORK.md` §5). (ii) **UNPLACED** 
 names no recognised progression schema, and none of `FRAMEWORK.md` §5's charters names the recognition of one or the
 span it covers. (iii) **HISTORICAL** — a deferral to the member's open items.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1).* (ii), its half on the match over the entry's whole stretch: **ADOPTED — proposed** — "§3.3, split by use (2): 44.34 (i) — the name ADOPTED — proposed, the evidence RELOCATED to L2 with key Ruling 2's candidate; 44.28 (ii) — the match over the entry's whole stretch ADOPTED — proposed (the surface marks this half as the writing side's reading), the key motion as evidence of the local key RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1).* (ii), its half on the key motion as evidence of the local key: **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "§3.3, split by use (2): 44.34 (i) — the name ADOPTED — proposed, the evidence RELOCATED to L2 with key Ruling 2's candidate; 44.28 (ii) — the match over the entry's whole stretch ADOPTED — proposed (the surface marks this half as the writing side's reading), the key motion as evidence of the local key RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
 *The decisions register at this row.* The quoted statement lies inside the homes of **register entry D-504** (lines
 161–178), *"A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only
 where no cadence existed threw corroboration away"*, and **register entry D-505** (lines 162–166), *"A harmonic sequence
@@ -62521,6 +62533,8 @@ and none of `FRAMEWORK.md` §5's charters names the recognition of one or the sp
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, on which *"a reading-shaped evidence
 producer is a score and never a constraint"* (`FRAMEWORK.md` §5, the L2 block).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (6): ADOPTED — proposed: 8.50, 8.52 (iii) (a match may cross a phrase-unit boundary; one phrase unit may hold several); 44.33 (i) (the matcher the same for every idiom); 44.35 (chords only); 44.20 (ii), 44.37 (i) (read-only and additive: publishing the matches revises nothing L2 published and changes no other L3 output)".
+
 ---
 
 **Row 44.34 — the member's decision D1: the recognition yields evidence and a name, and adds no layer.**
@@ -62541,6 +62555,10 @@ travelling with Row 44.19 (iii).
 
 *RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1).* (ii), its half on use as evidence: **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "§3.2, split by use (3): 38.21 (i), 44.34 (ii), 46.46 (i) — in each, the half on the published match ADOPTED — proposed under L3, the half on use as evidence (for 46.46 (i), the "ranked" half) RELOCATED to L2, travelling with the DP-O candidate of the key sitting's Ruling 2".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1).* (i), its half on the name: **ADOPTED — proposed** — "§3.3, split by use (2): 44.34 (i) — the name ADOPTED — proposed, the evidence RELOCATED to L2 with key Ruling 2's candidate; 44.28 (ii) — the match over the entry's whole stretch ADOPTED — proposed (the surface marks this half as the writing side's reading), the key motion as evidence of the local key RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1).* (i), its half on the evidence: **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "§3.3, split by use (2): 44.34 (i) — the name ADOPTED — proposed, the evidence RELOCATED to L2 with key Ruling 2's candidate; 44.28 (ii) — the match over the entry's whole stretch ADOPTED — proposed (the surface marks this half as the writing side's reading), the key motion as evidence of the local key RELOCATED to L2 with the sequence term at DP-O (D-504, D-505)".
+
 ---
 
 **Row 44.35 — the member's decision D2: the recognition's scope chords only.**
@@ -62555,6 +62573,8 @@ rule it points at, §2's closing paragraph, lies in the cut.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18: the derivation names no recognised progression schema, and
 none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it covers.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1).* **ADOPTED — proposed** — "§3.1, follow wholly (6): ADOPTED — proposed: 8.50, 8.52 (iii) (a match may cross a phrase-unit boundary; one phrase unit may hold several); 44.33 (i) (the matcher the same for every idiom); 44.35 (chords only); 44.20 (ii), 44.37 (i) (read-only and additive: publishing the matches revises nothing L2 published and changes no other L3 output)".
 
 ---
 
@@ -62590,6 +62610,8 @@ line 193). Two claims: (i) the recognition is additive; (ii) the literal Roman n
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 8.51. (ii)
 **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which publishes per span the chord as
 degree, quality, figure and applied target (`FRAMEWORK.md` §5).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1).* (i) **ADOPTED — proposed** — "§3.1, follow wholly (6): ADOPTED — proposed: 8.50, 8.52 (iii) (a match may cross a phrase-unit boundary; one phrase unit may hold several); 44.33 (i) (the matcher the same for every idiom); 44.35 (chords only); 44.20 (ii), 44.37 (i) (read-only and additive: publishing the matches revises nothing L2 published and changes no other L3 output)".
 
 *The decisions register at this row.* The quoted statement lies inside the home of **register entry D-506** (lines
 193–194), *"Progression recognition is ADDITIVE: the literal Roman numeral is never rewritten, and a substitution is
@@ -80619,6 +80641,8 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
 - Row 38.21 (i), its half on use as evidence — the catalog consumed by the old function layer (the progression prior / substitution-inversion). *(cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1; travelling with the DP-O candidate of the key sitting's Ruling 2.)*
 - Row 44.34 (ii), its half on use as evidence — that the recognition of a named progression, as evidence, adds no new layer. *(cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1; travelling with the DP-O candidate of the key sitting's Ruling 2.)*
 - Row 46.46 (i), its "ranked" half — that the catalog returns ranked structural matches. *(cowork_rulings_2026_11_06_l3_catalog_lead_rows_sitting.md, Ruling 1; travelling with the DP-O candidate of the key sitting's Ruling 2.)*
+- Row 44.34 (i), its half on the evidence — that the recognition of a named progression yields evidence. *(cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1; with key Ruling 2's candidate.)*
+- Row 44.28 (ii), its half on the key motion as evidence of the local key — that a single internally-sequential entry's implication of a key motion is carried by its schema span. *(cowork_rulings_2026_11_06_l3_catalog_recognition_part1_sitting.md, Ruling 1; with the sequence term at DP-O (D-504, D-505).)*
 
 **To *the second axis — voice leading*.**
 
