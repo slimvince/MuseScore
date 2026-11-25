@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.43 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.44 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.44 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.45 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -33030,6 +33030,8 @@ reports as problems and which as features of the style; no charter of `FRAMEWORK
 nearest is the part-writing advice the second axis owns as a claim, at Row 19.60 — and no derived statement speaks to a
 style; the bullet and the sub-section around it are the whole of what was read.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1).* **HISTORICAL** — "2B — HISTORICAL — a plan (1): Row 23.2, "`analysis` — what the analyzer flags as problems vs features", a dimension of the planned style file (`ARCHITECTURE.md` §6.2)".
+
 ---
 
 **Row 23.3 — the Jazz preset's constants carrying the mark, the validation path named beside each.**
@@ -33466,6 +33468,8 @@ as deferred product work, and no derived statement speaks to a preset; the bulle
 whole of what was read. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling
 with Row 23.19 (i), the structure over whose idioms its values are fitted.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1).* (i) **RELOCATED — outside the framework** — to `ARCHITECTURE.md` §6.8, the user-facing preset layer, recorded and deferred product work; recorded beside the row: RELOCATED stretched to a home outside the framework; the transfer list's entry "outside the framework — the style system"; D-587, D-589 and D-590 stay LIVE at their homes and are not written into L3's text.
+
 ---
 
 **Row 23.31 — a preset named after a recognized era and known musicians, never after an idiom or an obscure exemplar.**
@@ -33480,6 +33484,8 @@ not heard of." — the same bullet (locator: lines 5630–5632).
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: as Row 23.30 (i), the naming of a preset to its user; no charter of
 `FRAMEWORK.md` §5 names it, and no derived statement speaks to a preset.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1).* **RELOCATED — outside the framework** — to `ARCHITECTURE.md` §6.8, the user-facing preset layer, recorded and deferred product work; recorded beside the row: RELOCATED stretched to a home outside the framework; the transfer list's entry "outside the framework — the style system"; D-587, D-589 and D-590 stay LIVE at their homes and are not written into L3's text.
 
 ---
 
@@ -33559,6 +33565,8 @@ the product's configuration by its user, and no derived statement speaks to a pr
 around it are the whole of what was read. (ii) **RELOCATED** — to ***the uncertainty surface***, whose content is that
 every published value carries its own establishment status, as Row 21.194 (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1).* (i) **RELOCATED — outside the framework** — to `ARCHITECTURE.md` §6.8, the user-facing preset layer, recorded and deferred product work; recorded beside the row: RELOCATED stretched to a home outside the framework; the transfer list's entry "outside the framework — the style system"; D-587, D-589 and D-590 stay LIVE at their homes and are not written into L3's text.
+
 ---
 
 **Row 23.37 — named presets cluster centroids; a custom selector admitting any point.**
@@ -33573,6 +33581,8 @@ in the mixture space." — the same bullet (locator: lines 5645–5646).
 *PROPOSED DISPOSITION.* **UNPLACED** — read: as Row 23.36 (i), the presets named and the selector offered being the
 product's configuration offered to its user; no charter of `FRAMEWORK.md` §5 names it, and no derived statement speaks to
 a preset.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1).* **RELOCATED — outside the framework** — to `ARCHITECTURE.md` §6.8, the user-facing preset layer, recorded and deferred product work; recorded beside the row: RELOCATED stretched to a home outside the framework; the transfer list's entry "outside the framework — the style system"; D-587, D-589 and D-590 stay LIVE at their homes and are not written into L3's text.
 
 ---
 
@@ -33607,6 +33617,8 @@ replaced; no charter of `FRAMEWORK.md` §5 names the product's storage of its co
 notated record*, gives what the notation says and names no stored configuration — and no derived statement speaks to a
 preset; the bullet and the sub-section around it are the whole of what was read.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1).* **RELOCATED — outside the framework** — to `ARCHITECTURE.md` §6.8, the user-facing preset layer, recorded and deferred product work; recorded beside the row: RELOCATED stretched to a home outside the framework; the transfer list's entry "outside the framework — the style system"; D-587, D-589 and D-590 stay LIVE at their homes and are not written into L3's text.
+
 ---
 
 **Row 23.40 — the mixture stored in the score's own user-defined properties.**
@@ -33622,6 +33634,8 @@ same bullet (locator: lines 5654–5656).
 *PROPOSED DISPOSITION.* **UNPLACED** — read: as Row 23.39, the storage of a piece's chosen mixture; no charter of
 `FRAMEWORK.md` §5 names it, and no derived statement speaks to a preset.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1).* **RELOCATED — outside the framework** — to `ARCHITECTURE.md` §6.8, the user-facing preset layer, recorded and deferred product work; recorded beside the row: RELOCATED stretched to a home outside the framework; the transfer list's entry "outside the framework — the style system"; D-587, D-589 and D-590 stay LIVE at their homes and are not written into L3's text.
+
 ---
 
 **Row 23.41 — the stored value recording its provenance, and when it may be refreshed.**
@@ -33636,6 +33650,8 @@ detection marks the stored mixture refreshable." — the same bullet (locator: l
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read: as Row 23.39, the storage of a piece's chosen mixture and when it is
 replaced; no charter of `FRAMEWORK.md` §5 names it, and no derived statement speaks to a preset.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1).* **RELOCATED — outside the framework** — to `ARCHITECTURE.md` §6.8, the user-facing preset layer, recorded and deferred product work; recorded beside the row: RELOCATED stretched to a home outside the framework; the transfer list's entry "outside the framework — the style system"; D-587, D-589 and D-590 stay LIVE at their homes and are not written into L3's text.
 
 ---
 
@@ -36807,6 +36823,10 @@ infrastructure)." — the section *16. Scope Reference*, sub-section *Core — M
 harmonic analysis in its several idioms beside the tuning, the generation, the file format, the undo and the interface
 — under the heading *Core — Must Be Implemented*; no charter of `FRAMEWORK.md` §5 names the product's scope, and no
 derived statement speaks to it.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1).* "musical language detector and graceful degradation" **RELOCATED to *the uncertainty surface* (NOT A LAYER)** — "travelling with Row 1.19 [the L2 reading file's Row 1.19] and D-498"; "as its twin L2 Row 34.1 is ruled".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1).* the rest of the sentence **HISTORICAL** — "the rest, including "functional", HISTORICAL as the product's scope status"; "as its twin L2 Row 34.1 is ruled". Recorded beside the row as the record orders ("as L2 records them"), in the words of L2 Row 34.1's ruled line in the L2 reading file: recorded as answered, the "modal" clause, by tonality-vocabulary Ruling 1 of 2026-10-04 (the named increment), and the "jazz" clause, by chord-vocabulary Ruling 2 of 2026-10-05 (the named increment); homes, "voice leading analysis and optimization": the second axis — voice leading; "ornamentation (analysis …)": L2's elaboration relations; "enharmonic spelling" and "pickup bars and anacrusis": L0 — The notated record; "chord symbol input": comparison material only (FRAMEWORK.md §3.1); "incremental analysis cache": C-8 and working-span Ruling 3 of 2026-10-09; "extensible style system, initial five styles": the style family; UNSETTLED, "monophonic chord inference" ("No home was found, and this filing decides nothing about it."). "The product scope stays at ARCHITECTURE.md §16."
 
 #### Not a statement, at this member
 
@@ -81116,6 +81136,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   D-263's home, unmarked.)*
 - Row 57.490 (ii) — that the schema span of an entry defined by its lines carries the chords-only mark. *(As
   Row 44.46 (i); the L2 comparison relocated L2 Row 53.47 to L3.)*
+- Row 32.1, its clause "musical language detector and graceful degradation" — that the product's core scope includes a musical language detector and graceful degradation. *(cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1; travelling with Row 1.19 [the L2 reading file's Row 1.19] and D-498.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -81289,6 +81310,16 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
 - Rows 57.318 (i) and 57.322 (i) — that formal functions and multi-span sections, and sections, periods and sentences,
   lack a ground truth in the held corpus. *(The L2 comparison relocated L2 Rows 41.45 and 41.125 to L3.)*
 - Row 7.37, its remainder — that the DCML conventions for variants serve comparison with the ground truth. *(cowork_rulings_2026_11_03_l3_cadential_six_four_sitting.md, Ruling 1.)*
+
+**To *outside the framework — the style system*.**
+
+- Row 23.30 (i) — that a preset is presented to its user as a familiar genre-era label with exemplars the user knows, never as an idiom name or an obscure exemplar. *(cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1; to `ARCHITECTURE.md` §6.8, the user-facing preset layer.)*
+- Row 23.31 — that a preset is named after a period and style a user recognises, anchored by musicians they know, never after one of the five idioms or an exemplar most people have not heard of. *(cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1; to `ARCHITECTURE.md` §6.8, the user-facing preset layer.)*
+- Row 23.36 (i) — that every idiom mixture is selectable, the discovered cloud being the map of the evidence rather than the boundary of what may be chosen. *(cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1; to `ARCHITECTURE.md` §6.8, the user-facing preset layer.)*
+- Row 23.37 — that named presets are cluster centroids for progressive disclosure, and a custom selector admits any point in the mixture space. *(cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1; to `ARCHITECTURE.md` §6.8, the user-facing preset layer.)*
+- Row 23.39 — that the music's own metadata is the primary home of that piece's idiom mixture, and a user-set mixture is never silently overwritten by re-detection. *(cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1; to `ARCHITECTURE.md` §6.8, the user-facing preset layer.)*
+- Row 23.40 — that the mixture is stored in the score's own user-defined properties, so that it travels with the file. *(cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1; to `ARCHITECTURE.md` §6.8, the user-facing preset layer.)*
+- Row 23.41 — that the stored value records its provenance, a user-set mixture never silently replaced and an auto-detected one refreshable. *(cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1; to `ARCHITECTURE.md` §6.8, the user-facing preset layer.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
