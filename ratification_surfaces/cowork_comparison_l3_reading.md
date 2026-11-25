@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.42 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.43 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.43 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.44 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -25364,6 +25364,8 @@ loss — the notated spelling, the metric weight and the voice — and discard n
 
 *RULED DISPOSITION (cowork_rulings_2026_11_04_l3_architecture_rules_sitting.md, Ruling 1).* (iii) **ADOPTED — proposed** — as proposed; "C (5 row-parts: 19.56 (iii), 19.76 (ii), 19.77, 19.78, 19.82) — ADOPTED".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1).* (i) **HISTORICAL** — "2A — HISTORICAL (2): Rows 19.56 (i) and 38.50, each layer owns one evidence source's contribution to one question"; "HISTORICAL marks only that L3 owns the answers to its questions; D-033 stands for L0 and L1".
+
 ---
 
 **Row 19.57 — the layers not one homogeneous stack; their count not a cap.**
@@ -25378,6 +25380,10 @@ not a cap.
 
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read: the outgoing sentence; a rule of the framework's decomposition, as at
 Row 19.56 (i). (ii) **UNPLACED** — the same.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1).* (i) Outside every charter — carried for the framework; listed in the successor's notes.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1).* (ii) Outside every charter — carried for the framework; listed in the successor's notes.
 
 ---
 
@@ -25442,6 +25448,8 @@ at the current commit, and does the record that measured the orthogonality repro
 two texts above.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_sections_sitting.md, Ruling 1).* (iv) **HISTORICAL** — "recorded as overtaken by the charter".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1).* (i) **HISTORICAL** — "Row 19.59 (i), "Six" is the current decomposition of the harmonic spine, not a ceiling: a status of the layering superseded by Ruling 2 of 2026-08-29. Its rule content (not a ceiling) has its one home at Row 19.57 (ii) in 2C. It follows from 2C; if 19.57 (ii) is ever placed otherwise, 19.59 (i) is re-tested with it."
 
 ---
 
@@ -25534,6 +25542,8 @@ motion-event surface that serves it." — the same paragraph (locator: lines 120
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the outgoing sentence; a rule of the framework's decomposition, as at Row
 19.56 (i).
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1).* Outside every charter — carried for the framework; listed in the successor's notes.
+
 ---
 
 **Row 19.66 — a new layer or axis admitted only through three co-equal gates.**
@@ -25549,6 +25559,10 @@ gates; (ii) the three are co-equal and all required.
 *PROPOSED DISPOSITION.* (i) **UNPLACED** — read: the outgoing sentence; a rule of the framework's decomposition, as at
 Row 19.56 (i). (ii) **UNPLACED** — the same.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1).* (i) Outside every charter — carried for the framework; listed in the successor's notes.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1).* (ii) Outside every charter — carried for the framework; listed in the successor's notes.
+
 ---
 
 **Row 19.67 — the first gate: separation of concerns, sufficient on its own.**
@@ -25563,6 +25577,8 @@ gain, and the primary reason the stack is decomposed at all." — the same bulle
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 19.66.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1).* Outside every charter — carried for the framework; listed in the successor's notes.
+
 ---
 
 **Row 19.68 — the second gate: verifiability.**
@@ -25575,6 +25591,8 @@ gain, and the primary reason the stack is decomposed at all." — the same bulle
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 19.66.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1).* Outside every charter — carried for the framework; listed in the successor's notes.
 
 ---
 
@@ -25590,6 +25608,8 @@ multiply layers for their own sake)." — the same bullet (locator: lines 1217�
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 19.66.
 
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1).* Outside every charter — carried for the framework; listed in the successor's notes.
+
 ---
 
 **Row 19.70 — the first gate not subordinate to the other two.**
@@ -25602,6 +25622,8 @@ regardless of the immediate metric." — the same bullet (locator: lines 1219–
 *Current-text axis.* **THE DERIVATION IS SILENT**.
 
 *PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 19.66.
+
+*RULED PLACEMENT (cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1).* Outside every charter — carried for the framework; listed in the successor's notes.
 
 ---
 
@@ -48300,6 +48322,8 @@ led *What "single responsibility" actually means here …* (locator: lines 177�
 *PROPOSED DISPOSITION.* **UNPLACED** — read: `FRAMEWORK.md` §5 divides the analysis by question, one per charter, and
 makes L2 one entangled decision drawing on everything L0 and L1 publish; the derivation's L3-S9 and L3-S23 give each of
 L3's decisions several families of evidence.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_07_l3_decomposition_rules_family_sitting.md, Ruling 1).* **HISTORICAL** — "2A — HISTORICAL (2): Rows 19.56 (i) and 38.50, each layer owns one evidence source's contribution to one question"; "HISTORICAL marks only that L3 owns the answers to its questions; D-033 stands for L0 and L1".
 
 ---
 
