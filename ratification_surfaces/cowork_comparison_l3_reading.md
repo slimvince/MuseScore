@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.45 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.46 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.46 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.47 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -5246,6 +5246,8 @@ phrase boundary; L3-S8 says *"No item of evidence forces or forbids a phrase end
 relay of de Clercq (*"The fermata delineates the phrase and not necessarily the exact arrival"*).
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_phrase_end_evidence_family_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Recorded as decided against — phrase-ends Ruling 1 (alternative C declined); the fermata enters as evidence under L3-S9 (i)".
 
 ---
 
@@ -55064,6 +55066,8 @@ differs from; read: the two texts above, and L3-S9, whose family (i) names *"the
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* **HISTORICAL** — "The method rows (peak-picking, forcing markers, the primitive's worked examples) are the rows Ruling 1 decides against.".
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_phrase_end_evidence_family_sitting.md, Ruling 1).* **HISTORICAL** — "as 7.116 (ii)": "Recorded as decided against — phrase-ends Ruling 1 (alternative C declined); the fermata enters as evidence under L3-S9 (i)".
+
 ---
 
 **Row 40.7 — the fermata undiscussed as key evidence, and absent from the note model's documented facts.**
@@ -55179,6 +55183,10 @@ whose charters name no style hint, and L3-S37, under which L3 reads only what L0
 **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose sounding set at each slice is what
 the pedal changes. (vi) **RELOCATED** — to ***L0 — The notated record***, which gives voice membership (`FRAMEWORK.md`
 §5, the L0 block).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_phrase_end_evidence_family_sitting.md, Ruling 1).* (iii) **RELOCATED to *L0 — The notated record*** — "(whether L0 carries lyrics); beside the row: if it does, they enter L3 as a candidate term under L3-S9 (iv)'s held-out rule".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_phrase_end_evidence_family_sitting.md, Ruling 1).* (iv) **RELOCATED — outside the framework** — to `ARCHITECTURE.md` §6.8, the user-facing preset layer; recorded beside the row: RELOCATED, stretched to a home outside the framework, as family 6 records part 2A: "outside the framework — the style system".
 
 ---
 
@@ -55676,6 +55684,8 @@ published fact that `FRAMEWORK.md` §5 names on no charter's list; read: L3's li
 under which adding an output to L3 is a ruling.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "the 100 DIFFERS as the eight cuts file them"; cowork_l3_s38_seventh_cut_surface_2026_11_03.md, §3 A: "departs from the comparison's UNPLACED"; §2, the twin's placement: "a superseded plan. What is superseded is the route: a later layer's decided facts fed back to choose the chord or the key.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_phrase_end_evidence_family_sitting.md, Ruling 1).* (iii) **HISTORICAL** — "HISTORICAL — a status".
 
 ---
 
@@ -72688,6 +72698,8 @@ the size of the value itself, a large gap a stronger boundary than a small one.
 rulings that the transform is the consumer's and that its computed half goes to L3 — two placements on the record,
 between which this session cannot defend one in one sentence.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_phrase_end_evidence_family_sitting.md, Ruling 1).* **ADOPTED — carried** (L3-S9 (i)) — "as the evidence model of the phrase decision; no formula written into L3's text".
+
 *At the source now.* The sentence stands at lines 130–132 of the document's blob at this batch's Task 0 commit,
 found as quoted; its elision stands for the parenthesis *"(the value differing from its neighbours, captured by the
 change-ratios)"*. The quotation's first fragment stands at lines 129–130, the end of the sentence that opens at
@@ -80308,6 +80320,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
   and end of the piece, takes its request in ticks, executes one step and judges no convergence, holds no analysis
   knowledge, and is never handed the slices. *(Rows 54.9 (i) and 54.11 (ii) lie on register entry D-262's home,
   unmarked.)*
+- Row 40.12 (iii) — that lyrics and verse structure give the chorale's phrase structure, probably redundant with fermatas. *(cowork_rulings_2026_11_08_l3_phrase_end_evidence_family_sitting.md, Ruling 1; whether L0 carries lyrics; if it does, they enter L3 as a candidate term under L3-S9 (iv)'s held-out rule.)*
 
 **To *L1 — Change points, candidates and notated evidence*.**
 
@@ -81330,6 +81343,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
 - Row 23.39 — that the music's own metadata is the primary home of that piece's idiom mixture, and a user-set mixture is never silently overwritten by re-detection. *(cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1; to `ARCHITECTURE.md` §6.8, the user-facing preset layer.)*
 - Row 23.40 — that the mixture is stored in the score's own user-defined properties, so that it travels with the file. *(cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1; to `ARCHITECTURE.md` §6.8, the user-facing preset layer.)*
 - Row 23.41 — that the stored value records its provenance, a user-set mixture never silently replaced and an auto-detected one refreshable. *(cowork_rulings_2026_11_07_l3_presets_scope_family_sitting.md, Ruling 1; to `ARCHITECTURE.md` §6.8, the user-facing preset layer.)*
+- Row 40.12 (iv) — that tempo and character markings are hints of style or of a preset, weak. *(cowork_rulings_2026_11_08_l3_phrase_end_evidence_family_sitting.md, Ruling 1; to `ARCHITECTURE.md` §6.8, the user-facing preset layer.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
