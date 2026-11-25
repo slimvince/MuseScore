@@ -1,10 +1,22 @@
 # The stretch verification scripts (L3 application, Task 3 stretches)
 
-> **STATUS: NOT YET ESTABLISHED.** Written 2026-11-24 by the Cowork sitting booted on
+> **STATUS: ESTABLISHED 2026-11-25.** Written 2026-11-24 by the Cowork sitting booted on
+> `records/cowork/handoff/cowork_handoff_entry_one_thousand_two_hundred_and_forty.md`, on the user's decision of that
+> date (alternative B of decision 1, recorded in entry 1241): the verification scripts become ONE committed tool,
+> established once, then staged and run by every verifying sitting instead of being rewritten each time. Established
+> 2026-11-25 by the Cowork sitting booted on
+> `records/cowork/handoff/cowork_handoff_entry_one_thousand_two_hundred_and_forty_three.md`, by the *Establishment*
+> below on stretch 18's objects, the negative test included, each output as expected; the outputs are recorded in
+> `records/cowork/handoff/cowork_handoff_entry_one_thousand_two_hundred_and_forty_four.md` §2 item 1. Every verifying
+> sitting now stages and runs these scripts, within the *Limits* below.
+>
+> *(Brought up to date 2026-11-25 by the Cowork sitting booted on entry 1244, as a staleness fix under the user's rule
+> of 2026-09-22; the seven files are otherwise unchanged. Former banner, kept (#12): "**STATUS: NOT YET ESTABLISHED.**
+> Written 2026-11-24 by the Cowork sitting booted on
 > `records/cowork/handoff/cowork_handoff_entry_one_thousand_two_hundred_and_forty.md`, on the user's decision of that
 > date (alternative B of decision 1, recorded in entry 1241): the verification scripts become ONE committed tool,
 > established once, then staged and run by every verifying sitting instead of being rewritten each time. Until the
-> establishment below has been run and recorded in a handoff entry, nothing may rest on these scripts (#19).
+> establishment below has been run and recorded in a handoff entry, nothing may rest on these scripts (#19).")*
 
 ## What they are for
 
