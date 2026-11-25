@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.44 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.45 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.45 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.46 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -74692,6 +74692,8 @@ the analysis whose module is to be created, and the shape of the publish-once ru
 reading and never re-deriving — no charter of `FRAMEWORK.md` §5 names a reader outside the analysis. (ii) **UNPLACED** —
 travelling with (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_language_model_family_sitting.md, Ruling 1).* (i) and (ii) **HISTORICAL** — "Rows 57.124 (i), 57.124 (ii), 57.498, 57.499, 57.500 and 57.501 — HISTORICAL — a superseded plan".
+
 *At the source now.* The sentence stands at lines 8144–8146 of the document's blob at this batch's Task 0 commit, found
 as quoted, opening in line 8144 after the sentence on what is sent to the model. The nearest heading at the blob is
 *"### 19.3 Relationship to the composing module"*. The lines lie inside member 33's one range, 8142–8146, where §6.33
@@ -76297,6 +76299,8 @@ the chord symbols from the analysis are among what the planned serialization for
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.124 and as §6.51 read the line: what a planned bridge outside
 the analysis receives from it, and no charter of `FRAMEWORK.md` §5 names a reader outside the analysis.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_language_model_family_sitting.md, Ruling 1).* **HISTORICAL** — "Rows 57.124 (i), 57.124 (ii), 57.498, 57.499, 57.500 and 57.501 — HISTORICAL — a superseded plan".
+
 *At the source now.* The line stands at line 582 of the document's blob at this batch's Task 0 commit, found as quoted:
 it is a row of the table under *"### 7.3 What to include"*, and the L2 block quotes it with its pipes, as §6.51's item
 17 does. The line lies inside member 51's range 575–593, the table, where §6.51 lists it as item 17. The document is not
@@ -76326,6 +76330,8 @@ the analysis's chord symbols and Roman-numeral analysis are sent with every stre
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.124 and as §6.51 read the line: what a planned bridge outside
 the analysis receives from it, and no charter of `FRAMEWORK.md` §5 names a reader outside the analysis.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_language_model_family_sitting.md, Ruling 1).* **HISTORICAL** — "Rows 57.124 (i), 57.124 (ii), 57.498, 57.499, 57.500 and 57.501 — HISTORICAL — a superseded plan".
 
 *At the source now.* The line stands at line 708 of the document's blob at this batch's Task 0 commit, found as quoted,
 the quotation dropping the list marker that opens it; it is the first of the four bullets the sentence at lines 705–706
@@ -76358,6 +76364,8 @@ the analysis's tonality and mode are sent with every stretch of music to the pla
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.124 and as §6.51 read the line: what a planned bridge outside
 the analysis receives from it, and no charter of `FRAMEWORK.md` §5 names a reader outside the analysis.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_language_model_family_sitting.md, Ruling 1).* **HISTORICAL** — "Rows 57.124 (i), 57.124 (ii), 57.498, 57.499, 57.500 and 57.501 — HISTORICAL — a superseded plan".
+
 *At the source now.* The line stands at line 709 of the document's blob at this batch's Task 0 commit, found as quoted,
 the quotation dropping the list marker that opens it; it is the second of the four bullets the sentence at lines 705–706
 leads. The nearest heading at the blob is *"## 10. Relationship to the Composing Module"*. The line lies inside member
@@ -76388,6 +76396,8 @@ where the chords change is sent with every stretch of music to the planned model
 
 *PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 57.124 and as §6.51 read the line: what a planned bridge outside
 the analysis receives from it, and no charter of `FRAMEWORK.md` §5 names a reader outside the analysis.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_language_model_family_sitting.md, Ruling 1).* **HISTORICAL** — "Rows 57.124 (i), 57.124 (ii), 57.498, 57.499, 57.500 and 57.501 — HISTORICAL — a superseded plan".
 
 *At the source now.* The line stands at line 710 of the document's blob at this batch's Task 0 commit, found as quoted,
 the quotation dropping the list marker that opens it; it is the third of the four bullets the sentence at lines 705–706
