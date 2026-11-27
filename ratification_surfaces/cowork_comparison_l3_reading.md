@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.46 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.47 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.48 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.49 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -4046,6 +4046,8 @@ Schenkerian or time-span/prolongational reduction)." — §3, the first *Does no
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the sentence; `FRAMEWORK.md` §5 names no charter whose subject is
 prolongational reduction (its second axis lists the melodic phrase, voicing, part-writing and the stock outer-voice
 patterns), and the derivation does not speak to it.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_prolongational_reduction_group_sitting.md, Ruling 1).* **RELOCATED** to ***L2 — The tonal reading. The one entangled decision.*** — "carried there by L2-S31, as its L2 twin Row 5.52 is (L2 score-decomposition Ruling 4). It means "not adopted in this specification"; it does not foreclose DP-O".
 
 ---
 
@@ -25084,6 +25086,8 @@ both spans. (ii) **UNPLACED** — read: the two texts above. (iii) **ADOPTED —
 proposed**, travelling with Row 7.63. (v) **UNPLACED** — travelling with Row 19.38 (vi).
 
 *RULED DISPOSITION (cowork_rulings_2026_11_08_l3_disposition_words_sitting.md, Ruling 1).* (iv), its phrase half: **ADOPTED — carried** (L3-S8) — "a change of tonality may fall inside a phrase unit and a phrase may end without one; follows from Ruling 1 (no evidence forces or forbids a phrase end)".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_chord_span_pair_group_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Recorded as decided against by phrase-ends Ruling 1 of 2026-11-02 (L3-S8 as derived: "Every change point and both span edges are candidate phrase ends"; "no item of evidence forces or forbids a phrase end") and DP-J".
 
 ---
 
@@ -76446,6 +76450,8 @@ phrase units, so that every phrase boundary is a boundary of the harmonic spans.
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above, as Row 19.39 (ii).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_chord_span_pair_group_sitting.md, Ruling 1).* **HISTORICAL** — "Recorded as decided against by phrase-ends Ruling 1 of 2026-11-02 (L3-S8 as derived: "Every change point and both span edges are candidate phrase ends"; "no item of evidence forces or forbids a phrase end") and DP-J".
+
 *At the source now.* The sentence stands at lines 264–266 of the document's blob at this batch's Task 0 commit, found as
 quoted, the quotation dropping the list marker that opens line 264 and keeping the bullet's bold run-in lead *Nesting
 (containment):*. The nearest heading at the blob is *"## 2. The layer model"*. The lines lie in none of member 38's
@@ -80981,6 +80987,7 @@ rows here, by target charter, in the commit that tabulates it; where a row trave
 - Row 57.118, its part on the style weights — that each substitution carries its style weights. *(cowork_rulings_2026_11_07_l3_catalog_idiom_tags_part1_sitting.md, Ruling 1; with the candidate.)*
 - Row 57.513, its part "the posterior" — that the estimator's published surface carries the posterior. *(cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2.)*
 - Row 57.514, its part "segments, tonalities, chord classes, … the posterior" — that the estimator publishes its own record of segments, tonalities, chord classes and the posterior. *(cowork_rulings_2026_11_07_l3_code_interfaces_family_sitting.md, Ruling 2; as Row 57.513's part "the posterior".)*
+- Row 7.47 — that prolongation or reduction, the reduction of a passage to one underlying harmony, is out of scope. *(cowork_rulings_2026_11_08_l3_prolongational_reduction_group_sitting.md, Ruling 1; carried there by L2-S31, as its L2 twin Row 5.52 is (L2 score-decomposition Ruling 4); it means "not adopted in this specification" and does not foreclose DP-O.)*
 
 **To *the second axis — voice leading*.**
 
