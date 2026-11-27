@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.52 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.53 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.53 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.54 and §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -9590,6 +9590,8 @@ is left unresolved carry that mark visibly at that location, unchanged. (ii) **A
 
 *RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_key_areas_sitting.md, §2c).* (i) **QUARANTINED** — "placed QUARANTINED, this side's derivation"; audit question: "does any built code hand the function layer's open marks to a grouping step, and does that step pass them unchanged?"; "one treatment with the open-mark rows placed QUARANTINED by Ruling 3 of `cowork_rulings_2026_10_06_l2_publication_to_next_layer_sitting.md`". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_record_placed_rows_sitting.md, Ruling 1).* (i) **QUARANTINED** — "QUARANTINED, with the audit question "does any built code hand the function layer's open marks to a grouping step, and does that step pass them unchanged?", as the key-areas record §2c places it".
+
 ---
 
 **Row 8.32 — the recognised-schema spans hosted as cross-cutting labels.**
@@ -9912,6 +9914,8 @@ resolved here.
 rival or a mass."*
 
 *PROPOSED DISPOSITION.* (i) **ADOPTED — proposed** — travelling with Row 8.31 (i). (ii) **ADOPTED — carried** (L3-S38).
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_record_placed_rows_sitting.md, Ruling 1).* (i) **QUARANTINED** — following Row 8.31 (i): "Its travelling Rows 8.48 (i), 8.89 and 8.91 follow it at the application act"; audit question: "does any built code hand the function layer's open marks to a grouping step, and does that step pass them unchanged?".
 
 ---
 
@@ -10644,6 +10648,8 @@ unit (the group is reported as carrying an unresolved reading at that location).
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.31 (i).
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_record_placed_rows_sitting.md, Ruling 1).* **QUARANTINED** — following Row 8.31 (i): "Its travelling Rows 8.48 (i), 8.89 and 8.91 follow it at the application act"; audit question: "does any built code hand the function layer's open marks to a grouping step, and does that step pass them unchanged?".
+
 ---
 
 **Row 8.90 — the grouping never resolves an unresolved mark.** *WITHHELD — D-460.*
@@ -10672,6 +10678,8 @@ residual visible." — §5.4 (locator: lines 294–296).
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.31 (i): a unit reported fully resolved exactly
 when none of its spans carries the mark, no confidence threshold entering the test.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_record_placed_rows_sitting.md, Ruling 1).* **QUARANTINED** — following Row 8.31 (i): "Its travelling Rows 8.48 (i), 8.89 and 8.91 follow it at the application act"; audit question: "does any built code hand the function layer's open marks to a grouping step, and does that step pass them unchanged?".
 
 ---
 
@@ -28533,6 +28541,8 @@ decides where one span gives way to the next.
 
 *RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (b)).* **QUARANTINED** — "corrected to QUARANTINED, travelling with L2's Row 23.72, with that row's audit question (*"which fields make two regions' readings the same on each path at the current commit, and which path merges adjacent regions by them?"*)"; "since L2 placed the same three sentences (Rows 23.72 to 23.74) so by the adjacent-spans Ruling 1". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_record_placed_rows_sitting.md, Ruling 1).* **QUARANTINED** — "QUARANTINED, travelling with L2's Row 23.72 and its audit question ("which fields make two regions' readings the same on each path at the current commit, and which path merges adjacent regions by them?"), as the harmonic-rhythm record §2 (b) places them".
+
 ---
 
 **Row 21.28 — adjacent regions of the same root and quality merged.**
@@ -28552,6 +28562,8 @@ classes.
 
 *RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (b)).* **QUARANTINED** — "corrected to QUARANTINED, travelling with L2's Row 23.72, with that row's audit question (*"which fields make two regions' readings the same on each path at the current commit, and which path merges adjacent regions by them?"*)"; "since L2 placed the same three sentences (Rows 23.72 to 23.74) so by the adjacent-spans Ruling 1". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_record_placed_rows_sitting.md, Ruling 1).* **QUARANTINED** — "QUARANTINED, travelling with L2's Row 23.72 and its audit question ("which fields make two regions' readings the same on each path at the current commit, and which path merges adjacent regions by them?"), as the harmonic-rhythm record §2 (b) places them".
+
 ---
 
 **Row 21.29 — extensions, inversions and slash-chord bass notes secondary, not identity.**
@@ -28569,6 +28581,8 @@ keys"*, where L3-S30 counts a change of figure among *"the classes of what chang
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.27.
 
 *RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (b)).* **QUARANTINED** — "corrected to QUARANTINED, travelling with L2's Row 23.72, with that row's audit question (*"which fields make two regions' readings the same on each path at the current commit, and which path merges adjacent regions by them?"*)"; "since L2 placed the same three sentences (Rows 23.72 to 23.74) so by the adjacent-spans Ruling 1". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_record_placed_rows_sitting.md, Ruling 1).* **QUARANTINED** — "QUARANTINED, travelling with L2's Row 23.72 and its audit question ("which fields make two regions' readings the same on each path at the current commit, and which path merges adjacent regions by them?"), as the harmonic-rhythm record §2 (b) places them".
 
 ---
 
@@ -31623,6 +31637,8 @@ applied target, tonality"*.
 *PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.27.
 
 *RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (c)).* **HISTORICAL** — "corrected to HISTORICAL — a plan"; "as its twin Row 24.34 was ruled". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_record_placed_rows_sitting.md, Ruling 1).* **HISTORICAL** — "HISTORICAL, a plan, as §2 (c) of the same record places it".
 
 ---
 
@@ -56225,6 +56241,8 @@ publishes the tonality per span with its rivals and their mass. (iv)
 boundaries fall.
 
 *RECORDED DISPOSITION (cowork_rulings_2026_11_03_l3_harmonic_rhythm_sitting.md, §2 (d)).* (ii) **HISTORICAL** — "corrected to HISTORICAL — a superseded plan"; "as their twins Rows 44.33(ii), 44.50(vi) and 44.76(iii) were ruled by the nothing-from-L3 Ruling 4; the slice-duration reading of harmonic rhythm is also met by Ruling 62 item 3". Recorded by the record as this side's derivation, not ruled; challengeable at the row.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_record_placed_rows_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "HISTORICAL, a superseded plan, as §2 (d) of the same record places it".
 
 ---
 
@@ -81667,11 +81685,14 @@ rows here, in the commit that tabulates it, each with the audit question its row
 - Row 8.6 (i), with Row 8.123 (ii) — does any production path call or consume the grouping layer at the current commit?
 - Row 8.6 (ii) — was the batch gate unchanged on all three presets at the build, and on which corpus and run?
 - Row 8.31 (i) — does any built code hand the function layer's open marks to a grouping step, and does that step pass them unchanged? *(cowork_rulings_2026_11_03_l3_key_areas_sitting.md, §2c.)*
+- Row 8.48 (i) — does any built code hand the function layer's open marks to a grouping step, and does that step pass them unchanged? *(cowork_rulings_2026_11_08_l3_record_placed_rows_sitting.md, Ruling 1.)*
 - Row 8.55 — do `detectCadences()`, `detectPivotChords()` and the `KeyArea` grouping exist, do they read the
   key-dependent degree logic, and does any of them run at the current commit?
 - Row 8.57 (i) — which of the old grouping paths run at the current commit, and on which arm?
 - Row 8.80 — at what granularity does the as-built carry the local key, and does it permit a key change inside a
   punctuation-span?
+- Row 8.89 — does any built code hand the function layer's open marks to a grouping step, and does that step pass them unchanged? *(cowork_rulings_2026_11_08_l3_record_placed_rows_sitting.md, Ruling 1.)*
+- Row 8.91 — does any built code hand the function layer's open marks to a grouping step, and does that step pass them unchanged? *(cowork_rulings_2026_11_08_l3_record_placed_rows_sitting.md, Ruling 1.)*
 - Row 8.125 (i) — on which corpora, under which measurement, was the cadence type found unvalidated on the chorales and
   only partly attributable on the other repertoire?
 - Row 8.126 (i) — on which corpora and under which measurement are the lower layers found weaker outside the chorales,
