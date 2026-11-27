@@ -51,8 +51,6 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.53 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.54 and §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
-
 ---
 
 ## 0. Progress — which members are done, and where this stops
@@ -84715,6 +84713,8 @@ in the commit that tabulates it. **Nothing here is chosen**: a DIFFERS line stat
 **Over every member of the population** (§0: positions 1 to 57 are done), counted at this file's own rows; each member's
 statement lists are at its own foot, and the integers below are re-derivable from them.
 
+The tables below are the distribution of the PROPOSALS; the distribution of the rows placed by the records of 2026-11-02 to 2026-11-08 is §13a.
+
 | Member | Statements | ADOPTED — carried | ADOPTED — proposed | RELOCATED | QUARANTINED | DISCARDED | HISTORICAL | UNPLACED | Not a statement |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | 43 | 0 | 0 | 7 | 21 | 0 | 15 | 0 | 27 |
@@ -84850,6 +84850,90 @@ pointer lines are counted at the rows they name; its table, its groups and its f
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 +
 4 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 +
 42 + 0 + 27 + 25 + 56 + 16 + 5 + 161).
+
+## 13a. The ruled distribution, derived from the added lines
+
+**Derived mechanically from the lines the application act added at §6** (`records/cc/instructions/cc_instruction_l3_application_2026_11_08.md`,
+Task 3 (d)), counted at this file's own rows after the last ledger entry, §L.55. The unit is §13's: a **row-part** is
+each claim a row's `*PROPOSED DISPOSITION.*` paragraph marks `(i)`, `(ii)` and so on, or the whole row where that
+paragraph marks none. A line counts on the claims its opening names, on every row-part of its row where it names none,
+and on the claim it names where it places only a portion of that claim. Each row-part is counted in exactly one of
+the columns from *ADOPTED — carried* to *No line*: under its disposition word where every RULED DISPOSITION line on it
+carries the same word (HISTORICAL lines written under form (b-H) included); under *More than one word* where its
+RULED DISPOSITION lines carry different words; under *RECORDED only* where it carries a RECORDED DISPOSITION line and no
+RULED DISPOSITION line (form (d): never added into the ruled counts); under *RULED PLACEMENT only* where its only lines
+are RULED PLACEMENT lines (form (c-P): not counted in the ruled distribution); and under *No line* where it carries
+none, so it remains a proposal. *Two or more lines* counts the row-parts carrying two or more lines of the three
+kinds, and is not part of the sum.
+
+| Member | Statements | ADOPTED — carried | ADOPTED — proposed | RELOCATED | QUARANTINED | DISCARDED | HISTORICAL | More than one word | RECORDED only | RULED PLACEMENT only | No line | Two or more lines |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 43 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 41 | 0 |
+| 2 | 34 | 0 | 1 | 2 | 0 | 0 | 9 | 0 | 0 | 0 | 22 | 4 |
+| 3 | 21 | 0 | 2 | 0 | 0 | 0 | 6 | 1 | 0 | 0 | 12 | 3 |
+| 4 | 34 | 3 | 2 | 0 | 0 | 0 | 0 | 3 | 0 | 5 | 21 | 3 |
+| 5 | 19 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 18 | 0 |
+| 6 | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 8 | 0 |
+| 7 | 391 | 3 | 19 | 8 | 5 | 0 | 62 | 1 | 6 | 1 | 286 | 3 |
+| 8 | 195 | 1 | 8 | 2 | 4 | 0 | 55 | 0 | 0 | 3 | 122 | 10 |
+| 9 | 232 | 0 | 0 | 0 | 1 | 0 | 4 | 0 | 0 | 0 | 227 | 0 |
+| 10 | 247 | 0 | 0 | 1 | 1 | 0 | 14 | 0 | 11 | 0 | 220 | 1 |
+| 11 | 68 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 68 | 0 |
+| 12 | 70 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 68 | 0 |
+| 13 | 52 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 50 | 0 |
+| 14 | 23 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 23 | 0 |
+| 15 | 95 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 3 | 0 | 90 | 0 |
+| 16 | 63 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 63 | 0 |
+| 17 | 5 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 4 | 0 |
+| 18 | 12 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 11 | 0 |
+| 19 | 132 | 1 | 17 | 2 | 0 | 0 | 19 | 0 | 1 | 9 | 83 | 5 |
+| 20 | 113 | 0 | 3 | 2 | 0 | 0 | 1 | 0 | 0 | 0 | 107 | 0 |
+| 21 | 223 | 0 | 2 | 0 | 3 | 0 | 2 | 0 | 5 | 1 | 210 | 3 |
+| 22 | 98 | 0 | 0 | 0 | 2 | 0 | 3 | 0 | 1 | 1 | 91 | 1 |
+| 23 | 49 | 0 | 0 | 7 | 0 | 0 | 1 | 0 | 0 | 0 | 41 | 0 |
+| 24 | 9 | 0 | 0 | 0 | 0 | 0 | 3 | 1 | 0 | 0 | 5 | 1 |
+| 25 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 26 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 27 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 |
+| 28 | 72 | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 1 | 0 | 68 | 0 |
+| 29 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 |
+| 30 | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8 | 0 |
+| 31 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20 | 0 |
+| 32 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 1 |
+| 33 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 34 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 35 | 197 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 196 | 0 |
+| 36 | 237 | 0 | 2 | 2 | 0 | 0 | 45 | 0 | 0 | 0 | 188 | 31 |
+| 37 | 241 | 0 | 0 | 1 | 0 | 0 | 2 | 0 | 0 | 0 | 238 | 0 |
+| 38 | 171 | 0 | 15 | 1 | 0 | 0 | 18 | 3 | 2 | 1 | 131 | 6 |
+| 39 | 351 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 349 | 0 |
+| 40 | 102 | 0 | 2 | 2 | 0 | 0 | 8 | 0 | 0 | 1 | 89 | 4 |
+| 41 | 113 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 112 | 0 |
+| 42 | 51 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 50 | 0 |
+| 43 | 167 | 0 | 0 | 0 | 2 | 0 | 5 | 0 | 1 | 0 | 159 | 0 |
+| 44 | 80 | 0 | 8 | 1 | 0 | 0 | 3 | 3 | 0 | 0 | 65 | 3 |
+| 45 | 68 | 0 | 0 | 2 | 1 | 0 | 2 | 0 | 0 | 0 | 63 | 0 |
+| 46 | 67 | 0 | 12 | 0 | 0 | 0 | 0 | 4 | 0 | 1 | 50 | 5 |
+| 47 | 67 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 64 | 0 |
+| 48 | 62 | 2 | 2 | 0 | 0 | 0 | 1 | 0 | 1 | 9 | 47 | 1 |
+| 49 | 40 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 40 | 0 |
+| 50 | 42 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 40 | 0 |
+| 51 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 52 | 27 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 26 | 0 |
+| 53 | 25 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 25 | 0 |
+| 54 | 56 | 0 | 0 | 0 | 0 | 0 | 2 | 2 | 0 | 0 | 52 | 2 |
+| 55 | 16 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 16 | 0 |
+| 56 | 5 | 1 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 57 | 161 | 1 | 39 | 3 | 0 | 0 | 22 | 7 | 0 | 3 | 86 | 12 |
+| **Total** | **4696** | **12** | **138** | **39** | **23** | **0** | **293** | **26** | **40** | **39** | **4086** | **99** |
+
+**The arithmetic check:** 12 + 138 + 39 + 23 + 0 + 293 + 26 + 40 + 39 + 4086 = 4696, against §13's *Total* line of 4696 statements.
+Each member's row closes the same way against its own *Statements* cell.
+Of these, 531 row-parts carry a RULED DISPOSITION line (12 + 138 + 39 + 23 + 0 + 293 + 26).
+The lines counted: 626 RULED DISPOSITION, 53 RECORDED DISPOSITION and 46 RULED PLACEMENT lines, every one inside a
+row of §6. **Flagged items answered under form (c): 0**, stated here outside the row total.
+
+*The 26 row-parts counted under More than one word, each with its words in the order its lines stand at the row:* Row 3.5 (iii) (HISTORICAL, RELOCATED); Row 4.17 (HISTORICAL, ADOPTED — carried); Row 4.24 (ii) (HISTORICAL, ADOPTED — carried); Row 4.26 (HISTORICAL, ADOPTED — carried); Row 7.37 (HISTORICAL, RELOCATED); Row 24.2 (RELOCATED, ADOPTED — proposed, HISTORICAL); Row 32.1 (RELOCATED, HISTORICAL); Row 38.21 (i) (ADOPTED — proposed, RELOCATED); Row 38.22 (ii) (ADOPTED — proposed, HISTORICAL, RELOCATED); Row 38.79 (i) (HISTORICAL, ADOPTED — proposed); Row 44.28 (ii) (ADOPTED — proposed, RELOCATED); Row 44.34 (i) (ADOPTED — proposed, RELOCATED); Row 44.34 (ii) (ADOPTED — proposed, RELOCATED); Row 46.14 (HISTORICAL, ADOPTED — proposed); Row 46.43 (HISTORICAL, RELOCATED); Row 46.44 (i) (ADOPTED — proposed, HISTORICAL); Row 46.46 (i) (ADOPTED — proposed, RELOCATED); Row 54.14 (i) (HISTORICAL, ADOPTED — carried); Row 54.36 (ii) (HISTORICAL, ADOPTED — carried); Row 57.513 (ADOPTED — carried, RELOCATED, HISTORICAL); Row 57.514 (ADOPTED — carried, RELOCATED, HISTORICAL); Row 57.396 (ii) (HISTORICAL, ADOPTED — proposed); Row 57.445 (i) (ADOPTED — proposed, RELOCATED); Row 57.454 (ADOPTED — proposed, HISTORICAL, RELOCATED); Row 57.470 (ii) (ADOPTED — proposed, RELOCATED); Row 57.494 (i) (HISTORICAL, ADOPTED — proposed).
 
 ## 14. The derivation's independence record, relayed
 
