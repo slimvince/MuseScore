@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.50 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.51 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.51 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.52 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -6569,6 +6569,8 @@ markers plus any honest **open mark** (§7)." — §7 (locator: lines 553–554)
 *PROPOSED DISPOSITION.* **UNPLACED** — read: the sentence; in the derivation the cadence and the grouping are one
 layer's facts, so it states no contract between them, and its L3-S23 has the section reading take the cadence from L3
 itself and the tonality from L2.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_two_single_rows_group_sitting.md, Ruling 2).* **QUARANTINED** — "QUARANTINED, travelling with its L2 twin Row 5.208 and that row's companion, L2 Row 8.94"; *Audit question, the twin's own:* "what does the dormant function layer hand to the grouping layer, field by field?".
 
 ---
 
@@ -20074,6 +20076,8 @@ question:* on which run was the difference under an alternative key found to be 
 **UNPLACED** — what was read: a general reading of the no-information-loss principle (#12), applied to the shelved
 joint step; it names no L3 fact, no charter of `FRAMEWORK.md` §5 owns a reading of a guiding principle, and it is
 neither a plan, a status nor a claim about the implementation.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_two_single_rows_group_sitting.md, Ruling 1).* (iii) **ADOPTED — proposed** — "ADOPTED, carried by architecture-rules Ruling 1 part C".
 
 ---
 
@@ -81513,6 +81517,7 @@ rows here, in the commit that tabulates it, each with the audit question its row
   guard, and is that path reached at the current commit?
 - Row 7.182 (i) — is the unified emitter consumed by any path that runs at the current commit?
 - Row 7.189 (ii) — does the dormant cadence detector cast a weighted tonic vote per region, and what does the vote change? *(cowork_rulings_2026_11_03_l3_s38_ratification_sitting.md, Ruling 1.)*
+- Row 7.199 — what does the dormant function layer hand to the grouping layer, field by field? *(cowork_rulings_2026_11_08_l3_two_single_rows_group_sitting.md, Ruling 2.)*
 - Row 7.204 (i) — is the function confidence's internal value an unbounded additive of its three components, and on
   which run was it observed near the stated value?
 - Row 7.207 — which incumbents do the built override sites compare, and does any of them read the function confidence?
