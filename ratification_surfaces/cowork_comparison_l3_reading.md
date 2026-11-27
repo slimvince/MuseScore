@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.48 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.49 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.49 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.50 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -4843,6 +4843,8 @@ a deterministic function of L3-S16's features"*, and those six features name no 
 *PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
 texts above.
 
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_remaining_cadence_type_group_sitting.md, Ruling 1).* **HISTORICAL** — "Recorded as decided against by L3-S17 (as ruled; the cadence-type record) with L3-S42 (fit-and-rest Ruling 1: "L3 reads no fact of the axis in this specification"), **in so far as it makes the leading tone's resolution, as an event in a voice, a condition L3 computes**".
+
 ---
 
 **Row 7.97 — the seventh a vote strengthener, not a family gate.**
@@ -5127,6 +5129,8 @@ does not settle whether the *"weight"* is the cadence's tonic-vote weight (§5.2
 first would be RELOCATED as Row 7.53 is, the second set against L3-S19.
 
 *RULED DISPOSITION (cowork_rulings_2026_11_03_l3_cadence_type_sitting.md, Ruling 3).* (i) **ADOPTED — proposed** — "as types or rules of the declared vocabularies; each wording written from its source when that vocabulary is declared.".
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_remaining_cadence_type_group_sitting.md, Ruling 1).* (ii) **HISTORICAL** — "Recorded as decided against by cadence-mass Ruling 1 ("No cadence type carries a fixed, by-rule lowering of its confidence"), **in so far as it lowers a cadence's weight by a fixed rule**, as Rows 7.112 (ii) and 7.114 (ii)".
 
 ---
 
