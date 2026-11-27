@@ -51,7 +51,7 @@
 > whole before anything else this session read for the comparison, and they are the counts of record for this
 > comparison; the deriving session relays the same counts in its own §4 and §5.
 
-*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.49 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.50 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
+*Application in progress: the RULED DISPOSITION, RULED PLACEMENT and RECORDED DISPOSITION lines in this file are those of §L.1 to §L.50 of records/cc/instructions/cc_instruction_l3_application_2026_11_08.md only. §L.51 to §L.55 are applied by later Claude Code sessions, one stretch each, and the ruled distribution (§13a) is written by the last of them, which removes this line.*
 
 ---
 
@@ -67141,6 +67141,8 @@ slice, with the members of L2's chord; no charter of `FRAMEWORK.md` §5 lists it
 the chord symbol's bass note the structural bass and not the lowest sounding pitch, speaks to the chord symbol's bass
 and not to a role per event. The derivation's §6 item 2 flags L3-S4 as coinciding with a ruled sentence the L0/L1 input
 contract carries, for the comparison to check.
+
+*RULED DISPOSITION (cowork_rulings_2026_11_08_l3_bass_role_per_event_group_sitting.md, Ruling 1).* **ADOPTED — proposed** — "L3 publishes, per slice, which member of L2's chord the lowest sounding note is, or that it is not a chord tone (with L2's elaboration relation for it where L2 has one), read off L1's lowest sounding pitch per slice and its witness note and L2's chord and chord-tone assignment. It is named apart from the chord symbol's bass note (L3-S4), which stays the structural bass".
 
 ---
 
