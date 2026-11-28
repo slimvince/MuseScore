@@ -340,6 +340,9 @@ only for input this analysis does not take:**
     eligible note;
   - per slice, the **lowest sounding pitch** of its sounding set, published under that name (Ruling 2 of
     the 2026-10-08 structural-bass record);
+  - a **restatement relation** over the notes (Ruling 1 of the 2026-11-03 thematic-parallelism record);
+  - per slice, the **spelled intervals** above its lowest sounding pitch (Ruling 1 of the 2026-11-03
+    figured-bass record);
   - per change point, its **metric strength class**;
   - per change point, the **notated boundary evidence** at it: bar line, fermata, rest, repeat sign,
     double bar;
@@ -362,6 +365,18 @@ amended:* the ruling's ground as put — towards the objective (#4), the figure 
 every slice; towards the principles, one producer per fact (#6, D-100), L1 decides nothing, the item named
 for what it is (Ruling 42); its cost accepted, one edit to a ratified L1 face and to the charter's list,
 by the application act.
+
+**★ AMENDED 2026-11-28 ON THE USER'S RULINGS OF 2026-11-03, WITH THE FORMER WORDING PRESERVED IN PLACE
+(#12.)** Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_thematic_parallelism_sitting.md` and
+Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_figured_bass_sitting.md`, written by the
+application act of `records/cc/instructions/cc_instruction_l3_application_2026_11_08.md` (Task 4).
+**THE FORMER WORDING WAS:** *"the ordered, covering, gapless and non-overlapping list of **slices** — the
+stretches between consecutive change points, where a change point is every onset **and every release** of an
+eligible note; per slice, the **lowest sounding pitch** of its sounding set, published under that name (Ruling 2
+of the 2026-10-08 structural-bass record); per change point, its **metric strength class**; per change point,
+the **notated boundary evidence** at it: bar line, fermata, rest, repeat sign, double bar; the **local cadence
+cues**: a falling-fifth or rising-fourth bass motion, a leading-tone resolution, the sounding together of the
+fourth and seventh degrees of a candidate tonality in the approach."* — the list's five bullets, in order.
 
 **Why a layer.** The alternative is a grid, and the ledger records what a grid does: a context window
 defined as a fixed number of beats does not respect harmonic or metrical boundaries, so evidence
@@ -477,8 +492,19 @@ mechanisms:**
 - **Consumes:** L2's published facts, plus L0's and L1's. **It may not consume anything L2 did not
   publish, and it may not revise L2.**
 - **Publishes:** the **cadence** at each phrase end, with its type; the **phrase and section
-  grouping**; the **chord symbol** — root pitch class, quality and bass note; the **figured bass**; the
-  **harmonic rhythm**.
+  grouping**; the **chord symbol** — root (spelled), with its pitch class, quality and bass note; the
+  **figured bass**; the **harmonic rhythm**; the **form-function names** (Ruling 3 of the 2026-11-03
+  sections record); the **key areas** (Ruling 1 of the 2026-11-03 key-areas record); the **pivot
+  label** (Ruling 1 of the 2026-11-03 pivot-label record).
+
+**★ AMENDED 2026-11-28 ON THE USER'S RULINGS OF 2026-11-03, WITH THE FORMER WORDING PRESERVED IN PLACE
+(#12.)** Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_chord_symbol_sitting.md`, Ruling 3 of
+`records/cowork/rulings/cowork_rulings_2026_11_03_l3_sections_sitting.md`, Ruling 1 of
+`records/cowork/rulings/cowork_rulings_2026_11_03_l3_key_areas_sitting.md` and Ruling 1 of
+`records/cowork/rulings/cowork_rulings_2026_11_03_l3_pivot_label_sitting.md`, written by the application act of
+`records/cc/instructions/cc_instruction_l3_application_2026_11_08.md` (Task 4). **THE FORMER WORDING WAS:**
+*"**Publishes:** the **cadence** at each phrase end, with its type; the **phrase and section grouping**; the
+**chord symbol** — root pitch class, quality and bass note; the **figured bass**; the **harmonic rhythm**."*
 
 **Why cadence type is here while the cadence cues are at L1.** A cadence type is a claim about what
 the decided chords do at a decided phrase end. One study takes the cadence category as already given
@@ -527,11 +553,26 @@ had no second axis and placed phrase structure on the spine. Appendix A item 5, 
 | From → to | What crosses | Direction | What may NOT cross |
 |---|---|---|---|
 | L0 → L1 | The notated record, whole | forward only | Nothing derived. L1 may not treat the key signature as the tonality. |
+| L0 → L2 | The key-signature value | forward only | — |
 | L1 → L2 | Slices; metric strength; notated boundary evidence; cadence cues | forward only | No decided boundary — L1 decides none. No tonality claim. |
 | L2 → L3 | Segmentation; tonality per span; chord per span; chord-tone assignment and elaboration relation per note; rivals with mass | forward only | Nothing L2 did not publish — in particular no intermediate quantity of L2's own scoring. |
 | L3 → L2 | **Nothing.** | — | A read-off fact may not revise the decision it was read off. §8.4 states what happens instead. |
-| L1 → L3 | Notated phrase evidence | forward only | — |
+| L1 → L3 | Notated phrase evidence; the restatement relation (OQ-L3-5); the highest sounding pitch per slice (OQ-L3-4); the spelled intervals above the lowest sounding pitch per slice (OQ-L3-7) | forward only | — |
+| L0 → L3 | The key-signature value; the spellings of the notes L2's facts reference; slurs and dynamics only if measured to help (L3-S9 (iv)) | forward only | — |
 | spine ↔ voice-leading axis | Published facts only, in either direction, each carrying its establishment status | either | Neither axis may re-derive a fact the other publishes. |
+
+**★ AMENDED 2026-11-28 ON THE USER'S RULINGS OF 2026-11-03, WITH THE FORMER WORDING PRESERVED IN PLACE
+(#12.)** Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_boundaries_sitting.md` and Ruling 1 of
+`records/cowork/rulings/cowork_rulings_2026_11_03_l3_thematic_parallelism_sitting.md`, written by the application
+act of `records/cc/instructions/cc_instruction_l3_application_2026_11_08.md` (Task 4). The boundaries record:
+*"The consume lines remain the governing text; the table summarises them."* **THE FORMER WORDING WAS:** the
+table's rows, whole, each as it stood, in order:
+`| L0 → L1 | The notated record, whole | forward only | Nothing derived. L1 may not treat the key signature as the tonality. |`;
+`| L1 → L2 | Slices; metric strength; notated boundary evidence; cadence cues | forward only | No decided boundary — L1 decides none. No tonality claim. |`;
+`| L2 → L3 | Segmentation; tonality per span; chord per span; chord-tone assignment and elaboration relation per note; rivals with mass | forward only | Nothing L2 did not publish — in particular no intermediate quantity of L2's own scoring. |`;
+`| L3 → L2 | **Nothing.** | — | A read-off fact may not revise the decision it was read off. §8.4 states what happens instead. |`;
+`| L1 → L3 | Notated phrase evidence | forward only | — |`;
+`| spine ↔ voice-leading axis | Published facts only, in either direction, each carrying its establishment status | either | Neither axis may re-derive a fact the other publishes. |`.
 
 **The contract that carries the most weight, stated plainly:** L2 receives **candidates** and
 **evidence**, never **decisions**. Everything the analysis settles about the music is settled in L2, or
@@ -1878,10 +1919,24 @@ They are named here so that silence does not read as an omission.
 | From → to | What crosses | Direction | What may NOT cross |
 |---|---|---|---|
 | L0 → L1 | The notated record, whole | forward only | Nothing derived; L1 may not treat the key signature as the tonality |
+| L0 → L2 | The key-signature value | forward only | — |
 | L1 → L2 | Candidate onsets; metric strength; notated boundary evidence; cadence features | forward only | No decided boundary — L1 decides none; no tonality claim |
 | L2 → L3 | Segmentation; tonality per span; chord per span; chord-tone assignment per note; rivals with mass | forward only | Nothing L2 did not publish; in particular no intermediate quantity of L2's own scoring |
 | L3 → L2 | **Nothing.** | — | A later fact may not revise an earlier decision (C44's class, and the ordering that makes L2's answer measurable at all) |
-| L1 → L3 | Notated phrase evidence | forward only | — |
+| L1 → L3 | Notated phrase evidence; the restatement relation (OQ-L3-5); the highest sounding pitch per slice (OQ-L3-4); the spelled intervals above the lowest sounding pitch per slice (OQ-L3-7) | forward only | — |
+| L0 → L3 | The key-signature value; the spellings of the notes L2's facts reference; slurs and dynamics only if measured to help (L3-S9 (iv)) | forward only | — |
+
+**★ AMENDED 2026-11-28 ON THE USER'S RULINGS OF 2026-11-03, WITH THE FORMER WORDING PRESERVED IN PLACE
+(#12.)** Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_11_03_l3_boundaries_sitting.md` and Ruling 1 of
+`records/cowork/rulings/cowork_rulings_2026_11_03_l3_thematic_parallelism_sitting.md`, written by the application
+act of `records/cc/instructions/cc_instruction_l3_application_2026_11_08.md` (Task 4). The boundaries record:
+*"The consume lines remain the governing text; the table summarises them."* **THE FORMER WORDING WAS:** the
+table's rows, whole, each as it stood, in order:
+`| L0 → L1 | The notated record, whole | forward only | Nothing derived; L1 may not treat the key signature as the tonality |`;
+`| L1 → L2 | Candidate onsets; metric strength; notated boundary evidence; cadence features | forward only | No decided boundary — L1 decides none; no tonality claim |`;
+`| L2 → L3 | Segmentation; tonality per span; chord per span; chord-tone assignment per note; rivals with mass | forward only | Nothing L2 did not publish; in particular no intermediate quantity of L2's own scoring |`;
+`| L3 → L2 | **Nothing.** | — | A later fact may not revise an earlier decision (C44's class, and the ordering that makes L2's answer measurable at all) |`;
+`| L1 → L3 | Notated phrase evidence | forward only | — |`.
 
 **The one contract that carries the most weight, stated plainly:** L2 receives *candidates* and
 *evidence*, never *decisions*. Everything the analysis settles about the music is settled in L2 or in

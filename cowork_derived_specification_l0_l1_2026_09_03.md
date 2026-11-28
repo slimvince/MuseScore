@@ -1447,7 +1447,15 @@ slice's lowest sounding pitch — so that a consumer can read the motion of the 
 **S-50. L1 publishes exactly: the slice list (S-29–S-33) with each slice's sounding set by event
 identity; per slice, the lowest sounding pitch of its sounding set, published under that name, with its
 witness (the note), its establishment status, its provenance and, where not computed, a named reason
-(Ruling 2 of the 2026-10-08 structural-bass record, OQ-L2-11); the span's two edges published as such,
+(Ruling 2 of the 2026-10-08 structural-bass record, OQ-L2-11); per slice, the highest sounding pitch
+of its sounding set, published under that name (Ruling 2 of the 2026-11-03 cadence-features record,
+OQ-L3-4); a restatement relation over the notes — each instance naming the stretch, the earlier stretch
+it restates, the transposition (none, or an interval), and the representation under which it matched;
+with its witnesses (the notes), its establishment status, its provenance and, where not computed, a
+named reason (the forms S-50 already requires); named for the pattern detected, never *boundary*,
+*phrase* or *theme*; the matching measure UNESTABLISHED until measured (Ruling 1 of the 2026-11-03
+thematic-parallelism record, OQ-L3-5); per slice, the spelled intervals above its lowest sounding pitch
+(Ruling 1 of the 2026-11-03 figured-bass record, OQ-L3-7); the span's two edges published as such,
 with a record-edge mark where an edge is the
 record's own start or end (S-32, Ruling 40, Ruling 46 (vi)), events marked *entered sounding* and *cut
 by the span* (S-32), and a tie cut by the span so marked (S-25); per change point, its metric strength
@@ -1478,6 +1486,27 @@ flags (S-10, S-24, S-25). Every predicate is published with its witnesses, its e
 empty, a named reason (Ruling 62 item 7). No published field is named *boundary*, *cadence*, *phrase*,
 *chord*, *key*, *tonality*, *degree* or *function*.";
 cowork_rulings_2026_10_08_l2_structural_bass_sitting.md, Ruling 2)
+(was: "S-50. L1 publishes exactly: the slice list (S-29–S-33) with each slice's sounding set by event
+identity; per slice, the lowest sounding pitch of its sounding set, published under that name, with its
+witness (the note), its establishment status, its provenance and, where not computed, a named reason
+(Ruling 2 of the 2026-10-08 structural-bass record, OQ-L2-11); the span's two edges published as such,
+with a record-edge mark where an edge is the
+record's own start or end (S-32, Ruling 40, Ruling 46 (vi)), events marked *entered sounding* and *cut
+by the span* (S-32), and a tie cut by the span so marked (S-25); per change point, its metric strength
+class (S-35) and its boundary flag set (S-39), every flag with its scope (Ruling 48); the positioned
+marks list, complete over every notated mark of face (e), the flags referencing it by identity (S-41,
+Ruling 51); the junction adjacencies (S-27); per onset change point and per notated voice, the three
+relations to that voice's preceding event with their witnesses (Ruling 49) and the chordal count with
+its witnesses (Ruling 61); per onset change point, the cue flags (S-45–S-47) with the interval content
+(S-49); the PEDAL-HELD attribute on every change point inside a pedal span (S-54); the ornamental
+attachments and ornament attributes (S-16, S-17); the silent-notes and annotation carriers (S-2,
+S-18); and the defect flags (S-10, S-24, S-25). Every predicate is published with its witnesses, its
+establishment status (S-52), its provenance — how it was arrived at (Ruling 62 item 9) — and, where it
+is not computed or is empty, a named reason (Ruling 62 item 7). No published field is named
+*boundary*, *cadence*, *phrase*, *chord*, *key*, *tonality*, *degree* or *function*.";
+cowork_rulings_2026_11_03_l3_cadence_features_sitting.md, Ruling 2;
+cowork_rulings_2026_11_03_l3_thematic_parallelism_sitting.md, Ruling 1;
+cowork_rulings_2026_11_03_l3_figured_bass_sitting.md, Ruling 1)
 - *Defense.* The charter's list, plus the additions each derived above [RULED for the list; derived
   for the additions, each flagged where it stands]. The naming bar operationalises *decides nothing*:
   a field's name is what a consumer will treat it as, and a flag named *cadence* would be consumed as
@@ -1518,6 +1547,19 @@ cowork_rulings_2026_10_08_l2_structural_bass_sitting.md, Ruling 2)
   requires of every item). The derived list stands at the derivation; S-50's former wording is preserved
   at its site (#12). **L2's algorithm as its statements define it is unchanged:** L2-S28's term already
   wants exactly this." *The derived list stands at the derivation, S-50.*
+- *Amended by Ruling 2 of cowork_rulings_2026_11_03_l3_cadence_features_sitting.md (OQ-L3-4) — the
+  highest sounding pitch per slice.* "IC-L1 S-50's list gains "per slice, the highest sounding pitch of
+  its sounding set", published under that name." *The derived list stands at the derivation, S-50.*
+- *Amended by Ruling 1 of cowork_rulings_2026_11_03_l3_thematic_parallelism_sitting.md (OQ-L3-5) — the
+  restatement relation over the notes.* "L1's published list (IC-L1 S-50) gains one item: a restatement
+  relation over the notes — each instance naming the stretch, the earlier stretch it restates, the
+  transposition (none, or an interval), and the representation under which it matched; with its witnesses
+  (the notes), its establishment status, its provenance and, where not computed, a named reason (the forms
+  S-50 already requires); named for the pattern detected, never *boundary*, *phrase* or *theme*; the
+  matching measure UNESTABLISHED until measured." *The derived list stands at the derivation, S-50.*
+- *Amended by Ruling 1 of cowork_rulings_2026_11_03_l3_figured_bass_sitting.md (OQ-L3-7) — the spelled
+  intervals above the lowest sounding pitch per slice.* "L1 publishes, at every slice, the spelled
+  intervals above its lowest sounding pitch." *The derived list stands at the derivation, S-50.*
 
 **S-51. The test for whether an L1 output is a *claim* the charter forbids: an output is a candidate or
 evidence, not a claim, if and only if it is computable from L0 facts with no tonality, chord or
