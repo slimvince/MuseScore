@@ -15,11 +15,11 @@
    "its_one_home": "`tools/audit/session_start_read_size.json`, written by `tools/audit/gen_session_start_read_size.py`; what stands here is that tool's own `measure` called at the tree, and its total is checked against that artifact on every run",
    "characters_per_member": {
     "CLAUDE.md": 105441,
-    "STATUS.md": 11617,
+    "STATUS.md": 11926,
     "DECISIONS.md": 118132,
     "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2826
    },
-   "total_characters": 238016,
+   "total_characters": 238325,
    "the_reading_of_claude_md": {
     "regime": "ruled membership",
     "characters": 105441
@@ -284,7 +284,7 @@
     "read_by": "Claude Code, per batch of the L3 comparison",
     "the_mandate_class": "a user ruling",
     "the_record_that_mandates_it": "Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_08_24_comparison_design_sitting.md`, as the thirtieth dispatch's ruling ledger quotes it; ruled for this comparison, and not a target of the pruning iteration (entry 461 §2)",
-    "characters": 126702
+    "characters": 127626
    }
   ],
   "the_arc_dispatches": {
@@ -1380,28 +1380,28 @@
      "the_writing_sides_read": "unwritten practice"
     },
     "the_record_that_mandates_it": "the standing clause `Every dispatch's read-first block names the CURRENT HANDOVER BLOCK`, which this repository carries as numbered entry files; the writing side's three is its own practice",
-    "the_population_count": 505,
+    "the_population_count": 1205,
     "the_three": [
      {
-      "name": "cowork_handoff_entry_five_hundred_and_eighty_one.md",
-      "added_in_commit": "9a2b3c2d9a00f94ea2cf67f2dcf0832a3a65fbce",
-      "added_at_unix_time": 1794134795,
-      "characters": 8186
+      "name": "cowork_handoff_entry_one_thousand_two_hundred_and_eighty_five.md",
+      "added_in_commit": "4a07f73f639ce8edde6d217c4ff60fccea9643cc",
+      "added_at_unix_time": 1795858429,
+      "characters": 10055
      },
      {
-      "name": "cowork_handoff_entry_five_hundred_and_eighty_three.md",
-      "added_in_commit": "9a2b3c2d9a00f94ea2cf67f2dcf0832a3a65fbce",
-      "added_at_unix_time": 1794134795,
-      "characters": 6062
+      "name": "cowork_handoff_entry_one_thousand_two_hundred_and_eighty_four.md",
+      "added_in_commit": "4a07f73f639ce8edde6d217c4ff60fccea9643cc",
+      "added_at_unix_time": 1795858429,
+      "characters": 11905
      },
      {
-      "name": "cowork_handoff_entry_five_hundred_and_eighty_two.md",
-      "added_in_commit": "9a2b3c2d9a00f94ea2cf67f2dcf0832a3a65fbce",
-      "added_at_unix_time": 1794134795,
-      "characters": 8984
+      "name": "cowork_handoff_entry_one_thousand_two_hundred_and_eighty_three.md",
+      "added_in_commit": "4a07f73f639ce8edde6d217c4ff60fccea9643cc",
+      "added_at_unix_time": 1795858429,
+      "characters": 13998
      }
     ],
-    "characters": 23232
+    "characters": 35958
    }
   ],
   "totals_by_side": {
@@ -1409,7 +1409,7 @@
     "the_members_it_sums": [
      {
       "member": "the ordinary session-start read (imported)",
-      "characters": 238016
+      "characters": 238325
      },
      {
       "member": "BUILD_AND_TEST.md",
@@ -1425,17 +1425,17 @@
      },
      {
       "member": "the blind derivation of L3",
-      "characters": 126702
+      "characters": 127626
      },
      {
       "member": "the three handoff entry files with the latest add-commits",
-      "characters": 23232
+      "characters": 35958
      }
     ],
-    "without_the_injected_copy_of_CLAUDE_md": 675380,
-    "with_it": 844562,
+    "without_the_injected_copy_of_CLAUDE_md": 689339,
+    "with_it": 858521,
     "the_injected_copy_added_in_with_it": "CLAUDE.md, the whole file, 169182 characters",
-    "under_ruling_2_of_2026_11_01": 739121,
+    "under_ruling_2_of_2026_11_01": 753080,
     "how_ruling_2_moves_it": "Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_11_01_pruning_iteration_sitting.md`: the injected copy is the read of the six spans, so their file-tool read (105441 characters) leaves the sum and the injected copy stays; the eight-line check's own reads are not sized here",
     "left_out_and_said_so": "the previous report at the portions a dispatch orders, the reading file at its ordered portions, the ruling records a dispatch orders — varies per dispatch and is not sized here"
    },
@@ -1443,7 +1443,7 @@
     "the_members_it_sums": [
      {
       "member": "the ordinary session-start read (imported)",
-      "characters": 238016
+      "characters": 238325
      },
      {
       "member": "entry 118, the bridge-fault section",
@@ -1463,7 +1463,7 @@
      },
      {
       "member": "the three handoff entry files with the latest add-commits",
-      "characters": 23232
+      "characters": 35958
      },
      {
       "member": "the latest report of the arc, whole: cc_report_l3_comparison_tabulation_thirtieth_2026_10_31.md",
@@ -1474,7 +1474,7 @@
       "characters": 151805
      }
     ],
-    "characters": 974684,
+    "characters": 987719,
     "left_out_and_said_so": "the verification reads at the objects (the reading file at its sections, the guard state, the ref files, the away-returns close) — varies per batch and is not sized here"
    }
   }
@@ -3920,7 +3920,7 @@
    ],
    "the_two_denominators": {
     "the_six_session_start_spans": 105441,
-    "the_whole_ordinary_session_start_read": 238016
+    "the_whole_ordinary_session_start_read": 238325
    },
    "how_these_relate_to_the_sums_above": "a marked clause lies INSIDE a sub-block, so these values overlap table 2's sums and are never added to them"
   }

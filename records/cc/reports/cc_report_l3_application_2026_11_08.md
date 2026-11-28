@@ -4,6 +4,8 @@
 > NOT MADE. This report is committed alone. Read §0 first; the sections after it were written before the stop and are
 > kept as written, except where §0 names a sentence they hold that the stop made untrue.**
 
+> **★ RESUMED BY SESSION 41 (2026-11-28), under `records/cc/instructions/cc_instruction_l3_application_session_41_task_5_resume_2026_11_28.md`, keeping the uncommitted work §0 lists; see §10.**
+
 ## 0. The stop
 
 **What happened.** After this report was written (act 7 step 4), act 7 step 5 ran
@@ -477,3 +479,147 @@ tool's appended block), `tools/audit/gen_status_batch_bound.py` (35 added, 5 del
   (departures 3 and 7).
 - **(e) Uncertainty (#24).** This report makes no comparison whose sampling uncertainty applies: every comparison is
   exact equality of hashes, counts or verdicts.
+
+## 10. Session 41 — Task 5 resumed
+
+> **Written 2026-11-28 by Claude Code, session 41 of the L3 application**, under
+> `records/cc/instructions/cc_instruction_l3_application_session_41_task_5_resume_2026_11_28.md` (called **this
+> session's instruction** in this section), on the user's ruling "1" of 2026-11-28 (handoff entry 1284 §0): keep the work
+> session 40 left uncommitted on disk, and resume. Boot tip `a58acdb592e5005266555d7f8b1bd986a7a25b2e`. Documentation and
+> record-keeping only; nothing is ratified and this section decides nothing. **This section is final when written**
+> (this session's instruction §4 act 4). The last regeneration, the away-returns section, the close commit and the
+> end-state commit come after it; they are recorded in the away-returns section and in the closing message to the user,
+> not here. Every line number in this section is a line number of a file as it stands at this session's landing commit,
+> unless the sentence says otherwise.
+
+### 10.1 The first checks (this session's instruction §1), the pin, and the reads
+
+- **Check 0, the banner.** It records *"THE RECORD COMPARISON MADE 2026-11-28"* (this session's instruction, line 3).
+  Held.
+- **Check 1, the tip.** Read with the Read tool: `.git/HEAD` = `ref: refs/heads/master`; `.git/refs/heads/master` and
+  `.git/refs/remotes/origin/master` both = `a58acdb592e5005266555d7f8b1bd986a7a25b2e`. Held.
+- **Check 2, the two instructions.** `git hash-object` on the big dispatch printed
+  `b5274c2c7b82c171e1b44c1ed79635a34877b142`; on session 40's instruction, `0bb3dca8a907656a8651d79cacf3d69fb1a3d210`;
+  and `git ls-tree a58acdb… -- <session 40's instruction>` showed the blob `0bb3dca8a907656a8651d79cacf3d69fb1a3d210`.
+  Held.
+- **Check 3, the pin.** This session's instruction was read from the working tree first (the user's opening line ordered
+  that read as the first tool call), so the pin took its declared-departure route: **declared here — the file was read
+  before it was pinned.** `git hash-object -w` on it printed `ca81a43a259f3d25e1b51460a540bb3bb663ee42`.
+- **Check 4, the nine kept files and the other inputs.**
+  - `git diff --quiet a58acdb… -- records/cowork/handoff/cowork_away_returns.md tools/audit/guard_state.json records/cc/reports/cc_report_l3_application_2026_11_08.md`:
+    exit 0.
+  - `git diff --numstat a58acdb… -- <path>`, one call per path, printed (added, deleted):
+    `tools/audit/gen_status_batch_bound.py` 35 5; `tools/audit/evidence_pin_membership.json` 49 1;
+    `tools/audit/session_start_read_size.json` 8 8; `tools/audit/defense_share.json` 1 1;
+    `tools/audit/l3_outgoing_population.json` 1 1; `tools/audit/per_session_reading.json` 27 27. Each equals the
+    expected count.
+  - Recorded with no expected value, by the same command: `STATUS.md` 8 4; `STATUS_ARCHIVE.md` 10 0;
+    `tools/audit/status_batch_bound.json` 33 11. `python tools/audit/gen_status_batch_bound.py --check`: exit 0.
+  - Grep tool, counting matching lines, on `STATUS.md`: the dated-entry pattern `^\*(Last updated: )?20\d\d-\d\d-\d\d`
+    8; `Same dispatch` 6; `Last updated: ` 1; `cc_instruction_llm_correction_second_resume_2026_11_08.md` 0; a carriage
+    return 0. On `STATUS_ARCHIVE.md`: `★ RULING 4's FORWARD BOUND, 2026-11-28` 1. Each equals the expected count.
+  - `python tools/audit/gen_evidence_pin_membership.py --check`: exit 0.
+  - **Added, unordered (declared at §10.5):** `git diff --quiet a1938ebc… a58acdb… -- <the nine kept files>` gave exit 0,
+    so the two commits between session 40's boot tip and this session's boot tip change none of the nine; the numstat
+    counts above are therefore the same against either tip.
+- **Check 5, the act-6 blob.** `git hash-object -w tools/audit/per_session_reading.json` printed
+  `78186966e1b5bc33a35364c0f4ba6ff04f58f960`.
+- **Check 6, the working tree.** `python tools/audit/changed_paths.py` (output to the scratchpad, read with the file
+  tools) reported 410 changed path records: 10 tracked modifications and 400 untracked paths.
+  - The tracked modifications are exactly the nine kept files and `tools/audit/claude_md_finer_archive.json`. That one is
+    line endings only: `git hash-object` on it printed `1df4f20771b6782cbb965c293db4d445bc7ec892`, and
+    `git ls-tree a58acdb… -- <it>` showed the same blob; it is not a modification and was not landed.
+    `tools/audit/changed_paths_establishment.json` was **not** listed as modified, so the foreseen movement did not
+    appear. No other tracked modification.
+  - The untracked paths are exactly those check 6 expects: this session's instruction; handoff entries 1283, 1284 and
+    1285 (1285 is the entry the banner names); 387 under `scratch_artifacts/` (a Grep count of the tool's output);
+    `Claude outputs/`; `Codex research inventory/`; `docs/research_papers/desktop.ini`;
+    `docs/research_papers/polyph9-release/`; `docs/research_papers/rowe`; the two PDFs under `external resarch summary/`;
+    `tools/audit/derivation_exemplars/l0-l1/bwv1049_03_presto.mscx`; and
+    `records/cc/instructions/cc_instruction_l3_application_session_18_task_3_stretch_9_2026_11_24-1.md`. **No untracked
+    path outside those; no untracked path under `records/cowork/rulings/`; under `records/cowork/handoff/` only the
+    three entries act 1 lands.**
+- **`CLAUDE.md`** was in this session's context as a loaded project memory file; it was not read again.
+- **§2 item 3, the session-start read by size and modification time.** Read with PowerShell `Get-Item` (length, and the
+  last-write time in milliseconds since 1970), as sessions 38 to 40 did; declared at §10.5:
+  - `STATUS.md`: 12041 bytes, 1795856653795 — both equal; read whole under §2 item 7 in any case;
+  - `DECISIONS.md`: 120603 bytes, 1794081137207 — both equal; **not read**;
+  - `tools/audit/nongating_apparatus_rows.json`: 178066 bytes, 1788814584416 — both equal; **not read**.
+- **The big dispatch was not read by the Read tool and not searched** (§2 item 10); only its blob was taken.
+- **The checks immediately before staging act 1.** Check 2 again: `b5274c2c7b82c171e1b44c1ed79635a34877b142`,
+  `0bb3dca8a907656a8651d79cacf3d69fb1a3d210`, and the `git ls-tree` blob `0bb3dca8a907656a8651d79cacf3d69fb1a3d210`.
+  This session's instruction hashed again: `ca81a43a259f3d25e1b51460a540bb3bb663ee42`, equal to the pinned hash.
+  `git diff --quiet a58acdb… -- <the away-returns file, the guard artifact, this report>`: exit 0. All held.
+- **No file was edited before act 1 was committed, pushed and verified.** The first Edit call of this session is the
+  first insertion of act 4.
+
+### 10.2 This session's landing commit
+
+`4a07f73f639ce8edde6d217c4ff60fccea9643cc`, parent `a58acdb592e5005266555d7f8b1bd986a7a25b2e`, subject
+`record: handoff entries 1283 to 1285 and the session 41 instruction of the L3 application landed; Task 5 resumes`.
+Pushed; `.git/refs/heads/master` and `.git/refs/remotes/origin/master` both read equal to it. `git show --stat` shows
+exactly four paths added (782 insertions) and nothing else: this session's instruction and handoff entries 1283, 1284
+and 1285. The nine kept files were not staged.
+
+### 10.3 Acts 2 and 3
+
+- **Act 2.** `python tools/audit/changed_paths.py` again (output to the scratchpad, read with the Grep tool): 406
+  changed path records; the tracked modifications exactly the ten check 6 recorded, nothing added; **no untracked path
+  under `records/cowork/handoff/` or `records/cowork/rulings/`.** Held.
+- **Act 3**, each `--check` in its own call, output to the scratchpad: `tools/audit/gen_session_start_read_size.py`
+  exit 0; `tools/audit/gen_defense_share.py` exit 0; `tools/audit/gen_l3_outgoing_population.py` exit 0. **None was red,
+  so no writing run was made and no artifact was rewritten**; session 40's act-6 artifacts stand as §4.4 records them.
+
+### 10.4 The sentences of §0 that the stop made untrue
+
+The sentences of §0 that the stop made untrue — that the close commit and the end-state commit were not made, that the
+away-returns section was not appended, that E5 is not asserted and no end-state run was made, and that the
+`tools/audit/stretch_verify/` paths are reported at §7 only — **are overtaken by this session as far as the close and the
+end state go**: the last regeneration, the away-returns section, the close commit and the end-state run and commit are
+made after this section, as this session's instruction §4 acts 5 to 9 order. **§0 itself is kept as written (#12).**
+
+### 10.5 Departures from this session's instruction, session 40's instruction or the big dispatch, as far as act 4
+
+1. **The pin was taken after the first read** of this session's instruction (§1 check 3's declared-departure route).
+2. **§2 item 3 was read with PowerShell `Get-Item`, not with the file tools**, which give neither size nor modification
+   time; one call for the three files. Only those two attributes were read, and no file content.
+3. **One added, unordered check** at §1 check 4: `git diff --quiet a1938ebc… a58acdb… -- <the nine kept files>`, a git
+   object query by explicit hash, to establish at the objects what the instruction's note leaves to the numstat runs.
+4. **`python tools/audit/changed_paths.py --help`** was run once, to the scratchpad, to learn the tool's options; and
+   once with `--staged`, unordered, after staging act 1, to see that exactly the four paths were staged. Both are the
+   sanctioned tool; neither reads file content.
+5. **The reads of §2 items 6, 7 and 9 were made in one parallel call, and item 8 after it**, so item 8 was read after
+   item 9 rather than before it. All of §2 was read before act 1.
+6. **Session 40's instruction was read in two consecutive ranges** (lines 1–577, then 578–686), because the Read tool
+   truncates a file of that size; together they are the whole file. The batch report was read whole in one call.
+7. **The checks immediately before staging act 1 were sent as one shell call** carrying five commands, each with its own
+   `echo "exit:$?"`; this session's instruction orders those checks run again but does not order a call per command
+   there.
+8. **The commit message** carries the subject this session's instruction gives, exactly, followed by a `Co-Authored-By`
+   attribution line in the message body, as session 40's commits did (§8 item 9).
+9. **One Grep call was refused** by the tool (a look-ahead pattern it does not support) and was replaced by counting and
+   reading the scratchpad listing; nothing was read by it.
+
+**No recommendation is written anywhere** — not in `STATUS.md`, the tool, this report, the away-returns section or a
+commit message.
+
+### 10.6 The self-check after the work (`CLAUDE.md`, its last section), over this session's diffs as far as act 4
+
+The diffs re-read: this report's two insertions (the pointer line after the banner, and this section). **No artifact was
+rewritten at act 3.** The nine kept files were not edited by this session.
+
+- **(a) The guiding principles.** #12: nothing in this report was deleted or rewritten; the extension is insertions only,
+  and §0 stands as written. #6: this section points at §4.4 and the earlier sections rather than restating them; the
+  numbers it gives are this session's own readings. D-431: no number was written into `STATUS.md`. #14: no behavior
+  change; nothing ratified.
+- **(b) The conventions.** American English in this session's own words; no self-invented labels (every name used is the
+  one the instructions or the files give); the bare words *score*, *key*, *note*, *measure* and *register* do not occur
+  in a non-musical sense in this session's own words — *corpus of scores* and *the decisions register* are the qualified
+  forms used.
+- **(c) Every number and premise cited to its object.** Each hash, count and exit code above is named beside the command
+  or tool that produced it in this session; none is copied from this session's instruction as a result.
+- **(d) The file-tools rule (D-253).** Working-tree files were read with the Read and Grep tools; shell commands were git
+  object queries by explicit hash, the ordered tools, git staging, commit and push, and the size-and-time read of
+  departure 2.
+- **(e) Uncertainty (#24).** This section makes no comparison whose sampling uncertainty applies: every comparison is
+  exact equality of hashes, counts, exit codes or path lists.

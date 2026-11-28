@@ -2495,7 +2495,20 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # language-model correction batches between it and this one wrote no `STATUS.md` entry. Its close entry's
 # `Last updated: ` prefix was MOVED to this batch's close entry in the same edit that wrote this batch's
 # entries, before `--apply` ran. **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431).
-BASE_COMMIT = "468aac14856d2cabf6cc5f9ee58678b7073d5c24"
+#
+# ★★ RE-AIMED 2026-11-28 BY `records/cc/instructions/cc_instruction_l3_application_2026_11_08.md`
+# Task 5 (b). `BASE_COMMIT` was `468aac14856d2cabf6cc5f9ee58678b7073d5c24` and is now
+# `2c7a0d2da51d304202e789c5b5f99f0a6c6784d2`: this batch's Task 4 commit, which is its LAST TASK COMMIT
+# before the close. That commit carries no `STATUS.md` change, so its `STATUS.md` object is the one both refs
+# carried when this batch opened (the blob `2a137cccb050df0dfea6335ae92d5f28b66fdbf6`, at the commit
+# `e855ff2a38883bc453b3f1c83cb20b9fd89cda05` and at `2c7a0d2d…`, established at `git rev-parse` of each, one
+# command per commit) — and it carries the language-model correction second resume batch's entries at the head
+# of the dated entries. The then-previous batch is that batch. Its close entry's `Last updated: ` prefix was
+# MOVED to this batch's close entry in the same edit that wrote this batch's entries, before `--apply` ran.
+# The aiming this replaces is ALREADY the last row of `PREVIOUS_AIMINGS` — that batch recorded its own aiming
+# in its own act — so it is not appended a second time, and this batch's aiming is appended instead.
+# **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431).
+BASE_COMMIT = "2c7a0d2da51d304202e789c5b5f99f0a6c6784d2"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -2731,7 +2744,10 @@ BASE_COMMIT = "468aac14856d2cabf6cc5f9ee58678b7073d5c24"
 # `cc_instruction_records_landing_2026_11_07.md` was the executing act; it is re-stated here
 # for `cc_instruction_llm_correction_second_resume_2026_11_08.md`, whose then-previous batch is that one — the
 # two stopped language-model correction batches between them wrote no `STATUS.md` entry.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_records_landing_2026_11_07.md"
+# *(`PREVIOUS_BATCH_DISPATCH` read "cc_instruction_records_landing_2026_11_07.md" while
+# `cc_instruction_llm_correction_second_resume_2026_11_08.md` was the executing act; it is re-stated here
+# for `cc_instruction_l3_application_2026_11_08.md`, whose then-previous batch is that one.)*
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_llm_correction_second_resume_2026_11_08.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -3024,8 +3040,13 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_records_landing_2026_11_07.md"
 # while that batch was the executing act; both are re-stated here for
 # `cc_instruction_llm_correction_second_resume_2026_11_08.md`, dated 2026-11-08 in its file name, whose move
 # ran on 2026-11-08, so the two dates agree and `ACT_DATE` takes that value.)*
-ACT_DATE = "2026-11-08"
-DISPATCH = "cc_instruction_llm_correction_second_resume_2026_11_08.md"
+# *(`ACT_DATE` read "2026-11-08" and `DISPATCH` `cc_instruction_llm_correction_second_resume_2026_11_08.md`
+# while that batch was the executing act; both are re-stated here for
+# `cc_instruction_l3_application_2026_11_08.md`, dated 2026-11-08 in its file name, whose move ran on
+# 2026-11-28, so the two dates differ and `ACT_DATE` takes the day the move ran, as that dispatch's Task 5
+# item 1 (b) orders.)*
+ACT_DATE = "2026-11-28"
+DISPATCH = "cc_instruction_l3_application_2026_11_08.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -3291,7 +3312,12 @@ DISPATCH = "cc_instruction_llm_correction_second_resume_2026_11_08.md"
 # `cc_instruction_pruning_rulings_reexecution_2026_11_01.md` is the executing act, that dispatch ordering both
 # halves of the close — this batch's own entries at its 3(a) and this move at its 3(b) — inside its own Task 3,
 # which that dispatch's heading *"Task 3 — the close"* names in those words.)*
-TASK = "Task 3"
+# *(`TASK` read "Task 3" while `cc_instruction_llm_correction_second_resume_2026_11_08.md` was the executing
+# act, and names Task 5 while `cc_instruction_l3_application_2026_11_08.md` is the executing act, that
+# dispatch ordering both halves of the close — this batch's own entries at its item 1 (a) and this move at its
+# items 1 (b) and 1 (c) — inside its own Task 5, which that dispatch's heading *"Task 5 — the close"* names in
+# those words.)*
+TASK = "Task 5"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
 #                 moved in the same act that writes this batch's own entries.
@@ -3967,6 +3993,10 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_llm_correction_second_resume_2026_11_08.md, Task 3",
      "base_commit": "468aac14856d2cabf6cc5f9ee58678b7073d5c24",
      "the_then_previous_batch": "cc_instruction_records_landing_2026_11_07.md",
+     "the_kind_of_move": "ordinary"},
+    {"executing_act": "cc_instruction_l3_application_2026_11_08.md, Task 5",
+     "base_commit": "2c7a0d2da51d304202e789c5b5f99f0a6c6784d2",
+     "the_then_previous_batch": "cc_instruction_llm_correction_second_resume_2026_11_08.md",
      "the_kind_of_move": "ordinary"},
 ]
 

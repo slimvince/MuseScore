@@ -30866,3 +30866,367 @@ batch's end state did.)*
 
 *Provenance: CC, 2026-11-08, appended in the one further commit after the close commit
 `6b65a82a45e9053ba3ddf6c3ec76a3938272e41b`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 APPLICATION ACT: THE DERIVED L3 SPECIFICATION AS AMENDED WRITTEN, THE DERIVATION BANNERED, THE RULED AND RECORDED ROWS RE-MARKED, THE CHARTER AND S-50 OF THE DERIVED L0/L1 SPECIFICATION AMENDED WHERE THE RECORDS GIVE THE WORDS, NOTHING RATIFIED
+
+**The whole of this batch's close is the report**, `records/cc/reports/cc_report_l3_application_2026_11_08.md` (called
+**the batch report** below), carried by the close commit; this section points at it and at the session reports
+`records/cc/reports/cc_report_l3_application_session_<N>_*.md` (N = 2 to 39; session 1 wrote no report), and does not
+restate them.
+
+### The stop and the resumption
+
+- **The stop.** Session 40 stopped at its instruction's §5 act 7 step 5, because a handoff entry (1283) was written into
+  `records/cowork/handoff/` while it ran, and `tools/audit/gen_per_session_reading.py` STOPs on a handoff entry with no
+  add-commit (the batch report's §0).
+- **The resumption.** Session 41 resumed on the user's ruling "1" of 2026-11-28 (handoff entry 1284 §0), keeping the
+  work session 40 left uncommitted on disk, under
+  `records/cc/instructions/cc_instruction_l3_application_session_41_task_5_resume_2026_11_28.md` (the batch report's
+  §10).
+
+### The guard runs
+
+- **The start state** is session 40's act 2, at the tree session 40's landing commit
+  `3f7c9faea48fd706372121db2ec757d6a9597820` left, before any edit, as the batch report's §3 records it:
+  `python tools/audit/gen_guard_state.py --check`, last line *"83 guard(s) run, 15 failing, 4 not run, 20 historical
+  record(s)"*, no STOP; the failing set the thirteen of the big dispatch's declared start state plus
+  `gen_evidence_pin_membership.py --check` and `gen_per_session_reading.py --check`; none of the three admitted tools
+  (`gen_session_start_read_size.py`, `gen_defense_share.py`, `gen_l3_outgoing_population.py`) red. Against the
+  committed `tools/audit/guard_state.json`, exactly those two verdicts differ, each PASS → FAIL.
+- **Session 1's guard-set run** is **[relayed]** in handoff entry 1184 §2 items 1 and 2: fifteen failing, the same two
+  further reds beside the thirteen (session 40's instruction §4 item 3 relays it so; not re-read here).
+- **The end state** is appended by the one further commit, below this section.
+
+### Every commit of the batch, up to and including session 41's landing commit
+
+`git log --reverse --format="%H %ci %s" e855ff2a38883bc453b3f1c83cb20b9fd89cda05..4a07f73f639ce8edde6d217c4ff60fccea9643cc`,
+whole (118 commits). The close commit and the end-state commit follow it; the end-state portion names the close commit.
+
+- `cbde76fd78a244540df64895191a511df186cc29` 2026-11-22 20:01:13 +0100 record: the L3 family records of 2026-11-08 and the family surfaces, the carry list, the application surface, the release records and surfaces of 2026-11-09 onward and entries 586 to 1183 landed with the L3 application dispatch and its session 1 instruction; the application act follows
+- `95286f787d8b1a54ddcadd63ecdff84467497157` 2026-11-22 20:38:13 +0100 record: handoff entry 1184 and the session 2 instruction of the L3 application landed; Task 1 stretch 1 follows
+- `9987d3c91ad80a59743759dc24e6b87ed098c5c7` 2026-11-22 20:45:37 +0100 application L3, Task 1 stretch 1 of 4 (§L.1 to §L.15): the derived specification as amended by the first fifteen L3 family ruling records written beside the derivation, every amendment citing its record, not ratified
+- `cda8d48206f2b4d3e7bea168ed6a0f9ad7bc69c2` 2026-11-22 20:48:00 +0100 report: session 2 of the L3 application, Task 1 stretch 1 (§L.1 to §L.15) written; stretch 2 follows in a new session
+- `85d4e678ffec05274b4593f1878d57cecda54651` 2026-11-22 21:11:19 +0100 record: handoff entry 1185 and the session 3 instruction of the L3 application landed; Task 1 stretch 2 follows
+- `fbe355032fdca34c5f6246004c37ab30fc8581cd` 2026-11-22 21:19:18 +0100 application L3, Task 1 stretch 2 (§L.16 to §L.25): the derived specification as amended by ten more L3 family ruling records, every amendment citing its record, not ratified
+- `0b56da6ad42e6e0dd5b6ec41d15f87a299db7b65` 2026-11-22 21:21:26 +0100 report: session 3 of the L3 application, Task 1 stretch 2 (§L.16 to §L.25) written; stretch 3 follows in a new session
+- `49d32b25479f792571688c3658704aa8e28d935e` 2026-11-22 21:46:11 +0100 record: handoff entry 1186 and the session 4 instruction of the L3 application landed; Task 1 stretch 3 follows
+- `ea784008853a0e02e942f3128a0193c8ad3f597c` 2026-11-22 21:53:03 +0100 application L3, Task 1 stretch 3 (§L.26 to §L.33): the derived specification as amended by eight more L3 family ruling records, every amendment citing its record, not ratified
+- `13d0e22641b61ec6de061aa585be73f26318870b` 2026-11-22 21:54:57 +0100 report: session 4 of the L3 application, Task 1 stretch 3 (§L.26 to §L.33) written; stretch 4 follows in a new session
+- `fc2e099aa79cef0131789e6bffdb78654abdc79b` 2026-11-22 22:16:34 +0100 record: handoff entry 1187 and the session 5 instruction of the L3 application landed; Task 1 stretch 4 follows
+- `9c26668a8885cdc1f56123624beed4e0b2413f13` 2026-11-22 22:18:34 +0100 application L3, Task 1 stretch 4 (§L.34 to §L.40): the derived specification as amended by seven more L3 family ruling records, every amendment citing its record, not ratified
+- `93d2fad4f8406dee8975d545523ae8e5fd5f2766` 2026-11-22 22:20:06 +0100 report: session 5 of the L3 application, Task 1 stretch 4 (§L.34 to §L.40) written; stretch 5 follows in a new session
+- `70ce8ea0cbad998e95cec15ab58f6d8953efd529` 2026-11-22 22:44:25 +0100 record: handoff entry 1188 and the session 6 instruction of the L3 application landed; Task 1 stretch 5 follows
+- `3c79accb64f91eef702945d85b8b40132ee96e7c` 2026-11-22 22:46:50 +0100 application L3, Task 1 stretch 5 (§L.41 to §L.48): the derived specification as amended by eight more L3 family ruling records, every amendment citing its record, not ratified
+- `dd9625b95721901ad1f929a40a755522993b34a2` 2026-11-22 22:48:14 +0100 report: session 6 of the L3 application, Task 1 stretch 5 (§L.41 to §L.48) written; stretch 6 follows in a new session
+- `c011244275e9df9916b90241fc277816da501a22` 2026-11-22 23:03:35 +0100 record: handoff entry 1189 and the session 7 instruction of the L3 application landed; Task 1 stretch 6 follows
+- `0241e328f773cafe7ebfeb83b634f26838a8c268` 2026-11-22 23:04:52 +0100 application L3, Task 1 stretch 6 (§L.49 to §L.55, the last): the derived specification as amended by the last seven L3 family ruling records, every amendment citing its record, not ratified
+- `ae8fa501c2d4517f6930ad406030f2119b5f161c` 2026-11-22 23:06:11 +0100 report: session 7 of the L3 application, Task 1 stretch 6 (§L.49 to §L.55) written; the full Task 1 check follows in a new session
+- `0a66b83a7251aadf79bddfc4ce0e878aa43f17de` 2026-11-23 09:17:14 +0100 record: handoff entry 1190 and the session 8 instruction of the L3 application landed; the full Task 1 check follows
+- `0f26ac1b9d40a45d6e473927b5b672122f2e5761` 2026-11-23 09:23:51 +0100 report: session 8 of the L3 application, the full Task 1 check (Task 1 (e) and E1) written; Task 2 follows in a new session
+- `839c68182386e13d900f84c3911c7a430940e148` 2026-11-23 09:49:38 +0100 record: handoff entries 1191 and 1192 and the session 9 instruction of the L3 application landed; Task 2 follows
+- `4b6dc3bd4bb71e5dc7bc62b6a251af4ae9630774` 2026-11-23 09:50:30 +0100 application L3: the derivation re-bannered as the record of the blind act under D-674, body untouched
+- `905808a7a8b8b8f6e1b609273b19b0dc1a06f76f` 2026-11-23 09:52:30 +0100 report: session 9 of the L3 application, Task 2 (the derivation's banner) done; one line of session 8's report corrected, its former wording kept; Task 3 follows in a new session
+- `2ee977c48834131aa99213836106dc57047ecad2` 2026-11-23 11:33:11 +0100 record: handoff entries 1193 to 1197 and the session 10 instruction of the L3 application landed; Task 3 stretch 1 follows
+- `3df4da39120026195e5f58fa6c9e2ea3d3747ef5` 2026-11-23 11:45:38 +0100 application L3, Task 3 stretch 1 (§L.1 to §L.4): the rows placed by the first four ledger entries re-marked in the reading file, three transfer-list entries added and the file's state sentences written, proposals elsewhere standing
+- `73d26f37239cd199611026101552ccc9d2e8581c` 2026-11-23 11:47:38 +0100 report: session 10 of the L3 application, Task 3 stretch 1 (§L.1 to §L.4) written; stretch 2 follows in a new session
+- `b01263c5e5e4444e9532033984f476cdb979d33a` 2026-11-23 13:18:28 +0100 record: handoff entries 1198 and 1199 and the session 11 instruction of the L3 application landed; Task 3 stretch 2 follows
+- `402ed789f5caba5de5ca64798b7ecf3d9c599212` 2026-11-23 13:28:26 +0100 application L3, Task 3 stretch 2 (§L.5 to §L.12): the rows placed by ledger entries five to twelve re-marked in the reading file, one transfer-list entry added and the in-progress line brought forward, proposals elsewhere standing
+- `760c3cfb713be89aeb679966742ba0f1c9eae843` 2026-11-23 13:31:25 +0100 report: session 11 of the L3 application, Task 3 stretch 2 (§L.5 to §L.12) written; stretch 3 follows in a new session
+- `e514d90343100f11b0b20f0616940947d80226f4` 2026-11-23 14:26:32 +0100 record: handoff entries 1200 and 1201 and the session 12 instruction of the L3 application landed; Task 3 stretch 3 follows
+- `6d26bee4cff5f93d553ea16dbc9e39f122383293` 2026-11-23 14:37:30 +0100 application L3, Task 3 stretch 3 (§L.13 to §L.20): the rows placed by ledger entries thirteen to twenty re-marked in the reading file, the first recorded lines among them, one transfer-list entry, the Row 7.67 line and five audit questions added, two labels of stretch 2 corrected and the in-progress line brought forward, proposals elsewhere standing
+- `5ae0c46774f53e67b308a14df515561b89dcebd1` 2026-11-23 14:39:40 +0100 report: session 12 of the L3 application, Task 3 stretch 3 (§L.13 to §L.20) written; stretch 4 follows in a new session
+- `380b906fbc323586aa2a7579d45bd52e5d68cc3a` 2026-11-23 15:45:05 +0100 record: handoff entries 1202 and 1203 and the session 13 instruction of the L3 application landed; Task 3 stretch 4 follows
+- `857b2fa64fe1f57cd0ee649f95885b3e81ffd9a0` 2026-11-23 15:49:53 +0100 application L3, Task 3 stretch 4 (§L.21 and §L.22): Row 7.67's held line and its transfer-list line written, the rows of the first and second L3-S38 cuts ruled HISTORICAL re-marked in the reading file, four LEAVES L3 lines added to the transfer list and the in-progress line brought forward, proposals elsewhere standing
+- `d56ccc6ee74fa9a5327a5076cc97b33104ecb704` 2026-11-23 15:51:51 +0100 report: session 13 of the L3 application, Task 3 stretch 4 (§L.21 and §L.22) written; stretch 5 follows in a new session
+- `0ed08e109c8baeb206f285a874ab14685d79688b` 2026-11-23 17:12:29 +0100 record: handoff entries 1204 and 1205 and the session 14 instruction of the L3 application landed; Task 3 stretch 5 follows
+- `b897b16ccac7db11954a3e187a3cb4acc361d39e` 2026-11-23 21:26:51 +0100 application L3, Task 3 stretch 5 (§L.23): the rows of the L3-S38 ratification re-marked in the reading file, twenty-two LEAVES L3 lines added to the transfer list, nine audit questions and one NOT QUARANTINED line added, and the in-progress line brought forward, proposals elsewhere standing
+- `90cddaf575ac83ec444bb637050726eab34a24c2` 2026-11-23 21:29:51 +0100 report: session 14 of the L3 application, Task 3 stretch 5 (§L.23) written; stretch 6 follows in a new session
+- `a04e46f299c55b3b7438eb8a04394dce8b9cd21b` 2026-11-23 22:08:18 +0100 record: handoff entries 1206 and 1207 and the session 15 instruction of the L3 application landed; Task 3 stretch 6 follows
+- `4ab7231b3091933d087f50b089cb361f7fecd22a` 2026-11-23 22:08:57 +0100 application L3, Task 3 stretch 6 (§L.24): Row 37.18 re-marked HISTORICAL in the reading file under the L3 fit-and-rest ratification, and the in-progress line brought forward, proposals elsewhere standing
+- `3d1a95a119069b208acfcb0c68c355773446d9f1` 2026-11-23 22:10:27 +0100 report: session 15 of the L3 application, Task 3 stretch 6 (§L.24) written; stretch 7 follows in a new session
+- `4b4b4e3777bd8ececcfee02797b21a8d55e64c1c` 2026-11-23 23:04:36 +0100 record: handoff entries 1208 and 1209 and the session 16 instruction of the L3 application landed; Task 3 stretch 7 follows
+- `a3624335004095deb1cc663749b65d8e84adcdb6` 2026-11-23 23:07:49 +0100 application L3, Task 3 stretch 7 (§L.25 to §L.28): the 54 row-parts of the four item-13 cuts re-marked ADOPTED — proposed in the reading file under their ratifications, and the in-progress line brought forward, proposals elsewhere standing
+- `8771c9b88e6c2434698fbf4c9ce523694e7cd506` 2026-11-23 23:09:44 +0100 report: session 16 of the L3 application, Task 3 stretch 7 (§L.25 to §L.28) written; stretch 8 follows in a new session
+- `20bb213f0d20e43ef9a8138da38b05cf6cf680e7` 2026-11-24 00:29:14 +0100 record: handoff entries 1210, 1211, 1212 and 1213 and the session 17 instruction of the L3 application landed; Task 3 stretch 8 follows
+- `e61ad38abad3fcf6637f668c55defe0aef5fe3e6` 2026-11-24 00:30:49 +0100 application L3, Task 3 stretch 8 (§L.29 to §L.30): the 19 lines of the catalog's lead row-parts written in the reading file under their ratification, four RELOCATED row-parts appended to the transfer list, and the in-progress line brought forward, proposals elsewhere standing
+- `03a15953c701aeaece39a2932f8132719bc2c465` 2026-11-24 00:32:46 +0100 report: session 17 of the L3 application, Task 3 stretch 8 (§L.29 to §L.30) written; stretch 9 follows in a new session
+- `93695bde8e80b844eba3b8af1ed377536bd824d8` 2026-11-24 08:39:59 +0100 record: handoff entries 1214, 1215, 1216 and 1217 and the session 18 instruction of the L3 application landed; Task 3 stretch 9 follows
+- `51543b657ed1d3777f25812abede359615816369` 2026-11-24 08:41:11 +0100 application L3, Task 3 stretch 9 (§L.31): the 11 lines of the catalog recognition's part 1 row-parts written in the reading file under their ratification, two RELOCATED halves appended to the transfer list, and the in-progress line brought forward, proposals elsewhere standing
+- `f1e7c9144b9f78b0287f12a5573cb8523263fd6d` 2026-11-24 08:42:56 +0100 report: session 18 of the L3 application, Task 3 stretch 9 (§L.31) written; stretch 10 follows in a new session
+- `c0153261addee30e924b7da13774fc0c905ce539` 2026-11-24 09:31:29 +0100 record: handoff entries 1218, 1219 and 1220 and the session 19 instruction of the L3 application landed; Task 3 stretch 10 follows
+- `76b9919c2bba21fd7e8db4c6969f8ac5d7b75c13` 2026-11-24 09:33:22 +0100 application L3, Task 3 stretch 10 (§L.32): the 14 lines of the catalog recognition's part 2 row-parts written in the reading file under their ratification, four RELOCATED parts appended to the transfer list, and the in-progress line brought forward, proposals elsewhere standing
+- `9037f1b24cc6867acd57fcdf8f4b759b2b5b7953` 2026-11-24 09:35:42 +0100 report: session 19 of the L3 application, Task 3 stretch 10 (§L.32) written; stretch 11 follows in a new session
+- `de08becc4df69be519c4c005edad0ed8719cbde1` 2026-11-24 16:18:22 +0100 record: handoff entries 1221 and 1222 and the session 20 instruction of the L3 application landed; Task 3 stretch 11 follows
+- `824f968ef3772106a0106d2a31b05e5429e46c90` 2026-11-24 16:20:03 +0100 application L3, Task 3 stretch 11 (§L.33 and §L.34): the 10 lines of the catalog's further rows and substitution part 1 row-parts written in the reading file under their ratifications, and the in-progress line brought forward, proposals elsewhere standing
+- `22990f339c12a1e832151b9eeba3c2c99e8188bd` 2026-11-24 16:21:49 +0100 report: session 20 of the L3 application, Task 3 stretch 11 (§L.33 and §L.34) written; stretch 12 follows in a new session
+- `b5c145bb0f63dcfcaab22e99b277f4daf66a18db` 2026-11-24 17:04:44 +0100 record: handoff entries 1223 and 1224 and the session 21 instruction of the L3 application landed; Task 3 stretch 12 follows
+- `b3cec9999366ec330d2c7016f83115202cf8fe54` 2026-11-24 17:05:59 +0100 application L3, Task 3 stretch 12 (§L.35): the 6 lines of the catalog's substitution part 2 row-parts written in the reading file under their ratification, Row 57.118's voice-leading portion added to the transfer list, and the in-progress line brought forward, proposals elsewhere standing
+- `ad8f3ddda9a5b606e702433a7addd9e937fd8d5f` 2026-11-24 17:07:41 +0100 report: session 21 of the L3 application, Task 3 stretch 12 (§L.35) written; stretch 13 follows in a new session
+- `91026b9a2faf7c9a2f2fcd453430823a141f8b21` 2026-11-24 17:41:51 +0100 record: handoff entries 1225, 1226 and 1227 and the session 22 instruction of the L3 application landed; Task 3 stretch 13 follows
+- `2c21e606b3864f2f681b46f8d3fc3185f2973b37` 2026-11-24 17:43:36 +0100 application L3, Task 3 stretch 13 (§L.36): the 23 lines of the idiom-tags part 1 row-parts written in the reading file under their ratification, five RELOCATED parts added to the transfer list, and the in-progress line brought forward, proposals elsewhere standing
+- `8beb212a03499965cef2e57c725c075c99193f2f` 2026-11-24 17:45:33 +0100 report: session 22 of the L3 application, Task 3 stretch 13 (§L.36) written; stretch 14 follows in a new session
+- `0f6624c2bcee058fb9b26a3b405fae32ea83143f` 2026-11-24 18:12:15 +0100 record: handoff entries 1228, 1229 and 1230 and the session 23 instruction of the L3 application landed; Task 3 stretch 14 follows
+- `865a4c24a0394e656e40efd246aab1b858690970` 2026-11-24 18:13:41 +0100 application L3, Task 3 stretch 14 (§L.37 and §L.38): the 17 lines of the pairwise-grammar row-parts written in the reading file under their ratification, the 21 idiom-tags part 2 row-parts given no line now, and the in-progress line brought forward, proposals elsewhere standing
+- `eb6b94a172aaa1a87299c2b19639f5395ff24827` 2026-11-24 18:15:24 +0100 report: session 23 of the L3 application, Task 3 stretch 14 (§L.37 and §L.38) written; stretch 15 follows in a new session
+- `efa1bf4d0f0dbbc9ccd9079cdc26e62bd2d1e758` 2026-11-24 18:46:48 +0100 record: handoff entries 1231 and 1232 and the session 24 instruction of the L3 application landed; Task 3 stretch 15 follows
+- `b8bd4bddf4d1ac0fa1632ef19d049f76860e30e2` 2026-11-24 18:48:09 +0100 application L3, Task 3 stretch 15 (§L.39): the 13 lines of the suggestion-tool and cadential-entries row-parts written in the reading file under their ratification, seven of them placements outside every charter, §L.6's line at Row 46.14 given its part on the user's ruling, and the in-progress line brought forward, proposals elsewhere standing
+- `75955ee9d3da2fbeba04742375e3c9364e374106` 2026-11-24 18:49:43 +0100 report: session 24 of the L3 application, Task 3 stretch 15 (§L.39) written; stretch 16 follows in a new session
+- `0a64959261f45cbf218a893144edeb2fed32128c` 2026-11-24 19:29:59 +0100 record: handoff entries 1233 and 1234 and the session 25 instruction of the L3 application landed; Task 3 stretch 16 follows
+- `b07b82f5f60109d4ad5f250bca0074826580902a` 2026-11-24 20:01:02 +0100 record: handoff entries 1235 and 1236 and the session 25 resume instruction of the L3 application landed; the act-1 commit 0a64959 goes out with them; Task 3 stretch 16 follows
+- `2a723bba1f42f01fa895da7fd92ab1df420e37f9` 2026-11-24 20:02:36 +0100 application L3, Task 3 stretch 16 (§L.40): the 17 lines of the display-family row-parts written in the reading file under their ratification, thirteen of them placements outside every charter, and the in-progress line brought forward, proposals elsewhere standing
+- `693c798309103deec5b443219375f6545b042e6b` 2026-11-24 20:04:19 +0100 report: session 25 of the L3 application, Task 3 stretch 16 (§L.40) written; stretch 17 follows in a new session
+- `9bb2a6b4a7a8e99ccb9dd4ca0d8dc520926cde08` 2026-11-24 20:45:58 +0100 record: handoff entries 1237 and 1238 and the session 26 instruction of the L3 application landed; Task 3 stretch 17 follows
+- `0ea1a86b08a056d025bd3445d65249d46ee70395` 2026-11-24 20:47:49 +0100 application L3, Task 3 stretch 17 (§L.41): the 19 lines of the code-interfaces row-parts written in the reading file under their ratification, twelve of them placements outside every charter, two transfer-list entries appended, and the in-progress line brought forward, proposals elsewhere standing
+- `4edf4b9553b542a6e146302101d49b02bfbd8fe3` 2026-11-24 20:49:35 +0100 report: session 26 of the L3 application, Task 3 stretch 17 (§L.41) written; stretch 18 follows in a new session
+- `e498e84b2510ba040975b64d35738a7dd651b5df` 2026-11-24 22:12:25 +0100 record: handoff entries 1239 and 1240 and the session 27 instruction of the L3 application landed; Task 3 stretch 18 follows
+- `1e18431dc71d7fe0cf2c0a6030f32cebde282a83` 2026-11-24 22:13:40 +0100 application L3, Task 3 stretch 18 (§L.42): the 11 lines of the modal-counts row-parts written in the reading file under their ratification, ten ADOPTED by the new L3 publication and one a placement outside every charter, and the in-progress line brought forward, proposals elsewhere standing
+- `d3df2b7eefb00758291a8d1161027764ca7491ed` 2026-11-24 22:15:34 +0100 report: session 27 of the L3 application, Task 3 stretch 18 (§L.42) written; stretch 19 follows in a new session
+- `53b3f2db77af5d31562f29ffeea215ca5a755aad` 2026-11-25 10:44:37 +0100 record: handoff entries 1241 to 1243, the session 28 instruction of the L3 application and the stretch verification scripts landed; Task 3 stretch 19 follows
+- `b9f7c5e547ee690a2ecd1db472ccccaabedeb2e6` 2026-11-25 10:46:13 +0100 application L3, Task 3 stretch 19 (§L.43): the 12 lines of the decomposition-rules row-parts written in the reading file under their ratification, three HISTORICAL and nine placements outside every charter carried for the framework, and the in-progress line brought forward, proposals elsewhere standing
+- `9da280ac25387bf03ad5094f60ab7507411f967f` 2026-11-25 10:47:49 +0100 report: session 28 of the L3 application, Task 3 stretch 19 (§L.43) written; stretch 20 follows in a new session
+- `8dfffc59c9bbaa4df18e9f92df4f3369cfa5f834` 2026-11-25 13:07:44 +0100 record: handoff entries 1244 to 1246 and the session 29 instruction of the L3 application landed, and the stretch verification scripts' README banner brought up to date after their establishment; Task 3 stretch 20 follows
+- `23249f748218582072ae83a5434f58ec8b100144` 2026-11-25 13:08:45 +0100 application L3, Task 3 stretch 20 (§L.44): the 10 lines of the presets-scope row-parts written in the reading file under their ratification, eight RELOCATED and two HISTORICAL, the transfer list's heading for the style system made with its seven entries and Row 32.1's clause entered under the uncertainty surface, and the in-progress line brought forward, proposals elsewhere standing
+- `557849182df3363f38a356de46654aa5bc45355a` 2026-11-25 13:10:49 +0100 report: session 29 of the L3 application, Task 3 stretch 20 (§L.44) written; stretch 21 follows in a new session
+- `5f02d6c1d4c2a93c4e3f8fa6287da2ccc52d2845` 2026-11-25 14:11:49 +0100 record: handoff entries 1247 and 1248 and the session 30 instruction of the L3 application landed; Task 3 stretch 21 follows
+- `d373bbe9370c0df45c51c23172f518d9e9943c53` 2026-11-25 14:12:54 +0100 application L3, Task 3 stretch 21 (§L.45): the 5 lines of the language-model row-parts written in the reading file under their ratification, all HISTORICAL as a superseded plan, Row 57.124's line naming both its claims, and the in-progress line brought forward, proposals elsewhere standing
+- `371fe649373d5003dcc4b67c4291cf1ed9ed06b2` 2026-11-25 14:14:12 +0100 report: session 30 of the L3 application, Task 3 stretch 21 (§L.45) written; stretch 22 follows in a new session
+- `7539cb4f8d60d648ad68fb653240630c03337780` 2026-11-25 15:10:55 +0100 record: handoff entries 1249 and 1250 and the session 31 instruction of the L3 application landed; Task 3 stretch 22 follows
+- `b2f5fe446b79a9cc903b52b7dbd2f021e3e7600a` 2026-11-25 15:12:13 +0100 application L3, Task 3 stretch 22 (§L.46): the 6 lines of the phrase-end evidence row-parts written in the reading file under their ratification, two HISTORICAL as decided against, one ADOPTED carried, two RELOCATED with their transfer-list entries, one HISTORICAL as a status, and the in-progress line brought forward, proposals elsewhere standing
+- `4fa74ea2094c1f8c353d19b7fe35fe059e364ccd` 2026-11-25 15:14:04 +0100 report: session 31 of the L3 application, Task 3 stretch 22 (§L.46) written; stretch 23 follows in a new session
+- `bffefbdd618470cda427a33f2c60d70ccaba837a` 2026-11-27 17:19:27 +0100 record: handoff entries 1251 and 1252 and the session 32 instruction of the L3 application landed; Task 3 stretch 23 follows
+- `4fd41da3e69726aa105e5a3264f29793ff62adcc` 2026-11-27 17:21:13 +0100 application L3, Task 3 stretch 23 (§L.47 and §L.48): the 3 lines of the prolongational-reduction and chord-span pair row-parts written in the reading file under their ratification, one RELOCATED to L2 with its transfer-list entry, two HISTORICAL as decided against, three rows held by ruling with no line, and the in-progress line brought forward, proposals elsewhere standing
+- `23cf4329ea23164a507411a563f5fca9cdc2053a` 2026-11-27 17:23:14 +0100 report: session 32 of the L3 application, Task 3 stretch 23 (§L.47 and §L.48) written; stretch 24 follows in a new session
+- `70f94eb3e28e05923c8dd8d4a54001722fe694a7` 2026-11-27 18:12:10 +0100 record: handoff entries 1253, 1254 and 1255 and the session 33 instruction of the L3 application landed; Task 3 stretch 24 follows
+- `9322716cde8ea1d5836a8770159c241b0989a215` 2026-11-27 18:13:42 +0100 application L3, Task 3 stretch 24 (§L.49): the 2 lines of the remaining cadence-type row-parts written in the reading file under their ratification, both HISTORICAL as decided against in part, and the in-progress line brought forward, proposals elsewhere standing
+- `4df88baa673afe9d8225ec270e555474c4f86553` 2026-11-27 18:15:25 +0100 report: session 33 of the L3 application, Task 3 stretch 24 (§L.49) written; stretch 25 follows in a new session
+- `373a01571d6f0e29b6a35b0f722ef6cfba9fd7f1` 2026-11-27 18:40:11 +0100 record: handoff entries 1256 and 1257 and the session 34 instruction of the L3 application landed; Task 3 stretch 25 follows
+- `8b867551cf4e14480d510fa1ae330c3b57555188` 2026-11-27 18:41:39 +0100 application L3, Task 3 stretch 25 (§L.50): the line of the bass-role row written in the reading file under its ratification, ADOPTED — proposed with the record's sentence, and the in-progress line brought forward, proposals elsewhere standing
+- `89e107d35fc589f47da20cdf2821187a36e5014d` 2026-11-27 18:43:01 +0100 report: session 34 of the L3 application, Task 3 stretch 25 (§L.50) written; stretch 26 follows in a new session
+- `d164502e2fcc5411b4b7eddf52af8c595ee13146` 2026-11-27 19:51:13 +0100 record: handoff entries 1258, 1259 and 1260 and the session 35 instruction of the L3 application landed; Task 3 stretch 26 follows
+- `383c878a14ce96cea77ded9e850001c750498386` 2026-11-27 19:53:05 +0100 application L3, Task 3 stretch 26 (§L.51): the lines of the two single rows written in the reading file under their ratification, Row 7.199 QUARANTINED with its audit question added to §11 and Row 12.35 (iii) ADOPTED — proposed, and the in-progress line brought forward, proposals elsewhere standing
+- `2226b2476eb0a674ae87930ae2a02951a0d3ae31` 2026-11-27 19:54:41 +0100 report: session 35 of the L3 application, Task 3 stretch 26 (§L.51) written; stretch 27 follows in a new session
+- `6e27bb144973f39da9a6b53dc20be41bcf662732` 2026-11-27 21:01:29 +0100 record: handoff entries 1261 to 1266 and the session 36 instruction of the L3 application landed; Task 3 stretch 27 follows
+- `3b24b564bcca78a76ddbc67e05845cab2e5e606e` 2026-11-27 21:05:36 +0100 application L3, Task 3 stretch 27 (§L.52): the lines of the step-one remainder record written in the reading file under its ratification, 39 row-parts HISTORICAL as reached by phrase-ends Ruling 1 and the seven placed by a record's own reasoning ratified as the records place them, and the in-progress line brought forward, proposals elsewhere standing
+- `7363eb60955ad022de68542f76d9c1bdc45313fe` 2026-11-27 21:07:41 +0100 report: session 36 of the L3 application, Task 3 stretch 27 (§L.52) written; stretch 28 follows in a new session
+- `56597086db4baaa98f6b839d2b5d0e42c11a1f39` 2026-11-27 21:39:17 +0100 record: handoff entries 1267 to 1269 and the session 37 instruction of the L3 application landed; Task 3 stretch 28 follows
+- `5f794a7f1226781f9d6d30dea22617862a8e750f` 2026-11-27 21:41:42 +0100 application L3, Task 3 stretch 28 (§L.53): the lines of the record-placed rows record written in the reading file under its ratification, the six row-parts ratified as their records place them and the three travelling rows QUARANTINED following Row 8.31 (i) with their audit questions at §11, and the in-progress line brought forward, proposals elsewhere standing
+- `0ae03b7667245d453d2f845684980a30b48e12e0` 2026-11-27 21:43:30 +0100 report: session 37 of the L3 application, Task 3 stretch 28 (§L.53) written; stretch 29 follows in a new session
+- `524f0139c04d5c951edd125512861c400d1018cd` 2026-11-27 22:22:44 +0100 record: handoff entries 1270 to 1273 and the session 38 instruction of the L3 application landed; Task 3 stretch 29 follows
+- `8ce907b9962149eb8c7cdff5a8b1610a966d77cb` 2026-11-27 22:26:44 +0100 application L3, Task 3 stretch 29 (§L.54 and §L.55): the last two ledger entries applied with no row line, the ruled distribution §13a derived and written, the sentence beneath §13's heading added and the in-progress line removed; Task 3 complete, proposals elsewhere standing
+- `b24195e1b824fae274451ab697e33aa39656c83c` 2026-11-27 22:28:42 +0100 report: session 38 of the L3 application, Task 3 stretch 29 (§L.54 and §L.55) written, Task 3 complete; Task 4 follows in a new session
+- `3367e3e275e8e956d29985a9ec9d99b403432537` 2026-11-28 04:58:50 +0100 record: handoff entries 1274 to 1278 and the session 39 instruction of the L3 application landed; Task 4 follows
+- `2c7a0d2da51d304202e789c5b5f99f0a6c6784d2` 2026-11-28 05:03:28 +0100 application L3: the charter's L3 and L1 lists, its boundary tables and S-50 of the derived L0/L1 specification amended where the L3 family records give the words, former wordings kept
+- `a1938ebc7c57c867ff52b40e09fe8269b7b3fe9e` 2026-11-28 05:06:17 +0100 report: session 39 of the L3 application, Task 4 (the charter and S-50 amended where the records give the words) written; Task 5 follows in a new session
+- `3f7c9faea48fd706372121db2ec757d6a9597820` 2026-11-28 09:52:56 +0100 record: handoff entries 1279 to 1282 and the session 40 instruction of the L3 application landed; Task 5 follows
+- `a58acdb592e5005266555d7f8b1bd986a7a25b2e` 2026-11-28 10:12:46 +0100 report: session 40 of the L3 application, Task 5 stopped as the report says
+- `4a07f73f639ce8edde6d217c4ff60fccea9643cc` 2026-11-28 10:33:49 +0100 record: handoff entries 1283 to 1285 and the session 41 instruction of the L3 application landed; Task 5 resumes
+
+### E0 to E5, graded — POINTERS
+
+As the batch report's §5 grades and locates them. Each session report's own commit is the
+`report: session <N> of the L3 application, …` commit in the list above.
+
+- **E0 — MET, with the departures named in the record.** Session 1 wrote no report; the Task 0 commit
+  `cbde76fd78a244540df64895191a511df186cc29` is graded at its object in the batch report's §5; its guard-set run is
+  **[relayed]** in handoff entry 1184 §2 items 1 and 2.
+- **E1 — MET, with the departures each report names.** Sessions 2 to 7's reports, each at §3 and §5 (session 7 also
+  §6); session 8's report at §4 and §6 (its item 3 gathers the STOP-and-report items and the points listed for the
+  user).
+- **E2 — MET.** Session 9's report, §3.
+- **E3 — MET, with the departures each report names.** Sessions 10 to 37's reports, each at the section of the headings
+  Task 3 names (§4; session 24 at §5) and at the section of the row-parts given no line (§6; session 24 at §7); session
+  12 also §7; session 38's report at §3, the paragraph *The report headings Task 3 names, for this stretch* inside its §4,
+  and §5. The headings' wording varies as the batch report's §5 records.
+- **E4 — MET, with the departures its report names.** Session 39's report, §3 and §3.4.
+- **E5 — NOT ASSERTED HERE — the one further commit carries it.**
+
+**Each task's diff, attributed by site or passage — POINTERS:** Task 0, the commit's own path list (the batch report's
+§5); Task 1, the diff tables of sessions 2 to 7 (§5 each) and session 8's §4; Task 2, session 9's §3; Task 3, each of
+sessions 10 to 38's check-before-commit section (§5; session 24 at §6); Task 4, session 39's §3.5.
+
+### The named lists of Task 5 item 2 — POINTERS
+
+Copied from the batch report's §5.1 as it stands there (session numbers are the reports the phrase occurs in):
+
+| List, as Task 5 item 2 names it | Where it stands |
+|---|---|
+| *rows the act could not place* | sessions 10 to 38, the section of the headings Task 3 names |
+| *rows named by more than one record* | sessions 10 to 38, the same section |
+| *amendments with no words from the record* | the phrase occurs in no report; session 8's §6, item 3, answers it (E1) |
+| *points answered by a record's own derivation, nothing written* | session 12 only |
+| *§10 rows a record says leave, not named by row* | sessions 13 to 38 |
+| *charter and contract amendments left to the user* | session 39 only, §3.4 |
+| *ADOPTED words read at the row* | sessions 10 to 38 |
+| *audit questions added* | sessions 12 to 38 |
+| *audit questions no longer quarantined* | sessions 12 to 38 |
+| *held by ruling* | sessions 11 and 32 |
+| *placed outside every charter* | sessions 24 to 38 |
+| *rows given no line now* | sessions 11 to 23 |
+| *recorded lines not written: no disposition word* | sessions 12 to 38 |
+| the decided-against hits not tied to a row number | *decided against* or *decided-against*: sessions 7 and 10 to 38 |
+
+### The decisions-register supersessions — each §L entry's *Register* paragraph, restated as a list
+
+Copied from the batch report's §5.2 as it stands there.
+
+- §L.1 — none.
+- §L.2 — D-477, D-478 and D-481 (supersession at L3 for the application act and the register route to carry).
+- §L.3 — D-458, at its L3 home (supersession for the application act and the register route to carry); named, not
+  superseded: D-455, D-480, D-485, D-582, D-254.
+- §L.4 — D-455, at L3 (supersession for the application act and the register route to carry); D-495 (*"loses its
+  subject at L3"*, not called a supersession); named, not superseded: D-336.
+- §L.5 — D-336 and D-081 (*"superseded at L3 only"*); D-584 (superseded *"in that respect only"*); named, not superseded:
+  D-100.
+- §L.6 — D-584 (superseded at L3, in that respect only).
+- §L.7 — none superseded; D-096 cited as a ground.
+- §L.8 — none.
+- §L.9 — none.
+- §L.10 — none.
+- §L.11 — none.
+- §L.12 — D-454 and D-456 (*"the charter overtakes D-454 and D-456"*); named as grounds, not superseded: D-295, D-100.
+- §L.13 — D-472 (*"decided against by this ruling, its register status settled at the ratification act"*); named as
+  grounds, not superseded: D-605, D-295, D-100.
+- §L.14 — none superseded; named as grounds: D-100, D-295, D-472.
+- §L.15 — none superseded; named as grounds: D-260, D-261, D-263, D-624, D-030; D-457 named in its check correction.
+- §L.16 — none superseded; named as grounds: D-100, D-295, D-297.
+- §L.17 — none superseded; named as grounds: D-100, D-295, D-254.
+- §L.18 — none superseded; named as grounds: D-022, D-100, D-297, D-295.
+- §L.19 — none superseded; named as grounds: D-295, D-599; D-425, D-L3a and D-349 occur only inside a quotation.
+- §L.20 — none superseded; named as grounds: D-100, D-599.
+- §L.21 — none.
+- §L.22 — none.
+- §L.23 — none; named as grounds: D-100, D-599.
+- §L.24 — none superseded; D-599 named as a ground.
+- §L.25 — none; named as grounds: D-100, D-335, D-295, D-599.
+- §L.26 — none; named as grounds: D-028, D-599.
+- §L.27 — none; named as grounds: D-035, D-030, D-024, D-033, D-099, D-297, D-100, D-581, D-295, D-522, D-229, D-072,
+  D-466, D-461, D-480; D-202 named; D-599.
+- §L.28 — none allocated; named as a ground: D-607; D-599.
+- §L.29 — none allocated; named, not superseded: D-406, D-410, D-411, D-414, D-502, D-506, D-507, D-503, D-293, D-504,
+  D-505, D-254, D-599, D-250.
+- §L.30 — none; named: D-599, D-250.
+- §L.31 — none; named, not superseded: D-502, D-504, D-505, D-599, D-250.
+- §L.32 — none; named, not superseded: D-502, D-410, D-507, D-504, D-505, D-599, D-250.
+- §L.33 — none allocated; named, not superseded: D-406, D-502, D-599, D-250; D-133 named as a fact recorded.
+- §L.34 — none allocated; named, not superseded: D-506, D-599, D-250.
+- §L.35 — none allocated; named, not superseded: D-599, D-643, D-503, D-506, D-410, D-250.
+- §L.36 — none; named, not superseded: D-599, D-250.
+- §L.37 — none; named, not superseded: D-599, D-250.
+- §L.38 — none allocated; named, not superseded: D-599, D-406, D-341, D-250; D-410, D-411, D-414 and D-502 named among
+  the rows the record read.
+- §L.39 — none; named, not superseded: D-599, D-250.
+- §L.40 — none; named as a ground: D-522; named: D-599, D-250.
+- §L.41 — none; named, not superseded: D-599, D-623, D-100, D-229, D-072, D-250.
+- §L.42 — none; named as grounds: D-276, D-524; named: D-599, D-250.
+- §L.43 — none; named as grounds: D-033, D-034; named: D-599, D-250.
+- §L.44 — none; named as grounds: D-587, D-589, D-590, D-498; named: D-599, D-250.
+- §L.45 — none; named: D-599, D-250.
+- §L.46 — none; named: D-599, D-250.
+- §L.47 — none; named: D-599.
+- §L.48 — none; named: D-599, D-250, D-297.
+- §L.49 — none; named: D-599, D-250, D-297.
+- §L.50 — none; named: D-599, D-100, D-297, D-250.
+- §L.51 — none; named: D-297, D-599, D-250.
+- §L.52 — D-479 (*"superseded at its L3 home only so far as its boundaries are picked boundaries that decide a phrase
+  end"*, for the application act and the register route to carry); named: D-599, D-250.
+- §L.53 — none; named: D-599, D-250.
+- §L.54 — none; named: D-674, D-599, D-250.
+- §L.55 — none; named: D-599, D-250.
+
+**This batch writes nothing into `DECISIONS.md` and allocates no `D-NNN`.**
+
+### The points that are not this batch's — POINTERS
+
+Copied from the batch report's §5.3 as it stands there: every §L entry's *Open, for the releasing sitting* and *Carried
+open by the record* paragraphs stand in the big dispatch,
+`records/cc/instructions/cc_instruction_l3_application_2026_11_08.md`, at these lines (§L.1 carries neither):
+
+§L.2 — Carried open, line 527 · §L.3 — Open, line 620; Carried open, line 614 · §L.4 — Open, 676; Carried open, 696 ·
+§L.5 — Open, 754; Carried open, 773 · §L.6 — Open, 851; Carried open, 890 · §L.7 — Carried open, 940 · §L.8 — Open,
+974; Carried open, 1004 · §L.9 — Carried open, 1037 · §L.10 — Open, 1061; Carried open, 1078 · §L.11 — Open, 1133;
+Carried open, 1166 · §L.12 — Open, 1251; Carried open, 1323 · §L.13 — Open, 1381; Carried open, 1414 · §L.14 — Open,
+1489; Carried open, 1535 · §L.15 — Open, 1593; Carried open, 1630 · §L.16 — Open, 1713; Carried open, 1773 · §L.17 —
+Open, 1867; Carried open, 1922 · §L.18 — Open, 1987; Carried open, 2008 · §L.19 — Open, 2088; Carried open, 2132 ·
+§L.20 — Open, 2217; Carried open, 2247 · §L.21 — Open, 2305; Carried open, 2319 · §L.22 — Open, 2373; Carried open,
+2394 · §L.23 — Open, 2471; Carried open, 2512 · §L.24 — Open, 2570; Carried open, 2613 · §L.25 — Open, 2678; Carried
+open, 2723 · §L.26 — Open, 2792; Carried open, 2821 · §L.27 — Open, 2900; Carried open, 2949 · §L.28 — Open, 3004;
+Carried open, 3035 · §L.29 — Open, 3100; Carried open, 3142 · §L.30 — Open, 3207; Carried open, 3245 · §L.31 — Open,
+3304; Carried open, 3338 · §L.32 — Open, 3412; Carried open, 3444 · §L.33 — Open, 3506; Carried open, 3535 · §L.34 —
+Open, 3600; Carried open, 3649 · §L.35 — Open, 3706; Carried open, 3746 · §L.36 — Open, 3829; Carried open, 3881 ·
+§L.37 — Open, 3948; Carried open, 3981 · §L.38 — Open, 4052; Carried open, 4109 · §L.39 — Open, 4189; Carried open,
+4241 · §L.40 — Open, 4301; Carried open, 4346 · §L.41 — Open, 4424; Carried open, 4468 · §L.42 — Open, 4536; Carried
+open, 4575 · §L.43 — Open, 4638; Carried open, 4670 · §L.44 — Open, 4732; Carried open, 4787 · §L.45 — Open, 4844;
+Carried open, 4875 · §L.46 — Open, 4952; Carried open, 4996 · §L.47 — Open, 5062; Carried open, 5101 · §L.48 — Open,
+5164; Carried open, 5205 · §L.49 — Open, 5279; Carried open, 5304 · §L.50 — Open, 5379; Carried open, 5407 · §L.51 —
+Open, 5479; Carried open, 5510 · §L.52 — Open, 5588; Carried open, 5632 · §L.53 — Open, 5706; Carried open, 5730 ·
+§L.54 — Open, 5776; Carried open, 5796 · §L.55 — Open, 5893; Carried open, 5905.
+
+Every item this dispatch marked as authored and overrulable before Task 0, where its mark has been brought into line,
+stands as the user ruled it at the record that mark names; NOT YOURS, and untouched beyond what the Tasks write.
+
+### The declared departures
+
+- **Session 40's:** the batch report's §8.
+- **Session 41's, up to its act 4:** the batch report's §10.5.
+- **Session 41's, after its act 4** (declared here, because §10 of the batch report is final after act 4):
+  1. At act 5, the `tools/audit/changed_paths.py` listing was read with the Grep tool, by a pattern that picks out the
+     tracked modifications, every path under `records/cowork/handoff/` and `records/cowork/rulings/`, and the count
+     line; the whole listing was not read line by line.
+  2. At act 5, the first `--check`'s red output was read from the scratchpad before the writing run; the writing run's
+     printout was read after it.
+  3. The commit list above is the `git log` output with each hash put in backticks and each line made a list item; no
+     word of a subject was changed.
+- **Each session report's own *Departures* section:** sessions 2, 4, 5 and 6 at §6; session 3 at §6 (*Departures and
+  authored choices*); session 7 at §7; session 8 at §7; session 9 at §5; sessions 10, 11, and 15 to 23 at §7; sessions
+  12, 13, 14 and 24 at §8; sessions 25 to 37 at §7; session 38 at §6; session 39 at §4 (as the batch report's §5 locates
+  them).
+
+**No recommendation is written anywhere** — not in `STATUS.md`, the tool, the batch report, this section or a commit
+message.
+
+### The last regeneration — after the batch report was final
+
+`python tools/audit/gen_per_session_reading.py --check`: exit 1, *"STALE vs the measurement: per_session_reading.json does
+not re-derive"*. The writing run: exit 0. `--check` again: exit 0. **The artifact against the one session 40's act 6
+left** — `git diff 78186966e1b5bc33a35364c0f4ba6ff04f58f960 5d599155ab03d6147d0e2936a7e6b5675c0e6ad9`, the first blob
+being the copy session 41 put into git's object store before any act, the second the artifact after this run — moved
+**by field**:
+
+- the handoff-entry member: `the_population_count` 1202 → 1205;
+- its three files with the latest add-commits: from entries 1281, 1282 and 1279 (added in
+  `3f7c9faea48fd706372121db2ec757d6a9597820`; 9930, 11552 and 7284 characters) to entries 1285, 1284 and 1283 (added in
+  session 41's landing commit `4a07f73f639ce8edde6d217c4ff60fccea9643cc`; 10055, 11905 and 13998 characters), their
+  `characters` 28766 → 35958, at that member and at the two places that list it as a member;
+- the totals that sum it: `without_the_injected_copy_of_CLAUDE_md` 682147 → 689339; `with_it` 851329 → 858521;
+  `under_ruling_2_of_2026_11_01` 745888 → 753080; the Cowork per-sitting `characters` 980527 → 987719.
+
+**Nothing else moved.** Every moved field is caused by the three handoff entries session 41's landing commit added. The
+extension of the batch report moved no field of this artifact.
+
+### The plan lines
+
+*"The check turn and the ratification act are the writing side's; the ratification act is a separate decision surface
+over the successor (Task 3 (d): §15 of the reading file still reads NOTHING), where the points above return."*
+
+### The plan's tell
+
+**YES — one thing**, as the batch report's §7 states it: besides the landed paths of Task 0, the successor, the
+derivation's banner, the reading file's added lines and sections and the sentences Task 3 (d) writes into its existing
+lines, the four `FRAMEWORK.md` sites with their notes, S-50 of the derived L0/L1 specification, the Task-5 files and the
+report (and the handoff entries, session instructions and session reports landed under the split into sessions), the
+batch added seven files under `tools/audit/stretch_verify/` — `README.md`, `blobhash.py`, `blobout.py`, `counts.py`,
+`gitobj.py`, `rebuild.py`, `treediff.py` — in the commit `53b3f2db77af5d31562f29ffeea215ca5a755aad`, and edited the
+README's banner in the commit `8dfffc59c9bbaa4df18e9f92df4f3369cfa5f834`. **Those seven files were ordered landed by
+the writing side's own instruction for session 28**
+(`records/cc/instructions/cc_instruction_l3_application_session_28_task_3_stretch_19_2026_11_24.md`, its item headed
+*Landing the measurement tool's seven files*), so session 41's instruction adds `tools/audit/stretch_verify/` to the
+end-state check's added-path classes.
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: Claude Code, 2026-11-28. Session 40 (boot tip `a1938ebc7c57c867ff52b40e09fe8269b7b3fe9e`) under
+`records/cc/instructions/cc_instruction_l3_application_session_40_task_5_2026_11_28.md`, and session 41 (boot tip
+`a58acdb592e5005266555d7f8b1bd986a7a25b2e`) under
+`records/cc/instructions/cc_instruction_l3_application_session_41_task_5_resume_2026_11_28.md`, which wrote this
+section. Every commit identifier was read from `git log` or the commit's own object; the regeneration's movement is this
+session's own diff, read with the file tools.*

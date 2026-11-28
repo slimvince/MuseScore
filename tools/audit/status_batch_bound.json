@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_llm_correction_second_resume_2026_11_08.md, Task 3",
+ "dispatch": "cc_instruction_l3_application_2026_11_08.md, Task 5",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -813,30 +813,52 @@
    "base_commit": "468aac14856d2cabf6cc5f9ee58678b7073d5c24",
    "the_then_previous_batch": "cc_instruction_records_landing_2026_11_07.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_application_2026_11_08.md, Task 5",
+   "base_commit": "2c7a0d2da51d304202e789c5b5f99f0a6c6784d2",
+   "the_then_previous_batch": "cc_instruction_llm_correction_second_resume_2026_11_08.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "468aac14856d2cabf6cc5f9ee58678b7073d5c24",
- "the_then_previous_batch": "cc_instruction_records_landing_2026_11_07.md",
+ "base_commit": "2c7a0d2da51d304202e789c5b5f99f0a6c6784d2",
+ "the_then_previous_batch": "cc_instruction_llm_correction_second_resume_2026_11_08.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 2,
- "characters_moved": 1307,
+ "entries_moved": 4,
+ "characters_moved": 2337,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 999,
-   "sha256": "67fec06fe04cd789cc1a2f7fdd6815ac00f9e1fbd830f291b4a1b4ada0612ee0",
+   "characters": 1408,
+   "sha256": "902c22c8da7ac9e848772fc03cebbcb47b8f2daaa0c2d23c50ef3bce61070f7f",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-11-07 (CC — `records/cc/instructions/cc_instruction_records_landing_2026_11_07.md`, Task 3, the close. **★★ THE RECORDS LANDING: WHAT THE COWORK"
+   "opening": "*2026-11-08 (CC — `records/cc/instructions/cc_instruction_llm_correction_second_resume_2026_11_08.md`, Task 3, the close. **★★ THE LANGUAGE-MODEL CORR"
   },
   {
    "line_at_base": 10,
-   "characters": 308,
-   "sha256": "4d3ab1126602419cc5503ed48a869d5571688b54e7fa2e483432a7d7be746919",
+   "characters": 315,
+   "sha256": "473d877753d9c812f938409737810be8736e22b2a495201ae6db83796f1729bd",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-11-07 (CC — Same dispatch, Task 0. **HANDOFF ENTRIES 479 TO 569, 46 RULING RECORDS, 37 RATIFICATION DOCUMENTS AND THIS DISPATCH ARE LANDED**, as"
+   "opening": "*2026-11-08 (CC — Same dispatch, Task 2. **THE THREE READING FILES' LANGUAGE-MODEL DESCRIPTIONS ARE ANNOTATED** under Ruling 1 items 5 and 6, each not"
+  },
+  {
+   "line_at_base": 12,
+   "characters": 353,
+   "sha256": "f56415ebf8495510c640ad7d0fed3f9f8fa5a3f88706506f2300e38bfe2a577a",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-11-08 (CC — Same dispatch, Task 1. **THREE GRADES ARE ADDED TO THE SPECIFICATION-DOCUMENT-SET TOOL** for the §19 superseded banner's namings, al"
+  },
+  {
+   "line_at_base": 14,
+   "characters": 261,
+   "sha256": "ec944233ee7b93ffa165ea1253a781fd2d5f4eed735a6e8aadeeed4d9b61dba9",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-11-08 (CC — Same dispatch, Task 0. **HANDOFF ENTRIES 581 TO 585, THE RESUME BATCH'S REPORT AND APPENDIX, AND THIS DISPATCH ARE LANDED**, as they"
   }
  ],
  "reconciliation": {
