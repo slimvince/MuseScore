@@ -31230,3 +31230,65 @@ end-state check's added-path classes.
 `records/cc/instructions/cc_instruction_l3_application_session_41_task_5_resume_2026_11_28.md`, which wrote this
 section. Every commit identifier was read from `git log` or the commit's own object; the regeneration's movement is this
 session's own diff, read with the file tools.*
+
+### THE END STATE — run at the tree the close commit `da9a6188b43e28ab2f704b73d9a353499eae7789` left, appended in the one further commit
+
+**Session 41 of the L3 application made the close** (under
+`records/cc/instructions/cc_instruction_l3_application_session_41_task_5_resume_2026_11_28.md`), resuming the close
+session 40 stopped.
+
+The close commit `da9a6188b43e28ab2f704b73d9a353499eae7789` (parent `4a07f73f639ce8edde6d217c4ff60fccea9643cc`, session
+41's landing commit) was pushed, and `.git/refs/remotes/origin/master` read equal to it. `git show --stat` on it shows
+exactly the eleven paths of the close and no other (682 insertions, 58 deletions).
+
+**A fresh full guard run as a writing run (`python tools/audit/gen_guard_state.py`, named), after the close commit and
+before this one.** Its result is at `tools/audit/guard_state.json` → `summary`, which this commit carries. Its first
+line, verbatim: *"wrote tools\audit\guard_state.json"*; its last line, verbatim: *"83 guard(s) run, 13 failing, 4 not
+run, 20 historical record(s)"*. **E5's condition — MET:**
+
+- the run count is 83; zero STOPs in the runner (a Grep of the output for `STOP` finds none);
+- the failing set is exactly the thirteen of the big dispatch's declared start state, item 2 —
+  `gen_phase3_gate_partition.py`, `gen_filing_convention_application.py`, `gen_artifact_inventory.py`,
+  `gen_artifact_inventory_surface.py`, `gen_test_construction_evidence.py`, `gen_retirement_caller_check.py`,
+  `decisions/apply_soft_discard.py`, `decisions/apply_residue_discard.py`, `gen_epoch_write_path.py`,
+  `gen_recognizer_establishment_sort.py`, `decisions/gen_cluster_dispositions.py --verify`,
+  `decisions/gen_home_classification.py`, `decisions/gen_phase1p_delegation_bar.py` — none cleared by this batch, none
+  added; that is session 40's act-2 start state **less** the two reds this batch's ordered acts cleared, **plus none**;
+- `gen_status_batch_bound.py --check`, `gen_evidence_pin_membership.py --check`, `gen_session_start_read_size.py --check`,
+  `gen_defense_share.py --check`, `gen_per_session_reading.py --check` and `gen_l3_outgoing_population.py --check` PASS
+  (70 `[PASS]` lines in all, a Grep count);
+- against session 40's act 2 (the batch report's §3), compared verdict by verdict: **exactly two verdicts differ —
+  `gen_evidence_pin_membership.py --check` and `gen_per_session_reading.py --check`, each FAIL → PASS** — beside the
+  header line (a writing run against a `--check`) and the tally (15 → 13 failing); the four NOT RUN lines
+  (`gen_ratification_surface_set.py`, `reaim_ratification_surface_paths.py`,
+  `decisions/gen_verbatim_subject_consistency.py`, `gen_reserved_word_scanner.py`) and the twenty HISTORICAL lines are
+  the same; no verdict went PASS → FAIL. No red was left standing by session 40's act 5.
+
+**A4 and A5, verified at the objects.** `git diff --name-status e855ff2a38883bc453b3f1c83cb20b9fd89cda05
+da9a6188b43e28ab2f704b73d9a353499eae7789` lists **901 paths — 883 added, 18 modified, none deleted** (Grep counts of the
+listing). **Added, by class:** `records/cowork/handoff/` 700; `records/cowork/rulings/` 48; `ratification_surfaces/` 45;
+`records/cc/instructions/` 43; `records/cc/reports/` 39; the successor `cowork_derived_specification_l3_2026_11_08.md` 1;
+`tools/audit/stretch_verify/` 7 (`README.md`, `blobhash.py`, `blobout.py`, `counts.py`, `gitobj.py`, `rebuild.py`,
+`treediff.py`, the class session 41's instruction adds, those files having been ordered landed by the session 28
+instruction) — 883, none outside the classes. **Modified, by class:** the four Task 0 tracked paths
+(`docs/research_papers/BIBLIOGRAPHY.md`, `docs/research_papers/README.md`,
+`ratification_surfaces/cowork_l3_language_model_family_surface_2026_11_07.md`,
+`ratification_surfaces/cowork_l3_unplaced_families_2026_11_06.md`); the derivation `cowork_blind_derivation_l3_2026_10_17.md`
+(Task 2); the reading file `ratification_surfaces/cowork_comparison_l3_reading.md` (Task 3); `FRAMEWORK.md` and
+`cowork_derived_specification_l0_l1_2026_09_03.md` (Task 4); and ten paths of the close commit (`STATUS.md`,
+`STATUS_ARCHIVE.md`, this file, and seven under `tools/audit/`; the batch report, added in this batch, is among the
+additions) — 18, none outside the classes. Session 8's report, whose one line session 9's report declares corrected, was
+added in this batch and is counted among the additions. **A4 HELD. A5 HELD — no path outside the classes, so no
+STOP-and-report.** And `git diff e855ff2a… da9a6188… -- cowork_blind_derivation_l3_2026_10_17.md` shows **one changed
+passage, at the top, insertions only** (nine lines added after the heading's blank line, nothing removed), as E2.
+
+This commit adds only the guard run's artifact and this portion. *(Declared, as the last two closes' end states did:
+Task 5 item 4 orders "the one further commit with the end-state guard run", and session 40's instruction §4 item 9 names
+both `tools/audit/guard_state.json` and this portion.)* *(Declared departures after the section above was written: the
+staged set before the close commit was listed with `tools/audit/changed_paths.py --staged`, unordered; the guard run's
+output was read with the Grep tool by pattern rather than line by line; the per-class counts above were taken with the
+Grep tool over the listing.)*
+
+*Provenance: Claude Code, session 41 of the L3 application, 2026-11-28, appended in the one further commit after the
+close commit `da9a6188b43e28ab2f704b73d9a353499eae7789`; the verdicts are this run's own output, read with the file
+tools.*
